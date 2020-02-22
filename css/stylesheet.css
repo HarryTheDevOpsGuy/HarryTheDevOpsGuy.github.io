@@ -10,7 +10,7 @@ body {
 	font-size: 16px;
 	overflow-x: hidden;
 	font-weight: 400;
-	-webkit-overflow-scrolling: touch;	
+	-webkit-overflow-scrolling: touch;
 }
 /* ------------------------------------------------------------------------------------------ Preloader */
 
@@ -1069,7 +1069,7 @@ section#download-cv {
 #contact {
 	background-color: #e4545b;
 	color: #fff;
-	background-image: url(http://webagate.com/demos/alia/onepage-vcard-resume-portfolio-website-template/img/texture/black-dot.png);
+	background-image: url(../img/black-dot.png);
 	background-repeat: repeat;
 }
 #contact .section-heading .heading {
