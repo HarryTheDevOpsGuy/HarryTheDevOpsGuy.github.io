@@ -372,6 +372,54 @@ section {
 }
 /* ------------------------------------------------------------------------------------------ About Me Ends */
 
+/* ------------------------------------------------------------------------------------------ About Me Starts */
+#readme {
+	background-image: url(../img/white-dot.png);
+	background-repeat: repeat;
+}
+#readme .personal-info {
+}
+#readme .owl-controls {
+	padding: 0px;
+	margin: 0px;
+}
+#readme #my-pic-carousel img {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+#readme .personal-info .line1 {
+	font-family: 'Raleway', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	margin-bottom: 30px;
+}
+#readme .personal-info .line2 {
+	font-family: 'Raleway', sans-serif;
+	font-size: 20px;
+	font-weight: 600;
+}
+#readme .col-left {
+	text-align: right;
+	padding-top: 10px;
+}
+#readme .col-right {
+	text-align: left;
+	padding-top: 10px;
+}
+#readme .pic {
+	text-align: center;
+}
+#readme .pic img {
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+}
+#readme .intro {
+	padding-top: 50px;
+	text-align: center;
+}
+/* ------------------------------------------------------------------------------------------ About Me Ends */
+
 
 /* ------------------------------------------------------------------------------------------ My Skills Starts */
 #myskills {
@@ -519,6 +567,42 @@ section {
 	margin-bottom: 8px;
 }
 #process .items:hover {
+	background: #e4545b;
+	color: #fff;
+}
+/* ------------------------------------------------------------------------------------------ Process Ends */
+
+
+/* ------------------------------------------------------------------------------------------ Process Starts */
+#tools {
+	background: url(../img/3.jpg) 50% 0 repeat-y fixed;
+	color: #fff;
+	background-size: cover;
+}
+#tools .items {
+	width: 160px;
+	height: 160px;
+	background: #fff;
+	color: #000;
+	border-radius: 80px;
+	position: relative;
+	margin-bottom: 30px;
+	text-align: center;
+	padding-top: 42px;
+	margin-left: auto;
+	margin-right: auto;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	font-size: 20px;
+	font-weight: 600;
+}
+#tools .items i {
+	font-size: 50px;
+	margin-bottom: 8px;
+}
+#tools .items:hover {
 	background: #e4545b;
 	color: #fff;
 }
