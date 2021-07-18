@@ -1,0 +1,729 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional //EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:v='urn:schemas-microsoft-com:vml'>
+<head>
+<!--[if gte mso 9]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]-->
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'/>
+<meta content='width=device-width' name='viewport'/>
+<!--[if !mso]><!-->
+<meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+<!--<![endif]-->
+<title></title>
+<!--[if !mso]><!-->
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'/>
+<!--<![endif]-->
+
+<script type="text/javascript">
+var root = document.documentElement;
+var eyef = document.getElementById('eyef');
+var cx = document.getElementById("eyef").getAttribute("cx");
+var cy = document.getElementById("eyef").getAttribute("cy");
+
+document.addEventListener("mousemove", evt => {
+  let x = evt.clientX / innerWidth;
+  let y = evt.clientY / innerHeight;
+
+  root.style.setProperty("--mouse-x", x);
+  root.style.setProperty("--mouse-y", y);
+
+  cx = 115 + 30 * x;
+  cy = 50 + 30 * y;
+  eyef.setAttribute("cx", cx);
+  eyef.setAttribute("cy", cy);
+
+});
+
+document.addEventListener("touchmove", touchHandler => {
+  let x = touchHandler.touches[0].clientX / innerWidth;
+  let y = touchHandler.touches[0].clientY / innerHeight;
+
+  root.style.setProperty("--mouse-x", x);
+  root.style.setProperty("--mouse-y", y);
+});
+
+</script>
+<style type='text/css'>
+
+@import url("https://fonts.googleapis.com/css?family=Bungee");
+
+body {
+  background: #1b1b1b;
+  color: brown;
+  font-family: "Bungee", cursive;
+  margin-top: 50px;
+  text-align: center;
+}
+a {
+  color: #2aa7cc;
+  text-decoration: none;
+}
+a:hover {
+  color: green;
+}
+svg {
+  width: 50vw;
+}
+.lightblue {
+  fill: #444;
+}
+.eye {
+  cx: calc(115px + 30px * var(--mouse-x));
+  cy: calc(50px + 30px * var(--mouse-y));
+}
+#eye-wrap {
+  overflow: hidden;
+}
+.error-text {
+  font-size: 120px;
+}
+.alarm {
+  animation: alarmOn 0.5s infinite;
+}
+
+@keyframes alarmOn {
+  to {
+    fill: darkred;
+  }
+}
+
+		table,
+		td,
+		tr {
+			vertical-align: top;
+			border-collapse: collapse;
+		}
+
+		* {
+			line-height: inherit;
+		}
+
+		a[x-apple-data-detectors=true] {
+			color: inherit !important;
+			text-decoration: none !important;
+		}
+
+		.datatable tr td {
+			  text-align: left;
+			  padding: 4px;
+				border: 1px solid #ddd;
+		}
+
+		.datatable {
+		  border-collapse: collapse;
+			width: 100%;
+		}
+
+		tr:nth-child(even) {background-color: #f2f2f2;}
+
+		.datatable th {
+			border: 1px solid #ddd;
+			padding: 8px;
+			padding-top: 8px;
+			padding-bottom: 8px;
+			text-align: left;
+			background-color: #fc7318;
+			color: white;
+		}
+
+		.datatable caption {
+			display: table-caption;
+			text-align: center;
+			padding: 8px;
+		}
+
+
+	</style>
+<style id='media-query' type='text/css'>
+		@media (max-width: 920px) {
+
+			.block-grid,
+			.col {
+				min-width: 620px !important;
+				max-width: 100% !important;
+				display: block !important;
+				font-size: 90%;
+			}
+
+			.block-grid {
+				width: 100% !important;
+			}
+
+			.col {
+				width: 100% !important;
+			}
+
+			.col_cont {
+				margin: 0 auto;
+			}
+
+			img.fullwidth,
+			img.fullwidthOnMobile {
+				max-width: 100% !important;
+			}
+
+			.no-stack .col {
+				min-width: 0 !important;
+				display: table-cell !important;
+			}
+
+			.no-stack.two-up .col {
+				width: 50% !important;
+			}
+
+			.no-stack .col.num2 {
+				width: 16.6% !important;
+			}
+
+			.no-stack .col.num3 {
+				width: 25% !important;
+			}
+
+			.no-stack .col.num4 {
+				width: 33% !important;
+			}
+
+			.no-stack .col.num5 {
+				width: 41.6% !important;
+			}
+
+			.no-stack .col.num6 {
+				width: 50% !important;
+			}
+
+			.no-stack .col.num7 {
+				width: 58.3% !important;
+			}
+
+			.no-stack .col.num8 {
+				width: 66.6% !important;
+			}
+
+			.no-stack .col.num9 {
+				width: 75% !important;
+			}
+
+			.no-stack .col.num10 {
+				width: 83.3% !important;
+			}
+
+			.video-block {
+				max-width: none !important;
+			}
+
+			.mobile_hide {
+				min-height: 0px;
+				max-height: 0px;
+				max-width: 0px;
+				display: none;
+				overflow: hidden;
+				font-size: 0px;
+			}
+
+			.desktop_hide {
+				display: block !important;
+				max-height: none !important;
+			}
+		}
+	</style>
+<style id='icon-media-query' type='text/css'>
+		@media (max-width: 920px) {
+			.icons-inner {
+				text-align: center;
+			}
+
+			.icons-inner td {
+				margin: 0 auto;
+			}
+		}
+	</style>
+</head>
+<body class='clean-body' style='margin: 0; padding: 0; -webkit-text-size-adjust: 100%; background-color: #F5F5F5;'>
+<!--[if IE]><div class='ie-browser'><![endif]-->
+<table bgcolor='#F5F5F5' cellpadding='0' cellspacing='0' class='nl-container' role='presentation' style='table-layout: fixed; vertical-align: top; min-width: 320px; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #F5F5F5; width: 100%;' valign='top' width='100%'>
+<tbody>
+<tr style='vertical-align: top;' valign='top'>
+<td style='word-break: break-word; vertical-align: top;' valign='top'>
+<!--[if (mso)|(IE)]><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td align='center' style='background-color:#F5F5F5'><![endif]-->
+<div style='background-color:transparent;'>
+<div class='block-grid' style='min-width: 320px; max-width: 900px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: transparent;'>
+<div style='border-collapse: collapse;display: table;width: 100%;background-color:transparent;'>
+<!--[if (mso)|(IE)]><table width='100%' cellpadding='0' cellspacing='0' border='0' style='background-color:transparent;'><tr><td align='center'><table cellpadding='0' cellspacing='0' border='0' style='width:900px'><tr class='layout-full-width' style='background-color:transparent'><![endif]-->
+<!--[if (mso)|(IE)]><td align='center' width='900' style='background-color:transparent;width:900px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;' valign='top'><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;'><![endif]-->
+<div class='col num12' style='min-width: 320px; max-width: 900px; display: table-cell; vertical-align: top; width: 900px;'>
+<div class='col_cont' style='width:100% !important;'>
+<!--[if (!mso)&(!IE)]><!-->
+<div style='border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;'>
+<!--<![endif]-->
+<table border='0' cellpadding='0' cellspacing='0' class='divider' role='presentation' style='table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;' valign='top' width='100%'>
+<tbody>
+<tr style='vertical-align: top;' valign='top'>
+<td class='divider_inner' style='word-break: break-word; vertical-align: top; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;' valign='top'>
+<table align='center' border='0' cellpadding='0' cellspacing='0' class='divider_content' height='10' role='presentation' style='table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-top: 0px solid transparent; height: 10px; width: 100%;' valign='top' width='100%'>
+<tbody>
+<tr style='vertical-align: top;' valign='top'>
+<td height='10' style='word-break: break-word; vertical-align: top; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;' valign='top'><span></span></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if (!mso)&(!IE)]><!-->
+</div>
+<!--<![endif]-->
+</div>
+</div>
+<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+<!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+</div>
+</div>
+</div>
+<div style='background-color:transparent;'>
+<div class='block-grid three-up' style='min-width: 320px; max-width: 900px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: #FFFFFF;'>
+<div style='border-collapse: collapse;display: table;width: 100%;background-color:#FFFFFF;'>
+<!--[if (mso)|(IE)]><table width='100%' cellpadding='0' cellspacing='0' border='0' style='background-color:transparent;'><tr><td align='center'><table cellpadding='0' cellspacing='0' border='0' style='width:900px'><tr class='layout-full-width' style='background-color:#FFFFFF'><![endif]-->
+<!--[if (mso)|(IE)]><td align='center' width='450' style='background-color:#FFFFFF;width:450px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;' valign='top'><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;'><![endif]-->
+<div class='col num6' style='display: table-cell; vertical-align: top; max-width: 320px; min-width: 450px; width: 450px;'>
+<div class='col_cont' style='width:100% !important;'>
+<!--[if (!mso)&(!IE)]><!-->
+<div style='border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;'>
+<!--<![endif]-->
+<div align='center' class='img-container center fixedwidth' style='padding-right: 0px;padding-left: 0px;'>
+<!--[if mso]><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr style='line-height:0px'><td style='padding-right: 0px;padding-left: 0px;' align='center'><![endif]-->
+<div style='font-size:1px;line-height:5px'> </div><a href='https://github.com/HarryTheDevOpsGuy/mweb24x7' style='outline:none' tabindex='-1' target='_blank'><img align='center' alt='mCert - TrackSSL Smartly| Logo ' border='0' class='center fixedwidth' src='https://raw.githubusercontent.com/mCloud-Automation/mData/master/msend/images/mWatcher.png' style='text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 100%; max-width: 247px; display: block;' title='mSend | Logo ' width='247'/></a>
+<!--[if mso]></td></tr></table><![endif]-->
+</div>
+<!--[if (!mso)&(!IE)]><!-->
+</div>
+<!--<![endif]-->
+</div>
+</div>
+<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+<!--[if (mso)|(IE)]></td><td align='center' width='225' style='background-color:#FFFFFF;width:225px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;' valign='top'><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;'><![endif]-->
+<div class='col num3' style='display: table-cell; vertical-align: top; max-width: 320px; min-width: 225px; width: 225px;'>
+<div class='col_cont' style='width:100% !important;'>
+<!--[if (!mso)&(!IE)]><!-->
+<div style='border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;'>
+<!--<![endif]-->
+<div></div>
+<!--[if (!mso)&(!IE)]><!-->
+</div>
+<!--<![endif]-->
+</div>
+</div>
+<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+<!--[if (mso)|(IE)]></td><td align='center' width='225' style='background-color:#FFFFFF;width:225px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;' valign='top'><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;'><![endif]-->
+<div class='col num3' style='display: table-cell; vertical-align: top; max-width: 320px; min-width: 225px; width: 225px;'>
+<div class='col_cont' style='width:100% !important;'>
+<!--[if (!mso)&(!IE)]><!-->
+<div style='border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;'>
+<!--<![endif]-->
+<table cellpadding='0' cellspacing='0' class='social_icons' role='presentation' style='table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;' valign='top' width='100%'>
+<tbody>
+<tr style='vertical-align: top;' valign='top'>
+<td style='word-break: break-word; vertical-align: top; padding-top: 40px; padding-right: 40px; padding-bottom: 40px; padding-left: 40px;' valign='top'>
+<table align='center' cellpadding='0' cellspacing='0' class='social_table' role='presentation' style='table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-tspace: 0; mso-table-rspace: 0; mso-table-bspace: 0; mso-table-lspace: 0;' valign='top'>
+<tbody>
+<tr align='center' style='vertical-align: top; display: inline-block; text-align: center;' valign='top'>
+<td style='word-break: break-word; vertical-align: top; padding-bottom: 0; padding-right: 2.5px; padding-left: 2.5px;' valign='top'><a href='https://www.facebook.com/HarryTheITExpert' target='_blank'><img alt='Facebook' height='32' src='https://raw.githubusercontent.com/mCloud-Automation/mData/master/msend/images/facebook2x.png' style='text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; display: block;' title='Facebook' width='32'/></a></td>
+<td style='word-break: break-word; vertical-align: top; padding-bottom: 0; padding-right: 2.5px; padding-left: 2.5px;' valign='top'><a href='https://www.linkedin.com/in/hari-prasad-verma-19b948154/' target='_blank'><img alt='LinkedIn' height='32' src='https://raw.githubusercontent.com/mCloud-Automation/mData/master/msend/images/linkedin2x.png' style='text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; display: block;' title='LinkedIn' width='32'/></a></td>
+<td style='word-break: break-word; vertical-align: top; padding-bottom: 0; padding-right: 2.5px; padding-left: 2.5px;' valign='top'><a href='https://www.youtube.com/channel/UCCHSOf6AJiWZyNxae8ob_6Q' target='_blank'><img alt='YouTube' height='32' src='https://raw.githubusercontent.com/mCloud-Automation/mData/master/msend/images/youtube2x.png' style='text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; display: block;' title='YouTube' width='32'/></a></td>
+<td style='word-break: break-word; vertical-align: top; padding-bottom: 0; padding-right: 2.5px; padding-left: 2.5px;' valign='top'><a href='https://medium.com/@mr.harry41' target='_blank'><img alt='Medium' height='32' src='https://raw.githubusercontent.com/mCloud-Automation/mData/master/msend/images/medium2x.png' style='text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; display: block;' title='Medium' width='32'/></a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if (!mso)&(!IE)]><!-->
+</div>
+<!--<![endif]-->
+</div>
+</div>
+<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+<!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+</div>
+</div>
+</div>
+<div style='background-color:transparent;'>
+<div class='block-grid' style='min-width: 320px; max-width: 900px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: #ffffff;'>
+<div style='border-collapse: collapse;display: table;width: 100%;background-color:#ffffff;'>
+<!--[if (mso)|(IE)]><table width='100%' cellpadding='0' cellspacing='0' border='0' style='background-color:transparent;'><tr><td align='center'><table cellpadding='0' cellspacing='0' border='0' style='width:900px'><tr class='layout-full-width' style='background-color:#ffffff'><![endif]-->
+<!--[if (mso)|(IE)]><td align='center' width='900' style='background-color:#ffffff;width:900px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;' valign='top'><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 25px; padding-left: 25px; padding-top:5px; padding-bottom:60px;'><![endif]-->
+<div class='col num12' style='min-width: 320px; max-width: 900px; display: table-cell; vertical-align: top; width: 900px;'>
+<div class='col_cont' style='width:100% !important;'>
+
+	<table border='0' cellpadding='0' cellspacing='0' class='divider' role='presentation' style='table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;' valign='top' width='100%'>
+	<tbody>
+	<tr style='vertical-align: top;' valign='top'>
+	<td class='divider_inner' style='word-break: break-word; vertical-align: top; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;' valign='top'>
+	<table align='center' border='0' cellpadding='0' cellspacing='0' class='divider_content' role='presentation' style='table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-top: 1px solid #BBBBBB; width: 100%;' valign='top' width='100%'>
+	<tbody>
+	<tr style='vertical-align: top;' valign='top'>
+	<td style='word-break: break-word; vertical-align: top; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;' valign='top'><span></span></td>
+	</tr>
+	</tbody>
+	</table>
+	</td>
+	</tr>
+	</tbody>
+	</table>
+<!--[if (!mso)&(!IE)]><!-->
+<div style='border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:60px; padding-right: 25px; padding-left: 25px;'>
+<!--<![endif]-->
+<!--[if mso]><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 0px; padding-left: 0px; padding-top: 0px; padding-bottom: 0px; font-family: Tahoma, Verdana, sans-serif'><![endif]-->
+
+<!--[if mso]></td></tr></table><![endif]-->
+<!--[if mso]><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; font-family: Tahoma, Verdana, sans-serif'><![endif]-->
+<!-- <div style='color:#555555;font-family:Lato, Tahoma, Verdana, Segoe, sans-serif;line-height:1.2;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;'>
+<div class='txtTinyMce-wrapper' style='font-size: 18px; line-height: 1.2; color: #555555; font-family: Lato, Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 14px;'>
+<p style='font-size: 18px; line-height: 1.2; word-break: break-word; text-align: justify; mso-line-height-alt: 22px; margin: 0;'><span style='font-size: 18px; color: #000000;'>{MSG_DATA}</span></p>
+</div>
+</div> -->
+<!-- Main Section  -->
+<div class='overflow-x:auto;' style='font-size: 12px; min-width: 620px; max-width: 920px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: #ffffff;'>
+
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSesX__2gBasqvU_jeTEAPPHlp4HcUVmzV5xUD4G2h7DMDR_Hg/viewform?embedded=true" width="740" height="2092" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+	<h1>It will be free forever</h1>
+	<!-- <h3>Have Questions <a target="_blank" href="https://docs.google.com/spreadsheets/d/1pRSlu5gaQUv3Wkfh4NG5mIHnaM0pa_yG-eemkH9_BBY/edit?usp=sharing">whitelist yourself </a>, if you are valid user.</h3> -->
+	<h3>Powered by <a target="_blank" href="https://github.com/HarryTheDevOpsGuy/mweb24x7">mweb24x7</a> | <a target="_blank" href="https://github.com/HarryTheDevOpsGuy/mSend">mSend</a></h3>
+
+</div>
+<!-- Main Section END -->
+
+<!--[if mso]></td></tr></table><![endif]-->
+<!--[if (!mso)&(!IE)]><!-->
+</div>
+<!--<![endif]-->
+</div>
+</div>
+<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+<!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+</div>
+</div>
+</div>
+
+
+<div style='background-color:transparent;'>
+<div class='block-grid four-up' style='min-width: 320px; max-width: 900px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: #FFFFFF;'>
+<div style='border-collapse: collapse;display: table;width: 100%;background-color:#FFFFFF;'>
+<!--[if (mso)|(IE)]><table width='100%' cellpadding='0' cellspacing='0' border='0' style='background-color:transparent;'><tr><td align='center'><table cellpadding='0' cellspacing='0' border='0' style='width:900px'><tr class='layout-full-width' style='background-color:#FFFFFF'><![endif]-->
+<!--[if (mso)|(IE)]><td align='center' width='225' style='background-color:#FFFFFF;width:225px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;' valign='top'><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;'><![endif]-->
+<div class='col num3' style='display: table-cell; vertical-align: top; max-width: 320px; min-width: 225px; width: 225px;'>
+<div class='col_cont' style='width:100% !important;'>
+<!--[if (!mso)&(!IE)]><!-->
+<div style='border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;'>
+<!--<![endif]-->
+<div></div>
+<!--[if (!mso)&(!IE)]><!-->
+</div>
+<!--<![endif]-->
+</div>
+</div>
+<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+<!--[if (mso)|(IE)]></td><td align='center' width='225' style='background-color:#FFFFFF;width:225px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;' valign='top'><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;'><![endif]-->
+<div class='col num3' style='display: table-cell; vertical-align: top; max-width: 320px; min-width: 225px; width: 225px;'>
+<div class='col_cont' style='width:100% !important;'>
+<!--[if (!mso)&(!IE)]><!-->
+<div style='border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;'>
+<!--<![endif]-->
+<div></div>
+<!--[if (!mso)&(!IE)]><!-->
+</div>
+<!--<![endif]-->
+</div>
+</div>
+<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+<!--[if (mso)|(IE)]></td><td align='center' width='225' style='background-color:#FFFFFF;width:225px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;' valign='top'><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;'><![endif]-->
+<div class='col num3' style='display: table-cell; vertical-align: top; max-width: 320px; min-width: 225px; width: 225px;'>
+<div class='col_cont' style='width:100% !important;'>
+<!--[if (!mso)&(!IE)]><!-->
+<div style='border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;'>
+<!--<![endif]-->
+<div></div>
+<!--[if (!mso)&(!IE)]><!-->
+</div>
+<!--<![endif]-->
+</div>
+</div>
+<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+<!--[if (mso)|(IE)]></td><td align='center' width='225' style='background-color:#FFFFFF;width:225px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;' valign='top'><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;'><![endif]-->
+<div class='col num3' style='display: table-cell; vertical-align: top; max-width: 320px; min-width: 225px; width: 225px;'>
+<div class='col_cont' style='width:100% !important;'>
+<!--[if (!mso)&(!IE)]><!-->
+<div style='border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;'>
+<!--<![endif]-->
+<div></div>
+<!--[if (!mso)&(!IE)]><!-->
+</div>
+<!--<![endif]-->
+</div>
+</div>
+<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+<!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+</div>
+</div>
+</div>
+<div style='background-color:transparent;'>
+<div class='block-grid' style='min-width: 320px; max-width: 900px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: #FFFFFF;'>
+<div style='border-collapse: collapse;display: table;width: 100%;background-color:#FFFFFF;'>
+<!--[if (mso)|(IE)]><table width='100%' cellpadding='0' cellspacing='0' border='0' style='background-color:transparent;'><tr><td align='center'><table cellpadding='0' cellspacing='0' border='0' style='width:900px'><tr class='layout-full-width' style='background-color:#FFFFFF'><![endif]-->
+<!--[if (mso)|(IE)]><td align='center' width='900' style='background-color:#FFFFFF;width:900px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;' valign='top'><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;'><![endif]-->
+<div class='col num12' style='min-width: 320px; max-width: 900px; display: table-cell; vertical-align: top; width: 900px;'>
+<div class='col_cont' style='width:100% !important;'>
+<!--[if (!mso)&(!IE)]><!-->
+<div style='border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;'>
+<!--<![endif]-->
+<table border='0' cellpadding='0' cellspacing='0' class='divider' role='presentation' style='table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;' valign='top' width='100%'>
+<tbody>
+<tr style='vertical-align: top;' valign='top'>
+<td class='divider_inner' style='word-break: break-word; vertical-align: top; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;' valign='top'>
+<table align='center' border='0' cellpadding='0' cellspacing='0' class='divider_content' role='presentation' style='table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-top: 1px solid #BBBBBB; width: 100%;' valign='top' width='100%'>
+<tbody>
+<tr style='vertical-align: top;' valign='top'>
+<td style='word-break: break-word; vertical-align: top; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;' valign='top'><span></span></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<div align='center' class='button-container' style='padding-top:20px;padding-right:10px;padding-bottom:10px;padding-left:10px;'>
+<!--[if mso]><table width='100%' cellpadding='0' cellspacing='0' border='0' style='border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;'><tr><td style='padding-top: 20px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px' align='center'><v:roundrect xmlns:v='urn:schemas-microsoft-com:vml' xmlns:w='urn:schemas-microsoft-com:office:word' href='https://harrythedevopsguy.github.io/' style='height:39pt; width:307.5pt; v-text-anchor:middle;' arcsize='29%' stroke='false' fillcolor='#fc7318'><w:anchorlock/><v:textbox inset='0,0,0,0'><center style='color:#ffffff; font-family:Tahoma, Verdana, sans-serif; font-size:16px'><![endif]--><a href='https://harrythedevopsguy.github.io/' style='-webkit-text-size-adjust: none; text-decoration: none; display: inline-block; color: #ffffff; background-color: #fc7318; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; width: auto; width: auto; border-top: 1px solid #fc7318; border-right: 1px solid #fc7318; border-bottom: 1px solid #fc7318; border-left: 1px solid #fc7318; padding-top: 10px; padding-bottom: 10px; font-family: Lato, Tahoma, Verdana, Segoe, sans-serif; text-align: center; mso-border-alt: none; word-break: keep-all;' target='_blank'><span style='padding-left:40px;padding-right:40px;font-size:16px;display:inline-block;'><span style='font-size: 16px; line-height: 2; word-break: break-word; mso-line-height-alt: 32px;'><strong>Try  More mCloud Tools with mSend</strong></span></span></a>
+<!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
+</div>
+<!--[if (!mso)&(!IE)]><!-->
+</div>
+<!--<![endif]-->
+</div>
+</div>
+<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+<!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+</div>
+</div>
+</div>
+<div style='background-color:transparent;'>
+<div class='block-grid three-up' style='min-width: 320px; max-width: 900px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: #FFFFFF;'>
+<div style='border-collapse: collapse;display: table;width: 100%;background-color:#FFFFFF;'>
+<!--[if (mso)|(IE)]><table width='100%' cellpadding='0' cellspacing='0' border='0' style='background-color:transparent;'><tr><td align='center'><table cellpadding='0' cellspacing='0' border='0' style='width:900px'><tr class='layout-full-width' style='background-color:#FFFFFF'><![endif]-->
+<!--[if (mso)|(IE)]><td align='center' width='300' style='background-color:#FFFFFF;width:300px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;' valign='top'><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;'><![endif]-->
+<div class='col num4' style='display: table-cell; vertical-align: top; max-width: 320px; min-width: 300px; width: 300px;'>
+<div class='col_cont' style='width:100% !important;'>
+<!--[if (!mso)&(!IE)]><!-->
+<div style='border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;'>
+<!--<![endif]-->
+<div></div>
+<!--[if (!mso)&(!IE)]><!-->
+</div>
+<!--<![endif]-->
+</div>
+</div>
+<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+<!--[if (mso)|(IE)]></td><td align='center' width='300' style='background-color:#FFFFFF;width:300px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;' valign='top'><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;'><![endif]-->
+<div class='col num4' style='display: table-cell; vertical-align: top; max-width: 320px; min-width: 300px; width: 300px;'>
+<div class='col_cont' style='width:100% !important;'>
+<!--[if (!mso)&(!IE)]><!-->
+<div style='border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;'>
+<!--<![endif]-->
+<div></div>
+<!--[if (!mso)&(!IE)]><!-->
+</div>
+<!--<![endif]-->
+</div>
+</div>
+<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+<!--[if (mso)|(IE)]></td><td align='center' width='300' style='background-color:#FFFFFF;width:300px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;' valign='top'><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;'><![endif]-->
+<div class='col num4' style='display: table-cell; vertical-align: top; max-width: 320px; min-width: 300px; width: 300px;'>
+<div class='col_cont' style='width:100% !important;'>
+<!--[if (!mso)&(!IE)]><!-->
+<div style='border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;'>
+<!--<![endif]-->
+<div></div>
+<!--[if (!mso)&(!IE)]><!-->
+</div>
+<!--<![endif]-->
+</div>
+</div>
+<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+<!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+</div>
+</div>
+</div>
+<div style='background-color:transparent;'>
+<div class='block-grid four-up' style='min-width: 320px; max-width: 900px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: #FFFFFF;'>
+<div style='border-collapse: collapse;display: table;width: 100%;background-color:#FFFFFF;'>
+<!--[if (mso)|(IE)]><table width='100%' cellpadding='0' cellspacing='0' border='0' style='background-color:transparent;'><tr><td align='center'><table cellpadding='0' cellspacing='0' border='0' style='width:900px'><tr class='layout-full-width' style='background-color:#FFFFFF'><![endif]-->
+<!--[if (mso)|(IE)]><td align='center' width='225' style='background-color:#FFFFFF;width:225px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;' valign='top'><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;'><![endif]-->
+<div class='col num3' style='display: table-cell; vertical-align: top; max-width: 320px; min-width: 225px; width: 225px;'>
+<div class='col_cont' style='width:100% !important;'>
+<!--[if (!mso)&(!IE)]><!-->
+<div style='border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;'>
+<!--<![endif]-->
+<div align='center' class='img-container center fixedwidth' style='padding-right: 0px;padding-left: 0px;'>
+<!--[if mso]><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr style='line-height:0px'><td style='padding-right: 0px;padding-left: 0px;' align='center'><![endif]--><a href='https://github.com/HarryTheDevOpsGuy/mSend' style='outline:none' tabindex='-1' target='_blank'><img align='center' alt='Logo' border='0' class='center fixedwidth' src='https://raw.githubusercontent.com/mCloud-Automation/mData/master/msend/images/coollogo_com-1075130.png' style='text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 100%; max-width: 135px; display: block;' title='Logo' width='135'/></a>
+<!--[if mso]></td></tr></table><![endif]-->
+</div>
+<!--[if mso]><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 0px; padding-left: 0px; padding-top: 0px; padding-bottom: 0px; font-family: Tahoma, Verdana, sans-serif'><![endif]-->
+<div style='color:#555555;font-family:Lato, Tahoma, Verdana, Segoe, sans-serif;line-height:1.2;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;'>
+<div class='txtTinyMce-wrapper' style='line-height: 1.2; font-size: 12px; color: #555555; font-family: Lato, Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 14px;'>
+<p style='font-size: 14px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin: 0;'>Powerful SMTP Client</p>
+</div>
+</div>
+<!--[if mso]></td></tr></table><![endif]-->
+<div align='center' class='button-container' style='padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;'>
+<!--[if mso]><table width='100%' cellpadding='0' cellspacing='0' border='0' style='border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;'><tr><td style='padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px' align='center'><v:roundrect xmlns:v='urn:schemas-microsoft-com:vml' xmlns:w='urn:schemas-microsoft-com:office:word' href='https://github.com/HarryTheDevOpsGuy/mSend' style='height:31.5pt; width:120.75pt; v-text-anchor:middle;' arcsize='10%' stroke='false' fillcolor='#fc7318'><w:anchorlock/><v:textbox inset='0,0,0,0'><center style='color:#ffffff; font-family:Tahoma, Verdana, sans-serif; font-size:16px'><![endif]--><a href='https://github.com/HarryTheDevOpsGuy/mSend' style='-webkit-text-size-adjust: none; text-decoration: none; display: inline-block; color: #ffffff; background-color: #fc7318; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; width: auto; width: auto; border-top: 1px solid #fc7318; border-right: 1px solid #fc7318; border-bottom: 1px solid #fc7318; border-left: 1px solid #fc7318; padding-top: 5px; padding-bottom: 5px; font-family: Lato, Tahoma, Verdana, Segoe, sans-serif; text-align: center; mso-border-alt: none; word-break: keep-all;' target='_blank'><span style='padding-left:20px;padding-right:20px;font-size:16px;display:inline-block;'><span style='font-size: 16px; line-height: 2; word-break: break-word; mso-line-height-alt: 32px;'>Learn More</span></span></a>
+<!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
+</div>
+<!--[if (!mso)&(!IE)]><!-->
+</div>
+<!--<![endif]-->
+</div>
+</div>
+<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+<!--[if (mso)|(IE)]></td><td align='center' width='225' style='background-color:#FFFFFF;width:225px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;' valign='top'><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;'><![endif]-->
+<div class='col num3' style='display: table-cell; vertical-align: top; max-width: 320px; min-width: 225px; width: 225px;'>
+<div class='col_cont' style='width:100% !important;'>
+<!--[if (!mso)&(!IE)]><!-->
+<div style='border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;'>
+<!--<![endif]-->
+<div align='center' class='img-container center fixedwidth' style='padding-right: 0px;padding-left: 0px;'>
+<!--[if mso]><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr style='line-height:0px'><td style='padding-right: 0px;padding-left: 0px;' align='center'><![endif]--><a href='https://github.com/HarryTheDevOpsGuy/mlog' style='outline:none' tabindex='-1' target='_blank'><img align='center' alt='mLog | logo' border='0' class='center fixedwidth' src='https://raw.githubusercontent.com/mCloud-Automation/mData/master/msend/images/mLog_1.png' style='text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 100%; max-width: 112px; display: block;' title='mLog | logo' width='112'/></a>
+<!--[if mso]></td></tr></table><![endif]-->
+</div>
+<!--[if mso]><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 0px; padding-left: 0px; padding-top: 0px; padding-bottom: 0px; font-family: Tahoma, Verdana, sans-serif'><![endif]-->
+<div style='color:#555555;font-family:Lato, Tahoma, Verdana, Segoe, sans-serif;line-height:1.2;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;'>
+<div class='txtTinyMce-wrapper' style='line-height: 1.2; font-size: 12px; color: #555555; font-family: Lato, Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 14px;'>
+<p style='font-size: 14px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin: 0;'>log backup on S3 bucket</p>
+</div>
+</div>
+<!--[if mso]></td></tr></table><![endif]-->
+<div align='center' class='button-container' style='padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;'>
+<!--[if mso]><table width='100%' cellpadding='0' cellspacing='0' border='0' style='border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;'><tr><td style='padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px' align='center'><v:roundrect xmlns:v='urn:schemas-microsoft-com:vml' xmlns:w='urn:schemas-microsoft-com:office:word' href='https://github.com/HarryTheDevOpsGuy/mlog' style='height:31.5pt; width:120.75pt; v-text-anchor:middle;' arcsize='10%' stroke='false' fillcolor='#fc7318'><w:anchorlock/><v:textbox inset='0,0,0,0'><center style='color:#ffffff; font-family:Tahoma, Verdana, sans-serif; font-size:16px'><![endif]--><a href='https://github.com/HarryTheDevOpsGuy/mlog' style='-webkit-text-size-adjust: none; text-decoration: none; display: inline-block; color: #ffffff; background-color: #fc7318; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; width: auto; width: auto; border-top: 1px solid #fc7318; border-right: 1px solid #fc7318; border-bottom: 1px solid #fc7318; border-left: 1px solid #fc7318; padding-top: 5px; padding-bottom: 5px; font-family: Lato, Tahoma, Verdana, Segoe, sans-serif; text-align: center; mso-border-alt: none; word-break: keep-all;' target='_blank'><span style='padding-left:20px;padding-right:20px;font-size:16px;display:inline-block;'><span style='font-size: 16px; line-height: 2; word-break: break-word; mso-line-height-alt: 32px;'>Learn More</span></span></a>
+<!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
+</div>
+<!--[if (!mso)&(!IE)]><!-->
+</div>
+<!--<![endif]-->
+</div>
+</div>
+<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+<!--[if (mso)|(IE)]></td><td align='center' width='225' style='background-color:#FFFFFF;width:225px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;' valign='top'><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;'><![endif]-->
+<div class='col num3' style='display: table-cell; vertical-align: top; max-width: 320px; min-width: 225px; width: 225px;'>
+<div class='col_cont' style='width:100% !important;'>
+<!--[if (!mso)&(!IE)]><!-->
+<div style='border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;'>
+<!--<![endif]-->
+<div align='center' class='img-container center fixedwidth' style='padding-right: 0px;padding-left: 0px;'>
+<!--[if mso]><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr style='line-height:0px'><td style='padding-right: 0px;padding-left: 0px;' align='center'><![endif]--><a href='https://github.com/HarryTheDevOpsGuy/mWatcher' style='outline:none' tabindex='-1' target='_blank'><img align='center' alt='mWatcher' border='0' class='center fixedwidth' src='https://raw.githubusercontent.com/mCloud-Automation/mData/master/msend/images/mWatcher.png' style='text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 100%; max-width: 168px; display: block;' title='mWatcher' width='168'/></a>
+<!--[if mso]></td></tr></table><![endif]-->
+</div>
+<!--[if mso]><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 0px; padding-left: 0px; padding-top: 0px; padding-bottom: 0px; font-family: Tahoma, Verdana, sans-serif'><![endif]-->
+<div style='color:#555555;font-family:Lato, Tahoma, Verdana, Segoe, sans-serif;line-height:1.2;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;'>
+<div class='txtTinyMce-wrapper' style='line-height: 1.2; font-size: 12px; color: #555555; font-family: Lato, Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 14px;'>
+<p style='font-size: 14px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin: 0;'>Monitor your Linux Server </p>
+</div>
+</div>
+<!--[if mso]></td></tr></table><![endif]-->
+<div align='center' class='button-container' style='padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;'>
+<!--[if mso]><table width='100%' cellpadding='0' cellspacing='0' border='0' style='border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;'><tr><td style='padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px' align='center'><v:roundrect xmlns:v='urn:schemas-microsoft-com:vml' xmlns:w='urn:schemas-microsoft-com:office:word' href='https://github.com/HarryTheDevOpsGuy/mCert' style='height:31.5pt; width:120.75pt; v-text-anchor:middle;' arcsize='10%' stroke='false' fillcolor='#fc7318'><w:anchorlock/><v:textbox inset='0,0,0,0'><center style='color:#ffffff; font-family:Tahoma, Verdana, sans-serif; font-size:16px'><![endif]--><a href='https://github.com/HarryTheDevOpsGuy/mCert' style='-webkit-text-size-adjust: none; text-decoration: none; display: inline-block; color: #ffffff; background-color: #fc7318; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; width: auto; width: auto; border-top: 1px solid #fc7318; border-right: 1px solid #fc7318; border-bottom: 1px solid #fc7318; border-left: 1px solid #fc7318; padding-top: 5px; padding-bottom: 5px; font-family: Lato, Tahoma, Verdana, Segoe, sans-serif; text-align: center; mso-border-alt: none; word-break: keep-all;' target='_blank'><span style='padding-left:20px;padding-right:20px;font-size:16px;display:inline-block;'><span style='font-size: 16px; line-height: 2; word-break: break-word; mso-line-height-alt: 32px;'>Learn More</span></span></a>
+<!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
+</div>
+<!--[if (!mso)&(!IE)]><!-->
+</div>
+<!--<![endif]-->
+</div>
+</div>
+<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+<!--[if (mso)|(IE)]></td><td align='center' width='225' style='background-color:#FFFFFF;width:225px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;' valign='top'><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;'><![endif]-->
+<div class='col num3' style='display: table-cell; vertical-align: top; max-width: 320px; min-width: 225px; width: 225px;'>
+<div class='col_cont' style='width:100% !important;'>
+<!--[if (!mso)&(!IE)]><!-->
+<div style='border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;'>
+<!--<![endif]-->
+<div align='center' class='img-container center fixedwidth' style='padding-right: 0px;padding-left: 0px;'>
+<!--[if mso]><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr style='line-height:0px'><td style='padding-right: 0px;padding-left: 0px;' align='center'><![endif]--><a href='https://github.com/HarryTheDevOpsGuy/mCert' style='outline:none' tabindex='-1' target='_blank'><img align='center' alt='mCert | Logo' border='0' class='center fixedwidth' src='https://raw.githubusercontent.com/mCloud-Automation/mData/master/msend/images/MLOGO.png' style='text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 100%; max-width: 157px; display: block;' title='mCert | Logo' width='157'/></a>
+<!--[if mso]></td></tr></table><![endif]-->
+</div>
+<!--[if mso]><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 0px; padding-left: 0px; padding-top: 0px; padding-bottom: 0px; font-family: Tahoma, Verdana, sans-serif'><![endif]-->
+<div style='color:#555555;font-family:Lato, Tahoma, Verdana, Segoe, sans-serif;line-height:1.2;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;'>
+<div class='txtTinyMce-wrapper' style='line-height: 1.2; font-size: 12px; color: #555555; font-family: Lato, Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 14px;'>
+<p style='font-size: 14px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin: 0;'>Monitor SSL Certificate </p>
+</div>
+</div>
+<!--[if mso]></td></tr></table><![endif]-->
+<div align='center' class='button-container' style='padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;'>
+<!--[if mso]><table width='100%' cellpadding='0' cellspacing='0' border='0' style='border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;'><tr><td style='padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px' align='center'><v:roundrect xmlns:v='urn:schemas-microsoft-com:vml' xmlns:w='urn:schemas-microsoft-com:office:word' href='https://github.com/HarryTheDevOpsGuy/mCert' style='height:31.5pt; width:120.75pt; v-text-anchor:middle;' arcsize='10%' stroke='false' fillcolor='#fc7318'><w:anchorlock/><v:textbox inset='0,0,0,0'><center style='color:#ffffff; font-family:Tahoma, Verdana, sans-serif; font-size:16px'><![endif]--><a href='https://github.com/HarryTheDevOpsGuy/mCert' style='-webkit-text-size-adjust: none; text-decoration: none; display: inline-block; color: #ffffff; background-color: #fc7318; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; width: auto; width: auto; border-top: 1px solid #fc7318; border-right: 1px solid #fc7318; border-bottom: 1px solid #fc7318; border-left: 1px solid #fc7318; padding-top: 5px; padding-bottom: 5px; font-family: Lato, Tahoma, Verdana, Segoe, sans-serif; text-align: center; mso-border-alt: none; word-break: keep-all;' target='_blank'><span style='padding-left:20px;padding-right:20px;font-size:16px;display:inline-block;'><span style='font-size: 16px; line-height: 2; word-break: break-word; mso-line-height-alt: 32px;'>Learn More</span></span></a>
+<!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
+</div>
+<!--[if (!mso)&(!IE)]><!-->
+</div>
+<!--<![endif]-->
+</div>
+</div>
+<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+<!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+</div>
+</div>
+</div>
+<div style='background-color:transparent;'>
+<div class='block-grid' style='min-width: 320px; max-width: 900px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background-color: transparent;'>
+<div style='border-collapse: collapse;display: table;width: 100%;background-color:transparent;'>
+<!--[if (mso)|(IE)]><table width='100%' cellpadding='0' cellspacing='0' border='0' style='background-color:transparent;'><tr><td align='center'><table cellpadding='0' cellspacing='0' border='0' style='width:900px'><tr class='layout-full-width' style='background-color:transparent'><![endif]-->
+<!--[if (mso)|(IE)]><td align='center' width='900' style='background-color:transparent;width:900px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;' valign='top'><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 0px; padding-left: 0px; padding-top:20px; padding-bottom:60px;'><![endif]-->
+<div class='col num12' style='min-width: 320px; max-width: 900px; display: table-cell; vertical-align: top; width: 900px;'>
+<div class='col_cont' style='width:100% !important;'>
+<!--[if (!mso)&(!IE)]><!-->
+<div style='border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:20px; padding-bottom:60px; padding-right: 0px; padding-left: 0px;'>
+<!--<![endif]-->
+<!--[if mso]><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; font-family: Tahoma, Verdana, sans-serif'><![endif]-->
+<div style='color:#555555;font-family:Lato, Tahoma, Verdana, Segoe, sans-serif;line-height:1.5;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;'>
+<div class='txtTinyMce-wrapper' style='font-size: 12px; line-height: 1.5; color: #555555; font-family: Lato, Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 18px;'>
+<p style='font-size: 14px; line-height: 1.5; text-align: center; word-break: break-word; mso-line-height-alt: 21px; margin: 0;'><a href='https://github.com/HarryTheDevOpsGuy/mSend' rel='noopener' style='text-decoration: none; color: #0068A5;' target='_blank' title='mSend'>mSend </a> - A Powerful  SMTP client for SendGrid, SES, Gmail, etc. </p>
+<p style='font-size: 14px; line-height: 1.5; text-align: center; word-break: break-word; mso-line-height-alt: 21px; margin: 0;'>Write us for your suggestion and feedback</p>
+</div>
+</div>
+<!--[if mso]></td></tr></table><![endif]-->
+<table border='0' cellpadding='0' cellspacing='0' class='divider' role='presentation' style='table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;' valign='top' width='100%'>
+<tbody>
+<tr style='vertical-align: top;' valign='top'>
+<td class='divider_inner' style='word-break: break-word; vertical-align: top; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;' valign='top'>
+<table align='center' border='0' cellpadding='0' cellspacing='0' class='divider_content' height='0' role='presentation' style='table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-top: 1px dotted #C4C4C4; height: 0px; width: 60%;' valign='top' width='60%'>
+<tbody>
+<tr style='vertical-align: top;' valign='top'>
+<td height='0' style='word-break: break-word; vertical-align: top; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;' valign='top'><span></span></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]><table width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td style='padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; font-family: Tahoma, Verdana, sans-serif'><![endif]-->
+<div style='color:#4F4F4F;font-family:Lato, Tahoma, Verdana, Segoe, sans-serif;line-height:1.2;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;'>
+<div class='txtTinyMce-wrapper' style='font-size: 12px; line-height: 1.2; color: #4F4F4F; font-family: Lato, Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 14px;'>
+<p style='font-size: 14px; line-height: 1.2; text-align: center; word-break: break-word; mso-line-height-alt: 17px; margin: 0;'><span style='font-size: 14px;'><a href='#' rel='noopener' style='text-decoration: none; color: #2190E3;' target='_blank'><strong>Unsubscribe</strong></a> |  <strong><a href='#' rel='noopener' style='text-decoration: none; color: #2190E3;' target='_blank'>Suggestion</a> | <a href='https://harrythedevopsguy.github.io/' rel='noopener' style='text-decoration: none; color: #2190E3;' target='_blank'>Stay Touch With us</a> </strong> |  #mSend</span></p>
+</div>
+</div>
+<!--[if mso]></td></tr></table><![endif]-->
+<!--[if (!mso)&(!IE)]><!-->
+</div>
+<!--<![endif]-->
+</div>
+</div>
+<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+<!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+</div>
+</div>
+</div>
+<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if (IE)]></div><![endif]-->
+</body>
+</html>
