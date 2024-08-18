@@ -58,14 +58,14 @@ jobs:
           cd ${GITHUB_WORKSPACE}/DevOpsGarden
           ls -la 
           pwd
-        
           docnado --html ${GITHUB_WORKSPACE}/WEBROOT/blog
+
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: './WEBROOT/blog'
+          path: './WEBROOT'
           
       - name: Deploy to GitHub Pages
         id: deployment
