@@ -56,6 +56,9 @@ jobs:
       - name: Build the Site
         run: |
           cd ${GITHUB_WORKSPACE}/DevOpsGarden
+          ls -la 
+          pwd
+        
           docnado --html ${GITHUB_WORKSPACE}/WEBROOT/blog
         
       - name: Upload artifact
