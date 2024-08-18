@@ -29,18 +29,41 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      # - name: Checkout
+      #   uses: actions/checkout@v4
+
+
+      - name: CLONE REPOSITORIES
+        run: |
+          git clone -b master git@github.com:HarryTheDevOpsGuy/HarryTheDevOpsGuy.github.io.git ${GITHUB_WORKSPACE}/WEBROOT
+          git clone -b master git@github.com:HarryTheDevOpsGuy/DevOpsGarden.git ${GITHUB_WORKSPACE}/DevOpsGarden
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
         
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
+      - name: Install Docnado
+        run: |
+          python3 -m pip install docnado --upgrade
+
+      - name: Build the Site
+        run: |
+          cd ${GITHUB_WORKSPACE}/DevOpsGarden
+          docnado --html ${GITHUB_WORKSPACE}/WEBROOT/blog
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: '.'
+          path: './WEBROOT'
           
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4  
