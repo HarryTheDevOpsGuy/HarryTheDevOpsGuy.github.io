@@ -55,12 +55,14 @@ jobs:
 
       - name: Build the Site
         run: |
+          ls -la 
+          docnado --new
+          docnado --html ${GITHUB_WORKSPACE}/WEBROOT/help
+
           cd ${GITHUB_WORKSPACE}/DevOpsGarden
-          #docnado --new-force
           docnado --html ${GITHUB_WORKSPACE}/WEBROOT/blog
           cp -rf style/static ${GITHUB_WORKSPACE}/WEBROOT/blog
           ls -la ${GITHUB_WORKSPACE}/WEBROOT/blog
-
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
