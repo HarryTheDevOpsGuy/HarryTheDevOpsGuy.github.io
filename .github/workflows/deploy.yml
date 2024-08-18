@@ -58,7 +58,9 @@ jobs:
           cd ${GITHUB_WORKSPACE}/DevOpsGarden
           ls -la 
           pwd
+          docnado --new-force 
           docnado --html ${GITHUB_WORKSPACE}/WEBROOT/blog
+          ls -la ${GITHUB_WORKSPACE}/WEBROOT/blog
 
         
       - name: Upload artifact
