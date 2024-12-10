@@ -2,6 +2,23 @@
 // document.getElementById("footer").innerHTML = document.querySelector("footer").innerHTML;
 
 
+
+
+// Search feature
+$('#searchBar').on('input', function () {
+    var searchQuery = $(this).val().toLowerCase();
+    $('#blogPosts .post-card').each(function () {
+        var postTitle = $(this).find('.card-title').text().toLowerCase();
+        if (postTitle.indexOf(searchQuery) === -1) {
+            $(this).hide();
+        } else {
+            $(this).show();
+        }
+    });
+});
+
+
+
 $(document).ready(function() {
 
     // Function to get the value of 'id' from the URL
@@ -184,16 +201,6 @@ $(document).ready(function() {
         // $('#fontSizeValue').text(fontSize + '%');
     });
 
-
-
-    // Search feature
-    $('#search').on('keyup', function () {
-        var value = $(this).val().toLowerCase();
-        $('.post').filter(function () {
-          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-        });
-      });
-    });
 
 
 
