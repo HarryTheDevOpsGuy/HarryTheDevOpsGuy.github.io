@@ -3,13 +3,8 @@ layout: base
 title: "Blog"
 ---
 
-{% assign recent_posts = site.posts | slice: 0, 5 %}
-{% assign categories = site.categories %}
-{% assign tags = site.tags %}
-
-
-  <!-- About Section -->
-  <!-- <section id="blog" class="blog-main printable-area my-5">
+  <!-- About Section --> 
+  <section id="blog" class="blog-main printable-area my-5">
     <h2 class="blog-title">{{ page.title }}</h2>
     <p class="blog-description">{{ page.description }}</p>
     <div class="container">
@@ -31,73 +26,7 @@ title: "Blog"
         </a>
       {% endif %}
     </div>
-  </section> -->
-
-
-
-  <div class="container my-5">
-    <h1 class="mb-4">{{ site.title }}</h1>
-
-    <!-- Blog Posts Section -->
-    <div class="row">
-      <div class="col-lg-8">
-        <div class="mb-4">
-          <h2>Blog Posts</h2>
-          {% for post in site.posts %}
-          <div class="mb-3">
-            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-            <p>{{ post.excerpt }}</p>
-            <span>Posted on {{ post.date | date: "%B %d, %Y" }}</span>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-
-      <!-- Sidebar Section -->
-      <div class="col-lg-4">
-        <!-- Recent Posts -->
-        <div class="mb-4">
-          <h4>Recent Posts</h4>
-          <ul>
-            {% for post in recent_posts %}
-            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-
-        <!-- Popular Posts -->
-        <div class="mb-4">
-          <h4>Popular Posts</h4>
-          <ul>
-            <!-- Add logic to fetch popular posts -->
-            {% for post in site.posts limit: 5 %}
-            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-
-        <!-- Tags -->
-        <div class="mb-4">
-          <h4>Tags</h4>
-          <div>
-            {% for tag in tags %}
-            <a href="{{ site.baseurl }}/tag/{{ tag[0] }}" class="badge bg-primary text-white">{{ tag[0] }}</a>
-            {% endfor %}
-          </div>
-        </div>
-
-        <!-- Categories -->
-        <div>
-          <h4>Categories</h4>
-          <ul>
-            {% for category in categories %}
-            <li><a href="{{ site.baseurl }}/category/{{ category[0] }}">{{ category[0] }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+  </section>
 
 
   
