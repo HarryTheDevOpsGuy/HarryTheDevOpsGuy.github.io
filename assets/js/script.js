@@ -184,6 +184,19 @@ $(document).ready(function() {
         // $('#fontSizeValue').text(fontSize + '%');
     });
 
+
+
+    // Search feature
+    $('#search').on('keyup', function () {
+        var value = $(this).val().toLowerCase();
+        $('.post').filter(function () {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        });
+      });
+    });
+
+
+
     // Smooth scrolling for internal links
     $("a").on('click', function(event) {
         if (this.hash !== "") {
