@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevOps Engineer Resume</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .resume-header {
+      text-align: center;
+      background-color: #007bff;
+      color: white;
+      padding: 20px 0;
+    }
+    .resume-header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    .resume-header p {
+      margin: 5px 0;
+      font-size: 1.2rem;
+    }
+    .resume-section {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .section-title {
+      font-size: 1.5rem;
+      color: #007bff;
+      margin-bottom: 15px;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+    }
+    .progress-bar {
+      background-color: #007bff !important;
+    }
+    .timeline-item {
+      margin-bottom: 15px;
+    }
+    .timeline-item h5 {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+    .timeline-item small {
+      color: gray;
+    }
+    @media print {
+      body {
+        background: white;
+      }
+      .resume-section {
+        box-shadow: none;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container my-5">
+  <!-- Header -->
+  <div class="resume-header">
+    <h1>John Doe</h1>
+    <p>DevOps Engineer | Cloud Specialist | Automation Expert</p>
+    <p><i class="fas fa-envelope"></i> john.doe@example.com | <i class="fas fa-phone"></i> +123 456 7890</p>
+    <p>
+      <a href="https://linkedin.com/in/johndoe" target="_blank" class="text-white"><i class="fab fa-linkedin"></i> LinkedIn</a> |
+      <a href="https://github.com/johndoe" target="_blank" class="text-white"><i class="fab fa-github"></i> GitHub</a>
+    </p>
+  </div>
+
+  <!-- Summary -->
+  <div class="resume-section">
+    <h2 class="section-title">Profile Summary</h2>
+    <p>💻 Experienced DevOps Engineer with 10+ years in designing, automating, and optimizing mission-critical deployments. Proficient in tools like AWS, Docker, Kubernetes, Terraform, and Jenkins. Passionate about building scalable and secure infrastructures. 🛠️</p>
+  </div>
+
+  <!-- Skills -->
+  <div class="resume-section">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div>
+        <i class="fab fa-aws text-primary"></i> AWS
+        <div class="progress mt-2">
+          <div class="progress-bar" role="progressbar" style="width: 90%;">Expert</div>
+        </div>
+      </div>
+      <div>
+        <i class="fab fa-docker text-primary"></i> Docker
+        <div class="progress mt-2">
+          <div class="progress-bar" role="progressbar" style="width: 85%;">Advanced</div>
+        </div>
+      </div>
+      <div>
+        <i class="fas fa-code text-primary"></i> Terraform
+        <div class="progress mt-2">
+          <div class="progress-bar" role="progressbar" style="width: 80%;">Advanced</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Experience -->
+  <div class="resume-section">
+    <h2 class="section-title">Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h5>Senior DevOps Engineer</h5>
+        <small>ABC Corporation | Jan 2018 - Present</small>
+        <ul>
+          <li><i class="fas fa-check-circle text-primary"></i> Automated deployment pipelines with Jenkins, reducing deployment time by 60%.</li>
+          <li><i class="fas fa-cloud text-primary"></i> Migrated on-premises infrastructure to AWS, enhancing scalability and performance.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center mt-5">
+    <p>💼 Want to collaborate? Let's connect on <a href="https://linkedin.com/in/johndoe">LinkedIn</a> or <a href="mailto:john.doe@example.com">Email me</a>.</p>
+  </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Editor</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+    }
+    #editorjs {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: #f9f9f9;
+      flex: 1;
+      margin-bottom: 1rem;
+      overflow-y: auto;
+      padding: 1rem;
+    }
+    footer {
+      display: flex;
+      justify-content: space-around;
+      padding: 1rem;
+      background-color: #f1f1f1;
+    }
+    footer button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    footer button:hover {
+      background-color: #0056b3;
+    }
+    footer button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    #preview {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      z-index: 1000;
+      display: none;
+      overflow-y: auto;
+    }
+    #preview iframe {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HTML Editor</h1>
+  </header>
+  <main>
+    <div id="editorjs"></div>
+  </main>
+  <footer>
+    <button id="saveBtn">Save</button>
+    <button id="previewBtn">Preview</button>
+    <button id="exportBtn">Export</button>
+  </footer>
+
+  <div id="preview">
+    <iframe id="previewFrame"></iframe>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/paragraph@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/image@latest"></script>
+
+  <script>
+    const editor = new EditorJS({
+      holder: 'editorjs',
+      tools: {
+        header: Header,
+        list: List,
+        paragraph: Paragraph,
+        image: {
+          class: ImageTool,
+          config: {
+            endpoints: {
+              byFile: 'https://api.example.com/uploadFile',
+              byUrl: 'https://api.example.com/fetchUrl',
+            }
+          }
+        },
+      }
+    });
+
+    const saveBtn = document.getElementById('saveBtn');
+    const previewBtn = document.getElementById('previewBtn');
+    const exportBtn = document.getElementById('exportBtn');
+    const previewDiv = document.getElementById('preview');
+    const previewFrame = document.getElementById('previewFrame');
+
+    saveBtn.addEventListener('click', () => {
+      editor.save().then((outputData) => {
+        console.log('Saved data:', outputData);
+        alert('Content saved successfully!');
+      }).catch((error) => {
+        console.error('Saving failed:', error);
+      });
+    });
+
+    previewBtn.addEventListener('click', () => {
+      editor.save().then((outputData) => {
+        const htmlContent = convertToHTML(outputData);
+        previewFrame.srcdoc = htmlContent;
+        previewDiv.style.display = 'block';
+      }).catch((error) => {
+        console.error('Preview failed:', error);
+      });
+    });
+
+    exportBtn.addEventListener('click', () => {
+      editor.save().then((outputData) => {
+        const htmlContent = convertToHTML(outputData);
+        const blob = new Blob([htmlContent], { type: 'text/html' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'page.html';
+        link.click();
+      }).catch((error) => {
+        console.error('Export failed:', error);
+      });
+    });
+
+    previewDiv.addEventListener('click', () => {
+      previewDiv.style.display = 'none';
+    });
+
+    function convertToHTML(data) {
+      let html = '';
+      data.blocks.forEach(block => {
+        switch (block.type) {
+          case 'header':
+            html += `<h${block.data.level}>${block.data.text}</h${block.data.level}>`;
+            break;
+          case 'paragraph':
+            html += `<p>${block.data.text}</p>`;
+            break;
+          case 'list':
+            const tag = block.data.style === 'ordered' ? 'ol' : 'ul';
+            html += `<${tag}>${block.data.items.map(item => `<li>${item}</li>`).join('')}</${tag}>`;
+            break;
+          case 'image':
+            html += `<img src="${block.data.file.url}" alt="${block.data.caption}" />`;
+            break;
+          default:
+            console.warn(`Unhandled block type: ${block.type}`);
+        }
+      });
+      return html;
+    }
+  </script>
+</body>
+</html>

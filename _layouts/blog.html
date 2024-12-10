@@ -1,0 +1,32 @@
+---
+layout: base
+title: "Blog"
+---
+
+  <!-- About Section -->
+  <section id="blog" class="blog-main printable-area my-5">
+    <h2 class="blog-title">{{ page.title }}</h2>
+    <p class="blog-description">{{ page.description }}</p>
+    <div class="container">
+      <div class="blog-content">
+        {{ content }}
+      </div>
+    </div>
+
+    <div class="contact-links mb-4">
+      {% if page.previous %}
+        <a class="contact-link" href="{{ page.previous.url | relative_url }}" rel="prev">
+          &laquo; Previous: {{ page.previous.title }}
+        </a>
+      {% endif %}
+      
+      {% if page.next %}
+        <a class="contact-link" href="{{ page.next.url | relative_url }}" rel="next">
+          Next: {{ page.next.title }} &raquo;
+        </a>
+      {% endif %}
+    </div>
+  </section>
+
+  
+  

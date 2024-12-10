@@ -1,0 +1,57 @@
+---
+layout: base
+title: "cv"
+---
+
+<section id="deployed-solutions" class="container">
+    <h4 class="section-title">Saved Resumes</h4> 
+    <button class="btn btn-success" id="newResume"><i class="fas fa-plus"></i></button></h5>
+    <div id="saved-resumes" class="deployed-solutions"> </div>
+</section>
+
+<div class="container mt-3">
+    <div class="row justify-content-md-center resume-section">
+        <div class="col-md-auto">
+            <div id="resume" contenteditable="true" class="resume-body printable-area border rounded mx-auto">
+                <h3 id="name" class="text-primary">Jane Smith</h3>
+                <p id="title">DevOps Engineer | System Administrator</p>
+                <div class="row">
+                    <div class="col-sm-auto">
+                        <h5>Technical Skills</h5>
+                        <ul>
+                            <li>AWS, GCP, Azure</li>
+                            <li>CI/CD Pipeline Setup</li>
+                            <li>Linux Administration</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-auto">
+                        <h5>Work Experience</h5>
+                        <p><strong>Senior DevOps Engineer</strong> at DEF Ltd (2020 - Present)</p>
+                        <p><strong>Cloud Engineer</strong> at GHI Tech (2017 - 2020)</p>
+                    </div>
+                </div>
+            </div>
+        
+
+            <div class="resume-editor-options" >            
+                <div class="col col-lg-2 mx-auto">
+                    <label for="fontSizeControl" class="form-label">Font Size: <span id="fontSizeValue">100%</span></label>
+                    <input type="range" class="form-range font-size-control" id="fontSizeControl" min="50" max="100" value="100">
+                </div>
+            
+                <div class="mt-3 text-center">
+                    <button class="btn btn-primary" onclick="window.print()"><i class="fas fa-print me-2"></i> Print Resume</button>
+                    <button class="btn btn-primary btn-icon" id="saveResume"><i class="fas fa-save"></i> Save</button>
+                    <button class="btn btn-danger btn-icon" id="clearResume"><i class="fas fa-trash-alt"></i> Reset/Clear</button>
+                    <button class="btn btn-info btn-icon" id="copyResumeBase64"><i class="fas fa-copy"></i> Copy Base64</button>
+                    <button class="btn btn-warning" id="pasteResumeBase64"><i class="fas fa-clipboard"></i></button>
+                    <button class="btn btn-success btn-icon" id="sendWhatsApp"><i class="fas fa-paper-plane"></i> Send to WhatsApp</button>
+                </div>
+            
+                <div class="mt-3 text-center">
+                    <span id="successMessage" class="success-msg" style="display: none;">Data copied to clipboard!</span>
+                </div>
+            </div>
+        </div>
+      </div>
+</div>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Engineer Resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .header {
+            background-color: #2C3E50;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 36px;
+        }
+
+        .header p {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .header a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .header a:hover {
+            text-decoration: underline;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-top: 30px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            color: #3498db;
+        }
+
+        .skills ul,
+        .technical-expertise ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .skills li,
+        .technical-expertise li {
+            background-color: #ecf0f1;
+            margin: 5px;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .work-experience,
+        .education,
+        .certifications {
+            margin-top: 15px;
+        }
+
+        .work-experience h4,
+        .education h4,
+        .certifications h4 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .work-experience p,
+        .education p,
+        .certifications p {
+            margin: 5px 0;
+        }
+
+        .work-experience ul {
+            margin-left: 20px;
+        }
+
+        .work-experience li {
+            margin-bottom: 10px;
+        }
+
+        .achievements ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .achievements li {
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            margin-top: 15px;
+        }
+
+        .contact-info a {
+            color: #3498db;
+            margin-right: 20px;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+        }
+
+        @media print {
+            body {
+                font-size: 12px;
+            }
+
+            .container {
+                margin-top: 20px;
+            }
+
+            .header {
+                text-align: center;
+                padding: 20px 0;
+            }
+
+            .header h1 {
+                font-size: 30px;
+            }
+
+            .section-title {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>John Doe</h1>
+            <p>DevOps Engineer</p>
+            <div class="contact-info">
+                <a href="mailto:johndoe@example.com"><i class="fas fa-envelope"></i> johndoe@example.com</a>
+                <a href="tel:+1234567890"><i class="fas fa-phone-alt"></i> (123) 456-7890</a>
+                <a href="https://linkedin.com/in/johndoe"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/johndoe"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p>Experienced DevOps Engineer with over 10 years in cloud infrastructure, automation, CI/CD pipeline development, and containerization. Expertise in AWS, Azure, Kubernetes, Docker, Jenkins, and Terraform. Proven track record of optimizing deployment pipelines, automating manual processes, and building scalable, high-availability infrastructure. Strong background in monitoring and logging with Prometheus, Grafana, and ELK stack. Passionate about driving operational efficiency and continuous improvement in fast-paced environments.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Skills</h2>
+            <ul class="skills">
+                <li>AWS, Azure, GCP</li>
+                <li>Docker, Kubernetes, Helm</li>
+                <li>Terraform, Ansible</li>
+                <li>Jenkins, GitLab CI</li>
+                <li>Python, Bash, Groovy</li>
+                <li>Prometheus, Grafana, ELK Stack</li>
+                <li>Version Control: Git</li>
+                <li>Security: Vault, IAM</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="work-experience">
+                <h4>Senior DevOps Engineer</h4>
+                <p><strong>XYZ Technologies</strong> | New York, NY | June 2020 – Present</p>
+                <ul>
+                    <li>Designed and implemented scalable, highly available AWS-based infrastructure using EC2, RDS, and S3.</li>
+                    <li>Led the migration of legacy systems to Kubernetes clusters, improving deployment speed by 40%.</li>
+                    <li>Managed CI/CD pipeline using Jenkins, Terraform, and Docker, reducing release cycle times by 30%.</li>
+                </ul>
+            </div>
+            <div class="work-experience">
+                <h4>DevOps Engineer</h4>
+                <p><strong>ABC Solutions</strong> | San Francisco, CA | May 2016 – May 2020</p>
+                <ul>
+                    <li>Developed and maintained Ansible playbooks for automating server provisioning and configuration management.</li>
+                    <li>Managed multiple Kubernetes clusters for production and staging environments, scaling services dynamically.</li>
+                    <li>Implemented centralized logging and monitoring solutions using the ELK Stack, improving troubleshooting times.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            <p><strong>Bachelor of Science in Computer Science</strong> | University of California, Berkeley | 2013</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Certifications</h2>
+            <p>AWS Certified DevOps Engineer – Professional</p>
+            <p>Docker Certified Associate</p>
+            <p>Certified Kubernetes Administrator (CKA)</p>
+            <p>Terraform Associate Certification</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Technical Expertise</h2>
+            <ul class="technical-expertise">
+                <li>AWS, Azure, GCP</li>
+                <li>Docker, Kubernetes, Helm</li>
+                <li>Terraform, CloudFormation, Ansible</li>
+                <li>Python, Bash, Groovy</li>
+                <li>Prometheus, Grafana, ELK Stack</li>
+                <li>Git, GitHub, GitLab</li>
+                <li>Vault, IAM, Security Best Practices</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Achievements</h2>
+            <ul class="achievements">
+                <li>Contributed to an open-source project for creating Kubernetes monitoring solutions.</li>
+                <li>Automated infrastructure provisioning with Terraform, saving 200+ hours of manual work annually.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Engineer Resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABH8XNoD8t9rPZ9KkPczGmbm0ffKhS6FGtMI56S+zLv6Epg7j9m6p+z" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <style>
+        .resume-header {
+            background-color: #f8f9fa;
+            padding: 2rem;
+        }
+        .resume-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .resume-header .job-title {
+            font-size: 1.25rem;
+            color: #6c757d;
+        }
+        .resume-header .contact-info i {
+            margin-right: 10px;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 1.5rem;
+        }
+        .resume-body {
+            background-color: #ffffff;
+            padding: 2rem;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .skills-list i {
+            margin-right: 8px;
+        }
+        .experience-item {
+            margin-bottom: 1rem;
+        }
+        .experience-item .company-name {
+            font-weight: bold;
+        }
+        .education-item,
+        .certifications-item {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-4">
+
+        <!-- Header Section -->
+        <div class="resume-header text-center">
+            <h1>John Doe</h1>
+            <p class="job-title">DevOps Engineer</p>
+            <div class="contact-info">
+                <p><i class="fas fa-phone-alt"></i>(123) 456-7890 | <i class="fas fa-envelope"></i> john.doe@example.com</p>
+                <p><i class="fab fa-linkedin"></i> linkedin.com/in/johndoe | <i class="fab fa-github"></i> github.com/johndoe | <i class="fas fa-globe"></i> johndoe.com</p>
+            </div>
+        </div>
+
+        <!-- Resume Body -->
+        <div class="resume-body">
+            
+            <!-- Profile Summary -->
+            <div class="profile-summary">
+                <h2 class="section-title">Profile Summary</h2>
+                <p>A highly skilled DevOps Engineer with experience in automation, CI/CD, cloud technologies, and infrastructure management. Proficient in designing and maintaining robust pipelines, cloud architectures (AWS, Azure, GCP), containerization with Docker and Kubernetes, and utilizing tools like Terraform, Ansible, Jenkins, and GitLab CI. Passionate about improving system reliability, scalability, and security through automation and best practices.</p>
+            </div>
+
+            <!-- Skills -->
+            <div class="skills">
+                <h2 class="section-title">Skills</h2>
+                <ul class="list-unstyled d-flex flex-wrap">
+                    <li class="skills-list me-4"><i class="fab fa-aws"></i> AWS, Azure, GCP</li>
+                    <li class="skills-list me-4"><i class="fab fa-github"></i> Jenkins, GitLab CI, ArgoCD, CircleCI</li>
+                    <li class="skills-list me-4"><i class="fab fa-docker"></i> Docker, Kubernetes, Helm</li>
+                    <li class="skills-list me-4"><i class="fas fa-cogs"></i> Terraform, Ansible, Packer</li>
+                    <li class="skills-list me-4"><i class="fas fa-chart-line"></i> Prometheus, Grafana, ELK Stack, Nagios</li>
+                    <li class="skills-list me-4"><i class="fab fa-python"></i> Python, Bash, Groovy</li>
+                </ul>
+            </div>
+
+            <!-- Experience -->
+            <div class="experience">
+                <h2 class="section-title">Experience</h2>
+
+                <div class="experience-item">
+                    <p class="company-name">Company ABC - Senior DevOps Engineer</p>
+                    <p class="job-duration">Jan 2022 - Present</p>
+                    <ul>
+                        <li>Led the automation of the CI/CD pipeline using Jenkins and GitLab CI, reducing deployment time by 40%.</li>
+                        <li>Designed and implemented an AWS-based infrastructure using Terraform, improving scalability and availability.</li>
+                        <li>Created Docker and Kubernetes configurations to containerize legacy applications, streamlining deployments.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <p class="company-name">Company XYZ - DevOps Engineer</p>
+                    <p class="job-duration">Jun 2018 - Dec 2021</p>
+                    <ul>
+                        <li>Developed and maintained Ansible playbooks for automated server provisioning and configuration management.</li>
+                        <li>Implemented Prometheus and Grafana for monitoring and alerting, improving system observability.</li>
+                        <li>Managed cloud migrations to GCP, reducing infrastructure costs by 25%.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="education">
+                <h2 class="section-title">Education</h2>
+                <p>Bachelor of Technology in Computer Science, University of XYZ - 2017</p>
+                <p>Relevant Coursework: Cloud Computing, Software Engineering, System Architecture</p>
+            </div>
+
+            <!-- Certifications & Training -->
+            <div class="certifications">
+                <h2 class="section-title">Certifications & Training</h2>
+                <p>AWS Certified Solutions Architect – Associate</p>
+                <p>Kubernetes Certified Administrator (CKA)</p>
+                <p>Terraform Associate Certification</p>
+            </div>
+
+            <!-- Projects (Optional) -->
+            <div class="projects">
+                <h2 class="section-title">Projects</h2>
+                <p>GitOps Deployment Pipeline - A complete pipeline setup with GitOps principles using ArgoCD. Available on <a href="https://github.com/johndoe/gitops-pipeline" target="_blank">GitHub</a>.</p>
+                <p>Cloud Infrastructure Automation - Terraform-based AWS infrastructure for a scalable web application. Available on <a href="https://github.com/johndoe/terraform-aws-infra" target="_blank">GitHub</a>.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0g1iZJ1VQhImrnnkqf+fjw0+kXVUHi5lFfOHEaF9pAlUFXdh" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+---
+layout: default
+---
+
+<!-- Hero Section -->
+<section class="hero bg-primary text-white text-center d-flex align-items-center" style="background-image: url('your-image.jpg'); height: 100vh;">
+    <div class="container">
+        <h1 class="display-4">{{ site.data.resume.personal_info.name }}</h1>
+        <p class="lead">Web Developer | DevOps Engineer | Tech Enthusiast</p>
+        <a href="#about" class="btn btn-light btn-lg">Learn More</a>
+        <div class="social-links mt-3">
+            <a href="https://www.linkedin.com" class="fa fa-linkedin fa-2x mr-3"></a>
+            <a href="https://github.com" class="fa fa-github fa-2x mr-3"></a>
+            <a href="https://twitter.com" class="fa fa-twitter fa-2x"></a>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="profile.jpg" class="img-fluid rounded-circle" alt="Your Name">
+            </div>
+            <div class="col-md-8">
+                <h2>About Me</h2>
+                <p>I am a passionate web developer and DevOps engineer with experience in cloud technologies, containerization, and CI/CD pipelines.</p>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><i class="fa fa-cloud fa-2x"></i> AWS</li>
+                    <li class="list-inline-item"><i class="fa fa-docker fa-2x"></i> Docker</li>
+                    <li class="list-inline-item"><i class="fa fa-code fa-2x"></i> JavaScript</li>
+                </ul>
+                <p class="lead">With a deep interest in automation and performance, I strive to deliver seamless, scalable applications.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center">Skills</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <i class="fa fa-python fa-3x"></i>
+                <h4>Python</h4>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 80%" role="progressbar"></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-aws fa-3x"></i>
+                <h4>AWS</h4>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 75%" role="progressbar"></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-github fa-3x"></i>
+                <h4>GitHub</h4>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 85%" role="progressbar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-5">
+    <div class="container">
+        <h2 class="text-center">Projects</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="project1.jpg" class="card-img-top" alt="Project 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Project 1</h5>
+                        <p class="card-text">A short description of the project.</p>
+                        <a href="https://github.com/yourusername/project1" class="btn btn-primary">GitHub <i class="fa fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat for other projects -->
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5">
+    <div class="container">
+        <h2 class="text-center">Contact</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Your Email">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message" rows="3" placeholder="Your Message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2024 Your Name | <a href="#about" class="text-white">Back to Top</a></p>
+</footer>

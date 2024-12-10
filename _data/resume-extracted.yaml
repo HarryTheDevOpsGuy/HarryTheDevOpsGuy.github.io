@@ -1,0 +1,99 @@
+name: Hari Prasad
+title: Sr. DevOps Lead
+contact:
+  phone: 7503721297
+  email: HarrytheDevOpsGuy@gmail.com
+  social:
+    - platform: WhatsApp
+      url: https://wa.me/917503721297?text=Hi
+    - platform: LinkedIn
+      url: https://www.linkedin.com/in/hari-prasad-verma-19b948154
+    - platform: GitHub
+      url: https://github.com/HarryTheDevOpsGuy
+    - platform: Gmail
+      url: HarrytheDevOpsGuy@gmail.com
+
+professional_summary: >
+  11+ years of experience in DevOps engineering, specializing in cloud automation, CI/CD pipelines, and infrastructure as code (IaC). Proficient in tools like Terraform, Ansible, Packer, Kubernetes, Docker, Jenkins, and monitoring stacks (Prometheus, ELK). Skilled in designing scalable, secure, and highly available systems. Strong collaboration skills with a focus on bridging the gap between development and operations.
+
+technical_skills:
+  - category: Infrastructure as Code (IaC)
+    details: Provision, deploy, and manage entire infrastructure as code with Terraform, Ansible, Jenkins, Groovy, and shell script.
+  - category: CI/CD Automation
+    details: Proficient in creating and maintaining automated CI/CD pipelines using Jenkins, ArgoCD, and GitHub Actions for Java, Node.js, PHP, Python applications.
+  - category: Cloud Infrastructure Management
+    details: Expertise in managing AWS services like EC2, S3, RDS, VPC, IAM, CloudWatch, Secrets, Route 53, Lambda, and more.
+  - category: Configuration Management
+    details: Strong experience with Ansible, Terraform, and Packer for automating system configuration, provisioning, and infrastructure management.
+  - category: Containerization & Orchestration
+    details: Hands-on experience with Docker, Kubernetes, Helm, Karpenter, and EKS for containerized application deployment and management.
+  - category: Security & Compliance
+    details: Knowledge in security best practices, including CIS Linux hardening, vulnerability patching, and managing sensitive data with Vault.
+  - category: Automation & Scripting
+    details: Proficiency in scripting to develop custom tools to automate manual and repetitive tasks.
+  - category: Monitoring & Logging
+    details: Experienced in setting up and managing monitoring/logging systems using Prometheus, Grafana, ELK Stack, Telegraf, Prometheus Exporters, and CloudWatch.
+  - category: Web & Application Servers
+    details: Hands-on experience with Nginx, Apache, Tomcat, OpenResty, and Spring Boot.
+
+work_experience:
+  - company: One97 Communications Limited
+    position: Sr. DevOps Lead
+    location: Noida
+    duration: Mar 2020 – Present
+    responsibilities:
+      - Developed a fully automated blue-green deployment pipeline with zero downtime using Jenkins, AWS ALB, ASG, and CloudWatch.
+      - Managed infrastructure as code, leveraging Terraform, Ansible, Packer, and AWS.
+      - Built golden AMIs with Packer, ensuring timely security patching and Linux hardening.
+      - Designed and maintained CI/CD pipelines, enabling automated deployments for production and non-production environments.
+      - Configured Prometheus, Grafana, and ELK Stack for comprehensive monitoring and logging.
+      - Led a team of DevOps engineers, providing mentorship and support.
+      - Managed EKS clusters and CI/CD pipelines as code using ArgoCD, Helm, and Helmfile.
+      - Developed Lua scripts and integrated with OpenResty to obtain advanced request metrics (5xx, 4xx, 2xx, latency, etc.).
+      - Mastered Karpenter for dynamic EKS worker node management to reduce costs.
+      - Built and implemented dynamic Linux user management with Ansible Role.
+  - company: Ziploan
+    position: Sr. DevOps Engineer
+    location: Delhi
+    duration: Oct 2019 – Mar 2020
+    responsibilities:
+      - Migrated on-premises applications to AWS, reducing hosting costs by 50%.
+      - Implemented blue-green deployments with ALB, ASG, and Jenkins.
+      - Optimized centralized logging with ELK Stack for real-time data analysis.
+      - Automated application deployments using Jenkins, reducing setup time by 60%.
+      - Wrote Ansible roles to automate Linux setup and software installations.
+      - Developed Jenkins pipelines using Groovy scripts for seamless CI/CD.
+  - company: KiwiTech
+    position: DevOps Engineer
+    location: Noida
+    duration: Nov 2017 – Oct 2019
+    responsibilities:
+      - Managed 100+ Linux servers supporting mission-critical applications.
+      - Automated deployments with Jenkins and Ansible for consistency and speed.
+      - Set up AWS CloudWatch, SNS, and Lambda for monitoring and alerting.
+      - Built new infrastructure from scratch, ensuring seamless go-live support.
+      - Troubleshot high-priority production issues under strict SLAs.
+  - company: Xeliumtech Solutions
+    position: Linux System Administrator (DevOps)
+    location: Gurugram
+    duration: Dec 2015 – Nov 2017
+    responsibilities:
+      - Configured virtual machines to host multiple websites with LAMP stack architecture.
+      - Administered GitLab servers, managing repositories and version control.
+      - Maintained non-production infrastructure to support testing and development.
+      - Developed automation scripts to reduce manual tasks and improve operational efficiency.
+      - Implemented security best practices such as SSL configurations and user management.
+      - Created AWS infrastructure (EC2, SG, Keypair, S3, ALB, etc.) using Terraform and Ansible.
+      - Wrote shell scripts to perform ad-hoc tasks on Ubuntu servers.
+      - Managed multiple websites on a single web server with Nginx.
+  - company: Dental Council Of India (DCI)
+    position: Desktop Support Engineer
+    location: Delhi
+    duration: Mar 2013 - OCT 2015
+    responsibilities:
+      - Supported desktop and laptop users, resolving technical issues promptly.
+      - Managed MS SQL Server and ensured smooth operation of Windows applications.
+      - Diagnosed and resolved network connectivity issues in office systems.
+      - Performed regular maintenance and updates on Windows and Linux servers to ensure optimal performance.
+      - Implemented backup and recovery strategies for critical SQL Server databases.
+

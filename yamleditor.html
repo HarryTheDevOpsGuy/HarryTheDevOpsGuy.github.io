@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAML Resume Editor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/dracula.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .default-resume {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        .resume-content {
+            white-space: pre-wrap; 
+            word-wrap: break-word;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            background-color: #f9f9f9;
+        }
+        .action-btn {
+            cursor: pointer;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <h1>YAML Resume Editor</h1>
+    <div class="mt-4">
+        <h4>Resumes List:</h4>
+        <ul id="resume-list" class="list-group"></ul>
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-primary" onclick="saveYAML()" title="Save Resume">
+            <i class="fas fa-save"></i>
+        </button>
+        <button class="btn btn-secondary" onclick="viewAllResumes()" title="View All Resumes">
+            <i class="fas fa-eye"></i>
+        </button>
+        <button class="btn btn-success" onclick="addNewResume()" title="Add New Resume">
+            <i class="fas fa-plus"></i>
+        </button>
+    </div>
+    <div class="mt-4">
+        <textarea id="yaml-editor" class="form-control" rows="15"></textarea>
+    </div>
+
+    <div id="error-message" class="alert alert-danger mt-3" style="display: none;"></div>
+
+    <div class="mt-4">
+        <h4>Saved Resume Data:</h4>
+        <div id="saved-resume-data" class="resume-content"></div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/yaml/yaml.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.0.0/dist/js-yaml.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+
+<script>
+    // YAML Editor Configuration
+    const defaultYAML = `name: John Doe
+title: DevOps Engineer
+contact: "(123) 456-7890 | johndoe@email.com"
+experience:
+  - company: ABC Corp
+    job_title: Senior DevOps Engineer
+    years: 2020-2023
+    responsibilities:
+      - Implemented CI/CD pipelines with Jenkins, Docker, Kubernetes
+      - Collaborated with cross-functional teams for automation
+skills:
+  - Docker
+  - Kubernetes
+  - Terraform
+  - AWS
+education:
+  - institution: XYZ University
+    degree: Bachelor of Science in Computer Science
+    years: 2016-2020
+certifications:
+  - name: AWS Certified Solutions Architect
+    year: 2022
+  - name: Docker Certified Associate
+    year: 2021`;
+
+    const yamlEditor = CodeMirror.fromTextArea(document.getElementById('yaml-editor'), {
+        lineNumbers: true,
+        mode: "yaml",
+        theme: "dracula",
+        lineWrapping: true,
+    });
+
+    const errorElement = document.getElementById("error-message");
+    const resumeListElement = document.getElementById("resume-list");
+    const savedResumeDataElement = document.getElementById("saved-resume-data");
+
+    function getResumes() {
+        return JSON.parse(localStorage.getItem('yamlResumes')) || {};
+    }
+
+    function setResumes(resumes) {
+        localStorage.setItem('yamlResumes', JSON.stringify(resumes));
+    }
+
+    function loadResumes() {
+        const resumes = getResumes();
+        resumeListElement.innerHTML = "";
+
+        Object.keys(resumes).forEach((key) => {
+            const resume = resumes[key];
+            const listItem = document.createElement('li');
+            listItem.className = `list-group-item d-flex justify-content-between align-items-center ${resume.isDefault ? "default-resume" : ""}`;
+            listItem.innerHTML = `
+                ${resume.name} (${resume.title}) 
+                <div>
+                    <i class="fas fa-edit action-btn" onclick="editResume('${key}')" title="Edit"></i>
+                    <i class="fas fa-check action-btn" onclick="setDefault('${key}')" title="${resume.isDefault ? 'Default' : 'Set as Default'}"></i>
+                    <i class="fas fa-trash action-btn" onclick="deleteResume('${key}')" title="Delete"></i>
+                    <i class="fas fa-eye action-btn" onclick="viewResumeData('${key}')" title="View"></i>
+                </div>
+            `;
+            resumeListElement.appendChild(listItem);
+        });
+    }
+
+    function saveYAML() {
+        const yamlData = yamlEditor.getValue();
+        const resumes = getResumes();
+
+        try {
+            const parsedData = jsyaml.load(yamlData);
+            const name = parsedData.name || "Unknown";
+            const title = parsedData.title || "Unknown";
+            const key = `${name}-${title}`;
+            
+            resumes[key] = {
+                name: name,
+                title: title,
+                yamlData: yamlData,
+                isDefault: resumes[key]?.isDefault || false,
+            };
+
+            setResumes(resumes);
+            errorElement.style.display = "none";
+            loadResumes();
+            alert("Resume saved successfully!");
+        } catch (error) {
+            errorElement.style.display = "block";
+            errorElement.textContent = "YAML Syntax Error: " + error.message;
+        }
+    }
+
+    function viewAllResumes() {
+        const resumes = getResumes();
+        savedResumeDataElement.innerHTML = "";
+        if (Object.keys(resumes).length === 0) {
+            savedResumeDataElement.textContent = "No resumes found!";
+        } else {
+            Object.keys(resumes).forEach((key) => {
+                const resume = resumes[key];
+                const resumeData = document.createElement('div');
+                resumeData.className = "resume-content";
+                resumeData.textContent = resume.yamlData;
+                savedResumeDataElement.appendChild(resumeData);
+            });
+        }
+    }
+
+    function viewResumeData(key) {
+        const resumes = getResumes();
+        if (resumes[key]) {
+            savedResumeDataElement.innerHTML = `<div class="resume-content">${resumes[key].yamlData}</div>`;
+        } else {
+            savedResumeDataElement.textContent = "Resume not found!";
+        }
+    }
+
+    function addNewResume() {
+        yamlEditor.setValue(defaultYAML);
+    }
+
+    function editResume(key) {
+        const resumes = getResumes();
+        if (resumes[key]) {
+            yamlEditor.setValue(resumes[key].yamlData);
+        } else {
+            alert("Resume not found!");
+        }
+    }
+
+    function deleteResume(key) {
+        const resumes = getResumes();
+        if (resumes[key]) {
+            delete resumes[key];
+            setResumes(resumes);
+            loadResumes();
+        } else {
+            alert("Resume not found!");
+        }
+    }
+
+    function setDefault(key) {
+        const resumes = getResumes();
+        Object.keys(resumes).forEach(k => resumes[k].isDefault = false);
+
+        if (resumes[key]) {
+            resumes[key].isDefault = true;
+            setResumes(resumes);
+            loadResumes();
+        } else {
+            alert("Resume not found!");
+        }
+    }
+
+    function initialize() {
+        const resumes = getResumes();
+        const defaultKey = Object.keys(resumes).find(key => resumes[key].isDefault);
+
+        if (defaultKey) {
+            yamlEditor.setValue(resumes[defaultKey].yamlData);
+        } else {
+            yamlEditor.setValue(defaultYAML);
+        }
+
+        loadResumes();
+    }
+
+    initialize();
+</script>
+</body>
+</html>

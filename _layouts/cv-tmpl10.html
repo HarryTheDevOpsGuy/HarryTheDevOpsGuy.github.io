@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Hari Prasad</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .rating {
+            font-size: 20px;
+        }
+        .rating i {
+            color: #f39c12;
+        }
+        .tags {
+            display: flex;
+            gap: 10px;
+        }
+        .tags span {
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .btn-download {
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="text-center">
+                <img src="https://via.placeholder.com/150" alt="Profile Picture" class="rounded-circle mb-4">
+                <h2>Hari Prasad</h2>
+                <p class="text-muted">Senior DevOps Engineer</p>
+                <p><a href="mailto:HarryTheDevOpsGuy@gmail.com" class="btn btn-primary btn-sm"><i class="fas fa-envelope"></i> Contact</a></p>
+            </div>
+            <div>
+                <h5>Skills</h5>
+                <div class="tags">
+                    <span>AWS</span>
+                    <span>Docker</span>
+                    <span>Kubernetes</span>
+                    <span>Terraform</span>
+                    <span>Jenkins</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-8">
+            <h3>Summary</h3>
+            <p>A Senior DevOps Engineer with over 11 years of experience, specializing in cloud infrastructure, CI/CD pipelines, and performance optimization. Proficient in AWS, Kubernetes, Docker, Jenkins, and Terraform.</p>
+
+            <h3>Experience</h3>
+            <ul>
+                <li><strong>Sr. DevOps Engineer</strong> at ABC Communications Limited (Dec 2020 - Present)</li>
+                <li><strong>Systems Administrator</strong> at Web Services LLC (Jun 2018 - Dec 2020)</li>
+                <li><strong>Team Lead</strong> at abc Services LLC (Dec 2017 - Dec 2020)</li>
+            </ul>
+
+            <h3>Education</h3>
+            <ul>
+                <li><strong>Bachelor of Commerce</strong> from Delhi University, 2014</li>
+                <li><strong>12th Class</strong> from Delhi University, 2010</li>
+                <li><strong>10th Class</strong> from Delhi University, 2008</li>
+            </ul>
+
+            <h3>Certifications</h3>
+            <ul>
+                <li>AWS Certified Solutions Architect</li>
+                <li>Certified Kubernetes Administrator (CKA)</li>
+                <li>Docker Certified Associate</li>
+            </ul>
+
+            <h3>Technical Skills</h3>
+            <ul>
+                <li>Infrastructure as Code (IaC): Terraform, Ansible, Jenkins, Groovy</li>
+                <li>CI/CD Automation: Jenkins, ArgoCD, GitHub Actions</li>
+                <li>Cloud Infrastructure Management: AWS EC2, S3, RDS, IAM, etc.</li>
+                <li>Security: CIS Linux Hardening, Vault</li>
+            </ul>
+
+            <h3>Languages</h3>
+            <ul>
+                <li>Hindi</li>
+                <li>English</li>
+            </ul>
+
+            <div>
+                <button class="btn btn-download" onclick="window.print()">🖨️ Printable</button>
+                <button class="btn btn-download" id="downloadPdfBtn">📥 Download PDF</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+    document.getElementById('downloadPdfBtn').addEventListener('click', function () {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        doc.text("Resume - Hari Prasad", 10, 10);
+        doc.text("Senior DevOps Engineer", 10, 20);
+        doc.text("Email: HarryTheDevOpsGuy@gmail.com", 10, 30);
+        doc.text("Phone: +91 7503721297", 10, 40);
+        doc.text("Summary: A Senior DevOps Engineer with over 11 years of experience...", 10, 50);
+        // Add additional sections...
+        doc.save('Hari-Prasad-Resume.pdf');
+    });
+</script>
+
+</body>
+</html>

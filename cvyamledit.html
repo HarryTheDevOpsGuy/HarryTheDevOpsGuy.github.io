@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Resume in YAML Format</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/emoji-css/1.0.0/emoji.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+        }
+        .editable {
+            border: 1px solid #ddd;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        .yaml-data {
+            margin-top: 30px;
+            white-space: pre-wrap;
+            background-color: #f1f1f1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Edit Your Resume in YAML Format</h1>
+    <div class="form-group">
+        <label for="yaml-input">Edit YAML Data:</label>
+        <textarea id="yaml-input" class="form-control editable" rows="15" placeholder="Edit YAML data here..."></textarea>
+    </div>
+    <button class="btn btn-primary mt-4" onclick="saveResume()">Save Resume</button>
+    <button class="btn btn-secondary mt-4" onclick="exportYAML()">Export as YAML</button>
+    <button class="btn btn-success mt-4" onclick="importYAML()">Import from YAML</button>
+    <button class="btn btn-info mt-4" onclick="viewYAMLData()">View Data in YAML</button>
+
+    <div class="yaml-data" id="yaml-output" style="display: none;"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.0.0/dist/js-yaml.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Save data to localStorage
+    function saveResume() {
+        const yamlData = document.getElementById('yaml-input').value;
+        try {
+            // Parse the YAML data to check if it's valid
+            const parsedData = jsyaml.load(yamlData);
+            
+            // Store it in localStorage
+            localStorage.setItem('devOpsResume', yamlData);
+            alert('Resume data saved!');
+        } catch (e) {
+            alert('Invalid YAML format. Please check your syntax.');
+        }
+    }
+
+    // Export data as YAML file
+    function exportYAML() {
+        const savedResume = localStorage.getItem('devOpsResume');
+        if (savedResume) {
+            const blob = new Blob([savedResume], { type: 'application/x-yaml' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'resume.yaml';
+            link.click();
+        } else {
+            alert('No resume data to export!');
+        }
+    }
+
+    // Import YAML data from file
+    function importYAML() {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = '.yaml';
+        input.onchange = function (event) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const yamlData = e.target.result;
+                try {
+                    // Parse YAML data
+                    const parsedData = jsyaml.load(yamlData);
+                    // Populate textarea with the imported YAML
+                    document.getElementById('yaml-input').value = yamlData;
+                    alert('Resume data imported successfully!');
+                } catch (e) {
+                    alert('Invalid YAML file format.');
+                }
+            };
+            reader.readAsText(input.files[0]);
+        };
+        input.click();
+    }
+
+    // View data in YAML format
+    function viewYAMLData() {
+        const savedResume = localStorage.getItem('devOpsResume');
+        if (savedResume) {
+            document.getElementById('yaml-output').textContent = savedResume;
+            document.getElementById('yaml-output').style.display = 'block';
+        } else {
+            alert('No data to view!');
+        }
+    }
+
+    // Load saved YAML data into the textarea (if any)
+    window.onload = function() {
+        const savedResume = localStorage.getItem('devOpsResume');
+        if (savedResume) {
+            document.getElementById('yaml-input').value = savedResume;
+        }
+    };
+</script>
+
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Engineer Resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+        .header img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+        }
+        .header .contact-info i {
+            margin-right: 10px;
+        }
+        .section-title {
+            color: #343a40;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .progress-bar {
+            background-color: #28a745;
+        }
+        .card-body {
+            background-color: #ffffff;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .footer a {
+            color: #28a745;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .progress {
+            height: 10px;
+            margin-bottom: 20px;
+        }
+        .projects .project-icon {
+            font-size: 2rem;
+        }
+        .skills .skill-icon {
+            font-size: 1.5rem;
+        }
+        .print-btn {
+            display: none;
+        }
+        @media print {
+            .print-btn {
+                display: block;
+            }
+            .footer {
+                position: static;
+                bottom: auto;
+                text-align: left;
+            }
+            .container {
+                max-width: 100%;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<div class="header d-flex justify-content-center align-items-center">
+    <div>
+        <img src="https://via.placeholder.com/80" alt="Avatar">
+    </div>
+    <div>
+        <h1>John Doe</h1>
+        <p>DevOps Engineer</p>
+        <div class="contact-info">
+            <p>
+                <i class="fas fa-envelope"></i> john.doe@example.com |
+                <i class="fas fa-phone-alt"></i> +123 456 7890 |
+                <a href="https://www.linkedin.com/in/johndoe" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a> |
+                <a href="https://github.com/johndoe" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Skills Section -->
+<div class="container mt-4">
+    <h2 class="section-title">Skills</h2>
+    <div class="row">
+        <div class="col-6 col-md-3 mb-3">
+            <div class="text-center">
+                <i class="fab fa-aws skill-icon"></i>
+                <h5>AWS</h5>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 90%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+            <div class="text-center">
+                <i class="fab fa-docker skill-icon"></i>
+                <h5>Docker</h5>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 85%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+            <div class="text-center">
+                <i class="fab fa-kubernetes skill-icon"></i>
+                <h5>Kubernetes</h5>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 80%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+            <div class="text-center">
+                <i class="fab fa-jenkins skill-icon"></i>
+                <h5>Jenkins</h5>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 75%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Experience Section -->
+<div class="container mt-5">
+    <h2 class="section-title">Experience</h2>
+    <div class="timeline">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">DevOps Engineer - ABC Corp</h5>
+                <p><i class="fas fa-calendar-alt"></i> Jan 2020 - Present</p>
+                <ul>
+                    <li>Implemented CI/CD pipelines using Jenkins and GitHub Actions</li>
+                    <li>Managed cloud infrastructure on AWS using Terraform</li>
+                    <li>Automated container orchestration with Kubernetes and Docker</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Systems Engineer - XYZ Ltd</h5>
+                <p><i class="fas fa-calendar-alt"></i> Jun 2017 - Dec 2019</p>
+                <ul>
+                    <li>Designed and implemented automated backups and monitoring systems</li>
+                    <li>Provided infrastructure support for cloud migration projects</li>
+                    <li>Utilized Docker and Ansible for deployment automation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Projects Section -->
+<div class="container mt-5">
+    <h2 class="section-title">Projects</h2>
+    <div class="row projects">
+        <div class="col-md-4 mb-3">
+            <div class="text-center">
+                <i class="fas fa-cloud project-icon"></i>
+                <h5>Cloud Infrastructure Setup</h5>
+                <p>Designed and implemented a scalable cloud architecture using AWS.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="text-center">
+                <i class="fab fa-docker project-icon"></i>
+                <h5>Containerized Applications</h5>
+                <p>Containerized microservices using Docker for easy deployment.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="text-center">
+                <i class="fas fa-cogs project-icon"></i>
+                <h5>CI/CD Pipeline</h5>
+                <p>Built CI/CD pipeline with Jenkins to automate testing and deployment.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Education Section -->
+<div class="container mt-5">
+    <h2 class="section-title">Education</h2>
+    <ul>
+        <li><i class="fas fa-graduation-cap"></i> B.Tech in Computer Science - University of ABC (2014)</li>
+    </ul>
+</div>
+
+<!-- Certifications Section -->
+<div class="container mt-5">
+    <h2 class="section-title">Certifications</h2>
+    <ul>
+        <li><i class="fab fa-aws"></i> AWS Certified Solutions Architect</li>
+        <li><i class="fab fa-kubernetes"></i> Kubernetes Certified Administrator</li>
+        <li><i class="fab fa-terraform"></i> Terraform Associate</li>
+    </ul>
+</div>
+
+<!-- Footer Section -->
+<div class="footer">
+    <p>Contact me at <a href="mailto:john.doe@example.com">john.doe@example.com</a></p>
+    <p><a href="https://www.linkedin.com/in/johndoe" target="_blank">LinkedIn</a> | <a href="https://github.com/johndoe" target="_blank">GitHub</a></p>
+</div>
+
+<!-- Print Button -->
+<button class="btn btn-primary print-btn" onclick="window.print()">Print Resume</button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DevOps Engineer Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-info span {
+            display: inline-block;
+            margin: 5px 15px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 1.5em;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .skills,
+        .technical-expertise {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .skills div,
+        .technical-expertise div {
+            width: 48%;
+            margin-right: 2%;
+            margin-bottom: 10px;
+        }
+
+        .skills div:last-child,
+        .technical-expertise div:last-child {
+            margin-right: 0;
+        }
+
+        .experience,
+        .education,
+        .certifications {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .experience li,
+        .education li,
+        .certifications li {
+            margin-bottom: 15px;
+        }
+
+        .experience h3,
+        .education h3,
+        .certifications h3 {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .experience span,
+        .education span,
+        .certifications span {
+            display: block;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .skills div,
+            .technical-expertise div {
+                width: 100%;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: #fff;
+                color: #000;
+            }
+
+            .container {
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .header,
+            .contact-info {
+                text-align: left;
+            }
+
+            .contact-info span {
+                margin: 5px 0;
+            }
+
+            .skills div,
+            .technical-expertise div {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>[Full Name]</h1>
+            <h3>DevOps Engineer</h3>
+        </div>
+
+        <div class="contact-info">
+            <span>Email: [email@example.com]</span>
+            <span>Phone: [123-456-7890]</span>
+            <span>LinkedIn: [linkedin.com/in/username]</span>
+            <span>GitHub: [github.com/username]</span>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="section">
+            <h2>Professional Summary</h2>
+            <p>Experienced DevOps Engineer with over 10 years of experience specializing in cloud infrastructure, CI/CD automation, containerization (Docker, Kubernetes), and system monitoring (Prometheus, Grafana). Proficient in AWS, Azure, and Google Cloud services, with a strong background in streamlining operations, reducing costs, and improving deployment speed through automation and continuous integration practices.</p>
+        </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <h2>Key Skills</h2>
+            <div class="skills">
+                <div>Cloud Infrastructure: AWS, Azure, GCP</div>
+                <div>CI/CD Tools: Jenkins, GitLab CI, CircleCI</div>
+                <div>Containerization: Docker, Kubernetes, Helm</div>
+                <div>Automation: Terraform, Ansible</div>
+                <div>Monitoring: Prometheus, Grafana, ELK Stack</div>
+                <div>Scripting: Python, Bash, Groovy</div>
+                <div>Version Control: Git, GitHub, GitLab</div>
+                <div>Security: IAM, Vault</div>
+            </div>
+        </div>
+
+        <!-- Work Experience -->
+        <div class="section">
+            <h2>Work Experience</h2>
+            <ul class="experience">
+                <li>
+                    <h3>Senior DevOps Engineer</h3>
+                    <span>XYZ Technologies | June 2020 – Present</span>
+                    <p>Lead the migration of infrastructure to AWS and Kubernetes, improved deployment efficiency by 40%, and automated provisioning with Terraform. Implemented CI/CD pipelines using Jenkins, improving release times by 30%.</p>
+                </li>
+                <li>
+                    <h3>DevOps Engineer</h3>
+                    <span>ABC Solutions | May 2016 – May 2020</span>
+                    <p>Developed and maintained Ansible playbooks for automating server configuration and built multiple Kubernetes clusters for production and staging. Integrated security practices into CI/CD pipelines, including vulnerability scanning and secrets management.</p>
+                </li>
+                <li>
+                    <h3>Junior DevOps Engineer</h3>
+                    <span>Tech Innovations | Jan 2014 – Apr 2016</span>
+                    <p>Assisted in setting up Docker containers for local and production environments, contributed to cloud infrastructure management, and helped automate CI/CD pipelines using Jenkins.</p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h2>Education</h2>
+            <ul class="education">
+                <li>
+                    <h3>Bachelor of Science in Computer Science</h3>
+                    <span>University of California, Berkeley | 2013</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Certifications -->
+        <div class="section">
+            <h2>Certifications</h2>
+            <ul class="certifications">
+                <li>AWS Certified DevOps Engineer – Professional</li>
+                <li>Docker Certified Associate</li>
+                <li>Certified Kubernetes Administrator (CKA)</li>
+                <li>Terraform Associate Certification</li>
+            </ul>
+        </div>
+
+        <!-- Technical Expertise -->
+        <div class="section">
+            <h2>Technical Expertise</h2>
+            <div class="technical-expertise">
+                <div>AWS, Azure, Google Cloud</div>
+                <div>Docker, Kubernetes, Helm</div>
+                <div>Jenkins, CircleCI, Travis CI</div>
+                <div>Terraform, Ansible, CloudFormation</div>
+                <div>Python, Bash, Groovy</div>
+                <div>Prometheus, Grafana, ELK Stack</div>
+                <div>Git, GitHub, GitLab</div>
+                <div>IAM, Vault</div>
+            </div>
+        </div>
+
+        <!-- Achievements -->
+        <div class="section">
+            <h2>Projects & Achievements</h2>
+            <ul>
+                <li>Automated cloud infrastructure with Terraform, reducing manual intervention by 50%.</li>
+                <li>Contributed to open-source projects like Helm charts and Terraform modules.</li>
+                <li>Optimized Jenkins CI/CD pipelines, reducing build time by 30%.</li>
+                <li>Successfully migrated legacy applications to microservices architecture using Kubernetes and Docker.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Engineer Resume</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f9;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .header h2 {
+            font-weight: 400;
+            color: #555;
+        }
+        .contact-details i {
+            color: #555;
+        }
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .skills ul, .experience ul, .projects ul, .education ul {
+            padding-left: 20px;
+        }
+        .skills li, .experience li, .projects li, .education li {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+        .column-left {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .column-right {
+            padding: 20px;
+        }
+        .pdf-btn {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header Section -->
+    <div class="header">
+        <h1>John Doe</h1>
+        <h2>DevOps Engineer</h2>
+        <div class="contact-details">
+            <p><i class="fas fa-envelope"></i> john.doe@email.com | <i class="fas fa-phone"></i> +123 456 7890 | <i class="fab fa-linkedin"></i> linkedin.com/in/johndoe | <i class="fab fa-github"></i> github.com/johndoe</p>
+        </div>
+    </div>
+
+    <!-- Resume Content -->
+    <div class="row">
+        <!-- Left Column (Skills & Certifications) -->
+        <div class="col-md-4 column-left">
+            <div class="skills">
+                <div class="section-title">Skills</div>
+                <ul>
+                    <li><strong>Cloud Platforms:</strong> AWS, GCP, Azure</li>
+                    <li><strong>CI/CD Tools:</strong> Jenkins, GitLab CI, CircleCI, ArgoCD</li>
+                    <li><strong>Scripting Languages:</strong> Bash, Python, Groovy</li>
+                    <li><strong>Infrastructure as Code:</strong> Terraform, CloudFormation, Ansible</li>
+                    <li><strong>Monitoring & Logging:</strong> Prometheus, Grafana, ELK Stack</li>
+                    <li><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB, Redis</li>
+                </ul>
+            </div>
+
+            <div class="certifications">
+                <div class="section-title">Certifications</div>
+                <ul>
+                    <li>AWS Certified Solutions Architect</li>
+                    <li>Kubernetes Certified Administrator (CKA)</li>
+                    <li>HashiCorp Certified: Terraform Associate</li>
+                    <li>Certified Jenkins Engineer</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Column (Experience, Projects & Education) -->
+        <div class="col-md-8 column-right">
+            <div class="summary">
+                <div class="section-title">Summary</div>
+                <p>DevOps Engineer with over 10 years of experience in cloud infrastructure, automation, and CI/CD pipelines. Expertise in AWS, Kubernetes, Docker, and Terraform. Proven track record in managing scalable, secure, and highly available systems while improving development workflows through automation.</p>
+            </div>
+
+            <div class="experience">
+                <div class="section-title">Experience</div>
+                <ul>
+                    <li><strong>Senior DevOps Engineer</strong> at XYZ Corp | Jan 2019 – Present</li>
+                    <ul>
+                        <li>Led cloud migration projects, migrating legacy systems to AWS, improving scalability and reducing costs by 30%.</li>
+                        <li>Automated CI/CD pipelines using Jenkins and GitLab CI, reducing deployment times by 50%.</li>
+                        <li>Implemented monitoring and alerting systems using Prometheus and Grafana to improve system observability.</li>
+                    </ul>
+                    <li><strong>DevOps Engineer</strong> at ABC Technologies | Aug 2014 – Dec 2018</li>
+                    <ul>
+                        <li>Built and managed Kubernetes clusters on AWS EKS, improving application uptime and deployment speed.</li>
+                        <li>Developed automation scripts using Terraform and Ansible to provision cloud infrastructure.</li>
+                        <li>Collaborated with developers to streamline the release process, achieving faster and more reliable deployments.</li>
+                    </ul>
+                </ul>
+            </div>
+
+            <div class="projects">
+                <div class="section-title">Projects</div>
+                <ul>
+                    <li><strong>CI/CD Pipeline Automation:</strong> Built a fully automated CI/CD pipeline using Jenkins, Docker, and Kubernetes, which reduced manual deployment errors.</li>
+                    <li><strong>Cloud Migration:</strong> Led a team to migrate an on-premise infrastructure to AWS, reducing operational costs and improving scalability.</li>
+                </ul>
+            </div>
+
+            <div class="education">
+                <div class="section-title">Education</div>
+                <ul>
+                    <li><strong>Bachelor of Technology in Computer Science</strong> – University of Delhi | 2014</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- PDF Button -->
+    <div class="pdf-btn">
+        <button class="btn btn-primary" onclick="window.print()">Download PDF</button>
+    </div>
+</div>
+
+<!-- Bootstrap 5 JS (Optional for interactivity) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

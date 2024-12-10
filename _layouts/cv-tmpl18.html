@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevOps Engineer Resume</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      font-size: 36px;
+      color: #333;
+    }
+    .header p {
+      font-size: 18px;
+      color: #666;
+    }
+    .header a {
+      text-decoration: none;
+      color: #007BFF;
+      margin-left: 10px;
+    }
+
+    /* Main Sections */
+    .main-sections {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 30px;
+    }
+    
+    /* Left Section (Contact and Summary) */
+    .left-section {
+      font-size: 18px;
+      color: #555;
+    }
+    
+    .left-section .contact,
+    .left-section .summary {
+      margin-bottom: 20px;
+    }
+
+    /* Right Section (Experience, Education, Skills, etc.) */
+    .right-section h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    
+    .right-section ul {
+      list-style-type: none;
+    }
+    
+    .right-section ul li {
+      margin-bottom: 10px;
+    }
+
+    .right-section ul li::before {
+      content: "• ";
+      color: #007BFF;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        font-size: 14px;
+      }
+      .container {
+        width: 100%;
+        padding: 10px;
+      }
+      .header {
+        display: block;
+        text-align: center;
+        padding-bottom: 0;
+      }
+      .header h1 {
+        font-size: 28px;
+      }
+      .main-sections {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <h1>John Doe</h1>
+        <p>DevOps Engineer</p>
+      </div>
+      <div>
+        <p>
+          <a href="mailto:johndoe@example.com">johndoe@example.com</a> |
+          <a href="tel:+123456789">+1 234 567 89</a> |
+          <a href="https://www.linkedin.com/in/johndoe">LinkedIn</a> |
+          <a href="https://github.com/johndoe">GitHub</a>
+        </p>
+      </div>
+    </div>
+    
+    <div class="main-sections">
+      <!-- Left Section -->
+      <div class="left-section">
+        <div class="contact">
+          <h2>Contact</h2>
+          <p>Email: johndoe@example.com</p>
+          <p>Phone: +1 234 567 89</p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/johndoe">LinkedIn Profile</a></p>
+          <p>GitHub: <a href="https://github.com/johndoe">GitHub Profile</a></p>
+        </div>
+
+        <div class="summary">
+          <h2>Professional Summary</h2>
+          <p>DevOps Engineer with over 10 years of experience in managing cloud infrastructure, automating deployments, and optimizing CI/CD pipelines. Expertise in AWS, Kubernetes, Terraform, Ansible, Docker, Jenkins, and Prometheus. Passionate about improving operational efficiency and delivering reliable solutions at scale.</p>
+        </div>
+      </div>
+
+      <!-- Right Section -->
+      <div class="right-section">
+        <!-- Skills Section -->
+        <div>
+          <h2>Skills</h2>
+          <ul>
+            <li>AWS, Azure, Google Cloud</li>
+            <li>Docker, Kubernetes, Helm</li>
+            <li>Terraform, Ansible</li>
+            <li>CI/CD: Jenkins, GitLab CI</li>
+            <li>Monitoring: Prometheus, Grafana, ELK Stack</li>
+            <li>Scripting: Python, Bash, Groovy</li>
+          </ul>
+        </div>
+
+        <!-- Work Experience Section -->
+        <div>
+          <h2>Work Experience</h2>
+          <ul>
+            <li><strong>Senior DevOps Engineer - XYZ Technologies</strong> | June 2020 – Present
+              <p>Led cloud infrastructure development using AWS, automated CI/CD pipelines, and managed Docker/Kubernetes clusters for efficient deployment workflows.</p>
+            </li>
+            <li><strong>DevOps Engineer - ABC Solutions</strong> | May 2016 – May 2020
+              <p>Implemented infrastructure automation using Terraform and Ansible. Managed Kubernetes clusters and integrated monitoring systems with Prometheus and Grafana.</p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Education Section -->
+        <div>
+          <h2>Education</h2>
+          <ul>
+            <li><strong>Bachelor of Science in Computer Science</strong> | University of California, Berkeley | 2013</li>
+          </ul>
+        </div>
+
+        <!-- Certifications Section -->
+        <div>
+          <h2>Certifications</h2>
+          <ul>
+            <li>AWS Certified DevOps Engineer – Professional</li>
+            <li>Docker Certified Associate</li>
+            <li>Certified Kubernetes Administrator (CKA)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

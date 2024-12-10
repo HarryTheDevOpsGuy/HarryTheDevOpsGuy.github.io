@@ -1,0 +1,161 @@
+---
+layout: base
+title: "CV - Resume Builder"
+---
+
+<style>
+  .carousel-item img {
+    border-radius: 10px;
+    margin: auto;
+}
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+
+.popular-posts h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.popular-posts ul {
+    padding: 0;
+}
+
+.popular-posts li {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.popular-posts img {
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+</style>
+
+
+<!-- Saved Resume Section -->
+<section class="container mt-3">
+    <h2 class="blog-title">Saved Resumes</h2>
+    <p class="blog-description">Your resumes are safely kept in your browser's storage. We value your privacy and ensure no data is stored on our servers.</p>
+    <div id="saved-resumes" class="saved-resumes"> </div>
+</section>
+
+
+  <!-- About Section -->
+  <section id="blog" class="blog-main mt-5">
+    <h2 class="blog-title">{{ page.title }}</h2>
+    <p class="blog-description">{{ page.description }}</p>
+    <div class="container">
+      <div class="blog-content">
+        <div id="resume" contenteditable="{{ page.contenteditable | default: 'true' }}" class="resume-body printable-area rounded mx-auto">
+
+            {{ content }}
+
+        </div>
+
+        <div class="resume-editor-options" >            
+            
+            <div class="col col-lg-2 mx-auto text-center">
+              <input type="range" class="form-range font-size-control" id="fontSizeControl" min="50" max="100" value="100">
+              <span id="successMessage" class="success-msg" style="display: none;"></span>
+          </div>
+            <div class="mt-3 text-center">
+                <button class="btn btn-primary" onclick="window.print()"><i class="fas fa-print me-2" title="Print" ></i></button>
+                <button class="btn btn-primary btn-icon" id="saveResume"><i class="fas fa-save" title="Save in browser Cache"></i></button>
+                <!-- <button class="btn btn-danger btn-icon" id="clearResume"><i class="fas fa-trash-alt" title="Reset Changes"></i> Reset/Clear</button> -->
+                <button class="btn btn-info btn-icon" id="copyResumeBase64"><i class="fas fa-copy" title="Copy encoded resume data"></i></button>
+                <button class="btn btn-warning btn-icon" id="pasteResumeBase64"><i class="fas fa-clipboard" title="Paste encoded resume data"></i></button>
+                <button class="btn btn-success btn-icon" id="sendWhatsApp"><i class="fas fa-paper-plane" title="Share encoded resume data" ></i></button>
+            </div>
+            
+        </div>
+
+      </div>
+    </div>
+
+    <div class="contact-links m-4">
+      {% if page.previous %}
+        <a class="contact-link" href="{{ page.previous.url | relative_url }}" rel="prev">
+          &laquo; Previous: {{ page.previous.title }}
+        </a>
+      {% endif %}
+      
+      {% if page.next %}
+        <a class="contact-link" href="{{ page.next.url | relative_url }}" rel="next">
+          Next: {{ page.next.title }} &raquo;
+        </a>
+      {% endif %}
+    </div>
+  </section>
+
+  <div id="blogCarousel" class="carousel slide" data-bs-ride="carousel">
+    <!-- Carousel Indicators -->
+    <div class="carousel-indicators">
+        {% for post in site.posts %}
+        <button type="button" data-bs-target="#blogCarousel" data-bs-slide-to="{{ forloop.index0 }}"
+                {% if forloop.first %}class="active"{% endif %} aria-current="{% if forloop.first %}true{% endif %}"
+                aria-label="Slide {{ forloop.index }}"></button>
+        {% endfor %}
+    </div>
+
+    <!-- Carousel Items -->
+    <div class="carousel-inner">
+        {% for post in site.posts %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            <div class="row">
+                <div class="col mx-auto text-center">
+                    <!-- Post Thumbnail -->
+                    <img src="{{ post.featured_image | default: '/cv/assets/img/slider6.jpg' }}" 
+                         class="d-block w-100" alt="{{ post.title }}" style="max-height: 600px; object-fit: cover;">
+                    <!-- Post Title -->
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5><a href="{{ post.url }}" class="text-white text-decoration-none">{{ post.title }}</a></h5>
+                        <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#blogCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#blogCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+
+
+<!-- Top 5 popular posts  -->
+
+<div class="popular-posts">
+  <h3>Top 5 Popular Posts</h3>
+  <ul class="list-unstyled">
+      {% assign popular_posts = site.posts | sort: "views" | reverse %}
+      {% for post in popular_posts limit: 5 %}
+      <li class="mb-3">
+          <a href="{{ post.url }}" class="d-flex align-items-center text-decoration-none">
+              <img src="{{ post.featured_image | default: '/cv/assets/img/slider2.jpg' }}" alt="{{ post.title }}" class="img-thumbnail me-3" style="width: 80px; height: 80px; object-fit: cover;">
+              <div>
+                  <h5 class="mb-1">{{ post.title }}</h5>
+                  <small>{{ post.date | date: "%B %d, %Y" }}</small>
+              </div>
+          </a>
+      </li>
+      {% endfor %}
+  </ul>
+</div>

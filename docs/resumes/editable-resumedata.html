@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/emoji-css/1.0.0/emoji.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+        }
+        .editable {
+            border: 1px solid #ddd;
+            padding: 5px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <img id="profile-image" class="profile-image" src="https://via.placeholder.com/120" alt="Profile Picture">
+            <input type="file" id="upload-image" class="form-control mt-3" onchange="updateProfileImage()">
+        </div>
+        <div class="col-md-8">
+            <h1 class="editable" id="name" contenteditable="true">John Doe</h1>
+            <h4 class="editable" id="title" contenteditable="true">DevOps Engineer</h4>
+            <p id="contact" class="editable" contenteditable="true"><i class="fas fa-phone"></i> (123) 456-7890 | <i class="fas fa-envelope"></i> johndoe@email.com</p>
+        </div>
+    </div>
+
+    <div class="section-title">Experience</div>
+    <div class="editable" id="experience" contenteditable="true">
+        <p>Company Name | Job Title | 2020 - Present</p>
+        <ul>
+            <li>Led DevOps initiatives to automate CI/CD pipelines using Jenkins, Docker, and Kubernetes.</li>
+            <li>Collaborated with development teams to improve system scalability and security.</li>
+        </ul>
+    </div>
+
+    <div class="section-title">Skills</div>
+    <div class="editable" id="skills" contenteditable="true">
+        <ul>
+            <li>Docker</li>
+            <li>Kubernetes</li>
+            <li>AWS, GCP, Azure</li>
+            <li>Terraform, Ansible</li>
+        </ul>
+    </div>
+
+    <div class="section-title">Education</div>
+    <div class="editable" id="education" contenteditable="true">
+        <p>XYZ University | Bachelor of Science in Computer Science | 2016 - 2020</p>
+    </div>
+
+    <div class="section-title">Certifications</div>
+    <div class="editable" id="certifications" contenteditable="true">
+        <ul>
+            <li>AWS Certified Solutions Architect</li>
+            <li>Docker Certified Associate</li>
+        </ul>
+    </div>
+
+    <div class="section-title">Links</div>
+    <div class="editable" id="links" contenteditable="true">
+        <ul>
+            <li><a href="https://www.linkedin.com/in/johndoe" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/johndoe" target="_blank">GitHub</a></li>
+        </ul>
+    </div>
+
+    <button class="btn btn-primary mt-4" onclick="saveResume()">Save Resume</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Update profile image
+    function updateProfileImage() {
+        const file = document.getElementById('upload-image').files[0];
+        const reader = new FileReader();
+        reader.onloadend = function () {
+            $('#profile-image').attr('src', reader.result);
+            saveResume();
+        };
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+
+    // Save data to localStorage
+    function saveResume() {
+        const resumeData = {
+            name: $('#name').text(),
+            title: $('#title').text(),
+            contact: $('#contact').text(),
+            experience: $('#experience').html(),
+            skills: $('#skills').html(),
+            education: $('#education').html(),
+            certifications: $('#certifications').html(),
+            links: $('#links').html(),
+            profileImage: $('#profile-image').attr('src')
+        };
+
+        localStorage.setItem('devOpsResume', JSON.stringify(resumeData));
+        alert('Resume saved!');
+    }
+
+    // Load data from localStorage
+    function loadResume() {
+        const savedResume = JSON.parse(localStorage.getItem('devOpsResume'));
+        if (savedResume) {
+            $('#name').text(savedResume.name);
+            $('#title').text(savedResume.title);
+            $('#contact').text(savedResume.contact);
+            $('#experience').html(savedResume.experience);
+            $('#skills').html(savedResume.skills);
+            $('#education').html(savedResume.education);
+            $('#certifications').html(savedResume.certifications);
+            $('#links').html(savedResume.links);
+            $('#profile-image').attr('src', savedResume.profileImage);
+        }
+    }
+
+    // Load resume data on page load
+    $(document).ready(function () {
+        loadResume();
+    });
+</script>
+
+</body>
+</html>

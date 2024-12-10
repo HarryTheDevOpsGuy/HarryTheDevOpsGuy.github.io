@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site.title }}</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>{{ site.data.resume.personal_info.name }}</h1>
+    <h2>{{ site.data.resume.personal_info.title }}</h2>
+  </header>
+
+  <section>
+    <h3>Contact Information</h3>
+    <ul>
+      <li>Email: <a href="mailto:{{ site.data.resume.personal_info.email }}">{{ site.data.resume.personal_info.email }}</a></li>
+      <li>Phone: {{ site.data.resume.personal_info.phone }}</li>
+      <li>GitHub: <a href="{{ site.data.resume.personal_info.github }}" target="_blank">{{ site.data.resume.personal_info.github }}</a></li>
+      <li>LinkedIn: <a href="{{ site.data.resume.personal_info.linkedin }}" target="_blank">{{ site.data.resume.personal_info.linkedin }}</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Summary</h3>
+    <p>{{ site.data.resume.summary }}</p>
+  </section>
+
+  <section>
+    <h3>Technical Skills</h3>
+    <ul>
+      {% for skill in site.data.resume.skills.technical %}
+        <li>{{ skill }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section>
+    <h3>Experience</h3>
+    {% for job in site.data.resume.experience %}
+      <h4>{{ job.job_title }} at {{ job.company }}</h4>
+      <p><strong>{{ job.start_date }} - {{ job.end_date }}</strong></p>
+      <ul>
+        {% for responsibility in job.responsibilities %}
+          <li>{{ responsibility }}</li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  </section>
+
+  <section>
+    <h3>Education</h3>
+    {% for edu in site.data.resume.education %}
+      <p>{{ edu.degree }} - {{ edu.institution }} ({{ edu.year }})</p>
+    {% endfor %}
+  </section>
+</body>
+</html>
