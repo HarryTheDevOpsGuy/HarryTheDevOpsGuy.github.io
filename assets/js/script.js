@@ -4,21 +4,6 @@
 
 
 
-// Search feature
-$('#searchBar').on('input', function () {
-    var searchQuery = $(this).val().toLowerCase();
-    $('#blogPosts .post-card').each(function () {
-        var postTitle = $(this).find('.card-title').text().toLowerCase();
-        if (postTitle.indexOf(searchQuery) === -1) {
-            $(this).hide();
-        } else {
-            $(this).show();
-        }
-    });
-});
-
-
-
 $(document).ready(function() {
 
     // Function to get the value of 'id' from the URL

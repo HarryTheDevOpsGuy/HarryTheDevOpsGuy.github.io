@@ -3,20 +3,63 @@ layout: base
 title: Blog
 permalink: /blog/
 ---
+  <!-- Blog Posts and Sidebar Section -->
+  <div class="container my-5">
+    <div class="row">
+        <!-- Sidebar Section -->
+        <div class="col-lg-3">
+            <div class="sidebar">
+                <h5>Categories</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="#" class="text-white">Technology</a></li>
+                    <li class="list-group-item"><a href="#" class="text-white">Health</a></li>
+                    <li class="list-group-item"><a href="#" class="text-white">Travel</a></li>
+                    <li class="list-group-item"><a href="#" class="text-white">Lifestyle</a></li>
+                </ul>
+            </div>
 
-<main class="blog-content">
-    <div class="container">
-      <h2>{{ page.title }}</h2>
-      <div class="post-list">
-        {% for post in site.posts %}
-          <article class="post">
-            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-            <!-- <p class="post-meta">Published on {{ post.date | date: "%B %d, %Y" }}</p>
-            <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-            <a href="{{ post.url | relative_url }}" class="read-more">Read More</a> -->
-          </article>
-        {% endfor %}
-      </div>
+            <div class="sidebar">
+                <h5>Recent Posts</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="#" class="text-white">Blog Post 1</a></li>
+                    <li class="list-group-item"><a href="#" class="text-white">Blog Post 2</a></li>
+                    <li class="list-group-item"><a href="#" class="text-white">Blog Post 3</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content (Blog Posts) -->
+        <div class="col-lg-9">
+            <div class="row" id="blogPosts">
+
+              {% for post in site.posts %}
+                <!-- Blog Post Card 1 -->
+                <div class="col-md-6 post-card">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/500x250" class="card-img-top" alt="Post 1">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ post.title }}</h5>
+                            <p class="card-text">{{ post.description }}.</p>
+                            <a href="{{ post.url | relative_url }}" class="btn btn-light">Read More</a>
+                            <p class="post-meta">Published on {{ post.date | date: "%B %d, %Y" }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+
+            <!-- Pagination -->
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
-  </main>
+</div>
 
