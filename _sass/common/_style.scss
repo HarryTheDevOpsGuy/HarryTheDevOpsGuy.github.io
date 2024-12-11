@@ -43,6 +43,13 @@ h1, h2, h3 {
   .success-msg { color: green; display: none; }
   .font-size-control { width: 100%; }
 
+  .card {
+    --bs-card-bg : #1f1f1f;
+    --bs-card-title-color: #1abc9c;
+    --bs-card-subtitle-color: #e0e0e0;
+    --bs-card-color: #e0e0e0;
+  }
+
 
   * {
     margin: 0;
