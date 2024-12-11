@@ -4,167 +4,35 @@ title: Blog
 permalink: /blog/
 ---
 
-
-<style>
-  body {
-      background-color: #121212;
-      color: #f1f1f1;
-      font-family: 'Arial', sans-serif;
-  }
-
-  .hero-section {
-      background: #1c1c1c;
-      padding: 80px 0;
-      text-align: center;
-      color: #fff;
-  }
-
-  .card-img-top {
-      height: 250px;
-      object-fit: cover;
-  }
-
-  .post-card {
-      margin-bottom: 30px;
-  }
-
-  .sidebar {
-      background-color: #1a1a1a;
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 30px;
-  }
-
-  .sidebar h5 {
-      color: #fff;
-  }
-
-  .sidebar .list-group-item {
-      background-color: #333;
-      color: #fff;
-      border: none;
-  }
-
-  .sidebar .list-group-item:hover {
-      background-color: #444;
-  }
-
-  .footer {
-      background: #181818;
-      color: #f1f1f1;
-      padding: 20px 0;
-  }
-
-  .footer a {
-      color: #f1f1f1;
-  }
-
-  .navbar, .pagination {
-      background-color: #1a1a1a;
-  }
-
-  .navbar-nav .nav-link, .page-link {
-      color: #f1f1f1;
-  }
-
-  .navbar-nav .nav-link:hover, .page-link:hover {
-      color: #ddd;
-  }
-
-  .card-body {
-      background-color: #242424;
-  }
-
-  .card {
-      background-color: #2c2c2c;
-      border: none;
-      margin-bottom: 20px;
-  }
-
-  .form-control {
-      background-color: #333;
-      color: #fff;
-      border: none;
-  }
-
-  .form-control:focus {
-      border: 2px solid #f1f1f1;
-  }
-
-  .pagination .page-item.active .page-link {
-      background-color: #f1f1f1;
-      color: #121212;
-      border-color: #f1f1f1;
-  }
-
-  .search-bar {
-      width: 100%;
-      max-width: 500px;
-      margin: 20px auto;
-      padding: 10px;
-      background-color: #333;
-      color: #fff;
-      border: none;
-  }
-</style>
-
-  <!-- Blog Posts and Sidebar Section -->
-  <div class="container my-5">
-    <div class="row">
-        <!-- Sidebar Section -->
-        <div class="col-lg-3">
-            <div class="sidebar">
-                <h5>Categories</h5>
-                <ul class="list-group">
-                    <li class="list-group-item"><a href="#" class="text-white">Technology</a></li>
-                    <li class="list-group-item"><a href="#" class="text-white">Health</a></li>
-                    <li class="list-group-item"><a href="#" class="text-white">Travel</a></li>
-                    <li class="list-group-item"><a href="#" class="text-white">Lifestyle</a></li>
-                </ul>
-            </div>
-
-            <div class="sidebar">
-                <h5>Recent Posts</h5>
-                <ul class="list-group">
-                    <li class="list-group-item"><a href="#" class="text-white">Blog Post 1</a></li>
-                    <li class="list-group-item"><a href="#" class="text-white">Blog Post 2</a></li>
-                    <li class="list-group-item"><a href="#" class="text-white">Blog Post 3</a></li>
-                </ul>
-            </div>
+<section class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-4">
+          <h2 class="section-title">My Experience</h2>
+          <p class="lead">Here are some of the experiences I have gained throughout my career.</p>
         </div>
-
-        <!-- Main Content (Blog Posts) -->
-        <div class="col-lg-9">
-            <div class="row" id="blogPosts">
-
-              {% for post in site.posts %}
-                <!-- Blog Post Card 1 -->
-                <div class="col-md-6 post-card">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/500x250" class="card-img-top" alt="Post 1">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ post.title }}</h5>
-                            <p class="card-text">{{ post.description }}.</p>
-                            <a href="{{ post.url | relative_url }}" class="btn btn-light">Read More</a>
-                            <p class="post-meta">Published on {{ post.date | date: "%B %d, %Y" }}</p>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-
+      </div>
+      <div class="row">
+        <!-- Experience Card 1 -->
+        {% for post in site.posts %}
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card ">
+            <div class="card-body">
+              <h5 class="card-title">{{ post.title }}</h5>
+              <h6 class="card-subtitle mb-2">Paytm</h6>
+              <p class="card-text">{{ post.description }}</p>
+              <a href="{{ post.url | relative_url }}" class="btn btn-light">Read More</a>
+              <ul class="list-inline">
+                <li class="list-inline-item"><strong>Published on:</strong> {{ post.date | date: "%B %d, %Y" }}</li>
+                <li class="list-inline-item"><strong>Location:</strong> Noida</li>
+              </ul>
             </div>
-
-            <!-- Pagination -->
-            <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                </ul>
-            </nav>
+          </div>
         </div>
+        {% endfor %}
+        
+
+      </div>
     </div>
-</div>
+  </section>
 
