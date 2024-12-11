@@ -23,13 +23,13 @@ permalink: /blog/
               <h5 class="card-title">{{ post.title }}</h5>
               <h6 class="card-subtitle mb-2">Paytm</h6>
               <p class="card-text">{{ post.description }}</p>
-              <div class="contact-links">
-                <a href="{{ post.url | relative_url }}" class="contact-link">Read More</a>
-               </div>
               <ul class="list-inline">
                 <li class="list-inline-item"><strong>Published on:</strong> {{ post.date | date: "%B %d, %Y" }}</li>
                 <li class="list-inline-item"><strong>Location:</strong> Noida</li>
               </ul>
+              <div class="contact-links">
+                <a href="{{ post.url | relative_url }}" class="contact-link">Read More</a>
+               </div>
             </div>
           </div>
         </div>
