@@ -3,6 +3,21 @@ layout: base
 title: "Blog"
 ---
 
+
+
+<p>
+  Categories: 
+  {% for category in page.categories %}
+    <a href="/categories/{{ category | slugify }}/">{{ category }}</a>{% if forloop.last == false %}, {% endif %}
+  {% endfor %}
+</p>
+<p>
+  Tags: 
+  {% for tag in page.tags %}
+    <a href="/tags/{{ tag | slugify }}/">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}
+  {% endfor %}
+</p>
+
   <!-- About Section --> 
   <section id="blog" class="blog-main printable-area my-5">
     <h2 class="blog-title">{{ page.title }}</h2>

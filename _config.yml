@@ -4,6 +4,19 @@ url: "https://harrythedevopsguy.github.io"
 baseurl: "/"
 author: Harry
 
+
+
+
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: blog
+      tags: []
+      categories: []
+
 plugins:
   - jekyll-paginate
 
