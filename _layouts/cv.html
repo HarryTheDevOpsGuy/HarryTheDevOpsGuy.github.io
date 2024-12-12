@@ -8,7 +8,7 @@ title: "CV - Resume Builder"
     <div id="resumeCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
 
-            {% for post in site.posts %}
+            {% for post in site.tags['cv'] %}
             <div class="carousel-item {% if forloop.first %}active{% endif %}">
                 <div class="resume-info text-center">
                     <h4>{{ post.title }}</h4>

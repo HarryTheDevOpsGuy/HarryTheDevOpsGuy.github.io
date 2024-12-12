@@ -4,6 +4,7 @@ title: Hari-SrDevOpsLead-11yrs-2024-v3
 description: "A Stylish Resume for DevOps"
 permalink: /resume/
 contenteditable: false
+tag: cv
 ---
 
 <div class="row" markdown="1">
