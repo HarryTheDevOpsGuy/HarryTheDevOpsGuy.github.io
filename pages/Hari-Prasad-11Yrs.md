@@ -15,7 +15,7 @@ tag: cv
   </div>
   <div class="col mt-5" style="text-align: right;" markdown="1">
 
-![Hari Prasad](https://harrythedevopsguy.github.io/img/harry/4.jpg){:.border.rounded}{:style="max-height:80px"} 
+![Hari Prasad](/assets/img/hari-profile.jpeg){:.border.rounded}{:style="max-height:80px"} 
 
 
   </div>
