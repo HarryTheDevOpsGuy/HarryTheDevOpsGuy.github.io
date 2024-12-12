@@ -7,30 +7,18 @@ title: "CV - Resume Builder"
     <h2 class="section-title">Resume builder</h2>
     <div id="resumeCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active" data-resumeid="1">
+
+            {% for post in site.posts %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
                 <div class="resume-info text-center">
-                    <h4>DevOps Resume 1</h4>
-                    <p>Experience with Docker, Kubernetes, and Jenkins...</p>
+                    <h4>{{ post.title }}</h4>
+                    <p>{{ post.description | default: "trending resume" }}</p>
                 </div>
                 <div id="resume" class="resume-body rounded p-3">
                     <!-- This will update automatically -->
-                    <h3 id="name" class="text-primary">Harry Smith</h3>
-                    <p id="title">DevOps Engineer | System Administrator</p>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <h5>Technical Skills</h5>
-                            <ul>
-                                <li>AWS, GCP, Azure</li>
-                                <li>CI/CD Pipeline Setup</li>
-                                <li>Linux Administration</li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-6">
-                            <h5>Work Experience</h5>
-                            <p><strong>Senior DevOps Engineer</strong> at DEF Ltd (2020 - Present)</p>
-                            <p><strong>Cloud Engineer</strong> at GHI Tech (2017 - 2020)</p>
-                        </div>
-                    </div>
+                   
+                    {{ post.content | strip_html }}
+
                     <div class="contact-links text-center hide-code">
                         <button class="contact-link select-btn" data-resume="DevOps Resume 1"><i class="fa-solid fa-pen-to-square"></i>Looks Good? Edit Now</button>
                     </div>
@@ -39,6 +27,8 @@ title: "CV - Resume Builder"
                     <!-- end -->
                 </div>
             </div>
+            {% endfor %}
+
 
             <!-- Resume 2 -->
             <div class="carousel-item">
