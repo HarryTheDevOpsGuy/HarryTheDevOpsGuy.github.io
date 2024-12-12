@@ -8,17 +8,17 @@ author: Harry
 
 
 
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: blog
-      tags: []
-      categories: []
+# defaults:
+#   - scope:
+#       path: ""
+#       type: "posts"
+#     values:
+#       layout: blog
+#       tags: []
+#       categories: []
 
-plugins:
-  - jekyll-paginate
+# plugins:
+#   - jekyll-paginate
 
-paginate: 5  # Number of posts per page
-paginate_path: "/page/:num/"  # URL structure for paginated pages
+# paginate: 5  # Number of posts per page
+# paginate_path: "/page/:num/"  # URL structure for paginated pages
