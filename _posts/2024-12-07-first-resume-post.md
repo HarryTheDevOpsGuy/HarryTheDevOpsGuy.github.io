@@ -3,8 +3,7 @@ layout: cv-post
 title: "First resume Post"
 description: "This is my first resume"
 date: 2024-12-07
-categories: [ resume ]
-tags: [ cv ]
+
 ---
 
 # Hari Prasad
