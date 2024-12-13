@@ -19,18 +19,7 @@
 //   font-weight: bold;
 // }
 
-/* Header */
-header {
-  background-color: #1f1f1f;
-  padding: 20px 0;
-  text-align: center;
-}
 
-header h1 {
-  color: #1abc9c;
-  font-size: 3rem;
-  font-weight: 600;
-}
 
 .card {
   --bs-card-bg : #1f1f1f;
@@ -82,17 +71,18 @@ a {
   .font-size-control { width: 100%; }
 
 
-  /* Header */
-  header {
-    background-color: #1f1f1f;
-    padding: 1px 0;
-    text-align: center;
-  }
-  header h1 {
-    color: #1abc9c;
-    font-size: 3rem;
-    font-weight: 600;
-  }
+ /* Header */
+header {
+  background-color: #1f1f1f;
+  padding: 20px 0;
+  text-align: center;
+}
+
+header h1 {
+  color: #1abc9c;
+  font-size: 3rem;
+  font-weight: 600;
+}
 
   /* Navigation */
   nav {
