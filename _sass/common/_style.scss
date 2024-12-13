@@ -265,6 +265,84 @@ a {
 }
 
 
+/* About Section */
+.about-content {
+  background-color: #1f1f1f;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.about-text {
+  flex: 1 1 40%;
+  max-width: 800px;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.about-image {
+  flex: 1;
+  max-width: 300px;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Skills */
+.skills {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.skill {
+  background-color: #1f1f1f;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transform */
+  text-align: center;
+  flex: 1 1 200px;
+  max-width: 200px;
+}
+.skill i {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #1abc9c;
+}
+.skill-title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #e0e0e0;
+}
+
+.rating {
+  margin-top: 10px;
+}
+.rating i {
+  font-size: 1.5rem;
+}
+
+.skill:hover {
+  transform: scale(1.1); /* Scale up the element */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
+}
+
+
 /* Developed Tools */
     
 .deployed-solutions {
