@@ -4,42 +4,44 @@ title: "CV - Resume Builder"
 ---
 
 
-<div class="container">
-    <h2 class="section-title">Resume builder</h2>
-    <div id="resumeCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
+<section class="py-5">
+    <div class="container">
+        <h2 class="section-title">Resume builder</h2>
+        <div id="resumeCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
 
-            {% for post in site.tags['cv'] %}
-            <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                <div class="resume-info text-center">
-                    <h4>{{ post.title }}</h4>
-                    <p>{{ post.description | default: "trending resume" }}</p>
-                </div>
-                <div id="resume" class="resume-body rounded p-3">                   
-                    {{ post.content }}
-                    <div class="contact-links text-center hide-code">
-                        <a href="{{ post.url }}" class="contact-link" target="_blank">
-                            <i class="fa-solid fa-pen-to-square"></i> Looks Good? Edit Now
-                          </a>
-                        <!-- <button class="contact-link select-btn" data-resume="DevOps Resume 1"><i class="fa-solid fa-pen-to-square"></i>Looks Good? Edit Now</button> -->
+                {% for post in site.tags['cv'] %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <div class="resume-info text-center">
+                        <h4>{{ post.title }}</h4>
+                        <p>{{ post.description | default: "trending resume" }}</p>
                     </div>
+                    <div id="resume" class="resume-body rounded p-3">                   
+                        {{ post.content }}
+                        <div class="contact-links text-center hide-code">
+                            <a href="{{ post.url }}" class="contact-link" target="_blank">
+                                <i class="fa-solid fa-pen-to-square"></i> Looks Good? Edit Now
+                            </a>
+                            <!-- <button class="contact-link select-btn" data-resume="DevOps Resume 1"><i class="fa-solid fa-pen-to-square"></i>Looks Good? Edit Now</button> -->
+                        </div>
 
+                    </div>
                 </div>
+                {% endfor %}
+
             </div>
-            {% endfor %}
 
+            <button class="carousel-control-prev" type="button" data-bs-target="#resumeCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#resumeCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#resumeCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#resumeCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
-</div>
+</section>
 
 
 
