@@ -82,7 +82,7 @@ tag: cv
     </style>
 
 
-<div class="resume-container">
+<!-- <div class="resume-container"> -->
     <!-- Header Section -->
     <div class="resume-header">
         <h1>John Doe</h1>
@@ -175,4 +175,4 @@ tag: cv
             </div>
         </div>
     </div>
-</div>
+<!-- </div> -->
