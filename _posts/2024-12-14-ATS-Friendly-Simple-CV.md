@@ -6,6 +6,40 @@ date: 2024-12-14
 tag: cv
 ---
 
+<style>
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    margin: 0;
+    padding: 0;
+}
+.resume {
+    max-width: 850px;
+    margin: 20px auto;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+} */
+.section-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #495057;
+    border-bottom: 2px solid #adb5bd;
+    padding-bottom: 5px;
+}
+.print-button {
+    text-align: right;
+}
+@media print {
+    .print-button {
+        display: none;
+    }
+}
+</style>
+
+
 <header class="mb-4">
     <div class="d-flex justify-content-between align-items-center">
         <div>
