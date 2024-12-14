@@ -3,7 +3,7 @@ layout: base
 title: "CV - Resume Builder"
 ---
 
-<style>
+<!-- <style>
   .carousel-item img {
     border-radius: 10px;
     margin: auto;
@@ -38,7 +38,7 @@ title: "CV - Resume Builder"
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-</style>
+</style> -->
 
 
 <!-- Saved Resume Section -->
@@ -97,67 +97,3 @@ title: "CV - Resume Builder"
       {% endif %}
     </div>
   </section>
-
-  <div id="blogCarousel" class="carousel slide" data-bs-ride="carousel">
-    <!-- Carousel Indicators -->
-    <div class="carousel-indicators">
-        {% for post in site.posts %}
-        <button type="button" data-bs-target="#blogCarousel" data-bs-slide-to="{{ forloop.index0 }}"
-                {% if forloop.first %}class="active"{% endif %} aria-current="{% if forloop.first %}true{% endif %}"
-                aria-label="Slide {{ forloop.index }}"></button>
-        {% endfor %}
-    </div>
-
-    <!-- Carousel Items -->
-    <div class="carousel-inner">
-        {% for post in site.posts %}
-        <div class="carousel-item {% if forloop.first %}active{% endif %}">
-            <div class="row">
-                <div class="col mx-auto text-center">
-                    <!-- Post Thumbnail -->
-                    <img src="{{ post.featured_image | default: '/cv/assets/img/slider6.jpg' }}" 
-                         class="d-block w-100" alt="{{ post.title }}" style="max-height: 600px; object-fit: cover;">
-                    <!-- Post Title -->
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5><a href="{{ post.url }}" class="text-white text-decoration-none">{{ post.title }}</a></h5>
-                        <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-
-    <!-- Carousel Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#blogCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#blogCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
-
-
-
-
-<!-- Top 5 popular posts  -->
-
-<div class="popular-posts">
-  <h3>Top 5 Popular Posts</h3>
-  <ul class="list-unstyled">
-      {% assign popular_posts = site.posts | sort: "views" | reverse %}
-      {% for post in popular_posts limit: 5 %}
-      <li class="mb-3">
-          <a href="{{ post.url }}" class="d-flex align-items-center text-decoration-none">
-              <img src="{{ post.featured_image | default: '/cv/assets/img/slider2.jpg' }}" alt="{{ post.title }}" class="img-thumbnail me-3" style="width: 80px; height: 80px; object-fit: cover;">
-              <div>
-                  <h5 class="mb-1">{{ post.title }}</h5>
-                  <small>{{ post.date | date: "%B %d, %Y" }}</small>
-              </div>
-          </a>
-      </li>
-      {% endfor %}
-  </ul>
-</div>
