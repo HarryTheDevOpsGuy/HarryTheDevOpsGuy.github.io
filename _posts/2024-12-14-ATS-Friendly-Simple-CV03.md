@@ -6,80 +6,80 @@ date: 2024-12-14
 tag: cv
 ---
 <style>
-    .resume-container {
-        max-width: 960px;
-        margin: 2rem auto;
-        background: #fff;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        overflow: hidden;
-    }
+.resume-container {
+    max-width: 960px;
+    margin: 2rem auto;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
 
-    .resume-header {
-        background-color: #3f51b5;
-        color: #fff;
-        text-align: center;
-        padding: 2rem 1rem;
-    }
+.resume-header {
+    background-color: #3f51b5;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+}
 
-    .resume-header h1 {
-        font-size: 2.5rem;
-        margin: 0;
-    }
+.resume-header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
 
-    .resume-header p {
-        font-size: 1rem;
-        margin: 0.5rem 0;
-    }
+.resume-header p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
 
-    .resume-content {
-        padding: 2rem;
-    }
+.resume-content {
+    padding: 2rem;
+}
 
-    .section-title {
-        font-size: 1.25rem;
-        font-weight: bold;
-        color: #3f51b5;
-        margin-bottom: 1rem;
-        border-bottom: 2px solid #e0e0e0;
-        padding-bottom: 0.5rem;
-    }
+.section-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #3f51b5;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+}
 
-    .two-column {
-        display: flex;
-        gap: 1.5rem;
-    }
+.two-column {
+    display: flex;
+    gap: 1.5rem;
+}
 
-    .left-column {
-        flex: 2;
-    }
+.left-column {
+    flex: 2;
+}
 
-    .right-column {
-        flex: 1;
-        background: #f9f9fb;
-        padding: 1.5rem;
-        border-radius: 8px;
-    }
+.right-column {
+    flex: 1;
+    background: #f9f9fb;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
 
-    .job-title {
-        font-weight: bold;
-        color: #3f51b5;
-    }
+.job-title {
+    font-weight: bold;
+    color: #3f51b5;
+}
 
-    .skills-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
 
-    .skills-list span {
-        background: #e0e7ff;
-        color: #3f51b5;
-        padding: 0.3rem 0.6rem;
-        border-radius: 4px;
-        font-size: 0.9rem;
-    }
-    </style>
+.skills-list span {
+    background: #e0e7ff;
+    color: #3f51b5;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+</style>
 
 
 <!-- <div class="resume-container"> -->
