@@ -63,7 +63,7 @@ tag: cv
 <!-- Skills Section -->
 <section>
     <div class="section-title">Skills</div>
-    <div class="row">
+    <div class="row px-4">
         <ul class="col-md-6">
             <li>CI/CD Tools: Jenkins, GitHub Actions</li>
             <li>Containerization: Docker, Kubernetes</li>
