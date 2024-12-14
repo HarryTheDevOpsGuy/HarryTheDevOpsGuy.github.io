@@ -70,43 +70,7 @@ a {
 .success-msg { color: green; display: none; }
 .font-size-control { width: 100%; }
 
- /* Header */
- .main-header {
-  background-color: #1f1f1f;
-  padding: 20px 0;
-  text-align: center;
-}
-
-.main-header h1 {
-  color: #1abc9c;
-  font-size: 3rem;
-  font-weight: 600;
-}
-
-  /* Navigation */
-  nav {
-    background-color: #222;
-    padding: 15px 0;
-  }
-  nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-  }
-  nav ul li {
-    margin: 0 20px;
-  }
-  nav ul li a {
-    color: #e0e0e0;
-    font-size: 1.2rem;
-    font-weight: 600;
-    padding: 10px 20px;
-  }
-  nav ul li a:hover {
-    background-color: #1abc9c;
-    color: #fff;
-    border-radius: 5px;
-  }
+ 
 
 /* blog */
 
@@ -161,13 +125,8 @@ section {
   margin-bottom: 40px;
 }
 
-.about-title {
-  color: #1abc9c;
-}
-
 
 /* Contact */ 
-
 .custom-btn {
   background-color: #121212;
   color: #1abc9c;
@@ -179,8 +138,6 @@ section {
   border: 2px solid #fff;
   transform: scale(1.1);
 }
-
-
 
 .contact {
   padding: 50px 20px;
@@ -284,185 +241,6 @@ section {
   border: 4px solid #1abc9c;
   transform: scale(1.1);
 }
-
-
- /* Carousel Styles */
- .carousel {
-  position: relative;
-  overflow: hidden;
-}
-.carousel .carousel-inner img {
-  // height: 600px;
-  max-height: 600px;
-  object-fit: cover;
-  object-position: center;
-}
-.carousel-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
-  z-index: 1;
-}
-.carousel-caption {
-  z-index: 2;
-  bottom: 40px;
-}
-.carousel-caption h5 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  animation: fadeIn 1s ease-in-out;
-}
-.carousel-caption p {
-  font-size: 1.2rem;
-  margin-top: 10px;
-  animation: fadeIn 1.2s ease-in-out;
-}
-
-/* Carousel Navigation */
-.carousel-control-prev,
-.carousel-control-next {
-  z-index: 3;
-}
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  padding: 10px;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-
-/* About Section */
-.about-content {
-  background-color: #1f1f1f;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-}
-
-.about-text {
-  flex: 1 1 40%;
-  max-width: 800px;
-  font-size: 1.2rem;
-  line-height: 1.8;
-}
-
-.about-image {
-  flex: 1;
-  max-width: 300px;
-  text-align: center;
-}
-
-.about-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.about-image img:hover {
-  transform: scale(1.05); /* Slight zoom on hover */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
-}
-
-/* Skills */
-.skills {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.skill {
-  background-color: #1f1f1f;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transform */
-  text-align: center;
-  flex: 1 1 200px;
-  max-width: 200px;
-}
-.skill i {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  color: #1abc9c;
-}
-.skill-title {
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: #e0e0e0;
-}
-
-.rating {
-  margin-top: 10px;
-}
-.rating i {
-  font-size: 1.5rem;
-}
-
-.skill:hover {
-  transform: scale(1.1); /* Scale up the element */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
-}
-
-
-/* Deployed Solutions */
-
-.deployed-solutions {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.deployed-solution {
-  background-color: #1f1f1f;
-  padding: 5px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  flex-grow: 1;
-  max-width: 250px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transform */
-}
-
-.deployed-solution i {
-  font-size: 3rem;
-  color: #1abc9c;
-}
-
-.deployed-solution h4 {
-  margin-top: 10px;
-  font-size: 1.3rem;
-  color: #e0e0e0;
-  font-weight: 500;
-}
-
-.deployed-solution p {
-  color: #e0e0e0;
-}
-
-.deployed-solution:hover {
-  transform: scale(1.1); /* Scale up the element */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
-}
-
 
 
 .form-label {
