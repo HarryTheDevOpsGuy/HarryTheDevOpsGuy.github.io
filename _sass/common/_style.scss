@@ -167,6 +167,21 @@ section {
 
 
 /* Contact */ 
+
+.custom-btn {
+  background-color: #fff; 
+  color: #1abc9c;
+}
+
+.custom-btn:hover {
+  background-color: #1abc9c;
+  color: #fff;
+  border: 2px solid #fff;
+  transform: scale(1.1);
+}
+
+
+
 .contact {
   padding: 50px 20px;
   text-align: center;
