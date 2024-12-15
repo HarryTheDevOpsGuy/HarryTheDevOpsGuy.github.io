@@ -24,7 +24,7 @@ tag: cv
       border-bottom: 2px solid #007bff;
       display: inline-block;
     }
-    .skills .badge {
+    .cvskills .badge {
       margin-right: 5px;
       margin-bottom: 5px;
     }
@@ -60,7 +60,7 @@ tag: cv
 
     <section class="resume-section">
       <h2 class="section-title">Skills</h2>
-      <div class="skills">
+      <div class="cvskills">
         <span class="badge bg-primary">AWS</span>
         <span class="badge bg-secondary">Docker</span>
         <span class="badge bg-success">Kubernetes</span>
