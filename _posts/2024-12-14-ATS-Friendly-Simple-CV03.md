@@ -6,18 +6,10 @@ date: 2024-12-14
 tag: cv
 ---
 <style>
-.resume-container {
-    max-width: 960px;
-    margin: 2rem auto;
-    background: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-}
 
 .resume-header {
-    background-color: #3f51b5;
-    color: #fff;
+    /* background-color: #3f51b5;
+    color: #fff; */
     text-align: center;
     padding: 2rem 1rem;
 }
@@ -81,8 +73,6 @@ tag: cv
 }
 </style>
 
-
-<!-- <div class="resume-container"> -->
 <!-- Header Section -->
 <div class="resume-header">
     <h1>John Doe</h1>
@@ -175,4 +165,3 @@ tag: cv
         </div>
     </div>
 </div>
-<!-- </div> -->
