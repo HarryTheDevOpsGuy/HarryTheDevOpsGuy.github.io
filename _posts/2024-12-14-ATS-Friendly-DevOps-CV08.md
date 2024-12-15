@@ -41,14 +41,14 @@ tag: cv
       margin-right: 10px;
       color: #007bff;
     }
-    .skills ul {
+    .cvskills ul {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       list-style: none;
       padding: 0;
     }
-    .skills li {
+    .cvskills li {
       background-color: #007bff;
       color: white;
       padding: 5px 10px;
@@ -111,7 +111,7 @@ tag: cv
 </section>
 
 <!-- Skills -->
-<section class="skills">
+<section class="cvskills">
     <h2 class="section-title">Skills</h2>
     <ul>
     <li>AWS EC2, S3, RDS</li>
