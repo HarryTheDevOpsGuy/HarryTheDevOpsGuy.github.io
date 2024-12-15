@@ -25,7 +25,7 @@ tag: cv
 }
 
 .resume-content {
-    padding: 0.3rem;
+    padding: 0rem;
 }
 
 .section-title {
