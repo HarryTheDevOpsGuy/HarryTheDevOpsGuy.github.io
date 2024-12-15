@@ -33,7 +33,7 @@ tag: cv
     }
     .contact-info a {
       text-decoration: none;
-      color: #007bff;
+      color: white;
     }
     .contact-info a:hover {
       text-decoration: underline;
