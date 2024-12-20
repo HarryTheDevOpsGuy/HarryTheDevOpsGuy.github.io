@@ -37,7 +37,6 @@ function toggleTheme() {
         document.documentElement.style.setProperty('--sidebar-background-color', '#f8f9fa');
         document.documentElement.style.setProperty('--main-content-background-color', '#f8f9fa');
         document.documentElement.style.setProperty('--badge-text-color', '#ffffff');
-        document.documentElement.style.setProperty('--navbar-background-color', '#5b5b5b');
         document.documentElement.style.setProperty('--contact-section-background-color', '#5b5b5b');
     } else {
         document.documentElement.style.setProperty('--background-color', '#121212');
@@ -45,7 +44,6 @@ function toggleTheme() {
         document.documentElement.style.setProperty('--sidebar-background-color', '#1e1e1e');
         document.documentElement.style.setProperty('--main-content-background-color', '#1e1e1e');
         document.documentElement.style.setProperty('--badge-text-color', '#121212');
-        document.documentElement.style.setProperty('--navbar-background-color', '#1e1e1e');
         document.documentElement.style.setProperty('--contact-section-background-color', '#1e1e1e');
     }
 }
