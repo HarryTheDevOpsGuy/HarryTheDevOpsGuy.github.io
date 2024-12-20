@@ -1,6 +1,6 @@
 ---
 layout: cv-post
-title: "ATS-Friendly-For-Beginners-CV03"
+title: "ATS-Friendly-For-Beginners-CV01"
 description: "Most Popular ATS Friendly Simple Resume"
 date: 2024-12-20
 tag: cv
