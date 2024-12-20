@@ -216,7 +216,9 @@ body {
     transition: color 0.3s;
 }
 .footer a:hover {
-    color: var(--badge-text-color, #121212);
+    // color: var(--badge-text-color, #121212);
+    color: var(--text-color, #e0e0e0);
+    background-color: var(--theme-color, #bb86fc);
 }
 
 
