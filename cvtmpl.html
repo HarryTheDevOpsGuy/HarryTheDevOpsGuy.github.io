@@ -178,6 +178,18 @@
             const randomColor = getRandomColor();
             changeThemeColor(randomColor);
         }
+        
+        function changeFontStyle() {
+            const fonts = ['Roboto', 'Arial', 'Georgia', 'Times New Roman', 'Courier New', 'Verdana'];
+            const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
+            document.body.style.fontFamily = randomFont;
+        }
+
+        function changeFontSize() {
+            const sizes = ['12px', '14px', '16px', '18px', '20px'];
+            const randomSize = sizes[Math.floor(Math.random() * sizes.length)];
+            document.body.style.fontSize = randomSize;
+        }
     </script>
 </head>
 <body>
@@ -208,6 +220,24 @@
                 <button onclick="alert('Delete functionality not implemented')"><i class="fas fa-trash"></i></button>
             </div>
         </div>
+        
+        <div class="btn-group">
+            <button class="btn font-style-toggle-btn">
+                <i class="fas fa-font"></i>
+            </button>
+            <div class="dropdown-menu font-style-selector">
+                <button onclick="changeFontStyle()"><i class="fas fa-random"></i></button>
+            </div>
+        </div>
+        <div class="btn-group">
+            <button class="btn font-size-toggle-btn">
+                <i class="fas fa-text-height"></i>
+            </button>
+            <div class="dropdown-menu font-size-selector">
+                <button onclick="changeFontSize()"><i class="fas fa-random"></i></button>
+            </div>
+        </div>
+        
     </div>
     <div class="header">
         <div class="d-flex align-items-center">
@@ -401,10 +431,6 @@
                     </div>
                   </div>
             </div>
-
-
+          </div>
         </div>
-    </div>
-</body>
-</html>
                   
