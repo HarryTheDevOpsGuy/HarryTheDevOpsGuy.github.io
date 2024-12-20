@@ -45,8 +45,3 @@ function toggleTheme() {
         document.documentElement.style.setProperty('--badge-text-color', '#121212');
     }
 }
-
-function toggleNavbar() {
-    const navbarCollapse = document.getElementById('navbarNav');
-    navbarCollapse.classList.toggle('show');
-}
