@@ -160,7 +160,7 @@ tag: cv
     <div class="row">
         <div class="col-md-4">
             <div class="sidebar">
-                <div class="skills">
+                <div class="myskills">
                     <h3 class="section-title"><i class="fas fa-tools icon"></i> Technical Skills</h3>
                     <div class="skill-item">
                         <span class="badge">AWS</span>
