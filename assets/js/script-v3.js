@@ -37,6 +37,7 @@ function toggleTheme() {
         document.documentElement.style.setProperty('--sidebar-background-color', '#f8f9fa');
         document.documentElement.style.setProperty('--main-content-background-color', '#f8f9fa');
         document.documentElement.style.setProperty('--badge-text-color', '#ffffff');
+        document.documentElement.style.setProperty('--navbar-background-color', '#ffffff');
     } else {
         document.documentElement.style.setProperty('--background-color', '#121212');
         document.documentElement.style.setProperty('--text-color', '#e0e0e0');
