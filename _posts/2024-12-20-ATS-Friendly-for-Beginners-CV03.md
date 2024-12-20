@@ -7,12 +7,12 @@ tag: cv
 ---
 
 <style>
-      body {
+      /* body {
           font-family: 'Roboto', sans-serif;
           background-color: #f8f9fa;
           color: #333333;
           font-size: 14px;
-      }
+      } */
       .header {
           padding: 20px;
           display: flex;
@@ -99,7 +99,7 @@ tag: cv
       .theme-selector {
           margin: 20px 0;
       }
-      .rating {
+      .skill-rating {
           color: var(--theme-color, #007bff);
       }
       .skill-item {
@@ -164,7 +164,7 @@ tag: cv
                     <h3 class="section-title"><i class="fas fa-tools icon"></i> Technical Skills</h3>
                     <div class="skill-item">
                         <span class="badge">AWS</span>
-                        <span class="rating">
+                        <span class="skill-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -174,7 +174,7 @@ tag: cv
                     </div>
                     <div class="skill-item">
                         <span class="badge">Docker</span>
-                        <span class="rating">
+                        <span class="skill-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -184,7 +184,7 @@ tag: cv
                     </div>
                     <div class="skill-item">
                         <span class="badge">Kubernetes</span>
-                        <span class="rating">
+                        <span class="skill-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -194,7 +194,7 @@ tag: cv
                     </div>
                     <div class="skill-item">
                         <span class="badge">Terraform</span>
-                        <span class="rating">
+                        <span class="skill-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -204,7 +204,7 @@ tag: cv
                     </div>
                     <div class="skill-item">
                         <span class="badge">Jenkins</span>
-                        <span class="rating">
+                        <span class="skill-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -214,7 +214,7 @@ tag: cv
                     </div>
                     <div class="skill-item">
                         <span class="badge">Ansible</span>
-                        <span class="rating">
+                        <span class="skill-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -224,7 +224,7 @@ tag: cv
                     </div>
                     <div class="skill-item">
                         <span class="badge">Linux</span>
-                        <span class="rating">
+                        <span class="skill-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -234,7 +234,7 @@ tag: cv
                     </div>
                     <div class="skill-item">
                         <span class="badge">Python</span>
-                        <span class="rating">
+                        <span class="skill-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
