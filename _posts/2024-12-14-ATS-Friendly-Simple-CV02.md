@@ -36,6 +36,20 @@ tag: cv
     .print-friendly {
         page-break-after: always;
     }
+
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .skills-list span {
+        background: var(--theme-color, #bb86fc);
+        color: #fff;
+        padding: 0.3rem 0.6rem;
+        border-radius: 4px;
+        font-size: 0.9rem;
+    }
 </style>
 
 <!-- Header Section -->
@@ -83,16 +97,17 @@ tag: cv
 <!-- Skills -->
 <div class="resume-section">
     <h2 class="section-title">Skills</h2>
-    <ul class="list-inline">
-        <li class="list-inline-item btn btn-outline-danger">AWS</li>
-        <li class="list-inline-item">Docker</li>
-        <li class="list-inline-item">Kubernetes</li>
-        <li class="list-inline-item">Terraform</li>
-        <li class="list-inline-item">Jenkins</li>
-        <li class="list-inline-item">Ansible</li>
-        <li class="list-inline-item">Prometheus</li>
-        <li class="list-inline-item">Grafana</li>
-    </ul>
+    <div class="skills-list">
+        <span>AWS</span>
+        <span>Docker</span>
+        <span>Kubernetes</span>
+        <span>Terraform</span>
+        <span>Jenkins</span>
+        <span>Ansible</span>
+        <span>Prometheus</span>
+        <span>Grafana</span>
+        <span>Linux</span>
+    </div>
 </div>
 
 <!-- Education -->
