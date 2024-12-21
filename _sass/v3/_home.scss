@@ -18,39 +18,10 @@
 //   color: var(--theme-color, #bb86fc);
 // }
  
-.default-content {
-  background-color: var(--main-content-background-color, #1e1e1e);
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.card {
-  // --bs-card-bg : #1f1f1f;
-  --bs-card-bg: var(--main-content-background-color, #1e1e1e);
-  --bs-card-title-color: var(--theme-color, #bb86fc);
-  --bs-card-subtitle-color: var(--text-color, #e0e0e0);
-  --bs-card-color: var(--text-color, #e0e0e0);
-  --bs-card-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
 
 /* Sections */
 .home section {
   padding: 40px 0;
-}
-
-.section-default-title {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: var(--theme-color, #bb86fc);
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.default-title {
-  color: var(--theme-color, #bb86fc);
-  font-weight: 600;
 }
 
 .about-title {
@@ -115,42 +86,42 @@
   }
 }
 
-/* About Section */
-.about-content {
-  background-color: #1f1f1f;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-}
+// /* About Section */
+// .about-content {
+//   background-color: #1f1f1f;
+//   display: flex;
+//   flex-wrap: wrap;
+//   align-items: center;
+//   justify-content: center;
+//   gap: 20px;
+//   padding: 20px;
+// }
 
-.about-text {
-  flex: 1 1 40%;
-  max-width: 800px;
-  font-size: 1.2rem;
-  line-height: 1.8;
-}
+// .about-text {
+//   flex: 1 1 40%;
+//   max-width: 800px;
+//   font-size: 1.2rem;
+//   line-height: 1.8;
+// }
 
-.about-image {
-  flex: 1;
-  max-width: 300px;
-  text-align: center;
-}
+// .about-image {
+//   flex: 1;
+//   max-width: 300px;
+//   text-align: center;
+// }
 
-.about-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+// .about-image img {
+//   width: 100%;
+//   height: auto;
+//   border-radius: 20px;
+//   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+//   transition: transform 0.3s ease, box-shadow 0.3s ease;
+// }
 
-.about-image img:hover {
-  transform: scale(1.05); /* Slight zoom on hover */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
-}
+// .about-image img:hover {
+//   transform: scale(1.05); /* Slight zoom on hover */
+//   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+// }
 
 /* Skills */
 .home-skills {
