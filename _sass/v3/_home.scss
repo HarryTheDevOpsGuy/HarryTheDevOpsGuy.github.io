@@ -230,13 +230,13 @@
 }
 
 /* Skills */
-.skills {
+.home-skills {
   display: flex;
   // justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
 }
-.skill {
+.home-skill {
   background-color: #1f1f1f;
   padding: 20px;
   border-radius: 8px;
@@ -246,25 +246,25 @@
   flex: 1 1 200px;
   max-width: 200px;
 }
-.skill i {
+.home-skill i {
   font-size: 3rem;
   margin-bottom: 20px;
   color: var(--theme-color, #bb86fc);
 }
-.skill-title {
+.home-skill-title {
   font-size: 1.3rem;
   font-weight: 500;
   color: #e0e0e0;
 }
 
-.rating {
+.home-skill .rating {
   margin-top: 10px;
 }
-.rating i {
+.home-skill .rating i {
   font-size: 1.5rem;
 }
 
-.skill:hover {
+.home-skill:hover {
   transform: scale(1.1); /* Scale up the element */
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
 }
