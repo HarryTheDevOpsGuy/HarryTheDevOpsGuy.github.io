@@ -59,7 +59,6 @@
   margin-bottom: 5px;
 }
 
-
 .content {
   padding: 20px;
 }
@@ -104,6 +103,12 @@
 
 
 
+.card {
+  --bs-card-bg : #1f1f1f;
+  --bs-card-title-color: #1abc9c;
+  --bs-card-subtitle-color: #e0e0e0;
+  --bs-card-color: #e0e0e0;
+}
 
 
 /* Sections */
