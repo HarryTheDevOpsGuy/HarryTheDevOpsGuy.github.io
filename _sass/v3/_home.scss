@@ -54,6 +54,7 @@ h1, h2, h3, h4 {
 //   margin-bottom: 10px;
 //   color: var(--theme-color, #bb86fc);
 // }
+
 .contact-info i {
   margin-right: 10px;
 }
@@ -231,7 +232,7 @@ h1, h2, h3, h4 {
 /* Skills */
 .skills {
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
 }
