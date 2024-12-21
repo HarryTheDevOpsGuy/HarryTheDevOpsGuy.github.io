@@ -1,23 +1,7 @@
-// document.getElementById("header").innerHTML = document.querySelector("header").innerHTML;
-// document.getElementById("footer").innerHTML = document.querySelector("footer").innerHTML;
-
-
-
-
 $(document).ready(function() {
-
-    // Function to get the value of 'id' from the URL
-    // function getParams(params) {
-    //     const urlParams = new URLSearchParams(window.location.search);
-    //     return urlParams.get(params);
-    // }
-  
-
-
     function showMessage(message) { 
         $('#successMessage').text(message).fadeIn().delay(2000).fadeOut(); 
     }
-
 
     // Create new resume with unique ID
     $('#newResume').click(function() {
@@ -102,13 +86,8 @@ $(document).ready(function() {
             if (resume.url === window.location.href && resume.default ) {
                 $('#resume').attr('data-id', resume.id).html(resume.content);
             }
-
         }); 
-
     }
-    
-
-
 
     // Edit resume
     window.editResume = function(index) {
@@ -123,12 +102,6 @@ $(document).ready(function() {
             highlightActiveResume();
         }    
     };
-
-      // load resume for edit by query params
-        // const resumeid = getParams('id');
-        // if (resumeid) { 
-        //     editResume(resumeid); 
-        // }
 
     // Delete resume
     window.deleteResume = function(index) {
