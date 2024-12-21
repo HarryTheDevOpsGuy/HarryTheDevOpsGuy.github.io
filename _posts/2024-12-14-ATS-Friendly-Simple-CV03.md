@@ -43,7 +43,7 @@ tag: cv
 
 .left-column {
     flex: 2;
-    background: var(--main-content-background-color, #1e1e1e);
+    /* background: var(--main-content-background-color, #1e1e1e); */
 }
 
 .right-column {
