@@ -8,8 +8,6 @@ tag: cv
 <style>
 
 .resume-header {
-    /* background-color: #3f51b5;
-    color: #fff; */
     text-align: center;
     padding: 2rem 1rem;
 }
@@ -31,7 +29,8 @@ tag: cv
 .section-title {
     font-size: 1.25rem;
     font-weight: bold;
-    color: #3f51b5;
+    /* color: #3f51b5; */
+    color: var(--theme-color, #bb86fc);
     margin-bottom: 1rem;
     border-bottom: 2px solid #e0e0e0;
     padding-bottom: 0.5rem;
@@ -48,14 +47,14 @@ tag: cv
 
 .right-column {
     flex: 1;
-    background: #f9f9fb;
+    background: var(--main-content-background-color, #1e1e1e);
     padding: 1.5rem;
     border-radius: 8px;
 }
 
 .job-title {
     font-weight: bold;
-    color: #3f51b5;
+    color: var(--theme-color, #bb86fc);
 }
 
 .skills-list {
@@ -65,8 +64,8 @@ tag: cv
 }
 
 .skills-list span {
-    background: #e0e7ff;
-    color: #3f51b5;
+    background: var(--theme-color, #bb86fc);
+    color: var(--text-color, #e0e0e0);
     padding: 0.3rem 0.6rem;
     border-radius: 4px;
     font-size: 0.9rem;
