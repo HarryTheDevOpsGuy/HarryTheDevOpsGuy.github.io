@@ -47,7 +47,7 @@ tag: cv
 }
 
 .content {
-  padding: 15px 0px;
+  padding: 15px 10px;
 }
 
 .section-title {
