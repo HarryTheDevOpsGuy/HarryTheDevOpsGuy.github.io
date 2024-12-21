@@ -53,8 +53,11 @@ title: "CV - Resume Builder"
 
   <!-- About Section -->
   <section id="blog" class="blog-main mt-5">
-    <h2 class="blog-title">{{ page.title }}</h2>
-    <p class="blog-description">{{ page.description }}</p>
+    <div class="container text-center">
+      <h2 class="default-title">{{ page.title }}</h2>
+      <p>{{ page.description }}</p>
+    </div>
+    
     <div class="container">
       <div class="blog-content">
         <div id="resume" contenteditable="{{ page.contenteditable | default: 'true' }}" class="resume-body printable-area rounded mx-auto">
