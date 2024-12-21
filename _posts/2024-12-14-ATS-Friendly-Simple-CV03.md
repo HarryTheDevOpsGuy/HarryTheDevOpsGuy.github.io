@@ -65,7 +65,7 @@ tag: cv
 
 .skills-list span {
     background: var(--theme-color, #bb86fc);
-    color: var(--main-content-background-color, #1e1e1e);
+    color: #e0e0e0;
     padding: 0.3rem 0.6rem;
     border-radius: 4px;
     font-size: 0.9rem;
