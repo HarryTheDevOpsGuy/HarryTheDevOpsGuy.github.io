@@ -181,14 +181,14 @@ a {
     display: flex;
     align-items: center;
     gap: 10px;
-    border: 2px solid transparent;
+    border: 2px solid var(--theme-color, #bb86fc);
     
   }
   
   .contact-link:hover {
     background-color: var(--theme-color, #bb86fc);
     color: #fff;
-    border: 2px solid #fff;
+    border: 2px solid var(--text-color, #e0e0e0);
     transform: scale(1.1);
   }
   
