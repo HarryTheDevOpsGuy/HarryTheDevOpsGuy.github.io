@@ -12,6 +12,11 @@
     font-size: 3rem;
     font-weight: 600;
 }
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  color: var(--theme-color, #bb86fc);
+}
  
 // HEADERS
 // .header {
@@ -125,6 +130,7 @@
 
 .about-title {
     color: var(--theme-color, #bb86fc);
+    font-weight: 600;
 }
 
 /* Carousel Styles */
