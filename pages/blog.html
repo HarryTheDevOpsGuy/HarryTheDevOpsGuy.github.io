@@ -17,10 +17,10 @@ permalink: /blog/
         <!-- Experience Card 1 -->
         {% for post in site.posts %}
         <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card ">
+          <div class="card shadow-lg border-0 rounded">
             <img src="{{ post.featured_image | default: '/assets/img/logo1.jpg' }}" class="card-img-top" alt="Post 1">
             <div class="card-body">
-              <h5 class="card-title">{{ post.title }}</h5>
+              <h5 class="card-title default-title">{{ post.title }}</h5>
               <h6 class="card-subtitle mb-2">Harry</h6>
               <p class="card-text">{{ post.description }}</p>
               <ul class="list-inline">
