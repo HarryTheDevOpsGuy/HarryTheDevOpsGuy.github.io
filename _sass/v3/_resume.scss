@@ -1,0 +1,38 @@
+
+/* saved resume */
+.saved-resumes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .saved-resume {
+    background-color: #1f1f1f;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex-grow: 1;
+    max-width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transform */
+  }
+  .saved-resume i {
+    font-size: 2rem;
+    color: #1abc9c;
+  }
+  
+  .saved-resume h4 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #e0e0e0;
+    font-weight: 500;
+  }
+  
+  .saved-resume p {
+    color: #e0e0e0;
+  }
+  
+  .saved-resume:hover {
+    transform: scale(1.1); /* Scale up the element */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
+  }
