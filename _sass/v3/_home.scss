@@ -263,7 +263,7 @@
 .home-skill-title {
   font-size: 1.3rem;
   font-weight: 500;
-  color: #e0e0e0;
+  color: var(--text-color, #e0e0e0);
 }
 
 .home-skill .rating {
