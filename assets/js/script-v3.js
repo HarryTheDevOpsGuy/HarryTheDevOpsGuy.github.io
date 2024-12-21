@@ -1,6 +1,7 @@
 
 function changeThemeColor(color) {
     document.documentElement.style.setProperty('--theme-color', color);
+    localStorage.setItem('themeColor', color);
 }
 
 function getRandomColor() {
@@ -21,12 +22,14 @@ function changeFontStyle() {
     const fonts = ['Roboto', 'Arial', 'Georgia', 'Times New Roman', 'Courier New', 'Verdana'];
     const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
     document.body.style.fontFamily = randomFont;
+    localStorage.setItem('fontStyle', randomFont);
 }
 
 function changeFontSize() {
     const sizes = ['12px', '14px', '16px', '18px', '20px'];
     const randomSize = sizes[Math.floor(Math.random() * sizes.length)];
     document.body.style.fontSize = randomSize;
+    localStorage.setItem('fontSize', randomSize);
 }
 
 function toggleTheme() {
