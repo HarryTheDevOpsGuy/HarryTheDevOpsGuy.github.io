@@ -127,7 +127,7 @@ a {
 
 /* Contact */ 
 .custom-btn {
-    background-color: #121212;
+    background-color: var(--background-color, #121212);
     color: var(--theme-color, #bb86fc);
   }
   
