@@ -7,7 +7,8 @@
 }
   
 .main-header h1 {
-    color: #1abc9c;
+    color: var(--theme-color, #bb86fc);
+    // color: #1abc9c;
     font-size: 3rem;
     font-weight: 600;
 }
@@ -32,7 +33,7 @@ nav ul li a {
     padding: 10px 20px;
 }
 nav ul li a:hover {
-    background-color: #1abc9c;
+    background-color: var(--theme-color, #bb86fc);
     color: #fff;
     border-radius: 5px;
 }
@@ -45,13 +46,13 @@ nav ul li a:hover {
 .section-default-title {
   font-size: 2.5rem;
   font-weight: 600;
-  color: #1abc9c;
+  color: var(--theme-color, #bb86fc);
   text-align: center;
   margin-bottom: 40px;
 }
 
 .about-title {
-    color: #1abc9c;
+    color: var(--theme-color, #bb86fc);
 }
 
 /* Carousel Styles */
@@ -168,7 +169,7 @@ nav ul li a:hover {
 .skill i {
   font-size: 3rem;
   margin-bottom: 20px;
-  color: #1abc9c;
+  color: var(--theme-color, #bb86fc);
 }
 .skill-title {
   font-size: 1.3rem;
@@ -211,7 +212,7 @@ nav ul li a:hover {
 
 .deployed-solution i {
   font-size: 3rem;
-  color: #1abc9c;
+  color: var(--theme-color, #bb86fc);
 }
 
 .deployed-solution h4 {
