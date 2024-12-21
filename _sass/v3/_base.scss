@@ -111,17 +111,16 @@ a {
 }
 .footer a {
     color: var(--theme-color, #bb86fc);
-    margin: 0 10px;
+    margin: auto;
     // transition: color 0.3s;
     transition: background-color 0.3s, color 0.3s, border-radius 0.3s, padding 0.3s;
     border-radius: 5px;
-    padding: 10px 10px;
-
 }
 .footer a:hover {
     // color: var(--text-color, #e0e0e0);
     background-color: var(--theme-color, #bb86fc);
     color: var(--badge-text-color, #121212);
+    padding: 10px 10px;
 }
 
 
