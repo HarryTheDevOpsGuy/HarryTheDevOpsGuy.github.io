@@ -31,7 +31,7 @@ tag: cv
     }
     .job-title {
         font-weight: bold;
-        color: var(--theme-color, #bb86fc);
+        color: var(--text-color, #e0e0e0);
     }
     .print-friendly {
         page-break-after: always;
