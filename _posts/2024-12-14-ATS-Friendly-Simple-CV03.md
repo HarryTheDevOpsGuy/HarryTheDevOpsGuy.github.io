@@ -75,7 +75,7 @@ tag: cv
 
 <!-- Header Section -->
 <div class="resume-header">
-    <h1 class="default-title" >John Doe</h1>
+    <h1 class="default-title">John Doe</h1>
     <p>Email: john.doe@example.com | Phone: (123) 456-7890</p>
     <p>LinkedIn: linkedin.com/in/johndoe | Location: New York, NY</p>
 </div>
