@@ -289,7 +289,8 @@
 }
 
 .deployed-solution {
-  background-color: #1f1f1f;
+  // background-color: #1f1f1f;
+  background-color: var(--main-content-background-color, #1e1e1e);
   padding: 5px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -307,12 +308,12 @@
 .deployed-solution h4 {
   margin-top: 10px;
   font-size: 1.3rem;
-  color: #e0e0e0;
+  color: var(--text-color, #e0e0e0);
   font-weight: 500;
 }
 
 .deployed-solution p {
-  color: #e0e0e0;
+  color: var(--text-color, #e0e0e0);
 }
 
 .deployed-solution:hover {
