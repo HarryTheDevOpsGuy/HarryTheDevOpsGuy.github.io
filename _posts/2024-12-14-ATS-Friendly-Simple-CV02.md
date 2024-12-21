@@ -27,6 +27,7 @@ tag: cv
         margin-bottom: 1rem;
         border-bottom: 2px solid var(--theme-color, #dee2e6); 
         padding-bottom: 0.25rem;
+        color: var(--theme-color, #bb86fc);
     }
     .job-title {
         font-weight: bold;
