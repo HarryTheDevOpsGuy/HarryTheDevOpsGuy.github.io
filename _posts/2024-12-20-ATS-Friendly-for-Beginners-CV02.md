@@ -68,7 +68,7 @@ tag: cv
   border-left: 4px solid var(--theme-color, #bb86fc);
   margin-bottom: 20px;
   border-radius: 8px;
-  background-color: #e9ecef;
+  background-color: var(--main-content-background-color, #1e1e1e);
 }
   </style>
 
