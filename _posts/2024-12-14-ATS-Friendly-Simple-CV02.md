@@ -10,9 +10,9 @@ tag: cv
         padding: 1.5rem 2rem;
     }
     .resume-header {
-        background-color: #f8f9fa;
+        background-color: var(--main-content-background-color, #1e1e1e);
         padding: 1.5rem 2rem;
-        border-bottom: 2px solid #dee2e6;
+        border-bottom: 2px solid var(--theme-color, #dee2e6);
     }
     .resume-header h1 {
         font-size: 2rem;
@@ -25,12 +25,12 @@ tag: cv
     .section-title {
         font-weight: bold;
         margin-bottom: 1rem;
-        border-bottom: 2px solid #dee2e6;
+        border-bottom: 2px solid var(--theme-color, #dee2e6); 
         padding-bottom: 0.25rem;
     }
     .job-title {
         font-weight: bold;
-        color: #495057;
+        color: var(--theme-color, #bb86fc);
     }
     .print-friendly {
         page-break-after: always;
