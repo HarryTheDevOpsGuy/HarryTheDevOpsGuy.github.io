@@ -84,7 +84,7 @@ tag: cv
 <div class="resume-section">
     <h2 class="section-title">Skills</h2>
     <ul class="list-inline">
-        <li class="list-inline-item">AWS</li>
+        <li class="list-inline-item btn btn-outline-danger">AWS</li>
         <li class="list-inline-item">Docker</li>
         <li class="list-inline-item">Kubernetes</li>
         <li class="list-inline-item">Terraform</li>
