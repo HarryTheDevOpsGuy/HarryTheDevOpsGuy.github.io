@@ -43,8 +43,10 @@ title: "CV - Resume Builder"
 
 <!-- Saved Resume Section -->
 <section class="container mt-3">
-    <h2 class="blog-title">Saved Resumes</h2>
-    <p class="blog-description">Your resumes are safely kept in your browser's storage. We value your privacy and ensure no data is stored on our servers.</p>
+  <div class="text-center">
+    <h2 class="default-title">Saved Resumes</h2>
+    <p>Your resumes are safely kept in your browser's storage. We value your privacy and ensure no data is stored on our servers.</p>
+  </div>
     <div id="saved-resumes" class="saved-resumes"> </div>
 </section>
 
@@ -57,7 +59,7 @@ title: "CV - Resume Builder"
       <h2 class="default-title">{{ page.title }}</h2>
       <p>{{ page.description }}</p>
     </div>
-    
+
     <div class="container">
       <div class="blog-content">
         <div id="resume" contenteditable="{{ page.contenteditable | default: 'true' }}" class="resume-body printable-area rounded mx-auto">
