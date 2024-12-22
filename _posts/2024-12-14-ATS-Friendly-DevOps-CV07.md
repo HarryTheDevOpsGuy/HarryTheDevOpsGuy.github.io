@@ -6,7 +6,6 @@ date: 2024-12-14
 tag: cv
 ---
 
-
 <style>
     h1, h2, h3 {
         color: var(--theme-color, #bb86fc);
