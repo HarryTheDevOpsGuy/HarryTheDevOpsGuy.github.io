@@ -27,7 +27,7 @@ tag: cv
     .footer {
         text-align: center;
         font-size: 12px;
-        color: #555;
+        color: var(--text-color, #555);
     }
 </style>
 
@@ -35,7 +35,7 @@ tag: cv
     <!-- Header Section -->
     <header class="text-center">
         <h1>John Doe</h1>
-        <p class="text-muted">DevOps Engineer | Cloud Architect</p>
+        <p>DevOps Engineer | Cloud Architect</p>
         <div class="contact-info">
             <p>Email: john.doe@example.com | Phone: +123 456 7890</p>
             <p>LinkedIn: linkedin.com/in/johndoe | GitHub: github.com/johndoe</p>
