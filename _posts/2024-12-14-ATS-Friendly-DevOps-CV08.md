@@ -95,7 +95,7 @@ tag: cv
   <!-- Header -->
   <header class="resume-header">
       <div>
-      <h1>John Doe</h1>
+      <h1 class="default-title">John Doe</h1>
       <p class="h4">DevOps Engineer</p>
       </div>
       <div class="contact-info">
