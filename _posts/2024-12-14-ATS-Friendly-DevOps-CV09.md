@@ -21,14 +21,16 @@ tag: cv
     .emoji {
         font-size: 1.5em;
     }
-    .section-title {
+    .section-title { 
         font-size: 1.5em;
         margin-bottom: 0.5em;
-        border-bottom: 2px solid #007bff;
+        border-bottom: 2px solid var(--theme-color, #bb86fc);
         padding-bottom: 0.3em;
+        color: var(--theme-color, #bb86fc);
     }
     .section-content {
         margin-bottom: 1.5em;
+        background-color: var(--main-content-background-color, #1e1e1e);
     }
     .skills-list {
         list-style-type: none;
