@@ -8,48 +8,28 @@ tag: cv
 
 
 <style>
-        /* body {
-            background-color: #ffffff;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            color: #333;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-        } */
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
-        .section-title {
-            margin-top: 20px;
-            margin-bottom: 10px;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 5px;
-        }
-        .contact-info p {
-            margin: 0;
-            font-size: 14px;
-        }
-        .section {
-            margin-bottom: 20px;
-        }
-        .footer {
-            text-align: center;
-            font-size: 12px;
-            color: #555;
-        }
-        @media print {
-            .container {
-                box-shadow: none;
-                border: none;
-            }
-        }
-    </style>
+    h1, h2, h3 {
+        color: var(--theme-color, #bb86fc);
+    }
+    .section-title {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        border-bottom: 2px solid var(--theme-color, #bb86fc);
+        padding-bottom: 5px;
+    }
+    .contact-info p {
+        margin: 0;
+        font-size: 14px;
+    }
+    .section {
+        margin-bottom: 20px;
+    }
+    .footer {
+        text-align: center;
+        font-size: 12px;
+        color: #555;
+    }
+</style>
 
 
 <!-- Header Section -->
