@@ -159,7 +159,7 @@ tag: cv
   <section class="education">
       <h2 class="section-title">Education</h2>
       <div>
-      <h3 class="degree">Bachelor of Technology in Computer Science</h3>
+      <h4 class="degree">Bachelor of Technology in Computer Science</h4>
       <span class="emoji">🎓</span> XYZ University, <span>2012 - 2016</span>
       </div>
   </section>
