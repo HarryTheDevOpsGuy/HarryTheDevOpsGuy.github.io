@@ -134,7 +134,7 @@ tag: cv
       <h2 class="section-title">Professional Experience</h2>
 
       <div>
-      <h3 class="job-title">Senior DevOps Engineer | ABC Technologies</h3>
+      <h4 class="job-title">Senior DevOps Engineer | ABC Technologies</h4>
       <span class="emoji">📍</span> New York, NY | <span>Jan 2020 - Present</span>
       <ul>
           <li>Developed and managed CI/CD pipelines using Jenkins and GitLab to automate software deployments and improve workflow efficiency. 🔄</li>
@@ -145,7 +145,7 @@ tag: cv
       </div>
 
       <div>
-      <h3 class="job-title">DevOps Engineer | XYZ Inc.</h3>
+      <h4 class="job-title">DevOps Engineer | XYZ Inc.</h4>
       <span class="emoji">📍</span> Boston, MA | <span>Jan 2016 - Dec 2019</span>
       <ul>
           <li>Built and maintained scalable infrastructure on AWS (EC2, S3, RDS, Lambda) for application hosting. 🌐</li>
