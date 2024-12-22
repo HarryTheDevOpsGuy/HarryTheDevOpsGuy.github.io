@@ -206,3 +206,129 @@
   transform: scale(1.1); /* Scale up the element */
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
 }
+
+// my Experience
+.timeline {
+  position: relative;
+  padding: 20px 0;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--theme-color, #bb86fc);
+  left: 50%;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: 49%;
+    font-size: 2em;
+    color: var(--theme-color, #bb86fc);
+}
+.timeline-icon.start {
+    top: -40px;
+}
+.timeline-icon.end {
+    bottom: -35px;
+}
+
+.timeline-card {
+  position: relative;
+  width: 45%;
+  padding: 20px;
+  border-radius: 8px;
+  background: var(--main-content-background-color, #1e1e1e);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
+  color: var(--text-color, #e0e0e0);
+}
+.timeline-card:hover {
+  transform: translateY(-10px);
+}
+.timeline-card::before {
+  content: attr(data-year);
+  position: absolute;
+  top: 20px;
+  width: 50px;
+  height: 50px;
+  background: var(--theme-color, #bb86fc);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  z-index: 1;
+}
+.timeline-card.left {
+  right: -4%;
+}
+.timeline-card.left::before {
+  right: -26px;
+}
+.timeline-card.right {
+  left: 51%;
+}
+.timeline-card.right::before {
+  left: -29px;
+}
+.timeline-card h5 {
+  margin-bottom: 0px;
+}
+
+.tags {
+  margin-top: 10px;
+}
+
+.tags span {
+  display: inline-block;
+  background: var(--theme-color, #bb86fc);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.company-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.company-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+      left: 0%;
+  }
+
+  .timeline-icon.start {
+      top: -25px;
+      left: -3%;
+  }
+  .timeline-icon.end {
+      bottom: -25px;
+      left: -3%;
+  }
+
+  .timeline-card {
+      width: 100%;
+      margin-bottom: 20px;
+      transform: translateX(0) !important;
+  }
+  .timeline-card.left, .timeline-card.right {
+      left: 4%;
+  }
+  .timeline-card::before {
+      left: -25px;
+  }
+}
