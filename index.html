@@ -3,7 +3,6 @@ layout: base
 ---
 
 <style>
- 
  .timeline {
       position: relative;
       max-width: 900px;
@@ -73,6 +72,42 @@ layout: base
   .timeline-item-content .date {
       font-size: 0.9em;
       color: #6c757d;
+  }
+  .timeline-item-content .skills, .timeline-item-content .achievements {
+      margin-top: 10px;
+  }
+  .timeline-item-content .skills ul, .timeline-item-content .achievements ul {
+      list-style-type: none;
+      padding-left: 0;
+  }
+  .timeline-item-content .skills ul li, .timeline-item-content .achievements ul li {
+      background: #e9ecef;
+      margin: 5px 0;
+      padding: 5px 10px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+  }
+  .timeline-item-content .skills ul li i, .timeline-item-content .achievements ul li i {
+      margin-right: 10px;
+      color: #007bff;
+  }
+  .timeline-item-content .company-logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 15px;
+  }
+  .timeline-item-content .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+  }
+  .timeline-item-content .header h3 {
+      margin: 0;
+  }
+  .timeline-item-content .description {
+      margin-bottom: 15px;
   }
   @media screen and (max-width: 600px) {
       .timeline::after {
@@ -630,50 +665,347 @@ layout: base
 
 
 <div class="container mt-5">
-  <h2 class="text-center mb-5">My Work Journey</h2>
+  <h2 class="text-center mb-5">
+   My Work Journey
+  </h2>
   <div class="timeline">
-      <div class="timeline-item left" data-year="2020">
-          <div class="timeline-item-content">
-              <h3>Job Title 1</h3>
-              <p class="date">January 2020 - Present</p>
-              <p>Company Name 1</p>
-              <p>Job description and responsibilities for Job Title 1 at Company Name 1.</p>
-          </div>
+   <div class="timeline-item left" data-year="2020">
+    <div class="timeline-item-content">
+     <div class="header">
+      <img alt="Company logo for Company Name 1" class="company-logo" height="50" src="https://storage.googleapis.com/a1aa/image/Iwj1gpcYE4qVJZNC9re179kWuFH7Mm2CW88JE6sufwL2YV9TA.jpg" width="50"/>
+      <div>
+       <h3>
+        Job Title 1
+       </h3>
+       <p class="date">
+        January 2020 - Present
+       </p>
+       <p>
+        Company Name 1
+       </p>
       </div>
-      <div class="timeline-item right" data-year="2018">
-          <div class="timeline-item-content">
-              <h3>Job Title 2</h3>
-              <p class="date">June 2018 - December 2019</p>
-              <p>Company Name 2</p>
-              <p>Job description and responsibilities for Job Title 2 at Company Name 2.</p>
-          </div>
+     </div>
+     <div class="description">
+      <p>
+       Job description and responsibilities for Job Title 1 at Company Name 1.
+      </p>
+     </div>
+     <div class="skills">
+      <h5>
+       Skills Acquired:
+      </h5>
+      <ul>
+       <li>
+        <i class="fas fa-check-circle">
+        </i>
+        Skill 1
+       </li>
+       <li>
+        <i class="fas fa-check-circle">
+        </i>
+        Skill 2
+       </li>
+       <li>
+        <i class="fas fa-check-circle">
+        </i>
+        Skill 3
+       </li>
+      </ul>
+     </div>
+     <div class="achievements">
+      <h5>
+       Achievements:
+      </h5>
+      <ul>
+       <li>
+        <i class="fas fa-trophy">
+        </i>
+        Achievement 1
+       </li>
+       <li>
+        <i class="fas fa-trophy">
+        </i>
+        Achievement 2
+       </li>
+       <li>
+        <i class="fas fa-trophy">
+        </i>
+        Achievement 3
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+   <div class="timeline-item right" data-year="2018">
+    <div class="timeline-item-content">
+     <div class="header">
+      <img alt="Company logo for Company Name 2" class="company-logo" height="50" src="https://storage.googleapis.com/a1aa/image/pyVwtAoMsW7aAt85KL5BSt5N9HdZyhjtjZGGYoaJAiwMWVfJA.jpg" width="50"/>
+      <div>
+       <h3>
+        Job Title 2
+       </h3>
+       <p class="date">
+        June 2018 - December 2019
+       </p>
+       <p>
+        Company Name 2
+       </p>
       </div>
-      <div class="timeline-item left" data-year="2016">
-          <div class="timeline-item-content">
-              <h3>Job Title 3</h3>
-              <p class="date">March 2016 - May 2018</p>
-              <p>Company Name 3</p>
-              <p>Job description and responsibilities for Job Title 3 at Company Name 3.</p>
-          </div>
+     </div>
+     <div class="description">
+      <p>
+       Job description and responsibilities for Job Title 2 at Company Name 2.
+      </p>
+     </div>
+     <div class="skills">
+      <h5>
+       Skills Acquired:
+      </h5>
+      <ul>
+       <li>
+        <i class="fas fa-check-circle">
+        </i>
+        Skill 1
+       </li>
+       <li>
+        <i class="fas fa-check-circle">
+        </i>
+        Skill 2
+       </li>
+       <li>
+        <i class="fas fa-check-circle">
+        </i>
+        Skill 3
+       </li>
+      </ul>
+     </div>
+     <div class="achievements">
+      <h5>
+       Achievements:
+      </h5>
+      <ul>
+       <li>
+        <i class="fas fa-trophy">
+        </i>
+        Achievement 1
+       </li>
+       <li>
+        <i class="fas fa-trophy">
+        </i>
+        Achievement 2
+       </li>
+       <li>
+        <i class="fas fa-trophy">
+        </i>
+        Achievement 3
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+   <div class="timeline-item left" data-year="2016">
+    <div class="timeline-item-content">
+     <div class="header">
+      <img alt="Company logo for Company Name 3" class="company-logo" height="50" src="https://storage.googleapis.com/a1aa/image/9nCo56NI4I7EGBAS4x3JFcJlhwfW8xKUOsEsLE8zW8NdsqeTA.jpg" width="50"/>
+      <div>
+       <h3>
+        Job Title 3
+       </h3>
+       <p class="date">
+        March 2016 - May 2018
+       </p>
+       <p>
+        Company Name 3
+       </p>
       </div>
-      <div class="timeline-item right" data-year="2014">
-          <div class="timeline-item-content">
-              <h3>Job Title 4</h3>
-              <p class="date">July 2014 - February 2016</p>
-              <p>Company Name 4</p>
-              <p>Job description and responsibilities for Job Title 4 at Company Name 4.</p>
-          </div>
+     </div>
+     <div class="description">
+      <p>
+       Job description and responsibilities for Job Title 3 at Company Name 3.
+      </p>
+     </div>
+     <div class="skills">
+      <h5>
+       Skills Acquired:
+      </h5>
+      <ul>
+       <li>
+        <i class="fas fa-check-circle">
+        </i>
+        Skill 1
+       </li>
+       <li>
+        <i class="fas fa-check-circle">
+        </i>
+        Skill 2
+       </li>
+       <li>
+        <i class="fas fa-check-circle">
+        </i>
+        Skill 3
+       </li>
+      </ul>
+     </div>
+     <div class="achievements">
+      <h5>
+       Achievements:
+      </h5>
+      <ul>
+       <li>
+        <i class="fas fa-trophy">
+        </i>
+        Achievement 1
+       </li>
+       <li>
+        <i class="fas fa-trophy">
+        </i>
+        Achievement 2
+       </li>
+       <li>
+        <i class="fas fa-trophy">
+        </i>
+        Achievement 3
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+   <div class="timeline-item right" data-year="2014">
+    <div class="timeline-item-content">
+     <div class="header">
+      <img alt="Company logo for Company Name 4" class="company-logo" height="50" src="https://storage.googleapis.com/a1aa/image/bHfj7VqG14y8BaOPzxtoH7W9O2ewWKV2plHFDoyysOF4YV9TA.jpg" width="50"/>
+      <div>
+       <h3>
+        Job Title 4
+       </h3>
+       <p class="date">
+        July 2014 - February 2016
+       </p>
+       <p>
+        Company Name 4
+       </p>
       </div>
-      <div class="timeline-item left" data-year="2012">
-          <div class="timeline-item-content">
-              <h3>Job Title 5</h3>
-              <p class="date">January 2012 - June 2014</p>
-              <p>Company Name 5</p>
-              <p>Job description and responsibilities for Job Title 5 at Company Name 5.</p>
-          </div>
+     </div>
+     <div class="description">
+      <p>
+       Job description and responsibilities for Job Title 4 at Company Name 4.
+      </p>
+     </div>
+     <div class="skills">
+      <h5>
+       Skills Acquired:
+      </h5>
+      <ul>
+       <li>
+        <i class="fas fa-check-circle">
+        </i>
+        Skill 1
+       </li>
+       <li>
+        <i class="fas fa-check-circle">
+        </i>
+        Skill 2
+       </li>
+       <li>
+        <i class="fas fa-check-circle">
+        </i>
+        Skill 3
+       </li>
+      </ul>
+     </div>
+     <div class="achievements">
+      <h5>
+       Achievements:
+      </h5>
+      <ul>
+       <li>
+        <i class="fas fa-trophy">
+        </i>
+        Achievement 1
+       </li>
+       <li>
+        <i class="fas fa-trophy">
+        </i>
+        Achievement 2
+       </li>
+       <li>
+        <i class="fas fa-trophy">
+        </i>
+        Achievement 3
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+   <div class="timeline-item left" data-year="2012">
+    <div class="timeline-item-content">
+     <div class="header">
+      <img alt="Company logo for Company Name 5" class="company-logo" height="50" src="https://storage.googleapis.com/a1aa/image/r3czzEl2yI5XPFbJzOn0tYzY1clkgCnWeGCOfk8fbF9oxq6nA.jpg" width="50"/>
+      <div>
+       <h3>
+        Job Title 5
+       </h3>
+       <p class="date">
+        January 2012 - June 2014
+       </p>
+       <p>
+        Company Name 5
+       </p>
       </div>
+     </div>
+     <div class="description">
+      <p>
+       Job description and responsibilities for Job Title 5 at Company Name 5.
+      </p>
+     </div>
+     <div class="skills">
+      <h5>
+       Skills Acquired:
+      </h5>
+      <ul>
+       <li>
+        <i class="fas fa-check-circle">
+        </i>
+        Skill 1
+       </li>
+       <li>
+        <i class="fas fa-check-circle">
+        </i>
+        Skill 2
+       </li>
+       <li>
+        <i class="fas fa-check-circle">
+        </i>
+        Skill 3
+       </li>
+      </ul>
+     </div>
+     <div class="achievements">
+      <h5>
+       Achievements:
+      </h5>
+      <ul>
+       <li>
+        <i class="fas fa-trophy">
+        </i>
+        Achievement 1
+       </li>
+       <li>
+        <i class="fas fa-trophy">
+        </i>
+        Achievement 2
+       </li>
+       <li>
+        <i class="fas fa-trophy">
+        </i>
+        Achievement 3
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
   </div>
-</div>
+ </div>
 
 
 
