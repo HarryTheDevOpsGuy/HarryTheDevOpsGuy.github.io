@@ -39,23 +39,6 @@ layout: base
       bottom: -25px;
   }
 
-
-  .timeline-card .company-logo {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      margin-right: 15px;
-  }
-  .timeline-card .header {
-      display: flex;
-      align-items: center;
-      margin-bottom: 15px;
-  }
-  .timeline-card .header h3 {
-      margin: 0;
-  }
-
-
   .timeline-card {
       position: relative;
       width: 45%;
@@ -121,6 +104,25 @@ layout: base
       margin-right: 5px;
       margin-bottom: 5px;
   }
+
+  .timeline-card .company-logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 15px;
+  }
+  /* .timeline-card .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+  }
+  .timeline-card .header h3 {
+      margin: 0;
+  } */
+
+
+
+
   @media (max-width: 768px) {
       .timeline::before {
           left: 0%;
@@ -693,15 +695,16 @@ layout: base
         <div class="header">
           <img alt="Company logo for Company Name 3" class="company-logo" height="50" src="https://storage.googleapis.com/a1aa/image/9nCo56NI4I7EGBAS4x3JFcJlhwfW8xKUOsEsLE8zW8NdsqeTA.jpg" width="50"/>
           <div>
-              <h3>Job Title 3</h3>
-              <p class="date">March 2016 - May 2018</p>
-              <p>Company Name 3</p>
+            <h5 class="default-title">Sr. Devops Lead at Paytm</h5>
+            <ul class="list-inline">
+              <li class="list-inline-item"><strong>Duration:</strong> 2020 - Present</li>
+              <li class="list-inline-item"><strong>Location:</strong> Noida</li>
+            </ul>
           </div>
         </div>
 
 
         <h5 class="default-title">Sr. Devops Lead at Paytm</h5>
-        
         <ul class="list-inline">
           <li class="list-inline-item"><strong>Duration:</strong> 2020 - Present</li>
           <li class="list-inline-item"><strong>Location:</strong> Noida</li>
