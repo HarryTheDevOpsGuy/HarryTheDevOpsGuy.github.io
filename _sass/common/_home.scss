@@ -58,9 +58,10 @@ nav ul li a:hover {
 .carousel {
     position: relative;
     overflow: hidden;
+
   }
 .carousel .carousel-inner img {
-    // height: 600px;
+    height: 600px;
     max-height: 600px;
     object-fit: cover;
     object-position: center;
