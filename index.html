@@ -45,7 +45,6 @@ layout: base
       padding: 20px;
       border-radius: 8px;
       background: var(--main-content-background-color, #1e1e1e);
-      /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); */
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s ease-in-out;
       color: var(--text-color, #e0e0e0);
@@ -716,16 +715,26 @@ layout: base
       </div>
 
       <div class="timeline-card left" data-year="2023">
-          <h5 class="default-title">Senior Developer at XYZ Corp</h5>
-          <ul>
-              <li>Lead a team of 10 developers</li>
-              <li>Architected and implemented scalable solutions</li>
-              <li>Mentored junior developers</li>
+          <div class="company-info">
+            <img alt="XYZ Corp company logo" class="company-logo" height="50" src="https://storage.googleapis.com/a1aa/image/3eYgAFnkihRnV6eYqmJWEdpIqByNDzQ7gGmZfofq9Hzkqk1PB.jpg" width="50"/>
+            <div>
+              <h5 class="default-title">Sr. Devops Engineer at Ziploan</h5>
+              <div><strong>Duration:</strong> 2019 - 2020  | <strong>Location:</strong> Delhi</div>
+            </div>
+           </div>
+  
+          <p class="card-text">Implemented zero-downtime blue-green deployment with Jenkins and AWS. Managed IaC with Terraform, Ansible, and Packer. Built AMIs, configured monitoring, led a DevOps team, managed EKS with ArgoCD, and used Karpenter for cost-efficient node management.</p>
+          <ul class="mylist">
+            <li><i class="fas fa-check icon"></i>Migrated apps to AWS, cutting costs by 50%.</li>
+            <li><i class="fas fa-check icon"></i>Enabled blue-green deployments with ALB, ASG, and Jenkins.</li>
+            <li><i class="fas fa-check icon"></i>Optimized logging using the ELK Stack.</li>
+            <li><i class="fas fa-check icon"></i>Automated deployments with Jenkins, saving 60% setup time.</li>
+            <li><i class="fas fa-check icon"></i>Built Ansible roles and Jenkins pipelines for CI/CD.</li>
           </ul>
           <div class="tags">
-              <span>JavaScript</span>
-              <span>React</span>
-              <span>Node.js</span>
+              <span>Python</span>
+              <span>Shell Script</span>
+              <span>Ansible</span>
           </div>
       </div>
 
