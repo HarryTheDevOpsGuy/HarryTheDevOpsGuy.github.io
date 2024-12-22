@@ -31,13 +31,13 @@ tag: cv
     .section-content {
         margin-bottom: 1.5em;
     }
-    .skills-list {
+    /* .skills-list {
         list-style-type: none;
         padding: 0;
     }
     .skills-list li {
         padding: 5px 0;
-    }
+    } */
     .footer {
         text-align: center;
         font-size: 0.9em;
