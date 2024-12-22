@@ -74,16 +74,16 @@ tag: cv
 <div class="default-content">
   <!-- Header -->
   <header class="resume-header">
-      <div>
+    <div>
       <h1 class="default-title">John Doe</h1>
       <p class="h4">DevOps Engineer</p>
-      </div>
-      <div class="contact-info">
+    </div>
+    <div class="contact-info">
       <p><i class="fas fa-phone"></i><span>(123) 456-7890</span></p>
       <p><i class="fas fa-envelope"></i><span>john.doe@email.com</span></p>
       <p><i class="fas fa-map-marker-alt"></i><span>New York, NY</span></p>
       <p><i class="fas fa-link"></i><span><a href="https://linkedin.com/in/johndoe">linkedin.com/in/johndoe</a></span></p>
-      </div>
+    </div>
   </header>
 
   <!-- Professional Summary -->
