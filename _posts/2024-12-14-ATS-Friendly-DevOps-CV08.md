@@ -72,19 +72,7 @@ tag: cv
     .emoji {
       font-size: 1.5rem;
     }
-    /* Print-friendly */
-    @media print {
-      .resume-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .resume-header h1 {
-        font-size: 2rem;
-      }
-      .contact-info {
-        margin-top: 10px;
-      }
-    }
+    
   </style>
 
 
