@@ -239,3 +239,10 @@ a {
   .role-list li, .mylist li {
     margin-bottom: 1px;
   }
+
+  .role-list li i, .mylist li i {
+    color: var(--theme-color, #bb86fc);
+    margin-right: 5px;
+  }
+
+  
