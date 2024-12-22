@@ -49,7 +49,7 @@ tag: cv
 <!-- Header Section -->
 <div class="header-section">
     <div>
-        <h1 class="mb-0">John Doe <span class="emoji">👨‍💻</span></h1>
+        <h1 class="mb-0 default-title">John Doe <span class="emoji">👨‍💻</span></h1>
         <p class="mb-0"><i class="fas fa-map-marker-alt"></i> New York, NY</p>
     </div>
     <div>
