@@ -28,6 +28,7 @@ tag: cv
     }
     .section-title {
       font-size: 1.75rem;
+      font-weight: bold;
       margin-top: 40px;
       margin-bottom: 20px;
       color: var(--theme-color, #bb86fc);
