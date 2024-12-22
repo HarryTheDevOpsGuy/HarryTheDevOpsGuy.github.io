@@ -74,10 +74,6 @@ tag: cv
     }
     /* Print-friendly */
     @media print {
-      body {
-        font-size: 12px;
-        background-color: white;
-      }
       .resume-header {
         flex-direction: column;
         align-items: flex-start;
