@@ -47,11 +47,14 @@ tag: cv
 }
 
 
-
+.skill-rating {
+    color: var(--theme-color, #007bff);
+}
 .skill-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-bottom: 10px; */
 }
 
 .content {
