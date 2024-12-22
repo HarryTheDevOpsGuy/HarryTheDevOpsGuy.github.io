@@ -27,7 +27,7 @@ tag: cv
       margin-right: 10px;
     }
     .section-title {
-      font-size: 1.75rem;
+      /* font-size: 1.75rem; */
       font-weight: bold;
       margin-top: 40px;
       margin-bottom: 20px;
