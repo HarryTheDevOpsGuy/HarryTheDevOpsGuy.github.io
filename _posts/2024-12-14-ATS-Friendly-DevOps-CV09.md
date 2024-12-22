@@ -72,7 +72,7 @@ tag: cv
     <!-- Skills Section -->
     <div class="section-content">
         <h2 class="section-title">🔧 Skills</h2>
-        <ul class="skills-list">
+        <ul class="mylist">
             <li><i class="fas fa-check-circle"></i> Cloud Infrastructure (AWS, GCP, Azure)</li>
             <li><i class="fas fa-check-circle"></i> CI/CD Automation (Jenkins, GitLab CI, CircleCI)</li>
             <li><i class="fas fa-check-circle"></i> Containerization & Orchestration (Docker, Kubernetes, Helm)</li>
