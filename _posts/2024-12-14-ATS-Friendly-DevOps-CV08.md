@@ -175,7 +175,7 @@ tag: cv
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer class="text-center">
       <p>Made with ❤️ by John Doe</p>
   </footer>
 </div>
