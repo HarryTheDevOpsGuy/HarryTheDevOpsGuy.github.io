@@ -3,129 +3,97 @@ layout: base
 ---
 
 <style>
- .timeline {
+  .timeline {
       position: relative;
-      max-width: 900px;
-      margin: 0 auto;
       padding: 20px 0;
   }
-  .timeline::after {
+  .timeline::before {
       content: '';
       position: absolute;
-      width: 6px;
-      background-color: #007bff;
       top: 0;
       bottom: 0;
+      width: 4px;
+      background: #007bff;
       left: 50%;
-      margin-left: -3px;
+      transform: translateX(-50%);
   }
-  .timeline-item {
-      padding: 10px 40px;
+  .timeline-card {
       position: relative;
-      background-color: inherit;
-      width: 50%;
+      width: 45%;
+      padding: 20px;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
   }
-  .timeline-item::after {
+  .timeline-card:hover {
+      transform: translateY(-10px);
+  }
+  .timeline-card::before {
       content: attr(data-year);
       position: absolute;
+      top: 20px;
       width: 50px;
       height: 50px;
-      right: -25px;
-      background-color: #007bff;
-      color: white;
-      border: 4px solid #007bff;
-      top: 15px;
+      background: #007bff;
+      color: #fff;
       border-radius: 50%;
-      z-index: 1;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: bold;
+      font-size: 1.2em;
+      z-index: 1;
   }
-  .timeline-item.left {
-      left: 0;
+  .timeline-card.left {
+      left: 26%;
+      transform: translateX(-50%);
   }
-  .timeline-item.right {
-      left: 50%;
+  .timeline-card.left::before {
+      right: -26px;
   }
-  .timeline-item.right::after {
-      left: -25px;
+  .timeline-card.right {
+      left: 29%;
+      transform: translateX(50%);
   }
-  .timeline-item-content {
-      padding: 20px 30px;
-      background-color: white;
-      position: relative;
-      border-radius: 6px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease-in-out;
+  .timeline-card.right::before {
+      left: -29px;
   }
-  .timeline-item-content:hover {
-      transform: translateY(-10px);
+  .timeline-card h5 {
+      margin-bottom: 10px;
   }
-  .timeline-item-content h3 {
-      margin-top: 0;
-      color: #007bff;
+  .timeline-card ul {
+      padding-left: 20px;
   }
-  .timeline-item-content p {
-      margin: 0;
+  .timeline-card ul li {
+      list-style: disc;
   }
-  .timeline-item-content .date {
-      font-size: 0.9em;
-      color: #6c757d;
-  }
-  .timeline-item-content .skills, .timeline-item-content .achievements {
+  .tags {
       margin-top: 10px;
   }
-  .timeline-item-content .skills ul, .timeline-item-content .achievements ul {
-      list-style-type: none;
-      padding-left: 0;
-  }
-  .timeline-item-content .skills ul li, .timeline-item-content .achievements ul li {
-      background: #e9ecef;
-      margin: 5px 0;
+  .tags span {
+      display: inline-block;
+      background: #007bff;
+      color: #fff;
       padding: 5px 10px;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
+      border-radius: 20px;
+      margin-right: 5px;
+      margin-bottom: 5px;
   }
-  .timeline-item-content .skills ul li i, .timeline-item-content .achievements ul li i {
-      margin-right: 10px;
-      color: #007bff;
-  }
-  .timeline-item-content .company-logo {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      margin-right: 15px;
-  }
-  .timeline-item-content .header {
-      display: flex;
-      align-items: center;
-      margin-bottom: 15px;
-  }
-  .timeline-item-content .header h3 {
-      margin: 0;
-  }
-  .timeline-item-content .description {
-      margin-bottom: 15px;
-  }
-  @media screen and (max-width: 600px) {
-      .timeline::after {
-          left: 31px;
-      }
-      .timeline-item {
-          width: 100%;
-          padding-left: 70px;
-          padding-right: 25px;
-      }
-      .timeline-item::after {
-          left: 60px;
-      }
-      .timeline-item.right {
+  @media (max-width: 768px) {
+      .timeline::before {
           left: 0%;
       }
-      .timeline-item.right::after {
-          left: 60px;
+      .timeline-card {
+          width: 100%;
+          margin-bottom: 20px;
+          transform: translateX(0) !important;
+      }
+      .timeline-card.left, .timeline-card.right {
+          left: 4%;
+      }
+      .timeline-card::before {
+          left: -25px;
       }
   }
 </style>
@@ -663,349 +631,62 @@ layout: base
 </div> -->
 
 
-
-<div class="container mt-5">
-  <h2 class="text-center mb-5">
-   My Work Journey
-  </h2>
+<div class="container">
   <div class="timeline">
-   <div class="timeline-item left" data-year="2020">
-    <div class="timeline-item-content">
-     <div class="header">
-      <img alt="Company logo for Company Name 1" class="company-logo" height="50" src="https://storage.googleapis.com/a1aa/image/Iwj1gpcYE4qVJZNC9re179kWuFH7Mm2CW88JE6sufwL2YV9TA.jpg" width="50"/>
-      <div>
-       <h3>
-        Job Title 1
-       </h3>
-       <p class="date">
-        January 2020 - Present
-       </p>
-       <p>
-        Company Name 1
-       </p>
+      <div class="timeline-card left" data-year="2023">
+          <h5>Senior Developer at XYZ Corp</h5>
+          <ul>
+              <li>Lead a team of 10 developers</li>
+              <li>Architected and implemented scalable solutions</li>
+              <li>Mentored junior developers</li>
+          </ul>
+          <div class="tags">
+              <span>JavaScript</span>
+              <span>React</span>
+              <span>Node.js</span>
+          </div>
       </div>
-     </div>
-     <div class="description">
-      <p>
-       Job description and responsibilities for Job Title 1 at Company Name 1.
-      </p>
-     </div>
-     <div class="skills">
-      <h5>
-       Skills Acquired:
-      </h5>
-      <ul>
-       <li>
-        <i class="fas fa-check-circle">
-        </i>
-        Skill 1
-       </li>
-       <li>
-        <i class="fas fa-check-circle">
-        </i>
-        Skill 2
-       </li>
-       <li>
-        <i class="fas fa-check-circle">
-        </i>
-        Skill 3
-       </li>
-      </ul>
-     </div>
-     <div class="achievements">
-      <h5>
-       Achievements:
-      </h5>
-      <ul>
-       <li>
-        <i class="fas fa-trophy">
-        </i>
-        Achievement 1
-       </li>
-       <li>
-        <i class="fas fa-trophy">
-        </i>
-        Achievement 2
-       </li>
-       <li>
-        <i class="fas fa-trophy">
-        </i>
-        Achievement 3
-       </li>
-      </ul>
-     </div>
-    </div>
-   </div>
-   <div class="timeline-item right" data-year="2018">
-    <div class="timeline-item-content">
-     <div class="header">
-      <img alt="Company logo for Company Name 2" class="company-logo" height="50" src="https://storage.googleapis.com/a1aa/image/pyVwtAoMsW7aAt85KL5BSt5N9HdZyhjtjZGGYoaJAiwMWVfJA.jpg" width="50"/>
-      <div>
-       <h3>
-        Job Title 2
-       </h3>
-       <p class="date">
-        June 2018 - December 2019
-       </p>
-       <p>
-        Company Name 2
-       </p>
+      <div class="timeline-card right" data-year="2021">
+          <h5>Mid-Level Developer at ABC Inc</h5>
+          <ul>
+              <li>Developed and maintained web applications</li>
+              <li>Collaborated with cross-functional teams</li>
+              <li>Improved application performance</li>
+          </ul>
+          <div class="tags">
+              <span>Python</span>
+              <span>Django</span>
+              <span>REST APIs</span>
+          </div>
       </div>
-     </div>
-     <div class="description">
-      <p>
-       Job description and responsibilities for Job Title 2 at Company Name 2.
-      </p>
-     </div>
-     <div class="skills">
-      <h5>
-       Skills Acquired:
-      </h5>
-      <ul>
-       <li>
-        <i class="fas fa-check-circle">
-        </i>
-        Skill 1
-       </li>
-       <li>
-        <i class="fas fa-check-circle">
-        </i>
-        Skill 2
-       </li>
-       <li>
-        <i class="fas fa-check-circle">
-        </i>
-        Skill 3
-       </li>
-      </ul>
-     </div>
-     <div class="achievements">
-      <h5>
-       Achievements:
-      </h5>
-      <ul>
-       <li>
-        <i class="fas fa-trophy">
-        </i>
-        Achievement 1
-       </li>
-       <li>
-        <i class="fas fa-trophy">
-        </i>
-        Achievement 2
-       </li>
-       <li>
-        <i class="fas fa-trophy">
-        </i>
-        Achievement 3
-       </li>
-      </ul>
-     </div>
-    </div>
-   </div>
-   <div class="timeline-item left" data-year="2016">
-    <div class="timeline-item-content">
-     <div class="header">
-      <img alt="Company logo for Company Name 3" class="company-logo" height="50" src="https://storage.googleapis.com/a1aa/image/9nCo56NI4I7EGBAS4x3JFcJlhwfW8xKUOsEsLE8zW8NdsqeTA.jpg" width="50"/>
-      <div>
-       <h3>
-        Job Title 3
-       </h3>
-       <p class="date">
-        March 2016 - May 2018
-       </p>
-       <p>
-        Company Name 3
-       </p>
+      <div class="timeline-card left" data-year="2019">
+          <h5>Junior Developer at DEF Ltd</h5>
+          <ul>
+              <li>Assisted in the development of web applications</li>
+              <li>Wrote clean, maintainable code</li>
+              <li>Participated in code reviews</li>
+          </ul>
+          <div class="tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+          </div>
       </div>
-     </div>
-     <div class="description">
-      <p>
-       Job description and responsibilities for Job Title 3 at Company Name 3.
-      </p>
-     </div>
-     <div class="skills">
-      <h5>
-       Skills Acquired:
-      </h5>
-      <ul>
-       <li>
-        <i class="fas fa-check-circle">
-        </i>
-        Skill 1
-       </li>
-       <li>
-        <i class="fas fa-check-circle">
-        </i>
-        Skill 2
-       </li>
-       <li>
-        <i class="fas fa-check-circle">
-        </i>
-        Skill 3
-       </li>
-      </ul>
-     </div>
-     <div class="achievements">
-      <h5>
-       Achievements:
-      </h5>
-      <ul>
-       <li>
-        <i class="fas fa-trophy">
-        </i>
-        Achievement 1
-       </li>
-       <li>
-        <i class="fas fa-trophy">
-        </i>
-        Achievement 2
-       </li>
-       <li>
-        <i class="fas fa-trophy">
-        </i>
-        Achievement 3
-       </li>
-      </ul>
-     </div>
-    </div>
-   </div>
-   <div class="timeline-item right" data-year="2014">
-    <div class="timeline-item-content">
-     <div class="header">
-      <img alt="Company logo for Company Name 4" class="company-logo" height="50" src="https://storage.googleapis.com/a1aa/image/bHfj7VqG14y8BaOPzxtoH7W9O2ewWKV2plHFDoyysOF4YV9TA.jpg" width="50"/>
-      <div>
-       <h3>
-        Job Title 4
-       </h3>
-       <p class="date">
-        July 2014 - February 2016
-       </p>
-       <p>
-        Company Name 4
-       </p>
+      <div class="timeline-card right" data-year="2017">
+          <h5>Intern at GHI Co</h5>
+          <ul>
+              <li>Supported the development team</li>
+              <li>Learned about software development lifecycle</li>
+              <li>Worked on small projects</li>
+          </ul>
+          <div class="tags">
+              <span>Java</span>
+              <span>SQL</span>
+              <span>Git</span>
+          </div>
       </div>
-     </div>
-     <div class="description">
-      <p>
-       Job description and responsibilities for Job Title 4 at Company Name 4.
-      </p>
-     </div>
-     <div class="skills">
-      <h5>
-       Skills Acquired:
-      </h5>
-      <ul>
-       <li>
-        <i class="fas fa-check-circle">
-        </i>
-        Skill 1
-       </li>
-       <li>
-        <i class="fas fa-check-circle">
-        </i>
-        Skill 2
-       </li>
-       <li>
-        <i class="fas fa-check-circle">
-        </i>
-        Skill 3
-       </li>
-      </ul>
-     </div>
-     <div class="achievements">
-      <h5>
-       Achievements:
-      </h5>
-      <ul>
-       <li>
-        <i class="fas fa-trophy">
-        </i>
-        Achievement 1
-       </li>
-       <li>
-        <i class="fas fa-trophy">
-        </i>
-        Achievement 2
-       </li>
-       <li>
-        <i class="fas fa-trophy">
-        </i>
-        Achievement 3
-       </li>
-      </ul>
-     </div>
-    </div>
-   </div>
-   <div class="timeline-item left" data-year="2012">
-    <div class="timeline-item-content">
-     <div class="header">
-      <img alt="Company logo for Company Name 5" class="company-logo" height="50" src="https://storage.googleapis.com/a1aa/image/r3czzEl2yI5XPFbJzOn0tYzY1clkgCnWeGCOfk8fbF9oxq6nA.jpg" width="50"/>
-      <div>
-       <h3>
-        Job Title 5
-       </h3>
-       <p class="date">
-        January 2012 - June 2014
-       </p>
-       <p>
-        Company Name 5
-       </p>
-      </div>
-     </div>
-     <div class="description">
-      <p>
-       Job description and responsibilities for Job Title 5 at Company Name 5.
-      </p>
-     </div>
-     <div class="skills">
-      <h5>
-       Skills Acquired:
-      </h5>
-      <ul>
-       <li>
-        <i class="fas fa-check-circle">
-        </i>
-        Skill 1
-       </li>
-       <li>
-        <i class="fas fa-check-circle">
-        </i>
-        Skill 2
-       </li>
-       <li>
-        <i class="fas fa-check-circle">
-        </i>
-        Skill 3
-       </li>
-      </ul>
-     </div>
-     <div class="achievements">
-      <h5>
-       Achievements:
-      </h5>
-      <ul>
-       <li>
-        <i class="fas fa-trophy">
-        </i>
-        Achievement 1
-       </li>
-       <li>
-        <i class="fas fa-trophy">
-        </i>
-        Achievement 2
-       </li>
-       <li>
-        <i class="fas fa-trophy">
-        </i>
-        Achievement 3
-       </li>
-      </ul>
-     </div>
-    </div>
-   </div>
   </div>
- </div>
+</div>
 
 
 
