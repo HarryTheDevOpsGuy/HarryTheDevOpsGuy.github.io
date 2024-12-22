@@ -46,6 +46,14 @@ tag: cv
   margin-bottom: 1px;
 }
 
+
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .content {
   padding: 15px 10px;
 }
