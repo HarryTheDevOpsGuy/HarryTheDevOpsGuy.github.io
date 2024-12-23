@@ -1,7 +1,7 @@
 ---
 layout: cv
 title: "Design and Create your profesional Resume with ResumeBuilder"
-permalink: /blog/test.html
+permalink: /blog/test2.html
 ---
 
 <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
