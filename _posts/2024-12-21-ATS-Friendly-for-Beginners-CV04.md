@@ -4,9 +4,11 @@ title: "ATS-Friendly-For-Beginners-CV04"
 description: "Most Popular ATS Friendly Beginners Resume"
 date: 2024-12-21
 tag: cv
+id: cv01
 ---
 
 <style>
+
 .header {
   padding: 20px;
   display: flex;
