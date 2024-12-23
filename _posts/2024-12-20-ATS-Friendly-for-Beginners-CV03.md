@@ -3,7 +3,7 @@ layout: cv-post
 title: "ATS-Friendly-For-Beginners-CV03"
 description: "Most Popular ATS Friendly Beginners Resume"
 date: 2024-12-20
-tag: cv
+tag: dcv
 ---
 
 <style>
