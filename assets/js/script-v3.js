@@ -35,23 +35,11 @@ function changeFontSize() {
 function toggleTheme() {
     const currentBackgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--background-color').trim();
     if (currentBackgroundColor === '#000') {
-        // document.documentElement.style.setProperty('--background-color', '#ffffff');
-        // document.documentElement.style.setProperty('--text-color', '#000000');
-        // document.documentElement.style.setProperty('--sidebar-background-color', '#f8f9fa');
-        // document.documentElement.style.setProperty('--main-content-background-color', '#f8f9fa');
-        // document.documentElement.style.setProperty('--badge-text-color', '#ffffff');
-        // document.documentElement.style.setProperty('--contact-section-background-color', '#5b5b5b');
         websiteTheme('light');
         localStorage.setItem('theme', 'light');
     } else {
         websiteTheme('dark');
         localStorage.setItem('theme', 'dark');
-        // document.documentElement.style.setProperty('--background-color', '#121212');
-        // document.documentElement.style.setProperty('--text-color', '#e0e0e0');
-        // document.documentElement.style.setProperty('--sidebar-background-color', '#1e1e1e');
-        // document.documentElement.style.setProperty('--main-content-background-color', '#1e1e1e');
-        // document.documentElement.style.setProperty('--badge-text-color', '#121212');
-        // document.documentElement.style.setProperty('--contact-section-background-color', '#1e1e1e');
     }
 }
 
