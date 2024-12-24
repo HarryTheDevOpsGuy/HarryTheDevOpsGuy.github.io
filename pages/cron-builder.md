@@ -10,10 +10,10 @@ permalink: /cron-builder.html
     .card-custom { border: none; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
     .btn-custom { border-radius: 50px; }
     .code-block { background-color: #f8f9fa; padding: 5px 10px; border-radius: 5px; font-family: monospace; }
-    .icon-btn { color: #007bff; cursor: pointer; }
-    .icon-btn:hover { color: #0056b3; }
+    .icon-btn { color: var(--text-color, #e0e0e0); cursor: pointer; }
+    .icon-btn:hover { color: var(--theme-color, #bb86fc) }
     .details { display: none; margin-top: 10px; }
-    .example-card { color: var(--text-color, #e0e0e0); cursor: pointer; transition: transform 0.2s; border: 1px solid var(--theme-color, #bb86fc);; border-radius: 10px; padding: 15px; margin-bottom: 15px; }
+    .example-card { color: var(--text-color, #e0e0e0); cursor: pointer; transition: transform 0.2s; border: 1px solid var(--theme-color, #bb86fc); border-radius: 10px; padding: 15px; margin-bottom: 15px; }
     .example-card:hover { transform: scale(1.02); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
     .example-card .card-header { display: flex; justify-content: space-between; align-items: center; }
 </style>
