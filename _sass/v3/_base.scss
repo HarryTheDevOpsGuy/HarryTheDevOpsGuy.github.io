@@ -1,12 +1,12 @@
 
 :root {
-  --background-color: #121212;
+  --background-color: #000;
 }
 
 body {
     // font-family: 'Roboto', sans-serif;
     font-family: 'Poppins', sans-serif;
-    background-color: var(--background-color, #121212);
+    background-color: var(--background-color, #000;);
     color: var(--text-color, #e0e0e0);
     font-size: 14px;
     scroll-behavior: smooth;
@@ -82,7 +82,7 @@ a {
 }
 .floating-buttons .btn {
     background-color: var(--theme-color, #bb86fc);
-    color: var(--badge-text-color, #121212);
+    color: var(--badge-text-color, #000);
     border: none;
     border-radius: 50%;
     width: 40px;
@@ -160,7 +160,7 @@ a {
 
 /* Contact */ 
 .custom-btn {
-    background-color: var(--background-color, #121212);
+    background-color: var(--background-color, #000);
     color: var(--theme-color, #bb86fc);
   }
   
