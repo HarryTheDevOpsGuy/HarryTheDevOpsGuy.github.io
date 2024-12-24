@@ -88,7 +88,7 @@ permalink: /cron-builder.html
                 <div class="card-header">
                     <div>
                         <div class="fw-bold">Random example:</div>
-                        <span class="text-muted">${description}</span>
+                        <span>${description}</span>
                     </div>
                     <div>
                         <code class="code-block">${cronExpression}</code>
