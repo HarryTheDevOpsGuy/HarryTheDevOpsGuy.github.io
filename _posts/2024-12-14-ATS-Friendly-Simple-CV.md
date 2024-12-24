@@ -53,49 +53,46 @@ tag: cv
             </div>
         </div>
     </header>
-
     <!-- Summary Section -->
     <section>
         <div class="section-title">Professional Summary</div>
         <p>DevOps Engineer with 3+ years of experience in automating and optimizing mission-critical deployments in AWS, Docker, and Kubernetes environments. Adept at scripting and implementing CI/CD pipelines, with a focus on scalability and reliability.</p>
     </section>
-
     <!-- Skills Section -->
     <section>
         <div class="section-title">Skills</div>
         <div class="row px-4">
-            <ul class="col-md-6">
-                <li>CI/CD Tools: Jenkins, GitHub Actions</li>
-                <li>Containerization: Docker, Kubernetes</li>
-                <li>Cloud Platforms: AWS, Azure</li>
+            <ul class="mylist col-md-6">
+                <li><i class="fas fa-check icon"></i>CI/CD Tools: Jenkins, GitHub Actions</li>
+                <li><i class="fas fa-check icon"></i>Containerization: Docker, Kubernetes</li>
+                <li><i class="fas fa-check icon"></i>Cloud Platforms: AWS, Azure</li>
             </ul>
-            <ul class="col-md-6">
-                <li>Infrastructure as Code: Terraform, Ansible</li>
-                <li>Monitoring: Prometheus, Grafana</li>
-                <li>Scripting: Bash, Python</li>
+            <ul class="mylist col-md-6">
+                <li><i class="fas fa-check icon"></i>Infrastructure as Code: Terraform, Ansible</li>
+                <li><i class="fas fa-check icon"></i>Monitoring: Prometheus, Grafana</li>
+                <li><i class="fas fa-check icon"></i>Scripting: Bash, Python</li>
             </ul>
         </div>
     </section>
-
     <!-- Experience Section -->
     <section>
         <div class="section-title">Professional Experience</div>
         <div class="mb-3">
             <h5 class="mb-1">DevOps Engineer</h5>
             <p class="mb-0">Tech Solutions Inc. | Jan 2021 - Present</p>
-            <ul>
-                <li>Developed and maintained CI/CD pipelines for Java, Python, and Node.js applications, reducing deployment times by 30%.</li>
-                <li>Managed Kubernetes clusters, ensuring 99.99% uptime for microservices-based applications.</li>
-                <li>Automated infrastructure provisioning on AWS using Terraform and Ansible.</li>
+            <ul class="mylist">
+                <li><i class="fas fa-check icon"></i>Developed and maintained CI/CD pipelines for Java, Python, and Node.js applications, reducing deployment times by 30%.</li>
+                <li><i class="fas fa-check icon"></i>Managed Kubernetes clusters, ensuring 99.99% uptime for microservices-based applications.</li>
+                <li><i class="fas fa-check icon"></i>Automated infrastructure provisioning on AWS using Terraform and Ansible.</li>
             </ul>
         </div>
         <div>
             <h5 class="mb-1">Junior DevOps Engineer</h5>
             <p class="mb-0">Digital Innovators | Jun 2019 - Dec 2020</p>
-            <ul>
-                <li>Set up Jenkins CI/CD pipelines for multi-environment applications.</li>
-                <li>Implemented logging and monitoring with ELK stack and Prometheus.</li>
-                <li>Assisted in containerizing legacy applications using Docker.</li>
+            <ul class="mylist">
+                <li><i class="fas fa-check icon"></i>Set up Jenkins CI/CD pipelines for multi-environment applications.</li>
+                <li><i class="fas fa-check icon"></i>Implemented logging and monitoring with ELK stack and Prometheus.</li>
+                <li><i class="fas fa-check icon"></i>Assisted in containerizing legacy applications using Docker.</li>
             </ul>
         </div>
     </section>
