@@ -96,7 +96,6 @@ tag: cv
             </ul>
         </div>
     </section>
-
     <!-- Education Section -->
     <section>
         <div class="section-title">Education</div>
@@ -105,7 +104,6 @@ tag: cv
             <p class="mb-0">University of Technology | 2015 - 2019</p>
         </div>
     </section>
-
     <!-- Certifications Section -->
     <section>
         <div class="section-title">Certifications</div>
@@ -115,14 +113,13 @@ tag: cv
             <li><i class="fas fa-check icon"></i>HashiCorp Certified: Terraform Associate</li>
         </ul>
     </section>
-
     <!-- Projects Section -->
     <section>
         <div class="section-title">Projects</div>
-        <ul>
-            <li><strong>Automated Deployment System:</strong> Designed a Jenkins-based pipeline for a microservices application hosted on Kubernetes.</li>
-            <li><strong>Infrastructure as Code:</strong> Built reusable Terraform modules for AWS infrastructure.</li>
-            <li><strong>Monitoring Dashboard:</strong> Created Grafana dashboards to visualize application performance and health metrics.</li>
+        <ul class="mylist">
+            <li><i class="fas fa-check icon"></i><strong>Automated Deployment System:</strong> Designed a Jenkins-based pipeline for a microservices application hosted on Kubernetes.</li>
+            <li><i class="fas fa-check icon"></i><strong>Infrastructure as Code:</strong> Built reusable Terraform modules for AWS infrastructure.</li>
+            <li><i class="fas fa-check icon"></i><strong>Monitoring Dashboard:</strong> Created Grafana dashboards to visualize application performance and health metrics.</li>
         </ul>
     </section>
 </div>
