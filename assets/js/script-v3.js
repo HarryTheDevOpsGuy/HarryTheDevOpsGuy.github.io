@@ -63,12 +63,15 @@ function websiteTheme(theme) {
         document.documentElement.style.setProperty('--sidebar-background-color', '#f8f9fa');
         document.documentElement.style.setProperty('--main-content-background-color', '#f8f9fa');
         document.documentElement.style.setProperty('--badge-text-color', '#ffffff'); 
+        document.documentElement.style.setProperty('--resume-body-background-color', '#ffffff');
     } else {
         document.documentElement.style.setProperty('--background-color', '#121212');
         document.documentElement.style.setProperty('--text-color', '#e0e0e0');
         document.documentElement.style.setProperty('--sidebar-background-color', '#1e1e1e');
         document.documentElement.style.setProperty('--main-content-background-color', '#1e1e1e');
         document.documentElement.style.setProperty('--badge-text-color', '#121212');
+        document.documentElement.style.setProperty('--resume-body-background-color', '#1c2d34');
+
     }
 }
 
