@@ -9,7 +9,7 @@ tag: cv
 <style>
     .blog-content {
         font-family: 'Arial', sans-serif;
-        background: color #f2f2f5;
+        background: color var(--main-content-background-color, #1e1e1e);
     }
 
     .resume-body .header {
@@ -21,16 +21,16 @@ tag: cv
     }
     .resume-body .header h2 {
         font-weight: 400;
-        color: #555;
+        color: var(--theme-color, #bb86fc);
     }
     .contact-details i {
-        color: #555;
+        color: var(--theme-color, #bb86fc);
     }
     .resume-body .section-title {
         font-size: 1.2rem;
         font-weight: bold;
-        color: #333;
-        border-bottom: 2px solid #007bff;
+        color: var(--theme-color, #bb86fc);
+        border-bottom: 2px solid var(--theme-color, #bb86fc);
         padding-bottom: 5px;
         margin-bottom: 15px;
     }
@@ -42,7 +42,7 @@ tag: cv
         margin-bottom: 5px;
     }
     .column-left {
-        background-color: #fff;
+        background-color: var(--main-content-background-color, #1e1e1e);
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
