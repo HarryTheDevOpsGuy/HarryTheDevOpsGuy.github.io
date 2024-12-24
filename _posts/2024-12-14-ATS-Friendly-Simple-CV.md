@@ -82,7 +82,7 @@ tag: cv
         <div class="section-title">Professional Experience</div>
         <div class="mb-3">
             <h5 class="mb-1">DevOps Engineer</h5>
-            <p class="text-muted mb-0">Tech Solutions Inc. | Jan 2021 - Present</p>
+            <p class="mb-0">Tech Solutions Inc. | Jan 2021 - Present</p>
             <ul>
                 <li>Developed and maintained CI/CD pipelines for Java, Python, and Node.js applications, reducing deployment times by 30%.</li>
                 <li>Managed Kubernetes clusters, ensuring 99.99% uptime for microservices-based applications.</li>
@@ -91,7 +91,7 @@ tag: cv
         </div>
         <div>
             <h5 class="mb-1">Junior DevOps Engineer</h5>
-            <p class="text-muted mb-0">Digital Innovators | Jun 2019 - Dec 2020</p>
+            <p class="mb-0">Digital Innovators | Jun 2019 - Dec 2020</p>
             <ul>
                 <li>Set up Jenkins CI/CD pipelines for multi-environment applications.</li>
                 <li>Implemented logging and monitoring with ELK stack and Prometheus.</li>
@@ -105,7 +105,7 @@ tag: cv
         <div class="section-title">Education</div>
         <div>
             <p class="mb-0">Bachelor of Science in Computer Science</p>
-            <p class="text-muted mb-0">University of Technology | 2015 - 2019</p>
+            <p class="mb-0">University of Technology | 2015 - 2019</p>
         </div>
     </section>
 
