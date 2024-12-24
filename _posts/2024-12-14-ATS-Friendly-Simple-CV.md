@@ -44,12 +44,12 @@ tag: cv
         <div class="d-flex justify-content-between align-items-center">
             <div>
                 <h1 class="mb-0 default-title">John Doe</h1>
-                <p class="text-muted mb-0">DevOps Engineer</p>
-                <p class="text-muted">Email: john.doe@example.com | Phone: (123) 456-7890</p>
+                <p class="mb-0">DevOps Engineer</p>
+                <p>Email: john.doe@example.com | Phone: (123) 456-7890</p>
             </div>
             <div>
-                <p class="text-muted mb-0">LinkedIn: linkedin.com/in/johndoe</p>
-                <p class="text-muted mb-0">GitHub: github.com/johndoe</p>
+                <p class="mb-0">LinkedIn: linkedin.com/in/johndoe</p>
+                <p class="mb-0">GitHub: github.com/johndoe</p>
             </div>
         </div>
     </header>
