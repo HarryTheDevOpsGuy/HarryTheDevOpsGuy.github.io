@@ -34,7 +34,7 @@ function changeFontSize() {
 
 function toggleTheme() {
     const currentBackgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--background-color').trim();
-    if (currentBackgroundColor === '#121212') {
+    if (currentBackgroundColor === '#000') {
         // document.documentElement.style.setProperty('--background-color', '#ffffff');
         // document.documentElement.style.setProperty('--text-color', '#000000');
         // document.documentElement.style.setProperty('--sidebar-background-color', '#f8f9fa');
