@@ -27,10 +27,10 @@ permalink: /cron-builder.html
             <button class="btn btn-primary btn-custom" type="button" onclick="evaluateCron()">Evaluate</button>
             <button class="btn btn-warning btn-custom" type="button" onclick="generateAndEvaluateRandomCron()">Generate & Evaluate Random Cron</button>
         </div>
-        <p id="cronDescription" class="text-muted"></p>
+        <p id="cronDescription"></p>
     </div>
     <div class="card card-custom p-4">
-        <h3 class="card-title">Examples:</h3>
+        <h3 class="card-title">Recently Generated Crons:</h3>
         <div id="examplesList"></div>
     </div>
 </div>
