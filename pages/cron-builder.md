@@ -1,6 +1,6 @@
 ---
 layout: base
-title: Blog
+title: Cron Builder
 permalink: /cron-builder.html
 ---
 
