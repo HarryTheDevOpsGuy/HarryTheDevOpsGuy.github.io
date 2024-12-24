@@ -32,7 +32,7 @@ tag: cv
     margin-bottom: 15px;
     font-size: 1.2rem;
 }
-.skill-icon {
+/* .skill-icon {
     width: 30px;
     height: 30px;
     margin-right: 10px;
@@ -42,7 +42,22 @@ tag: cv
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
+} */
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
+
+.skills-list span {
+    background: var(--theme-color, #bb86fc);
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
 .experience, .education, .certifications {
     margin-bottom: 30px;
 }
@@ -82,14 +97,25 @@ tag: cv
     <div class="cv-skills">
         <div>
             <h3 class="cv-section-title">🔧 Skills</h3>
-            <div class="d-flex flex-wrap my-4">
+            <div class="skills-list">
+                <span>AWS</span>
+                <span>Docker</span>
+                <span>Kubernetes</span>
+                <span>Terraform</span>
+                <span>Jenkins</span>
+                <span>Ansible</span>
+                <span>Prometheus</span>
+                <span>Grafana</span>
+                <span>Linux</span>
+            </div>
+            <!-- <div class="d-flex flex-wrap my-4">
                 <div><img class="skill-icon" src="https://img.icons8.com/ios/452/aws.png" alt="AWS">AWS</div>
                 <div><img class="skill-icon" src="https://img.icons8.com/ios/452/docker.png" alt="Docker">Docker</div>
                 <div><img class="skill-icon" src="https://img.icons8.com/ios/452/kubernetes.png" alt="Kubernetes">Kubernetes</div>
                 <div><img class="skill-icon" src="https://img.icons8.com/ios/452/terraform.png" alt="Terraform">Terraform</div>
                 <div><img class="skill-icon" src="https://img.icons8.com/ios/452/jenkins.png" alt="Jenkins">Jenkins</div>
                 <div><img class="skill-icon" src="https://img.icons8.com/ios/452/gitlab.png" alt="GitLab">GitLab CI</div>
-            </div>
+            </div> -->
         </div>
     </div>
 
