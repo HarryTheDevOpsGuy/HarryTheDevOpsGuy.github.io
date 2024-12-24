@@ -6,7 +6,7 @@ permalink: /cron-builder.html
 
  <style>
     /* body { font-family: 'Roboto', sans-serif; } */
-    .highlight { background-color:rgba(116, 236, 238, 0.72); transition: background-color 1s ease; }
+    .highlight { background-color:rgba(63, 133, 67, 0.72); transition: background-color 1s ease; }
     .card-custom { border: none; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
     .btn-custom { border-radius: 50px; }
     .code-block { background-color: #f8f9fa; padding: 5px 10px; border-radius: 5px; font-family: monospace; }
@@ -104,9 +104,9 @@ permalink: /cron-builder.html
             </div>
         `);
         $('#examplesList').prepend(newExample);
-        setTimeout(() => newExample.removeClass('highlight'), 2000);
+        setTimeout(() => newExample.removeClass('highlight'), 10000);
         showDetails(newExample[0]);
-        setTimeout(() => $(newExample).find('.details').slideUp(), 5000);
+        setTimeout(() => $(newExample).find('.details').slideUp(), 10000);
     };
 
     const copyToClipboard = text => navigator.clipboard.writeText(text).then(() => alert('Cron expression copied to clipboard'));
