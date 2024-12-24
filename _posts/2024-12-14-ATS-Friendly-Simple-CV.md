@@ -109,10 +109,10 @@ tag: cv
     <!-- Certifications Section -->
     <section>
         <div class="section-title">Certifications</div>
-        <ul>
-            <li>AWS Certified Solutions Architect – Associate</li>
-            <li>Certified Kubernetes Administrator (CKA)</li>
-            <li>HashiCorp Certified: Terraform Associate</li>
+        <ul class="mylist">
+            <li><i class="fas fa-check icon"></i>AWS Certified Solutions Architect – Associate</li>
+            <li><i class="fas fa-check icon"></i>Certified Kubernetes Administrator (CKA)</li>
+            <li><i class="fas fa-check icon"></i>HashiCorp Certified: Terraform Associate</li>
         </ul>
     </section>
 
