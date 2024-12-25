@@ -15,6 +15,11 @@ Welcome to my DevOps blog. In this post, I'll share insights into the latest tre
 DevOps is a set of `practices` that combines **software development** (Dev) and IT operations (Ops), aiming to shorten the systems development life cycle and provide continuous delivery with high software quality.
 
 Stay tuned for more posts!
+## My **SKILLS**
+ - abc new
+ - new list2 
+ - *docker*
+ - **terraform**
 
 
 ## My Blog Post
