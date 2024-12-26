@@ -1,0 +1,10 @@
+// Light theme-specific styles
+// _light-theme.scss
+body {
+    background-color: $light-bg;
+    color: $light-text;
+}
+.btn-primary {
+    background-color: $light-primary;
+    border-color: $light-primary;
+}

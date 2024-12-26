@@ -1,0 +1,14 @@
+// Main entry point
+
+// main.scss
+@import 'variables';
+@import 'mixins';
+@import 'utilities';
+
+body {
+    @import 'light-theme';
+
+    &.dark-mode {
+        @import 'dark-theme';
+    }
+}
