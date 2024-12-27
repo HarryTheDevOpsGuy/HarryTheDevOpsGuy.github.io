@@ -1,0 +1,38 @@
+/* themes.css */
+
+/* Base Variables */
+:root {
+    --bs-primary: #0d6efd;
+    --bs-secondary: #6c757d;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+  
+  }
+  
+  /* Dark Theme Variables */
+  [data-theme="dark"] {
+    --body-bg: var(--bs-dark);
+    --text-color: #f8f9fa;
+    --link-color: #0dcaf0;
+    --card-bg: #343a40;
+    --card-border-color: #495057;
+    --input-bg: #495057;
+  }
+
+
+  /* Dark Theme Variables */
+  [data-theme="light"] {
+    --body-bg: var(--bs-light);
+    --text-color: #212529;
+    --link-color: var(--bs-primary);
+    --card-bg: #ffffff;
+    --card-border-color: #dee2e6;
+    --input-bg: #ffffff;
+  }
+
+
+  

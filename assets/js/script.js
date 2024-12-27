@@ -3,6 +3,16 @@ $(document).ready(function() {
         $('#successMessage').text(message).fadeIn().delay(2000).fadeOut(); 
     }
 
+    // Theme toggle script
+  
+    const toggleButton = $('#themeToggle');
+    toggleButton.click(function() {
+        const currentTheme = $('html').attr('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        $('html').attr('data-theme', newTheme);
+    });
+
+
     // Create new resume with unique ID
     $('#newResume').click(function() {
         const newResumeId = 'resume-' + Date.now();
