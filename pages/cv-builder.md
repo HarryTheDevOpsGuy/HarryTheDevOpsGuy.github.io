@@ -16,7 +16,7 @@ permalink: /cv-builder.html
     </div>
     <div class="row g-4">
         {% for post in site.tags['cv'] %}
-        <div class="col-md-4" data-tags="{{ post.tags | join: ', ' }}">
+        <div class="col-md-4 post" data-tags="{{ post.tags | join: ', ' }}">
             <div class="thumbnail">
                 <img alt="{{ post.title }}" src="{{ post.featured_image | default: '/assets/img/logo1.jpg' }}"/>
                 <div class="premium-tag">Free</div>
