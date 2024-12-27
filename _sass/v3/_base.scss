@@ -43,6 +43,31 @@ a {
 }
 
 
+.brand-logo {
+  position: relative;
+  width: 300px; /* Frame width */
+  height: 150px; /* Frame height for square frame */
+  border: 2px solid rgba(255, 255, 255, 0.8); /* Stylish border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 5px; /* Adds some space inside the border */
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0)); /* Fading transparent sides */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Stylish shadow for elevation */
+  overflow: hidden; /* Ensures the image stays within the frame */
+}
+
+.brand-logo img {
+  width: 100%; /* Ensures image covers the frame */
+  height: 100%; /* Ensures image covers the frame */
+  object-fit: cover; /* Ensures the image scales correctly inside the frame */
+  transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+  transform: scale(1.5);
+}
+
+.brand-logo:hover img {
+  transform: scale(1.2); /* Zooms the image within the frame */
+}
+
+
 // Default config
 .section-default-title {
   font-size: 2.5rem;
