@@ -4,6 +4,7 @@ title: "ATS Friendly DevOps CV11"
 description: "Most Popular ATS Friendly DevOps Resume"
 date: 2024-12-14
 tags: [cv, tailwind]
+categories: [resumes]
 ---
 
 <!-- Header Section -->
