@@ -114,7 +114,7 @@ id: cv01
 
 <div class="header">
   <div class="d-flex align-items-center">
-      <img src="https://placehold.co/150" alt="Profile picture of Hari Prasad" class="profile-picture">
+      <img src="assets/img/2.jpg" height="150px" width="150px" alt="Profile picture of Hari Prasad" class="profile-picture">
       <div>
           <h1>Hari Prasad</h1>
           <h3>Senior DevOps Engineer</h3>
