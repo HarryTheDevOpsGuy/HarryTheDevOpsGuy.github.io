@@ -183,7 +183,6 @@ $(document).ready(function() {
         }).show();
     });
 
-    
 
     // Initial load of saved resumes
     loadSavedResumes();
