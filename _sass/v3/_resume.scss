@@ -109,5 +109,19 @@
       font-size: 0.875rem;
       color: #d1d5db;
   }
+  .premium-tag {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #FF0000;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 0.875rem;
+      display: none;
+  }
+  .thumbnail:hover .premium-tag {
+      display: block;
+  }
 
 }

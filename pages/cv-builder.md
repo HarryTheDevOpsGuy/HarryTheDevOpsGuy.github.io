@@ -10,6 +10,7 @@ permalink: /cv-builder.html
         <div class="col-md-4">
             <div class="thumbnail">
                 <img alt="{{ post.title }}" src="{{ post.featured_image | default: '/assets/img/logo1.jpg' }}"/>
+                <div class="premium-tag">Free</div>
                 <div class="caption">
                     <h3>{{ post.title }}</h3>
                     <p>{{ post.description | default: "trending resume" }}</p>
