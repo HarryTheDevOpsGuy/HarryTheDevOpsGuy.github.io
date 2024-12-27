@@ -9,15 +9,15 @@ permalink: /cv-builder.html
         {% for post in site.tags['cv'] %}
         <div class="col-md-4">
             <div class="thumbnail">
-                <img alt="A scenic view of a mountain range with a clear blue sky" src="https://storage.googleapis.com/a1aa/image/fA2BlYvQlQ1hZa6orkCOfW4byoVW5CFQdKvsHvfk8y1NuJePB.jpg"/>
+                <img alt="{{ post.title }}" src="{{ post.featured_image | default: '/assets/img/logo1.jpg' }}"/>
                 <div class="caption">
                     <h3>{{ post.title }}</h3>
                     <p>{{ post.description | default: "trending resume" }}</p>
                     <div class="mt-2">
-                        <span class="tag">Adventure</span>
+                        <span class="tag">{{ post.tag }}</span>
                     </div>
                     <div class="meta mt-2">
-                        <span>Posted by Harry</span> | <span>March 10, 2023</span>
+                        <span>Posted by Harry</span> | <span>{{ post.date | date: "%B %d, %Y" }}</span>
                     </div>
                     <div class="contact-links text-center hide-code">
                         <a href="{{ post.url }}" class="contact-link" target="_blank">
