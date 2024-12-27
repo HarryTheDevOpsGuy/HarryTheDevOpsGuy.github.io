@@ -17,7 +17,7 @@ permalink: /cv-builder.html
         <div class="col-md-4 post" data-tags="{{ post.tags | join: ', ' }}">
             <div class="thumbnail">
                 <img alt="{{ post.title }}" src="{{ post.featured_image | default: '/assets/img/logo1.jpg' }}"/>
-                {% for cvtype in free premimum %}
+                {% for cvtype in data.base.resume_types %}
                     {% if post.tags contains cvtype %}
                 <div class="premium-tag">{{ cvtype }}</div> 
                     {% endif %}
