@@ -19,7 +19,7 @@ permalink: /cv-builder.html
                 <img alt="{{ post.title }}" src="{{ post.featured_image | default: '/assets/img/logo1.jpg' }}"/>
                 {% for cvtype in [ free, premimum ] %}
                     {% if post.tags contains cvtype %}
-                        <div class="premium-tag">{{ cvtype }}</div> 
+                <div class="premium-tag">{{ cvtype }}</div> 
                     {% endif %}
                 {% endfor %}
                 <div class="caption">
