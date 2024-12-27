@@ -21,9 +21,15 @@ permalink: /cv-builder.html
 
 
 <div class="container resumes mt-5">
+    <div class="mb-4">
+        <span class="tag" data-tag="Adventure">Adventure (1)</span>
+        <span class="tag" data-tag="Relaxation">Relaxation (1)</span>
+        <span class="tag" data-tag="Urban">Urban (1)</span>
+    </div>
     <div class="row g-4">
         {% for post in site.tags['cv'] %}
-        <div class="col-md-4">
+        {% assign tags = post.tags | sort %}
+        <div class="col-md-4" data-tags="[{{ post.tags }}]">
             <div class="thumbnail">
                 <img alt="{{ post.title }}" src="{{ post.featured_image | default: '/assets/img/logo1.jpg' }}"/>
                 <div class="premium-tag">Free</div>
@@ -31,7 +37,9 @@ permalink: /cv-builder.html
                     <h3>{{ post.title }}</h3>
                     <p>{{ post.description | default: "trending resume" }}</p>
                     <div class="mt-2">
-                        <span class="tag">{{ post.tag }}</span>
+                        {% for tgs in tags %}
+                        <span class="tag">{{ tgs }}</span>
+                        {% endfor %}
                     </div>
                     <div class="meta mt-2">
                         <span>Posted by Harry</span> | <span>{{ post.date | date: "%B %d, %Y" }}</span>
