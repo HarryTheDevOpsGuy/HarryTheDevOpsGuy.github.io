@@ -10,9 +10,6 @@ permalink: /cv-builder.html
         {% for tag in tags %}
         <span class="tag" data-tag="{{ tag[0] }}">{{ tag[0] }} ({{ tag[1].size }})</span>
         {% endfor %}
-        <!-- <span class="tag" data-tag="{{ tag[0] }}">Adventure (1)</span>
-        <span class="tag" data-tag="Relaxation">Relaxation (1)</span>
-        <span class="tag" data-tag="Urban">Urban (1)</span> -->
     </div>
     <div class="row g-4">
         {% for post in site.tags['cv'] %}
@@ -25,7 +22,7 @@ permalink: /cv-builder.html
                     <p>{{ post.description | default: "trending resume" }}</p>
                     <div class="mt-2">
                         {% for tgs in post.tags %}
-                        <span class="tag">{{ tgs }}</span>
+                        <span class="tag" data-tag="{{ tgs }}">{{ tgs }}</span>
                         {% endfor %}
                     </div>
                     <div class="meta mt-2">
