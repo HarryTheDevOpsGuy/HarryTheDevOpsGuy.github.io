@@ -173,6 +173,18 @@ $(document).ready(function() {
         }
     });
 
+    //  Filter resume by tags
+    $('.tag').on('click', function() {
+        var tag = $(this).data('tag');
+        $('.post').hide();
+        $('.post').filter(function() {
+            var tags = $(this).data('tags').split(', ');
+            return tags.includes(tag);
+        }).show();
+    });
+
+    
+
     // Initial load of saved resumes
     loadSavedResumes();
 });
