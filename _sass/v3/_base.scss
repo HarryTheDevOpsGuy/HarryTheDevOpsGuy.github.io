@@ -1,6 +1,6 @@
 
 :root {
-  --background-color: #000;
+  // --background-color: #000;
   --theme-color: #bb86fc;
   // --text-color: #e0e0e0;
 }
@@ -165,7 +165,7 @@ a {
 
 /* Contact */ 
 .custom-btn {
-    background-color: var(--background-color, #000);
+    background-color: var(--link-color, #000);
     color: var(--theme-color, #bb86fc);
   }
   
