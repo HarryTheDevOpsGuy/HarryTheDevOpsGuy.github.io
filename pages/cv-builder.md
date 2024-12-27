@@ -4,6 +4,21 @@ title: Resume Builder | CV Builder
 permalink: /cv-builder.html
 ---
 
+<div class="container">
+        <h1 class="my-4">Tags with Post Counts</h1>
+        <div class="tag-list">
+            {% assign tags = site.tags | sort %}
+            {% for tag in tags %}
+                <div class="tag-item">
+                    <a href="{{ site.baseurl }}/tag/{{ tag[0] | slugify }}" class="btn btn-primary">
+                        {{ tag[0] }} <span class="badge bg-secondary">{{ tag[1].size }}</span>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
 <div class="container resumes mt-5">
     <div class="row g-4">
         {% for post in site.tags['cv'] %}
