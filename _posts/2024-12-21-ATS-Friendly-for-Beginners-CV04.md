@@ -4,7 +4,7 @@ title: "ATS-Friendly-For-Beginners-CV04"
 description: "Most Popular ATS Friendly Beginners Resume"
 date: 2024-12-21
 featured_image: /assets/img/resume04.png
-tags: [cv, creative, stylish]
+tags: [cv, creative, stylish, free]
 id: cv01
 ---
 

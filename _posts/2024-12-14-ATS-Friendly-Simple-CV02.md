@@ -3,7 +3,7 @@ layout: cv-post
 title: "ATS-Friendly-Simple-CV02"
 description: "Most Popular ATS Friendly Simple Resume"
 date: 2024-12-14
-tag: cv
+tags: [cv, creative, stylish, free]
 ---
 <style>
     .resume-section {
