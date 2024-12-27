@@ -3,7 +3,8 @@ layout: cv-post
 title: "ATS-Friendly-For-Beginners-CV02"
 description: "Most Popular ATS Friendly Simple Resume"
 date: 2024-12-20
-tag: cv
+# tag: cv
+tags: [cv, trending, mordarn]
 ---
 
 <style>
