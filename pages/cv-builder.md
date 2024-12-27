@@ -7,8 +7,9 @@ permalink: /cv-builder.html
 <div class="container">
         <h1 class="my-4">Tags with Post Counts</h1>
         <div class="tag-list">
-            {% assign tags = site.tags['cv'] | sort %}
-            {% for tag in tags %}
+            {% assign tags = site.tags | sort %}
+            {% for tag in tags['cv'] %}
+
                 <div class="tag-item">
                     <a href="{{ site.baseurl }}/tag/{{ tag[0] | slugify }}" class="btn btn-primary">
                         {{ tag[0] }} <span class="badge bg-secondary">{{ tag[1].size }}</span>
