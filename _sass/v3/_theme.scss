@@ -16,11 +16,18 @@
   /* Dark Theme Variables */
   [data-theme="dark"] {
     --body-bg: var(--bs-dark);
-    --text-color: #f8f9fa;
+    // --text-color: #f8f9fa;
     --link-color: #0dcaf0;
     --card-bg: #343a40;
     --card-border-color: #495057;
     --input-bg: #495057;
+
+    --background-color: #000;
+    --text-color: #e0e0e0;
+    --sidebar-background-color: #1e1e1e;
+    --main-content-background-color: #1e1e1e;
+    --badge-text-color: #121212;
+    --resume-body-background-color: #1c2d34;
   }
 
 
@@ -32,6 +39,12 @@
     --card-bg: #ffffff;
     --card-border-color: #dee2e6;
     --input-bg: #ffffff;
+
+    --background-color: #ffffff;
+    --sidebar-background-color: #f8f9fa;
+    --main-content-background-color: #f8f9fa;
+    --badge-text-color: #ffffff;
+    --resume-body-background-color: #ffffff;
   }
 
 
