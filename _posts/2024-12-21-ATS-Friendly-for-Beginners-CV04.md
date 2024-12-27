@@ -3,6 +3,7 @@ layout: cv-post
 title: "ATS-Friendly-For-Beginners-CV04"
 description: "Most Popular ATS Friendly Beginners Resume"
 date: 2024-12-21
+featured_image: /assets/img/resume04.png
 tag: cv
 id: cv01
 ---
