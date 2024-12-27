@@ -4,7 +4,7 @@ title: "ATS Friendly DevOps CV10"
 description: "Most Popular ATS Friendly DevOps Resume"
 date: 2024-12-14
 # tag: cv
-tags: [cv, trending, mordarn, premimum]
+tags: [cv, trending, mordarn, premium]
 ---
 
 <style>
