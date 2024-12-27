@@ -32,6 +32,14 @@ function changeFontSize() {
     localStorage.setItem('fontSize', randomSize);
 }
 
+// Theme toggle script
+function switchTheme() {
+    const currentTheme = $('html').attr('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    $('html').attr('data-theme', newTheme);
+}
+
+
 function toggleTheme() {
     const currentBackgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--background-color').trim();
     if (currentBackgroundColor === '#000') {

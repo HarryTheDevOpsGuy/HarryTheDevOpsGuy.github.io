@@ -2,14 +2,16 @@
 :root {
   --background-color: #000;
   --theme-color: #bb86fc;
-  --text-color: #e0e0e0;
+  // --text-color: #e0e0e0;
 }
 
 
 body {
     // font-family: 'Roboto', sans-serif;
     font-family: 'Poppins', sans-serif;
-    background-color: var(--background-color, #000);
+    // background-color: var(--background-color, #000);
+    // color: var(--text-color, #e0e0e0);
+    background-color: var(--body-bg, #000);
     color: var(--text-color, #e0e0e0);
     font-size: 14px;
     scroll-behavior: smooth;
