@@ -8,7 +8,7 @@ permalink: /cv-builder.html
     <div class="mb-4">
         {% assign tags = site.tags | sort %}
         {% for tag in tags %}
-        <span class="tag" data-tag="{{ tag[0] }}">{{ tag[0] }} ({{ tag[1].size }})</span>
+        <button class="tag" data-tag="{{ tag[0] }}">{{ tag[0] }} ({{ tag[1].size }})</button>
         {% endfor %}
         <!-- <span class="tag" data-tag="{{ tag[0] }}">Adventure (1)</span>
         <span class="tag" data-tag="Relaxation">Relaxation (1)</span>
