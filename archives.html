@@ -125,9 +125,7 @@ title: Archives | All Posts
               <span><i class="fas fa-user"></i> Harry</span>
               <span><i class="fas fa-clock"></i>Posted on {{ post.date | date: "%B %d, %Y" }}</span>
               <span><i class="fas fa-tags"></i>
-                {% for tgs in post.tags %}
-                  {{ tgs }}
-                {% endfor %}
+                {{ post.tags | join: ", " }}
               </span>
             </div>
           </div>
