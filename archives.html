@@ -8,7 +8,7 @@ title: Archives | All Posts
     <ul>
         {% assign categories = site.posts | map: "categories" | join: "," | split: "," | uniq | sort %}
         {% for category in categories %}
-        <li><a href="/categories/{{ category | downcase }}/">{{ category }}</a></li>
+        <li><a href="/{{ category | downcase }}/">{{ category }}</a></li>
         {% endfor %}
     </ul>
 </nav>
