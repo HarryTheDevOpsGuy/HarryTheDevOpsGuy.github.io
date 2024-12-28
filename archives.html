@@ -201,7 +201,7 @@ title: Archives | All Posts
 
   {% for category in site.categories %}
      <div class="col-12">
-      <h2 class="category-title" onclick="togglePosts('category1')">
+      <h2 class="category-title" onclick="togglePosts('{{ category[0] }}')">
        <span>
         <a href="/{{ category[0] | slugify }}/">{{ category[0] }}</a> ({{ category[1].size }} posts)
        </span>
