@@ -4,176 +4,145 @@ title: Archives | All Posts
 ---
 
 <style>
-  /* body {
-           font-family: 'Roboto', sans-serif;
-           background-color: #f8f9fa;
-           color: #343a40;
-       }
-       header {
-           background-color: #343a40;
-           color: #ffffff;
-           padding: 2rem 0;
-           border-radius: 0.5rem;
-           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-           margin-bottom: 2rem;
-       } */
 
-  .default-row {
-    background-color:  var(--secondory-bg, #413d3d);
-    padding: 1px 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-  .category-title {
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      color: var(--theme-color, #bb86fc);
-      border-bottom: 2px solid var(--theme-color, #bb86fc);
-      padding-bottom: 0.5rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: color 0.3s ease;
-  }
-  .category-title:hover {
-      color: #0056b3;
-  }
-  .post-item {
-      margin-bottom: 1.5rem;
-      background-color:  var(--main-content-background-color, #1e1e1e);
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      transition: transform 0.3s ease;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      position: relative;
-      padding: 1rem;
-  }
-  .post-item:hover {
-      transform: translateY(-5px);
-  }
-  .post-item img {
-      width: 100px;
-      height: 100px;
-      border-right: 1px solid var(--theme-color, #bb86fc);
-      object-fit: cover;
-      border-radius: 0.5rem;
-      margin-right: 1rem;
-  }
-  .post-item h5 {
-      margin-top: 0.5rem;
-      color: var(--theme-color, #bb86fc);
-  }
-  .post-item p {
-      color: var(--text-color, #fbfbfb);
-  }
+.default-row {
+  background-color:  var(--secondory-bg, #413d3d);
+  padding: 1px 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.category-title {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: var(--theme-color, #bb86fc);
+    border-bottom: 2px solid var(--theme-color, #bb86fc);
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: color 0.3s ease;
+}
+.category-title:hover {
+    color: #0056b3;
+}
+.post-item {
+    margin-bottom: 1.5rem;
+    background-color:  var(--main-content-background-color, #1e1e1e);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    padding: 1rem;
+}
+.post-item:hover {
+    transform: translateY(-5px);
+}
+.post-item img {
+    width: 100px;
+    height: 100px;
+    border-right: 1px solid var(--theme-color, #bb86fc);
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+}
+.post-item h5 {
+    margin-top: 0.5rem;
+    color: var(--theme-color, #bb86fc);
+}
+.post-item p {
+    color: var(--text-color, #fbfbfb);
+}
 
-  .post-item i {
-      color: var(--theme-color, #bb86fc);
-  }
+.post-item i {
+    color: var(--theme-color, #bb86fc);
+}
 
-  .post-content {
-      flex: 1;
-  }
-  .post-meta {
-      font-size: 0.9rem;
-      color: var(--text-color, #fbfbfb);
-      margin-top: 0.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-  }
-  .post-meta span {
-      margin-right: 1rem;
-  }
-  .category-icon {
-      transition: transform 0.3s ease;
-  }
-  .category-title.collapsed .category-icon {
-      transform: rotate(180deg);
-  }
-  @media (max-width: 768px) {
-      .post-item {
-          flex-direction: column;
-          align-items: flex-start;
-      }
-      .post-item img {
-          width: 100%;
-          height: auto;
-          margin-right: 0;
-          margin-bottom: 1rem;
-      }
-      .post-meta {
-          flex-direction: column;
-          align-items: flex-start;
-      }
-      .post-meta span {
-          margin-bottom: 0.5rem;
-      }
-  }
+.post-content {
+    flex: 1;
+}
+.post-meta {
+    font-size: 0.9rem;
+    color: var(--text-color, #fbfbfb);
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.post-meta span {
+    margin-right: 1rem;
+}
+.category-icon {
+    transition: transform 0.3s ease;
+}
+.category-title.collapsed .category-icon {
+    transform: rotate(180deg);
+}
+@media (max-width: 768px) {
+    .post-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .post-item img {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    .post-meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .post-meta span {
+        margin-bottom: 0.5rem;
+    }
+}
 </style>
  
 
-  <div class="container">
-   <h2 class="section-default-title my-4">Blog Archives</h2>
-   <div class="row">
-
-  {% for category in site.categories %}
-     <div class="col-12">
+<div class="container">
+  <h2 class="section-default-title my-4">Blog Archives</h2>
+  <div class="row default-content">
+    {% for category in site.categories %}
+    <div class="col-12">
       <h2 class="category-title" onclick="togglePosts('{{ category[0] }}')">
-       <span>
+      <span>
         <a href="/{{ category[0] | slugify }}/">{{ category[0] }}</a> ({{ category[1].size }} posts)
-       </span>
-       <i class="fas fa-chevron-down category-icon">
-       </i>
+      </span>
+      <i class="fas fa-chevron-down category-icon">
+      </i>
       </h2>
 
-    <div class="post-list" id="{{ category[0] }}" style="display: none;">
-
-    {% for post in site.posts %}
-     {% if post.categories contains category[0] %}
-      
-       <div class="post-item">
-        <img alt="Placeholder image of a scenic landscape with mountains and a lake" src="https://storage.googleapis.com/a1aa/image/KCj65IJefSljqUpU4Fw8fGEKh6kvVFQ8KINUKnVTk302BrePB.jpg"/>
-        <div class="post-content">
-         <h5>
-          <a href="{{ post.url }}">{{ post.title }}</a>
-         </h5>
-         <p> {{ post.description }}</p>
-         <div class="post-meta">
-          <span><i class="fas fa-user"></i> Harry</span>
-          <span><i class="fas fa-clock"></i>Posted on {{ post.date | date: "%B %d, %Y" }}</span>
-          <span><i class="fas fa-tags"></i>
-            {% for tgs in post.tags %}
-              {{ tgs }}
-            {% endfor %}
-          </span>
-         </div>
+      <div class="post-list" id="{{ category[0] }}" style="display: none;">
+      {% for post in site.posts %}
+      {% if post.categories contains category[0] %}  
+        <div class="post-item">
+          <img alt="Placeholder image of a scenic landscape with mountains and a lake" src="https://storage.googleapis.com/a1aa/image/KCj65IJefSljqUpU4Fw8fGEKh6kvVFQ8KINUKnVTk302BrePB.jpg"/>
+          <div class="post-content">
+            <h5>
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </h5>
+            <p> {{ post.description }}</p>
+            <div class="post-meta">
+              <span><i class="fas fa-user"></i> Harry</span>
+              <span><i class="fas fa-clock"></i>Posted on {{ post.date | date: "%B %d, %Y" }}</span>
+              <span><i class="fas fa-tags"></i>
+                {% for tgs in post.tags %}
+                  {{ tgs }}
+                {% endfor %}
+              </span>
+            </div>
+          </div>
         </div>
+      {% endif %}
+      {% endfor %}
       </div>
-     {% endif %}
-    {% endfor %}
     </div>
-  {% endfor %}
-      
-
-   </div>
+    {% endfor %}
   </div>
-  
-  <!-- <script>
-    function togglePosts(categoryId) {
-         var postList = document.getElementById(categoryId);
-         var categoryTitle = postList.previousElementSibling;
-         if (postList.style.display === "none") {
-             postList.style.display = "block";
-             categoryTitle.classList.remove("collapsed");
-         } else {
-             postList.style.display = "none";
-             categoryTitle.classList.add("collapsed");
-         }
-     }
-   </script> -->
+</div>
