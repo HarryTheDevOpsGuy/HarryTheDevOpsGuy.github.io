@@ -4,40 +4,37 @@ title: Blog
 ---
 
 <section class="py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center mb-4">
-          <h2 class="section-default-title">Posts</h2>
-          <p class="lead">Explore All Posts.</p>
-        </div>
-      </div>
-      <div class="row">
-
-        <!-- Experience Card 1 -->
-      {% for post in site.posts %}
-        {% if post.categories['post'] %}
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card shadow-lg border-0 rounded">
-            <img src="{{ post.featured_image | default: '/assets/img/logo1.jpg' }}" class="card-img-top" alt="Post 1">
-            <div class="card-body">
-              <h5 class="card-title default-title">{{ post.title }}</h5>
-              <h6 class="card-subtitle mb-2">Harry</h6>
-              <p class="card-text">{{ post.description }}</p>
-              <ul class="list-inline">
-                <li class="list-inline-item"><strong>Published on:</strong> {{ post.date | date: "%B %d, %Y" }}</li>
-                <li class="list-inline-item"><strong>Author:</strong> Harry</li>
-              </ul>
-              <div class="contact-links">
-                <a href="{{ post.url | relative_url }}" class="contact-link">Read More</a>
-               </div>
-            </div>
-          </div>
-        </div>
-        {% endif %}
-      {% endfor %}
-        
-
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-4">
+        <h2 class="section-default-title">Posts</h2>
+        <p class="lead">Explore All Posts.</p>
       </div>
     </div>
-  </section>
+    <div class="row">
+      <!-- Experience Card 1 -->
+    {% for post in site.posts %}
+      {% if post.categories['post'] %}
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card shadow-lg border-0 rounded">
+          <img src="{{ post.featured_image | default: '/assets/img/logo1.jpg' }}" class="card-img-top" alt="Post 1">
+          <div class="card-body">
+            <h5 class="card-title default-title">{{ post.title }}</h5>
+            <h6 class="card-subtitle mb-2">Harry</h6>
+            <p class="card-text">{{ post.description }}</p>
+            <ul class="list-inline">
+              <li class="list-inline-item"><strong>Published on:</strong> {{ post.date | date: "%B %d, %Y" }}</li>
+              <li class="list-inline-item"><strong>Author:</strong> Harry</li>
+            </ul>
+            <div class="contact-links">
+              <a href="{{ post.url | relative_url }}" class="contact-link">Read More</a>
+              </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+    </div>
+  </div>
+</section>
 
