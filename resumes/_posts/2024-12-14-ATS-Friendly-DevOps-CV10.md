@@ -12,7 +12,7 @@ tags: [cv, trending, mordarn, premium]
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #2c3e50;
+    background-color: var(--secondary-bg, #1e1e1e);
     color: white;
     padding: 20px;
 }
@@ -34,9 +34,9 @@ tags: [cv, trending, mordarn, premium]
 .section-title {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #2c3e50;
+    color: var(--theme-color, #2c3e50); 
     margin-top: 20px;
-    border-bottom: 2px solid #2c3e50;
+    border-bottom: 2px solid var(--theme-color, #2c3e50); 
     padding-bottom: 5px;
 }
 
@@ -60,7 +60,7 @@ tags: [cv, trending, mordarn, premium]
 
 .skills-list li {
     display: inline-block;
-    background-color: #ecf0f1;
+    background-color: var(--theme-color, #2c3e50); 
     margin-right: 10px;
     margin-bottom: 10px;
     padding: 10px;
@@ -73,10 +73,11 @@ tags: [cv, trending, mordarn, premium]
 }
 
 .contact-info a {
-    color: #3498db;
+    color: var(--theme-color, #2c3e50);
 }
 </style>
 
+<div class="default-content">
 <!-- Header Section -->
 <div class="header container">
     <div class="name">
@@ -187,3 +188,4 @@ tags: [cv, trending, mordarn, premium]
         <div>📧 Email: johndoe@example.com</div>
         <div>📞 Phone: +1 234 567 890</div>
     </div>
+  </div>
