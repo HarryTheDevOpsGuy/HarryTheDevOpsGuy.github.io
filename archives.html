@@ -12,18 +12,18 @@ title: Archives | All Posts
         border-radius: 0.5rem;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         margin-bottom: 2rem;
-    }
+    }*/
     .category-title {
         margin-top: 2rem;
         margin-bottom: 1rem;
         font-weight: 700;
-        color: #007bff;
-        border-bottom: 2px solid #007bff;
+        color: var(--theme-color, #bb86fc);
+        border-bottom: 2px solid var(--theme-color, #bb86fc);
         padding-bottom: 0.5rem;
-    } */
+    } 
     .post-item {
         margin-bottom: 1.5rem;
-        background-color: #ffffff;
+        background-color: var(--main-content-background-color, #1e1e1e);
         border-radius: 0.5rem;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         overflow: hidden;
@@ -40,7 +40,7 @@ title: Archives | All Posts
     .post-item img {
         width: 150px;
         height: 150px;
-        border-right: 1px solid #dee2e6;
+        border-right: 1px solid var(--text-color, #fbfbfb);
         object-fit: cover;
         border-radius: 0.5rem;
         margin-right: 1rem;
@@ -50,14 +50,14 @@ title: Archives | All Posts
         color: #343a40;
     }
     .post-item p {
-        color: #6c757d;
+        color: var(--text-color, #6c757d);
     }
     .post-content {
         flex: 1;
     }
     .post-meta {
         font-size: 0.9rem;
-        color: #6c757d;
+        color: var(--text-color, #6c757d);
         margin-top: 0.5rem;
         display: flex;
         flex-wrap: wrap;
@@ -99,7 +99,7 @@ title: Archives | All Posts
 
   {% for category in site.categories %}
     <div class="col-12">
-     <h2 class="default-title">
+     <h2 class="category-title">
        <a href="/{{ category[0] | slugify }}/">{{ category[0] }}</a> ({{ category[1].size }} posts)
      </h2>
     {% for post in site.posts %}
