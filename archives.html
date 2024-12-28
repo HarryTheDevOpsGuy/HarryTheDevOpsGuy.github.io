@@ -20,6 +20,9 @@ title: Archives | All Posts
 
   .default-row {
     background-color:  var(--secondory-bg, #413d3d);
+    padding: 1px 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
   .category-title {
       margin-top: 2rem;
@@ -206,10 +209,10 @@ title: Archives | All Posts
     </h1>
    </header> -->
    <h2 class="section-default-title my-4">Blog Archives</h2>
-   <div class="row default-row">
+   <div class="row">
 
   {% for category in site.categories %}
-     <div class="col-12">
+     <div class="col-12 default-row">
       <h2 class="category-title" onclick="togglePosts('{{ category[0] }}')">
        <span>
         <a href="/{{ category[0] | slugify }}/">{{ category[0] }}</a> ({{ category[1].size }} posts)
