@@ -3,43 +3,9 @@ layout: base
 title: Archives | All Posts 
 ---
 
-
-
-  
-
-
-<!-- <h1>Categories</h1>
-<ul>
-  {% for category in site.categories %}
-    <li>
-      <a href="/{{ category[0] | slugify }}/">{{ category[0] }}</a> 
-      ({{ category[1].size }} posts)
-    </li>
-  {% endfor %}
-</ul> -->
-
-
-
-<!-- {% for category in site.categories %}
-<h2>Posts in the <a href="/{{ category[0] | slugify }}/">{{ category[0] }}</a> ({{ category[1].size }} posts) Category</h2>
-<ul>
-  {% for post in site.posts %}
-    {% if post.categories contains category[0] %}
-      <li>
-        <a href="{{ post.url }}">{{ post.title }}</a>
-        <span>({{ post.date | date: "%Y-%m-%d" }})</span>
-      </li>
-    {% endif %}
-  {% endfor %}
-</ul>
-{% endfor %}
- -->
-
-
-
 <style>
    
-    header {
+    /* header {
         background-color: #343a40;
         color: #ffffff;
         padding: 2rem 0;
@@ -54,7 +20,7 @@ title: Archives | All Posts
         color: #007bff;
         border-bottom: 2px solid #007bff;
         padding-bottom: 0.5rem;
-    }
+    } */
     .post-item {
         margin-bottom: 1.5rem;
         background-color: #ffffff;
@@ -72,8 +38,8 @@ title: Archives | All Posts
         transform: translateY(-5px);
     }
     .post-item img {
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
         border-right: 1px solid #dee2e6;
         object-fit: cover;
         border-radius: 0.5rem;
@@ -123,11 +89,12 @@ title: Archives | All Posts
  
 
   <div class="container">
-   <header class="text-center my-4">
+   <!-- <header class="text-center my-4">
     <h1>
      Blog Archives
     </h1>
-   </header>
+   </header> -->
+   <h2 class="section-default-title">Blog Archives</h2>
    <div class="row">
 
   {% for category in site.categories %}
