@@ -14,7 +14,6 @@ title: Blog
     <div class="row">
       <!-- Experience Card 1 -->
     {% for post in site.posts %}
-      {% if post.categories['post'] %}
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="card shadow-lg border-0 rounded">
           <img src="{{ post.featured_image | default: '/assets/img/logo1.jpg' }}" class="card-img-top" alt="Post 1">
@@ -32,7 +31,6 @@ title: Blog
           </div>
         </div>
       </div>
-      {% endif %}
     {% endfor %}
     </div>
   </div>
