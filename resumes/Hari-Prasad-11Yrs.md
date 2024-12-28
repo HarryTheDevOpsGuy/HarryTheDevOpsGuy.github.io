@@ -201,7 +201,7 @@ tag: cv
 ## ✨ **Footer** 
 ---
 _Thank you for considering my application. I look forward to the opportunity to contribute my skills and expertise to your team._ 
-
+</div>
 
 <!-- Below is not printable -->
 <div class="d-print-none text-center" markdown="1">
@@ -209,5 +209,4 @@ _Thank you for considering my application. I look forward to the opportunity to 
 ## 🙏 Thank You for Visiting! 🎉
 We appreciate your time and hope to see you again soon! 🚀
 
-</div>
 </div>
