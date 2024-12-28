@@ -1,7 +1,7 @@
 ---
 layout: base
 title: Resume Builder | CV Builder 
-permalink: /resume-builder.html
+permalink: index.html
 ---
 
 
