@@ -7,7 +7,7 @@ description: "A Stylish Resume for DevOps"
 tag: cv
 ---
 
-<div class="default-content">
+<div class="default-content" markdown="1">
 <div class="row" markdown="1">
   <div class="col col-md-auto mt-5" markdown="1">
 
