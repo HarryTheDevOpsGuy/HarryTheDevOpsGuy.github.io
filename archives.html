@@ -209,9 +209,11 @@ title: Archives | All Posts
        </i>
       </h2>
 
+    <div class="post-list" id="{{ category[0] }}" style="display: none;">
+
     {% for post in site.posts %}
      {% if post.categories contains category[0] %}
-      <div class="post-list" id="{{ category[0] }}" style="display: none;">
+      
        <div class="post-item">
         <img alt="Placeholder image of a scenic landscape with mountains and a lake" src="https://storage.googleapis.com/a1aa/image/KCj65IJefSljqUpU4Fw8fGEKh6kvVFQ8KINUKnVTk302BrePB.jpg"/>
         <div class="post-content">
@@ -229,10 +231,12 @@ title: Archives | All Posts
           </span>
          </div>
         </div>
-       </div>
+      </div>
      {% endif %}
     {% endfor %}
+    </div>
   {% endfor %}
+      
 
    </div>
   </div>
