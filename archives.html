@@ -143,19 +143,17 @@ title: Archives | All Posts
        <h5>
           <a href="{{ post.url }}">{{ post.title }}</a>
        </h5>
-       <p>
-        Short description of the post content. This is a brief summary of what the post is about.
-       </p>
+       <p> {{ post.description }}</p>
        <div class="post-meta">
         <span>
          <i class="fas fa-user">
          </i>
-         Author Name
+         Author: Harry
         </span>
         <span>
          <i class="fas fa-clock">
          </i>
-         Posted on January 1, 2023 | {{ post.date | date: "%Y-%m-%d" }}
+         Posted on: {{ post.date | date: "%B %d, %Y" }}
         </span>
         <span>
           <i class="fas fa-tags"></i> Tag1 
