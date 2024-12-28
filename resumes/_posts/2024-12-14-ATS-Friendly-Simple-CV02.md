@@ -52,6 +52,7 @@ tags: [cv, creative, stylish, free]
     }
 </style>
 
+<div class="default-content">
 <!-- Header Section -->
 <div class="resume-header text-center">
     <h1 class="default-title">John Doe</h1>
@@ -116,3 +117,6 @@ tags: [cv, creative, stylish, free]
     <p class="mb-1"><strong>Bachelor of Science in Computer Science</strong></p>
     <p>University of Example | Graduated: May 2020</p>
 </div>
+
+</div>
+
