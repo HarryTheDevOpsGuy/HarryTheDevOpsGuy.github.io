@@ -20,7 +20,7 @@ title: Archives | All Posts
 
 
 
-{% for category in site.categories %}
+<!-- {% for category in site.categories %}
 <h2>Posts in the <a href="/{{ category[0] | slugify }}/">{{ category[0] }}</a> ({{ category[1].size }} posts) Category</h2>
 <ul>
   {% for post in site.posts %}
@@ -33,7 +33,7 @@ title: Archives | All Posts
   {% endfor %}
 </ul>
 {% endfor %}
-
+ -->
 
 
 
@@ -129,15 +129,19 @@ title: Archives | All Posts
     </h1>
    </header>
    <div class="row">
+
+  {% for category in site.categories %}
     <div class="col-12">
      <h2 class="category-title">
-      Category 1
+       <a href="/{{ category[0] | slugify }}/">{{ category[0] }}</a> ({{ category[1].size }} posts)
      </h2>
+    {% for post in site.posts %}
+     {% if post.categories contains category[0] %}
      <div class="post-item">
       <img alt="Placeholder image of a scenic landscape with mountains and a lake" src="https://storage.googleapis.com/a1aa/image/KCj65IJefSljqUpU4Fw8fGEKh6kvVFQ8KINUKnVTk302BrePB.jpg"/>
       <div class="post-content">
        <h5>
-        Post Title 1
+          <a href="{{ post.url }}">{{ post.title }}</a>
        </h5>
        <p>
         Short description of the post content. This is a brief summary of what the post is about.
@@ -151,7 +155,7 @@ title: Archives | All Posts
         <span>
          <i class="fas fa-clock">
          </i>
-         Posted on January 1, 2023
+         Posted on January 1, 2023 | {{ post.date | date: "%Y-%m-%d" }}
         </span>
         <span>
           <i class="fas fa-tags"></i> Tag1 
@@ -161,213 +165,12 @@ title: Archives | All Posts
        </div>
       </div>
      </div>
-     <div class="post-item">
-      <img alt="Placeholder image of a city skyline at sunset" src="https://storage.googleapis.com/a1aa/image/HeuJJ2CTPc1OPSIY9ZDmY2Y27XFkVZVNpNbxGUjBJEOawqfTA.jpg"/>
-      <div class="post-content">
-       <h5>
-        Post Title 2
-       </h5>
-       <p>
-        Short description of the post content. This is a brief summary of what the post is about.
-       </p>
-       <div class="post-meta">
-        <span>
-         <i class="fas fa-user">
-         </i>
-         Author Name
-        </span>
-        <span>
-         <i class="fas fa-clock">
-         </i>
-         Posted on January 2, 2023
-        </span>
-        <span>
-          <i class="fas fa-tags"></i> Tag1 
-          <i class="fas fa-tags"></i> Tag2 
-          <i class="fas fa-tags"></i> Tag3 
-        </span>
-       </div>
-      </div>
-     </div>
-     <div class="post-item">
-      <img alt="Placeholder image of a forest trail with sunlight filtering through the trees" src="https://storage.googleapis.com/a1aa/image/d2fXe8e8ElDVRJzA9cJ5cUkTBFiG1RbAVFtEw9YznztcBrePB.jpg"/>
-      <div class="post-content">
-       <h5>
-        Post Title 3
-       </h5>
-       <p>
-        Short description of the post content. This is a brief summary of what the post is about.
-       </p>
-       <div class="post-meta">
-        <span>
-         <i class="fas fa-user">
-         </i>
-         Author Name
-        </span>
-        <span>
-         <i class="fas fa-clock">
-         </i>
-         Posted on January 3, 2023
-        </span>
-       </div>
-      </div>
-     </div>
-    </div>
-    <div class="col-12">
-     <h2 class="category-title">
-      Category 2
-     </h2>
-     <div class="post-item">
-      <img alt="Placeholder image of a beach with clear blue water and white sand" src="https://storage.googleapis.com/a1aa/image/aFSgl7if99T1HqNYf2h1pvSgZsZhj0CLXRfmi15ZK49xBrePB.jpg"/>
-      <div class="post-content">
-       <h5>
-        Post Title 4
-       </h5>
-       <p>
-        Short description of the post content. This is a brief summary of what the post is about.
-       </p>
-       <div class="post-meta">
-        <span>
-         <i class="fas fa-user">
-         </i>
-         Author Name
-        </span>
-        <span>
-         <i class="fas fa-clock">
-         </i>
-         Posted on January 4, 2023
-        </span>
-       </div>
-      </div>
-     </div>
-     <div class="post-item">
-      <img alt="Placeholder image of a bustling market with colorful stalls and people" src="https://storage.googleapis.com/a1aa/image/iQ3HJe0YorR9By02VGN7q1uxfTRnDHaGORv5kCt2tQxygVfnA.jpg"/>
-      <div class="post-content">
-       <h5>
-        Post Title 5
-       </h5>
-       <p>
-        Short description of the post content. This is a brief summary of what the post is about.
-       </p>
-       <div class="post-meta">
-        <span>
-         <i class="fas fa-user">
-         </i>
-         Author Name
-        </span>
-        <span>
-         <i class="fas fa-clock">
-         </i>
-         Posted on January 5, 2023
-        </span>
-       </div>
-      </div>
-     </div>
-     <div class="post-item">
-      <img alt="Placeholder image of a snowy mountain peak under a clear blue sky" src="https://storage.googleapis.com/a1aa/image/PpDHIc4jB7YfL6aSIl8daMffMrrplY3CMeHTqIn2GPNBDW9PB.jpg"/>
-      <div class="post-content">
-       <h5>
-        Post Title 6
-       </h5>
-       <p>
-        Short description of the post content. This is a brief summary of what the post is about.
-       </p>
-       <div class="post-meta">
-        <span>
-         <i class="fas fa-user">
-         </i>
-         Author Name
-        </span>
-        <span>
-         <i class="fas fa-clock">
-         </i>
-         Posted on January 6, 2023
-        </span>
-       </div>
-      </div>
-     </div>
-    </div>
-    <div class="col-12">
-     <h2 class="category-title">
-      Category 3
-     </h2>
-     <div class="post-item">
-      <img alt="Placeholder image of a serene lake surrounded by autumn trees" src="https://storage.googleapis.com/a1aa/image/eCx3tHM6791eJ0g6ta8ieVvoFY7lqukf8kp8nCg47jKwCW9PB.jpg"/>
-      <div class="post-content">
-       <h5>
-        Post Title 7
-       </h5>
-       <p>
-        Short description of the post content. This is a brief summary of what the post is about.
-       </p>
-       <div class="post-meta">
-        <span>
-         <i class="fas fa-user">
-         </i>
-         Author Name
-        </span>
-        <span>
-         <i class="fas fa-clock">
-         </i>
-         Posted on January 7, 2023
-        </span>
-       </div>
-      </div>
-     </div>
-     <div class="post-item">
-      <img alt="Placeholder image of a modern office workspace with computers and desks" src="https://storage.googleapis.com/a1aa/image/24GfNdP3PHx5AaPeiLAFkepOx5DxQfo8x2JCmtnFK2BrDW9PB.jpg"/>
-      <div class="post-content">
-       <h5>
-        Post Title 8
-       </h5>
-       <p>
-        Short description of the post content. This is a brief summary of what the post is about.
-       </p>
-       <div class="post-meta">
-        <span>
-         <i class="fas fa-user">
-         </i>
-         Author Name
-        </span>
-        <span>
-         <i class="fas fa-clock">
-         </i>
-         Posted on January 8, 2023
-        </span>
-       </div>
-      </div>
-     </div>
-     <div class="post-item">
-      <img alt="Placeholder image of a night sky filled with stars and a visible Milky Way" src="https://storage.googleapis.com/a1aa/image/uWI35j47vFLyIVw8x5O1QQKQHHvEi4Ad9NNDXeg7w8YbwqfTA.jpg"/>
-      <div class="post-content">
-       <h5>
-        Post Title 9
-       </h5>
-       <p>
-        Short description of the post content. This is a brief summary of what the post is about.
-       </p>
-       <div class="post-meta">
-        <span>
-         <i class="fas fa-user">
-         </i>
-         Author Name
-        </span>
-        <span>
-         <i class="fas fa-clock">
-         </i>
-         Posted on January 9, 2023
-        </span>
-        
-        <span>
-          <i class="fas fa-tags"></i> Tag1 
-          <i class="fas fa-tags"></i> Tag2 
-          <i class="fas fa-tags"></i> Tag3 
-        </span>
-        
-       </div>
-      </div>
-     </div>
-    </div>
+     {% endif %}
+    {% endfor %}
+
+     
+    {% endfor %}
+
    </div>
   </div>
   
