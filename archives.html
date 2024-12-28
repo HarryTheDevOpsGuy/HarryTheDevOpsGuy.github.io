@@ -198,7 +198,8 @@ title: Archives | All Posts
    </header> -->
    <h2 class="section-default-title my-4">Blog Archives</h2>
    <div class="row">
-     {% for category in site.categories %}
+
+  {% for category in site.categories %}
      <div class="col-12">
       <h2 class="category-title" onclick="togglePosts('category1')">
        <span>
@@ -210,7 +211,6 @@ title: Archives | All Posts
 
     {% for post in site.posts %}
      {% if post.categories contains category[0] %}
-
       <div class="post-list" id="category1" style="display: none;">
        <div class="post-item">
         <img alt="Placeholder image of a scenic landscape with mountains and a lake" src="https://storage.googleapis.com/a1aa/image/KCj65IJefSljqUpU4Fw8fGEKh6kvVFQ8KINUKnVTk302BrePB.jpg"/>
@@ -232,7 +232,7 @@ title: Archives | All Posts
        </div>
      {% endif %}
     {% endfor %}
-    {% endfor %}
+  {% endfor %}
 
    </div>
   </div>
