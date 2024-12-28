@@ -1,4 +1,17 @@
 
+// archive posts
+function togglePosts(categoryId) {
+    var postList = document.getElementById(categoryId);
+    var categoryTitle = postList.previousElementSibling;
+    if (postList.style.display === "none") {
+        postList.style.display = "block";
+        categoryTitle.classList.remove("collapsed");
+    } else {
+        postList.style.display = "none";
+        categoryTitle.classList.add("collapsed");
+    }
+}
+
 function changeThemeColor(color) {
     document.documentElement.style.setProperty('--theme-color', color);
     localStorage.setItem('themeColor', color);

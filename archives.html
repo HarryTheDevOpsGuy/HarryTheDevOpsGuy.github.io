@@ -17,6 +17,10 @@ title: Archives | All Posts
            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
            margin-bottom: 2rem;
        } */
+
+  .default-row {
+    background-color:  var(--secondory-bg, #413d3d);
+  }
   .category-title {
       margin-top: 2rem;
       margin-bottom: 1rem;
@@ -202,7 +206,7 @@ title: Archives | All Posts
     </h1>
    </header> -->
    <h2 class="section-default-title my-4">Blog Archives</h2>
-   <div class="row">
+   <div class="row default-row">
 
   {% for category in site.categories %}
      <div class="col-12">
@@ -246,7 +250,7 @@ title: Archives | All Posts
    </div>
   </div>
   
-  <script>
+  <!-- <script>
     function togglePosts(categoryId) {
          var postList = document.getElementById(categoryId);
          var categoryTitle = postList.previousElementSibling;
@@ -258,4 +262,4 @@ title: Archives | All Posts
              categoryTitle.classList.add("collapsed");
          }
      }
-   </script>
+   </script> -->

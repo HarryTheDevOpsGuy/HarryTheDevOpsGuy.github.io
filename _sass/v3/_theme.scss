@@ -18,6 +18,7 @@
   /* Dark Theme Variables */
   [data-theme="dark"] {
     --body-bg: #000;
+    --secondary-bg: var(--bs-dark);
     // --text-color: #f8f9fa;
     --link-color: #edeeee;
     --card-bg: #343a40;
@@ -36,7 +37,7 @@
   /* Dark Theme Variables */
   [data-theme="light"] {
     --body-bg: #ffffff;
-    --secondory-body-bg: var(--bs-light);
+    --secondory-bg: var(--bs-light);
     --text-color: #0c0c0c;
     --link-color:  #494848;
     --card-bg: #ffffff;
