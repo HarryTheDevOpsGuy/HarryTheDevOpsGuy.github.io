@@ -102,10 +102,12 @@
   font-size: 2.5rem;
   font-weight: 700;
   animation: fadeInDown 1.5s;
+  color: var(--theme-color, #bb86fc);
 }
 .carousel-caption p {
   font-size: 1.25rem;
   animation: fadeInUp 1.5s;
+  color: var(--text-color, #f7f7f8);
 }
 @keyframes fadeInDown {
   from {
