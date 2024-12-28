@@ -4,6 +4,7 @@ title: "First Blog Post"
 description: its all about my devops journey.
 date: 2024-11-30
 excerpt: "A Stylish Resume for DevOps. This is excerpt"
+category: devops
 ---
 
 ### My First Blog Post
