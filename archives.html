@@ -237,3 +237,16 @@ title: Archives | All Posts
    </div>
   </div>
   
+  <script>
+    function togglePosts(categoryId) {
+         var postList = document.getElementById(categoryId);
+         var categoryTitle = postList.previousElementSibling;
+         if (postList.style.display === "none") {
+             postList.style.display = "block";
+             categoryTitle.classList.remove("collapsed");
+         } else {
+             postList.style.display = "none";
+             categoryTitle.classList.add("collapsed");
+         }
+     }
+   </script>
