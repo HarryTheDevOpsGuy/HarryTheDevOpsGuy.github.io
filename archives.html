@@ -115,7 +115,7 @@ title: Archives | All Posts
       {% for post in site.posts %}
       {% if post.categories contains category[0] %}  
         <div class="post-item">
-          <img alt="Placeholder image of a scenic landscape with mountains and a lake" src="https://storage.googleapis.com/a1aa/image/KCj65IJefSljqUpU4Fw8fGEKh6kvVFQ8KINUKnVTk302BrePB.jpg"/>
+          <img alt="{{ post.title }}" src="{{ post.featured_image | default: '/assets/img/logo1.jpg' }}"/>
           <div class="post-content">
             <h5>
               <a href="{{ post.url }}">{{ post.title }}</a>
