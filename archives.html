@@ -156,9 +156,9 @@ title: Archives | All Posts
          Posted on: {{ post.date | date: "%B %d, %Y" }}
         </span>
         <span>
-          <i class="fas fa-tags"></i> Tag1 
-          <i class="fas fa-tags"></i> Tag2 
-          <i class="fas fa-tags"></i> Tag3 
+          {% for tgs in post.tags %}
+          <i class="fas fa-tags"></i> {{ tgs }}
+          {% endfor %}
         </span>
        </div>
       </div>
