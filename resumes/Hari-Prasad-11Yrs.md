@@ -2,8 +2,8 @@
 layout: cv-post
 title: Hari-SrDevOpsLead-11yrs-2024-v3
 description: "A Stylish Resume for DevOps"
-permalink: /resumes/Hari-Prasad-11Yrs-2024-v3.html
-contenteditable: false
+# permalink: /resumes/Hari-Prasad-11Yrs-2024-v3.html
+# contenteditable: false
 tag: cv
 ---
 
