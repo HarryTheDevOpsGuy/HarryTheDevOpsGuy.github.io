@@ -3,6 +3,18 @@ layout: base
 title: Archives | All Posts 
 ---
 
+
+<nav>
+    <ul>
+        {% assign categories = site.posts | map: "categories" | join: "," | split: "," | uniq | sort %}
+        {% for category in categories %}
+        <li><a href="/categories/{{ category | downcase }}/">{{ category }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>
+  
+
+
 <h1>Categories</h1>
 <ul>
   {% for category in site.categories %}
