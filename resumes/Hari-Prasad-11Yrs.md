@@ -7,6 +7,7 @@ description: "A Stylish Resume for DevOps"
 tag: cv
 ---
 
+<div class="default-content">
 <div class="row" markdown="1">
   <div class="col col-md-auto mt-5" markdown="1">
 
@@ -208,4 +209,5 @@ _Thank you for considering my application. I look forward to the opportunity to 
 ## 🙏 Thank You for Visiting! 🎉
 We appreciate your time and hope to see you again soon! 🚀
 
+</div>
 </div>
