@@ -135,7 +135,7 @@ $(document).ready(function() {
     $('#editButton').click(function() {
         $('.resume-body').attr('contenteditable', 'true');
         $('.resume-editor-options').show();
-        $(this).hide();
+        $('.edit-opts').hide();
       });
 
     // Highlight active resume
