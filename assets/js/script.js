@@ -131,6 +131,13 @@ $(document).ready(function() {
         });
     });
 
+    // Enable edit and visible editor tools
+    $('#editButton').click(function() {
+        $('.resume-body').attr('contenteditable', 'true');
+        $('.resume-editor-options').show();
+        $(this).hide();
+      });
+
     // Highlight active resume
     function highlightActiveResume() {
         const resumeId = $('#resume').attr('data-id');
