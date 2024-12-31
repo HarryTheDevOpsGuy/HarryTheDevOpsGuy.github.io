@@ -4,7 +4,7 @@ title: Resume Builder | CV Builder
 ---
 
 
-<header class="resume-header text-center py-5">
+<header class="resume-header text-white text-center py-5">
    <div class="container">
     <h1> Build Your Professional Resume</h1>
     <p class="lead"> Choose from a variety of templates and create your resume in minutes.</p>
