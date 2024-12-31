@@ -3,6 +3,21 @@ layout: base
 title: Resume Builder | CV Builder 
 ---
 
+
+<header class="bg-primary text-white text-center py-5">
+   <div class="container">
+    <h1>
+     Build Your Professional Resume
+    </h1>
+    <p class="lead">
+     Choose from a variety of templates and create your resume in minutes.
+    </p>
+    <a class="btn btn-light btn-lg" href="#">
+     Get Started
+    </a>
+   </div>
+</header>
+
 <div class="container resumes mt-5">
     <div class="mb-4">
         {% assign tags = site.tags | sort %}
