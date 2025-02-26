@@ -4,30 +4,30 @@ layout: default
 
 <div class="flex flex-col md:flex-row gap-8">
   <!-- Course Sidebar with Toggle -->
-  <aside class="md:w-64 flex-shrink-0 relative">
-    <button class="md:hidden absolute -right-3 top-0 p-2 bg-white dark:bg-gray-800 rounded-full shadow-lg z-10" onclick="toggleSidebar()" aria-label="Toggle Sidebar">
-      <svg class="w-4 h-4 transform transition-transform duration-200" id="sidebar-toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <aside class="md:w-72 flex-shrink-0 relative">
+    <button class="md:hidden fixed right-4 top-20 p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg z-50 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200" onclick="toggleSidebar()" aria-label="Toggle Sidebar">
+      <svg class="w-5 h-5 transform transition-transform duration-200" id="sidebar-toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
       </svg>
     </button>
-    <nav class="sticky top-24 overflow-y-auto max-h-(screen-24) bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm transition-all duration-300 ease-in-out" id="course-sidebar">
+    <nav class="md:sticky top-24 overflow-y-auto max-h-[calc(100vh-6rem)] bg-white dark:bg-gray-800 p-5 rounded-xl shadow-md transition-all duration-300 ease-in-out transform md:translate-x-0" id="course-sidebar">
       <!-- Course Info -->
-      <div class="mb-6 border-b dark:border-gray-700 pb-4">
-        <h2 class="text-xl font-bold mb-2">{{ page.course_title | default: page.title }}</h2>
+      <div class="mb-8 border-b dark:border-gray-700 pb-6">
+        <h2 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">{{ page.course_title | default: page.title }}</h2>
         {% if page.course_description %}
-        <p class="text-gray-600 dark:text-gray-400 text-sm">{{ page.course_description }}</p>
+        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{{ page.course_description }}</p>
         {% endif %}
         
         <!-- Progress Bar -->
         {% assign total_lessons = site.pages | where: "course", page.course_id | size %}
         {% assign completed_lessons = 0 %}
-        <div class="mt-4">
-          <div class="flex justify-between text-sm mb-1">
-            <span class="text-gray-600 dark:text-gray-400">Course Progress</span>
-            <span class="text-primary-600">{{ completed_lessons }}/{{ total_lessons }}</span>
+        <div class="mt-6">
+          <div class="flex justify-between text-sm mb-2">
+            <span class="text-gray-600 dark:text-gray-400 font-medium">Course Progress</span>
+            <span class="text-primary-600 dark:text-primary-400 font-semibold">{{ completed_lessons }}/{{ total_lessons }}</span>
           </div>
-          <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-            <div class="h-full bg-primary-600 rounded-full transition-all duration-300" style="width: {{ completed_lessons | times: 100.0 | divided_by: total_lessons }}%"></div>
+          <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+            <div class="h-full bg-primary-600 dark:bg-primary-500 rounded-full transition-all duration-300 ease-out" style="width: {{ completed_lessons | times: 100.0 | divided_by: total_lessons }}%"></div>
           </div>
         </div>
       </div>
@@ -129,8 +129,13 @@ layout: default
 function toggleSidebar() {
   const sidebar = document.getElementById('course-sidebar');
   const icon = document.getElementById('sidebar-toggle-icon');
+  const body = document.body;
+
   sidebar.classList.toggle('translate-x-full');
   icon.classList.toggle('rotate-180');
+
+  // Prevent body scroll when sidebar is open on mobile
+  body.classList.toggle('overflow-hidden', sidebar.classList.contains('translate-x-full'));
 }
 
 function toggleModule(button) {
@@ -138,8 +143,63 @@ function toggleModule(button) {
   const icon = button.querySelector('svg');
   const isExpanded = button.getAttribute('aria-expanded') === 'true';
   
+  // Toggle aria-expanded state
   button.setAttribute('aria-expanded', !isExpanded);
+  
+  // Animate the icon rotation
   icon.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(180deg)';
-  content.style.display = isExpanded ? 'none' : 'block';
+  
+  // Smoothly animate the content height
+  if (isExpanded) {
+    content.style.height = content.scrollHeight + 'px';
+    requestAnimationFrame(() => {
+      content.style.height = '0';
+      content.style.opacity = '0';
+    });
+  } else {
+    content.style.display = 'block';
+    content.style.height = '0';
+    content.style.opacity = '0';
+    requestAnimationFrame(() => {
+      content.style.height = content.scrollHeight + 'px';
+      content.style.opacity = '1';
+    });
+  }
+  
+  // Clean up after animation
+  content.addEventListener('transitionend', function handler() {
+    if (isExpanded) {
+      content.style.display = 'none';
+    } else {
+      content.style.height = 'auto';
+    }
+    content.removeEventListener('transitionend', handler);
+  });
 }
+
+// Initialize module states
+document.addEventListener('DOMContentLoaded', () => {
+  const modules = document.querySelectorAll('.module-section');
+  modules.forEach(module => {
+    const button = module.querySelector('button');
+    const content = module.querySelector('.module-content');
+    
+    // Add transition styles
+    content.style.transition = 'height 0.3s ease-in-out, opacity 0.3s ease-in-out';
+    content.style.overflow = 'hidden';
+    
+    // Set initial state
+    if (content.querySelector('.nav-link.bg-primary-50')) {
+      button.setAttribute('aria-expanded', 'true');
+      content.style.display = 'block';
+      content.style.height = 'auto';
+      content.style.opacity = '1';
+    } else {
+      button.setAttribute('aria-expanded', 'false');
+      content.style.display = 'none';
+      content.style.height = '0';
+      content.style.opacity = '0';
+    }
+  });
+});
 </script>
