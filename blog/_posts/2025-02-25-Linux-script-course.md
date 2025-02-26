@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Complete Linux Shell Scripting Course: From Beginner to Advanced"
-date: 2024-01-07
+date: 2025-02-25
 categories: [Linux, Shell Scripting, Programming]
 tags: [bash, shell, linux, scripting, automation]
 description: "A comprehensive guide to master Linux Shell Scripting from basics to advanced concepts"
