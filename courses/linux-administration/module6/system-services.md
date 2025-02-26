@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: course
 title: System Services
 module: 6
 order: 1

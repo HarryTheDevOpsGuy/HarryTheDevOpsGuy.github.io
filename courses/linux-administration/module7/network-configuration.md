@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: course
 title: Network Configuration
 module: 7
 order: 1

@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: course
 title: User Management
 module: 3
 order: 1

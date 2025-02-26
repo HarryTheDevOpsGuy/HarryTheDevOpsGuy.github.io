@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: course
 title: Introduction to Linux
 module: 1
 order: 1

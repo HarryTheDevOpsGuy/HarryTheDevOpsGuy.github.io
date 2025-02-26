@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: course
 title: Shell Scripting
 module: 8
 order: 1

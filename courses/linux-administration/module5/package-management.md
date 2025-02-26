@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: course
 title: Package Management
 module: 5
 order: 1

@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: course
 title: File System Management
 module: 2
 order: 1

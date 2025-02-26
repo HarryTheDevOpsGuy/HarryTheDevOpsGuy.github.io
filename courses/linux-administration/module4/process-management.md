@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: course
 title: Process Management
 module: 4
 order: 1
