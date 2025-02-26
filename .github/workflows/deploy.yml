@@ -94,13 +94,13 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v3
+        uses: actions/deploy-pages@v4
 
-      - name: Notify deployment status
-        if: always()
-        uses: rtCamp/action-slack-notify@v2
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_COLOR: ${{ job.status }}
-          SLACK_MESSAGE: 'Deployment ${{ job.status }} :rocket:'
-          SLACK_TITLE: 'Deployment Status'
+      # - name: Notify deployment status
+      #   if: always()
+      #   uses: rtCamp/action-slack-notify@v2
+      #   env:
+      #     SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+      #     SLACK_COLOR: ${{ job.status }}
+      #     SLACK_MESSAGE: 'Deployment ${{ job.status }} :rocket:'
+      #     SLACK_TITLE: 'Deployment Status'
