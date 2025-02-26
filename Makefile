@@ -2,7 +2,7 @@
 
 install:
 	@echo "Installing dependencies..."
-	bundle install
+	bundle install --path vendor/bundle
 	npm install
 
 # Build the site with Jekyll and Tailwind CSS
