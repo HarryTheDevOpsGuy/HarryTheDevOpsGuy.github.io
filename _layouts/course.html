@@ -7,39 +7,27 @@ layout: default
   <aside class="md:w-72 flex-shrink-0 fixed md:sticky left-0 top-0 md:top-24 h-screen md:h-auto z-40 transform transition-transform duration-300 ease-in-out" id="course-sidebar">
     <nav class="h-full overflow-y-auto bg-white dark:bg-gray-800 p-5 rounded-xl shadow-md">
       <!-- Course Info -->
-      <div class="mb-8 border-b dark:border-gray-700 pb-6">
+      <div class="mb-8 border-b dark:border-gray-700 pb-6" data-course-id="{{ page.course_id }}">
         <h2 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">{{ page.course_title | default: page.title }}</h2>
         {% if page.course_description %}
         <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{{ page.course_description }}</p>
         {% endif %}
         
-        <!-- Course Prerequisites -->
-        {% if page.prerequisites %}
-        <div class="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-          <h3 class="text-sm font-semibold text-blue-700 dark:text-blue-400 mb-2">Prerequisites</h3>
-          <ul class="text-sm text-blue-600 dark:text-blue-300 space-y-1">
-            {% for prerequisite in page.prerequisites %}
-            <li class="flex items-center gap-2">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path>
-              </svg>
-              {{ prerequisite }}
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
-        {% endif %}
-        
-        <!-- Progress Bar -->
-        {% assign total_lessons = site.pages | where: "course", page.course_id | size %}
-        {% assign completed_lessons = 0 %}
+        <!-- Course Progress -->
         <div class="mt-6">
           <div class="flex justify-between text-sm mb-2">
-            <span class="text-gray-600 dark:text-gray-400 font-medium">Course Progress</span>
-            <span class="text-primary-600 dark:text-primary-400 font-semibold">{{ completed_lessons }}/{{ total_lessons }}</span>
+            <span class="text-gray-600 dark:text-gray-400 font-medium">Overall Progress</span>
+            <span class="text-primary-600 dark:text-primary-400 font-semibold" data-progress-text>0%</span>
           </div>
           <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-            <div class="h-full bg-primary-600 dark:bg-primary-500 rounded-full transition-all duration-300 ease-out" style="width: {{ completed_lessons | times: 100.0 | divided_by: total_lessons }}%"></div>
+            <div class="h-full bg-primary-600 dark:bg-primary-500 rounded-full transition-all duration-300 ease-out" 
+                 data-course-progress 
+                 data-total-modules="{{ modules.size }}" 
+                 data-total-lessons="{{ total_lessons }}" 
+                 style="width: 0%" 
+                 aria-valuenow="0" 
+                 aria-valuemin="0" 
+                 aria-valuemax="100"></div>
           </div>
         </div>
       </div>
@@ -51,43 +39,64 @@ layout: default
           <span class="text-sm text-gray-500 dark:text-gray-400">{{ modules.size }} Modules</span>
         </div>
         <div class="space-y-4">
-          {% assign modules = site.pages | where: "course", page.course_id | group_by: "module" | sort: "name" %}
-          {% for module in modules %}
-          {% assign lesson_count = module.items | size %}
-          <div class="module-section bg-gray-50 dark:bg-gray-700/30 rounded-lg overflow-hidden">
-            <button class="w-full flex items-center justify-between p-4 text-left font-medium hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all duration-200" onclick="toggleModule(this)" aria-expanded="true">
-              <div class="flex items-center gap-3 flex-grow min-w-0">
-                <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 font-semibold">M{{ module.name }}</span>
-                <div class="truncate">
-                  <span class="text-gray-900 dark:text-white block truncate">{{ module.items.first.module_title }}</span>
-                  <span class="text-sm text-gray-500 dark:text-gray-400">{{ lesson_count }} Lessons</span>
+          {% assign modules = site.pages | where: "layout", "course" | where_exp: "page", "page.url contains '/module'" | group_by: "module" %}
+      {% for module in modules %}
+        {% assign module_title = module.items | first %}
+        {% assign lesson_count = module.items | size | minus: 1 %}
+        <div class="module-section bg-gray-50 dark:bg-gray-700/30 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200" data-module-id="{{ module.name }}">
+          <button class="w-full flex items-center justify-between p-4 text-left font-medium hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all duration-200" onclick="toggleModule(this)" aria-expanded="true">
+            <div class="flex items-center gap-4 flex-grow min-w-0">
+              <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 font-semibold text-lg">M{{ module.name }}</span>
+              <div class="truncate">
+                <span class="text-gray-900 dark:text-white block truncate font-semibold text-lg">{{ module_title.title }}</span>
+                <div class="flex items-center gap-3 mt-1">
+                  <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                    </svg>
+                    <span class="text-sm text-gray-600 dark:text-gray-300 font-medium">{{ lesson_count }} Lessons</span>
+                  </div>
+                  <div class="w-24 h-1.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                    <div class="h-full bg-primary-600 dark:bg-primary-500 rounded-full transition-all duration-300 ease-out"
+                         data-module-progress
+                         data-total-lessons="{{ lesson_count }}"
+                         style="width: 0%"
+                         aria-valuenow="0"
+                         aria-valuemin="0"
+                         aria-valuemax="100"></div>
+                  </div>
                 </div>
               </div>
-              <svg class="w-5 h-5 text-gray-500 dark:text-gray-400 transform transition-transform duration-200 flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-            <ul class="py-2 space-y-1 module-content bg-white dark:bg-gray-800/50">
-              {% assign sorted_items = module.items | sort: "lesson_number" %}
-              {% for lesson in sorted_items %}
-              <li>
+            </div>
+            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400 transform transition-transform duration-200 flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <ul class="py-2 space-y-1 module-content bg-white dark:bg-gray-800/50">
+            {% assign sorted_lessons = module.items | sort: "order" %}
+            {% for lesson in sorted_lessons %}
+              {% if lesson.order != 0 %}
+              <li data-lesson-id="{{ lesson.order }}">
                 <a href="{{ lesson.url }}" 
                    class="nav-link flex items-center gap-3 p-2 rounded-lg transition-all duration-200 {% if page.url == lesson.url %}bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400{% endif %} hover:bg-gray-50 dark:hover:bg-gray-700/50">
                   <span class="w-6 h-6 flex-shrink-0 flex items-center justify-center rounded-full {% if page.url == lesson.url %}bg-primary-100 dark:bg-primary-900/40{% else %}border-2{% endif %} border-current text-sm">
-                    {{ lesson.lesson_number }}
+                    {{ lesson.order }}
                   </span>
                   <span class="flex-grow truncate">{{ lesson.title }}</span>
                   {% if page.url == lesson.url %}
-                  <svg class="w-4 h-4 text-primary-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path>
-                  </svg>
+                  <button class="p-1 hover:bg-primary-100 dark:hover:bg-primary-900/30 rounded-full" data-mark-complete>
+                    <svg class="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </button>
                   {% endif %}
                 </a>
               </li>
-              {% endfor %}
-            </ul>
-          </div>
-          {% endfor %}
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
         </div>
       </div>
     </nav>

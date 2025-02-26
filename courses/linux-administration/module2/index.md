@@ -1,8 +1,8 @@
 ---
 layout: course
-title: Module 2 - File System Management
+title: File System Management
 module: 2
-order: 1
+order: 0
 ---
 
 # File System Management and Permissions

@@ -1,6 +1,6 @@
 ---
 layout: course
-title: Introduction to Linux
+title: lesson Introduction to Linux
 module: 1
 order: 1
 ---
