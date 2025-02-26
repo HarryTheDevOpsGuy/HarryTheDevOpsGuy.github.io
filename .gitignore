@@ -12,6 +12,7 @@ yarn-error.log*
 # Ruby dependencies
 .bundle/
 vendor/
+Gemfile.lock
 
 # Environment files
 .env
