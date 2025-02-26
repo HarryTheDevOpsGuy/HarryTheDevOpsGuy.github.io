@@ -184,4 +184,3 @@ To make your Kafka cluster production-ready:
 
 You have successfully set up a Kafka cluster with KRaft on EC2 Linux instances. This setup eliminates the dependency on Zookeeper and provides a simplified architecture for managing Kafka metadata. You can now use this cluster to build scalable, real-time data pipelines and applications.
 
-Feel free to customize this guide further based on your specific requirements and share it with your audience!
