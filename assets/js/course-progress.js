@@ -7,21 +7,47 @@ const CourseProgress = {
         this.loadProgress();
         this.setupProgressTracking();
         this.setupResponsiveness();
+        this.setupModuleAnimations();
     },
 
     setupSidebar() {
-        const sidebar = document.querySelector('aside nav');
-        const toggleBtn = document.createElement('button');
-        toggleBtn.className = 'sidebar-toggle btn btn-outline mb-4 md:hidden w-full flex items-center justify-center';
-        toggleBtn.innerHTML = '<svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg> Menu';
-        sidebar.parentNode.insertBefore(toggleBtn, sidebar);
+        const sidebar = document.getElementById('course-sidebar');
+        const toggleBtn = document.querySelector('[aria-label="Toggle Sidebar"]');
+        const toggleIcon = document.getElementById('sidebar-toggle-icon');
 
-        toggleBtn.addEventListener('click', () => {
-            sidebar.classList.toggle('hidden');
-            sidebar.classList.toggle('block');
-            toggleBtn.classList.toggle('bg-primary-600');
-            toggleBtn.classList.toggle('text-white');
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                sidebar.classList.toggle('collapsed');
+                toggleIcon.style.transform = sidebar.classList.contains('collapsed') ? 'rotate(180deg)' : '';
+            });
+        }
+    },
+
+    setupModuleAnimations() {
+        const moduleButtons = document.querySelectorAll('.module-section button');
+        moduleButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('svg');
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+                // Toggle aria-expanded
+                button.setAttribute('aria-expanded', !isExpanded);
+
+                // Animate icon
+                icon.style.transform = isExpanded ? '' : 'rotate(180deg)';
+
+                // Animate content
+                if (isExpanded) {
+                    content.style.maxHeight = '0';
+                    content.style.opacity = '0';
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    content.style.opacity = '1';
+                }
+            });
         });
+    },
 
         // Add collapse functionality to sections with animation
         const sections = document.querySelectorAll('.course-section');
