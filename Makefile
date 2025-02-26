@@ -1,37 +1,80 @@
-.PHONY: install build serve clean
+# Environment variables
+ENV ?= development
+JEKYLL_ENV ?= $(ENV)
+NODE_ENV ?= $(ENV)
+JOBS ?= 4
 
-install:
-	@echo "Installing dependencies..."
-	bundle install --path vendor/bundle
-	npm install
+# Colors for pretty output
+RESET = \033[0m
+BOLD = \033[1m
+GREEN = \033[32m
+YELLOW = \033[33m
+BLUE = \033[34m
 
-# Build the site with Jekyll and Tailwind CSS
-build:
-	@echo "Building site..."
-	npx tailwindcss -i ./assets/css/main.css -o ./_site/assets/css/tailwind.css --minify
-	bundle exec jekyll build
-
-# Serve the site locally
-serve:
-	@echo "Starting development server..."
-	bundle exec jekyll serve --livereload
-
-# Clean generated files
-clean:
-	@echo "Cleaning up..."
-	rm -rf _site
-	rm -rf .jekyll-cache
-	rm -rf node_modules
+# Declare phony targets
+.PHONY: install build serve clean lint test deploy dev prod help
 
 # Default target
-all: install build
+.DEFAULT_GOAL := help
+
+install: ## Install all dependencies
+	@echo "${BLUE}Installing dependencies...${RESET}"
+	@bundle install --jobs $(JOBS) --retry 3 --path vendor/bundle
+	@npm ci
+	@echo "${GREEN}✓ Dependencies installed successfully${RESET}"
+
+# Build the site with Jekyll and Tailwind CSS
+build: ## Build the site for production
+	@echo "${BLUE}Building site for $(ENV) environment...${RESET}"
+	@npm run build:css
+	@JEKYLL_ENV=$(JEKYLL_ENV) bundle exec jekyll build --trace
+	@echo "${GREEN}✓ Site built successfully${RESET}"
+
+# Development build with watch mode
+dev: ## Start development server with live reload
+	@echo "${BLUE}Starting development server...${RESET}"
+	@JEKYLL_ENV=development bundle exec jekyll serve --livereload --incremental
+
+# Production build
+prod: ENV=production ## Build for production
+prod:
+	@make build
+
+# Serve the site locally
+serve: ## Serve the site locally
+	@echo "${BLUE}Starting local server...${RESET}"
+	@bundle exec jekyll serve --livereload
+
+# Clean generated files
+clean: ## Clean up generated files
+	@echo "${YELLOW}Cleaning up generated files...${RESET}"
+	@rm -rf _site .jekyll-cache node_modules
+	@echo "${GREEN}✓ Cleanup complete${RESET}"
+
+# Lint code
+lint: ## Lint JavaScript and CSS files
+	@echo "${BLUE}Linting code...${RESET}"
+	@npm run lint
+
+# Run tests
+test: ## Run all tests
+	@echo "${BLUE}Running tests...${RESET}"
+	@npm test
+
+# Deploy to GitHub Pages (requires proper setup)
+deploy: prod ## Deploy to GitHub Pages
+	@echo "${BLUE}Deploying to GitHub Pages...${RESET}"
+	@git push origin main
 
 # Help command
-help:
-	@echo "Available commands:"
-	@echo "  make install  - Install all dependencies"
-	@echo "  make build   - Build the site"
-	@echo "  make serve   - Start development server"
-	@echo "  make clean   - Clean up generated files"
-	@echo "  make all     - Install dependencies and build site"
-	@echo "  make help    - Show this help message"
+help: ## Show this help message
+	@echo "${BOLD}Available commands:${RESET}"
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  ${YELLOW}%-15s${RESET} %s\n", $$1, $$2}'
+
+# Error handling
+.SILENT:
+.ONESHELL:
+.NOTPARALLEL:
+
+# Ensure clean state
+.PHONY: install build serve clean lint test deploy dev prod help
