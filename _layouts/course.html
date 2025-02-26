@@ -2,15 +2,10 @@
 layout: default
 ---
 
-<div class="flex flex-col md:flex-row gap-8">
+<div class="flex flex-col md:flex-row gap-8 relative">
   <!-- Course Sidebar with Toggle -->
-  <aside class="md:w-72 flex-shrink-0 relative">
-    <button class="md:hidden fixed right-4 top-20 p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg z-50 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200" onclick="toggleSidebar()" aria-label="Toggle Sidebar">
-      <svg class="w-5 h-5 transform transition-transform duration-200" id="sidebar-toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-      </svg>
-    </button>
-    <nav class="md:sticky top-24 overflow-y-auto max-h-[calc(100vh-6rem)] bg-white dark:bg-gray-800 p-5 rounded-xl shadow-md transition-all duration-300 ease-in-out transform md:translate-x-0" id="course-sidebar">
+  <aside class="md:w-72 flex-shrink-0 fixed md:sticky left-0 top-0 md:top-24 h-screen md:h-auto z-40 transform transition-transform duration-300 ease-in-out" id="course-sidebar">
+    <nav class="h-full overflow-y-auto bg-white dark:bg-gray-800 p-5 rounded-xl shadow-md">
       <!-- Course Info -->
       <div class="mb-8 border-b dark:border-gray-700 pb-6">
         <h2 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">{{ page.course_title | default: page.title }}</h2>
@@ -74,9 +69,16 @@ layout: default
     </nav>
   </aside>
 
+  <!-- Sidebar Toggle Button -->
+  <button class="fixed right-4 top-20 p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg z-50 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 md:hidden" onclick="toggleSidebar()" aria-label="Toggle Sidebar">
+    <svg class="w-5 h-5 transform transition-transform duration-200" id="sidebar-toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+    </svg>
+  </button>
+
   <!-- Main Content -->
-  <div class="flex-grow max-w-3xl">
-    <article class="prose dark:prose-invert lg:prose-lg">
+  <div class="flex-grow max-w-none w-full md:ml-72 transition-all duration-300 ease-in-out" id="main-content">
+    <article class="prose dark:prose-invert lg:prose-lg mx-auto">
       <h1 class="mb-6">{{ page.title }}</h1>
       {{ content }}
     </article>
@@ -128,14 +130,16 @@ layout: default
 <script>
 function toggleSidebar() {
   const sidebar = document.getElementById('course-sidebar');
+  const mainContent = document.getElementById('main-content');
   const icon = document.getElementById('sidebar-toggle-icon');
   const body = document.body;
 
-  sidebar.classList.toggle('translate-x-full');
+  sidebar.classList.toggle('-translate-x-full');
+  mainContent.classList.toggle('md:ml-0');
   icon.classList.toggle('rotate-180');
 
   // Prevent body scroll when sidebar is open on mobile
-  body.classList.toggle('overflow-hidden', sidebar.classList.contains('translate-x-full'));
+  body.classList.toggle('overflow-hidden');
 }
 
 function toggleModule(button) {
