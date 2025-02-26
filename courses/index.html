@@ -10,22 +10,17 @@ title: Courses
   <section class="space-y-8">
     <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Beginner Track</h2>
     <div class="grid md:grid-cols-2 gap-6">
-      <a href="/courses/devops-fundamentals" class="card p-6 hover:shadow-lg transition-shadow">
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">DevOps Fundamentals</h3>
-        <p class="text-gray-600 dark:text-gray-400">Learn the core concepts and principles of DevOps methodology.</p>
+      {% assign beginner_courses = site.pages | where: "layout", "course" | where: "level", "beginner" | sort: "order" %}
+      {% for course in beginner_courses %}
+      <a href="{{ course.url }}" class="card p-6 hover:shadow-lg transition-shadow">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ course.title }}</h3>
+        <p class="text-gray-600 dark:text-gray-400">{{ course.description }}</p>
         <div class="mt-4 flex justify-between items-center">
-          <span class="badge">8 Modules</span>
-          <span class="text-primary-600">Free</span>
+          <span class="badge">{{ course.modules }} Modules</span>
+          <span class="text-primary-600">{{ course.price | default: 'Free' }}</span>
         </div>
       </a>
-      <a href="/courses/linux-essentials" class="card p-6 hover:shadow-lg transition-shadow">
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Linux Essentials</h3>
-        <p class="text-gray-600 dark:text-gray-400">Master the fundamental Linux commands and system administration.</p>
-        <div class="mt-4 flex justify-between items-center">
-          <span class="badge">6 Modules</span>
-          <span class="text-primary-600">Free</span>
-        </div>
-      </a>
+      {% endfor %}
     </div>
   </section>
 
@@ -33,22 +28,17 @@ title: Courses
   <section class="space-y-8">
     <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Intermediate Track</h2>
     <div class="grid md:grid-cols-2 gap-6">
-      <a href="/courses/docker-mastery" class="card p-6 hover:shadow-lg transition-shadow">
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Docker Mastery</h3>
-        <p class="text-gray-600 dark:text-gray-400">Deep dive into Docker containerization and best practices.</p>
+      {% assign intermediate_courses = site.pages | where: "layout", "course" | where: "level", "intermediate" | sort: "order" %}
+      {% for course in intermediate_courses %}
+      <a href="{{ course.url }}" class="card p-6 hover:shadow-lg transition-shadow">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ course.title }}</h3>
+        <p class="text-gray-600 dark:text-gray-400">{{ course.description }}</p>
         <div class="mt-4 flex justify-between items-center">
-          <span class="badge">10 Modules</span>
-          <span class="text-primary-600">Premium</span>
+          <span class="badge">{{ course.modules }} Modules</span>
+          <span class="text-primary-600">{{ course.price | default: 'Free' }}</span>
         </div>
       </a>
-      <a href="/courses/aws-fundamentals" class="card p-6 hover:shadow-lg transition-shadow">
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">AWS Fundamentals</h3>
-        <p class="text-gray-600 dark:text-gray-400">Learn essential AWS services and cloud architecture.</p>
-        <div class="mt-4 flex justify-between items-center">
-          <span class="badge">12 Modules</span>
-          <span class="text-primary-600">Premium</span>
-        </div>
-      </a>
+      {% endfor %}
     </div>
   </section>
 
@@ -56,22 +46,17 @@ title: Courses
   <section class="space-y-8">
     <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Advanced Track</h2>
     <div class="grid md:grid-cols-2 gap-6">
-      <a href="/courses/kubernetes-expert" class="card p-6 hover:shadow-lg transition-shadow">
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Kubernetes Expert</h3>
-        <p class="text-gray-600 dark:text-gray-400">Master Kubernetes orchestration and advanced deployment patterns.</p>
+      {% assign advanced_courses = site.pages | where: "layout", "course" | where: "level", "advanced" | sort: "order" %}
+      {% for course in advanced_courses %}
+      <a href="{{ course.url }}" class="card p-6 hover:shadow-lg transition-shadow">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ course.title }}</h3>
+        <p class="text-gray-600 dark:text-gray-400">{{ course.description }}</p>
         <div class="mt-4 flex justify-between items-center">
-          <span class="badge">15 Modules</span>
-          <span class="text-primary-600">Premium</span>
+          <span class="badge">{{ course.modules }} Modules</span>
+          <span class="text-primary-600">{{ course.price | default: 'Free' }}</span>
         </div>
       </a>
-      <a href="/courses/terraform-advanced" class="card p-6 hover:shadow-lg transition-shadow">
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Advanced Terraform</h3>
-        <p class="text-gray-600 dark:text-gray-400">Learn advanced Infrastructure as Code patterns and practices.</p>
-        <div class="mt-4 flex justify-between items-center">
-          <span class="badge">8 Modules</span>
-          <span class="text-primary-600">Premium</span>
-        </div>
-      </a>
+      {% endfor %}
     </div>
   </section>
 </div>
