@@ -35,25 +35,38 @@ layout: default
       <!-- Course Content -->
       <div class="space-y-4">
         <h3 class="text-lg font-semibold">Course Content</h3>
-        <ul class="space-y-3">
-          {% assign lessons = site.pages | where: "course", page.course_id | sort: "lesson_number" %}
-          {% for lesson in lessons %}
-          <li>
-            <a href="{{ lesson.url }}" 
-               class="nav-link flex items-center gap-3 p-2 rounded-lg transition-all duration-200 {% if page.url == lesson.url %}bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400{% endif %} hover:bg-gray-50 dark:hover:bg-gray-700/50">
-              <span class="w-6 h-6 flex-shrink-0 flex items-center justify-center rounded-full {% if page.url == lesson.url %}bg-primary-100 dark:bg-primary-900/40{% else %}border-2{% endif %} border-current text-sm">
-                {{ lesson.lesson_number }}
-              </span>
-              <span class="flex-grow">{{ lesson.title }}</span>
-              {% if page.url == lesson.url %}
-              <svg class="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path>
+        <div class="space-y-4">
+          {% assign modules = site.pages | where: "course", page.course_id | group_by: "module" | sort: "name" %}
+          {% for module in modules %}
+          <div class="module-section">
+            <button class="w-full flex items-center justify-between p-2 text-left font-medium hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg transition-all duration-200" onclick="toggleModule(this)" aria-expanded="true">
+              <span>Module {{ module.name }}: {{ module.items.first.module_title }}</span>
+              <svg class="w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
-              {% endif %}
-            </a>
-          </li>
+            </button>
+            <ul class="mt-2 ml-4 space-y-2 module-content">
+              {% assign sorted_items = module.items | sort: "lesson_number" %}
+              {% for lesson in sorted_items %}
+              <li>
+                <a href="{{ lesson.url }}" 
+                   class="nav-link flex items-center gap-3 p-2 rounded-lg transition-all duration-200 {% if page.url == lesson.url %}bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400{% endif %} hover:bg-gray-50 dark:hover:bg-gray-700/50">
+                  <span class="w-6 h-6 flex-shrink-0 flex items-center justify-center rounded-full {% if page.url == lesson.url %}bg-primary-100 dark:bg-primary-900/40{% else %}border-2{% endif %} border-current text-sm">
+                    {{ lesson.lesson_number }}
+                  </span>
+                  <span class="flex-grow truncate">{{ lesson.title }}</span>
+                  {% if page.url == lesson.url %}
+                  <svg class="w-4 h-4 text-primary-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path>
+                  </svg>
+                  {% endif %}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
           {% endfor %}
-        </ul>
+        </div>
       </div>
     </nav>
   </aside>
@@ -115,5 +128,15 @@ function toggleSidebar() {
   const icon = document.getElementById('sidebar-toggle-icon');
   sidebar.classList.toggle('translate-x-full');
   icon.classList.toggle('rotate-180');
+}
+
+function toggleModule(button) {
+  const content = button.nextElementSibling;
+  const icon = button.querySelector('svg');
+  const isExpanded = button.getAttribute('aria-expanded') === 'true';
+  
+  button.setAttribute('aria-expanded', !isExpanded);
+  icon.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(180deg)';
+  content.style.display = isExpanded ? 'none' : 'block';
 }
 </script>
