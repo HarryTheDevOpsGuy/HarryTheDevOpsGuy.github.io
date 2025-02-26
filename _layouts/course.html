@@ -33,19 +33,22 @@ layout: default
       </div>
 
       <!-- Course Content -->
-      <div class="space-y-4">
-        <h3 class="text-lg font-semibold">Course Content</h3>
+      <div class="space-y-6">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Course Content</h3>
         <div class="space-y-4">
           {% assign modules = site.pages | where: "course", page.course_id | group_by: "module" | sort: "name" %}
           {% for module in modules %}
-          <div class="module-section">
-            <button class="w-full flex items-center justify-between p-2 text-left font-medium hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg transition-all duration-200" onclick="toggleModule(this)" aria-expanded="true">
-              <span>Module {{ module.name }}: {{ module.items.first.module_title }}</span>
-              <svg class="w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="module-section bg-gray-50 dark:bg-gray-700/30 rounded-lg overflow-hidden">
+            <button class="w-full flex items-center justify-between p-4 text-left font-medium hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all duration-200" onclick="toggleModule(this)" aria-expanded="true">
+              <div class="flex items-center gap-3">
+                <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 font-semibold">{{ module.name }}</span>
+                <span class="text-gray-900 dark:text-white">{{ module.items.first.module_title }}</span>
+              </div>
+              <svg class="w-5 h-5 text-gray-500 dark:text-gray-400 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </button>
-            <ul class="mt-2 ml-4 space-y-2 module-content">
+            <ul class="py-2 space-y-1 module-content bg-white dark:bg-gray-800/50">
               {% assign sorted_items = module.items | sort: "lesson_number" %}
               {% for lesson in sorted_items %}
               <li>
