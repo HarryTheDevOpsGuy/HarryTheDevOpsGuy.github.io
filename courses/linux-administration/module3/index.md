@@ -2,7 +2,7 @@
 layout: course
 title: Module 3 - User Management
 module: 3
-order: 1
+order: 0
 ---
 
 # User Management and Administration

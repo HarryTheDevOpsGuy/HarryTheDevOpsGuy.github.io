@@ -2,7 +2,7 @@
 layout: course
 title: Module 4 - Process Management
 module: 4
-order: 1
+order: 0
 ---
 
 # Process Management and System Monitoring
