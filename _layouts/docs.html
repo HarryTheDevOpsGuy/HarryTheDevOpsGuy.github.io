@@ -6,17 +6,28 @@ layout: default
   <!-- Sidebar with Table of Contents -->
   <aside class="md:w-64 flex-shrink-0">
     <nav class="sticky top-24 overflow-y-auto max-h-(screen-24)">
-      <h3 class="text-lg font-semibold mb-4">Table of Contents</h3>
-      <ul class="space-y-2">
-        {% assign docs = site.pages | where: "layout", "docs" | sort: "order" %}
-        {% for doc in docs %}
-        <li>
-          <a href="{{ doc.url }}" class="nav-link {% if page.url == doc.url %}text-primary-600 dark:text-primary-400{% endif %}">
-            {{ doc.title }}
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
+      <h3 class="text-lg font-semibold mb-4">Course Content</h3>
+      {% assign modules = site.pages | where: "layout", "docs" | group_by: "module" | sort: "name" %}
+      {% for module in modules %}
+      <div class="course-section mb-4">
+        <h4 class="text-md font-medium mb-2 cursor-pointer flex items-center">
+          <span class="mr-2">Module {{ module.name }}</span>
+          <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </h4>
+        <ul class="space-y-2 ml-4">
+          {% assign sorted_docs = module.items | sort: "order" %}
+          {% for doc in sorted_docs %}
+          <li>
+            <a href="{{ doc.url }}" class="nav-link {% if page.url == doc.url %}text-primary-600 dark:text-primary-400{% endif %}">
+              {{ doc.title }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
     </nav>
   </aside>
 
