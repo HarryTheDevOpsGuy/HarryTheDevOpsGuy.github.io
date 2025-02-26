@@ -64,7 +64,7 @@ test: ## Run all tests
 # Deploy to GitHub Pages (requires proper setup)
 deploy: prod ## Deploy to GitHub Pages
 	@echo "${BLUE}Deploying to GitHub Pages...${RESET}"
-	@git push origin main
+	@git push origin v4
 
 # Help command
 help: ## Show this help message
