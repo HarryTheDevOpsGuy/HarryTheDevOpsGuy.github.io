@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<article class="prose dark:prose-invert lg:prose-lg mx-auto">
+  <header class="mb-8">
+    <h1 class="!mb-3">{{ page.title }}</h1>
+    <div class="text-gray-600 dark:text-gray-400 flex items-center gap-4">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+      {% if page.author %}
+      <span>by {{ page.author }}</span>
+      {% endif %}
+      {% if page.tags.size > 0 %}
+      <div class="flex gap-2">
+        {% for tag in page.tags %}
+        <span class="px-2 py-1 text-sm bg-gray-100 dark:bg-gray-700 rounded-lg">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </header>
+
+  {{ content }}
+
+  <footer class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+    <div class="flex justify-between items-center">
+      {% if page.previous.url %}
+      <a href="{{ page.previous.url }}" class="btn-outline">&larr; Previous Post</a>
+      {% endif %}
+      {% if page.next.url %}
+      <a href="{{ page.next.url }}" class="btn-outline">Next Post &rarr;</a>
+      {% endif %}
+    </div>
+  </footer>
+</article>

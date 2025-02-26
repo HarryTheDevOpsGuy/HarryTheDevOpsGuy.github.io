@@ -1,0 +1,64 @@
+---
+layout: default
+---
+
+<div class="flex flex-col md:flex-row gap-8">
+  <!-- Course Sidebar -->
+  <aside class="md:w-64 flex-shrink-0">
+    <nav class="sticky top-24 overflow-y-auto max-h-(screen-24)">
+      <div class="mb-6">
+        <h2 class="text-xl font-bold mb-2">{{ page.course_title | default: page.title }}</h2>
+        {% if page.course_description %}
+        <p class="text-gray-600 dark:text-gray-400 text-sm">{{ page.course_description }}</p>
+        {% endif %}
+      </div>
+
+      <div class="mb-6">
+        <h3 class="text-lg font-semibold mb-4">Course Content</h3>
+        <ul class="space-y-2">
+          {% assign lessons = site.pages | where: "course", page.course_id | sort: "lesson_number" %}
+          {% for lesson in lessons %}
+          <li>
+            <a href="{{ lesson.url }}" class="nav-link flex items-center gap-2 {% if page.url == lesson.url %}text-primary-600 dark:text-primary-400{% endif %}">
+              <span class="w-6 h-6 flex items-center justify-center rounded-full border-2 border-current text-sm">
+                {{ lesson.lesson_number }}
+              </span>
+              <span>{{ lesson.title }}</span>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="flex-grow max-w-3xl">
+    <article class="prose dark:prose-invert lg:prose-lg">
+      <h1>{{ page.title }}</h1>
+      {{ content }}
+    </article>
+
+    <!-- Navigation -->
+    <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+      <div class="flex justify-between items-center">
+        {% assign lessons = site.pages | where: "course", page.course_id | sort: "lesson_number" %}
+        {% for lesson in lessons %}
+          {% if lesson.url == page.url %}
+            {% assign prev_index = forloop.index0 | minus: 1 %}
+            {% assign next_index = forloop.index0 | plus: 1 %}
+            {% if prev_index >= 0 %}
+              {% assign prev_lesson = lessons[prev_index] %}
+              <a href="{{ prev_lesson.url }}" class="btn-outline">&larr; {{ prev_lesson.title }}</a>
+            {% endif %}
+            {% if next_index < lessons.size %}
+              {% assign next_lesson = lessons[next_index] %}
+              <a href="{{ next_lesson.url }}" class="btn-outline">{{ next_lesson.title }} &rarr;</a>
+            {% endif %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
