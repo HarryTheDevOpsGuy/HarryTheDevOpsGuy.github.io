@@ -3,27 +3,53 @@ layout: default
 ---
 
 <div class="flex flex-col md:flex-row gap-8">
-  <!-- Course Sidebar -->
-  <aside class="md:w-64 flex-shrink-0">
-    <nav class="sticky top-24 overflow-y-auto max-h-(screen-24)">
-      <div class="mb-6">
+  <!-- Course Sidebar with Toggle -->
+  <aside class="md:w-64 flex-shrink-0 relative">
+    <button class="md:hidden absolute -right-3 top-0 p-2 bg-white dark:bg-gray-800 rounded-full shadow-lg z-10" onclick="toggleSidebar()" aria-label="Toggle Sidebar">
+      <svg class="w-4 h-4 transform transition-transform duration-200" id="sidebar-toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+    </button>
+    <nav class="sticky top-24 overflow-y-auto max-h-(screen-24) bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm transition-all duration-300 ease-in-out" id="course-sidebar">
+      <!-- Course Info -->
+      <div class="mb-6 border-b dark:border-gray-700 pb-4">
         <h2 class="text-xl font-bold mb-2">{{ page.course_title | default: page.title }}</h2>
         {% if page.course_description %}
         <p class="text-gray-600 dark:text-gray-400 text-sm">{{ page.course_description }}</p>
         {% endif %}
+        
+        <!-- Progress Bar -->
+        {% assign total_lessons = site.pages | where: "course", page.course_id | size %}
+        {% assign completed_lessons = 0 %}
+        <div class="mt-4">
+          <div class="flex justify-between text-sm mb-1">
+            <span class="text-gray-600 dark:text-gray-400">Course Progress</span>
+            <span class="text-primary-600">{{ completed_lessons }}/{{ total_lessons }}</span>
+          </div>
+          <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+            <div class="h-full bg-primary-600 rounded-full transition-all duration-300" style="width: {{ completed_lessons | times: 100.0 | divided_by: total_lessons }}%"></div>
+          </div>
+        </div>
       </div>
 
-      <div class="mb-6">
-        <h3 class="text-lg font-semibold mb-4">Course Content</h3>
-        <ul class="space-y-2">
+      <!-- Course Content -->
+      <div class="space-y-4">
+        <h3 class="text-lg font-semibold">Course Content</h3>
+        <ul class="space-y-3">
           {% assign lessons = site.pages | where: "course", page.course_id | sort: "lesson_number" %}
           {% for lesson in lessons %}
           <li>
-            <a href="{{ lesson.url }}" class="nav-link flex items-center gap-2 {% if page.url == lesson.url %}text-primary-600 dark:text-primary-400{% endif %}">
-              <span class="w-6 h-6 flex items-center justify-center rounded-full border-2 border-current text-sm">
+            <a href="{{ lesson.url }}" 
+               class="nav-link flex items-center gap-3 p-2 rounded-lg transition-all duration-200 {% if page.url == lesson.url %}bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400{% endif %} hover:bg-gray-50 dark:hover:bg-gray-700/50">
+              <span class="w-6 h-6 flex-shrink-0 flex items-center justify-center rounded-full {% if page.url == lesson.url %}bg-primary-100 dark:bg-primary-900/40{% else %}border-2{% endif %} border-current text-sm">
                 {{ lesson.lesson_number }}
               </span>
-              <span>{{ lesson.title }}</span>
+              <span class="flex-grow">{{ lesson.title }}</span>
+              {% if page.url == lesson.url %}
+              <svg class="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path>
+              </svg>
+              {% endif %}
             </a>
           </li>
           {% endfor %}
@@ -35,11 +61,11 @@ layout: default
   <!-- Main Content -->
   <div class="flex-grow max-w-3xl">
     <article class="prose dark:prose-invert lg:prose-lg">
-      <h1>{{ page.title }}</h1>
+      <h1 class="mb-6">{{ page.title }}</h1>
       {{ content }}
     </article>
 
-    <!-- Navigation -->
+    <!-- Enhanced Navigation -->
     <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
       <div class="flex justify-between items-center">
         {% assign lessons = site.pages | where: "course", page.course_id | sort: "lesson_number" %}
@@ -47,14 +73,34 @@ layout: default
           {% if lesson.url == page.url %}
             {% assign prev_index = forloop.index0 | minus: 1 %}
             {% assign next_index = forloop.index0 | plus: 1 %}
-            {% if prev_index >= 0 %}
-              {% assign prev_lesson = lessons[prev_index] %}
-              <a href="{{ prev_lesson.url }}" class="btn-outline">&larr; {{ prev_lesson.title }}</a>
-            {% endif %}
-            {% if next_index < lessons.size %}
-              {% assign next_lesson = lessons[next_index] %}
-              <a href="{{ next_lesson.url }}" class="btn-outline">{{ next_lesson.title }} &rarr;</a>
-            {% endif %}
+            <div class="flex-1 min-w-0 {% if prev_index < 0 %}invisible{% endif %}">
+              {% if prev_index >= 0 %}
+                {% assign prev_lesson = lessons[prev_index] %}
+                <a href="{{ prev_lesson.url }}" class="group flex items-center gap-2 hover:text-primary-600 transition-colors duration-200">
+                  <svg class="w-5 h-5 transform group-hover:-translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                  </svg>
+                  <div class="min-w-0">
+                    <div class="text-sm text-gray-500 dark:text-gray-400">Previous Lesson</div>
+                    <div class="font-medium truncate">{{ prev_lesson.title }}</div>
+                  </div>
+                </a>
+              {% endif %}
+            </div>
+            <div class="flex-1 min-w-0 text-right {% if next_index >= lessons.size %}invisible{% endif %}">
+              {% if next_index < lessons.size %}
+                {% assign next_lesson = lessons[next_index] %}
+                <a href="{{ next_lesson.url }}" class="group flex items-center justify-end gap-2 hover:text-primary-600 transition-colors duration-200">
+                  <div class="min-w-0">
+                    <div class="text-sm text-gray-500 dark:text-gray-400">Next Lesson</div>
+                    <div class="font-medium truncate">{{ next_lesson.title }}</div>
+                  </div>
+                  <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              {% endif %}
+            </div>
             {% break %}
           {% endif %}
         {% endfor %}
@@ -62,3 +108,12 @@ layout: default
     </div>
   </div>
 </div>
+
+<script>
+function toggleSidebar() {
+  const sidebar = document.getElementById('course-sidebar');
+  const icon = document.getElementById('sidebar-toggle-icon');
+  sidebar.classList.toggle('translate-x-full');
+  icon.classList.toggle('rotate-180');
+}
+</script>
