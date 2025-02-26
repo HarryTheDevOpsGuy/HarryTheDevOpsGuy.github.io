@@ -1,6 +1,58 @@
----
-layout: base
-title: "Default page"
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <link rel="stylesheet" href="/assets/css/tailwind.css">
+  {% seo %}
+</head>
+<body class="min-h-screen flex flex-col">
+  <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50">
+    <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="/" class="text-2xl font-bold text-primary-600">{{ site.title }}</a>
+      <div class="hidden md:flex space-x-6">
+        <a href="/portfolio" class="nav-link">Portfolio</a>
+        <a href="/blog" class="nav-link">Blog</a>
+        <a href="/courses" class="nav-link">Courses</a>
+        <a href="/docs" class="nav-link">Docs</a>
+        <a href="/garden" class="nav-link">Garden</a>
+      </div>
+      <button class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </nav>
+    <!-- Mobile menu -->
+    <div class="md:hidden hidden">
+      <div class="px-4 py-3 space-y-3">
+        <a href="/portfolio" class="nav-link block">Portfolio</a>
+        <a href="/blog" class="nav-link block">Blog</a>
+        <a href="/courses" class="nav-link block">Courses</a>
+        <a href="/docs" class="nav-link block">Docs</a>
+        <a href="/garden" class="nav-link block">Garden</a>
+      </div>
+    </div>
+  </header>
 
-{{ content }}
+  <main class="flex-grow container mx-auto px-4 py-8">
+    {{ content }}
+  </main>
+
+  <footer class="bg-white dark:bg-gray-800 shadow-inner">
+    <div class="container mx-auto px-4 py-8">
+      <div class="text-center text-gray-600 dark:text-gray-400">
+        <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.querySelector('button[aria-label="Menu"]').addEventListener('click', function() {
+      document.querySelector('.md\\:hidden:not(button)').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

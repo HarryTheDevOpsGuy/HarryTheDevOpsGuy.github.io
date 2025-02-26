@@ -1,24 +1,41 @@
-title: "Harry's DevOps Portfolio"
-description: "A Senior DevOps Engineer with over 11 years of experience"
+title: Digital Garden & Portfolio
+description: A modern portfolio with blogs, docs, courses, and digital garden
+baseurl: ""
 url: "https://harrythedevopsguy.github.io"
-baseurl: "/"
-author: Harry
 
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
 
+# Collections
+collections:
+  portfolio:
+    output: true
+    permalink: /portfolio/:path/
+  courses:
+    output: true
+    permalink: /courses/:path/
+  docs:
+    output: true
+    permalink: /docs/:path/
+  garden:
+    output: true
+    permalink: /garden/:path/
 
+# Pagination
+paginate: 6
+paginate_path: "/blog/page:num/"
 
-
-# defaults:
-#   - scope:
-#       path: ""
-#       type: "posts"
-#     values:
-#       layout: blog
-#       tags: []
-#       categories: []
-
-# plugins:
-#   - jekyll-paginate
-
-# paginate: 5  # Number of posts per page
-# paginate_path: "/page/:num/"  # URL structure for paginated pages
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - package-lock.json
+  - README.md
+  - vendor
