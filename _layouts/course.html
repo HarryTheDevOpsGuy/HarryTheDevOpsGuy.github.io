@@ -166,37 +166,73 @@ layout: default
     <!-- Enhanced Navigation -->
     <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700 px-6 lg:px-10 bg-gradient-to-b from-transparent to-gray-50 dark:to-gray-800/50">
       <div class="flex justify-between items-center gap-8">
-        {% assign lessons = site.pages | where: "course", page.course_id | sort: "lesson_number" %}
-        {% for lesson in lessons %}
+        {% assign current_module = page.module %}
+        {% assign course_id = page.url | split: '/' | slice: 2 | first %}
+        {% assign all_modules = site.pages | where: "layout", "course" | where_exp: "p", "p.url contains course_id" | group_by: "module" | sort: "name" %}
+        {% assign current_lessons = site.pages | where: "layout", "course" | where_exp: "p", "p.url contains course_id" | where: "module", current_module | sort: "order" %}
+        
+        {% for lesson in current_lessons %}
           {% if lesson.url == page.url %}
             {% assign prev_index = forloop.index0 | minus: 1 %}
             {% assign next_index = forloop.index0 | plus: 1 %}
-            <div class="flex-1 min-w-0 {% if prev_index < 0 %}invisible{% endif %}">
+            
+            <div class="flex-1 min-w-0">
               {% if prev_index >= 0 %}
-                {% assign prev_lesson = lessons[prev_index] %}
+                {% assign prev_lesson = current_lessons[prev_index] %}
                 <a href="{{ prev_lesson.url }}" class="group flex items-center gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-gray-800/50 transition-all duration-200 shadow-sm hover:shadow-md border border-gray-100/50 dark:border-gray-700/30">
                   <svg class="w-6 h-6 text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transform group-hover:-translate-x-2 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                   </svg>
                   <div class="min-w-0">
                     <div class="text-sm text-gray-500 dark:text-gray-400">Previous Lesson</div>
                     <div class="font-medium truncate">{{ prev_lesson.title }}</div>
                   </div>
                 </a>
+              {% elsif current_module > 1 %}
+                {% assign prev_module = current_module | minus: 1 %}
+                {% assign prev_module_lessons = site.pages | where: "layout", "course" | where_exp: "p", "p.url contains course_id" | where: "module", prev_module | sort: "order" %}
+                {% assign last_lesson = prev_module_lessons | last %}
+                {% if last_lesson %}
+                  <a href="{{ last_lesson.url }}" class="group flex items-center gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-gray-800/50 transition-all duration-200 shadow-sm hover:shadow-md border border-gray-100/50 dark:border-gray-700/30">
+                    <svg class="w-6 h-6 text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transform group-hover:-translate-x-2 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    <div class="min-w-0">
+                      <div class="text-sm text-gray-500 dark:text-gray-400">Previous Module</div>
+                      <div class="font-medium truncate">{{ last_lesson.title }}</div>
+                    </div>
+                  </a>
+                {% endif %}
               {% endif %}
             </div>
-            <div class="flex-1 min-w-0 text-right {% if next_index >= lessons.size %}invisible{% endif %}">
-              {% if next_index < lessons.size %}
-                {% assign next_lesson = lessons[next_index] %}
+
+            <div class="flex-1 min-w-0 text-right">
+              {% if next_index < current_lessons.size %}
+                {% assign next_lesson = current_lessons[next_index] %}
                 <a href="{{ next_lesson.url }}" class="group flex items-center justify-end gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-gray-800/50 transition-all duration-200 shadow-sm hover:shadow-md border border-gray-100/50 dark:border-gray-700/30">
                   <div class="min-w-0">
                     <div class="text-sm text-gray-500 dark:text-gray-400">Next Lesson</div>
                     <div class="font-medium truncate">{{ next_lesson.title }}</div>
                   </div>
-                  <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-6 h-6 text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transform group-hover:translate-x-2 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                   </svg>
                 </a>
+              {% else %}
+                {% assign next_module = current_module | plus: 1 %}
+                {% assign next_module_lessons = site.pages | where: "layout", "course" | where_exp: "p", "p.url contains course_id" | where: "module", next_module | sort: "order" %}
+                {% assign first_lesson = next_module_lessons | first %}
+                {% if first_lesson %}
+                  <a href="{{ first_lesson.url }}" class="group flex items-center justify-end gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-gray-800/50 transition-all duration-200 shadow-sm hover:shadow-md border border-gray-100/50 dark:border-gray-700/30">
+                    <div class="min-w-0">
+                      <div class="text-sm text-gray-500 dark:text-gray-400">Next Module</div>
+                      <div class="font-medium truncate">{{ first_lesson.title }}</div>
+                    </div>
+                    <svg class="w-6 h-6 text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transform group-hover:translate-x-2 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                {% endif %}
               {% endif %}
             </div>
             {% break %}
