@@ -20,9 +20,9 @@ layout: default
   
         <!-- Course Info -->
         <div class="mb-8 border-b dark:border-gray-700/50 pb-6" data-course-id="{{ page.course_id }}">
-          <h2 class="text-lg md:text-xl font-bold mb-2 text-gray-900 dark:text-white leading-tight bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-purple-600">{{ page.course_title | default: page.title }}</h2>
+          <h2 class="text-base md:text-lg font-bold mb-2 text-gray-900 dark:text-white leading-tight bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-purple-600">{{ page.course_title | default: page.title }}</h2>
           {% if page.course_description %}
-          <p class="text-xs md:text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">{{ page.course_description }}</p>
+          <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3">{{ page.course_description }}</p>
           {% endif %}
           
           <!-- Course Progress -->
@@ -52,8 +52,8 @@ layout: default
         <!-- Course Content -->
         <div class="space-y-6">
           <div class="flex items-center justify-between mb-4">
-            <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white">Course Content</h3>
-            <span class="text-xs md:text-sm font-medium px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full shadow-sm">{{ modules.size }} Modules</span>
+            <h3 class="text-base md:text-lg font-bold text-gray-900 dark:text-white">Course Content</h3>
+            <span class="text-xs font-medium px-2.5 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full shadow-sm">{{ modules.size }} Modules</span>
           </div>
           <div class="space-y-4">
             {% assign course_id = page.url | split: '/' | slice: 2 | first %}
@@ -66,7 +66,7 @@ layout: default
                   <div class="flex items-center gap-3 flex-grow min-w-0">
                     <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-purple-600 text-white font-bold text-xs shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">M{{ module.name }}</span>
                     <div class="truncate">
-                      <span class="text-gray-900 dark:text-white block truncate font-medium text-base">{{ module_title.title }}</span>
+                      <span class="text-gray-900 dark:text-white block truncate font-medium text-sm">{{ module_title.title }}</span>
                       <div class="flex items-center gap-3 mt-1">
                         <div class="flex items-center gap-1.5">
                           <svg class="w-3.5 h-3.5 text-primary-500 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -125,7 +125,7 @@ layout: default
 
   <!-- Main Content -->
   <div class="flex-grow max-w-none w-full transition-all duration-300 ease-in-out pl-0 md:pl-6" id="main-content">
-    <article class="prose dark:prose-invert lg:prose-lg xl:prose-xl w-full max-w-none px-3 md:px-4 lg:px-6 prose-headings:text-gray-900 dark:prose-headings:text-white prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-a:text-primary-600 dark:prose-a:text-primary-400 hover:prose-a:text-primary-700 dark:hover:prose-a:text-primary-300 prose-img:rounded-xl prose-img:shadow-lg">
+    <article class="prose dark:prose-invert prose-sm md:prose-base w-full max-w-none px-3 md:px-4 lg:px-6 prose-headings:text-gray-900 dark:prose-headings:text-white prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-a:text-primary-600 dark:prose-a:text-primary-400 hover:prose-a:text-primary-700 dark:hover:prose-a:text-primary-300 prose-img:rounded-xl prose-img:shadow-lg prose-pre:bg-gray-800/95 prose-pre:shadow-xl prose-pre:border prose-pre:border-gray-700/30 prose-pre:rounded-xl prose-code:text-primary-600 dark:prose-code:text-primary-400 prose-code:bg-primary-50/50 dark:prose-code:bg-primary-900/20 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:before:content-none prose-code:after:content-none prose-pre:prose-code:bg-transparent dark:prose-pre:prose-code:bg-transparent prose-pre:prose-code:p-0 prose-blockquote:border-l-4 prose-blockquote:border-primary-500/50 prose-blockquote:bg-primary-50/20 dark:prose-blockquote:bg-primary-900/10 prose-blockquote:rounded-r-lg prose-blockquote:pl-5 prose-blockquote:pr-4 prose-blockquote:py-2 prose-blockquote:not-italic prose-blockquote:text-gray-700 dark:prose-blockquote:text-gray-300 prose-h1:text-3xl md:prose-h1:text-4xl prose-h2:text-2xl md:prose-h2:text-3xl prose-h3:text-xl md:prose-h3:text-2xl prose-h4:text-lg md:prose-h4:text-xl">
       <h1 class="mb-8">{{ page.title }}</h1>
       {{ content }}
 
