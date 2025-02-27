@@ -66,6 +66,7 @@ default_timezone: UTC
 ## Ansible Facts
 
 ### System Facts
+{% raw %}
 ```yaml
 - name: Display system facts
   debug:
@@ -75,6 +76,7 @@ default_timezone: UTC
       Version: {{ ansible_distribution_version }}
       Architecture: {{ ansible_architecture }}
 ```
+{% endraw %}
 
 ### Custom Facts
 ```yaml
@@ -104,6 +106,7 @@ default_timezone: UTC
 7. Role defaults
 
 ### Variable Usage
+{% raw %}
 ```yaml
 - name: Configure application
   template:
@@ -113,6 +116,7 @@ default_timezone: UTC
     app_name: myapp
     app_port: "{{ http_port | default(8080) }}"
 ```
+{% endraw %}
 
 ## Fact Gathering
 
