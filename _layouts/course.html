@@ -26,7 +26,7 @@ layout: default
           {% endif %}
           
           <!-- Course Progress -->
-          <div class="mt-6 bg-gray-50/80 dark:bg-gray-700/30 rounded-xl p-4">
+          <div class="mt-6 bg-gray-50/80 dark:bg-gray-700/30 rounded-xl p-4 backdrop-blur-sm border border-gray-200/20 dark:border-gray-600/20 shadow-inner">
             <div class="flex justify-between text-sm mb-2">
               <span class="text-gray-600 dark:text-gray-400 font-medium flex items-center gap-2">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -60,10 +60,10 @@ layout: default
         {% for module in modules %}
           {% assign module_title = module.items | first %}
           {% assign lesson_count = module.items | size | minus: 1 %}
-          <div class="module-section bg-white/95 dark:bg-gray-800/95 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100/50 dark:border-gray-700/30 mb-3 group" data-module-id="{{ module.name }}">
+          <div class="module-section bg-white/95 dark:bg-gray-800/95 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 border border-gray-100/50 dark:border-gray-700/30 mb-3 group" data-module-id="{{ module.name }}">
             <button class="w-full flex items-center justify-between p-3.5 text-left font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 rounded-t-xl hover:bg-gray-50/80 dark:hover:bg-gray-700/30" onclick="toggleModule(this)" aria-expanded="true">
               <div class="flex items-center gap-3 flex-grow min-w-0">
-                <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-purple-600 text-white font-bold text-xs shadow-sm group-hover:scale-105 transition-transform duration-300">M{{ module.name }}</span>
+                <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-purple-600 text-white font-bold text-xs shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">M{{ module.name }}</span>
                 <div class="truncate">
                   <span class="text-gray-900 dark:text-white block truncate font-medium text-base">{{ module_title.title }}</span>
                   <div class="flex items-center gap-3 mt-1">
@@ -73,7 +73,7 @@ layout: default
                       </svg>
                       <span class="text-xs text-gray-600 dark:text-gray-300 font-medium">{{ lesson_count }} Lessons</span>
                     </div>
-                    <div class="w-24 h-2 bg-gray-200 dark:bg-gray-700/50 rounded-full overflow-hidden shadow-inner">
+                    <div class="w-24 h-2 bg-gray-200 dark:bg-gray-700/50 rounded-full overflow-hidden shadow-inner backdrop-blur-sm">
                       <div class="h-full bg-gradient-to-r from-primary-600 to-purple-600 rounded-full transition-all duration-300 ease-out"
                            data-module-progress
                            data-total-lessons="{{ lesson_count }}"
@@ -95,8 +95,9 @@ layout: default
                 {% if lesson.order != 0 %}
                 <li data-lesson-id="{{ lesson.order }}" class="px-2">
                   <a href="{{ lesson.url }}" 
-                     class="nav-link flex items-center gap-2 p-2 rounded-lg transition-all duration-200 {% if page.url == lesson.url %}bg-primary-50/90 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 shadow-sm{% endif %} hover:bg-gray-100/80 dark:hover:bg-gray-600/20">
-                    <span class="w-5 h-5 flex-shrink-0 flex items-center justify-center rounded-md {% if page.url == lesson.url %}bg-primary-100/90 dark:bg-primary-900/30 shadow-inner{% else %}border{% endif %} border-current text-xs font-medium">
+                     class="nav-link flex items-center gap-2 p-2 rounded-lg transition-all duration-200 group/lesson {% if page.url == lesson.url %}bg-primary-50/90 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 shadow-sm{% endif %} hover:bg-gray-100/80 dark:hover:bg-gray-600/20 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-purple-500/10 transform -translate-x-full group-hover/lesson:translate-x-0 transition-transform duration-500 ease-out"></div>
+                    <span class="w-5 h-5 flex-shrink-0 flex items-center justify-center rounded-md relative z-10 {% if page.url == lesson.url %}bg-primary-100/90 dark:bg-primary-900/30 shadow-inner ring-2 ring-primary-500/20{% else %}border{% endif %} border-current text-xs font-medium transform group-hover/lesson:scale-110 transition-transform duration-200">
                       {{ lesson.order }}
                     </span>
                     <span class="flex-grow truncate text-xs font-normal">{{ lesson.title }}</span>
@@ -123,7 +124,7 @@ layout: default
 
   <!-- Main Content -->
   <div class="flex-grow max-w-none w-full transition-all duration-300 ease-in-out pl-0 md:pl-6" id="main-content">
-    <article class="prose dark:prose-invert lg:prose-lg w-full max-w-none px-3 md:px-4 lg:px-6">
+    <article class="prose dark:prose-invert lg:prose-lg xl:prose-xl w-full max-w-none px-3 md:px-4 lg:px-6 prose-headings:text-gray-900 dark:prose-headings:text-white prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-a:text-primary-600 dark:prose-a:text-primary-400 hover:prose-a:text-primary-700 dark:hover:prose-a:text-primary-300 prose-img:rounded-xl prose-img:shadow-lg">
       <h1 class="mb-8">{{ page.title }}</h1>
       {{ content }}
 
@@ -162,7 +163,7 @@ layout: default
     </article>
 
     <!-- Enhanced Navigation -->
-    <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700 px-6 lg:px-10">
+    <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700 px-6 lg:px-10 bg-gradient-to-b from-transparent to-gray-50 dark:to-gray-800/50">
       <div class="flex justify-between items-center gap-8">
         {% assign lessons = site.pages | where: "course", page.course_id | sort: "lesson_number" %}
         {% for lesson in lessons %}
@@ -172,8 +173,8 @@ layout: default
             <div class="flex-1 min-w-0 {% if prev_index < 0 %}invisible{% endif %}">
               {% if prev_index >= 0 %}
                 {% assign prev_lesson = lessons[prev_index] %}
-                <a href="{{ prev_lesson.url }}" class="group flex items-center gap-4 p-4 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all duration-200">
-                  <svg class="w-6 h-6 text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transform group-hover:-translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <a href="{{ prev_lesson.url }}" class="group flex items-center gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-gray-800/50 transition-all duration-200 shadow-sm hover:shadow-md border border-gray-100/50 dark:border-gray-700/30">
+                  <svg class="w-6 h-6 text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transform group-hover:-translate-x-2 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7
                   </svg>
                   <div class="min-w-0">
@@ -186,7 +187,7 @@ layout: default
             <div class="flex-1 min-w-0 text-right {% if next_index >= lessons.size %}invisible{% endif %}">
               {% if next_index < lessons.size %}
                 {% assign next_lesson = lessons[next_index] %}
-                <a href="{{ next_lesson.url }}" class="group flex items-center justify-end gap-2 hover:text-primary-600 transition-colors duration-200">
+                <a href="{{ next_lesson.url }}" class="group flex items-center justify-end gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-gray-800/50 transition-all duration-200 shadow-sm hover:shadow-md border border-gray-100/50 dark:border-gray-700/30">
                   <div class="min-w-0">
                     <div class="text-sm text-gray-500 dark:text-gray-400">Next Lesson</div>
                     <div class="font-medium truncate">{{ next_lesson.title }}</div>
