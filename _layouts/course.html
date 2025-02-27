@@ -60,20 +60,20 @@ layout: default
         {% for module in modules %}
           {% assign module_title = module.items | first %}
           {% assign lesson_count = module.items | size | minus: 1 %}
-          <div class="module-section bg-white/95 dark:bg-gray-800/95 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100/50 dark:border-gray-700/30 mb-4 group" data-module-id="{{ module.name }}">
-            <button class="w-full flex items-center justify-between p-4 text-left font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 rounded-t-xl hover:bg-gray-50/80 dark:hover:bg-gray-700/30" onclick="toggleModule(this)" aria-expanded="true">
-              <div class="flex items-center gap-2.5 flex-grow min-w-0">
-                <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-purple-600 text-white font-bold text-sm shadow-md group-hover:scale-110 transition-transform duration-300">M{{ module.name }}</span>
+          <div class="module-section bg-white/95 dark:bg-gray-800/95 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100/50 dark:border-gray-700/30 mb-3 group" data-module-id="{{ module.name }}">
+            <button class="w-full flex items-center justify-between p-3.5 text-left font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 rounded-t-xl hover:bg-gray-50/80 dark:hover:bg-gray-700/30" onclick="toggleModule(this)" aria-expanded="true">
+              <div class="flex items-center gap-3 flex-grow min-w-0">
+                <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-purple-600 text-white font-bold text-xs shadow-sm group-hover:scale-105 transition-transform duration-300">M{{ module.name }}</span>
                 <div class="truncate">
-                  <span class="text-gray-900 dark:text-white block truncate font-semibold text-lg mb-1.5">{{ module_title.title }}</span>
-                  <div class="flex items-center gap-4">
-                    <div class="flex items-center gap-2">
-                      <svg class="w-4 h-4 text-primary-500 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span class="text-gray-900 dark:text-white block truncate font-medium text-base">{{ module_title.title }}</span>
+                  <div class="flex items-center gap-3 mt-1">
+                    <div class="flex items-center gap-1.5">
+                      <svg class="w-3.5 h-3.5 text-primary-500 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                       </svg>
-                      <span class="text-sm text-gray-600 dark:text-gray-300 font-medium">{{ lesson_count }} Lessons</span>
+                      <span class="text-xs text-gray-600 dark:text-gray-300 font-medium">{{ lesson_count }} Lessons</span>
                     </div>
-                    <div class="w-32 h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden shadow-inner">
+                    <div class="w-24 h-2 bg-gray-200 dark:bg-gray-700/50 rounded-full overflow-hidden shadow-inner">
                       <div class="h-full bg-gradient-to-r from-primary-600 to-purple-600 rounded-full transition-all duration-300 ease-out"
                            data-module-progress
                            data-total-lessons="{{ lesson_count }}"
@@ -85,24 +85,24 @@ layout: default
                   </div>
                 </div>
               </div>
-              <!-- <svg class="w-6 h-6 text-primary-500 dark:text-primary-400 transform transition-transform duration-200 flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-primary-500 dark:text-primary-400 transform transition-transform duration-200 flex-shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg> -->
+              </svg>
             </button>
-            <ul class="py-4 space-y-2 module-content bg-gray-50/80 dark:bg-gray-700/20 border-t border-gray-100/50 dark:border-gray-700/30">
+            <ul class="py-2 space-y-0.5 module-content bg-gray-50/80 dark:bg-gray-700/20 border-t border-gray-100/50 dark:border-gray-700/30">
               {% assign sorted_lessons = module.items | sort: "order" %}
               {% for lesson in sorted_lessons %}
                 {% if lesson.order != 0 %}
-                <li data-lesson-id="{{ lesson.order }}" class="px-3">
+                <li data-lesson-id="{{ lesson.order }}" class="px-2">
                   <a href="{{ lesson.url }}" 
-                     class="nav-link flex items-center gap-2 p-2.5 rounded-md transition-all duration-200 {% if page.url == lesson.url %}bg-primary-50/90 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 shadow-sm{% endif %} hover:bg-gray-100/80 dark:hover:bg-gray-600/20">
-                    <span class="w-6 h-6 flex-shrink-0 flex items-center justify-center rounded-md {% if page.url == lesson.url %}bg-primary-100/90 dark:bg-primary-900/30 shadow-inner{% else %}border{% endif %} border-current text-xs font-medium">
+                     class="nav-link flex items-center gap-2 p-2 rounded-lg transition-all duration-200 {% if page.url == lesson.url %}bg-primary-50/90 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 shadow-sm{% endif %} hover:bg-gray-100/80 dark:hover:bg-gray-600/20">
+                    <span class="w-5 h-5 flex-shrink-0 flex items-center justify-center rounded-md {% if page.url == lesson.url %}bg-primary-100/90 dark:bg-primary-900/30 shadow-inner{% else %}border{% endif %} border-current text-xs font-medium">
                       {{ lesson.order }}
                     </span>
-                    <span class="flex-grow truncate text-sm font-normal">{{ lesson.title }}</span>
+                    <span class="flex-grow truncate text-xs font-normal">{{ lesson.title }}</span>
                     {% if page.url == lesson.url %}
-                    <button class="p-1.5 hover:bg-primary-100/80 dark:hover:bg-primary-900/20 rounded-lg transition-colors duration-200" data-mark-complete>
-                      <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <button class="p-1 hover:bg-primary-100/80 dark:hover:bg-primary-900/20 rounded-md transition-colors duration-200" data-mark-complete>
+                      <svg class="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                       </svg>
                     </button>
