@@ -1,0 +1,115 @@
+---
+layout: default
+---
+
+<div class="flex flex-col md:flex-row gap-8 relative min-h-screen bg-gray-50 dark:bg-gray-900">
+  <!-- Course Sidebar -->
+  <aside class="md:w-80 flex-shrink-0 fixed md:sticky left-0 top-0 md:top-24 h-screen md:h-[calc(100vh-6rem)] z-40 transform transition-all duration-300 ease-in-out" id="course-sidebar">
+    <nav class="h-full overflow-y-auto bg-white dark:bg-gray-800 rounded-r-2xl md:rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+      <!-- Course Header -->
+      <div class="sticky top-0 bg-white dark:bg-gray-800 border-b dark:border-gray-700 p-6 z-10">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
+            <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white">{{ page.title }}</h2>
+            {% if page.description %}
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">{{ page.description }}</p>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Course Progress -->
+        <div class="bg-gray-50 dark:bg-gray-900/50 rounded-lg p-4">
+          <div class="flex justify-between text-sm mb-2">
+            <span class="text-gray-600 dark:text-gray-400 font-medium">Course Progress</span>
+            <span class="text-primary-600 dark:text-primary-400 font-semibold" data-progress-text>0%</span>
+          </div>
+          <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+            <div class="h-full bg-primary-600 dark:bg-primary-500 rounded-full transition-all duration-300 ease-out" 
+                 data-course-progress 
+                 data-total-modules="{{ page.modules }}" 
+                 data-total-lessons="{{ page.lessons }}" 
+                 style="width: 0%" 
+                 aria-valuenow="0" 
+                 aria-valuemin="0" 
+                 aria-valuemax="100"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course Modules -->
+      <div class="p-6 space-y-4">
+        {% for module in page.course_modules %}
+        <div class="module-section bg-gray-50 dark:bg-gray-900/50 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-md" data-module-id="{{ module.id }}">
+          <button class="w-full text-left p-4 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 rounded-xl" aria-expanded="false">
+            <div class="flex items-center gap-4">
+              <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 font-semibold flex items-center justify-center">{{ forloop.index }}</span>
+              <div class="flex-grow min-w-0">
+                <h3 class="text-base font-semibold text-gray-900 dark:text-white truncate">{{ module.title }}</h3>
+                <div class="flex items-center gap-3 mt-1">
+                  <span class="text-sm text-gray-500 dark:text-gray-400">{{ module.lessons.size }} Lessons</span>
+                  <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400">{{ module.duration }}</span>
+                  <div class="w-16 h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                    <div class="h-full bg-primary-600 dark:bg-primary-500 rounded-full" style="width: 0%" data-module-progress></div>
+                  </div>
+                </div>
+              </div>
+              <svg class="flex-shrink-0 w-5 h-5 text-gray-400 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </div>
+          </button>
+          <div class="module-content overflow-hidden transition-all duration-300 max-h-0 opacity-0">
+            <div class="p-4 space-y-2">
+              {% for lesson in module.lessons %}
+              <a href="{{ lesson.url }}" class="flex items-center gap-3 p-3 rounded-lg hover:bg-white dark:hover:bg-gray-800 transition-colors group">
+                <span class="progress-indicator w-2 h-2 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-primary-500 transition-colors"></span>
+                <span class="text-gray-700 dark:text-gray-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 flex-grow truncate">{{ lesson.title }}</span>
+                <span class="text-xs text-gray-500 dark:text-gray-400 flex-shrink-0">{{ lesson.duration }}</span>
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Mobile Sidebar Toggle -->
+  <button 
+    class="fixed bottom-6 right-6 z-50 bg-primary-600 text-white p-3 rounded-full shadow-lg hover:bg-primary-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2" 
+    aria-label="Toggle Sidebar"
+    onclick="document.getElementById('course-sidebar').classList.toggle('-translate-x-full')">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+    </svg>
+  </button>
+
+  <!-- Main Content -->
+  <main class="flex-grow max-w-4xl mx-auto px-6 py-8 md:py-12">
+    <article class="prose prose-lg dark:prose-invert prose-primary max-w-none bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
+      <!-- Content Header -->
+      <header class="mb-8 pb-8 border-b dark:border-gray-700">
+        <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">{{ page.title }}</h1>
+        {% if page.description %}
+        <p class="text-xl text-gray-600 dark:text-gray-400">{{ page.description }}</p>
+        {% endif %}
+      </header>
+
+      <!-- Course Content -->
+      {{ content }}
+    </article>
+  </main>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const courseProgress = new CourseProgress();
+    courseProgress.init();
+  });
+</script>

@@ -2,122 +2,129 @@
 layout: default
 ---
 
-<div class="flex flex-col md:flex-row gap-8 relative min-h-screen bg-gray-50 dark:bg-gray-900">
-  <!-- Course Sidebar with Toggle -->
-  <aside class="md:w-96 flex-shrink-0 fixed md:sticky left-0 top-0 md:top-24 h-screen md:h-[calc(100vh-6rem)] z-40 transform transition-all duration-300 ease-in-out" id="course-sidebar">
-    <nav class="h-full overflow-y-auto bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl backdrop-blur-sm backdrop-filter">
-      <!-- Course Info -->
-      <div class="mb-10 border-b dark:border-gray-700 pb-8" data-course-id="{{ page.course_id }}">
-        <h2 class="text-3xl font-extrabold mb-4 text-gray-900 dark:text-white leading-tight bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-purple-600">{{ page.course_title | default: page.title }}</h2>
-        {% if page.course_description %}
-        <p class="text-gray-600 dark:text-gray-400 text-base leading-relaxed mb-6">{{ page.course_description }}</p>
-        {% endif %}
-        
-        <!-- Course Progress -->
-        <div class="mt-6">
-          <div class="flex justify-between text-sm mb-3">
-            <span class="text-gray-600 dark:text-gray-400 font-medium">Overall Progress</span>
-            <span class="text-primary-600 dark:text-primary-400 font-semibold" data-progress-text>0%</span>
-          </div>
-          <div class="h-4 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden shadow-inner">
-            <div class="h-full bg-gradient-to-r from-primary-600 to-purple-600 rounded-full transition-all duration-300 ease-out" 
-                 data-course-progress 
-                 data-total-modules="{{ modules.size }}" 
-                 data-total-lessons="{{ total_lessons }}" 
-                 style="width: 0%" 
-                 aria-valuenow="0" 
-                 aria-valuemin="0" 
-                 aria-valuemax="100"></div>
+<div class="flex flex-col md:flex-row gap-6 relative min-h-screen bg-gray-50 dark:bg-gray-900">
+   <!-- Course Sidebar with Toggle -->
+  <aside class="md:w-80 flex-shrink-0 fixed md:sticky left-0 top-0 md:top-24 h-screen md:h-[calc(100vh-6rem)] z-40 transform transition-all duration-300 ease-in-out -translate-x-full md:translate-x-0" id="course-sidebar">
+      <nav class="h-full overflow-y-auto bg-white/95 dark:bg-gray-800/95 p-3 md:p-4 rounded-2xl shadow-lg backdrop-blur-sm backdrop-filter relative flex flex-col border border-gray-100 dark:border-gray-700/30">
+        <!-- Sidebar Header with Toggle Button -->
+        <div class="flex items-center justify-between sticky top-0 z-10 bg-white/95 dark:bg-gray-800/95 pb-3 mb-3 border-b border-gray-100 dark:border-gray-700/30">
+          <div class="flex items-center gap-2">
+            <button class="p-2 rounded-lg bg-gray-50 dark:bg-gray-700/50 hover:bg-gray-100 dark:hover:bg-gray-600/50 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-opacity-50 group" onclick="toggleSidebar()" aria-label="Toggle Sidebar">
+              <svg class="w-4 h-4 text-gray-600 dark:text-gray-300 group-hover:scale-110 transition-transform duration-200" id="sidebar-toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+            </button>
+            <span class="text-xs font-medium text-gray-500 dark:text-gray-400">Course Navigation</span>
           </div>
         </div>
-      </div>
-
-      <!-- Course Content -->
-      <div class="space-y-8">
-        <div class="flex items-center justify-between mb-6">
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white">Course Content</h3>
-          <span class="text-sm font-medium px-4 py-1.5 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full shadow-sm">{{ modules.size }} Modules</span>
+  
+        <!-- Course Info -->
+        <div class="mb-8 border-b dark:border-gray-700 pb-6" data-course-id="{{ page.course_id }}">
+          <h2 class="text-lg md:text-xl font-bold mb-2 text-gray-900 dark:text-white leading-tight bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-purple-600">{{ page.course_title | default: page.title }}</h2>
+          {% if page.course_description %}
+          <p class="text-xs md:text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">{{ page.course_description }}</p>
+          {% endif %}
+          
+          <!-- Course Progress -->
+          <div class="mt-4">
+            <div class="flex justify-between text-xs mb-1.5">
+              <span class="text-gray-500 dark:text-gray-400 font-medium">Overall Progress</span>
+              <span class="text-primary-600 dark:text-primary-400 font-semibold" data-progress-text>0%</span>
+            </div>
+            <div class="h-2 bg-gray-100 dark:bg-gray-700/50 rounded-full overflow-hidden shadow-inner">
+              <div class="h-full bg-gradient-to-r from-primary-600 to-purple-600 rounded-full transition-all duration-300 ease-out" 
+                   data-course-progress 
+                   data-total-modules="{{ modules.size }}" 
+                   data-total-lessons="{{ total_lessons }}" 
+                   style="width: 0%" 
+                   aria-valuenow="0" 
+                   aria-valuemin="0" 
+                   aria-valuemax="100"></div>
+            </div>
+          </div>
         </div>
+  
+        <!-- Course Content -->
         <div class="space-y-6">
-          {% assign modules = site.pages | where: "layout", "course" | where_exp: "page", "page.url contains '/module'" | group_by: "module" | sort: "name" %}
-      {% for module in modules %}
-        {% assign module_title = module.items | first %}
-        {% assign lesson_count = module.items | size | minus: 1 %}
-        <div class="module-section bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 border border-gray-100 dark:border-gray-700" data-module-id="{{ module.name }}">
-          <button class="w-full flex items-center justify-between p-6 text-left font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-opacity-50 rounded-t-2xl hover:bg-gray-50 dark:hover:bg-gray-700/40" onclick="toggleModule(this)" aria-expanded="true">
-            <div class="flex items-center gap-5 flex-grow min-w-0">
-              <span class="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-purple-600 text-white font-bold text-lg shadow-lg">M{{ module.name }}</span>
-              <div class="truncate">
-                <span class="text-gray-900 dark:text-white block truncate font-bold text-lg mb-2">{{ module_title.title }}</span>
-                <div class="flex items-center gap-4">
-                  <div class="flex items-center gap-2">
-                    <svg class="w-4 h-4 text-primary-500 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                    </svg>
-                    <span class="text-sm text-gray-600 dark:text-gray-300 font-medium">{{ lesson_count }} Lessons</span>
-                  </div>
-                  <div class="w-28 h-2.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden shadow-inner">
-                    <div class="h-full bg-gradient-to-r from-primary-600 to-purple-600 rounded-full transition-all duration-300 ease-out"
-                         data-module-progress
-                         data-total-lessons="{{ lesson_count }}"
-                         style="width: 0%"
-                         aria-valuenow="0"
-                         aria-valuemin="0"
-                         aria-valuemax="100"></div>
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white">Course Content</h3>
+            <span class="text-xs md:text-sm font-medium px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full shadow-sm">{{ modules.size }} Modules</span>
+          </div>
+          <div class="space-y-4">
+            {% assign modules = site.pages | where: "layout", "course" | where_exp: "page", "page.url contains '/module'" | group_by: "module" | sort: "name" %}
+        {% for module in modules %}
+          {% assign module_title = module.items | first %}
+          {% assign lesson_count = module.items | size | minus: 1 %}
+          <div class="module-section bg-white/90 dark:bg-gray-800/90 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 border border-gray-100/50 dark:border-gray-700/30" data-module-id="{{ module.name }}">
+            <button class="w-full flex items-center justify-between p-4 text-left font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 rounded-t-xl hover:bg-gray-50/80 dark:hover:bg-gray-700/30" onclick="toggleModule(this)" aria-expanded="true">
+              <div class="flex items-center gap-3 flex-grow min-w-0">
+                <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-purple-600 text-white font-bold text-sm shadow-md group-hover:scale-105 transition-transform duration-200">M{{ module.name }}</span>
+                <div class="truncate">
+                  <span class="text-gray-900 dark:text-white block truncate font-bold text-xl mb-3">{{ module_title.title }}</span>
+                  <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-3">
+                      <svg class="w-5 h-5 text-primary-500 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                      </svg>
+                      <span class="text-base text-gray-600 dark:text-gray-300 font-medium">{{ lesson_count }} Lessons</span>
+                    </div>
+                    <div class="w-32 h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden shadow-inner">
+                      <div class="h-full bg-gradient-to-r from-primary-600 to-purple-600 rounded-full transition-all duration-300 ease-out"
+                           data-module-progress
+                           data-total-lessons="{{ lesson_count }}"
+                           style="width: 0%"
+                           aria-valuenow="0"
+                           aria-valuemin="0"
+                           aria-valuemax="100"></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <svg class="w-6 h-6 text-primary-500 dark:text-primary-400 transform transition-transform duration-200 flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <ul class="py-4 space-y-2 module-content bg-gray-50 dark:bg-gray-700/30 border-t border-gray-100 dark:border-gray-700">
-            {% assign sorted_lessons = module.items | sort: "order" %}
-            {% for lesson in sorted_lessons %}
-              {% if lesson.order != 0 %}
-              <li data-lesson-id="{{ lesson.order }}" class="px-4">
-                <a href="{{ lesson.url }}" 
-                   class="nav-link flex items-center gap-4 p-4 rounded-xl transition-all duration-200 {% if page.url == lesson.url %}bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 shadow-sm{% endif %} hover:bg-gray-100 dark:hover:bg-gray-600/30">
-                  <span class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-xl {% if page.url == lesson.url %}bg-primary-100 dark:bg-primary-900/40 shadow-inner{% else %}border-2{% endif %} border-current text-sm font-medium">
-                    {{ lesson.order }}
-                  </span>
-                  <span class="flex-grow truncate font-medium">{{ lesson.title }}</span>
-                  {% if page.url == lesson.url %}
-                  <button class="p-2 hover:bg-primary-100 dark:hover:bg-primary-900/30 rounded-xl transition-colors duration-200" data-mark-complete>
-                    <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                  </button>
-                  {% endif %}
-                </a>
-              </li>
-              {% endif %}
-            {% endfor %}
-          </ul>
+              <svg class="w-6 h-6 text-primary-500 dark:text-primary-400 transform transition-transform duration-200 flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul class="py-3 space-y-1.5 module-content bg-gray-50/80 dark:bg-gray-700/20 border-t border-gray-100/50 dark:border-gray-700/30">
+              {% assign sorted_lessons = module.items | sort: "order" %}
+              {% for lesson in sorted_lessons %}
+                {% if lesson.order != 0 %}
+                <li data-lesson-id="{{ lesson.order }}" class="px-3">
+                  <a href="{{ lesson.url }}" 
+                     class="nav-link flex items-center gap-3 p-3 rounded-lg transition-all duration-200 {% if page.url == lesson.url %}bg-primary-50/90 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 shadow-sm{% endif %} hover:bg-gray-100/80 dark:hover:bg-gray-600/20">
+                    <span class="w-8 h-8 flex-shrink-0 flex items-center justify-center rounded-lg {% if page.url == lesson.url %}bg-primary-100/90 dark:bg-primary-900/30 shadow-inner{% else %}border{% endif %} border-current text-xs font-medium">
+                      {{ lesson.order }}
+                    </span>
+                    <span class="flex-grow truncate text-sm font-medium">{{ lesson.title }}</span>
+                    {% if page.url == lesson.url %}
+                    <button class="p-1.5 hover:bg-primary-100/80 dark:hover:bg-primary-900/20 rounded-lg transition-colors duration-200" data-mark-complete>
+                      <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                    </button>
+                    {% endif %}
+                  </a>
+                </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+        {% endfor %}
+          </div>
         </div>
-      {% endfor %}
-        </div>
-      </div>
-    </nav>
-  </aside>
+      </nav>
+    </aside>
 
-  <!-- Sidebar Toggle Button -->
-  <button class="fixed right-4 top-20 p-3.5 bg-white dark:bg-gray-800 rounded-full shadow-lg z-50 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 md:hidden" onclick="toggleSidebar()" aria-label="Toggle Sidebar">
-    <svg class="w-6 h-6 transform transition-transform duration-200" id="sidebar-toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-    </svg>
-  </button>
+
 
   <!-- Main Content -->
-  <div class="flex-grow max-w-none w-full transition-all duration-300 ease-in-out" id="main-content">
+  <div class="flex-grow max-w-none w-full transition-all duration-300 ease-in-out pl-0 md:pl-4" id="main-content">
     <!-- Floating Table of Contents -->
-    <div class="hidden lg:block fixed right-6 top-24 w-72 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 max-h-[calc(100vh-8rem)] overflow-y-auto" id="toc">
-      <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Table of Contents</h3>
+    <div class="hidden lg:block fixed right-4 top-24 w-56 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 max-h-[calc(100vh-8rem)] overflow-y-auto" id="toc">
+      <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Table of Contents</h3>
       <nav class="toc-nav"></nav>
     </div>
 
-    <article class="prose dark:prose-invert lg:prose-lg xl:prose-xl w-full max-w-none px-6 lg:px-10 lg:mr-80">
+    <article class="prose dark:prose-invert lg:prose-lg w-full max-w-none px-4 md:px-6 lg:px-8 lg:mr-64">
       <h1 class="mb-8">{{ page.title }}</h1>
       {{ content }}
 
@@ -207,11 +214,10 @@ function toggleSidebar() {
   const body = document.body;
 
   sidebar.classList.toggle('-translate-x-full');
-  mainContent.classList.toggle('md:ml-0');
   icon.classList.toggle('rotate-180');
-
+  
   // Prevent body scroll when sidebar is open on mobile
-  body.classList.toggle('overflow-hidden');
+  body.classList.toggle('overflow-hidden', !sidebar.classList.contains('-translate-x-full'));
 }
 
 function toggleModule(button) {
