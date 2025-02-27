@@ -2,7 +2,7 @@
 layout: course
 title: Module 7 - Network Configuration
 module: 7
-order: 1
+order: 0
 ---
 
 # Network Configuration and Security

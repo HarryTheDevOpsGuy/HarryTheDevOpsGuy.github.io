@@ -2,7 +2,7 @@
 layout: course
 title: Module 8 - Shell Scripting and Automation
 module: 8
-order: 1
+order: 0
 ---
 
 # Shell Scripting and Automation

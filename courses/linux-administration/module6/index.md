@@ -2,7 +2,7 @@
 layout: course
 title: Module 6 - System Services
 module: 6
-order: 1
+order: 0
 ---
 
 # System Services and Boot Process Management

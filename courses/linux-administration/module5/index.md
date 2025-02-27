@@ -2,7 +2,7 @@
 layout: course
 title: Module 5 - Package Management
 module: 5
-order: 1
+order: 0
 ---
 
 # Package Management and Software Installation
