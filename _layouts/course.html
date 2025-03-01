@@ -20,9 +20,9 @@ layout: default
   
         <!-- Course Info -->
         <div class="mb-8 border-b dark:border-gray-700/50 pb-6 px-4" data-course-id="{{ page.course_id }}">
-          <h2 class="text-base md:text-lg font-bold mb-2 text-gray-900 dark:text-white leading-tight bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-purple-600">{{ page.course_title | default: page.title }}</h2>
+          <h2 class="text-xl md:text-2xl font-extrabold mb-3 text-gray-900 dark:text-white leading-tight bg-clip-text text-transparent bg-gradient-to-r from-primary-600 via-purple-500 to-purple-600 tracking-tight">{{ page.course_title | default: page.title }}</h2>
           {% if page.course_description %}
-          <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3">{{ page.course_description }}</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4 max-w-prose">{{ page.course_description }}</p>
           {% endif %}
           
           <!-- Course Progress -->
@@ -36,7 +36,7 @@ layout: default
               </span>
               <span class="text-primary-600 dark:text-primary-400 font-semibold" data-progress-text>0%</span>
             </div>
-            <div class="h-3 bg-gray-200 dark:bg-gray-700/50 rounded-full overflow-hidden shadow-inner">
+            <div class="h-3 bg-gray-200 dark:bg-gray-700/50 rounded-full overflow-hidden shadow-inner backdrop-blur-sm ring-1 ring-gray-900/5 dark:ring-white/10">
               <div class="h-full bg-gradient-to-r from-primary-600 via-purple-500 to-purple-600 rounded-full transition-all duration-1000 ease-out" 
                    data-course-progress 
                    data-total-modules="{{ modules.size }}" 
@@ -61,7 +61,7 @@ layout: default
             {% for module in modules %}
               {% assign module_title = module.items | first %}
               {% assign lesson_count = module.items | size | minus: 1 %}
-              <div class="module-section bg-white/95 dark:bg-gray-800/95 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 border border-gray-100/50 dark:border-gray-700/30 mb-3 group" data-module-id="{{ module.name }}">
+              <div class="module-section bg-white/95 dark:bg-gray-800/95 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 border border-gray-100/50 dark:border-gray-700/30 mb-3 group backdrop-blur-sm ring-1 ring-gray-900/5 dark:ring-white/10" data-module-id="{{ module.name }}">
                 <button class="w-full flex items-center justify-between p-3.5 text-left font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 rounded-t-xl hover:bg-gray-50/80 dark:hover:bg-gray-700/30" onclick="toggleModule(this)" aria-expanded="true">
                   <div class="flex items-center gap-3 flex-grow min-w-0">
                     <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-purple-600 text-white font-bold text-xs shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">M{{ module.name }}</span>
