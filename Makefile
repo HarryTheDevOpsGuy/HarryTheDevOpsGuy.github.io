@@ -32,6 +32,7 @@ build: ## Build the site for production
 
 # Development build with watch mode
 dev: ## Start development server with live reload
+	@make build
 	@echo "${BLUE}Starting development server...${RESET}"
 	@JEKYLL_ENV=development bundle exec jekyll serve --livereload --incremental
 

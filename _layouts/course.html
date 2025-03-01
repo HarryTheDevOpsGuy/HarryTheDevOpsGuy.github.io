@@ -125,10 +125,179 @@ layout: default
 
   <!-- Main Content -->
   <main class="flex-grow max-w-4xl mx-auto md:p-8">
-    <article class="prose prose-xl dark:prose-invert max-w-none bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 prose-headings:font-bold prose-headings:tracking-tight prose-headings:scroll-mt-24 prose-h1:text-4xl md:prose-h1:text-5xl prose-h1:bg-clip-text prose-h1:text-transparent prose-h1:bg-gradient-to-r prose-h1:from-primary-600 prose-h1:to-purple-600 prose-h2:text-3xl md:prose-h2:text-4xl prose-h2:border-b prose-h2:border-gray-200 dark:prose-h2:border-gray-700 prose-h2:pb-2 prose-h3:text-2xl md:prose-h3:text-3xl prose-p:text-lg prose-p:text-gray-600 dark:prose-p:text-gray-300 prose-p:leading-relaxed prose-a:text-primary-600 dark:prose-a:text-primary-400 hover:prose-a:text-primary-500 dark:hover:prose-a:text-primary-300 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 dark:prose-strong:text-white prose-strong:font-semibold prose-code:text-base prose-code:font-mono prose-code:bg-gray-100 dark:prose-code:bg-gray-800 prose-code:px-2 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none prose-pre:bg-gray-900 dark:prose-pre:bg-gray-950 prose-pre:border prose-pre:border-gray-200 dark:prose-pre:border-gray-700 prose-pre:rounded-xl prose-pre:shadow-inner prose-img:rounded-xl prose-img:shadow-lg prose-li:text-gray-600 dark:prose-li:text-gray-300 prose-li:my-2 prose-blockquote:border-l-4 prose-blockquote:border-primary-500 prose-blockquote:bg-gray-50 dark:prose-blockquote:bg-gray-700/30 prose-blockquote:pl-4 prose-blockquote:py-2 prose-blockquote:rounded-r-lg prose-table:border-collapse prose-th:border prose-th:border-gray-200 dark:prose-th:border-gray-700 prose-th:p-2 prose-th:bg-gray-50 dark:prose-th:bg-gray-700/30 prose-td:border prose-td:border-gray-200 dark:prose-td:border-gray-700 prose-td:p-2 hover:prose-tr:bg-gray-50 dark:hover:prose-tr:bg-gray-800/50 prose-hr:border-gray-200 dark:prose-hr:border-gray-700">
-      <h1 class="mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-purple-600">{{ page.title }}</h1>
-      {{ content }}
+    <article class="prose prose-sm dark:prose-invert max-w-none bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8
+      prose-headings:font-bold 
+      prose-headings:tracking-tight 
+      prose-h1:text-3xl 
+      md:prose-h1:text-4xl 
+      prose-h2:text-2xl 
+      md:prose-h2:text-3xl 
+      prose-h3:text-xl 
+      md:prose-h3:text-2xl 
+      
+      prose-p:text-base 
+      prose-p:text-gray-600 
+      dark:prose-p:text-gray-300 
+      prose-p:leading-relaxed 
+      
+      prose-li:text-base
+      prose-li:text-gray-600
+      dark:prose-li:text-gray-300
+      
+      prose-a:text-primary-600 
+      dark:prose-a:text-primary-400 
+      hover:prose-a:text-primary-500 
+      dark:hover:prose-a:text-primary-300 
+      prose-a:no-underline 
+      hover:prose-a:underline 
+      
+      prose-strong:text-gray-900 
+      dark:prose-strong:text-white 
+      prose-strong:font-semibold 
+      
+      prose-code:font-mono
+      prose-code:text-sm
+      prose-code:px-1.5
+      prose-code:py-0.5
+      prose-code:rounded-md
+      prose-pre:rounded-xl
+      prose-pre:shadow-lg
+      
+      prose-img:rounded-xl 
+      prose-img:shadow-lg
+      prose-img:mx-auto
+      
+      prose-hr:border-gray-200
+      dark:prose-hr:border-gray-700
+      prose-hr:my-8
+      
+      [&>*]:mb-4
+      [&>h1]:relative
+      [&>h1]:pb-4
+      [&>h1]:mb-6
+      [&>h1]:after:content-['']
+      [&>h1]:after:absolute
+      [&>h1]:after:bottom-0
+      [&>h1]:after:left-0
+      [&>h1]:after:w-24
+      [&>h1]:after:h-1
+      [&>h1]:after:bg-gradient-to-r
+      [&>h1]:after:from-primary-600
+      [&>h1]:after:to-purple-600
+      [&>h1]:after:rounded-full
+      
+      [&>h2]:mt-8
+      [&>h2]:flex
+      [&>h2]:items-center
+      [&>h2]:gap-2
+      [&>h2]:before:content-['#']
+      [&>h2]:before:text-primary-500
+      [&>h2]:before:opacity-50
+      [&>h2]:before:text-sm
+      
+      [&>h3]:mt-6
+      [&>h3]:flex
+      [&>h3]:items-center
+      [&>h3]:gap-2
+      
+      [&>ul]:my-4
+      [&>ul]:list-none
+      [&>ul>li]:relative
+      [&>ul>li]:pl-6
+      [&>ul>li]:before:content-['']
+      [&>ul>li]:before:absolute
+      [&>ul>li]:before:left-0
+      [&>ul>li]:before:top-[0.6em]
+      [&>ul>li]:before:h-1.5
+      [&>ul>li]:before:w-1.5
+      [&>ul>li]:before:rounded-full
+      [&>ul>li]:before:bg-primary-500
+      
+      [&>ol]:my-4
+      [&>ol>li]:marker:text-primary-500
+      
+      [&>blockquote]:my-6
+      [&>blockquote]:pl-4
+      [&>blockquote]:border-l-4
+      [&>blockquote]:border-primary-500
+      [&>blockquote]:bg-gray-50
+      dark:[&>blockquote]:bg-gray-800
+      [&>blockquote]:rounded-r-lg
+      [&>blockquote]:py-2
+      [&>blockquote]:px-4
+      [&>blockquote]:shadow-sm
+      
+      [&>table]:w-full
+      [&>table]:border-collapse
+      [&>table>thead>tr>th]:bg-gray-50
+      dark:[&>table>thead>tr>th]:bg-gray-800
+      [&>table>thead>tr>th]:p-2
+      [&>table>tbody>tr>td]:border-t
+      [&>table>tbody>tr>td]:border-gray-200
+      dark:[&>table>tbody>tr>td]:border-gray-700
+      [&>table>tbody>tr>td]:p-2
+      
+      [&>*:first-child]:mt-0
+      [&>*:last-child]:mb-0">
+      
+      <h1 class="mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-purple-600">
+        {{ page.title }}
+      </h1>
 
+      <!-- Add icons to headings using JavaScript -->
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const article = document.querySelector('article');
+          
+          // Add icons to h2 headings
+          article.querySelectorAll('h2').forEach(h2 => {
+            const icon = document.createElement('span');
+            icon.innerHTML = `<svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>`;
+            h2.prepend(icon);
+          });
+          
+          // Add icons to h3 headings
+          article.querySelectorAll('h3').forEach(h3 => {
+            const icon = document.createElement('span');
+            icon.innerHTML = `<svg class="w-4 h-4 text-primary-500/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>`;
+            h3.prepend(icon);
+          });
+          
+          // Add copy button to code blocks
+          article.querySelectorAll('pre').forEach(pre => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'relative group';
+            pre.parentNode.insertBefore(wrapper, pre);
+            wrapper.appendChild(pre);
+            
+            const copyButton = document.createElement('button');
+            copyButton.className = 'absolute top-2 right-2 p-2 rounded-lg bg-gray-800/50 hover:bg-gray-800/70 text-gray-400 hover:text-white opacity-0 group-hover:opacity-100 transition-opacity';
+            copyButton.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>`;
+            wrapper.appendChild(copyButton);
+            
+            copyButton.addEventListener('click', () => {
+              navigator.clipboard.writeText(pre.textContent);
+              copyButton.innerHTML = `<svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>`;
+              setTimeout(() => {
+                copyButton.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>`;
+              }, 2000);
+            });
+          });
+        });
+      </script>
+
+      {{ content }}
+      
       <!-- Resources -->
       {% if page.resources %}
       <div class="mt-8 p-6 bg-gray-50 dark:bg-gray-700 rounded-xl">
