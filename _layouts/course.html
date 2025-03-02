@@ -133,55 +133,98 @@ layout: default
             {% endif %}
 
             <!-- Navigation Links -->
-            <div class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 border-t dark:border-gray-700 pt-6">
-                {% assign sorted_pages = site.pages | where: "layout", "course" | where_exp: "page", "page.url contains current_course" | sort: "order" %}
-                {% for p in sorted_pages %}
-                    {% if p.url == page.url %}
-                        {% assign current_index = forloop.index0 %}
-                        {% assign prev_index = current_index | minus: 1 %}
-                        {% assign next_index = current_index | plus: 1 %}
-                        {% if prev_index >= 0 %}
-                            {% assign prev_page = sorted_pages[prev_index] %}
-                        {% endif %}
-                        {% if next_index < sorted_pages.size %}
-                            {% assign next_page = sorted_pages[next_index] %}
-                        {% endif %}
-                        {% break %}
-                    {% endif %}
-                {% endfor %}
-
-                {% if prev_page %}
-                <a href="{{ prev_page.url | relative_url }}" class="group w-full sm:w-auto flex items-center justify-center px-6 py-3 rounded-xl bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-700 hover:from-primary-50 hover:to-purple-50 dark:hover:from-primary-900/50 dark:hover:to-purple-900/50 transition-all duration-300 shadow-lg hover:shadow-primary-500/20 dark:hover:shadow-primary-400/20 border border-gray-200 dark:border-gray-600 hover:border-primary-500/30 dark:hover:border-primary-400/30">
-                    <div class="flex items-center gap-3">
-                        <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-gray-200 to-gray-100 dark:from-gray-700 dark:to-gray-600 group-hover:from-primary-200 group-hover:to-purple-200 dark:group-hover:from-primary-800 dark:group-hover:to-purple-800 transition-all duration-300">
-                            <svg class="w-4 h-4 text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {% assign current_module = page.module %}
+            {% assign course_id = page.url | split: '/' | slice: 2 | first %}
+            {% assign all_modules = site.pages | where: "layout", "course" | where_exp: "p", "p.url contains course_id" | group_by: "module" | sort: "name" %}
+            {% assign current_lessons = site.pages | where: "layout", "course" | where_exp: "p", "p.url contains course_id" | where: "module", current_module | sort: "order" %}
+            
+            {% for lesson in current_lessons %}
+              {% if lesson.url == page.url %}
+                {% assign prev_index = forloop.index0 | minus: 1 %}
+                {% assign next_index = forloop.index0 | plus: 1 %}
+                
+                <div class="flex flex-col md:flex-row gap-6 mt-8">
+                  <div class="flex-1 min-w-0">
+                    {% if prev_index >= 0 %}
+                      {% assign prev_lesson = current_lessons[prev_index] %}
+                      <a href="{{ prev_lesson.url }}" class="group block p-6 rounded-2xl bg-gradient-to-br from-white/95 via-white/90 to-gray-50/90 dark:from-gray-800/95 dark:via-gray-800/90 dark:to-gray-700/90 hover:from-primary-50/95 hover:via-primary-50/90 hover:to-purple-50/90 dark:hover:from-primary-900/30 dark:hover:via-primary-800/30 dark:hover:to-purple-900/30 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10 border border-gray-200/50 dark:border-gray-700/30 hover:border-primary-500/30 dark:hover:border-primary-400/30 transform hover:-translate-y-1">
+                        <div class="flex items-center gap-4">
+                          <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-primary-100 to-purple-100 dark:from-primary-900 dark:to-purple-900 group-hover:from-primary-200 group-hover:to-purple-200 dark:group-hover:from-primary-800 dark:group-hover:to-purple-800 transition-all duration-300 shadow-md group-hover:shadow-lg">
+                            <svg class="w-6 h-6 text-primary-600 dark:text-primary-400 group-hover:text-primary-700 dark:group-hover:text-primary-300 transform group-hover:-translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                          </div>
+                          <div class="min-w-0">
+                            <div class="text-sm font-medium text-primary-600 dark:text-primary-400 mb-1 group-hover:text-primary-700 dark:group-hover:text-primary-300">Previous Lesson</div>
+                            <div class="text-lg font-bold text-gray-900 dark:text-white truncate group-hover:text-primary-600 dark:group-hover:text-primary-400">{{ prev_lesson.title }}</div>
+                          </div>
+                        </div>
+                      </a>
+                    {% elsif current_module > 1 %}
+                      {% assign prev_module = current_module | minus: 1 %}
+                      {% assign prev_module_lessons = site.pages | where: "layout", "course" | where_exp: "p", "p.url contains course_id" | where: "module", prev_module | sort: "order" %}
+                      {% assign last_lesson = prev_module_lessons | last %}
+                      {% if last_lesson %}
+                        <a href="{{ last_lesson.url }}" class="group block p-6 rounded-2xl bg-gradient-to-br from-white/95 via-white/90 to-gray-50/90 dark:from-gray-800/95 dark:via-gray-800/90 dark:to-gray-700/90 hover:from-primary-50/95 hover:via-primary-50/90 hover:to-purple-50/90 dark:hover:from-primary-900/30 dark:hover:via-primary-800/30 dark:hover:to-purple-900/30 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10 border border-gray-200/50 dark:border-gray-700/30 hover:border-primary-500/30 dark:hover:border-primary-400/30 transform hover:-translate-y-1">
+                          <div class="flex items-center gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-primary-100 to-purple-100 dark:from-primary-900 dark:to-purple-900 group-hover:from-primary-200 group-hover:to-purple-200 dark:group-hover:from-primary-800 dark:group-hover:to-purple-800 transition-all duration-300 shadow-md group-hover:shadow-lg">
+                              <svg class="w-6 h-6 text-primary-600 dark:text-primary-400 group-hover:text-primary-700 dark:group-hover:text-primary-300 transform group-hover:-translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                              </svg>
+                            </div>
+                            <div class="min-w-0">
+                              <div class="text-sm font-medium text-primary-600 dark:text-primary-400 mb-1 group-hover:text-primary-700 dark:group-hover:text-primary-300">Previous Module</div>
+                              <div class="text-lg font-bold text-gray-900 dark:text-white truncate group-hover:text-primary-600 dark:group-hover:text-primary-400">{{ last_lesson.title }}</div>
+                            </div>
+                          </div>
+                        </a>
+                      {% endif %}
+                    {% endif %}
+                  </div>
+      
+                  <div class="flex-1 min-w-0">
+                    {% if next_index < current_lessons.size %}
+                      {% assign next_lesson = current_lessons[next_index] %}
+                      <a href="{{ next_lesson.url }}" class="group block p-6 rounded-2xl bg-gradient-to-br from-white/95 via-white/90 to-gray-50/90 dark:from-gray-800/95 dark:via-gray-800/90 dark:to-gray-700/90 hover:from-primary-50/95 hover:via-primary-50/90 hover:to-purple-50/90 dark:hover:from-primary-900/30 dark:hover:via-primary-800/30 dark:hover:to-purple-900/30 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10 border border-gray-200/50 dark:border-gray-700/30 hover:border-primary-500/30 dark:hover:border-primary-400/30 transform hover:-translate-y-1">
+                        <div class="flex items-center justify-end gap-4">
+                          <div class="min-w-0">
+                            <div class="text-sm font-medium text-primary-600 dark:text-primary-400 mb-1 text-right group-hover:text-primary-700 dark:group-hover:text-primary-300">Next Lesson</div>
+                            <div class="text-lg font-bold text-gray-900 dark:text-white truncate text-right group-hover:text-primary-600 dark:group-hover:text-primary-400">{{ next_lesson.title }}</div>
+                          </div>
+                          <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-primary-100 to-purple-100 dark:from-primary-900 dark:to-purple-900 group-hover:from-primary-200 group-hover:to-purple-200 dark:group-hover:from-primary-800 dark:group-hover:to-purple-800 transition-all duration-300 shadow-md group-hover:shadow-lg">
+                            <svg class="w-6 h-6 text-primary-600 dark:text-primary-400 group-hover:text-primary-700 dark:group-hover:text-primary-300 transform group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                             </svg>
-                        </span>
-                        <div class="flex flex-col items-start">
-                            <span class="text-xs text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400">Previous Lesson</span>
-                            <span class="text-sm font-medium text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{{ prev_page.title }}</span>
+                          </div>
                         </div>
-                    </div>
-                </a>
-                {% endif %}
-
-                {% if next_page %}
-                <a href="{{ next_page.url | relative_url }}" class="group w-full sm:w-auto flex items-center justify-center px-6 py-3 rounded-xl bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-700 hover:from-primary-50 hover:to-purple-50 dark:hover:from-primary-900/50 dark:hover:to-purple-900/50 transition-all duration-300 shadow-lg hover:shadow-primary-500/20 dark:hover:shadow-primary-400/20 border border-gray-200 dark:border-gray-600 hover:border-primary-500/30 dark:hover:border-primary-400/30">
-                    <div class="flex items-center gap-3">
-                        <div class="flex flex-col items-end">
-                            <span class="text-xs text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400">Next Lesson</span>
-                            <span class="text-sm font-medium text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{{ next_page.title }}</span>
-                        </div>
-                        <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-gray-200 to-gray-100 dark:from-gray-700 dark:to-gray-600 group-hover:from-primary-200 group-hover:to-purple-200 dark:group-hover:from-primary-800 dark:group-hover:to-purple-800 transition-all duration-300">
-                            <svg class="w-4 h-4 text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      </a>
+                    {% else %}
+                      {% assign next_module = current_module | plus: 1 %}
+                      {% assign next_module_lessons = site.pages | where: "layout", "course" | where_exp: "p", "p.url contains course_id" | where: "module", next_module | sort: "order" %}
+                      {% assign first_lesson = next_module_lessons | first %}
+                      {% if first_lesson %}
+                        <a href="{{ first_lesson.url }}" class="group block p-6 rounded-2xl bg-gradient-to-br from-white/95 via-white/90 to-gray-50/90 dark:from-gray-800/95 dark:via-gray-800/90 dark:to-gray-700/90 hover:from-primary-50/95 hover:via-primary-50/90 hover:to-purple-50/90 dark:hover:from-primary-900/30 dark:hover:via-primary-800/30 dark:hover:to-purple-900/30 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10 border border-gray-200/50 dark:border-gray-700/30 hover:border-primary-500/30 dark:hover:border-primary-400/30 transform hover:-translate-y-1">
+                          <div class="flex items-center justify-end gap-4">
+                            <div class="min-w-0">
+                              <div class="text-sm font-medium text-primary-600 dark:text-primary-400 mb-1 text-right group-hover:text-primary-700 dark:group-hover:text-primary-300">Next Module</div>
+                              <div class="text-lg font-bold text-gray-900 dark:text-white truncate text-right group-hover:text-primary-600 dark:group-hover:text-primary-400">{{ first_lesson.title }}</div>
+                            </div>
+                            <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-primary-100 to-purple-100 dark:from-primary-900 dark:to-purple-900 group-hover:from-primary-200 group-hover:to-purple-200 dark:group-hover:from-primary-800 dark:group-hover:to-purple-800 transition-all duration-300 shadow-md group-hover:shadow-lg">
+                              <svg class="w-6 h-6 text-primary-600 dark:text-primary-400 group-hover:text-primary-700 dark:group-hover:text-primary-300 transform group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </span>
-                    </div>
-                </a>
-                {% endif %}
-            </div>
+                              </svg>
+                            </div>
+                          </div>
+                        </a>
+                      {% endif %}
+                    {% endif %}
+                  </div>
+                </div>
+                {% break %}
+              {% endif %}
+            {% endfor %}
+            
+            
         </article>
     </main>
 
