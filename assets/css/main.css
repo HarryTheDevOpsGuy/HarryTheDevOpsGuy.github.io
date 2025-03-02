@@ -26,30 +26,37 @@
     animation: gradient 4s ease infinite;
   }
 
-  .prose h1 {
-    @apply text-3xl md:text-3xl mb-8 animate-fade-in;
+  /* Typography */
+  .prose {
+    h1 {
+      @apply text-4xl md:text-5xl font-extrabold mb-6 animate-fade-in;
+      &:after {
+        content: '';
+        @apply block w-full h-px mt-4 bg-gradient-to-r from-primary-500/50 via-purple-500/50 to-transparent;
+      }
+    }
+    h2 {
+      @apply text-3xl md:text-4xl font-bold mt-10 mb-4 animate-slide-up;
+      &:after {
+        content: '';
+        @apply block w-3/4 h-px mt-2 bg-gradient-to-r from-primary-400/30 to-transparent;
+      }
+    }
+    h3 {
+      @apply text-2xl md:text-3xl font-semibold mt-6 mb-3 animate-slide-up;
+    }
+    p, li {
+      @apply text-gray-700 dark:text-gray-300 leading-normal animate-fade-in;
+    }
+    ul {
+      @apply space-y-1.5 my-4 animate-fade-in;
+    }
+    hr {
+      @apply my-6 border-0 h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent;
+    }
   }
 
-  .prose h2 {
-    @apply text-2xl md:text-2xl mt-12 mb-6 animate-slide-up;
-  }
-
-  .prose h3 {
-    @apply text-xl md:text-xl mt-8 mb-4 animate-slide-up;
-  }
-
-  .prose p {
-    @apply text-gray-700 dark:text-gray-300 leading-relaxed animate-fade-in;
-  }
-
-  .prose ul {
-    @apply space-y-2 my-6 animate-fade-in;
-  }
-
-  .prose li {
-    @apply text-gray-700 dark:text-gray-300 animate-fade-in;
-  }
-
+  /* Buttons */
   .btn {
     @apply inline-flex items-center px-4 py-2 rounded-lg font-medium transition-all duration-300;
   }
@@ -59,62 +66,49 @@
   .btn-outline {
     @apply btn border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white hover:scale-105;
   }
+
+  /* Components */
   .card {
     @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden animate-fade-in hover:shadow-xl transition-shadow duration-300;
   }
   .nav-link {
     @apply text-gray-600 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-all duration-300 hover:translate-x-2;
   }
+
+  /* Course Components */
   .module-section {
     @apply transition-all duration-300 hover:shadow-md;
-  }
-  .module-content {
-    @apply transition-all duration-300;
-  }
-  .module-section button {
-    @apply transition-all duration-300;
-  }
-  .module-section button:hover {
-    @apply transform scale-[1.02];
+    button {
+      @apply transition-all duration-300;
+      &:hover {
+        @apply transform scale-[1.02];
+      }
+    }
   }
   .course-sidebar {
     @apply transition-transform duration-300 ease-in-out;
-  }
-  .course-sidebar.collapsed {
-    @apply -translate-x-full md:translate-x-0;
+    &.collapsed {
+      @apply -translate-x-full md:translate-x-0;
+    }
   }
   .progress-indicator {
     @apply transition-all duration-300 ease-in-out;
   }
 
-  /* Enhanced code styling */
-  .prose :not(pre) > code {
-    @apply bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-2 py-0.5 rounded font-mono text-sm border border-gray-200 dark:border-gray-700;
-  }
-
-  .prose pre {
-    @apply bg-gray-100 dark:bg-gray-800 p-4 rounded-lg overflow-x-auto border border-gray-200 dark:border-gray-700 relative;
-  }
-
-  .prose pre code {
-    @apply font-mono text-sm leading-relaxed text-gray-800 dark:text-gray-200;
-  }
-
-  .prose .highlight {
-    @apply relative;
-  }
-
-  .prose .highlight pre {
-    @apply my-4;
-  }
-
-  .prose .language-plaintext {
-    @apply text-primary-600 dark:text-primary-400;
-  }
-
-
-
-  .prose hr {
-    @apply my-8 border-0 h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent;
+  /* Code Styling */
+  .prose {
+    :not(pre) > code {
+      @apply bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-1.5 py-0.5 rounded font-mono text-sm border border-gray-200/50 dark:border-gray-700/50;
+    }
+    pre {
+      @apply bg-gray-100/90 dark:bg-gray-800/90 p-3 rounded-lg overflow-x-auto border border-gray-200/50 dark:border-gray-700/50 relative my-3 backdrop-blur-sm;
+      code {
+        @apply font-mono text-sm leading-snug text-gray-800 dark:text-gray-200 block;
+        line-height: 1.4;
+      }
+      &:hover {
+        @apply border-primary-500/30 dark:border-primary-400/30 shadow-lg shadow-primary-500/5 dark:shadow-primary-400/5;
+      }
+    }
   }
 }
