@@ -2,216 +2,92 @@
 layout: default
 ---
 
-<div class="flex flex-col md:flex-row min-h-screen bg-gray-50 dark:bg-gray-900">
-    
-    <!-- Main Content -->
-    <main class="flex-grow max-w-4xl mx-auto md:p-8">
-        <article class="prose prose-sm dark:prose-invert max-w-none bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8
-      prose-headings:font-bold 
-      prose-headings:tracking-tight 
-      prose-h1:text-3xl 
-      md:prose-h1:text-4xl 
-      prose-h2:text-2xl 
-      md:prose-h2:text-3xl 
-      prose-h3:text-xl 
-      md:prose-h3:text-2xl 
-      
-      prose-p:text-base 
-      prose-p:text-gray-600 
-      dark:prose-p:text-gray-300 
-      prose-p:leading-relaxed 
-      
-      prose-li:text-base
-      prose-li:text-gray-600
-      dark:prose-li:text-gray-300
-      
-      prose-a:text-primary-600 
-      dark:prose-a:text-primary-400 
-      hover:prose-a:text-primary-500 
-      dark:hover:prose-a:text-primary-300 
-      prose-a:no-underline 
-      hover:prose-a:underline 
-      
-      prose-strong:text-gray-900 
-      dark:prose-strong:text-white 
-      prose-strong:font-semibold 
-      
-      prose-code:font-mono
-      prose-code:text-sm
-      prose-code:px-1.5
-      prose-code:py-0.5
-      prose-code:rounded-md
-      prose-pre:rounded-xl
-      prose-pre:shadow-lg
-      
-      prose-img:rounded-xl 
-      prose-img:shadow-lg
-      prose-img:mx-auto
-      
-      prose-hr:border-gray-200
-      dark:prose-hr:border-gray-700
-      prose-hr:my-8
-      
-      [&>*]:mb-4
-      [&>h1]:relative
-      [&>h1]:pb-4
-      [&>h1]:mb-6
-      [&>h1]:after:content-['']
-      [&>h1]:after:absolute
-      [&>h1]:after:bottom-0
-      [&>h1]:after:left-0
-      [&>h1]:after:w-24
-      [&>h1]:after:h-1
-      [&>h1]:after:bg-gradient-to-r
-      [&>h1]:after:from-primary-600
-      [&>h1]:after:to-purple-600
-      [&>h1]:after:rounded-full
-      
-      [&>h2]:mt-8
-      [&>h2]:flex
-      [&>h2]:items-center
-      [&>h2]:before:text-primary-500
-      [&>h2]:before:opacity-50
-      [&>h2]:before:text-sm
-      
-      [&>h3]:mt-6
-      [&>h3]:flex
-      [&>h3]:items-center
-      [&>h3]:gap-2
-      
-      [&>ul]:my-4
-      [&>ul]:list-none
-      [&>ul>li]:relative
-      [&>ul>li]:pl-6
-      [&>ul>li]:before:content-['']
-      [&>ul>li]:before:absolute
-      [&>ul>li]:before:left-0
-      [&>ul>li]:before:top-[0.6em]
-      [&>ul>li]:before:h-1.5
-      [&>ul>li]:before:w-1.5
-      [&>ul>li]:before:rounded-full
-      [&>ul>li]:before:bg-primary-500
-      
-      [&>ol]:my-4
-      [&>ol>li]:marker:text-primary-500
-      
-      [&>blockquote]:my-6
-      [&>blockquote]:pl-4
-      [&>blockquote]:border-l-4
-      [&>blockquote]:border-primary-500
-      [&>blockquote]:bg-gray-50
-      dark:[&>blockquote]:bg-gray-800
-      [&>blockquote]:rounded-r-lg
-      [&>blockquote]:py-2
-      [&>blockquote]:px-4
-      [&>blockquote]:shadow-sm
-      
-      [&>table]:w-full
-      [&>table]:border-collapse
-      [&>table>thead>tr>th]:bg-gray-50
-      dark:[&>table>thead>tr>th]:bg-gray-800
-      [&>table>thead>tr>th]:p-2
-      [&>table>tbody>tr>td]:border-t
-      [&>table>tbody>tr>td]:border-gray-200
-      dark:[&>table>tbody>tr>td]:border-gray-700
-      [&>table>tbody>tr>td]:p-2
-      
-      [&>*:first-child]:mt-0
-      [&>*:last-child]:mb-0">
+<div class="flex flex-col md:flex-row gap-4 relative min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <!-- Left Sidebar -->
+    <aside class="md:w-72 flex-shrink-0 fixed md:sticky left-0 top-0 md:top-24 h-screen md:h-[calc(100vh-6rem)] z-40 transform transition-all duration-300 ease-in-out -translate-x-full md:translate-x-0" id="course-sidebar">
+        <nav class="h-full overflow-y-auto bg-white/95 dark:bg-gray-800/95 p-4 rounded-2xl shadow-xl backdrop-blur-sm backdrop-filter relative flex flex-col border border-gray-100/50 dark:border-gray-700/30">
+            <!-- Sidebar Header with Toggle Button -->
+            <div class="flex items-center justify-between sticky top-0 z-10 bg-white/95 dark:bg-gray-800/95 pb-3 mb-4 border-b border-gray-100/50 dark:border-gray-700/30">
+                <h2 class="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-purple-600">Course Content</h2>
+                <button class="p-1.5 rounded-lg bg-gray-50 dark:bg-gray-700/50 hover:bg-gray-100 dark:hover:bg-gray-600/50 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-opacity-50 group md:hidden" onclick="toggleSidebar()" aria-label="Toggle Sidebar">
+                    <svg class="w-4 h-4 text-gray-600 dark:text-gray-300 group-hover:scale-110 transition-transform duration-200" id="sidebar-toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+            </div>
 
+            <!-- Course Progress -->
+            <div class="mb-6">
+                <div class="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400 mb-2">
+                    <span>Course Progress</span>
+                    <span class="font-medium" id="progress-percentage">0%</span>
+                </div>
+                <div class="h-2 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-primary-500 to-purple-500 transform origin-left transition-transform duration-500" id="progress-bar" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Course Modules -->
+            <div class="flex-grow space-y-3 overflow-y-auto">
+                {% assign modules = site.pages | where: "layout", "course" | group_by: "module" | sort: "name" %}
+                {% for module in modules %}
+                <div class="course-module bg-gray-50/50 dark:bg-gray-700/30 rounded-xl p-3 transition-all duration-200 hover:shadow-md">
+                    <button class="w-full flex items-center justify-between text-left" onclick="toggleModule(this)" aria-expanded="false">
+                        <h3 class="text-base font-semibold text-gray-900 dark:text-white">Module {{ module.name }}</h3>
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="mt-3 space-y-1.5 hidden">
+                        {% assign sorted_pages = module.items | sort: "order" %}
+                        {% for page in sorted_pages %}
+                        <a href="{{ page.url | relative_url }}" class="block p-2 rounded-lg hover:bg-white dark:hover:bg-gray-700 transition-colors duration-200 {% if page.url == page.url %}bg-white dark:bg-gray-700 shadow-sm{% endif %}">
+                            <div class="flex items-center space-x-2">
+                                <span class="flex-shrink-0 w-1.5 h-1.5 rounded-full {% if page.completed %}bg-green-500{% else %}bg-gray-300 dark:bg-gray-600{% endif %}"></span>
+                                <span class="text-sm text-gray-700 dark:text-gray-300">{{ page.title }}</span>
+                            </div>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-grow p-6">
+        <article class="prose prose-sm md:prose-base lg:prose-lg dark:prose-invert max-w-none bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
             <h1 class="mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-purple-600">
                 {{ page.title }}
             </h1>
 
-            <!-- Add icons to headings using JavaScript -->
-            <script>
-                document.addEventListener('DOMContentLoaded', () => {
-                    const article = document.querySelector('article');
-
-                    // Add icons to h2 headings
-                    article.querySelectorAll('h2').forEach(h2 => {
-                        const icon = document.createElement('span');
-                        icon.innerHTML = `<svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>`;
-                        h2.prepend(icon);
-                    });
-
-                    // Add icons to h3 headings
-                    article.querySelectorAll('h3').forEach(h3 => {
-                        const icon = document.createElement('span');
-                        icon.innerHTML = `<svg class="w-4 h-4 text-primary-500/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>`;
-                        h3.prepend(icon);
-                    });
-
-                    // Add copy button to code blocks
-                    article.querySelectorAll('pre').forEach(pre => {
-                        const wrapper = document.createElement('div');
-                        wrapper.className = 'relative group';
-                        pre.parentNode.insertBefore(wrapper, pre);
-                        wrapper.appendChild(pre);
-
-                        const copyButton = document.createElement('button');
-                        copyButton.className = 'absolute top-2 right-2 p-2 rounded-lg bg-gray-800/50 hover:bg-gray-800/70 text-gray-400 hover:text-white opacity-0 group-hover:opacity-100 transition-opacity';
-                        copyButton.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-            </svg>`;
-                        wrapper.appendChild(copyButton);
-
-                        copyButton.addEventListener('click', () => {
-                            navigator.clipboard.writeText(pre.textContent);
-                            copyButton.innerHTML = `<svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>`;
-                            setTimeout(() => {
-                                copyButton.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                </svg>`;
-                            }, 2000);
-                        });
-                    });
-                });
-            </script>
-
             {{ content }}
 
-            <!-- Resources -->
+            <!-- Resources Section -->
             {% if page.resources %}
             <div class="mt-8 p-6 bg-gray-50 dark:bg-gray-700 rounded-xl">
                 <h2>Additional Resources</h2>
                 <div class="grid gap-4 md:grid-cols-2">
                     {% for resource in page.resources %}
-                    <a href="{{ resource.url }}" target="_blank" rel="noopener"
-                        class="flex items-start p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow transition">
+                    <a href="{{ resource.url }}" target="_blank" rel="noopener" class="flex items-start p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow transition">
                         <div class="mr-4">
-                            <div
-                                class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900 text-primary-600">
+                            <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900 text-primary-600">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     {% case resource.type %}
                                     {% when 'video' %}
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z">
-                                    </path>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     {% when 'document' %}
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
-                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                                     {% else %}
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1">
-                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
                                     {% endcase %}
                                 </svg>
                             </div>
                         </div>
                         <div>
-                            <h3
-                                class="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-200">
-                                {{ resource.title }}</h3>
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">{{ resource.title }}</h3>
                             <p class="text-sm text-gray-600 dark:text-gray-400">{{ resource.description }}</p>
                         </div>
                     </a>
@@ -219,93 +95,154 @@ layout: default
                 </div>
             </div>
             {% endif %}
-        </article>
 
+            <!-- Navigation Links -->
+            <div class="mt-8 flex items-center justify-between border-t dark:border-gray-700 pt-6">
+                {% assign sorted_pages = site.pages | where: "layout", "course" | sort: "order" %}
+                {% for page in sorted_pages %}
+                    {% if page.url == page.url %}
+                        {% assign current_index = forloop.index0 %}
+                        {% assign prev_page = sorted_pages[forloop.index0 | minus: 1] %}
+                        {% assign next_page = sorted_pages[forloop.index0 | plus: 1] %}
+                        {% break %}
+                    {% endif %}
+                {% endfor %}
 
-        {% assign current_module = page.module %}
-        {% assign course_id = page.url | split: '/' | slice: 2 | first %}
-        {% assign all_modules = site.pages | where: "layout", "course" | where_exp: "p", "p.url contains course_id" |
-        group_by: "module" | sort: "name" %}
-        {% assign current_lessons = site.pages | where: "layout", "course" | where_exp: "p", "p.url contains course_id"
-        | where: "module", current_module | sort: "order" %}
-
-        {% for lesson in current_lessons %}
-        {% if lesson.url == page.url %}
-        {% assign prev_index = forloop.index0 | minus: 1 %}
-        {% assign next_index = forloop.index0 | plus: 1 %}
-
-        <div class="flex-1 min-w-0">
-            {% if prev_index >= 0 %}
-            {% assign prev_lesson = current_lessons[prev_index] %}
-            <a href="{{ prev_lesson.url }}"
-                class="group flex items-center gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-gray-800/50 transition-all duration-200 shadow-sm hover:shadow-md border border-gray-100/50 dark:border-gray-700/30">
-                <svg class="w-6 h-6 text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transform group-hover:-translate-x-2 transition-all duration-200"
-                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                </svg>
-                <div class="min-w-0">
-                    <div class="text-sm text-gray-500 dark:text-gray-400">Previous Lesson</div>
-                    <div class="font-medium truncate">{{ prev_lesson.title }}</div>
-                </div>
-            </a>
-            {% elsif current_module > 1 %}
-            {% assign prev_module = current_module | minus: 1 %}
-            {% assign prev_module_lessons = site.pages | where: "layout", "course" | where_exp: "p", "p.url contains
-            course_id" | where: "module", prev_module | sort: "order" %}
-            {% assign last_lesson = prev_module_lessons | last %}
-            {% if last_lesson %}
-            <a href="{{ last_lesson.url }}"
-                class="group flex items-center gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-gray-800/50 transition-all duration-200 shadow-sm hover:shadow-md border border-gray-100/50 dark:border-gray-700/30">
-                <svg class="w-6 h-6 text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transform group-hover:-translate-x-2 transition-all duration-200"
-                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                </svg>
-                <div class="min-w-0">
-                    <div class="text-sm text-gray-500 dark:text-gray-400">Previous Module</div>
-                    <div class="font-medium truncate">{{ last_lesson.title }}</div>
-                </div>
-            </a>
-            {% endif %}
-            {% endif %}
-        </div>
-
-        <div class="flex-1 min-w-0 text-right">
-            {% if next_index < current_lessons.size %} {% assign next_lesson=current_lessons[next_index] %} <a
-                href="{{ next_lesson.url }}"
-                class="group flex items-center justify-end gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-gray-800/50 transition-all duration-200 shadow-sm hover:shadow-md border border-gray-100/50 dark:border-gray-700/30">
-                <div class="min-w-0">
-                    <div class="text-sm text-gray-500 dark:text-gray-400">Next Lesson</div>
-                    <div class="font-medium truncate">{{ next_lesson.title }}</div>
-                </div>
-                <svg class="w-6 h-6 text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transform group-hover:translate-x-2 transition-all duration-200"
-                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
+                {% if prev_page %}
+                <a href="{{ prev_page.url | relative_url }}" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Previous: {{ prev_page.title }}
                 </a>
-                {% else %}
-                {% assign next_module = current_module | plus: 1 %}
-                {% assign next_module_lessons = site.pages | where: "layout", "course" | where_exp: "p", "p.url contains
-                course_id" | where: "module", next_module | sort: "order" %}
-                {% assign first_lesson = next_module_lessons | first %}
-                {% if first_lesson %}
-                <a href="{{ first_lesson.url }}"
-                    class="group flex items-center justify-end gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-gray-800/50 transition-all duration-200 shadow-sm hover:shadow-md border border-gray-100/50 dark:border-gray-700/30">
-                    <div class="min-w-0">
-                        <div class="text-sm text-gray-500 dark:text-gray-400">Next Module</div>
-                        <div class="font-medium truncate">{{ first_lesson.title }}</div>
-                    </div>
-                    <svg class="w-6 h-6 text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transform group-hover:translate-x-2 transition-all duration-200"
-                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {% endif %}
+
+                {% if next_page %}
+                <a href="{{ next_page.url | relative_url }}" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 ml-auto">
+                    Next: {{ next_page.title }}
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
                 </a>
                 {% endif %}
-                {% endif %}
-        </div>
-        {% break %}
-        {% endif %}
-        {% endfor %}
+            </div>
+        </article>
+    </main>
+
+    <!-- Right TOC Sidebar -->
+    <aside class="hidden lg:block w-64 flex-shrink-0 sticky top-24 h-[calc(100vh-6rem)] overflow-y-auto pl-4">
+        <nav class="p-4 rounded-xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-lg border border-gray-100/50 dark:border-gray-700/30">
+            <h4 class="text-sm font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-purple-600">On this page</h4>
+            <div id="toc" class="space-y-2 text-sm"></div>
+        </nav>
+    </aside>
 </div>
-</div>
-</div>
-</div>
+
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('course-sidebar');
+        sidebar.classList.toggle('-translate-x-full');
+    }
+
+    function toggleModule(button) {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector('svg');
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+        button.setAttribute('aria-expanded', !isExpanded);
+        content.classList.toggle('hidden');
+        icon.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(180deg)';
+    }
+
+    // Generate Table of Contents with Intersection Observer
+    document.addEventListener('DOMContentLoaded', () => {
+        const article = document.querySelector('article');
+        const toc = document.getElementById('toc');
+        const headings = article.querySelectorAll('h2, h3');
+        
+        // Create TOC items with enhanced styling
+        headings.forEach((heading, index) => {
+            const id = `heading-${index}`;
+            heading.id = id;
+            
+            const link = document.createElement('a');
+            link.href = `#${id}`;
+            link.className = `group flex items-center py-2 transition-all duration-200 ${heading.tagName === 'H3' ? 'pl-4 opacity-80' : ''}`;
+            
+            // Add dot indicator
+            const dot = document.createElement('span');
+            dot.className = `w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-primary-500 dark:group-hover:bg-primary-400 transition-colors duration-200 mr-2 flex-shrink-0`;
+            
+            // Add text container
+            const text = document.createElement('span');
+            text.className = 'text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400';
+            text.textContent = heading.textContent;
+            
+            link.appendChild(dot);
+            link.appendChild(text);
+            toc.appendChild(link);
+            
+            // Smooth scroll to section
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                heading.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        
+        // Intersection Observer for active section highlighting
+        const observerOptions = {
+            rootMargin: '-20% 0px -60% 0px'
+        };
+        
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                const id = entry.target.id;
+                const tocItem = toc.querySelector(`a[href="#${id}"]`);
+                if (tocItem) {
+                    const dot = tocItem.querySelector('span:first-child');
+                    const text = tocItem.querySelector('span:last-child');
+                    
+                    if (entry.isIntersecting) {
+                        dot.classList.add('bg-primary-500', 'dark:bg-primary-400', 'scale-150');
+                        text.classList.add('text-primary-600', 'dark:text-primary-400', 'font-medium');
+                    } else {
+                        dot.classList.remove('bg-primary-500', 'dark:bg-primary-400', 'scale-150');
+                        text.classList.remove('text-primary-600', 'dark:text-primary-400', 'font-medium');
+                    }
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all headings
+        headings.forEach(heading => observer.observe(heading));
+
+        // Auto-expand current module
+        const currentPage = window.location.pathname;
+        const currentLink = document.querySelector(`a[href*="${currentPage}"]`);
+        if (currentLink) {
+            const moduleButton = currentLink.closest('.course-module').querySelector('button');
+            toggleModule(moduleButton);
+        }
+
+        // Update progress bar
+        const progressBar = document.getElementById('progress-bar');
+        const progressPercentage = document.getElementById('progress-percentage');
+        const completedLessons = document.querySelectorAll('.bg-green-500').length;
+        const totalLessons = document.querySelectorAll('[class*="rounded-full"]').length;
+
+        if (totalLessons > 0) {
+            const progress = Math.round((completedLessons / totalLessons) * 100);
+            progressBar.style.width = `${progress}%`;
+            progressPercentage.textContent = `${progress}%`;
+        }
+    });
+
+    // Handle click outside to close sidebar on mobile
+    document.addEventListener('click', (event) => {
+        const sidebar = document.getElementById('course-sidebar');
+        const toggleButton = document.querySelector('[onclick="toggleSidebar()"]');
+        if (!sidebar.contains(event.target) && event.target !== toggleButton && !toggleButton.contains(event.target)) {
+            sidebar.classList.add('-translate-x-full');
+        }
+    });
+</script>

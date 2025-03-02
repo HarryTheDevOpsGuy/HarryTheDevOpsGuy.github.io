@@ -52,27 +52,48 @@
     @apply transform scale-[1.02];
   }
   .course-sidebar {
-    @apply transition-transform duration-300 ease-in-out;
+    @apply transition-transform duration-300 ease-in-out bg-white/95 dark:bg-gray-800/95 p-6 rounded-2xl shadow-xl backdrop-blur-sm border border-gray-100/50 dark:border-gray-700/30;
   }
   .course-sidebar.collapsed {
     @apply -translate-x-full md:translate-x-0;
   }
-  .progress-indicator {
-    @apply transition-all duration-300 ease-in-out;
+  .course-module {
+    @apply mb-6 last:mb-0;
   }
-  .progress-bar {
-    @apply transition-all duration-1000 ease-out;
+  .module-header {
+    @apply flex items-center gap-3 mb-3 p-3 rounded-xl bg-gray-50 dark:bg-gray-700/30 cursor-pointer transition-all duration-200 hover:bg-gray-100 dark:hover:bg-gray-600/40;
   }
-  .copy-button {
-    @apply absolute top-2 right-2 p-2 rounded-lg bg-gray-800/50 hover:bg-gray-800/70 text-gray-400 hover:text-white opacity-0 group-hover:opacity-100 transition-opacity;
+  .module-title {
+    @apply text-sm font-semibold text-gray-900 dark:text-gray-100;
+  }
+  .module-lessons {
+    @apply pl-6 space-y-1;
   }
   .lesson-link {
-    @apply relative flex items-center gap-2 p-2 rounded-lg transition-all duration-200;
+    @apply relative flex items-center gap-2 p-2 rounded-lg text-sm text-gray-600 dark:text-gray-300 transition-all duration-200 hover:bg-primary-50/10 dark:hover:bg-primary-900/10;
   }
-  .lesson-link:hover {
-    @apply bg-primary-50/10 dark:bg-primary-900/10;
+  .lesson-number {
+    @apply w-5 h-5 flex-shrink-0 flex items-center justify-center rounded-md text-xs font-medium border border-current transition-transform duration-200;
+  }
+  .lesson-title {
+    @apply flex-grow truncate;
+  }
+  .lesson-link:hover .lesson-number {
+    @apply scale-110;
   }
   .lesson-link.completed {
     @apply text-green-600 dark:text-green-400;
+  }
+  .lesson-link.active {
+    @apply bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400;
+  }
+  .progress-indicator {
+    @apply transition-all duration-300 ease-in-out h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden;
+  }
+  .progress-bar {
+    @apply transition-all duration-1000 ease-out h-full bg-primary-500 dark:bg-primary-400;
+  }
+  .copy-button {
+    @apply absolute top-2 right-2 p-2 rounded-lg bg-gray-800/50 hover:bg-gray-800/70 text-gray-400 hover:text-white opacity-0 group-hover:opacity-100 transition-opacity;
   }
 }
