@@ -1,5 +1,5 @@
 ---
-layout: doc
+layout: docs
 title: "Getting Started with CI/CD Pipelines"
 category: CI/CD
 order: 1

@@ -6,20 +6,19 @@ layout: default
   <!-- Sidebar with Table of Contents -->
   <aside class="md:w-72 flex-shrink-0 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
     <nav class="sticky top-24 overflow-y-auto max-h-(screen-24)">
-      <h3 class="text-xl font-bold mb-6 text-primary-600 dark:text-primary-400">Course Content</h3>
-      <div id="course-progress-indicator" class="mb-6"></div>
-      {% assign modules = site.pages | where: "layout", "docs" | group_by: "module" | sort: "name" %}
-      {% for module in modules %}
-      <div class="course-section mb-6 border-b border-gray-200 dark:border-gray-700 pb-4 last:border-0">
-        <h4 class="text-md font-semibold mb-3 cursor-pointer flex items-center justify-between hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-          <span class="mr-2">Module {{ module.name }}</span>
+      <h3 class="text-xl font-bold mb-6 text-primary-600 dark:text-primary-400">Documentation</h3>
+      
+      <!-- Getting Started Section -->
+      <div class="mb-6">
+        <h4 class="text-md font-semibold mb-3 cursor-pointer flex items-center justify-between hover:text-primary-600 dark:hover:text-primary-400 transition-colors" data-section="getting-started">
+          <span class="mr-2">Getting Started</span>
           <svg class="w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
           </svg>
         </h4>
-        <ul class="space-y-3 ml-4">
-          {% assign sorted_docs = module.items | sort: "order" %}
-          {% for doc in sorted_docs %}
+        <ul class="space-y-3 ml-4 hidden" data-content="getting-started">
+          {% assign getting_started_docs = site.pages | where: "layout", "docs" | where: "category", "getting-started" | sort: "order" %}
+          {% for doc in getting_started_docs %}
           <li class="transform transition-transform hover:translate-x-1">
             <a href="{{ doc.url }}" class="nav-link flex items-center {% if page.url == doc.url %}text-primary-600 font-medium dark:text-primary-400{% endif %}">
               <span class="progress-indicator mr-2">○</span>
@@ -29,7 +28,90 @@ layout: default
           {% endfor %}
         </ul>
       </div>
-      {% endfor %}
+
+      <!-- Infrastructure Section -->
+      <div class="mb-6">
+        <h4 class="text-md font-semibold mb-3 cursor-pointer flex items-center justify-between hover:text-primary-600 dark:hover:text-primary-400 transition-colors" data-section="infrastructure">
+          <span class="mr-2">Infrastructure</span>
+          <svg class="w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </h4>
+        <ul class="space-y-3 ml-4 hidden" data-content="infrastructure">
+          {% assign infrastructure_docs = site.pages | where: "layout", "docs" | where: "category", "infrastructure" | sort: "order" %}
+          {% for doc in infrastructure_docs %}
+          <li class="transform transition-transform hover:translate-x-1">
+            <a href="{{ doc.url }}" class="nav-link flex items-center {% if page.url == doc.url %}text-primary-600 font-medium dark:text-primary-400{% endif %}">
+              <span class="progress-indicator mr-2">○</span>
+              {{ doc.title }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Container Section -->
+      <div class="mb-6">
+        <h4 class="text-md font-semibold mb-3 cursor-pointer flex items-center justify-between hover:text-primary-600 dark:hover:text-primary-400 transition-colors" data-section="containers">
+          <span class="mr-2">Containers</span>
+          <svg class="w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </h4>
+        <ul class="space-y-3 ml-4 hidden" data-content="containers">
+          {% assign container_docs = site.pages | where: "layout", "docs" | where: "category", "containers" | sort: "order" %}
+          {% for doc in container_docs %}
+          <li class="transform transition-transform hover:translate-x-1">
+            <a href="{{ doc.url }}" class="nav-link flex items-center {% if page.url == doc.url %}text-primary-600 font-medium dark:text-primary-400{% endif %}">
+              <span class="progress-indicator mr-2">○</span>
+              {{ doc.title }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- CI/CD Section -->
+      <div class="mb-6">
+        <h4 class="text-md font-semibold mb-3 cursor-pointer flex items-center justify-between hover:text-primary-600 dark:hover:text-primary-400 transition-colors" data-section="ci-cd">
+          <span class="mr-2">CI/CD</span>
+          <svg class="w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </h4>
+        <ul class="space-y-3 ml-4 hidden" data-content="ci-cd">
+          {% assign cicd_docs = site.pages | where: "layout", "docs" | where: "category", "ci-cd" | sort: "order" %}
+          {% for doc in cicd_docs %}
+          <li class="transform transition-transform hover:translate-x-1">
+            <a href="{{ doc.url }}" class="nav-link flex items-center {% if page.url == doc.url %}text-primary-600 font-medium dark:text-primary-400{% endif %}">
+              <span class="progress-indicator mr-2">○</span>
+              {{ doc.title }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Automation Section -->
+      <div class="mb-6">
+        <h4 class="text-md font-semibold mb-3 cursor-pointer flex items-center justify-between hover:text-primary-600 dark:hover:text-primary-400 transition-colors" data-section="automation">
+          <span class="mr-2">Automation</span>
+          <svg class="w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </h4>
+        <ul class="space-y-3 ml-4 hidden" data-content="automation">
+          {% assign automation_docs = site.pages | where: "layout", "docs" | where: "category", "automation" | sort: "order" %}
+          {% for doc in automation_docs %}
+          <li class="transform transition-transform hover:translate-x-1">
+            <a href="{{ doc.url }}" class="nav-link flex items-center {% if page.url == doc.url %}text-primary-600 font-medium dark:text-primary-400{% endif %}">
+              <span class="progress-indicator mr-2">○</span>
+              {{ doc.title }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
     </nav>
   </aside>
 
@@ -39,41 +121,33 @@ layout: default
       <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-8">{{ page.title }}</h1>
       {{ content }}
     </article>
-
-    <!-- Navigation -->
-    <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-      <div class="flex justify-between items-center">
-        {% assign docs = site.pages | where: "layout", "docs" | sort: "order" %}
-        {% for doc in docs %}
-          {% if doc.url == page.url %}
-            {% assign prev_index = forloop.index0 | minus: 1 %}
-            {% assign next_index = forloop.index0 | plus: 1 %}
-            {% if prev_index >= 0 %}
-              {% assign prev_doc = docs[prev_index] %}
-              <a href="{{ prev_doc.url }}" class="btn btn-outline flex items-center">
-                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                </svg>
-                {{ prev_doc.title }}
-              </a>
-            {% else %}
-              <div></div>
-            {% endif %}
-            {% if next_index < docs.size %}
-              {% assign next_doc = docs[next_index] %}
-              <a href="{{ next_doc.url }}" class="btn btn-primary flex items-center">
-                {{ next_doc.title }}
-                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-              </a>
-            {% else %}
-              <div></div>
-            {% endif %}
-            {% break %}
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('[data-section]');
+    
+    sections.forEach(section => {
+      section.addEventListener('click', () => {
+        const content = document.querySelector(`[data-content="${section.dataset.section}"]`);
+        const arrow = section.querySelector('svg');
+        
+        content.classList.toggle('hidden');
+        arrow.style.transform = content.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+
+      // Show active section
+      const currentPath = window.location.pathname;
+      const content = document.querySelector(`[data-content="${section.dataset.section}"]`);
+      const links = content.querySelectorAll('a');
+      
+      links.forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+          content.classList.remove('hidden');
+          section.querySelector('svg').style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+  });
+</script>
