@@ -3,99 +3,112 @@ layout: default
 title: Portfolio
 ---
 
-<div class="max-w-4xl mx-auto px-4 py-16 space-y-16">
-  <!-- Profile Section -->
-  <section class="text-center space-y-8">
-    <img src="/assets/images/profile.jpg" alt="Profile Picture" class="w-48 h-48 rounded-full mx-auto object-cover shadow-lg border-4 border-primary-600">
-    <div>
-      <h1 class="text-4xl font-bold text-gray-900 dark:text-white">Hari Prasad</h1>
-      <p class="text-xl text-gray-600 dark:text-gray-400">Lead DevOps Architect</p>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16 animate-fade-in">
+  <style>
+    .gradient-text {
+      @apply bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent animate-gradient;
+    }
+    .card {
+      @apply bg-white dark:bg-gray-800 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02] border border-gray-200 dark:border-gray-700;
+    }
+    .badge {
+      @apply px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-primary-100 to-purple-100 dark:from-primary-900 dark:to-purple-900 text-primary-700 dark:text-primary-300;
+    }
+    .animate-gradient {
+      background-size: 200% auto;
+      animation: gradient 4s ease infinite;
+    }
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Hero Section -->
+  <section class="text-center space-y-8 animate-fade-in">
+    <div class="relative inline-block">
+      <img src="https://storage.googleapis.com/a1aa/image/xZ1AHvHt1bJaMJYUECLvvTUcbPYUPwcfNICS4m5qyxabLwfTA.jpg" 
+           alt="Profile Picture" 
+           class="w-48 h-48 rounded-full mx-auto object-cover shadow-lg border-4 border-primary-600">
+    </div>
+    <div class="space-y-4">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">Hari Prasad</h1>
+      <p class="text-xl text-gray-600 dark:text-gray-400"><i class="fas fa-code-branch mr-2"></i>Senior DevOps Lead</p>
+      <p class="text-lg text-gray-600 dark:text-gray-400"><i class="fas fa-map-marker-alt mr-2"></i>Noida, UP, India</p>
     </div>
     <div class="flex justify-center gap-4">
-      <a href="https://github.com/HarryTheDevOpsGuy" class="btn-outline" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/in/your-profile" class="btn-outline" target="_blank">LinkedIn</a>
-      <a href="mailto:contact@example.com" class="btn-outline" target="_blank">Email</a>
+      <a href="mailto:HarryTheDevOpsGuy@gmail.com" class="btn-outline" target="_blank"><i class="fas fa-envelope"></i> Email</a>
+      <a href="https://github.com/HarryTheDevOpsGuy" class="btn-outline" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/hari-prasad-verma-19b948154" class="btn-outline" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
     </div>
   </section>
 
   <!-- Summary Section -->
   <section class="space-y-4">
-    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Professional Summary</h2>
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white"><i class="fas fa-user-circle mr-2"></i>Professional Summary</h2>
     <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-      Seasoned DevOps Architect with 12+ years of experience in designing, implementing, and scaling cloud-native infrastructure solutions. 
-      Proven track record in leading digital transformations for Fortune 500 companies, specializing in containerization, infrastructure automation, 
-      and building resilient CI/CD pipelines. Passionate about fostering DevOps culture and mentoring teams in adopting modern practices.
+      I am a passionate and results-driven DevOps engineer with over 11 years of experience in cloud computing, infrastructure automation, and CI/CD pipeline design. My expertise includes AWS, Kubernetes, Terraform, Jenkins, and many other tools that help streamline development and operational workflows.
     </p>
   </section>
 
-  <!-- Skills Section -->
+  <!-- Technical Skills Section -->
   <section class="space-y-6">
-    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Technical Expertise</h2>
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white"><i class="fas fa-tools mr-2"></i>Technical Skills</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div class="card p-6">
-        <h3 class="font-bold mb-4 text-lg text-primary-600">Cloud & Infrastructure</h3>
+        <h3 class="font-bold mb-4 text-lg gradient-text"><i class="fas fa-cloud mr-2"></i>Infrastructure & Cloud</h3>
         <ul class="text-gray-600 dark:text-gray-400 space-y-2">
-          <li>• AWS (Solutions Architect Professional)</li>
-          <li>• Google Cloud Platform (Professional)</li>
-          <li>• Azure (Solutions Architect)</li>
-          <li>• Multi-Cloud Architecture</li>
-          <li>• Infrastructure Security</li>
-          <li>• Cost Optimization</li>
+          <li><i class="fas fa-code mr-2"></i>Infrastructure as Code (Terraform, Ansible)</li>
+          <li><i class="fab fa-aws mr-2"></i>AWS Services (EC2, S3, RDS, VPC, IAM)</li>
+          <li><i class="fas fa-chart-line mr-2"></i>CloudWatch, Route 53, Lambda</li>
+          <li><i class="fas fa-key mr-2"></i>Secrets Manager, IAM</li>
         </ul>
       </div>
       <div class="card p-6">
-        <h3 class="font-bold mb-4 text-lg text-primary-600">DevOps & Automation</h3>
+        <h3 class="font-bold mb-4 text-lg gradient-text"><i class="fas fa-sync-alt mr-2"></i>CI/CD & Automation</h3>
         <ul class="text-gray-600 dark:text-gray-400 space-y-2">
-          <li>• Terraform & Terragrunt</li>
-          <li>• Ansible & Chef</li>
-          <li>• Jenkins & GitHub Actions</li>
-          <li>• ArgoCD & Flux</li>
-          <li>• Python & Go</li>
-          <li>• Shell Scripting</li>
+          <li><i class="fab fa-jenkins mr-2"></i>Jenkins, ArgoCD, GitHub Actions</li>
+          <li><i class="fas fa-random mr-2"></i>Blue-Green Deployment</li>
+          <li><i class="fas fa-terminal mr-2"></i>Shell Scripting, Python</li>
+          <li><i class="fas fa-cogs mr-2"></i>Configuration Management</li>
         </ul>
       </div>
       <div class="card p-6">
-        <h3 class="font-bold mb-4 text-lg text-primary-600">Containers & Orchestration</h3>
+        <h3 class="font-bold mb-4 text-lg gradient-text"><i class="fab fa-docker mr-2"></i>Containers & Orchestration</h3>
         <ul class="text-gray-600 dark:text-gray-400 space-y-2">
-          <li>• Kubernetes (CKA, CKAD)</li>
-          <li>• Docker & Podman</li>
-          <li>• Service Mesh (Istio)</li>
-          <li>• EKS, GKE, AKS</li>
-          <li>• Helm & Kustomize</li>
-          <li>• Container Security</li>
+          <li><i class="fab fa-docker mr-2"></i>Docker, Kubernetes, EKS</li>
+          <li><i class="fas fa-dharmachakra mr-2"></i>Helm, Karpenter</li>
+          <li><i class="fas fa-shield-alt mr-2"></i>Container Security</li>
+          <li><i class="fas fa-cubes mr-2"></i>Microservices Architecture</li>
         </ul>
       </div>
       <div class="card p-6">
-        <h3 class="font-bold mb-4 text-lg text-primary-600">Monitoring & Observability</h3>
+        <h3 class="font-bold mb-4 text-lg gradient-text"><i class="fas fa-chart-bar mr-2"></i>Monitoring & Logging</h3>
         <ul class="text-gray-600 dark:text-gray-400 space-y-2">
-          <li>• Prometheus & Grafana</li>
-          <li>• ELK Stack</li>
-          <li>• Datadog</li>
-          <li>• New Relic</li>
-          <li>• Jaeger & OpenTelemetry</li>
-          <li>• SLO/SLI Implementation</li>
+          <li><i class="fas fa-tachometer-alt mr-2"></i>Prometheus, Grafana</li>
+          <li><i class="fas fa-search mr-2"></i>ELK Stack, CloudWatch</li>
+          <li><i class="fas fa-chart-line mr-2"></i>Telegraf, Prometheus Exporters</li>
+          <li><i class="fas fa-heartbeat mr-2"></i>Performance Monitoring</li>
         </ul>
       </div>
       <div class="card p-6">
-        <h3 class="font-bold mb-4 text-lg text-primary-600">Security & Compliance</h3>
+        <h3 class="font-bold mb-4 text-lg gradient-text"><i class="fas fa-shield-alt mr-2"></i>Security & Compliance</h3>
         <ul class="text-gray-600 dark:text-gray-400 space-y-2">
-          <li>• HashiCorp Vault</li>
-          <li>• AWS Security Hub</li>
-          <li>• SAST/DAST Tools</li>
-          <li>• SOC2 Compliance</li>
-          <li>• GitOps Security</li>
-          <li>• Zero Trust Architecture</li>
+          <li><i class="fas fa-lock mr-2"></i>CIS Linux Hardening</li>
+          <li><i class="fas fa-key mr-2"></i>Vault Integration</li>
+          <li><i class="fas fa-bug mr-2"></i>Vulnerability Patching</li>
+          <li><i class="fas fa-check-circle mr-2"></i>Security Best Practices</li>
         </ul>
       </div>
       <div class="card p-6">
-        <h3 class="font-bold mb-4 text-lg text-primary-600">Development & Tools</h3>
+        <h3 class="font-bold mb-4 text-lg gradient-text"><i class="fas fa-server mr-2"></i>Web & Application</h3>
         <ul class="text-gray-600 dark:text-gray-400 space-y-2">
-          <li>• Git & GitHub</li>
-          <li>• REST APIs</li>
-          <li>• Microservices</li>
-          <li>• Test Automation</li>
-          <li>• CI/CD Best Practices</li>
-          <li>• Documentation as Code</li>
+          <li><i class="fas fa-server mr-2"></i>Nginx, Apache</li>
+          <li><i class="fab fa-java mr-2"></i>Tomcat, Spring Boot</li>
+          <li><i class="fas fa-code mr-2"></i>OpenResty</li>
+          <li><i class="fas fa-balance-scale mr-2"></i>Load Balancing</li>
         </ul>
       </div>
     </div>
@@ -103,114 +116,109 @@ title: Portfolio
 
   <!-- Experience Section -->
   <section class="space-y-6">
-    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Professional Journey</h2>
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white"><i class="fas fa-briefcase mr-2"></i>Professional Experience</h2>
     <div class="space-y-8">
       <div class="card p-6">
-        <h3 class="text-xl font-bold mb-2">Lead DevOps Architect</h3>
-        <p class="text-gray-600 dark:text-gray-400 mb-4">Global Tech Solutions • 2020 - Present</p>
+        <h3 class="text-xl font-bold mb-2"><i class="fas fa-building mr-2"></i>Sr. DevOps Lead</h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-4"><i class="fas fa-calendar-alt mr-2"></i>Paytm • 2020 - Present • Noida</p>
         <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-2">
-          <li>Led the migration of 200+ microservices to Kubernetes, reducing deployment time by 70%</li>
-          <li>Architected multi-region, multi-cloud infrastructure serving 10M+ users</li>
-          <li>Implemented GitOps practices reducing deployment errors by 85%</li>
-          <li>Designed zero-downtime deployment strategies for critical applications</li>
-          <li>Mentored team of 15 DevOps engineers and established best practices</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>Implemented zero-downtime blue-green deployment with Jenkins and AWS</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>Managed IaC with Terraform, Ansible, and Packer</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>Built CI/CD pipelines and optimized EKS clusters with Karpenter</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>Configured Prometheus, Grafana, and ELK Stack for monitoring</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>Developed automated Blue-Green Deployment (BG Deployer)</li>
         </ul>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="badge"><i class="fas fa-chart-line mr-1"></i>Prometheus</span>
+          <span class="badge"><i class="fas fa-search mr-1"></i>ELK Stack</span>
+          <span class="badge"><i class="fas fa-dharmachakra mr-1"></i>Kubernetes</span>
+          <span class="badge"><i class="fab fa-aws mr-1"></i>AWS</span>
+          <span class="badge"><i class="fas fa-robot mr-1"></i>Karpenter</span>
+        </div>
       </div>
+
       <div class="card p-6">
-        <h3 class="text-xl font-bold mb-2">Senior DevOps Engineer</h3>
-        <p class="text-gray-600 dark:text-gray-400 mb-4">Cloud Innovation Corp • 2016 - 2020</p>
+        <h3 class="text-xl font-bold mb-2">Sr. DevOps Engineer</h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">Ziploan • 2019 - 2020 • Delhi</p>
         <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-2">
-          <li>Built and maintained CI/CD pipelines for 50+ microservices</li>
-          <li>Reduced infrastructure costs by 40% through optimization</li>
-          <li>Implemented comprehensive monitoring reducing MTTR by 60%</li>
-          <li>Led cloud migration projects for enterprise clients</li>
+          <li>Migrated apps to AWS, cutting costs by 50%</li>
+          <li>Enabled blue-green deployments with ALB, ASG, and Jenkins</li>
+          <li>Optimized logging using the ELK Stack</li>
+          <li>Automated deployments with Jenkins, saving 60% setup time</li>
+          <li>Built Ansible roles and Jenkins pipelines for CI/CD</li>
         </ul>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="badge">ELK</span>
+          <span class="badge">Shell Script</span>
+          <span class="badge">Python</span>
+        </div>
       </div>
+
       <div class="card p-6">
         <h3 class="text-xl font-bold mb-2">DevOps Engineer</h3>
-        <p class="text-gray-600 dark:text-gray-400 mb-4">Tech Innovations Inc • 2012 - 2016</p>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">KiwiTech • Nov 2017 - Oct 2019 • Noida</p>
         <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-2">
-          <li>Automated deployment processes reducing release time by 50%</li>
-          <li>Implemented configuration management using Ansible</li>
-          <li>Developed monitoring solutions using ELK stack</li>
+          <li>Managed 100+ Linux servers for mission-critical apps</li>
+          <li>Automated deployments with Jenkins and Ansible</li>
+          <li>Configured AWS CloudWatch, SNS, and Lambda for monitoring</li>
+          <li>Built infrastructure from scratch with seamless go-live support</li>
+          <li>Resolved production issues under strict SLAs</li>
         </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section class="space-y-6">
-    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Featured Projects</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="card p-6 space-y-4">
-        <h3 class="text-xl font-bold">Multi-Cloud Infrastructure Platform</h3>
-        <p class="text-gray-600 dark:text-gray-400">Designed and implemented a scalable multi-cloud infrastructure platform supporting 1000+ applications with automated failover and disaster recovery capabilities.</p>
-        <div class="flex flex-wrap gap-2">
+        <div class="flex flex-wrap gap-2 mt-4">
           <span class="badge">AWS</span>
-          <span class="badge">GCP</span>
+          <span class="badge">Ansible</span>
+          <span class="badge">Jenkins</span>
           <span class="badge">Terraform</span>
-          <span class="badge">Python</span>
-          <span class="badge">Kubernetes</span>
         </div>
       </div>
-      <div class="card p-6 space-y-4">
-        <h3 class="text-xl font-bold">Enterprise GitOps Platform</h3>
-        <p class="text-gray-600 dark:text-gray-400">Built a comprehensive GitOps platform using ArgoCD and Flux, enabling automated deployments and configuration management for 200+ microservices.</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="badge">ArgoCD</span>
-          <span class="badge">Kubernetes</span>
-          <span class="badge">Helm</span>
-          <span class="badge">Go</span>
-        </div>
-      </div>
-      <div class="card p-6 space-y-4">
-        <h3 class="text-xl font-bold">Cloud-Native Monitoring Solution</h3>
-        <p class="text-gray-600 dark:text-gray-400">Implemented a comprehensive observability platform using Prometheus, Grafana, and OpenTelemetry, providing real-time insights for 1000+ services.</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="badge">Prometheus</span>
-          <span class="badge">Grafana</span>
-          <span class="badge">OpenTelemetry</span>
-        </div>
-      </div>
-      <div class="card p-6 space-y-4">
-        <h3 class="text-xl font-bold">Security Automation Framework</h3>
-        <p class="text-gray-600 dark:text-gray-400">Developed an automated security scanning and compliance framework, reducing security vulnerabilities by 75% and ensuring continuous compliance.</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="badge">HashiCorp Vault</span>
-          <span class="badge">Python</span>
-          <span class="badge">AWS Security Hub</span>
+
+      <div class="card p-6">
+        <h3 class="text-xl font-bold mb-2">Linux System Admin (DevOps)</h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">XeliumTech • Dec 2015 - Nov 2017 • Gurugram</p>
+        <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-2">
+          <li>Hosted multiple websites on LAMP and Nginx servers</li>
+          <li>Administered GitLab for repositories and version control</li>
+          <li>Automated AWS infrastructure with Terraform and Ansible</li>
+          <li>Developed Shell scripts for ad hoc tasks on Ubuntu servers</li>
+          <li>Implemented SSL and user management for enhanced security</li>
+        </ul>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="badge">Terraform</span>
+          <span class="badge">Docker</span>
+          <span class="badge">AWS</span>
+          <span class="badge">Ubuntu</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Certifications Section -->
+  <!-- Deployed Solutions Section -->
   <section class="space-y-6">
-    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Certifications</h2>
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Deployed Solutions</h2>
     <div class="grid md:grid-cols-2 gap-6">
-      <div class="card p-4 flex items-center space-x-4">
-        <div class="flex-1">
-          <h3 class="font-bold">AWS Solutions Architect Professional</h3>
-          <p class="text-gray-600 dark:text-gray-400">Amazon Web Services</p>
-        </div>
+      <div class="card p-6 space-y-4">
+        <h3 class="text-xl font-bold">AWS EC2 Infrastructure</h3>
+        <p class="text-gray-600 dark:text-gray-400">Deployed scalable EC2 instances with Auto Scaling Groups for high availability and fault tolerance.</p>
       </div>
-      <div class="card p-4 flex items-center space-x-4">
-        <div class="flex-1">
-          <h3 class="font-bold">Certified Kubernetes Administrator (CKA)</h3>
-          <p class="text-gray-600 dark:text-gray-400">Cloud Native Computing Foundation</p>
-        </div>
+      <div class="card p-6 space-y-4">
+        <h3 class="text-xl font-bold">Docker Containerization</h3>
+        <p class="text-gray-600 dark:text-gray-400">Containerized applications using Docker for consistent environments and rapid deployments.</p>
       </div>
-      <div class="card p-4 flex items-center space-x-4">
-        <div class="flex-1">
-          <h3 class="font-bold">Google Cloud Professional Architect</h3>
-          <p class="text-gray-600 dark:text-gray-400">Google Cloud</p>
-        </div>
+      <div class="card p-6 space-y-4">
+        <h3 class="text-xl font-bold">Kubernetes Orchestration</h3>
+        <p class="text-gray-600 dark:text-gray-400">Orchestrated containerized apps with Kubernetes for seamless scaling and management of workloads.</p>
       </div>
-      <div class="card p-4 flex items-center space-x-4">
-        <div class="flex-1">
-          <h3 class="font-bold">HashiCorp Certified: Terraform Associate</h3>
-          <p class="text-gray-600 dark:text-gray-400">HashiCorp</p>
-        </div>
+      <div class="card p-6 space-y-4">
+        <h3 class="text-xl font-bold">Jenkins CI/CD Pipeline</h3>
+        <p class="text-gray-600 dark:text-gray-400">Implemented continuous integration and deployment pipelines with Jenkins for automated software delivery.</p>
+      </div>
+      <div class="card p-6 space-y-4">
+        <h3 class="text-xl font-bold">Nginx Load Balancer</h3>
+        <p class="text-gray-600 dark:text-gray-400">Deployed Nginx as a load balancer to distribute traffic across multiple backend services for optimal performance.</p>
+      </div>
+      <div class="card p-6 space-y-4">
+        <h3 class="text-xl font-bold">Infrastructure as Code</h3>
+        <p class="text-gray-600 dark:text-gray-400">Used AWS Terraform for infrastructure-as-code to automate the provisioning of AWS resources.</p>
       </div>
     </div>
   </section>
