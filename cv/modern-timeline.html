@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Timeline Resume - Hari Prasad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+                width: 210mm;
+                height: 297mm;
+                background-color: white !important;
+            }
+            .no-print { display: none; }
+            a { text-decoration: none; color: #000; }
+            @page { size: A4; margin: 0; }
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.4;
+            margin: 0;
+            padding: 20px;
+            background-color: #f1f5f9;
+            color: #334155;
+            font-size: 0.92em;
+        }
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 12px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        h1 {
+            font-size: 2.4em;
+            margin: 0;
+            color: #1e40af;
+            letter-spacing: -0.5px;
+        }
+        .title {
+            font-size: 1.2em;
+            color: #64748b;
+            margin-top: 8px;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .contact-item {
+            color: #475569;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.3s;
+        }
+        .contact-item:hover {
+            color: #2563eb;
+        }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 50px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: #e2e8f0;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -54px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #2563eb;
+            border: 4px solid #bfdbfe;
+        }
+        .timeline-date {
+            position: absolute;
+            left: -160px;
+            top: -2px;
+            color: #64748b;
+            font-size: 0.9em;
+        }
+        .timeline-title {
+            font-size: 1.2em;
+            color: #1e40af;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .timeline-subtitle {
+            color: #64748b;
+            margin-bottom: 12px;
+        }
+        .timeline-content {
+            color: #475569;
+            line-height: 1.6;
+        }
+        .skills-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid #e2e8f0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 1.4em;
+            color: #1e40af;
+            margin-bottom: 30px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+        .skill-category {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        .skill-category-title {
+            color: #1e40af;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .skill-item {
+            background: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Hari Prasad</h1>
+            <div class="title">Senior DevOps Engineer</div>
+            <div class="contact-info">
+                <a href="mailto:contact@example.com" class="contact-item">
+                    <i class="fas fa-envelope"></i> contact@example.com
+                </a>
+                <a href="https://linkedin.com/in/example" class="contact-item">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/example" class="contact-item">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2020 - Present</div>
+                <div class="timeline-title">Senior DevOps Engineer</div>
+                <div class="timeline-subtitle">Tech Solutions Inc.</div>
+                <div class="timeline-content">
+                    <ul>
+                        <li>Led the implementation of infrastructure as code using Terraform across multiple cloud platforms</li>
+                        <li>Designed and maintained CI/CD pipelines for microservices architecture</li>
+                        <li>Optimized cloud costs resulting in 30% reduction in infrastructure expenses</li>
+                        <li>Mentored junior engineers in DevOps practices and cloud technologies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2018 - 2020</div>
+                <div class="timeline-title">DevOps Engineer</div>
+                <div class="timeline-subtitle">Cloud Systems Ltd.</div>
+                <div class="timeline-content">
+                    <ul>
+                        <li>Implemented containerization strategies using Docker and Kubernetes</li>
+                        <li>Developed automation scripts for deployment and configuration management</li>
+                        <li>Set up monitoring and alerting systems using Prometheus and Grafana</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2016 - 2018</div>
+                <div class="timeline-title">Systems Administrator</div>
+                <div class="timeline-subtitle">Tech Corp</div>
+                <div class="timeline-content">
+                    <ul>
+                        <li>Managed on-premise infrastructure and cloud migration projects</li>
+                        <li>Implemented backup and disaster recovery solutions</li>
+                        <li>Provided technical support and system maintenance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="skills-section">
+            <div class="section-title">Technical Expertise</div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-category-title">
+                        <i class="fas fa-cloud"></i> Cloud & Infrastructure
+                    </div>
+                    <div class="skill-list">
+                        <span class="skill-item">AWS</span>
+                        <span class="skill-item">Azure</span>
+                        <span class="skill-item">GCP</span>
+                        <span class="skill-item">Terraform</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">
+                        <i class="fas fa-container-storage"></i> Containerization
+                    </div>
+                    <div class="skill-list">
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">Kubernetes</span>
+                        <span class="skill-item">Helm</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">
+                        <i class="fas fa-code-branch"></i> CI/CD
+                    </div>
+                    <div class="skill-list">
+                        <span class="skill-item">Jenkins</span>
+                        <span class="skill-item">GitLab CI</span>
+                        <span class="skill-item">GitHub Actions</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">
+                        <i class="fas fa-chart-line"></i> Monitoring
+                    </div>
+                    <div class="skill-list">
+                        <span class="skill-item">Prometheus</span>
+                        <span class="skill-item">Grafana</span>
+                        <span class="skill-item">ELK Stack</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

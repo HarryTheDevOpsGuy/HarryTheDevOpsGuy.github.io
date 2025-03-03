@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hari Prasad - DevOps Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @media print {
+            body {
+                margin: 0;
+                padding: 15px;
+                width: 210mm;
+                height: 297mm;
+                background-color: white !important;
+            }
+            .no-print { display: none; }
+            a { text-decoration: none; color: #000; }
+            @page { size: A4; margin: 0; }
+            .container { box-shadow: none !important; }
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.4;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0;
+            color: #2563eb;
+            font-size: 2.5em;
+        }
+        .contact-info {
+            margin: 10px 0;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #1e40af;
+            border-bottom: 2px solid #93c5fd;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .skill-category {
+            margin-bottom: 12px;
+        }
+        .skill-category h3 {
+            color: #1e40af;
+            margin-bottom: 10px;
+        }
+        .experience-item {
+            margin-bottom: 20px;
+        }
+        .job-title {
+            font-weight: bold;
+            color: #1e40af;
+        }
+        .company-info {
+            color: #666;
+            font-style: italic;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 3px;
+        }
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .print-button:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="window.print()" class="print-button no-print">
+        <i class="fas fa-print"></i> Print Resume
+    </button>
+
+    <div class="header">
+        <h1>HARI PRASAD</h1>
+        <div class="contact-info">
+            Senior DevOps Lead • Noida, UP, India<br>
+            <i class="fas fa-envelope"></i> HarryTheDevOpsGuy@gmail.com • 
+            <i class="fab fa-github"></i> github.com/HarryTheDevOpsGuy • 
+            <i class="fab fa-linkedin"></i> linkedin.com/in/hari-prasad-verma-19b948154
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>PROFESSIONAL SUMMARY</h2>
+        <p>Results-driven DevOps engineer with 11+ years of experience in cloud computing, infrastructure automation, and CI/CD pipeline design. Proven expertise in AWS, Kubernetes, Terraform, and Jenkins, with a track record of implementing efficient DevOps practices that enhance development workflows and operational efficiency.</p>
+    </div>
+
+    <div class="section">
+        <h2>TECHNICAL EXPERTISE</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3><i class="fas fa-cloud"></i> Infrastructure & Cloud</h3>
+                <ul>
+                    <li>AWS Services (EC2, S3, RDS, VPC, IAM, Lambda)</li>
+                    <li>Infrastructure as Code (Terraform, Ansible)</li>
+                    <li>CloudWatch, Route 53, Secrets Manager</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-sync-alt"></i> CI/CD & Automation</h3>
+                <ul>
+                    <li>Jenkins, ArgoCD, GitHub Actions</li>
+                    <li>Blue-Green Deployment Strategies</li>
+                    <li>Shell Scripting, Python</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fab fa-docker"></i> Containers & Orchestration</h3>
+                <ul>
+                    <li>Docker, Kubernetes, EKS</li>
+                    <li>Helm, Karpenter</li>
+                    <li>Microservices Architecture</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-chart-bar"></i> Monitoring & Security</h3>
+                <ul>
+                    <li>Prometheus, Grafana, ELK Stack</li>
+                    <li>CIS Linux Hardening</li>
+                    <li>Vault Integration, Security Best Practices</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>PROFESSIONAL EXPERIENCE</h2>
+        
+        <div class="experience-item">
+            <div class="job-title">Sr. DevOps Lead</div>
+            <div class="company-info">Paytm • 2020 - Present • Noida</div>
+            <ul>
+                <li>Implemented zero-downtime blue-green deployment with Jenkins and AWS</li>
+                <li>Managed Infrastructure as Code with Terraform, Ansible, and Packer</li>
+                <li>Built CI/CD pipelines and optimized EKS clusters with Karpenter</li>
+                <li>Configured comprehensive monitoring using Prometheus, Grafana, and ELK Stack</li>
+                <li>Developed automated Blue-Green Deployment (BG Deployer) solution</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-title">Sr. DevOps Engineer</div>
+            <div class="company-info">Ziploan • 2019 - 2020 • Delhi</div>
+            <ul>
+                <li>Led AWS migration initiative, achieving 50% cost reduction</li>
+                <li>Implemented blue-green deployments using ALB, ASG, and Jenkins</li>
+                <li>Optimized logging infrastructure with ELK Stack</li>
+                <li>Reduced deployment setup time by 60% through automation</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-title">DevOps Engineer</div>
+            <div class="company-info">KiwiTech • 2017 - 2019 • Noida</div>
+            <ul>
+                <li>Managed 100+ Linux servers for mission-critical applications</li>
+                <li>Implemented AWS CloudWatch, SNS, and Lambda for monitoring</li>
+                <li>Built infrastructure from scratch with seamless go-live support</li>
+                <li>Maintained high availability under strict SLAs</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-title">Linux System Admin (DevOps)</div>
+            <div class="company-info">XeliumTech • 2015 - 2017 • Gurugram</div>
+            <ul>
+                <li>Managed LAMP and Nginx server infrastructure</li>
+                <li>Administered GitLab for version control</li>
+                <li>Automated AWS infrastructure using Terraform and Ansible</li>
+                <li>Implemented SSL and security best practices</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>KEY ACHIEVEMENTS</h2>
+        <ul>
+            <li>Reduced infrastructure costs by 50% through AWS optimization</li>
+            <li>Improved deployment efficiency by 60% through automation</li>
+            <li>Successfully managed 100+ mission-critical Linux servers</li>
+            <li>Implemented zero-downtime deployment strategies</li>
+            <li>Designed and deployed scalable Kubernetes clusters</li>
+        </ul>
+    </div>
+</body>
+</html>

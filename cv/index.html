@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Collection - Hari Prasad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f1f5f9;
+            color: #334155;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #2563eb, #4f46e5);
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 800;
+        }
+        .subtitle {
+            margin-top: 12px;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .resume-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+        .resume-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        .resume-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        .resume-title {
+            font-size: 1.5em;
+            color: #1e40af;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .resume-title i {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        .resume-description {
+            color: #64748b;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        .resume-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .feature-tag {
+            background: #f1f5f9;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.9em;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .feature-tag i {
+            font-size: 0.9em;
+            color: #2563eb;
+        }
+        .view-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        .view-button:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Resume Collection</h1>
+            <div class="subtitle">Choose from multiple professional resume layouts</div>
+        </div>
+
+        <div class="resume-grid">
+            <!-- Modern Designs -->
+            <div class="resume-card">
+                <div class="resume-title">
+                    <i class="fas fa-paint-brush"></i> Modern Gradient
+                </div>
+                <div class="resume-description">
+                    Sleek gradient design with modern color transitions and clean layout.
+                </div>
+                <div class="resume-features">
+                    <span class="feature-tag"><i class="fas fa-palette"></i> Gradient</span>
+                    <span class="feature-tag"><i class="fas fa-star"></i> Modern</span>
+                    <span class="feature-tag"><i class="fas fa-print"></i> Print Ready</span>
+                </div>
+                <a href="modern-gradient.html" class="view-button">
+                    <i class="fas fa-eye"></i> View Resume
+                </a>
+            </div>
+
+            <div class="resume-card">
+                <div class="resume-title">
+                    <i class="fas fa-moon"></i> Modern Dark
+                </div>
+                <div class="resume-description">
+                    Dark theme design with high contrast and professional appearance.
+                </div>
+                <div class="resume-features">
+                    <span class="feature-tag"><i class="fas fa-adjust"></i> Dark Theme</span>
+                    <span class="feature-tag"><i class="fas fa-star"></i> Modern</span>
+                    <span class="feature-tag"><i class="fas fa-print"></i> Print Ready</span>
+                </div>
+                <a href="modern-dark.html" class="view-button">
+                    <i class="fas fa-eye"></i> View Resume
+                </a>
+            </div>
+
+            <div class="resume-card">
+                <div class="resume-title">
+                    <i class="fas fa-feather"></i> Modern Minimalist
+                </div>
+                <div class="resume-description">
+                    Clean and minimalist design with focus on typography and whitespace.
+                </div>
+                <div class="resume-features">
+                    <span class="feature-tag"><i class="fas fa-minus"></i> Minimal</span>
+                    <span class="feature-tag"><i class="fas fa-font"></i> Typography</span>
+                    <span class="feature-tag"><i class="fas fa-print"></i> Print Ready</span>
+                </div>
+                <a href="modern-minimalist.html" class="view-button">
+                    <i class="fas fa-eye"></i> View Resume
+                </a>
+            </div>
+
+            <div class="resume-card">
+                <div class="resume-title">
+                    <i class="fas fa-compress-alt"></i> Modern Compact
+                </div>
+                <div class="resume-description">
+                    Space-efficient design that maintains professional appearance.
+                </div>
+                <div class="resume-features">
+                    <span class="feature-tag"><i class="fas fa-compress"></i> Compact</span>
+                    <span class="feature-tag"><i class="fas fa-star"></i> Modern</span>
+                    <span class="feature-tag"><i class="fas fa-print"></i> Print Ready</span>
+                </div>
+                <a href="modern-compact.html" class="view-button">
+                    <i class="fas fa-eye"></i> View Resume
+                </a>
+            </div>
+
+            <!-- Timeline Designs -->
+            <div class="resume-card">
+                <div class="resume-title">
+                    <i class="fas fa-stream"></i> Modern Timeline
+                </div>
+                <div class="resume-description">
+                    Vertical timeline layout showcasing career progression.
+                </div>
+                <div class="resume-features">
+                    <span class="feature-tag"><i class="fas fa-clock"></i> Timeline</span>
+                    <span class="feature-tag"><i class="fas fa-star"></i> Modern</span>
+                    <span class="feature-tag"><i class="fas fa-print"></i> Print Ready</span>
+                </div>
+                <a href="modern-timeline.html" class="view-button">
+                    <i class="fas fa-eye"></i> View Resume
+                </a>
+            </div>
+
+            <!-- Creative Designs -->
+            <div class="resume-card">
+                <div class="resume-title">
+                    <i class="fas fa-chart-bar"></i> Infographic Modern
+                </div>
+                <div class="resume-description">
+                    Visual-focused design with infographic elements and skills presentation.
+                </div>
+                <div class="resume-features">
+                    <span class="feature-tag"><i class="fas fa-chart-pie"></i> Infographic</span>
+                    <span class="feature-tag"><i class="fas fa-star"></i> Modern</span>
+                    <span class="feature-tag"><i class="fas fa-print"></i> Print Ready</span>
+                </div>
+                <a href="infographic-modern.html" class="view-button">
+                    <i class="fas fa-eye"></i> View Resume
+                </a>
+            </div>
+
+            <div class="resume-card">
+                <div class="resume-title">
+                    <i class="fas fa-paint-brush"></i> Creative Modern
+                </div>
+                <div class="resume-description">
+                    Creative and bold design with modern elements and styling.
+                </div>
+                <div class="resume-features">
+                    <span class="feature-tag"><i class="fas fa-palette"></i> Creative</span>
+                    <span class="feature-tag"><i class="fas fa-star"></i> Modern</span>
+                    <span class="feature-tag"><i class="fas fa-print"></i> Print Ready</span>
+                </div>
+                <a href="creative-modern.html" class="view-button">
+                    <i class="fas fa-eye"></i> View Resume
+                </a>
+            </div>
+
+            <div class="resume-card">
+                <div class="resume-title">
+                    <i class="fas fa-compress-alt"></i> Creative Modern Compact
+                </div>
+                <div class="resume-description">
+                    Condensed version of creative modern design for concise presentation.
+                </div>
+                <div class="resume-features">
+                    <span class="feature-tag"><i class="fas fa-compress"></i> Compact</span>
+                    <span class="feature-tag"><i class="fas fa-palette"></i> Creative</span>
+                    <span class="feature-tag"><i class="fas fa-print"></i> Print Ready</span>
+                </div>
+                <a href="creative-modern-compact.html" class="view-button">
+                    <i class="fas fa-eye"></i> View Resume
+                </a>
+            </div>
+
+            <!-- Professional Designs -->
+            <div class="resume-card">
+                <div class="resume-title">
+                    <i class="fas fa-columns"></i> Professional Two Column
+                </div>
+                <div class="resume-description">
+                    Two-column layout balancing content with professional design.
+                </div>
+                <div class="resume-features">
+                    <span class="feature-tag"><i class="fas fa-columns"></i> Two Column</span>
+                    <span class="feature-tag"><i class="fas fa-briefcase"></i> Professional</span>
+                    <span class="feature-tag"><i class="fas fa-print"></i> Print Ready</span>
+                </div>
+                <a href="professional-two-column.html" class="view-button">
+                    <i class="fas fa-eye"></i> View Resume
+                </a>
+            </div>
+
+            <div class="resume-card">
+                <div class="resume-title">
+                    <i class="fas fa-laptop-code"></i> Technical Specialist
+                </div>
+                <div class="resume-description">
+                    Specialized layout highlighting technical skills and expertise.
+                </div>
+                <div class="resume-features">
+                    <span class="feature-tag"><i class="fas fa
+    </div>
+</body>
+</html>

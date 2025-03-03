@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Single Column Resume - Hari Prasad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @media print {
+            body { margin: 0; padding: 20px; }
+            .no-print { display: none; }
+            a { text-decoration: none; color: #000; }
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            color: #1f2937;
+            background-color: #f9fafb;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #2563eb;
+            margin: 0;
+            letter-spacing: -0.5px;
+        }
+        .contact-info {
+            margin: 15px 0;
+            color: #4b5563;
+        }
+        .contact-info i {
+            color: #2563eb;
+            margin-right: 5px;
+        }
+        .section {
+            margin-bottom: 30px;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #1e40af;
+            font-size: 1.5em;
+            margin: 0 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        h2 i {
+            font-size: 0.9em;
+        }
+        .skill-category {
+            margin-bottom: 20px;
+        }
+        .skill-category h3 {
+            color: #2563eb;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .skill-tag {
+            background: #e5e7eb;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            color: #4b5563;
+        }
+        .experience-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .experience-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+        .job-title {
+            font-weight: 600;
+            color: #2563eb;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        .company-info {
+            color: #6b7280;
+            font-size: 0.95em;
+            margin-bottom: 10px;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+            list-style-type: none;
+        }
+        li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        li:before {
+            content: '•';
+            color: #2563eb;
+            position: absolute;
+            left: -15px;
+        }
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9em;
+            box-shadow: 0 2px 4px rgba(37,99,235,0.2);
+        }
+        .print-button:hover {
+            background-color: #1d4ed8;
+        }
+        @media screen and (max-width: 600px) {
+            body { padding: 20px; }
+            .section { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <button onclick="window.print()" class="print-button no-print">
+        <i class="fas fa-print"></i> Print Resume
+    </button>
+
+    <div class="header">
+        <h1>HARI PRASAD</h1>
+        <div class="contact-info">
+            <i class="fas fa-briefcase"></i> Senior DevOps Lead • 
+            <i class="fas fa-map-marker-alt"></i> Noida, UP, India<br>
+            <i class="fas fa-envelope"></i> HarryTheDevOpsGuy@gmail.com • 
+            <i class="fab fa-github"></i> github.com/HarryTheDevOpsGuy • 
+            <i class="fab fa-linkedin"></i> linkedin.com/in/hari-prasad-verma-19b948154
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><i class="fas fa-user-circle"></i> Professional Summary</h2>
+        <p>Results-driven DevOps engineer with 11+ years of experience in cloud computing, infrastructure automation, and CI/CD pipeline design. Proven expertise in AWS, Kubernetes, Terraform, and Jenkins, with a track record of implementing efficient DevOps practices that enhance development workflows and operational efficiency.</p>
+    </div>
+
+    <div class="section">
+        <h2><i class="fas fa-tools"></i> Technical Expertise</h2>
+        <div class="skill-category">
+            <h3><i class="fas fa-cloud"></i> Infrastructure & Cloud</h3>
+            <div class="skill-list">
+                <span class="skill-tag">AWS EC2</span>
+                <span class="skill-tag">S3</span>
+                <span class="skill-tag">RDS</span>
+                <span class="skill-tag">VPC</span>
+                <span class="skill-tag">IAM</span>
+                <span class="skill-tag">Lambda</span>
+                <span class="skill-tag">Terraform</span>
+                <span class="skill-tag">Ansible</span>
+            </div>
+        </div>
+        <div class="skill-category">
+            <h3><i class="fas fa-sync-alt"></i> CI/CD & Automation</h3>
+            <div class="skill-list">
+                <span class="skill-tag">Jenkins</span>
+                <span class="skill-tag">ArgoCD</span>
+                <span class="skill-tag">GitHub Actions</span>
+                <span class="skill-tag">Blue-Green Deployment</span>
+                <span class="skill-tag">Shell Scripting</span>
+                <span class="skill-tag">Python</span>
+            </div>
+        </div>
+        <div class="skill-category">
+            <h3><i class="fab fa-docker"></i> Containers & Orchestration</h3>
+            <div class="skill-list">
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Kubernetes</span>
+                <span class="skill-tag">EKS</span>
+                <span class="skill-tag">Helm</span>
+                <span class="skill-tag">Karpenter</span>
+            </div>
+        </div>
+        <div class="skill-category">
+            <h3><i class="fas fa-chart-line"></i> Monitoring & Security</h3>
+            <div class="skill-list">
+                <span class="skill-tag">Prometheus</span>
+                <span class="skill-tag">Grafana</span>
+                <span class="skill-tag">ELK Stack</span>
+                <span class="skill-tag">CIS Hardening</span>
+                <span class="skill-tag">Vault</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
+        
+        <div class="experience-item">
+            <div class="job-title">Sr. DevOps Lead</div>
+            <div class="company-info">
+                <i class="fas fa-building"></i> Paytm • 2020 - Present • Noida
+            </div>
+            <ul>
+                <li>Implemented zero-downtime blue-green deployment with Jenkins and AWS</li>
+                <li>Managed Infrastructure as Code with Terraform, Ansible, and Packer</li>
+                <li>Built CI/CD pipelines and optimized EKS clusters with Karpenter</li>
+                <li>Configured comprehensive monitoring using Prometheus, Grafana, and ELK Stack</li>
+                <li>Developed automated Blue-Green Deployment (BG Deployer) solution</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-title">Sr. DevOps Engineer</div>
+            <div class="company-info">
+                <i class="fas fa-building"></i> Ziploan • 2019 - 2020 • Delhi
+            </div>
+            <ul>
+                <li>Led AWS migration initiative, achieving 50% cost reduction</li>
+                <li>Implemented blue-green deployments using ALB, ASG, and Jenkins</li>
+                <li>Optimized logging infrastructure with ELK Stack</li>
+                <li>Reduced deployment setup time by 60% through automation</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-title">DevOps Engineer</div>
+            <div class="company-info">
+                <i class="fas fa-building"></i> KiwiTech • 2017 - 2019 • Noida
+            </div>
+            <ul>
+                <li>Managed 100+ Linux servers for mission-critical applications</li>
+                <li>Implemented AWS CloudWatch, SNS, and Lambda for monitoring</li>
+                <li>Built infrastructure from scratch with seamless go-live support</li>
+                <li>Maintained high availability under strict SLAs</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-title">Linux System Admin (DevOps)</div>
+            <div class="company-info">
+                <i class="fas fa-building"></i> XeliumTech • 2015 - 2017 • Gurugram
+            </div>
+            <ul>
+                <li>Managed LAMP and Nginx server infrastructure</li>
+                <li>Administered GitLab for version control</li>
+                <li>Automated AWS infrastructure using Terraform and Ansible</li>
+                <li>Implemented SSL and security best practices</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><i class="fas fa-trophy"></i> Key Achievements</h2>
+        <ul>
+            <li>Reduced infrastructure costs by 50% through AWS optimization</li>
+            <li>Improved deployment efficiency by 60% through automation</li>
+            <li>Successfully managed 100+ mission-critical Linux servers</li>
+            <li>Implemented zero-downtime deployment strategies</li>
+            <li>Designed and deployed scalable Kubernetes clusters</li>
+        </ul>
+    </div>
+</body>
+</html>
