@@ -7,43 +7,43 @@
   <link rel="stylesheet" href="/assets/css/tailwind.css">
   {% seo %}
 </head>
-<body class="min-h-screen flex flex-col">
-  <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50">
+<body class="min-h-screen flex flex-col bg-gradient-to-br from-primary-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-primary-900 animate-gradient-slow">
+  <header class="bg-white/95 dark:bg-gray-800/95 shadow-lg sticky top-0 z-50 backdrop-blur-sm border-b border-gray-200/50 dark:border-gray-700/30">
     <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="/" class="text-2xl font-bold text-primary-600">{{ site.title }}</a>
+      <a href="/" class="text-2xl font-bold bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">{{ site.title }}</a>
       <div class="hidden md:flex space-x-6">
-        <a href="/portfolio" class="nav-link">Portfolio</a>
-        <a href="/blog" class="nav-link">Blog</a>
-        <a href="/courses" class="nav-link">Courses</a>
-        <a href="/docs" class="nav-link">Docs</a>
-        <a href="/garden" class="nav-link">Garden</a>
+        <a href="/portfolio" class="nav-link hover:text-primary-600 dark:hover:text-primary-400">Portfolio</a>
+        <a href="/blog" class="nav-link hover:text-primary-600 dark:hover:text-primary-400">Blog</a>
+        <a href="/courses" class="nav-link hover:text-primary-600 dark:hover:text-primary-400">Courses</a>
+        <a href="/docs" class="nav-link hover:text-primary-600 dark:hover:text-primary-400">Docs</a>
+        <a href="/garden" class="nav-link hover:text-primary-600 dark:hover:text-primary-400">Garden</a>
       </div>
-      <button class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" aria-label="Menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <button class="md:hidden p-2 rounded-lg bg-gray-50 dark:bg-gray-700/50 hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-all duration-200" aria-label="Menu">
+        <svg class="w-6 h-6 text-gray-600 dark:text-gray-300 group-hover:text-primary-500 dark:group-hover:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
     </nav>
     <!-- Mobile menu -->
-    <div class="md:hidden hidden">
+    <div class="md:hidden hidden bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm border-t border-gray-200/50 dark:border-gray-700/30">
       <div class="px-4 py-3 space-y-3">
-        <a href="/portfolio" class="nav-link block">Portfolio</a>
-        <a href="/blog" class="nav-link block">Blog</a>
-        <a href="/courses" class="nav-link block">Courses</a>
-        <a href="/docs" class="nav-link block">Docs</a>
-        <a href="/garden" class="nav-link block">Garden</a>
+        <a href="/portfolio" class="nav-link block hover:text-primary-600 dark:hover:text-primary-400">Portfolio</a>
+        <a href="/blog" class="nav-link block hover:text-primary-600 dark:hover:text-primary-400">Blog</a>
+        <a href="/courses" class="nav-link block hover:text-primary-600 dark:hover:text-primary-400">Courses</a>
+        <a href="/docs" class="nav-link block hover:text-primary-600 dark:hover:text-primary-400">Docs</a>
+        <a href="/garden" class="nav-link block hover:text-primary-600 dark:hover:text-primary-400">Garden</a>
       </div>
     </div>
   </header>
 
-  <main class="flex-grow px-4 py-3">
+  <main class="flex-grow px-4 py-8 md:py-12">
     {{ content }}
   </main>
 
-  <footer class="bg-white dark:bg-gray-800 shadow-inner">
+  <footer class="bg-white/95 dark:bg-gray-800/95 shadow-lg border-t border-gray-200/50 dark:border-gray-700/30 backdrop-blur-sm">
     <div class="container mx-auto px-4 py-8">
       <div class="text-center text-gray-600 dark:text-gray-400">
-        <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+        <p class="animate-fade-in">&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
       </div>
     </div>
   </footer>
