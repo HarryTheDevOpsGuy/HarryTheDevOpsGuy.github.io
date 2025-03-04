@@ -6,106 +6,207 @@
     <title>Resume Collection - Hari Prasad</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #4f46e5;
+            --text-primary: #334155;
+            --text-secondary: #64748b;
+            --bg-primary: #f1f5f9;
+            --bg-secondary: #e2e8f0;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f1f5f9;
-            color: #334155;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
         }
+
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
+            padding: 2rem;
         }
+
         .header {
             text-align: center;
-            margin-bottom: 40px;
-            padding: 30px;
-            background: linear-gradient(135deg, #2563eb, #4f46e5);
-            color: white;
-            border-radius: 12px;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            border-radius: 1rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
         }
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top right, rgba(255,255,255,0.1), transparent);
+        }
+
+        .header h1 {
+            font-size: 3rem;
             font-weight: 800;
+            margin-bottom: 1rem;
+            position: relative;
         }
+
         .subtitle {
-            margin-top: 12px;
-            font-size: 1.2em;
+            font-size: 1.25rem;
             opacity: 0.9;
+            position: relative;
         }
+
+        .category-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--bg-secondary);
+        }
+
         .resume-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
-            margin-top: 24px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
+
         .resume-card {
-            background: white;
-            border-radius: 12px;
-            padding: 24px;
+            background: var(--white);
+            border-radius: 1rem;
+            padding: 1.5rem;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--bg-secondary);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
         }
+
+        .resume-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
         .resume-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
         }
+
+        .resume-card:hover::before {
+            opacity: 1;
+        }
+
         .resume-title {
-            font-size: 1.5em;
-            color: #1e40af;
-            margin-bottom: 12px;
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 0.5rem;
         }
+
         .resume-title i {
-            font-size: 0.9em;
-            opacity: 0.8;
+            font-size: 1rem;
+            opacity: 0.9;
         }
+
         .resume-description {
-            color: #64748b;
-            margin-bottom: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
             line-height: 1.5;
         }
+
         .resume-features {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 20px;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
         }
+
         .feature-tag {
-            background: #f1f5f9;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.9em;
-            color: #475569;
+            background: var(--bg-primary);
+            padding: 0.4rem 0.75rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 0.4rem;
+            transition: all 0.2s ease;
         }
+
+        .feature-tag:hover {
+            background: var(--bg-secondary);
+            color: var(--primary);
+        }
+
         .feature-tag i {
-            font-size: 0.9em;
-            color: #2563eb;
+            color: var(--primary);
+            font-size: 0.875rem;
         }
+
         .view-button {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            background-color: #2563eb;
-            color: white;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background-color: var(--primary);
+            color: var(--white);
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 0.5rem;
             font-weight: 500;
-            transition: background-color 0.3s ease;
+            transition: all 0.2s ease;
         }
+
         .view-button:hover {
-            background-color: #1d4ed8;
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .header {
+                padding: 2rem 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .resume-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -113,11 +214,11 @@
     <div class="container">
         <div class="header">
             <h1>Resume Collection</h1>
-            <div class="subtitle">Choose from multiple professional resume layouts</div>
+            <div class="subtitle">Explore our professionally crafted resume templates</div>
         </div>
 
+        <h2 class="category-title"><i class="fas fa-star"></i> Modern Designs</h2>
         <div class="resume-grid">
-            <!-- Modern Designs -->
             <div class="resume-card">
                 <div class="resume-title">
                     <i class="fas fa-paint-brush"></i> Modern Gradient
@@ -168,25 +269,10 @@
                     <i class="fas fa-eye"></i> View Resume
                 </a>
             </div>
+        </div>
 
-            <div class="resume-card">
-                <div class="resume-title">
-                    <i class="fas fa-compress-alt"></i> Modern Compact
-                </div>
-                <div class="resume-description">
-                    Space-efficient design that maintains professional appearance.
-                </div>
-                <div class="resume-features">
-                    <span class="feature-tag"><i class="fas fa-compress"></i> Compact</span>
-                    <span class="feature-tag"><i class="fas fa-star"></i> Modern</span>
-                    <span class="feature-tag"><i class="fas fa-print"></i> Print Ready</span>
-                </div>
-                <a href="modern-compact.html" class="view-button">
-                    <i class="fas fa-eye"></i> View Resume
-                </a>
-            </div>
-
-            <!-- Timeline Designs -->
+        <h2 class="category-title"><i class="fas fa-stream"></i> Timeline Designs</h2>
+        <div class="resume-grid">
             <div class="resume-card">
                 <div class="resume-title">
                     <i class="fas fa-stream"></i> Modern Timeline
@@ -204,7 +290,26 @@
                 </a>
             </div>
 
-            <!-- Creative Designs -->
+            <div class="resume-card">
+                <div class="resume-title">
+                    <i class="fas fa-chart-bar"></i> Minimal Timeline
+                </div>
+                <div class="resume-description">
+                    Simplified timeline design focusing on key career highlights.
+                </div>
+                <div class="resume-features">
+                    <span class="feature-tag"><i class="fas fa-clock"></i> Timeline</span>
+                    <span class="feature-tag"><i class="fas fa-minus"></i> Minimal</span>
+                    <span class="feature-tag"><i class="fas fa-print"></i> Print Ready</span>
+                </div>
+                <a href="minimal-timeline.html" class="view-button">
+                    <i class="fas fa-eye"></i> View Resume
+                </a>
+            </div>
+        </div>
+
+        <h2 class="category-title"><i class="fas fa-palette"></i> Creative Designs</h2>
+        <div class="resume-grid">
             <div class="resume-card">
                 <div class="resume-title">
                     <i class="fas fa-chart-bar"></i> Infographic Modern
@@ -238,25 +343,10 @@
                     <i class="fas fa-eye"></i> View Resume
                 </a>
             </div>
+        </div>
 
-            <div class="resume-card">
-                <div class="resume-title">
-                    <i class="fas fa-compress-alt"></i> Creative Modern Compact
-                </div>
-                <div class="resume-description">
-                    Condensed version of creative modern design for concise presentation.
-                </div>
-                <div class="resume-features">
-                    <span class="feature-tag"><i class="fas fa-compress"></i> Compact</span>
-                    <span class="feature-tag"><i class="fas fa-palette"></i> Creative</span>
-                    <span class="feature-tag"><i class="fas fa-print"></i> Print Ready</span>
-                </div>
-                <a href="creative-modern-compact.html" class="view-button">
-                    <i class="fas fa-eye"></i> View Resume
-                </a>
-            </div>
-
-            <!-- Professional Designs -->
+        <h2 class="category-title"><i class="fas fa-briefcase"></i> Professional Designs</h2>
+        <div class="resume-grid">
             <div class="resume-card">
                 <div class="resume-title">
                     <i class="fas fa-columns"></i> Professional Two Column
@@ -282,7 +372,5 @@
                     Specialized layout highlighting technical skills and expertise.
                 </div>
                 <div class="resume-features">
-                    <span class="feature-tag"><i class="fas fa
-    </div>
-</body>
-</html>
+                    <span class="feature-tag"><i class="fas fa-code"></i> Technical</span>
+                    <span class="feature-

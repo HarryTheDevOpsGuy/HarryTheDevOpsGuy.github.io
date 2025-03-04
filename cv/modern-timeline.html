@@ -135,8 +135,8 @@
         }
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
             padding: 0 20px;
         }
         .skill-category {
@@ -148,23 +148,71 @@
         .skill-category-title {
             color: #1e40af;
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
             gap: 8px;
+            font-size: 1.1em;
         }
         .skill-list {
             display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
+            flex-direction: column;
+            gap: 12px;
         }
         .skill-item {
             background: white;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 0.9em;
+            padding: 10px 15px;
+            border-radius: 6px;
             color: #475569;
             border: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .skill-name {
+            font-weight: 500;
+        }
+        .skill-rating {
+            display: flex;
+            gap: 3px;
+        }
+        .rating-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #e2e8f0;
+        }
+        .rating-dot.filled {
+            background: #2563eb;
+        }
+        .certifications-section {
+            margin-top: 40px;
+            padding: 0 20px;
+        }
+        .certification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .certification-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        .certification-title {
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 5px;
+        }
+        .certification-issuer {
+            color: #64748b;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        .certification-date {
+            color: #94a3b8;
+            font-size: 0.85em;
         }
     </style>
 </head>
@@ -188,41 +236,58 @@
 
         <div class="timeline">
             <div class="timeline-item">
-                <div class="timeline-date">2020 - Present</div>
+                <div class="timeline-date">2021 - Present</div>
+                <div class="timeline-title">Lead DevOps Engineer</div>
+                <div class="timeline-subtitle">Global Tech Solutions Inc.</div>
+                <div class="timeline-content">
+                    <ul>
+                        <li>Architected and implemented multi-cloud infrastructure spanning AWS, Azure, and GCP, reducing deployment time by 60%</li>
+                        <li>Led a team of 8 DevOps engineers, implementing GitOps practices and achieving 99.99% uptime</li>
+                        <li>Designed and implemented zero-trust security architecture, reducing security incidents by 75%</li>
+                        <li>Optimized cloud costs through automated resource management, saving $500K annually</li>
+                        <li>Established SRE practices and implemented SLO/SLI monitoring, improving system reliability by 40%</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2019 - 2021</div>
                 <div class="timeline-title">Senior DevOps Engineer</div>
-                <div class="timeline-subtitle">Tech Solutions Inc.</div>
+                <div class="timeline-subtitle">Cloud Innovation Labs</div>
                 <div class="timeline-content">
                     <ul>
-                        <li>Led the implementation of infrastructure as code using Terraform across multiple cloud platforms</li>
-                        <li>Designed and maintained CI/CD pipelines for microservices architecture</li>
-                        <li>Optimized cloud costs resulting in 30% reduction in infrastructure expenses</li>
-                        <li>Mentored junior engineers in DevOps practices and cloud technologies</li>
+                        <li>Spearheaded migration of 200+ microservices to Kubernetes, improving scalability and reducing costs by 45%</li>
+                        <li>Implemented GitLab CI/CD pipelines with automated security scanning, reducing deployment time from days to hours</li>
+                        <li>Developed custom Kubernetes operators for automated database management and backup solutions</li>
+                        <li>Created comprehensive monitoring solutions using Prometheus, Grafana, and ELK stack</li>
                     </ul>
                 </div>
             </div>
 
             <div class="timeline-item">
-                <div class="timeline-date">2018 - 2020</div>
+                <div class="timeline-date">2017 - 2019</div>
                 <div class="timeline-title">DevOps Engineer</div>
-                <div class="timeline-subtitle">Cloud Systems Ltd.</div>
+                <div class="timeline-subtitle">TechForward Solutions</div>
                 <div class="timeline-content">
                     <ul>
-                        <li>Implemented containerization strategies using Docker and Kubernetes</li>
-                        <li>Developed automation scripts for deployment and configuration management</li>
-                        <li>Set up monitoring and alerting systems using Prometheus and Grafana</li>
+                        <li>Automated infrastructure deployment using Terraform and Ansible, reducing provisioning time by 70%</li>
+                        <li>Implemented container orchestration using Docker Swarm and later Kubernetes</li>
+                        <li>Developed CI/CD pipelines using Jenkins, improving deployment frequency by 300%</li>
+                        <li>Created disaster recovery solutions with 15-minute RPO and 1-hour RTO</li>
                     </ul>
                 </div>
             </div>
 
             <div class="timeline-item">
-                <div class="timeline-date">2016 - 2018</div>
-                <div class="timeline-title">Systems Administrator</div>
-                <div class="timeline-subtitle">Tech Corp</div>
+                <div class="timeline-date">2015 - 2017</div>
+                <div class="timeline-title">Systems Engineer</div>
+                <div class="timeline-subtitle">DataTech Corp</div>
                 <div class="timeline-content">
                     <ul>
-                        <li>Managed on-premise infrastructure and cloud migration projects</li>
-                        <li>Implemented backup and disaster recovery solutions</li>
-                        <li>Provided technical support and system maintenance</li>
+                        <li>Managed hybrid cloud infrastructure across AWS and on-premise data centers</li>
+                        <li>Implemented configuration management using Puppet, reducing system inconsistencies by 80%</li>
+                        <li>Developed automated backup and recovery procedures for critical systems</li>
+                        <li>Led migration of legacy applications to cloud-native architecture</li>
                     </ul>
                 </div>
             </div>
@@ -236,10 +301,46 @@
                         <i class="fas fa-cloud"></i> Cloud & Infrastructure
                     </div>
                     <div class="skill-list">
-                        <span class="skill-item">AWS</span>
-                        <span class="skill-item">Azure</span>
-                        <span class="skill-item">GCP</span>
-                        <span class="skill-item">Terraform</span>
+                        <div class="skill-item">
+                            <span class="skill-name">AWS</span>
+                            <div class="skill-rating">
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Azure</span>
+                            <div class="skill-rating">
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot"></span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">GCP</span>
+                            <div class="skill-rating">
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot"></span>
+                                <span class="rating-dot"></span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Terraform</span>
+                            <div class="skill-rating">
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -248,9 +349,36 @@
                         <i class="fas fa-container-storage"></i> Containerization
                     </div>
                     <div class="skill-list">
-                        <span class="skill-item">Docker</span>
-                        <span class="skill-item">Kubernetes</span>
-                        <span class="skill-item">Helm</span>
+                        <div class="skill-item">
+                            <span class="skill-name">Docker</span>
+                            <div class="skill-rating">
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Kubernetes</span>
+                            <div class="skill-rating">
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot"></span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Helm</span>
+                            <div class="skill-rating">
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -259,9 +387,36 @@
                         <i class="fas fa-code-branch"></i> CI/CD
                     </div>
                     <div class="skill-list">
-                        <span class="skill-item">Jenkins</span>
-                        <span class="skill-item">GitLab CI</span>
-                        <span class="skill-item">GitHub Actions</span>
+                        <div class="skill-item">
+                            <span class="skill-name">Jenkins</span>
+                            <div class="skill-rating">
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">GitLab CI</span>
+                            <div class="skill-rating">
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot"></span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">GitHub Actions</span>
+                            <div class="skill-rating">
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -270,12 +425,57 @@
                         <i class="fas fa-chart-line"></i> Monitoring
                     </div>
                     <div class="skill-list">
-                        <span class="skill-item">Prometheus</span>
-                        <span class="skill-item">Grafana</span>
-                        <span class="skill-item">ELK Stack</span>
+                        <div class="skill-item">
+                            <span class="skill-name">Prometheus</span>
+                            <div class="skill-rating">
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot"></span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Grafana</span>
+                            <div class="skill-rating">
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">ELK Stack</span>
+                            <div class="skill-rating">
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot filled"></span>
+                                <span class="rating-dot"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div class="certifications-section">
+                <div class="section-title">Certifications</div>
+                <div class="certification-grid">
+                    <div class="certification-item">
+                        <div class="certification-title">AWS Certified Solutions Architect Professional</div>
+                        <div class="certification-issuer">Amazon Web Services</div>
+                        <div class="certification-date">Issued Dec 2023 · Expires Dec 2026</div>
+                    </div>
+                    <div class="certification-item">
+                        <div class="certification-title">Certified Kubernetes Administrator (CKA)</div>
+                        <div class="certification-issuer">Cloud Native Computing Foundation</div>
+                        <div class="certification-date">Issued Sep 2023 · Expires Sep 2026</div>
+                    </div>
+                    <div class="certification-item">
+                        <div class="certification-title">HashiCorp Certified Terraform Expert</div>
+                        <div class="certification-issuer">HashiCorp</div>
+                        <div class="certification-date">Issued Mar 2023 ·
         </div>
     </div>
 </body>
