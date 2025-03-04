@@ -1,0 +1,129 @@
+personal:
+  name: "Hari Prasad"
+  title: "CI/CD Specialist"
+  phone: "7503721297"
+  email: "HarrytheDevOpsGuy@gmail.com"
+  location: "Noida, India"
+  social:
+    whatsapp: "https://wa.me/917503721297?text=Hi"
+    linkedin: "https://www.linkedin.com/in/hari-prasad-verma-19b948154"
+    github: "https://github.com/HarryTheDevOpsGuy"
+    portfolio: "https://harrythedevopsguy.github.io"
+
+summary: |
+  11+ years of experience in DevOps engineering, specializing in cloud automation, CI/CD pipelines, and infrastructure as code (IaC). Proficient in tools like Terraform, Ansible, Packer, Kubernetes, Docker, Jenkins, and monitoring stacks (Prometheus, ELK). Skilled in designing scalable, secure, and highly available systems. Strong collaboration skills with a focus on bridging the gap between development and operations.
+
+skills:
+  categories:
+    - name: "Infrastructure as Code (IaC)"
+      icon: "⚡"
+      items:
+        - "Terraform"
+        - "Ansible"
+        - "Jenkins"
+        - "Groovy"
+        - "Shell Script"
+    - name: "CI/CD & Automation"
+      icon: "🚀"
+      items:
+        - "Jenkins"
+        - "ArgoCD"
+        - "GitHub Actions"
+        - "Blue-Green Deployment"
+    - name: "Cloud & Infrastructure"
+      icon: "☁️"
+      items:
+        - "AWS EC2"
+        - "AWS S3"
+        - "AWS RDS"
+        - "AWS VPC"
+        - "AWS IAM"
+        - "AWS Lambda"
+    - name: "Containers & Orchestration"
+      icon: "🐳"
+      items:
+        - "Docker"
+        - "Kubernetes"
+        - "EKS"
+        - "Helm"
+        - "Karpenter"
+    - name: "Monitoring & Logging"
+      icon: "📊"
+      items:
+        - "Prometheus"
+        - "Grafana"
+        - "ELK Stack"
+        - "Telegraf"
+        - "CloudWatch"
+
+experience:
+  - company: "One97 Communications Limited"
+    position: "Sr. DevOps Lead"
+    location: "Noida"
+    duration: "Mar-20 – Present"
+    highlights:
+      - "Developed BG Deployer for zero-downtime deployments"
+      - "Managed infrastructure using Terraform and Ansible"
+      - "Built secure golden AMIs with Packer"
+      - "Led CI/CD automation initiatives"
+      - "Implemented comprehensive monitoring"
+      - "Managed EKS clusters with ArgoCD"
+      - "Optimized costs with Karpenter"
+
+  - company: "Ziploan"
+    position: "Sr. DevOps Engineer"
+    location: "Delhi"
+    duration: "Oct-19 – Mar-20"
+    highlights:
+      - "Reduced hosting costs by 50% through AWS migration"
+      - "Implemented blue-green deployments"
+      - "Optimized logging with ELK Stack"
+      - "Automated deployments with Jenkins"
+
+  - company: "KiwiTech"
+    position: "DevOps Engineer"
+    location: "Noida"
+    duration: "Nov-17 – Oct-19"
+    highlights:
+      - "Managed 100+ Linux servers"
+      - "Automated deployments with Jenkins"
+      - "Implemented AWS monitoring solutions"
+      - "Built infrastructure from scratch"
+
+  - company: "Xeliumtech Solutions"
+    position: "Linux System Administrator (DevOps)"
+    location: "Gurugram"
+    duration: "Dec-15 – Nov-17"
+    highlights:
+      - "Managed LAMP stack infrastructure"
+      - "Administered GitLab servers"
+      - "Automated infrastructure with Terraform"
+      - "Implemented security best practices"
+
+education:
+  - degree: "B.Com"
+    institution: "DU, Delhi"
+    year: "2014"
+  - degree: "H/W & N/W"
+    institution: "Delhi"
+    year: "2013"
+
+projects:
+  - name: "BG Deployer"
+    url: "https://harrythedevopsguy.github.io/articles/docs/apps/bgdeployerv3"
+    description: "Shell-based Blue-Green Deployment solution"
+  - name: "mCert"
+    url: "https://github.com/HarryTheDevOpsGuy/mCert"
+    description: "SSL certificate monitoring utility"
+  - name: "mTracker"
+    url: "https://github.com/HarryTheDevOpsGuy/mTracker"
+    description: "Linux user activity monitoring tool"
+  - name: "mWatcher"
+    url: "https://github.com/HarryTheDevOpsGuy/mWatcher"
+    description: "Server health monitoring system"
+
+languages:
+  - "English"
+  - "Hindi"
+
+certifications: []

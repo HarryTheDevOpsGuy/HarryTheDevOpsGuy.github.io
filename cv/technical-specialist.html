@@ -14,110 +14,129 @@
         }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
+            line-height: 1.5;
             margin: 0;
             padding: 40px 20px;
             color: #1f2937;
             background-color: #f9fafb;
+            font-size: 0.85em;
         }
         .container {
             max-width: 210mm;
             margin: 0 auto;
             background: white;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            padding: 30px;
+            padding: 25px;
             display: grid;
             grid-template-columns: 1fr 2fr;
-            gap: 30px;
+            gap: 25px;
         }
         .header {
             grid-column: 1 / -1;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             border-bottom: 2px solid #2563eb;
-            padding-bottom: 20px;
+            padding-bottom: 15px;
         }
         h1 {
-            font-size: 2.5em;
+            font-size: 2.2em;
             color: #2563eb;
             margin: 0;
             letter-spacing: -0.5px;
         }
         .contact-info {
-            margin: 15px 0;
+            margin: 12px 0;
             color: #4b5563;
+            font-size: 0.9em;
         }
         .contact-info i {
             color: #2563eb;
-            margin-right: 5px;
+            margin-right: 4px;
         }
         .sidebar {
             background: #f8fafc;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
         }
         .main-content {
-            padding: 20px;
+            padding: 15px;
         }
         .section {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         h2 {
             color: #1e40af;
-            font-size: 1.4em;
-            margin-bottom: 15px;
+            font-size: 1.3em;
+            margin-bottom: 12px;
             border-bottom: 1px solid #93c5fd;
-            padding-bottom: 5px;
+            padding-bottom: 4px;
         }
         .skill-category {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .skill-category h3 {
             color: #2563eb;
-            font-size: 1.1em;
-            margin-bottom: 10px;
+            font-size: 1em;
+            margin-bottom: 8px;
         }
         .skill-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 6px;
         }
         .skill-tag {
             background: #e5e7eb;
             padding: 4px 8px;
             border-radius: 4px;
-            font-size: 0.9em;
+            font-size: 0.85em;
             color: #4b5563;
         }
         .experience-item {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .job-title {
             font-weight: bold;
             color: #2563eb;
+            font-size: 1.05em;
+            margin-bottom: 4px;
         }
         .company-info {
             color: #6b7280;
             font-style: italic;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
+            font-size: 0.9em;
         }
         ul {
             margin: 0;
-            padding-left: 20px;
+            padding-left: 18px;
+            list-style-type: none;
         }
         li {
-            margin-bottom: 5px;
+            margin-bottom: 4px;
+            position: relative;
+            font-size: 0.9em;
+        }
+        li:before {
+            content: '•';
+            color: #2563eb;
+            position: absolute;
+            left: -15px;
         }
         .print-button {
             position: fixed;
             top: 20px;
             right: 20px;
-            padding: 10px 20px;
+            padding: 8px 16px;
             background-color: #2563eb;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85em;
+            box-shadow: 0 2px 4px rgba(37,99,235,0.2);
         }
         .print-button:hover {
             background-color: #1d4ed8;
@@ -133,8 +152,10 @@
         <div class="header">
             <h1>HARI PRASAD</h1>
             <div class="contact-info">
-                Senior DevOps Lead • Noida, UP, India<br>
+                <i class="fas fa-briefcase"></i> Senior DevOps Lead • 
+                <i class="fas fa-map-marker-alt"></i> Noida, UP, India<br>
                 <i class="fas fa-envelope"></i> HarryTheDevOpsGuy@gmail.com • 
+                <i class="fas fa-phone"></i> +91 7503721297 •
                 <i class="fab fa-github"></i> github.com/HarryTheDevOpsGuy • 
                 <i class="fab fa-linkedin"></i> linkedin.com/in/hari-prasad-verma-19b948154
             </div>
@@ -144,98 +165,119 @@
             <div class="section">
                 <h2>Technical Skills</h2>
                 <div class="skill-category">
-                    <h3>Cloud & Infrastructure</h3>
+                    <h3>Infrastructure & Cloud</h3>
                     <div class="skill-list">
-                        <span class="skill-tag">AWS</span>
-                        <span class="skill-tag">EC2</span>
-                        <span class="skill-tag">S3</span>
-                        <span class="skill-tag">RDS</span>
-                        <span class="skill-tag">Lambda</span>
-                        <span class="skill-tag">VPC</span>
+                        <span class="skill-tag">AWS EC2</span>
+                        <span class="skill-tag">AWS S3</span>
+                        <span class="skill-tag">AWS RDS</span>
+                        <span class="skill-tag">AWS Lambda</span>
+                        <span class="skill-tag">AWS VPC</span>
+                        <span class="skill-tag">AWS Route53</span>
+                        <span class="skill-tag">AWS IAM</span>
+                        <span class="skill-tag">AWS CloudWatch</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>DevOps Tools</h3>
+                    <h3>DevOps & CI/CD</h3>
                     <div class="skill-list">
                         <span class="skill-tag">Jenkins</span>
                         <span class="skill-tag">Docker</span>
                         <span class="skill-tag">Kubernetes</span>
                         <span class="skill-tag">Terraform</span>
                         <span class="skill-tag">Ansible</span>
+                        <span class="skill-tag">Packer</span>
+                        <span class="skill-tag">ArgoCD</span>
+                        <span class="skill-tag">Helm</span>
+                        <span class="skill-tag">Karpenter</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Monitoring & Security</h3>
+                    <h3>Monitoring & Logging</h3>
                     <div class="skill-list">
                         <span class="skill-tag">Prometheus</span>
                         <span class="skill-tag">Grafana</span>
                         <span class="skill-tag">ELK Stack</span>
-                        <span class="skill-tag">Vault</span>
+                        <span class="skill-tag">Telegraf</span>
+                        <span class="skill-tag">CloudWatch</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Programming</h3>
+                    <h3>Programming & Tools</h3>
                     <div class="skill-list">
-                        <span class="skill-tag">Python</span>
                         <span class="skill-tag">Shell Script</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Groovy</span>
                         <span class="skill-tag">YAML</span>
                         <span class="skill-tag">HCL</span>
+                        <span class="skill-tag">Git</span>
                     </div>
                 </div>
             </div>
 
             <div class="section">
-                <h2>Certifications</h2>
+                <h2>Projects</h2>
                 <ul>
-                    <li>AWS Certified Solutions Architect</li>
-                    <li>Certified Kubernetes Administrator</li>
-                    <li>HashiCorp Certified Terraform Associate</li>
+                    <li>BG Deployer - Blue-Green Deployment Tool</li>
+                    <li>mCert - SSL Certificate Monitor</li>
+                    <li>mTracker - User Activity Monitor</li>
+                    <li>mWatcher - Server Health Monitor</li>
+                    <li>gCrypt - Git Repository Encryption</li>
+                    <li>mStatus - Website Status Monitor</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Education</h2>
+                <ul>
+                    <li>B.Com, Delhi University (2014)</li>
+                    <li>Hardware & Networking (2013)</li>
                 </ul>
             </div>
         </div>
 
         <div class="main-content">
             <div class="section">
+                <h2>Professional Summary</h2>
+                <p>11+ years of experience in DevOps engineering, specializing in cloud automation, CI/CD pipelines, and infrastructure as code. Expert in designing and implementing scalable, secure, and highly available systems using modern DevOps practices and tools.</p>
+            </div>
+
+            <div class="section">
                 <h2>Professional Experience</h2>
                 <div class="experience-item">
                     <div class="job-title">Sr. DevOps Lead</div>
-                    <div class="company-info">Paytm • 2020 - Present</div>
+                    <div class="company-info">One97 Communications Limited, Noida | Mar 2020 - Present</div>
                     <ul>
-                        <li>Architected and implemented zero-downtime deployment strategies using blue-green deployment with Jenkins and AWS</li>
-                        <li>Managed infrastructure as code using Terraform and Ansible, reducing provisioning time by 60%</li>
-                        <li>Led the migration of monolithic applications to microservices architecture using Docker and Kubernetes</li>
-                        <li>Implemented comprehensive monitoring solutions using Prometheus and Grafana</li>
+                        <li>Developed BG Deployer for automated blue-green deployments with zero downtime using Jenkins, AWS ALB, ASG, and CloudWatch</li>
+                        <li>Managed infrastructure as Code using Terraform, Ansible, and Packer</li>
+                        <li>Built golden AMIs with security patching and Linux hardening</li>
+                        <li>Configured comprehensive monitoring using Prometheus, Grafana, and ELK Stack</li>
+                        <li>Led DevOps team and provided technical mentorship</li>
+                        <li>Managed EKS clusters using ArgoCD, Helm, and Helmfile</li>
+                        <li>Implemented Karpenter for dynamic EKS worker node management</li>
+                        <li>Developed Lua scripts for OpenResty to capture advanced metrics</li>
                     </ul>
                 </div>
 
                 <div class="experience-item">
                     <div class="job-title">Sr. DevOps Engineer</div>
-                    <div class="company-info">Ziploan • 2019 - 2020</div>
+                    <div class="company-info">Ziploan, Delhi | Oct 2019 - Mar 2020</div>
                     <ul>
-                        <li>Reduced AWS infrastructure costs by 50% through optimization and right-sizing</li>
-                        <li>Implemented automated CI/CD pipelines reducing deployment time by 70%</li>
-                        <li>Set up ELK stack for centralized logging and monitoring</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2>Key Projects</h2>
-                <div class="experience-item">
-                    <div class="job-title">Infrastructure Automation Platform</div>
-                    <ul>
-                        <li>Developed custom Terraform modules for standardized infrastructure deployment</li>
-                        <li>Implemented GitOps workflow with ArgoCD for Kubernetes deployments</li>
-                        <li>Created self-service portal for developers to provision resources</li>
+                        <li>Migrated on-premises applications to AWS, reducing hosting costs by 50%</li>
+                        <li>Implemented blue-green deployments with ALB and ASG</li>
+                        <li>Optimized centralized logging with ELK Stack</li>
+                        <li>Automated deployments using Jenkins, reducing setup time by 60%</li>
+                        <li>Developed Jenkins pipelines using Groovy scripts</li>
                     </ul>
                 </div>
 
                 <div class="experience-item">
-                    <div class="job-title">Monitoring & Alerting System</div>
+                    <div class="job-title">DevOps Engineer</div>
+                    <div class="company-info">KiwiTech, Noida | Nov 2017 - Oct 2019</div>
                     <ul>
-                        <li>Designed and implemented comprehensive monitoring using Prometheus and Grafana</li>
-                        <li>Created custom dashboards and alerting rules for different service metrics</li>
-                        <li>Reduced MTTR by 40% through improved observability</li>
+                        <li>Managed 100+ Linux servers supporting mission-critical applications</li>
+                        <li>Automated deployments with Jenkins and Ansible</li>
+                        <li>Set up AWS CloudWatch, SNS, and Lambda for monitoring</li>
+                        <li>Built new infrastructure from scratch with go-live support</li>
                     </ul>
                 </div>
             </div>

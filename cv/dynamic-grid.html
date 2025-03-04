@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Grid CV - Hari Prasad</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-color: #1f2937;
+            --light-bg: #f3f4f6;
+            --border-color: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+
+        .header {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            padding: 2rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .profile-info h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-info .title {
+            font-size: 1.25rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .contact-item i {
+            color: var(--primary-color);
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .experience-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .company-name {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .duration {
+            color: #666;
+        }
+
+        .highlights {
+            list-style-type: none;
+        }
+
+        .highlights li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlights li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-category {
+            background: var(--light-bg);
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        .skill-category h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .project-card {
+            background: var(--light-bg);
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        .project-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            margin-top: 0.5rem;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                padding: 0;
+            }
+            .header {
+                background: #f8f9fa;
+            }
+            .skill-category, .project-card {
+                background: #f8f9fa;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="profile-info">
+                <h1>Hari Prasad</h1>
+                <div class="title">CI/CD Specialist</div>
+                <p>Noida, India</p>
+            </div>
+            <div class="contact-info">
+                <a href="mailto:HarrytheDevOpsGuy@gmail.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>HarrytheDevOpsGuy@gmail.com</span>
+                </a>
+                <a href="tel:7503721297" class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>7503721297</span>
+                </a>
+                <a href="https://github.com/HarryTheDevOpsGuy" class="contact-item" target="_blank">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/hari-prasad-verma-19b948154" class="contact-item" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </header>
+
+        <div class="grid-layout">
+            <main>
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-user-circle"></i> Professional Summary</h2>
+                    <p>11+ years of experience in DevOps engineering, specializing in cloud automation, CI/CD pipelines, and infrastructure as code (IaC). Proficient in tools like Terraform, Ansible, Packer, Kubernetes, Docker, Jenkins, and monitoring stacks (Prometheus, ELK). Skilled in designing scalable, secure, and highly available systems. Strong collaboration skills with a focus on bridging the gap between development and operations.</p>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-briefcase"></i> Experience</h2>
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="company-name">One97 Communications Limited</div>
+                            <div class="duration">Mar-20 – Present</div>
+                        </div>
+                        <div class="position">Sr. DevOps Lead</div>
+                        <ul class="highlights">
+                            <li>Developed BG Deployer for zero-downtime deployments</li>
+                            <li>Managed infrastructure using Terraform and Ansible</li>
+                            <li>Built secure golden AMIs with Packer</li>
+                            <li>Led CI/CD automation initiatives</li>
+                            <li>Implemented comprehensive monitoring</li>
+                            <li>Managed EKS clusters with ArgoCD</li>
+                            <li>Optimized costs with Karpenter</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="company-name">Ziploan</div>
+                            <div class="duration">Oct-19 – Mar-20</div>
+                        </div>
+                        <div class="position">Sr. DevOps Engineer</div>
+                        <ul class="highlights">
+                            <li>Reduced hosting costs by 50% through AWS migration</li>
+                            <li>Implemented blue-green deployments</li>
+                            <li>Optimized logging with ELK Stack</li>
+                            <li>Automated deployments with Jenkins</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="company-name">KiwiTech</div>
+                            <div class="duration">Nov-17 – Oct-19</div>
+                        </div>
+                        <div class="position">DevOps Engineer</div>
+                        <ul class="highlights">
+                            <li>Managed 100+ Linux servers</li>
+                            <li>Automated deployments with Jenkins</li>
+                            <li>Implemented AWS monitoring solutions</li>
+                            <li>Built infrastructure from scratch</li>
+                        </ul>
+                    </div>
+                </section>
+            </main>
+
+            <aside>
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-tools"></i> Skills</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>⚡ IaC</h3>
+                            <div class="skill-items">
+                                <span class="skill-item">Terraform</span>
+                                <span class="skill-item">Ansible</span>
+                                <span class="skill-item">Jenkins</span>
+                                <span class="skill-item">Groovy</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3>🚀 CI/CD</h3>
+                            <div class="skill-items">
+                                <span class="skill-item">Jenkins</span>
+                                <span class="skill-item">ArgoCD</span>
+                                <span class="skill-item">GitHub Actions</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3>🐳 Containers</h3>
+                            <div class="skill-items">
+                                <span class="skill-item">Docker</span>
+                                <span class="skill-item">Kubernetes</span>
+                                <span class="skill-item">EKS</span>
+                                <span class="skill-item">Helm</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-project-diagram"></i> Projects</h2>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <h3>BG Deployer</h3>
+                            <p>Shell-based Blue-Green Deployment solution</p>
+                            <a href="https://harrythedevopsguy.github.io/articles/docs/apps/bgdeployerv3" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                        </div>
+                        <div class="project-card">
+                            <h3>mCert</h3>
+                            <p>SSL certificate monitoring utility</p>
+                            <a href="https://github.com/HarryTheDevOpsGuy/mCert" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+                    <div class="education-item">
+                        <div class="degree">B.Com</div>
+                        <div class="institution">DU, Delhi (2014)</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="degree">H/W & N/W</div>
+                        <div class="institution">Delhi (2013)</div>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>

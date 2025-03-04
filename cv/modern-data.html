@@ -1,0 +1,224 @@
+---
+layout: default
+title: Modern Data-Driven CV
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.data.resume.personal_info.name }} - CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-color: #333;
+            --light-bg: #f3f4f6;
+            --border-color: #e5e7eb;
+        }
+        @media print {
+            body { margin: 0; padding: 20px; }
+            .no-print { display: none; }
+            a { text-decoration: none; color: var(--text-color); }
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            color: var(--text-color);
+        }
+        .header {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+        .profile-info h1 {
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+        }
+        .profile-info .title {
+            font-size: 1.25rem;
+            color: var(--secondary-color);
+        }
+        .contact-info {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+        .section {
+            margin-bottom: 2rem;
+        }
+        .section-title {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+        .experience-item {
+            margin-bottom: 1.5rem;
+        }
+        .experience-header {
+            margin-bottom: 0.5rem;
+        }
+        .experience-title {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .experience-company {
+            font-weight: 500;
+        }
+        .experience-duration {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .skill-tag {
+            background-color: var(--light-bg);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.9rem;
+        }
+        .projects-list {
+            display: grid;
+            gap: 1rem;
+        }
+        .project-item {
+            padding: 1rem;
+            background-color: var(--light-bg);
+            border-radius: 0.5rem;
+        }
+        .project-title {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="profile-info">
+            <h1>{{ site.data.resume.personal_info.name }}</h1>
+            <div class="title">{{ site.data.resume.personal_info.title }}</div>
+        </div>
+        <div class="contact-info">
+            <a href="mailto:{{ site.data.resume.personal_info.email }}" class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>{{ site.data.resume.personal_info.email }}</span>
+            </a>
+            <a href="tel:{{ site.data.resume.personal_info.phone }}" class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>{{ site.data.resume.personal_info.phone }}</span>
+            </a>
+            <a href="{{ site.data.resume.personal_info.social.linkedin }}" class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+            </a>
+            <a href="{{ site.data.resume.personal_info.social.github }}" class="contact-item">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="main-grid">
+        <div class="left-column">
+            <div class="section">
+                <div class="section-title">Professional Summary</div>
+                <p>{{ site.data.resume.professional_summary }}</p>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Work Experience</div>
+                {% for job in site.data.resume.work_experience %}
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="experience-title">{{ job.position }}</div>
+                        <div class="experience-company">{{ job.company }} | {{ job.location }}</div>
+                        <div class="experience-duration">{{ job.duration }}</div>
+                    </div>
+                    <ul>
+                        {% for highlight in job.highlights %}
+                        <li>{{ highlight }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="section">
+                <div class="section-title">Skills</div>
+                <div class="skills-list">
+                    {% for skill in site.data.resume.skills.primary %}
+                    <span class="skill-tag">{{ skill }}</span>
+                    {% endfor %}
+                    {% for skill in site.data.resume.skills.secondary %}
+                    <span class="skill-tag">{{ skill }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Education</div>
+                {% for edu in site.data.resume.education %}
+                <div class="experience-item">
+                    <div class="experience-title">{{ edu.degree }}</div>
+                    <div>{{ edu.institution }}</div>
+                    <div class="experience-duration">{{ edu.year }}</div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="section">
+                <div class="section-title">Projects</div>
+                <div class="projects-list">
+                    {% for project in site.data.resume.projects %}
+                    <div class="project-item">
+                        <div class="project-title">
+                            <a href="{{ project.url }}">{{ project.name }}</a>
+                        </div>
+                        <p>{{ project.description }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Languages</div>
+                <div class="skills-list">
+                    {% for language in site.data.resume.languages %}
+                    <span class="skill-tag">{{ language }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
