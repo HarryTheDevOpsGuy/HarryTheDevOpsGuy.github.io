@@ -5,57 +5,49 @@ title: Portfolio
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16 animate-fade-in">
   <style>
-    .gradient-text {
-      @apply bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent animate-gradient;
+    html {
+      scroll-behavior: smooth;
     }
-    .card {
-      @apply bg-white dark:bg-gray-800 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02] border border-gray-200 dark:border-gray-700;
-      position: relative;
-      overflow: hidden;
-    }
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--tw-gradient-from), var(--tw-gradient-to));
-      transform: translateX(-100%);
+    .dark-mode-toggle {
+      position: fixed;
+      right: 20px;
+      top: 20px;
+      z-index: 100;
+      padding: 10px;
+      border-radius: 50%;
+      background: var(--tw-gradient-from);
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
     }
-    .card:hover::before {
-      transform: translateX(0);
+    .dark-mode-toggle:hover {
+      transform: scale(1.1);
     }
-    .badge {
-      @apply px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-primary-100 to-purple-100 dark:from-primary-900 dark:to-purple-900 text-primary-700 dark:text-primary-300;
-      transition: all 0.3s ease;
+    .floating-contact {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 100;
+      padding: 15px;
+      border-radius: 50%;
+      background: var(--tw-gradient-from);
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
-    .badge:hover {
-      transform: translateY(-2px);
+    .floating-contact:hover {
+      transform: scale(1.1);
     }
-    .animate-gradient {
-      background-size: 200% auto;
-      animation: gradient 4s ease infinite;
-    }
-    .animate-slide-up {
-      animation: slideUp 0.6s ease-out forwards;
+    .section-fade {
       opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    @keyframes slideUp {
-      from {
-        transform: translateY(20px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
+    .section-fade.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
   <!-- Font Awesome -->
