@@ -3,67 +3,129 @@ layout: default
 title: Home
 ---
 
-<div class="space-y-16">
+<div class="min-h-screen bg-gradient-to-br from-primary-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-primary-900 animate-gradient-slow">
   <!-- Hero Section -->
-  <section class="py-16 md:py-24">
-    <div class="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
-      <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-white">
-        Welcome to My <span class="text-primary-600">Digital Garden</span>
+  <section class="py-20 md:py-32 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-purple-500/10 dark:from-primary-500/5 dark:to-purple-500/5 animate-pulse-slow"></div>
+    <div class="max-w-4xl mx-auto text-center space-y-10 animate-fade-in relative">
+      <h1 class="text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent animate-gradient">
+        Welcome to My Digital Garden
       </h1>
-      <p class="text-xl text-gray-600 dark:text-gray-400">
+      <p class="text-2xl text-gray-700 dark:text-gray-300 leading-relaxed">
         Exploring technology, sharing knowledge, and growing together
       </p>
-      <div class="flex justify-center gap-4">
-        <a href="/portfolio" class="btn-primary">View Portfolio</a>
-        <a href="/blog" class="btn-outline">Read Blog</a>
+      <div class="flex justify-center gap-6">
+        <a href="/portfolio" class="inline-block px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-primary-600 via-purple-500 to-purple-600 hover:from-primary-500 hover:via-purple-400 hover:to-purple-500 rounded-xl shadow-xl hover:shadow-primary-500/50 transform hover:scale-105 transition-all duration-300 animate-gradient relative overflow-hidden group">
+          <span class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+          <span class="relative z-10 flex items-center">
+            <span>View Portfolio</span>
+            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </span>
+        </a>
+        <a href="/blog" class="inline-block px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 via-indigo-500 to-indigo-600 hover:from-purple-500 hover:via-indigo-400 hover:to-indigo-500 rounded-xl shadow-xl hover:shadow-purple-500/50 transform hover:scale-105 transition-all duration-300 animate-gradient relative overflow-hidden group">
+          <span class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+          <span class="relative z-10 flex items-center">
+            <span>Read Blog</span>
+            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </span>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Featured Sections -->
-  <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <section class="container mx-auto px-4 py-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
     <!-- Portfolio Preview -->
-    <div class="card animate-slide-up">
-      <div class="p-6 space-y-4">
-        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Portfolio</h2>
-        <p class="text-gray-600 dark:text-gray-400">Discover my latest projects and achievements</p>
-        <a href="/portfolio" class="btn-primary">Explore Projects</a>
+    <div class="card group hover:shadow-2xl hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10 transform hover:-translate-y-1 transition-all duration-300">
+      <div class="p-8 space-y-6 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <h2 class="text-2xl font-bold bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">Portfolio</h2>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Discover my latest projects and achievements</p>
+        <a href="/portfolio" class="inline-block px-6 py-3 text-white bg-gradient-to-r from-primary-600 via-primary-500 to-primary-400 hover:from-primary-500 hover:via-primary-400 hover:to-primary-300 rounded-lg shadow-lg hover:shadow-primary-500/40 transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 group relative overflow-hidden">
+          <span class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+          <span class="relative z-10 flex items-center">
+            <span>Explore Projects</span>
+            <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </span>
+        </a>
       </div>
     </div>
 
     <!-- Blog Preview -->
-    <div class="card animate-slide-up" style="animation-delay: 100ms;">
-      <div class="p-6 space-y-4">
-        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Blog</h2>
-        <p class="text-gray-600 dark:text-gray-400">Read my thoughts on technology and development</p>
-        <a href="/blog" class="btn-primary">View Posts</a>
+    <div class="card group hover:shadow-2xl hover:shadow-purple-500/10 dark:hover:shadow-purple-400/10 transform hover:-translate-y-1 transition-all duration-300" style="animation-delay: 100ms;">
+      <div class="p-8 space-y-6 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <h2 class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-purple-500 bg-clip-text text-transparent">Blog</h2>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Read my thoughts on technology and development</p>
+        <a href="/blog" class="inline-block px-6 py-3 text-white bg-gradient-to-r from-purple-600 via-purple-500 to-purple-400 hover:from-purple-500 hover:via-purple-400 hover:to-purple-300 rounded-lg shadow-lg hover:shadow-purple-500/40 transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 group relative overflow-hidden">
+          <span class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+          <span class="relative z-10 flex items-center">
+            <span>View Posts</span>
+            <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </span>
+        </a>
       </div>
     </div>
 
     <!-- Courses Preview -->
-    <div class="card animate-slide-up" style="animation-delay: 200ms;">
-      <div class="p-6 space-y-4">
-        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Courses</h2>
-        <p class="text-gray-600 dark:text-gray-400">Learn from structured educational content</p>
-        <a href="/courses" class="btn-primary">Start Learning</a>
+    <div class="card group hover:shadow-2xl hover:shadow-indigo-500/10 dark:hover:shadow-indigo-400/10 transform hover:-translate-y-1 transition-all duration-300" style="animation-delay: 200ms;">
+      <div class="p-8 space-y-6 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <h2 class="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-indigo-500 bg-clip-text text-transparent">Courses</h2>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Learn from structured educational content</p>
+        <a href="/courses" class="inline-block px-6 py-3 text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-indigo-400 hover:from-indigo-500 hover:via-indigo-400 hover:to-indigo-300 rounded-lg shadow-lg hover:shadow-indigo-500/40 transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 group relative overflow-hidden">
+          <span class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+          <span class="relative z-10 flex items-center">
+            <span>Start Learning</span>
+            <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </span>
+        </a>
       </div>
     </div>
 
     <!-- Documentation Preview -->
-    <div class="card animate-slide-up" style="animation-delay: 300ms;">
-      <div class="p-6 space-y-4">
-        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Documentation</h2>
-        <p class="text-gray-600 dark:text-gray-400">Access comprehensive guides and references</p>
-        <a href="/docs" class="btn-primary">View Docs</a>
+    <div class="card group hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-400/10 transform hover:-translate-y-1 transition-all duration-300" style="animation-delay: 300ms;">
+      <div class="p-8 space-y-6 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <h2 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">Documentation</h2>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Access comprehensive guides and references</p>
+        <a href="/docs" class="inline-block px-6 py-3 text-white bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 hover:from-blue-500 hover:via-blue-400 hover:to-blue-300 rounded-lg shadow-lg hover:shadow-blue-500/40 transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 group relative overflow-hidden">
+          <span class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+          <span class="relative z-10 flex items-center">
+            <span>View Docs</span>
+            <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </span>
+        </a>
       </div>
     </div>
 
     <!-- Digital Garden Preview -->
-    <div class="card animate-slide-up" style="animation-delay: 400ms;">
-      <div class="p-6 space-y-4">
-        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Digital Garden</h2>
-        <p class="text-gray-600 dark:text-gray-400">Explore my collection of growing ideas</p>
-        <a href="/garden" class="btn-primary">Visit Garden</a>
+    <div class="card group hover:shadow-2xl hover:shadow-green-500/10 dark:hover:shadow-green-400/10 transform hover:-translate-y-1 transition-all duration-300" style="animation-delay: 400ms;">
+      <div class="p-8 space-y-6 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <h2 class="text-2xl font-bold bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent">Digital Garden</h2>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Explore my collection of growing ideas</p>
+        <a href="/garden" class="inline-block px-6 py-3 text-white bg-gradient-to-r from-green-600 via-green-500 to-green-400 hover:from-green-500 hover:via-green-400 hover:to-green-300 rounded-lg shadow-lg hover:shadow-green-500/40 transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 group relative overflow-hidden">
+          <span class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+          <span class="relative z-10 flex items-center">
+            <span>Visit Garden</span>
+            <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </span>
+        </a>
       </div>
     </div>
   </section>
