@@ -29,14 +29,19 @@ title: Portfolio
       transform: translateX(0);
     }
     .badge {
-      @apply px-3 py-1 rounded-full text-sm font-medium;
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      @apply px-3 py-1.5 rounded-full text-sm font-medium inline-flex items-center gap-2;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+      background-size: 200% 200%;
       color: white;
       transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
     .badge:hover {
-      transform: translateY(-2px);
+      transform: translateY(-2px) scale(1.05);
       filter: brightness(1.1);
+      background-position: 100% 100%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     }
     .animate-gradient {
       background-size: 300% 300%;
