@@ -3,48 +3,186 @@ layout: default
 title: Documentation
 ---
 
+<!-- Hero Section with Enhanced Gradient Background -->
+<div class="relative bg-gradient-to-br from-primary-600 via-purple-500 to-purple-600 text-white py-24 animate-gradient">
+  <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+    <h1 class="text-6xl font-extrabold mb-6 animate-fade-in bg-clip-text text-transparent bg-gradient-to-r from-white to-white/90">DevOps Documentation</h1>
+    <p class="text-xl text-white/90 mb-12 animate-fade-in delay-100">Comprehensive guides and resources for your DevOps journey</p>
+    
+    <!-- Enhanced Search Bar with Animation -->
+    <div class="max-w-2xl mx-auto relative animate-fade-in delay-200">
+      <input type="text" id="doc-search" placeholder="Search documentation..." class="w-full px-8 py-5 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-4 focus:ring-white/30 focus:border-white/40 transition-all duration-300 shadow-lg hover:shadow-white/10">
+      <svg class="absolute right-6 top-5 w-6 h-6 text-white/70 transition-transform duration-300 transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+      </svg>
+    </div>
+  </div>
+  
+  <!-- Decorative Background Pattern -->
+  <div class="absolute inset-0 opacity-10 pattern-grid"></div>
+</div>
+
 <div class="max-w-4xl mx-auto px-4 py-16 space-y-16">
-  <h1 class="text-4xl font-bold text-gray-900 dark:text-white text-center">DevOps Documentation</h1>
+  <!-- Category Filters -->
+  <div class="flex flex-wrap gap-4 justify-center mb-8">
+    <button class="filter-btn active px-6 py-2 rounded-full bg-primary-100 text-primary-600 font-medium hover:bg-primary-200 transition-colors" data-category="all">All</button>
+    <button class="filter-btn px-6 py-2 rounded-full bg-gray-100 text-gray-600 font-medium hover:bg-gray-200 transition-colors" data-category="getting-started">Getting Started</button>
+    <button class="filter-btn px-6 py-2 rounded-full bg-gray-100 text-gray-600 font-medium hover:bg-gray-200 transition-colors" data-category="infrastructure">Infrastructure</button>
+    <button class="filter-btn px-6 py-2 rounded-full bg-gray-100 text-gray-600 font-medium hover:bg-gray-200 transition-colors" data-category="containers">Containers</button>
+  </div>
 
   <!-- Getting Started Section -->
-  <section class="space-y-8">
-    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Getting Started</h2>
+  <section class="space-y-8 doc-section" data-category="getting-started">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white flex items-center gap-3">
+      <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+      </svg>
+      Getting Started
+    </h2>
     <div class="grid md:grid-cols-2 gap-6">
       {% assign getting_started_docs = site.pages | where: "layout", "docs" | where: "category", "getting-started" | sort: "order" %}
       {% for doc in getting_started_docs %}
-      <a href="{{ doc.url }}" class="card p-6 hover:shadow-lg transition-shadow">
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ doc.title }}</h3>
+      <a href="{{ doc.url }}" class="group card p-6 hover:shadow-lg hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10 transition-all duration-300 border border-gray-200/50 dark:border-gray-700/30 hover:border-primary-500/30 dark:hover:border-primary-400/30">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{{ doc.title }}</h3>
         <p class="text-gray-600 dark:text-gray-400">{{ doc.description }}</p>
+        <div class="mt-4 flex items-center text-primary-600 dark:text-primary-400 opacity-0 group-hover:opacity-100 transition-opacity">
+          <span class="text-sm font-medium">Learn more</span>
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </div>
       </a>
       {% endfor %}
     </div>
   </section>
 
   <!-- Infrastructure Section -->
-  <section class="space-y-8">
-    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Infrastructure</h2>
+  <section class="space-y-8 doc-section" data-category="infrastructure">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white flex items-center gap-3">
+      <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+      </svg>
+      Infrastructure
+    </h2>
     <div class="grid md:grid-cols-2 gap-6">
       {% assign infrastructure_docs = site.pages | where: "layout", "docs" | where: "category", "infrastructure" | sort: "order" %}
       {% for doc in infrastructure_docs %}
-      <a href="{{ doc.url }}" class="card p-6 hover:shadow-lg transition-shadow">
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ doc.title }}</h3>
+      <a href="{{ doc.url }}" class="group card p-6 hover:shadow-lg hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10 transition-all duration-300 border border-gray-200/50 dark:border-gray-700/30 hover:border-primary-500/30 dark:hover:border-primary-400/30">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{{ doc.title }}</h3>
         <p class="text-gray-600 dark:text-gray-400">{{ doc.description }}</p>
+        <div class="mt-4 flex items-center text-primary-600 dark:text-primary-400 opacity-0 group-hover:opacity-100 transition-opacity">
+          <span class="text-sm font-medium">Learn more</span>
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </div>
       </a>
       {% endfor %}
     </div>
   </section>
 
-  <!-- Container Orchestration -->
-  <section class="space-y-8">
-    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Container Orchestration</h2>
+  <!-- Container Orchestration Section -->
+  <section class="space-y-8 doc-section" data-category="containers">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white flex items-center gap-3">
+      <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+      </svg>
+      Container Orchestration
+    </h2>
     <div class="grid md:grid-cols-2 gap-6">
       {% assign container_docs = site.pages | where: "layout", "docs" | where: "category", "containers" | sort: "order" %}
       {% for doc in container_docs %}
-      <a href="{{ doc.url }}" class="card p-6 hover:shadow-lg transition-shadow">
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ doc.title }}</h3>
+      <a href="{{ doc.url }}" class="group card p-6 hover:shadow-lg hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10 transition-all duration-300 border border-gray-200/50 dark:border-gray-700/30 hover:border-primary-500/30 dark:hover:border-primary-400/30">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{{ doc.title }}</h3>
         <p class="text-gray-600 dark:text-gray-400">{{ doc.description }}</p>
+        <div class="mt-4 flex items-center text-primary-600 dark:text-primary-400 opacity-0 group-hover:opacity-100 transition-opacity">
+          <span class="text-sm font-medium">Learn more</span>
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </div>
       </a>
       {% endfor %}
     </div>
   </section>
 </div>
+
+<!-- Add JavaScript for Search and Filtering -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Search functionality
+  const searchInput = document.getElementById('doc-search');
+  const docSections = document.querySelectorAll('.doc-section');
+  const docCards = document.querySelectorAll('.card');
+
+  searchInput.addEventListener('input', function(e) {
+    const searchTerm = e.target.value.toLowerCase();
+
+    docCards.forEach(card => {
+      const title = card.querySelector('h3').textContent.toLowerCase();
+      const description = card.querySelector('p').textContent.toLowerCase();
+      const isMatch = title.includes(searchTerm) || description.includes(searchTerm);
+      card.style.display = isMatch ? 'block' : 'none';
+    });
+  });
+
+  // Category filtering
+  const filterButtons = document.querySelectorAll('.filter-btn');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const category = this.dataset.category;
+      
+      // Update active button state
+      filterButtons.forEach(b => b.classList.remove('active', 'bg-primary-100', 'text-primary-600'));
+      filterButtons.forEach(b => b.classList.add('bg-gray-100', 'text-gray-600'));
+      this.classList.add('active', 'bg-primary-100', 'text-primary-600');
+      this.classList.remove('bg-gray-100', 'text-gray-600');
+
+      // Show/hide sections
+      docSections.forEach(section => {
+        if (category === 'all' || section.dataset.category === category) {
+          section.style.display = 'block';
+        } else {
+          section.style.display = 'none';
+        }
+      });
+    });
+  });
+});
+</script>
+
+<style>
+.pattern-grid {
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+</style>
