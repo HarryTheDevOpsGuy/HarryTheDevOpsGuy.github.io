@@ -3,60 +3,135 @@ layout: default
 title: Courses
 ---
 
-<div class="max-w-4xl mx-auto px-4 py-16 space-y-16">
-  <h1 class="text-4xl font-bold text-gray-900 dark:text-white text-center">DevOps Learning Paths</h1>
-
-  <!-- Beginner Track -->
-  <section class="space-y-8">
-    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Beginner Track</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      {% assign beginner_courses = site.pages | where: "layout", "course" | where: "level", "beginner" | sort: "order" %}
-      {% for course in beginner_courses %}
-      <a href="{{ course.url }}" class="card p-6 hover:shadow-lg transition-shadow">
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ course.title }}</h3>
-        <p class="text-gray-600 dark:text-gray-400">{{ course.description }}</p>
-        <div class="mt-4 flex justify-between items-center">
-          <span class="badge">{{ course.modules }} Modules</span>
-          <span class="text-primary-600">{{ course.price | default: 'Free' }}</span>
-        </div>
-      </a>
-      {% endfor %}
+<div class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Hero Section -->
+    <div class="text-center mb-16">
+      <h1 class="text-5xl font-extrabold bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent animate-gradient mb-4">DevOps Learning Paths</h1>
+      <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Master the art of DevOps through our carefully curated learning paths designed for every skill level</p>
     </div>
-  </section>
 
-  <!-- Intermediate Track -->
-  <section class="space-y-8">
-    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Intermediate Track</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      {% assign intermediate_courses = site.pages | where: "layout", "course" | where: "level", "intermediate" | sort: "order" %}
-      {% for course in intermediate_courses %}
-      <a href="{{ course.url }}" class="card p-6 hover:shadow-lg transition-shadow">
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ course.title }}</h3>
-        <p class="text-gray-600 dark:text-gray-400">{{ course.description }}</p>
-        <div class="mt-4 flex justify-between items-center">
-          <span class="badge">{{ course.modules }} Modules</span>
-          <span class="text-primary-600">{{ course.price | default: 'Free' }}</span>
+    <!-- Learning Paths Grid -->
+    <div class="space-y-16">
+      <!-- Beginner Track -->
+      <section class="space-y-8">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+            <svg class="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Beginner Track</h2>
+            <p class="text-gray-600 dark:text-gray-400">Start your DevOps journey with fundamental concepts and practices</p>
+          </div>
         </div>
-      </a>
-      {% endfor %}
-    </div>
-  </section>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {% assign beginner_courses = site.pages | where: "layout", "course" | where: "level", "beginner" | sort: "order" %}
+          {% for course in beginner_courses %}
+          <a href="{{ course.url }}" class="group">
+            <div class="h-full bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 border border-gray-100/50 dark:border-gray-700/30 hover:border-primary-500/30 dark:hover:border-primary-400/30">
+              <div class="flex items-center gap-4 mb-4">
+                <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ course.icon | default: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' }}" />
+                  </svg>
+                </span>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{{ course.title }}</h3>
+              </div>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">{{ course.description }}</p>
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400">
+                  {{ course.modules }} Modules
+                </span>
+                <span class="text-primary-600 dark:text-primary-400 font-medium">{{ course.price | default: 'Free' }}</span>
+              </div>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+      </section>
 
-  <!-- Advanced Track -->
-  <section class="space-y-8">
-    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Advanced Track</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      {% assign advanced_courses = site.pages | where: "layout", "course" | where: "level", "advanced" | sort: "order" %}
-      {% for course in advanced_courses %}
-      <a href="{{ course.url }}" class="card p-6 hover:shadow-lg transition-shadow">
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ course.title }}</h3>
-        <p class="text-gray-600 dark:text-gray-400">{{ course.description }}</p>
-        <div class="mt-4 flex justify-between items-center">
-          <span class="badge">{{ course.modules }} Modules</span>
-          <span class="text-primary-600">{{ course.price | default: 'Free' }}</span>
+      <!-- Intermediate Track -->
+      <section class="space-y-8">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+            <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Intermediate Track</h2>
+            <p class="text-gray-600 dark:text-gray-400">Deepen your knowledge with advanced concepts and real-world applications</p>
+          </div>
         </div>
-      </a>
-      {% endfor %}
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {% assign intermediate_courses = site.pages | where: "layout", "course" | where: "level", "intermediate" | sort: "order" %}
+          {% for course in intermediate_courses %}
+          <a href="{{ course.url }}" class="group">
+            <div class="h-full bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 border border-gray-100/50 dark:border-gray-700/30 hover:border-primary-500/30 dark:hover:border-primary-400/30">
+              <div class="flex items-center gap-4 mb-4">
+                <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ course.icon | default: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' }}" />
+                  </svg>
+                </span>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{{ course.title }}</h3>
+              </div>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">{{ course.description }}</p>
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400">
+                  {{ course.modules }} Modules
+                </span>
+                <span class="text-primary-600 dark:text-primary-400 font-medium">{{ course.price | default: 'Free' }}</span>
+              </div>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- Advanced Track -->
+      <section class="space-y-8">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+            <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Advanced Track</h2>
+            <p class="text-gray-600 dark:text-gray-400">Master complex DevOps scenarios and become an expert</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {% assign advanced_courses = site.pages | where: "layout", "course" | where: "level", "advanced" | sort: "order" %}
+          {% for course in advanced_courses %}
+          <a href="{{ course.url }}" class="group">
+            <div class="h-full bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 border border-gray-100/50 dark:border-gray-700/30 hover:border-primary-500/30 dark:hover:border-primary-400/30">
+              <div class="flex items-center gap-4 mb-4">
+                <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ course.icon | default: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' }}" />
+                  </svg>
+                </span>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{{ course.title }}</h3>
+              </div>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">{{ course.description }}</p>
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400">
+                  {{ course.modules }} Modules
+                </span>
+                <span class="text-primary-600 dark:text-primary-400 font-medium">{{ course.price | default: 'Free' }}</span>
+              </div>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+      </section>
     </div>
-  </section>
+  </div>
 </div>
