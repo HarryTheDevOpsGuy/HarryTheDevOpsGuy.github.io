@@ -4,29 +4,38 @@ title: Digital Garden
 ---
 
 <div class="max-w-4xl mx-auto px-4 py-16 space-y-16">
-  <h1 class="text-4xl font-bold text-gray-900 dark:text-white text-center">Digital Garden</h1>
-  <p class="text-xl text-gray-600 dark:text-gray-400 text-center">A collection of growing ideas and interconnected knowledge about DevOps and technology.</p>
+  <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-gray-800 dark:to-gray-900 p-8 mb-12 animate-fade-in">
+    <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+    <h1 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-green-400 text-center mb-6 animate-slide-up">🌿 Digital Garden 🌿</h1>
+    <p class="text-xl text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto animate-slide-up" style="animation-delay: 200ms">A collection of growing ideas and interconnected knowledge about DevOps and technology.</p>
+  </div>
 
   <!-- Featured Topics -->
   <section class="space-y-8">
-    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Growing Ideas</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      <a href="/garden/cloud-native" class="card p-6 hover:shadow-lg transition-shadow">
+    <h2 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-green-400 mb-2">
+      <svg class="inline-block w-8 h-8 mr-2" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M10 3.5a6.5 6.5 0 00-6.5 6.5c0 3.314 2.686 6 6 6s6-2.686 6-6c0-3.314-2.686-6-6-6zm0 10.5a4.5 4.5 0 110-9 4.5 4.5 0 010 9z"/>
+        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+      </svg>
+      Growing Ideas
+    </h2>
+    <div class="grid md:grid-cols-2 gap-6 animate-fade-in" style="animation-delay: 400ms">
+      <a href="/garden/cloud-native" class="card p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-xl">
         <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Cloud Native Journey</h3>
         <p class="text-gray-600 dark:text-gray-400">Exploring the evolution of cloud-native technologies and practices.</p>
         <div class="mt-4 flex gap-2">
-          <span class="badge">Microservices</span>
-          <span class="badge">Containers</span>
-          <span class="badge">Growing</span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">Microservices</span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">Containers</span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-200 dark:hover:bg-emerald-900/50 transition-colors">🌿 Growing</span>
         </div>
       </a>
-      <a href="/garden/automation" class="card p-6 hover:shadow-lg transition-shadow">
+      <a href="/garden/automation" class="card p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-xl">
         <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Automation Philosophy</h3>
         <p class="text-gray-600 dark:text-gray-400">Thoughts on building effective automation strategies and tools.</p>
         <div class="mt-4 flex gap-2">
-          <span class="badge">Automation</span>
-          <span class="badge">Tools</span>
-          <span class="badge">Seedling</span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">Automation</span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">Tools</span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-200 dark:hover:bg-emerald-900/50 transition-colors">🌱 Seedling</span>
         </div>
       </a>
     </div>
@@ -34,24 +43,29 @@ title: Digital Garden
 
   <!-- Knowledge Maps -->
   <section class="space-y-8">
-    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Knowledge Maps</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      <a href="/garden/devops-roadmap" class="card p-6 hover:shadow-lg transition-shadow">
+    <h2 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-green-400 mb-2">
+      <svg class="inline-block w-8 h-8 mr-2" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+      </svg>
+      Knowledge Maps
+    </h2>
+    <div class="grid md:grid-cols-2 gap-6 animate-fade-in" style="animation-delay: 600ms">
+      <a href="/garden/devops-roadmap" class="card p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-xl">
         <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">DevOps Learning Path</h3>
         <p class="text-gray-600 dark:text-gray-400">A curated roadmap for mastering DevOps skills and tools.</p>
         <div class="mt-4 flex gap-2">
-          <span class="badge">Learning</span>
-          <span class="badge">Career</span>
-          <span class="badge">Evergreen</span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">Learning</span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">Career</span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-200 dark:hover:bg-emerald-900/50 transition-colors">🌲 Evergreen</span>
         </div>
       </a>
-      <a href="/garden/tech-stack" class="card p-6 hover:shadow-lg transition-shadow">
+      <a href="/garden/tech-stack" class="card p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-xl">
         <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Modern Tech Stack</h3>
         <p class="text-gray-600 dark:text-gray-400">Analysis of current and emerging technology stacks.</p>
         <div class="mt-4 flex gap-2">
-          <span class="badge">Technology</span>
-          <span class="badge">Analysis</span>
-          <span class="badge">Growing</span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">Technology</span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">Analysis</span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-200 dark:hover:bg-emerald-900/50 transition-colors">🌿 Growing</span>
         </div>
       </a>
     </div>
@@ -59,15 +73,20 @@ title: Digital Garden
 
   <!-- Latest Notes -->
   <section class="space-y-8">
-    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Latest Notes</h2>
-    <div class="grid gap-6">
+    <h2 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-green-400 mb-2">
+      <svg class="inline-block w-8 h-8 mr-2" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+      </svg>
+      Latest Notes 🌺
+    </h2>
+    <div class="grid gap-6 animate-fade-in" style="animation-delay: 800ms">
       <div class="card p-6 space-y-4">
         <h3 class="text-xl font-bold text-gray-900 dark:text-white">Kubernetes Observability Patterns</h3>
         <p class="text-gray-600 dark:text-gray-400">Exploring different approaches to monitoring and observability in Kubernetes clusters.</p>
         <div class="flex justify-between items-center">
           <div class="flex gap-2">
-            <span class="badge">Kubernetes</span>
-            <span class="badge">Monitoring</span>
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">Kubernetes</span>
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">Monitoring</span>
           </div>
           <time class="text-sm text-gray-500">Last updated: 2 days ago</time>
         </div>
@@ -77,8 +96,8 @@ title: Digital Garden
         <p class="text-gray-600 dark:text-gray-400">Documenting the evolution of GitOps practices and tools in modern DevOps.</p>
         <div class="flex justify-between items-center">
           <div class="flex gap-2">
-            <span class="badge">GitOps</span>
-            <span class="badge">Workflows</span>
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">GitOps</span>
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">Workflows</span>
           </div>
           <time class="text-sm text-gray-500">Last updated: 5 days ago</time>
         </div>
