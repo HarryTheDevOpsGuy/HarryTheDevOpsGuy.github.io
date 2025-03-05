@@ -3,23 +3,102 @@ layout: default
 title: Documentation
 ---
 
-<!-- Hero Section with Enhanced Gradient Background -->
-<div class="relative bg-gradient-to-br from-primary-600 via-purple-500 to-purple-600 text-white py-24 animate-gradient">
-  <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-    <h1 class="text-6xl font-extrabold mb-6 animate-fade-in bg-clip-text text-transparent bg-gradient-to-r from-white to-white/90">DevOps Documentation</h1>
-    <p class="text-xl text-white/90 mb-12 animate-fade-in delay-100">Comprehensive guides and resources for your DevOps journey</p>
-    
-    <!-- Enhanced Search Bar with Animation -->
-    <div class="max-w-2xl mx-auto relative animate-fade-in delay-200">
-      <input type="text" id="doc-search" placeholder="Search documentation..." class="w-full px-8 py-5 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-4 focus:ring-white/30 focus:border-white/40 transition-all duration-300 shadow-lg hover:shadow-white/10">
-      <svg class="absolute right-6 top-5 w-6 h-6 text-white/70 transition-transform duration-300 transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-      </svg>
+<!-- Hero Section with Enhanced Gradient Background and Interactive Elements -->
+<div class="relative min-h-[80vh] flex items-center bg-gradient-to-br from-primary-800 via-purple-700 to-primary-900 text-white overflow-hidden">
+  <!-- Dynamic Background Elements -->
+  <div class="absolute inset-0">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.15),transparent)] animate-pulse-slow"></div>
+    <div class="absolute inset-0 pattern-grid opacity-20"></div>
+    <!-- Floating Elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="floating-icon left-[10%] top-[20%]">⚙️</div>
+      <div class="floating-icon left-[85%] top-[15%]">🚀</div>
+      <div class="floating-icon left-[75%] top-[75%]">🔧</div>
+      <div class="floating-icon left-[15%] top-[65%]">🔄</div>
     </div>
   </div>
-  
-  <!-- Decorative Background Pattern -->
-  <div class="absolute inset-0 opacity-10 pattern-grid"></div>
+
+  <div class="max-w-6xl mx-auto px-4 py-20 relative z-10">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Left Column: Content -->
+      <div class="text-left space-y-8 animate-fade-in">
+        <div class="space-y-4">
+          <span class="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-sm font-medium animate-fade-in delay-100">Your DevOps Journey Starts Here</span>
+          <h1 class="text-6xl lg:text-7xl font-extrabold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-100 to-white/90 animate-gradient">
+            DevOps<br/>
+            <span class="text-4xl lg:text-5xl bg-gradient-to-r from-purple-300 to-primary-300 bg-clip-text">Documentation</span>
+          </h1>
+        </div>
+        <p class="text-xl text-white/90 animate-fade-in delay-200 leading-relaxed">
+          Comprehensive guides and resources to master modern DevOps practices and tools. Start your journey to continuous improvement.
+        </p>
+        <div class="flex flex-wrap gap-4 animate-fade-in delay-300">
+          <a href="#getting-started" class="btn-primary px-8 py-4 rounded-xl bg-white text-primary-900 hover:bg-primary-100 font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-white/20 flex items-center gap-2">
+            Get Started
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+            </svg>
+          </a>
+          <a href="#explore" class="btn-secondary px-8 py-4 rounded-xl border-2 border-white/20 hover:border-white/40 backdrop-blur-sm transition-all duration-300 hover:scale-105 flex items-center gap-2">
+            Explore Docs
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Enhanced Search Experience -->
+      <div class="space-y-8 animate-fade-in delay-400">
+        <div class="relative group">
+          <div class="absolute inset-0 bg-gradient-to-r from-primary-500/30 to-purple-500/30 blur-2xl group-hover:blur-3xl transition-all duration-500 rounded-2xl"></div>
+          <div class="relative bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 group-hover:border-white/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-500/20">
+            <h3 class="text-2xl font-bold mb-4 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">Quick Search</h3>
+            <div class="relative">
+              <input 
+                type="text" 
+                id="doc-search" 
+                placeholder="Search documentation..." 
+                class="w-full px-6 py-4 rounded-xl bg-white/5 backdrop-blur-sm border-2 border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-4 focus:ring-white/20 focus:border-white/30 transition-all duration-300"
+              >
+              <button class="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-300 group-hover:scale-105">
+                <svg class="w-6 h-6 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+              </button>
+            </div>
+            <!-- Quick Links -->
+            <div class="mt-6 grid grid-cols-2 gap-3">
+              <a href="#" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <svg class="w-5 h-5 text-primary-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+                <span>Quick Start</span>
+              </a>
+              <a href="#" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <svg class="w-5 h-5 text-primary-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                </svg>
+                <span>Infrastructure</span>
+              </a>
+              <a href="#" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <svg class="w-5 h-5 text-primary-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                </svg>
+                <span>Containers</span>
+              </a>
+              <a href="#" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <svg class="w-5 h-5 text-primary-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                </svg>
+                <span>CI/CD</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="max-w-4xl mx-auto px-4 py-16 space-y-16">
@@ -184,5 +263,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
 .delay-200 {
   animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.floating-icon {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.3;
+  animation: float 3s ease-in-out infinite;
+  filter: blur(1px);
+  transition: all 0.3s ease;
+}
+
+.floating-icon:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.floating-icon:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.floating-icon:nth-child(4) {
+  animation-delay: 1.5s;
 }
 </style>
