@@ -7,7 +7,6 @@ modules: 8
 description: Master infrastructure as code using Terraform for cloud resource management
 ---
 
-# Terraform Infrastructure as Code
 
 ## Course Overview
 Learn to manage cloud infrastructure efficiently using Terraform, focusing on infrastructure as code principles and best practices.
