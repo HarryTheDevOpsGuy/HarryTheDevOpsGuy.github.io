@@ -1,3 +1,4 @@
+# Personal Information
 personal:
   name: "Hari Prasad"
   title: "CI/CD Specialist"
@@ -10,120 +11,160 @@ personal:
     github: "https://github.com/HarryTheDevOpsGuy"
     portfolio: "https://harrythedevopsguy.github.io"
 
+# Professional Summary
 summary: |
-  11+ years of experience in DevOps engineering, specializing in cloud automation, CI/CD pipelines, and infrastructure as code (IaC). Proficient in tools like Terraform, Ansible, Packer, Kubernetes, Docker, Jenkins, and monitoring stacks (Prometheus, ELK). Skilled in designing scalable, secure, and highly available systems. Strong collaboration skills with a focus on bridging the gap between development and operations.
+  11+ years of experience in DevOps engineering, specializing in cloud automation, CI/CD pipelines, and infrastructure as code (IaC). 
+  Proficient in tools like Terraform, Ansible, Packer, Kubernetes, Docker, Jenkins, and monitoring stacks (Prometheus, ELK). 
+  Skilled in designing scalable, secure, and highly available systems. Strong collaboration skills with a focus on bridging the gap between development and operations.
 
+# Technical Skills
 skills:
   categories:
     - name: "Infrastructure as Code (IaC)"
       icon: "⚡"
-      items:
-        - "Terraform"
-        - "Ansible"
-        - "Jenkins"
-        - "Groovy"
-        - "Shell Script"
-    - name: "CI/CD & Automation"
+      description: "Provision, deploy, and manage entire infrastructure as code"
+      tools:
+        - Terraform
+        - Ansible
+        - Jenkins
+        - Groovy
+        - Shell Script
+
+    - name: "CI/CD Automation"
       icon: "🚀"
-      items:
-        - "Jenkins"
-        - "ArgoCD"
-        - "GitHub Actions"
-        - "Blue-Green Deployment"
-    - name: "Cloud & Infrastructure"
+      description: "Creating and maintaining automated CI/CD pipelines"
+      tools:
+        - Jenkins
+        - ArgoCD
+        - GitHub Actions
+        - Blue-Green Deployment
+
+    - name: "Cloud Infrastructure"
       icon: "☁️"
-      items:
-        - "AWS EC2"
-        - "AWS S3"
-        - "AWS RDS"
-        - "AWS VPC"
-        - "AWS IAM"
-        - "AWS Lambda"
-    - name: "Containers & Orchestration"
+      description: "Expertise in managing AWS services"
+      tools:
+        - AWS EC2
+        - AWS S3
+        - AWS RDS
+        - AWS VPC
+        - AWS IAM
+        - AWS CloudWatch
+        - AWS Lambda
+
+    - name: "Containerization & Orchestration"
       icon: "🐳"
-      items:
-        - "Docker"
-        - "Kubernetes"
-        - "EKS"
-        - "Helm"
-        - "Karpenter"
+      description: "Container deployment and management"
+      tools:
+        - Docker
+        - Kubernetes
+        - Helm
+        - Karpenter
+        - EKS
+
     - name: "Monitoring & Logging"
       icon: "📊"
-      items:
-        - "Prometheus"
-        - "Grafana"
-        - "ELK Stack"
-        - "Telegraf"
-        - "CloudWatch"
+      description: "Setting up and managing monitoring systems"
+      tools:
+        - Prometheus
+        - Grafana
+        - ELK Stack
+        - Telegraf
+        - CloudWatch
 
+# Work Experience
 experience:
   - company: "One97 Communications Limited"
     position: "Sr. DevOps Lead"
     location: "Noida"
-    duration: "Mar-20 – Present"
+    period: "Mar-20 – Present"
     highlights:
-      - "Developed BG Deployer for zero-downtime deployments"
-      - "Managed infrastructure using Terraform and Ansible"
-      - "Built secure golden AMIs with Packer"
-      - "Led CI/CD automation initiatives"
-      - "Implemented comprehensive monitoring"
-      - "Managed EKS clusters with ArgoCD"
-      - "Optimized costs with Karpenter"
+      - "Developed BG Deployer for automated blue-green deployment with zero downtime"
+      - "Managed infrastructure as Code using Terraform, Ansible, and Packer"
+      - "Built golden AMIs with Packer for security patching and Linux hardening"
+      - "Configured Prometheus, Grafana, and ELK Stack for monitoring"
+      - "Managed EKS clusters using ArgoCD, Helm, and Helmfile"
+      - "Developed Lua scripts for OpenResty metrics collection"
+      - "Implemented dynamic Linux user management with Ansible"
 
   - company: "Ziploan"
     position: "Sr. DevOps Engineer"
     location: "Delhi"
-    duration: "Oct-19 – Mar-20"
+    period: "Oct-19 – Mar-20"
     highlights:
-      - "Reduced hosting costs by 50% through AWS migration"
-      - "Implemented blue-green deployments"
-      - "Optimized logging with ELK Stack"
-      - "Automated deployments with Jenkins"
+      - "Migrated on-premises applications to AWS, reducing costs by 50%"
+      - "Implemented blue-green deployments with ALB and ASG"
+      - "Optimized centralized logging with ELK Stack"
+      - "Automated deployments using Jenkins, reducing setup time by 60%"
 
   - company: "KiwiTech"
     position: "DevOps Engineer"
     location: "Noida"
-    duration: "Nov-17 – Oct-19"
+    period: "Nov-17 – Oct-19"
     highlights:
-      - "Managed 100+ Linux servers"
-      - "Automated deployments with Jenkins"
-      - "Implemented AWS monitoring solutions"
-      - "Built infrastructure from scratch"
+      - "Managed 100+ Linux servers for mission-critical applications"
+      - "Automated deployments with Jenkins and Ansible"
+      - "Set up AWS CloudWatch, SNS, and Lambda for monitoring"
+      - "Built new infrastructure from scratch"
 
   - company: "Xeliumtech Solutions"
     position: "Linux System Administrator (DevOps)"
     location: "Gurugram"
-    duration: "Dec-15 – Nov-17"
+    period: "Dec-15 – Nov-17"
     highlights:
-      - "Managed LAMP stack infrastructure"
-      - "Administered GitLab servers"
-      - "Automated infrastructure with Terraform"
-      - "Implemented security best practices"
+      - "Configured LAMP stack architecture for multiple websites"
+      - "Administered GitLab servers and version control"
+      - "Created AWS infrastructure using Terraform and Ansible"
+      - "Managed multiple websites with nginx"
 
+# Education
 education:
   - degree: "B.Com"
-    institution: "DU, Delhi"
-    year: "2014"
-  - degree: "H/W & N/W"
-    institution: "Delhi"
-    year: "2013"
+    institution: "DU"
+    location: "Delhi"
+    year: 2014
+  - degree: "12th"
+    institution: "CBSE"
+    location: "Delhi"
+    year: 2010
+  - degree: "10th"
+    institution: "CBSE"
+    location: "Delhi"
+    year: 2008
+  - certification: "H/W & N/W"
+    location: "Delhi"
+    year: 2013
 
+# Languages
+languages:
+  - English
+  - Hindi
+
+# Projects
 projects:
   - name: "BG Deployer"
-    url: "https://harrythedevopsguy.github.io/articles/docs/apps/bgdeployerv3"
     description: "Shell-based Blue-Green Deployment solution"
+    url: "https://harrythedevopsguy.github.io/articles/docs/apps/bgdeployerv3"
+
   - name: "mCert"
+    description: "SSL certificate expiration monitoring tool"
     url: "https://github.com/HarryTheDevOpsGuy/mCert"
-    description: "SSL certificate monitoring utility"
+
   - name: "mTracker"
-    url: "https://github.com/HarryTheDevOpsGuy/mTracker"
     description: "Linux user activity monitoring tool"
+    url: "https://github.com/HarryTheDevOpsGuy/mTracker"
+
   - name: "mWatcher"
+    description: "Server health monitoring tool"
     url: "https://github.com/HarryTheDevOpsGuy/mWatcher"
-    description: "Server health monitoring system"
 
-languages:
-  - "English"
-  - "Hindi"
+  - name: "gCrypt"
+    description: "Git-crypt wrapper for secure repo data encryption"
+    url: "https://harrythedevopsguy.github.io/articles/docs/apps/gcrypt"
 
-certifications: []
+  - name: "mStatus"
+    description: "Website and SSL status monitoring tool"
+    url: "https://harrythedevopsguy.github.io/articles/docs/apps/mstatus"
+
+  - name: "mSend"
+    description: "HTML email notification utility"
+    url: "https://github.com/HarryTheDevOpsGuy/mSend"

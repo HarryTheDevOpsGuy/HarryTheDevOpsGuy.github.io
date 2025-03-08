@@ -8,7 +8,7 @@
   {% seo %}
 </head>
 <body class="min-h-screen flex flex-col bg-gradient-to-br from-primary-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-primary-900 animate-gradient-slow">
-  <header class="bg-white/95 dark:bg-gray-800/95 shadow-lg sticky top-0 z-50 backdrop-blur-sm border-b border-gray-200/50 dark:border-gray-700/30">
+  <header role="banner" class="bg-white/95 dark:bg-gray-800/95 shadow-lg sticky top-0 z-50 backdrop-blur-sm border-b border-gray-200/50 dark:border-gray-700/30">
     <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
       <a href="/" class="text-xl font-bold bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">{{ site.title }}</a>
       <div class="hidden md:flex space-x-5">
@@ -40,7 +40,7 @@
     {{ content }}
   </main>
 
-  <footer class="bg-gradient-to-br from-primary-100/95 via-white/95 to-purple-100/95 dark:from-gray-800/95 dark:via-gray-900/95 dark:to-primary-900/95 shadow-lg border-t border-gray-200/50 dark:border-gray-700/30 backdrop-blur-sm">
+  <footer role="contentinfo" class="mt-auto bg-white/95 dark:bg-gray-800/95 border-t border-gray-200/50 dark:border-gray-700/30">
     <div class="container mx-auto px-4 py-12">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
         <div class="space-y-4">

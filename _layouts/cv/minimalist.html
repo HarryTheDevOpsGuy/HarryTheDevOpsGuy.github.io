@@ -1,0 +1,142 @@
+---
+layout: default
+---
+
+<!-- Print Styles -->
+<style>
+  @media print {
+    @page { 
+      margin: 0.5in;
+      size: A4 portrait;
+    }
+    body { 
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    header[role="banner"], 
+    footer[role="contentinfo"] { 
+      display: none !important;
+    }
+    .cv-container { 
+      padding: 0 !important;
+      margin: 0 !important;
+      max-width: 210mm !important;
+    }
+    .avoid-break { break-inside: avoid; }
+  }
+</style>
+
+<div class="cv-container container mx-auto px-4 py-8">
+  <article class="max-w-[210mm] mx-auto bg-white/95 dark:bg-gray-800/95 rounded-xl shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30">
+    <!-- Minimalist Header -->
+    <header class="p-8 border-b border-gray-200 dark:border-gray-700 avoid-break">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-3xl font-bold text-gray-900 dark:text-white">{{ page.cvdata.personal.name }}</h1>
+        <p class="text-xl text-primary-600 dark:text-primary-400 mt-2">{{ page.cvdata.personal.title }}</p>
+        
+        <div class="flex flex-wrap justify-center gap-4 mt-4 text-sm text-gray-600 dark:text-gray-400">
+          <a href="mailto:{{ page.cvdata.personal.contact.email }}" 
+             class="hover:text-primary-600 dark:hover:text-primary-400">
+            {{ page.cvdata.personal.contact.email }}
+          </a>
+          <span class="hidden md:inline text-gray-300 dark:text-gray-600">|</span>
+          <span>{{ page.cvdata.personal.contact.phone }}</span>
+          {% if page.cvdata.personal.social.linkedin %}
+            <span class="hidden md:inline text-gray-300 dark:text-gray-600">|</span>
+            <a href="{{ page.cvdata.personal.social.linkedin }}" 
+               class="hover:text-primary-600 dark:hover:text-primary-400">
+              LinkedIn
+            </a>
+          {% endif %}
+          {% if page.cvdata.personal.social.github %}
+            <span class="hidden md:inline text-gray-300 dark:text-gray-600">|</span>
+            <a href="{{ page.cvdata.personal.social.github }}" 
+               class="hover:text-primary-600 dark:hover:text-primary-400">
+              GitHub
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </header>
+
+    <div class="p-8 space-y-8">
+      <!-- Professional Summary -->
+      <section class="max-w-3xl mx-auto avoid-break">
+        <p class="text-gray-600 dark:text-gray-400 text-center leading-relaxed">
+          {{ page.cvdata.professional_summary }}
+        </p>
+      </section>
+
+      <!-- Core Skills -->
+      <section class="max-w-3xl mx-auto avoid-break">
+        <h2 class="text-lg font-medium text-gray-900 dark:text-white mb-4 text-center">Core Competencies</h2>
+        <div class="flex flex-wrap justify-center gap-2">
+          {% for skill in page.cvdata.skills.core %}
+            <span class="px-4 py-1.5 bg-gray-50 dark:bg-gray-700/50 text-gray-600 dark:text-gray-400 rounded-full text-sm">
+              {{ skill }}
+            </span>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section class="max-w-3xl mx-auto avoid-break">
+        <h2 class="text-lg font-medium text-gray-900 dark:text-white mb-6 text-center">Professional Experience</h2>
+        <div class="space-y-8">
+          {% for exp in page.cvdata.experience %}
+            <div class="avoid-break">
+              <div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-1 mb-2">
+                <div>
+                  <h3 class="text-base font-medium text-gray-900 dark:text-white">{{ exp.position }}</h3>
+                  <p class="text-sm text-primary-600 dark:text-primary-400">{{ exp.company }}</p>
+                </div>
+                <p class="text-sm text-gray-500 dark:text-gray-400">{{ exp.period }} | {{ exp.location }}</p>
+              </div>
+              <ul class="mt-2 space-y-2">
+                {% for achievement in exp.achievements %}
+                  <li class="text-sm text-gray-600 dark:text-gray-400 pl-4 relative">
+                    <span class="absolute left-0 top-2 w-1.5 h-1.5 rounded-full bg-primary-600 dark:bg-primary-400"></span>
+                    {{ achievement }}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="max-w-3xl mx-auto avoid-break">
+        <h2 class="text-lg font-medium text-gray-900 dark:text-white mb-6 text-center">Notable Projects</h2>
+        <div class="space-y-4">
+          {% for project in page.cvdata.projects %}
+            <div class="avoid-break">
+              <h3 class="text-base font-medium text-gray-900 dark:text-white">{{ project.name }}</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">{{ project.description }}</p>
+              <a href="{{ project.url }}" 
+                 class="inline-block text-sm text-primary-600 dark:text-primary-400 mt-1 hover:underline">
+                View Project →
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="max-w-3xl mx-auto avoid-break">
+        <h2 class="text-lg font-medium text-gray-900 dark:text-white mb-4 text-center">Education</h2>
+        <div class="space-y-4">
+          {% for edu in page.cvdata.education %}
+            <div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-1">
+              <div>
+                <h3 class="text-base font-medium text-gray-900 dark:text-white">{{ edu.degree }}</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">{{ edu.institution }}</p>
+              </div>
+              <p class="text-sm text-gray-500 dark:text-gray-400">{{ edu.year }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    </div>
+  </article>
+</div> 
