@@ -4,7 +4,6 @@ title: Module 2 - Working with Playbooks
 description: Understanding and creating Ansible playbooks
 module: 2
 order: 0
-difficulty: Beginner
 ---
 
 # Module 2: Working with Playbooks
