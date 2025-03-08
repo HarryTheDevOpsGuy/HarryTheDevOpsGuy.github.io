@@ -15,7 +15,7 @@ order: 0
 - Configure performance testing
 
 ## Module Content
-1. [Testing Framework Integration](frameworks/)
-2. [Parallel Testing](parallel/)
-3. [Test Analysis](analysis/)
-4. [Performance Testing](performance/)
+1. [Testing Framework Integration](frameworks)
+2. [Parallel Testing](parallel)
+3. [Test Analysis](analysis)
+4. [Performance Testing](performance)

@@ -15,7 +15,7 @@ order: 0
 - Master pipeline optimization
 
 ## Module Content
-1. [Performance Analysis](analysis/)
-2. [Resource Management](resources/)
-3. [Caching Strategies](caching/)
-4. [Pipeline Optimization](optimization/)
+1. [Performance Analysis](analysis)
+2. [Resource Management](resources)
+3. [Caching Strategies](caching)
+4. [Pipeline Optimization](optimization)

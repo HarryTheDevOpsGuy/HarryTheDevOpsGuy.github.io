@@ -15,7 +15,7 @@ order: 0
 - Plan disaster recovery
 
 ## Module Content
-1. [Design Patterns](patterns/)
-2. [Quality Gates](quality/)
-3. [Documentation](documentation/)
-4. [Disaster Recovery](disaster-recovery/)
+1. [Design Patterns](patterns)
+2. [Quality Gates](quality)
+3. [Documentation](documentation)
+4. [Disaster Recovery](disaster-recovery)

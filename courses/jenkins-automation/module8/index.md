@@ -15,7 +15,7 @@ order: 0
 - Analyze performance metrics
 
 ## Module Content
-1. [Monitoring Setup](setup/)
-2. [Metrics Collection](metrics/)
-3. [Alert Configuration](alerts/)
-4. [Performance Analysis](analysis/)
+1. [Monitoring Setup](setup)
+2. [Metrics Collection](metrics)
+3. [Alert Configuration](alerts)
+4. [Performance Analysis](analysis)

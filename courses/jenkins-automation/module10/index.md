@@ -15,7 +15,7 @@ order: 0
 - Setup advanced notifications
 
 ## Module Content
-1. [GitOps Implementation](gitops/)
-2. [Artifact Management](artifacts/)
-3. [Cloud Services](cloud-services/)
-4. [Notification Systems](notifications/)
+1. [GitOps Implementation](gitops)
+2. [Artifact Management](artifacts)
+3. [Cloud Services](cloud-services)
+4. [Notification Systems](notifications)

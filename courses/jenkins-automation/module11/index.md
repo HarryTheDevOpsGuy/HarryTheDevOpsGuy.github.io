@@ -15,7 +15,7 @@ order: 0
 - Master rolling updates
 
 ## Module Content
-1. [Blue-Green Deployments](blue-green/)
-2. [Canary Releases](canary/)
-3. [Feature Flags](feature-flags/)
-4. [Rolling Updates](rolling-updates/)
+1. [Blue-Green Deployments](blue-green)
+2. [Canary Releases](canary)
+3. [Feature Flags](feature-flags)
+4. [Rolling Updates](rolling-updates)

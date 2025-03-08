@@ -15,7 +15,7 @@ order: 0
 - Master multi-environment deployments
 
 ## Module Content
-1. [Docker Integration](docker/)
-2. [Kubernetes Deployment](kubernetes/)
-3. [Container Security](security/)
-4. [Environment Management](environments/)
+1. [Docker Integration](docker)
+2. [Kubernetes Deployment](kubernetes)
+3. [Container Security](security)
+4. [Environment Management](environments)
