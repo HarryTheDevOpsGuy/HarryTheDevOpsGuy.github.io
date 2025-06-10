@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Cluster autocaller VS KARPENTER"
+date: 2024-01-16
+author: Hari Prasad
+tags: [GitOps, DevOps, Kubernetes, CI/CD, Infrastructure as Code]
+---
 
 ## 🔍 Overview
 
