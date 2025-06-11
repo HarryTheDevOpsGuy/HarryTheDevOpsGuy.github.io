@@ -41,6 +41,7 @@ To follow this process, ensure:
 
 ```bash
 VERSION="v2.10.5"  # Example: check https://github.com/argoproj/argo-cd/releases
+```
 
 
 
@@ -54,19 +55,23 @@ kubectl get configmaps,secrets -n argocd -o yaml > config-backup.yaml
 
 ### 3. ⏸️ Pause Sync (Optional for Sensitive Apps)
 
+```bash
 argocd app list | awk '{print $1}' | tail -n +2 | xargs -I{} argocd app set {} --sync-policy none
+```
 
 
 ---
 
 ### 4. 🚀 Upgrade ArgoCD via Helm (Rolling, Safe)
 
+```bash
 helm repo update
 
 helm upgrade argocd argo/argo-cd \
   --namespace argocd \
   --version $VERSION \
   --reuse-values
+```
 
 Helm performs rolling upgrades respecting readinessProbe. HA mode ensures availability during restarts.
 
@@ -74,20 +79,23 @@ Helm performs rolling upgrades respecting readinessProbe. HA mode ensures availa
 ---
 
 ### 5. ✅ Verify Pod Health Post-Upgrade
-
+```bash
 kubectl rollout status deploy/argocd-repo-server -n argocd
 kubectl rollout status deploy/argocd-application-controller -n argocd
 kubectl rollout status deploy/argocd-server -n argocd
 
 argocd version
 argocd app list
+```
 
 
 ---
 
 ### 6. 🔄 Resume Sync (If Paused)
 
+```bash
 argocd app list | awk '{print $1}' | tail -n +2 | xargs -I{} argocd app set {} --sync-policy automated
+```
 
 
 ---
@@ -95,11 +103,11 @@ argocd app list | awk '{print $1}' | tail -n +2 | xargs -I{} argocd app set {} -
 🔐 Optional: Upgrade Using Kustomize or Raw YAML
 
 For GitOps-managed ArgoCD installs, use version-pinned manifests:
-
+```bash
 VERSION="v2.10.5"
 curl -sSL -o argocd-install.yaml https://raw.githubusercontent.com/argoproj/argo-cd/$VERSION/manifests/install.yaml
 kubectl apply -n argocd -f argocd-install.yaml
-
+```
 
 ---
 
