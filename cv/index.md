@@ -21,26 +21,26 @@ title: Resume Collection
       {% for user in site.data.cv %}
         {% assign user_id = user[0] %}
         {% assign user_data = user[1] %}
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col items-center p-8">
-          <img src="{{ user_data.personal.avatar }}" alt="{{ user_data.personal.name }}" class="w-24 h-24 rounded-full object-cover ring-4 ring-blue-200 dark:ring-blue-900 mb-4">
+        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center p-8 transform hover:-translate-y-1 hover:scale-105 focus-within:ring-2 focus-within:ring-blue-400">
+          <img src="{{ user_data.personal.avatar }}" alt="Avatar of {{ user_data.personal.name }}" class="w-24 h-24 rounded-full object-cover ring-4 ring-blue-200 dark:ring-blue-900 mb-4" loading="lazy">
           <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-1">{{ user_data.personal.name }}</h2>
           <p class="text-primary-600 dark:text-primary-400 mb-4">{{ user_data.personal.title }}</p>
           <div class="flex flex-wrap justify-center gap-2 mb-4">
             {% if user_data.personal.social.linkedin %}
-              <a href="{{ user_data.personal.social.linkedin }}" class="text-blue-700 dark:text-blue-300 hover:underline" target="_blank">LinkedIn</a>
+              <a href="{{ user_data.personal.social.linkedin }}" class="text-blue-700 dark:text-blue-300 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400 rounded" target="_blank" aria-label="LinkedIn profile of {{ user_data.personal.name }}">LinkedIn</a>
             {% endif %}
             {% if user_data.personal.social.github %}
-              <a href="{{ user_data.personal.social.github }}" class="text-gray-700 dark:text-gray-300 hover:underline" target="_blank">GitHub</a>
+              <a href="{{ user_data.personal.social.github }}" class="text-gray-700 dark:text-gray-300 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400 rounded" target="_blank" aria-label="GitHub profile of {{ user_data.personal.name }}">GitHub</a>
             {% endif %}
             {% if user_data.personal.social.portfolio %}
-              <a href="{{ user_data.personal.social.portfolio }}" class="text-green-700 dark:text-green-300 hover:underline" target="_blank">Portfolio</a>
+              <a href="{{ user_data.personal.social.portfolio }}" class="text-green-700 dark:text-green-300 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400 rounded" target="_blank" aria-label="Portfolio of {{ user_data.personal.name }}">Portfolio</a>
             {% endif %}
           </div>
           <div class="w-full mt-2">
             <div class="grid grid-cols-1 gap-2">
               {% for layout in layouts %}
                 {% assign layout_name = layout[0] | split: '/' | last %}
-                <a href="/cv/{{ user_id }}/{{ layout_name }}.html" class="inline-flex items-center justify-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors w-full mb-1">
+                <a href="/cv/{{ user_id }}/{{ layout_name }}.html" class="inline-flex items-center justify-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors w-full mb-1 focus:outline-none focus:ring-2 focus:ring-blue-400" aria-label="View {{ layout_name | capitalize }} resume for {{ user_data.personal.name }}">
                   <span>{{ layout_name | capitalize }} Resume</span>
                   <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -48,6 +48,15 @@ title: Resume Collection
                 </a>
               {% endfor %}
             </div>
+            <!-- Browse More Button -->
+            <a href="/cv/{{ user_id }}"
+               class="mt-3 inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-all w-full focus:outline-none focus:ring-2 focus:ring-blue-400 font-semibold shadow-md"
+               aria-label="Browse more resume formats for {{ user_data.personal.name }}">
+              <span>Browse More Formats</span>
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              </svg>
+            </a>
           </div>
         </div>
       {% endfor %}
