@@ -25,6 +25,9 @@ collections:
   garden:
     output: true
     permalink: /garden/:path/
+  cv:
+    output: true
+    permalink: /cv/:path/
 
 # Pagination
 paginate: 6
