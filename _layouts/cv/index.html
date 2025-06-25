@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+<div class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-12">
+  <div class="container mx-auto px-4">
+    <header class="max-w-4xl mx-auto text-center mb-12">
+      <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        All Resumes in This Directory
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-400">
+        Browse and preview all available resumes in creative layouts.
+      </p>
+    </header>
+
+    <div class="w-full max-w-none grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      {% assign cv_index_url = page.url | split: '/' %}
+      {% assign userid = cv_index_url[2] %}
+      {% assign cv_path = page.url | split: '/' | slice: 0, 3 | join: '/' %}
+
+      {% assign resumes = site.pages | where_exp: "page", "page.url contains cv_path and page.url contains '.html'" %}
+      {% for page in resumes %}
+        {% unless page.url contains 'index.html' %}
+          {% assign path_parts = page.url | split: '/' %}
+          {% assign user_id = path_parts[2] %}
+          {% assign layout_name = path_parts[3] | split: '.' | first %}
+          {% assign user = site.data.cv[user_id] %}
+          <div class="card flex flex-col items-center p-8 border border-primary-100 dark:border-primary-900 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 w-full h-full">
+            <div class="w-20 h-20 mb-4">
+              {% if user and user.personal.avatar %}
+                <img src="{{ user.personal.avatar }}" alt="{{ user.personal.name }}" class="w-20 h-20 rounded-full object-cover ring-4 ring-blue-200 dark:ring-blue-900">
+              {% else %}
+                <div class="w-20 h-20 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-2xl text-gray-400">?</div>
+              {% endif %}
+            </div>
+            <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-1 text-center w-full truncate">
+              {{ user.personal.name | default: user_id | capitalize }}
+            </h2>
+            <p class="text-primary-600 dark:text-primary-400 mb-1 text-center w-full truncate">
+              {{ user.personal.title | default: layout_name | capitalize }}
+            </p>
+            <span class="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-full text-xs font-semibold mb-4 mt-1">{{ layout_name | capitalize }}</span>
+            <a href="{{ page.url | relative_url }}" class="btn btn-primary w-full mt-auto flex items-center justify-center">
+              View Resume
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+

@@ -11,69 +11,45 @@ title: Resume Collection
         Professional Resume Collection
       </h1>
       <p class="text-xl text-gray-600 dark:text-gray-400">
-        Choose from multiple professionally designed resume templates
+        Browse all users and view their resumes in multiple professional layouts
       </p>
     </header>
 
-    <!-- Main Content -->
-    <div class="max-w-7xl mx-auto">
-      <!-- Resume Categories -->
-      {% for dataset in site.data.cv %}
-      <div class="mb-12">
-        <div class="flex items-center justify-between mb-6">
-          <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">
-            {{ dataset[0] | capitalize }} Collection
-          </h2>
-          <span class="px-4 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-full text-sm">
-            {{ site.layouts | where_exp: "item", "item[0] contains 'cv/'" | size }} Templates
-          </span>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {% assign layouts = site.layouts | where_exp: "item", "item[0] contains 'cv/'" %}
-          {% for layout in layouts %}
-            {% assign layout_name = layout[0] | split: '/' | last %}
-            <div class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
-              <!-- Preview Area (You can add template previews here) -->
-              <div class="h-48 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 p-6">
-                <div class="h-full border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg flex items-center justify-center">
-                  <span class="text-gray-500 dark:text-gray-400">{{ layout_name | capitalize }}</span>
-                </div>
-              </div>
-
-              <!-- Template Info -->
-              <div class="p-6">
-                <div class="flex items-center justify-between mb-4">
-                  <h3 class="text-lg font-medium text-gray-900 dark:text-white">
-                    {{ layout_name | capitalize }} Template
-                  </h3>
-                  <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-full text-sm">
-                    {{ layout_name }}
-                  </span>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="flex items-center gap-4 mt-6">
-                  <a href="/cv/{{ dataset[0] }}/{{ layout_name }}.html"
-                     class="flex-1 inline-flex items-center justify-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
-                    <span>View Resume</span>
-                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                    </svg>
-                  </a>
-                  
-                  <button onclick="printCV('/cv/{{ dataset[0] }}/{{ layout_name }}.html')"
-                          class="inline-flex items-center px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
-                    </svg>
-                  </button>
-                </div>
-              </div>
+    <!-- User Cards Section -->
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% assign layouts = site.layouts | where_exp: "item", "item[0] contains 'cv/'" %}
+      {% for user in site.data.cv %}
+        {% assign user_id = user[0] %}
+        {% assign user_data = user[1] %}
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col items-center p-8">
+          <img src="{{ user_data.personal.avatar }}" alt="{{ user_data.personal.name }}" class="w-24 h-24 rounded-full object-cover ring-4 ring-blue-200 dark:ring-blue-900 mb-4">
+          <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-1">{{ user_data.personal.name }}</h2>
+          <p class="text-primary-600 dark:text-primary-400 mb-4">{{ user_data.personal.title }}</p>
+          <div class="flex flex-wrap justify-center gap-2 mb-4">
+            {% if user_data.personal.social.linkedin %}
+              <a href="{{ user_data.personal.social.linkedin }}" class="text-blue-700 dark:text-blue-300 hover:underline" target="_blank">LinkedIn</a>
+            {% endif %}
+            {% if user_data.personal.social.github %}
+              <a href="{{ user_data.personal.social.github }}" class="text-gray-700 dark:text-gray-300 hover:underline" target="_blank">GitHub</a>
+            {% endif %}
+            {% if user_data.personal.social.portfolio %}
+              <a href="{{ user_data.personal.social.portfolio }}" class="text-green-700 dark:text-green-300 hover:underline" target="_blank">Portfolio</a>
+            {% endif %}
+          </div>
+          <div class="w-full mt-2">
+            <div class="grid grid-cols-1 gap-2">
+              {% for layout in layouts %}
+                {% assign layout_name = layout[0] | split: '/' | last %}
+                <a href="/cv/{{ user_id }}/{{ layout_name }}.html" class="inline-flex items-center justify-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors w-full mb-1">
+                  <span>{{ layout_name | capitalize }} Resume</span>
+                  <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              {% endfor %}
             </div>
-          {% endfor %}
+          </div>
         </div>
-      </div>
       {% endfor %}
     </div>
 
@@ -113,9 +89,3 @@ title: Resume Collection
     </section>
   </div>
 </div>
-
-<script>
-  function printCV(url) {
-    window.open(url, '_blank').print();
-  }
-</script>
