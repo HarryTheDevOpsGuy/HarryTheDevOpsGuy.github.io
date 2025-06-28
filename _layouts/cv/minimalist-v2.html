@@ -1,0 +1,150 @@
+---
+layout: default
+title: "Hari Prasad | Resume"
+---
+
+<!-- Print Styles -->
+<style>
+  @media print {
+    @page {
+      margin: 0.5in;
+    }
+    body {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    header[role="banner"],
+    footer[role="contentinfo"] {
+      display: none !important;
+    }
+    .resume-wrapper {
+      max-width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    * {
+      break-inside: avoid !important;
+    }
+  }
+</style>
+
+<div class="resume-wrapper container mx-auto px-6 py-10">
+  <!-- Header Section -->
+  <header class="bg-gradient-to-r from-blue-100 to-blue-50 dark:from-blue-900 dark:to-gray-800 shadow-md rounded-lg p-6 mb-10">
+    <div class="flex flex-col md:flex-row items-center md:justify-between gap-4">
+      <div class="flex items-center gap-4">
+        <img src="{{ page.cvdata.personal.avatar }}" alt="Avatar" class="w-24 h-24 rounded-full border-4 border-blue-500 shadow" />
+        <div>
+          <h1 class="text-3xl font-bold text-blue-900 dark:text-blue-100">{{ page.cvdata.personal.name }}</h1>
+          <p class="text-base font-medium text-gray-700 dark:text-gray-300">🚀 {{ page.cvdata.personal.title }}</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400">📧 {{ page.cvdata.personal.contact.email }} | 📱 {{ page.cvdata.personal.contact.phone }}</p>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-2 text-sm">
+        <a href="{{ page.cvdata.personal.social.linkedin }}" class="badge bg-blue-100 text-blue-800 hover:bg-blue-200">🔗 LinkedIn</a>
+        <a href="{{ page.cvdata.personal.social.github }}" class="badge bg-gray-100 text-gray-800 hover:bg-gray-200">💻 GitHub</a>
+        <a href="{{ page.cvdata.personal.social.portfolio }}" class="badge bg-green-100 text-green-700 hover:bg-green-200">🌐 Portfolio</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Left Column -->
+    <section class="md:col-span-2 space-y-8">
+      <section>
+        <h2 class="text-xl font-semibold text-blue-700 dark:text-blue-300 border-b pb-1">🧾 Professional Summary</h2>
+        <p class="text-sm text-gray-800 dark:text-gray-300">{{ page.cvdata.professional_summary }}</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-blue-700 dark:text-blue-300 border-b pb-1">🛠 Technical Skills</h2>
+        <ul class="list-disc list-inside space-y-1 text-sm text-gray-700 dark:text-gray-300">
+          {% for skill in page.cvdata.technical_skills %}
+            <li><strong>{{ skill.category }}:</strong> {{ skill.description }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-blue-700 dark:text-blue-300 border-b pb-1">💼 Work Experience</h2>
+        <div class="space-y-4">
+          {% for job in page.cvdata.experience %}
+            <div>
+              <div class="flex justify-between items-center">
+                <strong>{{ job.position }}</strong>
+                <span class="text-xs text-gray-500">{{ job.period }}</span>
+              </div>
+              <div class="text-xs text-gray-500 mb-1">{{ job.company }} | {{ job.location }}</div>
+              <ul class="list-disc list-inside text-sm space-y-1 text-gray-700 dark:text-gray-300">
+                {% for item in job.achievements %}
+                  <li>{{ item }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-blue-700 dark:text-blue-300 border-b pb-1">🚀 Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-800 dark:text-gray-300">
+          {% for project in page.cvdata.projects %}
+            <div class="border-l-4 border-blue-500 pl-4">
+              <strong class="text-blue-800 dark:text-blue-200">🛠 {{ project.name }}</strong><br>
+              <span class="text-xs text-gray-500">{{ project.description }}</span><br>
+              <a href="{{ project.url }}" class="text-blue-500 hover:underline">🔗 View</a>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    </section>
+
+    <!-- Sidebar -->
+    <aside class="space-y-6">
+      <section>
+        <h3 class="text-sm font-semibold text-blue-700 dark:text-blue-300 uppercase">🎓 Education</h3>
+        <ul class="mt-2 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+          {% for edu in page.cvdata.education %}
+            <li>
+              <strong>📘 {{ edu.degree }}</strong><br>
+              <span class="text-xs text-gray-500">{{ edu.institution }}, {{ edu.location }} — {{ edu.year }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <section>
+        <h3 class="text-sm font-semibold text-blue-700 dark:text-blue-300 uppercase">🗣 Languages</h3>
+        <div class="flex flex-wrap gap-2 text-sm">
+          {% for lang in page.cvdata.languages %}
+            <span class="badge bg-indigo-100 text-indigo-700">{{ lang }}</span>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section>
+        <h3 class="text-sm font-semibold text-blue-700 dark:text-blue-300 uppercase">🧰 Tool Ratings</h3>
+        <ul class="text-sm text-gray-700 dark:text-gray-300">
+          {% for tool in page.cvdata.skills.core %}
+            <li class="flex justify-between py-1">
+              <span>{{ tool }}</span>
+              <span class="text-yellow-500">★★★★★</span>
+            </li>
+          {% endfor %}
+          {% for tool in page.cvdata.skills.tools %}
+            <li class="flex justify-between py-1">
+              <span>{{ tool }}</span>
+              <span class="text-yellow-500">★★★★☆</span>
+            </li>
+          {% endfor %}
+          {% for tool in page.cvdata.skills.additional %}
+            <li class="flex justify-between py-1">
+              <span>{{ tool }}</span>
+              <span class="text-yellow-500">★★★☆☆</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    </aside>
+  </main>
+</div>
