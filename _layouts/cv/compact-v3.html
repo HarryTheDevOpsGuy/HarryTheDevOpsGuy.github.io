@@ -83,7 +83,6 @@ layout: default
 
     <div class="p-5 space-y-4 md:space-y-5">
       <section>
-        <!-- <h2 class="text-sm font-semibold text-blue-700 dark:text-blue-300 border-b pb-1">🛠 Technical Skills</h2> -->
         <h2 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-3.5">🛠 Technical Skills</h2>
         <ul class="list-disc list-inside space-y-1 text-xs text-gray-700 dark:text-gray-300">
           {% for skill in page.cvdata.technical_skills %}
@@ -91,42 +90,19 @@ layout: default
           {% endfor %}
         </ul>
       </section>
-      <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
-        <section class="avoid-break">
-          <h2 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-2.5">Core Skills</h2>
-          <div class="flex flex-wrap gap-1.5">
-            {% for skill in page.cvdata.skills.core %}
-              <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 text-sm rounded">
-                {{ skill }}
-              </span>
-            {% endfor %}
-          </div>
-        </section>
-        <section class="avoid-break">
-          <h2 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-2.5">Tools & Technologies</h2>
-          <div class="flex flex-wrap gap-1.5">
-            {% for tool in page.cvdata.skills.tools %}
-              <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 text-sm rounded">
-                {{ tool }}
-              </span>
-            {% endfor %}
-          </div>
-        </section>
-      </div> -->
 
-      <!-- Experience with Aside Section -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <section class="md:col-span-2 avoid-break">
-          <h2 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-3.5">Professional Experience</h2>
+          <h2 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-3.5">💼 Professional Experience</h2>
           <div class="space-y-4">
             {% for exp in page.cvdata.experience %}
               <div class="avoid-break">
                 <div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-1">
                   <div>
                     <h3 class="text-sm font-medium text-gray-900 dark:text-white">{{ exp.position }}</h3>
-                    <p class="text-sm text-primary-600 dark:text-primary-400">{{ exp.company }}</p>
+                    <p class="text-sm text-primary-600 dark:text-primary-400">🏢 {{ exp.company }}</p>
                   </div>
-                  <p class="text-xs text-gray-500 dark:text-gray-400">{{ exp.period }} | {{ exp.location }}</p>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">📍 {{ exp.period }} | {{ exp.location }}</p>
                 </div>
                 <ul class="mt-1.5 space-y-0.5 leading-snug">
                   {% for achievement in exp.achievements %}
@@ -141,27 +117,22 @@ layout: default
           </div>
         </section>
         <aside class="avoid-break space-y-3">
-         
-    
           <section>
             <h3 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider">🧰 Tool Ratings</h3>
             <ul class="text-sm text-gray-700 dark:text-gray-300">
               {% for tool in page.cvdata.skills.core %}
                 <li class="flex justify-between py-1">
-                  <span>{{ tool }}</span>
-                  <span class="text-yellow-500">★★★★★</span>
+                  <span>{{ tool }}</span><span class="text-yellow-500">★★★★★</span>
                 </li>
               {% endfor %}
               {% for tool in page.cvdata.skills.tools %}
                 <li class="flex justify-between py-1">
-                  <span>{{ tool }}</span>
-                  <span class="text-yellow-500">★★★★☆</span>
+                  <span>{{ tool }}</span><span class="text-yellow-500">★★★★☆</span>
                 </li>
               {% endfor %}
               {% for tool in page.cvdata.skills.additional %}
                 <li class="flex justify-between py-1">
-                  <span>{{ tool }}</span>
-                  <span class="text-yellow-500">★★★☆☆</span>
+                  <span>{{ tool }}</span><span class="text-yellow-500">★★★☆☆</span>
                 </li>
               {% endfor %}
             </ul>
@@ -178,7 +149,7 @@ layout: default
               {% endfor %}
             </ul>
           </section>
-    
+
           <section>
             <h3 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider">🗣 Languages</h3>
             <div class="flex flex-wrap gap-2 text-sm">
@@ -191,7 +162,7 @@ layout: default
       </div>
 
       <section class="avoid-break">
-        <h2 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-3">Education</h2>
+        <h2 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-3">🎓 Education</h2>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
           {% for edu in page.cvdata.education %}
             <div>
@@ -204,7 +175,7 @@ layout: default
       </section>
 
       <section class="avoid-break">
-        <h2 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-3.5">Developed Custom Solutions</h2>
+        <h2 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-3.5">🛠 Developed Custom Solutions</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
           {% for project in page.cvdata.projects %}
             <div class="bg-gray-50 dark:bg-gray-700/50 rounded p-2.5">
@@ -212,13 +183,12 @@ layout: default
               <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">{{ project.description }}</p>
               <a href="{{ project.url }}" 
                  class="inline-flex items-center mt-1 text-xs text-primary-600 dark:text-primary-400 hover:underline">
-                View Project →
+                🔗 View Project →
               </a>
             </div>
           {% endfor %}
         </div>
       </section>
-
     </div>
   </article>
 </div>
