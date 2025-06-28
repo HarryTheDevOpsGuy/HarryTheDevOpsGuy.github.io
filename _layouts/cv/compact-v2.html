@@ -34,10 +34,10 @@ title: "Hari Prasad | Resume"
   }
 </style>
 
-<div class="resume-container grid grid-cols-1 lg:grid-cols-3 max-w-7xl mx-auto gap-6 p-6 bg-white dark:bg-gray-900 shadow-lg rounded-xl border border-gray-300 dark:border-gray-700">
+<div class="resume-container grid grid-cols-1 md:grid-cols-3 max-w-full mx-auto gap-6 p-6 bg-white dark:bg-gray-900 shadow-lg rounded-xl border border-gray-300 dark:border-gray-700">
 
   <!-- Main Content Column -->
-  <main class="lg:col-span-2 space-y-6">
+  <main class="md:col-span-2 space-y-6">
     <!-- Header -->
     <header>
       <h1 class="text-4xl font-extrabold text-blue-900 dark:text-blue-200 tracking-tight">{{ page.cvdata.personal.name }}</h1>
@@ -55,7 +55,7 @@ title: "Hari Prasad | Resume"
     <!-- Technical Skills -->
     <section>
       <h2 class="section-title">Technical Skills</h2>
-      <div class="section-content grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="section-content grid grid-cols-1 md:grid-cols-2 gap-2">
         {% for skill in page.cvdata.technical_skills %}
           <div>
             <strong>{{ skill.category }}</strong><br>
@@ -107,24 +107,10 @@ title: "Hari Prasad | Resume"
     <!-- Social -->
     <section>
       <h2 class="section-title">Social Links</h2>
-      <div class="section-content space-y-1 text-sm">
-        <a href="{{ page.cvdata.personal.social.linkedin }}" class="text-blue-500 hover:underline">LinkedIn</a><br>
-        <a href="{{ page.cvdata.personal.social.github }}" class="text-blue-500 hover:underline">GitHub</a><br>
-        <a href="{{ page.cvdata.personal.social.portfolio }}" class="text-blue-500 hover:underline">Portfolio</a>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section>
-      <h2 class="section-title">Projects</h2>
-      <div class="section-content space-y-2">
-        {% for project in page.cvdata.projects %}
-          <div>
-            <strong>{{ project.name }}</strong><br>
-            <span class="text-xs text-gray-500">{{ project.description }}</span><br>
-            <a href="{{ project.url }}" class="text-xs text-blue-500 hover:underline">🔗 View</a>
-          </div>
-        {% endfor %}
+      <div class="section-content flex flex-wrap gap-2 text-sm">
+        <a href="{{ page.cvdata.personal.social.linkedin }}" class="badge bg-blue-100 text-blue-800 hover:bg-blue-200">🔗 LinkedIn</a>
+        <a href="{{ page.cvdata.personal.social.github }}" class="badge bg-gray-100 text-gray-800 hover:bg-gray-200">💻 GitHub</a>
+        <a href="{{ page.cvdata.personal.social.portfolio }}" class="badge bg-green-100 text-green-700 hover:bg-green-200">🌐 Portfolio</a>
       </div>
     </section>
 
@@ -151,20 +137,43 @@ title: "Hari Prasad | Resume"
       </div>
     </section>
 
-    <!-- Skill Tags -->
+    <!-- Skill Ratings -->
     <section>
       <h2 class="section-title">Core & Tooling</h2>
-      <div class="section-content flex flex-wrap gap-2">
+      <div class="section-content space-y-1">
         {% for tool in page.cvdata.skills.core %}
-          <span class="badge bg-blue-100 text-blue-800">{{ tool }}</span>
+          <div class="flex justify-between">
+            <span>{{ tool }}</span>
+            <span class="text-yellow-500">★★★★★</span>
+          </div>
         {% endfor %}
         {% for tool in page.cvdata.skills.tools %}
-          <span class="badge bg-gray-100 text-gray-800">{{ tool }}</span>
+          <div class="flex justify-between">
+            <span>{{ tool }}</span>
+            <span class="text-yellow-500">★★★★☆</span>
+          </div>
         {% endfor %}
         {% for tool in page.cvdata.skills.additional %}
-          <span class="badge bg-yellow-100 text-yellow-800">{{ tool }}</span>
+          <div class="flex justify-between">
+            <span>{{ tool }}</span>
+            <span class="text-yellow-500">★★★☆☆</span>
+          </div>
         {% endfor %}
       </div>
     </section>
   </aside>
+</div>
+
+<!-- Bottom Full-Width Projects Row -->
+<div class="max-w-full mx-auto mt-6 p-6 bg-white dark:bg-gray-900 shadow-md rounded-xl border border-gray-300 dark:border-gray-700">
+  <h2 class="section-title">Projects</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 section-content">
+    {% for project in page.cvdata.projects %}
+      <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded border border-gray-200 dark:border-gray-700">
+        <strong class="block text-blue-800 dark:text-blue-200">{{ project.name }}</strong>
+        <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">{{ project.description }}</p>
+        <a href="{{ project.url }}" class="text-xs text-blue-500 hover:underline mt-1 block">🔗 View Project</a>
+      </div>
+    {% endfor %}
+  </div>
 </div>
