@@ -6,8 +6,8 @@ layout: default
 <style>
   @media print {
     @page { 
-      margin: 0.5in;
-      size: A4 portrait;
+      margin: 0.4in;
+      /* size: A4 portrait; */
     }
     body { 
       -webkit-print-color-adjust: exact !important;
@@ -20,18 +20,30 @@ layout: default
     .cv-container { 
       padding: 0 !important;
       margin: 0 !important;
-      max-width: 210mm !important;
+      max-width: 100% !important;
     }
     .avoid-break { break-inside: avoid; }
+    /* Remove forced page break */
+    /* .page-break { page-break-before: always; } */
     .executive-border { border-color: #1e293b !important; }
+    
+    /* Adjust spacing to maximize page usage */
+    section {
+      margin-top: 0.5rem !important;
+    }
+    
+    /* Allow breaking between major sections if needed */
+    .space-y-12 > div {
+      margin-top: 1rem !important;
+    }
   }
 </style>
 
 <div class="cv-container container mx-auto px-4 py-8">
-  <article class="max-w-[210mm] mx-auto">
+  <article class=" mx-auto">
     <!-- Executive Header -->
     <header class="bg-slate-900 dark:bg-slate-800 text-white rounded-xl p-8 shadow-xl avoid-break">
-      <div class="max-w-3xl mx-auto">
+      <div class=" mx-auto">
         <h1 class="text-4xl font-serif font-bold tracking-tight">
           {{ page.cvdata.personal.name }}
         </h1>
@@ -67,8 +79,8 @@ layout: default
     </header>
 
     <!-- Executive Summary -->
-    <section class="mt-8 bg-white/95 dark:bg-gray-800/95 rounded-xl p-8 shadow-lg backdrop-blur-sm border-l-4 executive-border border-slate-900 dark:border-slate-700 avoid-break">
-      <div class="max-w-3xl mx-auto">
+    <section class="mt-8 bg-white/95 dark:bg-gray-800/95 rounded-xl p-8 shadow-lg backdrop-blur-sm border-l-4 executive-border border-slate-900 dark:border-slate-700">
+      <div class="max-w-full mx-auto">
         <h2 class="text-2xl font-serif font-semibold text-slate-900 dark:text-white mb-4">Executive Summary</h2>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
           {{ page.cvdata.professional_summary }}
@@ -77,8 +89,8 @@ layout: default
     </section>
 
     <!-- Core Competencies -->
-    <section class="mt-6 bg-white/95 dark:bg-gray-800/95 rounded-xl p-8 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
-      <div class="max-w-3xl mx-auto">
+    <section class="mt-6 bg-white/95 dark:bg-gray-800/95 rounded-xl p-8 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30">
+      <div class="max-w-full mx-auto">
         <h2 class="text-2xl font-serif font-semibold text-slate-900 dark:text-white mb-6">Core Competencies</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
           {% for skill in page.cvdata.skills.core %}
@@ -92,8 +104,8 @@ layout: default
     </section>
 
     <!-- Professional Experience -->
-    <section class="mt-6 bg-white/95 dark:bg-gray-800/95 rounded-xl p-8 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
-      <div class="max-w-3xl mx-auto">
+    <section class="mt-6 bg-white/95 dark:bg-gray-800/95 rounded-xl p-8 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30">
+      <div class="max-w-full mx-auto">
         <h2 class="text-2xl font-serif font-semibold text-slate-900 dark:text-white mb-8">Leadership Experience</h2>
         <div class="space-y-12">
           {% for exp in page.cvdata.experience %}
@@ -120,8 +132,8 @@ layout: default
     </section>
 
     <!-- Strategic Initiatives -->
-    <section class="mt-6 bg-white/95 dark:bg-gray-800/95 rounded-xl p-8 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
-      <div class="max-w-3xl mx-auto">
+    <section class="mt-6 bg-white/95 dark:bg-gray-800/95 rounded-xl p-8 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30">
+      <div class="max-w-full mx-auto">
         <h2 class="text-2xl font-serif font-semibold text-slate-900 dark:text-white mb-6">Strategic Initiatives</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           {% for project in page.cvdata.projects %}
@@ -142,8 +154,8 @@ layout: default
     </section>
 
     <!-- Education -->
-    <section class="mt-6 bg-white/95 dark:bg-gray-800/95 rounded-xl p-8 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
-      <div class="max-w-3xl mx-auto">
+    <section class="mt-6 bg-white/95 dark:bg-gray-800/95 rounded-xl p-8 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30">
+      <div class="max-w-full mx-auto">
         <h2 class="text-2xl font-serif font-semibold text-slate-900 dark:text-white mb-6">Education</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           {% for edu in page.cvdata.education %}
@@ -158,8 +170,8 @@ layout: default
     </section>
 
     <!-- Technical Expertise -->
-    <section class="mt-6 bg-white/95 dark:bg-gray-800/95 rounded-xl p-8 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
-      <div class="max-w-3xl mx-auto">
+    <section class="mt-6 bg-white/95 dark:bg-gray-800/95 rounded-xl p-8 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30">
+      <div class="max-w-full mx-auto">
         <h2 class="text-2xl font-serif font-semibold text-slate-900 dark:text-white mb-6">Technical Expertise</h2>
         <div class="flex flex-wrap gap-2">
           {% for tool in page.cvdata.skills.tools %}
@@ -171,4 +183,4 @@ layout: default
       </div>
     </section>
   </article>
-</div> 
+</div>

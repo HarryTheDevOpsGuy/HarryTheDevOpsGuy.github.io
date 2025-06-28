@@ -6,8 +6,8 @@ layout: default
 <style>
   @media print {
     @page { 
-      margin: 0.5in;
-      size: A4 portrait;
+      margin: 0.4in;
+      /* size: A4 portrait; */
     }
     body { 
       -webkit-print-color-adjust: exact !important;
@@ -20,7 +20,7 @@ layout: default
     .cv-container { 
       padding: 0 !important;
       margin: 0 !important;
-      max-width: 210mm !important;
+      max-width: 100% !important;
     }
     .avoid-break { break-inside: avoid; }
     .section-border { border-color: #2563eb !important; }
@@ -28,10 +28,10 @@ layout: default
 </style>
 
 <div class="cv-container container mx-auto px-4 py-8">
-  <article class="max-w-[210mm] mx-auto bg-white/95 dark:bg-gray-800/95 rounded-xl shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30">
+  <article class=" mx-auto bg-white/95 dark:bg-gray-800/95 rounded-xl shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30">
     <!-- Classic Header -->
     <header class="p-8 border-b-4 section-border border-primary-600 dark:border-primary-500 avoid-break">
-      <div class="max-w-4xl mx-auto">
+      <div class="max-w-full mx-auto">
         <div class="flex flex-col md:flex-row items-start gap-8">
           <div class="flex-grow">
             <h1 class="text-4xl font-serif font-bold text-gray-900 dark:text-white">
@@ -76,7 +76,7 @@ layout: default
 
     <div class="p-8 space-y-8">
       <!-- Professional Summary -->
-      <section class="max-w-4xl mx-auto avoid-break">
+      <section class="max-w-full mx-auto avoid-break">
         <h2 class="text-xl font-serif font-semibold text-gray-900 dark:text-white border-b-2 section-border border-primary-600 dark:border-primary-500 pb-2 mb-4">
           Professional Summary
         </h2>
@@ -86,7 +86,7 @@ layout: default
       </section>
 
       <!-- Skills Section -->
-      <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="max-w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- Core Skills -->
         <section class="avoid-break">
           <h2 class="text-xl font-serif font-semibold text-gray-900 dark:text-white border-b-2 section-border border-primary-600 dark:border-primary-500 pb-2 mb-4">
@@ -113,7 +113,7 @@ layout: default
       </div>
 
       <!-- Professional Experience -->
-      <section class="max-w-4xl mx-auto avoid-break">
+      <section class="max-w-full mx-auto avoid-break">
         <h2 class="text-xl font-serif font-semibold text-gray-900 dark:text-white border-b-2 section-border border-primary-600 dark:border-primary-500 pb-2 mb-6">
           Professional Experience
         </h2>
@@ -138,7 +138,7 @@ layout: default
       </section>
 
       <!-- Notable Projects -->
-      <section class="max-w-4xl mx-auto avoid-break">
+      <section class="max-w-full mx-auto avoid-break">
         <h2 class="text-xl font-serif font-semibold text-gray-900 dark:text-white border-b-2 section-border border-primary-600 dark:border-primary-500 pb-2 mb-6">
           Notable Projects
         </h2>
@@ -157,7 +157,7 @@ layout: default
       </section>
 
       <!-- Education -->
-      <section class="max-w-4xl mx-auto avoid-break">
+      <section class="max-w-full mx-auto avoid-break">
         <h2 class="text-xl font-serif font-semibold text-gray-900 dark:text-white border-b-2 section-border border-primary-600 dark:border-primary-500 pb-2 mb-4">
           Education
         </h2>
@@ -175,4 +175,4 @@ layout: default
       </section>
     </div>
   </article>
-</div> 
+</div>

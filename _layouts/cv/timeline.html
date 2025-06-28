@@ -6,8 +6,8 @@ layout: default
 <style>
   @media print {
     @page { 
-      margin: 0.5in;
-      size: A4 portrait;
+      margin: 0.4in;
+      /* size: A4 portrait; */
     }
     body { 
       -webkit-print-color-adjust: exact !important;
@@ -20,7 +20,7 @@ layout: default
     .cv-container { 
       padding: 0 !important;
       margin: 0 !important;
-      max-width: 210mm !important;
+      max-width: 100% !important;
     }
     .avoid-break { break-inside: avoid; }
     .timeline-dot { 
@@ -34,7 +34,7 @@ layout: default
 </style>
 
 <div class="cv-container container mx-auto px-4 py-8">
-  <article class="max-w-[210mm] mx-auto">
+  <article class=" mx-auto">
     <!-- Timeline Header -->
     <header class="bg-gradient-to-br from-primary-600 to-purple-700 rounded-xl p-8 text-white avoid-break">
       <div class="flex flex-col md:flex-row items-center gap-6">
@@ -200,4 +200,4 @@ layout: default
       </div>
     </div>
   </article>
-</div> 
+</div>

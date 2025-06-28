@@ -5,15 +5,15 @@ layout: default
 <!-- Print Styles -->
 <style>
   @media print {
-    @page { margin: 0.5in; size: A4; }
+    @page { margin: 0.4in; /* size: A4; */ }
     body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
     header[role="banner"], footer[role="contentinfo"] { display: none !important; }
-    .cv-container { padding: 0 !important; margin: 0 !important; }
+    .cv-container { padding: 0 !important; margin: 0 !important; max-width: 100% !important; }
   }
 </style>
 
 <div class="cv-container container mx-auto px-4 py-8">
-  <div class="max-w-7xl mx-auto bg-white/95 dark:bg-gray-800/95 rounded-xl shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30">
+  <div class="max-w-full mx-auto bg-white/95 dark:bg-gray-800/95 rounded-xl shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 p-8">
       <!-- Left Column -->
       <div class="space-y-6">
@@ -140,4 +140,4 @@ layout: default
       </div>
     </div>
   </div>
-</div> 
+</div>

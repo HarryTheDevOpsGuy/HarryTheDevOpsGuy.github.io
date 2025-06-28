@@ -1,146 +1,146 @@
 personal:
-  name: "Hari Prasad"
-  title: "CI/CD Specialist"
+  name: Hari Prasad
+  title: CI/CD Specialist
   avatar: /assets/image/hari-profile.jpeg
   resume_image: /assets/image/cv-preview/placeholder.png
   contact:
-    phone: "7503721297"
-    email: "HarrytheDevOpsGuy@gmail.com"
+    phone: 7503721297
+    email: HarrytheDevOpsGuy@gmail.com
   social:
-    linkedin: "https://www.linkedin.com/in/hari-prasad-verma-19b948154"
-    github: "https://github.com/HarryTheDevOpsGuy"
-    portfolio: "https://harrythedevopsguy.github.io"
+    linkedin: https://www.linkedin.com/in/hari-prasad-verma-19b948154
+    github: https://github.com/HarryTheDevOpsGuy
+    portfolio: https://harrythedevopsguy.github.io
 
 professional_summary: |
   11+ years of experience in DevOps engineering, specializing in cloud automation, CI/CD pipelines, and infrastructure as code (IaC). Proficient in tools like Terraform, Ansible, Packer, Kubernetes, Docker, Jenkins, and monitoring stacks (Prometheus, ELK). Skilled in designing scalable, secure, and highly available systems. Strong collaboration skills with a focus on bridging the gap between development and operations.
 
 technical_skills:
-  - category: "Infrastructure as Code (IaC)"
-    description: "Provision, deploy, and manage entire infrastructure as code with Terraform, Ansible, Jenkins, Groovy and shell script."
-  - category: "CI/CD Automation"
-    description: "Proficient in creating and maintaining automated CI/CD pipelines using Jenkins, ArgoCD, and GitHub Actions for Java, Nodejs, php, python etc applications."
-  - category: "Cloud Infrastructure Management"
-    description: "Expertise in managing AWS services like EC2, S3, RDS, VPC, IAM, CloudWatch, Secrets, Route 53, Lambda, and more."
-  - category: "Configuration Management"
-    description: "Strong experience with Ansible, Terraform, and Packer for automating system configuration, provisioning, and infrastructure management."
-  - category: "Containerization & Orchestration"
-    description: "Hands-on experience with Docker, Kubernetes, Helm, Karpenter and EKS for containerized application deployment and management."
-  - category: "Security & Compliance"
-    description: "Knowledge in security best practices, including CIS Linux hardening, vulnerability patching and managing sensitive data with Vault."
-  - category: "Automation & Scripting"
-    description: "Proficiency in scripting to develop custom tool to automate manual and repeated task."
-  - category: "Monitoring & Logging"
-    description: "Experienced in setting up and managing monitoring/logging systems using Prometheus, Grafana, ELK Stack, Telegraf, Prometheus Exporters and CloudWatch."
-  - category: "Web & Application Servers"
-    description: "Hands-on experience with Nginx, Apache, Tomcat, OpenResty and Springboot."
+  - category: Infrastructure as Code (IaC)
+    description: Provision, deploy, and manage entire <b>infrastructure as code</b> with Terraform, Ansible, Jenkins, Groovy and shell script.
+  - category: CI/CD Automation
+    description: Proficient in creating and maintaining automated CI/CD pipelines using Jenkins, ArgoCD, and GitHub Actions for Java, Nodejs, php, python etc applications.
+  - category: Cloud Infrastructure Management
+    description: Expertise in managing AWS services like EC2, S3, RDS, VPC, IAM, CloudWatch, Secrets, Route 53, Lambda, and more.
+  - category: Configuration Management
+    description: Strong experience with Ansible, Terraform, and Packer for automating system configuration, provisioning, and infrastructure management.
+  - category: Containerization & Orchestration
+    description: Hands-on experience with Docker, Kubernetes, Helm, Karpenter and EKS for containerized application deployment and management.
+  - category: Security & Compliance
+    description: Knowledge in security best practices, including CIS Linux hardening, vulnerability patching and managing sensitive data with Vault.
+  - category: Automation & Scripting
+    description: Proficiency in scripting to develop custom tool to automate manual and repeated task.
+  - category: Monitoring & Logging
+    description: Experienced in setting up and managing monitoring/logging systems using Prometheus, Grafana, ELK Stack, Telegraf, Prometheus Exporters and CloudWatch.
+  - category: Web & Application Servers
+    description: Hands-on experience with Nginx, Apache, Tomcat, OpenResty and Springboot.
 
 experience:
-  - company: "One97 Communications Limited"
-    position: "Sr. DevOps Lead"
-    location: "Noida"
-    period: "Mar-20 – Present"
+  - company: One97 Communications Limited
+    position: Sr. DevOps Lead
+    location: Noida
+    period: Mar-20 – Present
     achievements:
-      - "Developed BG Deployer a fully automated blue-green deployment pipeline with zero downtime using Jenkins, AWS ALB, ASG, and CloudWatch."
-      - "Managed infrastructure as Code, leveraging Terraform, Ansible, Packer, and AWS."
-      - "Built golden AMIs with Packer, ensuring timely security patching and Linux hardening."
-      - "Designed and maintained CI/CD pipelines, enabling automated deployments for prod & nonprod."
-      - "Configured Prometheus, Grafana, and ELK Stack for comprehensive monitoring and logging."
-      - "Led a team of DevOps engineers, providing mentorship and support."
-      - "Managed EKS clusters and CI/CD pipelines as code using ArgoCD, Helm, and Helmfile."
-      - "Developed Lua script & Integrated with Openresty get Advanced Requests metrics(5xx,4xx,2xx,latency,etc)."
-      - "Mastery in Karpenter for dynamic EKS worker node management to reduce costs."
-      - "Built & implemented dynamic Linux user management with Ansible Role."
+      - Developed BG Deployer a fully automated blue-green deployment pipeline with zero downtime using Jenkins, AWS ALB, ASG, and CloudWatch.
+      - Managed infrastructure as Code, leveraging Terraform, Ansible, Packer, and AWS.
+      - Built golden AMIs with Packer, ensuring timely security patching and Linux hardening.
+      - Designed and maintained CI/CD pipelines, enabling automated deployments for prod & nonprod.
+      - Configured Prometheus, Grafana, and ELK Stack for comprehensive monitoring and logging.
+      - Led a team of DevOps engineers, providing mentorship and support.
+      - Managed EKS clusters and CI/CD pipelines as code using ArgoCD, Helm, and Helmfile.
+      - Developed Lua script & Integrated with Openresty get Advanced Requests metrics(5xx,4xx,2xx,latency,etc).
+      - Mastery in Karpenter for dynamic EKS worker node management to reduce costs.
+      - Built & implemented dynamic Linux user management with Ansible Role.
 
-  - company: "Ziploan"
-    position: "Sr. DevOps Engineer"
-    location: "Delhi"
-    period: "Oct-19 – Mar-20"
+  - company: Ziploan
+    position: Sr. DevOps Engineer
+    location: Delhi
+    period: Oct-19 – Mar-20
     achievements:
-      - "Migrated on-premises applications to AWS, cutting hosting costs by 50%."
-      - "Implemented blue-green deployments with ALB, ASG, and Jenkins."
-      - "Optimized centralized logging with ELK Stack for real-time data analysis."
-      - "Automated Application deployments using Jenkins, reducing setup time by 60%."
-      - "Wrote Ansible roles to automate Linux setup and software installations."
-      - "Developed Jenkins pipelines using Groovy scripts for seamless CI/CD."
+      - Migrated on-premises applications to AWS, cutting hosting costs by 50%.
+      - Implemented blue-green deployments with ALB, ASG, and Jenkins.
+      - Optimized centralized logging with ELK Stack for real-time data analysis.
+      - Automated Application deployments using Jenkins, reducing setup time by 60%.
+      - Wrote Ansible roles to automate Linux setup and software installations.
+      - Developed Jenkins pipelines using Groovy scripts for seamless CI/CD.
 
-  - company: "KiwiTech"
-    position: "DevOps Engineer"
-    location: "Noida"
-    period: "Nov-17 – Oct-19"
+  - company: KiwiTech
+    position: DevOps Engineer
+    location: Noida
+    period: Nov-17 – Oct-19
     achievements:
-      - "Managed 100+ Linux servers supporting mission-critical applications."
-      - "Automated deployments with Jenkins and Ansible for consistency and speed."
-      - "Set up AWS CloudWatch, SNS, and Lambda for monitoring and alerting."
-      - "Built new infrastructure from scratch, ensuring seamless go-live support."
-      - "Troubleshot high-priority production issues under strict SLAs."
+      - Managed 100+ Linux servers supporting mission-critical applications.
+      - Automated deployments with Jenkins and Ansible for consistency and speed.
+      - Set up AWS CloudWatch, SNS, and Lambda for monitoring and alerting.
+      - Built new infrastructure from scratch, ensuring seamless go-live support.
+      - Troubleshot high-priority production issues under strict SLAs.
 
-  - company: "Xeliumtech Solutions"
-    position: "Linux System Administrator (DevOps)"
-    location: "Gurugram"
-    period: "Dec-15 – Nov-17"
+  - company: Xeliumtech Solutions
+    position: Linux Administrator (DevOps)
+    location: Gurugram
+    period: Dec-15 – Nov-17
     achievements:
-      - "Configured virtual machines to host multiple websites with LAMP stack architecture."
-      - "Administered GitLab servers, managing repositories and version control."
-      - "Maintained non-production infrastructure to support testing and development."
-      - "Developed automation scripts to reduce manual tasks and improve operational efficiency."
-      - "Implemented security best practices such as SSL configurations and user management."
-      - "Created AWS infrastructure (EC2, SG, Keypair, S3, ALB, etc) using Terraform, Ansible."
-      - "Written Shell scripts to perform adhoc task on ubuntu servers."
-      - "Managed Multiple website on Single web servers with nginx."
+      - Configured virtual machines to host multiple websites with LAMP stack architecture.
+      - Administered GitLab servers, managing repositories and version control.
+      - Maintained non-production infrastructure to support testing and development.
+      - Developed automation scripts to reduce manual tasks and improve operational efficiency.
+      - Implemented security best practices such as SSL configurations and user management.
+      - Created AWS infrastructure (EC2, SG, Keypair, S3, ALB, etc) using Terraform, Ansible.
+      - Written Shell scripts to perform adhoc task on ubuntu servers.
+      - Managed Multiple website on Single web servers with nginx.
 
-  - company: "Dental Council Of India (DCI)"
-    position: "Desktop Support Engineer"
-    location: "Delhi"
-    period: "Mar-13 – Dec-2015"
+  - company: Dental Council Of India (DCI)
+    position: Desktop Support Engineer
+    location: Delhi
+    period: Mar-13 – Dec-2015
     achievements:
-      - "Supported desktop and laptop users, resolving technical issues promptly."
-      - "Managed MS SQL Server and ensured smooth operation of Windows applications."
-      - "Diagnosed and resolved network connectivity issues in office systems."
-      - "Performed regular maintenance and updates on Windows and Linux servers to ensure optimal performance."
-      - "Implemented backup and recovery strategies for critical SQL Server databases."
+      - Supported desktop and laptop users, resolving technical issues promptly.
+      - Managed MS SQL Server and ensured smooth operation of Windows applications.
+      - Diagnosed and resolved network connectivity issues in office systems.
+      - Performed regular maintenance and updates on Windows and Linux servers to ensure optimal performance.
+      - Implemented backup and recovery strategies for critical SQL Server databases.
 
 skills:
   core:
-    - "Terraform"
-    - "Jenkins"
-    - "AWS"
-    - "Kubernetes"
-    - "Ansible"
+    - Terraform
+    - Jenkins
+    - AWS
+    - Kubernetes
+    - Ansible
+    - Nginx/OpenResty
   tools:
-    - "Telegraf"
-    - "Redis"
-    - "Shell Script"
-    - "Helm"
-    - "ArgoCD"
-    - "Karpenter"
-    - "ELK Stack"
-    - "Packer"
+    - Telegraf
+    - Redis
+    - Shell Scripting
+    - Helm
+    - ArgoCD
+    - Karpenter
+    - ELK Stack
+    - Packer
+    - Groovy
   additional:
-    - "Nexus"
-    - "Nginx"
-    - "Groovy"
-    - "Kafka"
-    - "Helmfile"
-    - "OpenResty"
-    - "Prometheus"
-    - "Grafana"
-    - "Python"
-    - "GitHub Actions"
+    - Nexus
+    - Kafka
+    - Helmfile
+    - Prometheus
+    - Grafana
+    - Python
+    - GitHub Actions
 
 education:
-  - degree: "B.Com"
-    institution: "DU"
+  - degree: "Bachelor of Commerce (B.Com)"
+    institution: "University of Delhi (DU)"
     location: "Delhi"
     year: "2014"
-  - degree: "12th"
-    institution: "CBSE"
+  - degree: "12th Standard"
+    institution: "Central Board of Secondary Education (CBSE)"
     location: "Delhi"
     year: "2010"
-  - degree: "10th"
-    institution: "CBSE"
+  - degree: "10th Standard"
+    institution: "Central Board of Secondary Education (CBSE)"
     location: "Delhi"
     year: "2008"
-  - degree: "H/W & N/W"
+  - degree: "Hardware & Networking Certification"
+    institution: "IACM Smart Learn Pvt ltd"
     location: "Delhi"
     year: "2013"
 
@@ -150,23 +150,23 @@ languages:
 
 projects:
   - name: "BG Deployer"
-    description: "Shell-based Blue-Green Deployment solution."
-    url: https://harrythedevopsguy.github.io/articles/docs/apps/bgdeployer
+    description: "Shell-based Blue-Green Deployment automation tool for zero-downtime deployments using AWS ALB, ASG, CloudWatch, and Jenkins."
+    url: https://harrythedevopsguy.github.io/articles/docs/apps/bgdeployer 
   - name: "mCert"
-    description: "Utility to monitor SSL certificate expiration and notify via Slack, Telegraf, and email."
-    url: https://harrythedevopsguy.github.io/articles/docs/apps/mcert
+    description: "Utility to monitor SSL certificate expiration and send alerts via Slack, email, and Telegraf."
+    url: https://harrythedevopsguy.github.io/articles/docs/apps/mcert 
   - name: "mTracker"
-    description: "Utility to monitor Linux user activity and send Slack notifications."
-    url: https://github.com/HarryTheDevOpsGuy/mTracker
+    description: "Linux user activity monitoring tool that sends real-time notifications via Slack."
+    url: https://github.com/HarryTheDevOpsGuy/mTracker 
   - name: "mWatcher"
-    description: "Monitor Linux server health (CPU, Memory, Disk) and notify via Slack."
-    url: https://github.com/HarryTheDevOpsGuy/mWatcher
+    description: "Monitors Linux server health (CPU, Memory, Disk usage) and triggers alerts via Slack or email."
+    url: https://github.com/HarryTheDevOpsGuy/mWatcher 
   - name: "gCrypt"
-    description: "Git-crypt wrapper for secure repo data encryption and user access control."
-    url: https://github.com/HarryTheDevOpsGuy/gCrypt
+    description: "Git-crypt wrapper for encrypting sensitive files in Git repositories and managing user access securely."
+    url: https://github.com/HarryTheDevOpsGuy/gCrypt 
   - name: "mStatus"
-    description: "Utility to check SSL and website status with instant notifications on failures."
-    url: https://github.com/HarryTheDevOpsGuy/mStatus
+    description: "Tool to check SSL certificate status and website availability with instant failure alerts."
+    url: https://github.com/HarryTheDevOpsGuy/mStatus 
   - name: "mSend"
-    description: "Utility to send HTML email notifications."
-    url: https://github.com/HarryTheDevOpsGuy/mSend
+    description: "Utility for sending HTML-formatted emails programmatically via CLI or automation scripts."
+    url: https://github.com/HarryTheDevOpsGuy/mSend 

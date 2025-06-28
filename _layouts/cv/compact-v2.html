@@ -1,0 +1,136 @@
+---
+layout: default
+---
+
+<!-- Print Styles -->
+<style>
+  @media print {
+    @page {
+      margin: 0.5in;
+    }
+    body {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    header[role="banner"],
+    footer[role="contentinfo"] {
+      display: none !important;
+    }
+    .resume-container {
+      padding: 0 !important;
+      margin: 0 !important;
+      max-width: 100% !important;
+    }
+
+    * {
+      break-inside: auto !important;
+    }
+  }
+</style>
+
+<div class="resume-container container mx-auto px-4 py-8">
+  <article class="grid grid-cols-1 md:grid-cols-3 gap-6 bg-white/95 dark:bg-gray-900/95 rounded-xl shadow-md border border-gray-200/50 dark:border-gray-700/30">
+    <!-- Left Sidebar -->
+    <aside class="md:col-span-1 p-6 border-r border-gray-200 dark:border-gray-700">
+      <div class="space-y-4">
+        <div class="text-center">
+          <img src="{{ page.cvdata.personal.avatar }}" alt="Avatar" class="w-24 h-24 rounded-full mx-auto border-2 border-blue-400" />
+          <h1 class="mt-3 font-bold text-blue-800 dark:text-blue-300">
+            {{ page.cvdata.personal.name }}
+          </h1>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">{{ page.cvdata.personal.title }}</p>
+        </div>
+        <div>
+          <h2 class="font-semibold text-blue-700 dark:text-blue-300 text-sm uppercase">Contact</h2>
+          <p class="text-sm text-gray-700 dark:text-gray-300">
+            <a href="mailto:{{ page.cvdata.personal.contact.email }}" class="hover:underline block">{{ page.cvdata.personal.contact.email }}</a>
+            <span class="block">{{ page.cvdata.personal.contact.phone }}</span>
+          </p>
+        </div>
+        <div>
+          <h2 class="font-semibold text-blue-700 dark:text-blue-300 text-sm uppercase">Social</h2>
+          <ul class="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+            {% if page.cvdata.personal.social.linkedin %}
+              <li><a href="{{ page.cvdata.personal.social.linkedin }}" class="hover:underline">LinkedIn</a></li>
+            {% endif %}
+            {% if page.cvdata.personal.social.github %}
+              <li><a href="{{ page.cvdata.personal.social.github }}" class="hover:underline">GitHub</a></li>
+            {% endif %}
+            {% if page.cvdata.personal.social.portfolio %}
+              <li><a href="{{ page.cvdata.personal.social.portfolio }}" class="hover:underline">Portfolio</a></li>
+            {% endif %}
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-semibold text-blue-700 dark:text-blue-300 text-sm uppercase">Languages</h2>
+          <ul class="text-sm text-gray-700 dark:text-gray-300 list-disc ml-4">
+            {% for lang in page.cvdata.languages %}
+              <li>{{ lang }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right Content -->
+    <section class="md:col-span-2 p-6 space-y-6">
+      <section>
+        <h2 class="font-semibold text-blue-700 dark:text-blue-300 text-lg">Professional Summary</h2>
+        <p class="text-gray-700 dark:text-gray-300 text-sm">
+          {{ page.cvdata.professional_summary }}
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-semibold text-blue-700 dark:text-blue-300 text-lg">Technical Skills</h2>
+        <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300 list-disc ml-5">
+          {% for skill in page.cvdata.technical_skills %}
+            <li><strong>{{ skill.category }}:</strong> {{ skill.description }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-semibold text-blue-700 dark:text-blue-300 text-lg">Experience</h2>
+        {% for exp in page.cvdata.experience %}
+          <div class="mb-4">
+            <div class="flex justify-between">
+              <div><strong>{{ exp.position }}</strong> @ {{ exp.company }}</div>
+              <div class="text-sm text-gray-500">{{ exp.period }} — {{ exp.location }}</div>
+            </div>
+            <ul class="list-disc ml-5 text-sm text-gray-700 dark:text-gray-300 mt-1">
+              {% for achievement in exp.achievements %}
+                <li>{{ achievement }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endfor %}
+      </section>
+
+      <section>
+        <h2 class="font-semibold text-blue-700 dark:text-blue-300 text-lg">Projects</h2>
+        <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+          {% for project in page.cvdata.projects %}
+            <li>
+              <strong>{{ project.name }}</strong>: {{ project.description }}<br/>
+              <a href="{{ project.url }}" class="text-blue-500 hover:underline">{{ project.url }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-semibold text-blue-700 dark:text-blue-300 text-lg">Education</h2>
+        <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+          {% for edu in page.cvdata.education %}
+            <li>
+              <strong>{{ edu.degree }}</strong><br/>
+              <span>{{ edu.institution }}</span> - {{ edu.location }}<br/>
+              <span class="text-gray-500">{{ edu.year }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    </section>
+  </article>
+</div>

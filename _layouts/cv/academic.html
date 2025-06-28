@@ -6,8 +6,8 @@ layout: default
 <style>
   @media print {
     @page { 
-      margin: 0.5in;
-      size: A4 portrait;
+      margin: 0.4in;
+      /* size: A4 portrait; */
     }
     body { 
       -webkit-print-color-adjust: exact !important;
@@ -20,7 +20,7 @@ layout: default
     .cv-container { 
       padding: 0 !important;
       margin: 0 !important;
-      max-width: 210mm !important;
+      max-width: 100% !important;
     }
     .avoid-break { break-inside: avoid; }
     .academic-border { border-color: #4f46e5 !important; }
@@ -28,10 +28,10 @@ layout: default
 </style>
 
 <div class="cv-container container mx-auto px-4 py-8">
-  <article class="max-w-[210mm] mx-auto">
+  <article class=" mx-auto">
     <!-- Academic Header -->
     <header class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-8 shadow-lg backdrop-blur-sm border-b-4 academic-border border-indigo-600 dark:border-indigo-500 avoid-break">
-      <div class="max-w-3xl mx-auto text-center">
+      <div class="max-w-full mx-auto text-center">
         <h1 class="text-4xl font-serif font-bold text-gray-900 dark:text-white">
           {{ page.cvdata.personal.name }}
         </h1>
@@ -82,7 +82,7 @@ layout: default
           <!-- Add ORCID -->
           <a href="#" class="text-gray-400 hover:text-indigo-600 transition-colors">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm7.369 19.369a10.35 10.35 0 01-14.738 0A10.35 10.35 0 014.631 4.631a10.35 10.35 0 0114.738 0 10.35 10.35 0 010 14.738zM8.999 11.999v6h2v-6h-2zm0-4v2h2v-2h-2zm4 4v6h2v-6h-2zm0-4v2h2v-2h-2z"/>
+              <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm7.369 19.369a10.35 10.35 0 01-14.738 0A10.35 10.35 0 014.631 4.631a10.35 10.35 0 0114.738 0 10.35 10.35 0 010 14.738zM8.999 11.999v6h2v-6h-2zm0-4v2h2v-2h-2zm4 4v6h2v-6h-2zm0-4v2h2v-2h-2zm4 4v6h2v-6h-2zm0-4v2h2v-2h-2z"/>
             </svg>
           </a>
         </div>
@@ -91,7 +91,7 @@ layout: default
 
     <!-- Research Interests -->
     <section class="mt-8 bg-white/95 dark:bg-gray-800/95 rounded-xl p-8 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
-      <div class="max-w-3xl mx-auto">
+      <div class="max-w-full mx-auto">
         <h2 class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-4">Research Interests</h2>
         <div class="flex flex-wrap gap-2">
           {% for skill in page.cvdata.skills.core %}
@@ -105,7 +105,7 @@ layout: default
 
     <!-- Education -->
     <section class="mt-6 bg-white/95 dark:bg-gray-800/95 rounded-xl p-8 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
-      <div class="max-w-3xl mx-auto">
+      <div class="max-w-full mx-auto">
         <h2 class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-6">Education</h2>
         <div class="space-y-6">
           {% for edu in page.cvdata.education %}
@@ -123,7 +123,7 @@ layout: default
 
     <!-- Publications -->
     <section class="mt-6 bg-white/95 dark:bg-gray-800/95 rounded-xl p-8 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
-      <div class="max-w-3xl mx-auto">
+      <div class="max-w-full mx-auto">
         <h2 class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-6">Publications</h2>
         <div class="space-y-6">
           {% for project in page.cvdata.projects %}
@@ -148,7 +148,7 @@ layout: default
 
     <!-- Research Experience -->
     <section class="mt-6 bg-white/95 dark:bg-gray-800/95 rounded-xl p-8 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
-      <div class="max-w-3xl mx-auto">
+      <div class="max-w-full mx-auto">
         <h2 class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-6">Research Experience</h2>
         <div class="space-y-8">
           {% for exp in page.cvdata.experience %}
@@ -176,7 +176,7 @@ layout: default
 
     <!-- Technical Skills -->
     <section class="mt-6 bg-white/95 dark:bg-gray-800/95 rounded-xl p-8 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
-      <div class="max-w-3xl mx-auto">
+      <div class="max-w-full mx-auto">
         <h2 class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-6">Technical Skills</h2>
         <div class="flex flex-wrap gap-2">
           {% for tool in page.cvdata.skills.tools %}
@@ -188,4 +188,4 @@ layout: default
       </div>
     </section>
   </article>
-</div> 
+</div>

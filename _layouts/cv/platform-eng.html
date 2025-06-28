@@ -6,8 +6,8 @@ layout: default
 <style>
   @media print {
     @page { 
-      margin: 0.5in;
-      size: A4 portrait;
+      margin: 0.4in;
+      /* size: A4 portrait; */
     }
     body { 
       -webkit-print-color-adjust: exact !important;
@@ -20,7 +20,7 @@ layout: default
     .cv-container { 
       padding: 0 !important;
       margin: 0 !important;
-      max-width: 210mm !important;
+      max-width: 100% !important;
     }
     .avoid-break { break-inside: avoid; }
     .platform-accent { 
@@ -31,10 +31,10 @@ layout: default
 </style>
 
 <div class="cv-container container mx-auto px-4 py-8">
-  <article class="max-w-[210mm] mx-auto">
+  <article class=" mx-auto">
     <!-- Platform Engineering Header -->
     <header class="platform-accent bg-gradient-to-r from-blue-800 to-indigo-900 text-white rounded-xl p-8 shadow-xl avoid-break">
-      <div class="max-w-3xl mx-auto">
+      <div class="max-w-full mx-auto">
         <div class="flex flex-col md:flex-row justify-between items-start gap-6">
           <div>
             <h1 class="text-3xl font-mono font-bold tracking-tight">
@@ -43,7 +43,7 @@ layout: default
             <p class="text-blue-300 mt-2 font-mono">
               {{ page.cvdata.personal.title }}
             </p>
-            <p class="mt-4 text-slate-300 max-w-2xl">
+            <p class="mt-4 text-slate-300 max-w-full">
               Platform Engineer specializing in developer experience, infrastructure automation, and scalable cloud-native architectures.
             </p>
           </div>
@@ -246,4 +246,4 @@ layout: default
       </div>
     </section>
   </article>
-</div> 
+</div>

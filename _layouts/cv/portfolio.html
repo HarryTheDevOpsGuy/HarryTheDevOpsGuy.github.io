@@ -6,8 +6,8 @@ layout: default
 <style>
   @media print {
     @page { 
-      margin: 0.5in;
-      size: A4 portrait;
+      margin: 0.4in;
+      /* size: A4 portrait; */
     }
     body { 
       -webkit-print-color-adjust: exact !important;
@@ -20,7 +20,7 @@ layout: default
     .cv-container { 
       padding: 0 !important;
       margin: 0 !important;
-      max-width: 210mm !important;
+      max-width: 100% !important;
     }
     .avoid-break { break-inside: avoid; }
     .portfolio-accent { 
@@ -31,7 +31,7 @@ layout: default
 </style>
 
 <div class="cv-container container mx-auto px-4 py-8">
-  <article class="max-w-[210mm] mx-auto">
+  <article class=" mx-auto">
     <!-- Portfolio Header -->
     <header class="portfolio-accent bg-slate-900 text-white rounded-xl overflow-hidden avoid-break">
       <div class="relative">
@@ -204,4 +204,4 @@ layout: default
       </div>
     </section>
   </article>
-</div> 
+</div>
