@@ -20,11 +20,11 @@ title: "Hari Prasad | Resume"
     }
   }
 
-  .section-title {
+  .cv-title {
     @apply text-blue-700 dark:text-blue-300 uppercase font-semibold text-xs tracking-widest border-b border-gray-300 dark:border-gray-700 pb-1 mb-2;
   }
 
-  .section-content {
+  .cv-content {
     @apply text-sm text-gray-700 dark:text-gray-300 space-y-2;
   }
 
@@ -49,16 +49,16 @@ title: "Hari Prasad | Resume"
 
     <!-- Summary -->
     <section>
-      <h2 class="section-title">Professional Summary</h2>
-      <div class="section-content">
+      <h2 class="cv-title">Professional Summary</h2>
+      <div class="cv-content">
         <p>{{ page.cvdata.professional_summary }}</p>
       </div>
     </section>
 
     <!-- Technical Skills -->
     <section>
-      <h2 class="section-title">Technical Skills</h2>
-      <div class="section-content grid grid-cols-1 md:grid-cols-2 gap-1">
+      <h2 class="cv-title">Technical Skills</h2>
+      <div class="cv-content grid grid-cols-1 md:grid-cols-2 gap-1">
         {% for skill in page.cvdata.technical_skills %}
           <div>
             <strong>{{ skill.category }}</strong><br>
@@ -70,8 +70,8 @@ title: "Hari Prasad | Resume"
 
     <!-- Experience -->
     <section>
-      <h2 class="section-title">Work Experience</h2>
-      <div class="section-content space-y-4">
+      <h2 class="cv-title">Work Experience</h2>
+      <div class="cv-content space-y-4">
         {% for job in page.cvdata.experience %}
           <div>
             <div class="flex justify-between items-center">
@@ -100,8 +100,8 @@ title: "Hari Prasad | Resume"
 
     <!-- Contact -->
     <section>
-      <h2 class="section-title">Contact</h2>
-      <div class="section-content space-y-1">
+      <h2 class="cv-title">Contact</h2>
+      <div class="cv-content space-y-1">
         <p><strong>Email:</strong> {{ page.cvdata.personal.contact.email }}</p>
         <p><strong>Phone:</strong> {{ page.cvdata.personal.contact.phone }}</p>
       </div>
@@ -109,8 +109,8 @@ title: "Hari Prasad | Resume"
 
     <!-- Social -->
     <section>
-      <h2 class="section-title">Social Links</h2>
-      <div class="section-content flex flex-wrap gap-2 text-sm">
+      <h2 class="cv-title">Social Links</h2>
+      <div class="cv-content flex flex-wrap gap-2 text-sm">
         <a href="{{ page.cvdata.personal.social.linkedin }}" class="badge bg-blue-100 text-blue-800 hover:bg-blue-200">🔗 LinkedIn</a>
         <a href="{{ page.cvdata.personal.social.github }}" class="badge bg-gray-100 text-gray-800 hover:bg-gray-200">💻 GitHub</a>
         <a href="{{ page.cvdata.personal.social.portfolio }}" class="badge bg-green-100 text-green-700 hover:bg-green-200">🌐 Portfolio</a>
@@ -119,8 +119,8 @@ title: "Hari Prasad | Resume"
 
     <!-- Education -->
     <section>
-      <h2 class="section-title">Education</h2>
-      <ul class="section-content space-y-1">
+      <h2 class="cv-title">Education</h2>
+      <ul class="cv-content space-y-1">
         {% for edu in page.cvdata.education %}
           <li>
             <strong>{{ edu.degree }}</strong><br>
@@ -132,8 +132,8 @@ title: "Hari Prasad | Resume"
 
     <!-- Languages -->
     <section>
-      <h2 class="section-title">Languages</h2>
-      <div class="section-content flex flex-wrap gap-2">
+      <h2 class="cv-title">Languages</h2>
+      <div class="cv-content flex flex-wrap gap-2">
         {% for lang in page.cvdata.languages %}
           <span class="badge bg-indigo-100 text-indigo-700">{{ lang }}</span>
         {% endfor %}
@@ -142,8 +142,8 @@ title: "Hari Prasad | Resume"
 
     <!-- Skill Ratings -->
     <section>
-      <h2 class="section-title">Core & Tooling</h2>
-      <div class="section-content space-y-1">
+      <h2 class="cv-title">Core & Tooling</h2>
+      <div class="cv-content space-y-1">
         {% for tool in page.cvdata.skills.core %}
           <div class="flex justify-between">
             <span>{{ tool }}</span>
@@ -169,8 +169,8 @@ title: "Hari Prasad | Resume"
 
 <!-- Bottom Full-Width Projects Row -->
 <div class="max-w-full mx-auto mt-6 p-6 bg-white dark:bg-gray-900 shadow-md rounded-xl border border-gray-300 dark:border-gray-700">
-  <h2 class="section-title">Projects</h2>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 section-content">
+  <h2 class="cv-title">Projects</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 cv-content">
     {% for project in page.cvdata.projects %}
       <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded border border-gray-200 dark:border-gray-700">
         <strong class="block text-blue-800 dark:text-blue-200">{{ project.name }}</strong>
