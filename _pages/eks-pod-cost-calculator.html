@@ -1,0 +1,119 @@
+---
+layout: default
+title: AWS EKS Pod Cost Calculator
+permalink: /tools/aws/pod-cost-calculator.html
+---
+
+  <div class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <!-- Header -->
+      <header class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">AWS EKS Pod Cost Calculator</h1>
+        <p class="text-lg text-gray-600 dark:text-gray-300">
+          Estimate monthly EKS costs based on pod-level CPU & memory usage and instance requirements.
+        </p>
+      </header>
+
+      <!-- Form -->
+      <form id="eksCostForm" class="bg-white dark:bg-gray-800 shadow-md rounded-xl p-6 space-y-6">
+        <div>
+          <label for="workerNode" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Worker Node Type</label>
+          <select id="workerNode" name="workerNode" required
+                  class="w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+            <!-- <option value="">-- Select Worker Node --</option> -->
+            {% for instance in site.data.tools.aws.instances %}
+              <option value="{{ instance.type }}" data-cpu="{{ instance.cpu }}" data-memory="{{ instance.memory }}" data-hourly="{{ instance.hourly }}">
+                {{ instance.type }} ({{ instance.cpu }} vCPU, {{ instance.memory }} GB RAM)
+              </option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div>
+            <label for="podCount" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Pod Count</label>
+            <input type="number" id="podCount" value="10" min="1" required
+                   class="w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+          </div>
+          <div>
+            <label for="cpuPerPod" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">CPU per Pod (vCPU)</label>
+            <input type="number" step="0.1" id="cpuPerPod" value="0.5" required
+                   class="w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+          </div>
+          <div>
+            <label for="memoryPerPod" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Memory per Pod (GB)</label>
+            <input type="number" step="0.1" id="memoryPerPod" value="1" required
+                   class="w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+          </div>
+          <div>
+            <label for="podCount" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Per Day Usage (Hours)</label>
+            <input type="number" id="perDayUsage" value="24" min="0" max="24" required
+                   class="w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+          </div>
+        </div>
+
+        <button type="submit"
+                class="w-full inline-flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
+          Calculate Cost
+        </button>
+      </form>
+
+      <!-- Result Section -->
+      <div id="resultSection" class="hidden mt-10">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-6 text-center">Estimated Cost Breakdown</h2>
+        
+        <!-- Summary Cards -->
+        <!-- <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+          <div class="bg-blue-50 dark:bg-gray-700 p-6 rounded-lg shadow-md border border-blue-100 dark:border-gray-600">
+            <h3 class="text-sm uppercase tracking-wider text-blue-600 dark:text-blue-400 font-semibold mb-2">Instance Type</h3>
+            <p class="text-xl font-semibold text-gray-900 dark:text-white" id="instanceType">-</p>
+          </div>
+          <div class="bg-green-50 dark:bg-gray-700 p-6 rounded-lg shadow-md border border-green-100 dark:border-gray-600">
+            <h3 class="text-sm uppercase tracking-wider text-green-600 dark:text-green-400 font-semibold mb-2">Total Pods</h3>
+            <p class="text-xl font-semibold text-gray-900 dark:text-white" id="totalPods">-</p>
+          </div>
+          <div class="bg-yellow-50 dark:bg-gray-700 p-6 rounded-lg shadow-md border border-yellow-100 dark:border-gray-600">
+            <h3 class="text-sm uppercase tracking-wider text-yellow-600 dark:text-yellow-400 font-semibold mb-2">Pods per Node</h3>
+            <p class="text-xl font-semibold text-gray-900 dark:text-white" id="podsPerNode">-</p>
+          </div>
+          <div class="bg-purple-50 dark:bg-gray-700 p-6 rounded-lg shadow-md border border-purple-100 dark:border-gray-600">
+            <h3 class="text-sm uppercase tracking-wider text-purple-600 dark:text-purple-400 font-semibold mb-2">Nodes Needed</h3>
+            <p class="text-xl font-semibold text-gray-900 dark:text-white" id="nodesNeeded">-</p>
+          </div>
+        </div> -->
+
+        <!-- Card Layout for Results -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Instance Cost Details -->
+          <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-4">Instance Cost Details</h3>
+            <ul class="space-y-2">
+              <li><strong>Instance Type:</strong> <span id="instanceTypeDetail">-</span></li>
+              <li><strong>Per Instance Monthly Cost:</strong> $<span id="perInstanceMonthlyCost">-</span></li>
+              <li><strong>Total Nodes Needed:</strong> <span id="nodesNeededDetail">-</span></li>
+            </ul>
+            <h3 class="text-xl font-bold mt-4 text-center">$<span id="monthlyInstanceCost">-</span> Monthly</h3>
+          </div>
+
+          <!-- Pods Cost Details -->
+          <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-4">Pods Cost Details</h3>
+            <ul class="space-y-2">
+              <li><strong>Required Resources:</strong> vCPU: <span id="cpuPerPodDetail">-</span>, Memory: <span id="memPerPodDetail">-</span> GB</li>
+              <li><strong>Total Pods:</strong> <span id="totalPodsDetail">-</span></li>
+              <li><strong>Per Pod Monthly Cost:</strong> $<span id="perPodMonthlyCostDetail">-</span></li>
+              <!-- <li><strong>Total Monthly Cost:</strong> $<span id="monthlyPodCostDetail">-</span></li> -->
+              <li><strong>Pods per Node:</strong> <span id="podsPerNode">-</span></li>
+            </ul>
+            <h3 class="text-xl font-bold mt-4 text-center">$<span id="monthlyPodCostDetail">-</span> Monthly</h3>
+          </div>
+        </div>
+        <!-- Footer Tip -->
+        <div class="mt-3 text-center text-sm text-gray-500 dark:text-gray-400">
+          * This is an estimation only. Actual cost may vary depending on usage, region, and other AWS charges.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/js/eks-calculator.js"></script>

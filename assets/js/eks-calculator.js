@@ -1,60 +1,67 @@
-document.getElementById("eksCostForm").addEventListener("submit", function (e) {
+document.getElementById('eksCostForm').addEventListener('submit', function(e) {
   e.preventDefault();
 
-  const workerNodeSelect = document.getElementById("workerNode");
+  const workerNodeSelect = document.getElementById('workerNode');
   const selectedOption = workerNodeSelect.options[workerNodeSelect.selectedIndex];
-  const podCount = parseFloat(document.getElementById("podCount").value);
-  const cpuPerPod = parseFloat(document.getElementById("cpuPerPod").value);
-  const memoryPerPod = parseFloat(document.getElementById("memoryPerPod").value);
+  const nodeCPU = parseFloat(selectedOption.dataset.cpu);
+  const nodeMemory = parseFloat(selectedOption.dataset.memory);
+  const hourlyRate = parseFloat(selectedOption.dataset.hourly);
 
-  if (!selectedOption.value) {
-    alert("Please select a worker node type.");
-    return;
-  }
+  // Get pod inputs
+  const podCount = parseFloat(document.getElementById('podCount').value);
+  const cpuPerPod = parseFloat(document.getElementById('cpuPerPod').value);
+  const memPerPod = parseFloat(document.getElementById('memoryPerPod').value);
+  const UsagePerDay = parseFloat(document.getElementById('perDayUsage').value);
 
-  const instance = {
-    type: selectedOption.value,
-    cpu: parseFloat(selectedOption.dataset.cpu),
-    memory: parseFloat(selectedOption.dataset.memory),
-    hourly: parseFloat(selectedOption.dataset.hourly)
-  };
+  // Unit cost calculation
+  const cpuCostPerUnit = (hourlyRate / nodeCPU) / 2;
+  const memCostPerUnit = (hourlyRate / nodeMemory) / 2;
 
-  const totalCPU = podCount * cpuPerPod;
-  const totalMem = podCount * memoryPerPod;
+  // Total resources needed
+  const totalCpu = podCount * cpuPerPod;
+  const totalMem = podCount * memPerPod;
 
-  const nodesByCPU = totalCPU / instance.cpu;
-  const nodesByMem = totalMem / instance.memory;
-  const nodesNeeded = Math.ceil(Math.max(nodesByCPU, nodesByMem));
+  // Total cost based on pod resource usage
+  const hourlyPodCost = (totalCpu * cpuCostPerUnit) + (totalMem * memCostPerUnit);
+  const dailyPodCost = hourlyPodCost * UsagePerDay;
+  const monthlyPodCost = dailyPodCost * 30.44;
+  const perPodMonthlyCost = monthlyPodCost / podCount;
 
-  const hourlyCost = nodesNeeded * instance.hourly;
-  const dailyCost = hourlyCost * 24;
-  const monthlyCost = dailyCost * 30;
+  // Pods per instance
+  const podsPerNode = Math.min(
+    Math.floor(nodeCPU / cpuPerPod),
+    Math.floor(nodeMemory / memPerPod)
+  );
+  const totalInstances = Math.ceil(podCount / podsPerNode);
+  const monthlyInstanceCost = totalInstances * hourlyRate * UsagePerDay * 30.44;
 
-  updateResults({
-    instanceType: instance.type,
-    totalPods: podCount,
-    podCpu: cpuPerPod.toFixed(2),
-    podMem: memoryPerPod.toFixed(2),
-    totalCpu: totalCPU.toFixed(2),
-    totalMem: totalMem.toFixed(2),
-    nodesNeeded,
-    hourlyRate: instance.hourly.toFixed(4),
-    dailyCost: dailyCost.toFixed(2),
-    monthlyCost: monthlyCost.toFixed(2)
-  });
+  // Update DOM
+  // document.getElementById('instanceType').textContent = selectedOption.value;
+  // document.getElementById('totalPods').textContent = podCount;
+  // document.getElementById('totalPodsTable').textContent = podCount;
+  // document.getElementById('podCpu').textContent = cpuPerPod;
+  // document.getElementById('podMem').textContent = memPerPod;
+  // document.getElementById('totalCpu').textContent = totalCpu.toFixed(2);
+  // document.getElementById('totalMem').textContent = totalMem.toFixed(2);
+  // document.getElementById('hourlyRate').textContent = hourlyPodCost.toFixed(4);
+  // document.getElementById('dailyCost').textContent = dailyPodCost.toFixed(2);
+  // document.getElementById('monthlyCost').textContent = monthlyPodCost.toFixed(2);
+  // document.getElementById('perPodCost').textContent = perPodMonthlyCost.toFixed(2);
+  document.getElementById('podsPerNode').textContent = podsPerNode || 0;
+  // document.getElementById('nodesNeeded').textContent = totalInstances;
+  document.getElementById('monthlyInstanceCost').textContent = monthlyInstanceCost.toFixed(2);
+
+  // Populate card details
+  document.getElementById('instanceTypeDetail').textContent = `${selectedOption.value} (${nodeCPU} vCPU + ${nodeMemory} GB)`;
+  document.getElementById('perInstanceMonthlyCost').textContent = (hourlyRate * UsagePerDay * 30.44).toFixed(2);
+  document.getElementById('monthlyInstanceCost').textContent = monthlyInstanceCost.toFixed(2);
+  document.getElementById('nodesNeededDetail').textContent = totalInstances;
+  document.getElementById('cpuPerPodDetail').textContent = cpuPerPod.toFixed(2);
+  document.getElementById('memPerPodDetail').textContent = memPerPod.toFixed(2);
+  document.getElementById('totalPodsDetail').textContent = podCount;
+  document.getElementById('perPodMonthlyCostDetail').textContent = perPodMonthlyCost.toFixed(2);
+  document.getElementById('monthlyPodCostDetail').textContent = monthlyPodCost.toFixed(2);
+
+  // Show results
+  document.getElementById('resultSection').classList.remove('hidden');
 });
-
-function updateResults(data) {
-  document.getElementById("instanceType").textContent = data.instanceType;
-  document.getElementById("totalPods").textContent = data.totalPods;
-  document.getElementById("podCpu").textContent = data.podCpu;
-  document.getElementById("podMem").textContent = data.podMem;
-  document.getElementById("totalCpu").textContent = data.totalCpu;
-  document.getElementById("totalMem").textContent = data.totalMem;
-  document.getElementById("nodesNeeded").textContent = data.nodesNeeded;
-  document.getElementById("hourlyRate").textContent = data.hourlyRate;
-  document.getElementById("dailyCost").textContent = data.dailyCost;
-  document.getElementById("monthlyCost").textContent = data.monthlyCost;
-
-  document.getElementById("resultSection").classList.remove("hidden");
-}

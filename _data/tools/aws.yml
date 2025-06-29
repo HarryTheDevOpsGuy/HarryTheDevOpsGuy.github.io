@@ -2,7 +2,7 @@ instances:
   - type: m5.large
     cpu: 2
     memory: 8
-    hourly: 0.096
+    hourly: 0.101
   - type: m5.xlarge
     cpu: 4
     memory: 16
