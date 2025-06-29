@@ -1,0 +1,21 @@
+instances:
+  - type: m5.large
+    cpu: 2
+    memory: 8
+    hourly: 0.096
+  - type: m5.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.192
+  - type: m6g.large
+    cpu: 2
+    memory: 8
+    hourly: 0.083
+  - type: t3.medium
+    cpu: 2
+    memory: 4
+    hourly: 0.0464
+  - type: r5.large
+    cpu: 2
+    memory: 16
+    hourly: 0.128
