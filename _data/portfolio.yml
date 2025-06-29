@@ -1,0 +1,33 @@
+default:
+  name: Hari Prasad
+  role: Senior DevOps Lead
+  mobile: 75053721297
+  place: Delhi, UP, India
+  Title: Transforming infrastructure into scalable, automated, and resilient systems through innovative DevOps solutions
+  social:
+    whatsapp: "https://wa.me/917503721297?text=Hi"
+    linkedin: "https://www.linkedin.com/in/hari-prasad-verma-19b948154"
+    github: "https://github.com/HarryTheDevOpsGuy"
+    portfolio: "https://harrythedevopsguy.github.io"
+  professional_summary: |
+    11+ years of experience in DevOps engineering, specializing in cloud automation, CI/CD pipelines, and infrastructure as code (IaC). Proficient in tools like Terraform, Ansible, Packer, Kubernetes, Docker, Jenkins, and monitoring stacks (Prometheus, ELK). Skilled in designing scalable, secure, and highly available systems. Strong collaboration skills with a focus on bridging the gap between development and operations.
+  technical_skills:
+    - category: Infrastructure as Code (IaC)
+      description: Provision, deploy, and manage entire <b>infrastructure as code</b> with Terraform, Ansible, Jenkins, Groovy and shell script.
+    - category: CI/CD Automation
+      description: Proficient in creating and maintaining automated CI/CD pipelines using Jenkins, ArgoCD, and GitHub Actions for Java, Nodejs, php, python etc applications.
+    - category: Cloud Infrastructure Management
+      description: Expertise in managing AWS services like EC2, S3, RDS, VPC, IAM, CloudWatch, Secrets, Route 53, Lambda, and more.
+    - category: Configuration Management
+      description: Strong experience with Ansible, Terraform, and Packer for automating system configuration, provisioning, and infrastructure management.
+    - category: Containerization & Orchestration
+      description: Hands-on experience with Docker, Kubernetes, Helm, Karpenter and EKS for containerized application deployment and management.
+    - category: Security & Compliance
+      description: Knowledge in security best practices, including CIS Linux hardening, vulnerability patching and managing sensitive data with Vault.
+    - category: Automation & Scripting
+      description: Proficiency in scripting to develop custom tool to automate manual and repeated task.
+    - category: Monitoring & Logging
+      description: Experienced in setting up and managing monitoring/logging systems using Prometheus, Grafana, ELK Stack, Telegraf, Prometheus Exporters and CloudWatch.
+    - category: Web & Application Servers
+      description: Hands-on experience with Nginx, Apache, Tomcat, OpenResty and Springboot.
+
