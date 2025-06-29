@@ -1,21 +1,809 @@
 instances:
-  - type: m5.large
+  - type: t4g.nano
+    cpu: 2
+    memory: 0.5
+    hourly: 0.0028
+  - type: t3a.nano
+    cpu: 2
+    memory: 0.5
+    hourly: 0.0031
+  - type: t4g.micro
+    cpu: 2
+    memory: 1
+    hourly: 0.0056
+  - type: t3.nano
+    cpu: 2
+    memory: 0.5
+    hourly: 0.0056
+  - type: t3a.micro
+    cpu: 2
+    memory: 1
+    hourly: 0.0062
+  - type: t2.nano
+    cpu: 1
+    memory: 0.5
+    hourly: 0.0000
+  - type: t4g.small
+    cpu: 2
+    memory: 2
+    hourly: 0.0112
+  - type: t3.micro
+    cpu: 2
+    memory: 1
+    hourly: 0.0112
+  - type: t3a.small
+    cpu: 2
+    memory: 2
+    hourly: 0.0123
+  - type: t2.micro
+    cpu: 1
+    memory: 1
+    hourly: 0.0000
+  - type: c6g.medium
+    cpu: 1
+    memory: 2
+    hourly: 0.0213
+  - type: t4g.medium
+    cpu: 2
+    memory: 4
+    hourly: 0.0224
+  - type: t3.small
+    cpu: 2
+    memory: 2
+    hourly: 0.0224
+  - type: c7g.medium
+    cpu: 1
+    memory: 2
+    hourly: 0.0245
+  - type: c6gd.medium
+    cpu: 1
+    memory: 2
+    hourly: 0.0245
+  - type: t3a.medium
+    cpu: 2
+    memory: 4
+    hourly: 0.0246
+  - type: t2.small
+    cpu: 1
+    memory: 2
+    hourly: 0.0000
+  - type: m6g.medium
+    cpu: 1
+    memory: 4
+    hourly: 0.0253
+  - type: a1.medium
+    cpu: 1
+    memory: 2
+    hourly: 0.0255
+  - type: c8g.medium
+    cpu: 1
+    memory: 2
+    hourly: 0.0270
+  - type: c7gd.medium
+    cpu: 1
+    memory: 2
+    hourly: 0.0288
+  - type: m7g.medium
+    cpu: 1
+    memory: 4
+    hourly: 0.0292
+  - type: m6gd.medium
+    cpu: 1
+    memory: 4
+    hourly: 0.0302
+  - type: m8g.medium
+    cpu: 1
+    memory: 4
+    hourly: 0.0321
+  - type: r6g.medium
+    cpu: 1
+    memory: 8
+    hourly: 0.0325
+  - type: m7gd.medium
+    cpu: 1
+    memory: 4
+    hourly: 0.0355
+  - type: r6gd.medium
+    cpu: 1
+    memory: 8
+    hourly: 0.0374
+  - type: r7g.medium
+    cpu: 1
+    memory: 8
+    hourly: 0.0375
+  - type: r8g.medium
+    cpu: 1
+    memory: 8
+    hourly: 0.0413
+  - type: c6g.large
+    cpu: 2
+    memory: 4
+    hourly: 0.0426
+  - type: c6gn.medium
+    cpu: 1
+    memory: 2
+    hourly: 0.0432
+  - type: r7gd.medium
+    cpu: 1
+    memory: 8
+    hourly: 0.0440
+  - type: t4g.large
     cpu: 2
     memory: 8
-    hourly: 0.101
-  - type: m5.xlarge
-    cpu: 4
-    memory: 16
-    hourly: 0.192
-  - type: m6g.large
-    cpu: 2
-    memory: 8
-    hourly: 0.083
+    hourly: 0.0448
   - type: t3.medium
     cpu: 2
     memory: 4
-    hourly: 0.0464
+    hourly: 0.0448
+  - type: c6a.large
+    cpu: 2
+    memory: 4
+    hourly: 0.0467
+  - type: c5a.large
+    cpu: 2
+    memory: 4
+    hourly: 0.0470
+  - type: c6gd.large
+    cpu: 2
+    memory: 4
+    hourly: 0.0490
+  - type: c7g.large
+    cpu: 2
+    memory: 4
+    hourly: 0.0491
+  - type: t3a.large
+    cpu: 2
+    memory: 8
+    hourly: 0.0493
+  - type: t2.medium
+    cpu: 2
+    memory: 4
+    hourly: 0.0000
+  - type: m6g.large
+    cpu: 2
+    memory: 8
+    hourly: 0.0506
+  - type: a1.large
+    cpu: 2
+    memory: 4
+    hourly: 0.0510
+  - type: c8g.large
+    cpu: 2
+    memory: 4
+    hourly: 0.0540
+  - type: m6a.large
+    cpu: 2
+    memory: 8
+    hourly: 0.0556
+  - type: m5a.large
+    cpu: 2
+    memory: 8
+    hourly: 0.0560
+  - type: c7gd.large
+    cpu: 2
+    memory: 4
+    hourly: 0.0576
+  - type: m7g.large
+    cpu: 2
+    memory: 8
+    hourly: 0.0583
+  - type: m6gd.large
+    cpu: 2
+    memory: 8
+    hourly: 0.0604
+  - type: m8g.large
+    cpu: 2
+    memory: 8
+    hourly: 0.0642
+  - type: r6g.large
+    cpu: 2
+    memory: 16
+    hourly: 0.0650
+  - type: m5ad.large
+    cpu: 2
+    memory: 8
+    hourly: 0.0670
+  - type: m7gd.large
+    cpu: 2
+    memory: 8
+    hourly: 0.0710
+  - type: r6a.large
+    cpu: 2
+    memory: 16
+    hourly: 0.0715
+  - type: r5a.large
+    cpu: 2
+    memory: 16
+    hourly: 0.0720
+  - type: r6gd.large
+    cpu: 2
+    memory: 16
+    hourly: 0.0747
+  - type: r7g.large
+    cpu: 2
+    memory: 16
+    hourly: 0.0751
+  - type: r8g.large
+    cpu: 2
+    memory: 16
+    hourly: 0.0826
+  - type: r5ad.large
+    cpu: 2
+    memory: 16
+    hourly: 0.0830
+  - type: c7i-flex.large
+    cpu: 2
+    memory: 4
+    hourly: 0.0848
+  - type: c6i.large
+    cpu: 2
+    memory: 4
+    hourly: 0.0850
+  - type: c5.large
+    cpu: 2
+    memory: 4
+    hourly: 0.0850
+  - type: c6g.xlarge
+    cpu: 4
+    memory: 8
+    hourly: 0.0852
+  - type: c6gn.large
+    cpu: 2
+    memory: 4
+    hourly: 0.0865
+  - type: r7gd.large
+    cpu: 2
+    memory: 16
+    hourly: 0.0880
+  - type: c7i.large
+    cpu: 2
+    memory: 4
+    hourly: 0.0892
+  - type: t3.large
+    cpu: 2
+    memory: 8
+    hourly: 0.0896
+  - type: t4g.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.0896
+  - type: c6a.xlarge
+    cpu: 4
+    memory: 8
+    hourly: 0.0935
+  - type: c5a.xlarge
+    cpu: 4
+    memory: 8
+    hourly: 0.0940
+  - type: c6gd.xlarge
+    cpu: 4
+    memory: 8
+    hourly: 0.0980
+  - type: c7g.xlarge
+    cpu: 4
+    memory: 8
+    hourly: 0.0982
+  - type: t3a.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.0986
+  - type: c5d.large
+    cpu: 2
+    memory: 4
+    hourly: 0.0990
+  - type: t2.large
+    cpu: 2
+    memory: 8
+    hourly: 0.0992
+  - type: c4.large
+    cpu: 2
+    memory: 3.75
+    hourly: 0.1000
+  - type: m7i-flex.large
+    cpu: 2
+    memory: 8
+    hourly: 0.1008
+  - type: m6i.large
+    cpu: 2
+    memory: 8
+    hourly: 0.1010
+  - type: m5.large
+    cpu: 2
+    memory: 8
+    hourly: 0.1010
+  - type: m6g.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.1012
+  - type: a1.xlarge
+    cpu: 4
+    memory: 8
+    hourly: 0.1020
+  - type: m4.large
+    cpu: 2
+    memory: 8
+    hourly: 0.1050
+  - type: m7i.large
+    cpu: 2
+    memory: 8
+    hourly: 0.1061
+  - type: c8g.xlarge
+    cpu: 4
+    memory: 8
+    hourly: 0.1080
+  - type: c5n.large
+    cpu: 2
+    memory: 5.25
+    hourly: 0.1080
+  - type: m5a.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.1110
+  - type: m6a.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.1111
+  - type: c6in.large
+    cpu: 2
+    memory: 4
+    hourly: 0.1134
+  - type: c7gd.xlarge
+    cpu: 4
+    memory: 8
+    hourly: 0.1152
+  - type: m7g.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.1166
+  - type: m6gd.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.1208
+  - type: m5d.large
+    cpu: 2
+    memory: 8
+    hourly: 0.1220
+  - type: m6id.large
+    cpu: 2
+    memory: 8
+    hourly: 0.1281
+  - type: m8g.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.1283
+  - type: r6i.large
+    cpu: 2
+    memory: 16
+    hourly: 0.1300
+  - type: r6g.xlarge
+    cpu: 4
+    memory: 32
+    hourly: 0.1300
   - type: r5.large
     cpu: 2
     memory: 16
-    hourly: 0.128
+    hourly: 0.1300
+  - type: m5ad.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.1340
+  - type: r7i.large
+    cpu: 2
+    memory: 16
+    hourly: 0.1365
+  - type: r4.large
+    cpu: 2
+    memory: 15.25
+    hourly: 0.1370
+  - type: m7gd.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.1420
+  - type: r5a.xlarge
+    cpu: 4
+    memory: 32
+    hourly: 0.1430
+  - type: r6a.xlarge
+    cpu: 4
+    memory: 32
+    hourly: 0.1430
+  - type: m6in.large
+    cpu: 2
+    memory: 8
+    hourly: 0.1451
+  - type: r6gd.xlarge
+    cpu: 4
+    memory: 32
+    hourly: 0.1495
+  - type: r7g.xlarge
+    cpu: 4
+    memory: 32
+    hourly: 0.1502
+  - type: r5d.large
+    cpu: 2
+    memory: 16
+    hourly: 0.1510
+  - type: r5n.large
+    cpu: 2
+    memory: 16
+    hourly: 0.1530
+  - type: r6id.large
+    cpu: 2
+    memory: 16
+    hourly: 0.1586
+  - type: is4gen.medium
+    cpu: 1
+    memory: 6
+    hourly: 0.1638
+  - type: r8g.xlarge
+    cpu: 4
+    memory: 32
+    hourly: 0.1652
+  - type: r5ad.xlarge
+    cpu: 4
+    memory: 32
+    hourly: 0.1660
+  - type: c7i-flex.xlarge
+    cpu: 4
+    memory: 8
+    hourly: 0.1696
+  - type: m6idn.large
+    cpu: 2
+    memory: 8
+    hourly: 0.1696
+  - type: c5.xlarge
+    cpu: 4
+    memory: 8
+    hourly: 0.1700
+  - type: c6i.xlarge
+    cpu: 4
+    memory: 8
+    hourly: 0.1700
+  - type: c6g.2xlarge
+    cpu: 8
+    memory: 16
+    hourly: 0.1704
+  - type: c6gn.xlarge
+    cpu: 4
+    memory: 8
+    hourly: 0.1730
+  - type: r7gd.xlarge
+    cpu: 4
+    memory: 32
+    hourly: 0.1760
+  - type: i3.large
+    cpu: 2
+    memory: 15.25
+    hourly: 0.1770
+  - type: c7i.xlarge
+    cpu: 4
+    memory: 8
+    hourly: 0.1785
+  - type: t3.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.1792
+  - type: t4g.2xlarge
+    cpu: 8
+    memory: 32
+    hourly: 0.1792
+  - type: c6a.2xlarge
+    cpu: 8
+    memory: 16
+    hourly: 0.1870
+  - type: c5a.2xlarge
+    cpu: 8
+    memory: 16
+    hourly: 0.1880
+  - type: r3.large
+    cpu: 2
+    memory: 15.25
+    hourly: 0.1900
+  - type: i4i.large
+    cpu: 2
+    memory: 16
+    hourly: 0.1950
+  - type: z1d.large
+    cpu: 2
+    memory: 16
+    hourly: 0.1960
+  - type: c6gd.2xlarge
+    cpu: 8
+    memory: 16
+    hourly: 0.1960
+  - type: c7g.2xlarge
+    cpu: 8
+    memory: 16
+    hourly: 0.1963
+  - type: t3a.2xlarge
+    cpu: 8
+    memory: 32
+    hourly: 0.1971
+  - type: c5d.xlarge
+    cpu: 4
+    memory: 8
+    hourly: 0.1980
+  - type: t2.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.1984
+  - type: c4.xlarge
+    cpu: 4
+    memory: 7.5
+    hourly: 0.2000
+  - type: m7i-flex.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.2015
+  - type: m5.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.2020
+  - type: m6i.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.2020
+  - type: m6g.2xlarge
+    cpu: 8
+    memory: 32
+    hourly: 0.2024
+  - type: a1.2xlarge
+    cpu: 8
+    memory: 16
+    hourly: 0.2040
+  - type: m4.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.2100
+  - type: m7i.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.2121
+  - type: c8g.2xlarge
+    cpu: 8
+    memory: 16
+    hourly: 0.2159
+  - type: c5n.xlarge
+    cpu: 4
+    memory: 10.5
+    hourly: 0.2160
+  - type: m5a.2xlarge
+    cpu: 8
+    memory: 32
+    hourly: 0.2220
+  - type: m6a.2xlarge
+    cpu: 8
+    memory: 32
+    hourly: 0.2222
+  - type: c6in.xlarge
+    cpu: 4
+    memory: 8
+    hourly: 0.2268
+  - type: c7gd.2xlarge
+    cpu: 8
+    memory: 16
+    hourly: 0.2304
+  - type: m7g.2xlarge
+    cpu: 8
+    memory: 32
+    hourly: 0.2333
+  - type: inf1.xlarge
+    cpu: 4
+    memory: 8
+    hourly: 0.2400
+  - type: m6gd.2xlarge
+    cpu: 8
+    memory: 32
+    hourly: 0.2416
+  - type: m5d.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.2440
+  - type: m6id.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.2562
+  - type: m8g.2xlarge
+    cpu: 8
+    memory: 32
+    hourly: 0.2566
+  - type: i3en.large
+    cpu: 2
+    memory: 16
+    hourly: 0.2570
+  - type: r6i.xlarge
+    cpu: 4
+    memory: 32
+    hourly: 0.2600
+  - type: r5.xlarge
+    cpu: 4
+    memory: 32
+    hourly: 0.2600
+  - type: m5ad.2xlarge
+    cpu: 8
+    memory: 32
+    hourly: 0.2680
+  - type: r7i.xlarge
+    cpu: 4
+    memory: 32
+    hourly: 0.2730
+  - type: r4.xlarge
+    cpu: 4
+    memory: 30.5
+    hourly: 0.2740
+  - type: m7gd.2xlarge
+    cpu: 8
+    memory: 32
+    hourly: 0.2840
+  - type: m6in.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.2902
+  - type: r5d.xlarge
+    cpu: 4
+    memory: 32
+    hourly: 0.3020
+  - type: r5n.xlarge
+    cpu: 4
+    memory: 32
+    hourly: 0.3060
+  - type: r6id.xlarge
+    cpu: 4
+    memory: 32
+    hourly: 0.3172
+  - type: is4gen.large
+    cpu: 2
+    memory: 12
+    hourly: 0.3275
+  - type: c7i-flex.2xlarge
+    cpu: 8
+    memory: 16
+    hourly: 0.3392
+  - type: m6idn.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.3393
+  - type: c5.2xlarge
+    cpu: 8
+    memory: 16
+    hourly: 0.3400
+  - type: c6i.2xlarge
+    cpu: 8
+    memory: 16
+    hourly: 0.3400
+  - type: c6gn.2xlarge
+    cpu: 8
+    memory: 16
+    hourly: 0.3460
+  - type: i3.xlarge
+    cpu: 4
+    memory: 30.5
+    hourly: 0.3540
+  - type: c7i.2xlarge
+    cpu: 8
+    memory: 16
+    hourly: 0.3570
+  - type: t3.2xlarge
+    cpu: 8
+    memory: 32
+    hourly: 0.3584
+  - type: r3.xlarge
+    cpu: 4
+    memory: 30.5
+    hourly: 0.3790
+  - type: inf1.2xlarge
+    cpu: 8
+    memory: 16
+    hourly: 0.3810
+  - type: i4i.xlarge
+    cpu: 4
+    memory: 32
+    hourly: 0.3890
+  - type: z1d.xlarge
+    cpu: 4
+    memory: 32
+    hourly: 0.3920
+  - type: c5d.2xlarge
+    cpu: 8
+    memory: 16
+    hourly: 0.3960
+  - type: t2.2xlarge
+    cpu: 8
+    memory: 32
+    hourly: 0.3968
+  - type: c4.2xlarge
+    cpu: 8
+    memory: 15
+    hourly: 0.4000
+  - type: m7i-flex.2xlarge
+    cpu: 8
+    memory: 32
+    hourly: 0.4030
+  - type: m6i.2xlarge
+    cpu: 8
+    memory: 32
+    hourly: 0.4040
+  - type: m5.2xlarge
+    cpu: 8
+    memory: 32
+    hourly: 0.4040
+  - type: m4.2xlarge
+    cpu: 8
+    memory: 32
+    hourly: 0.4200
+  - type: m7i.2xlarge
+    cpu: 8
+    memory: 32
+    hourly: 0.4242
+  - type: c5n.2xlarge
+    cpu: 8
+    memory: 21
+    hourly: 0.4320
+  - type: c6in.2xlarge
+    cpu: 8
+    memory: 16
+    hourly: 0.4536
+  - type: m5d.2xlarge
+    cpu: 8
+    memory: 32
+    hourly: 0.4880
+  - type: m6id.2xlarge
+    cpu: 8
+    memory: 32
+    hourly: 0.5124
+  - type: i3en.xlarge
+    cpu: 4
+    memory: 32
+    hourly: 0.5140
+  - type: d3.xlarge
+    cpu: 4
+    memory: 32
+    hourly: 0.5240
+  - type: g4dn.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.5790
+  - type: m6in.2xlarge
+    cpu: 8
+    memory: 32
+    hourly: 0.5803
+  - type: is4gen.xlarge
+    cpu: 4
+    memory: 24
+    hourly: 0.6550
+  - type: m6idn.2xlarge
+    cpu: 8
+    memory: 32
+    hourly: 0.6786
+  - type: d2.xlarge
+    cpu: 4
+    memory: 30.5
+    hourly: 0.8270
+  - type: g4dn.2xlarge
+    cpu: 8
+    memory: 32
+    hourly: 0.8280
+  - type: g6.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.9664
+  - type: i2.xlarge
+    cpu: 4
+    memory: 30.5
+    hourly: 0.9670
+  - type: inf2.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 0.9857
+  - type: g6.2xlarge
+    cpu: 8
+    memory: 32
+    hourly: 1.1739
+  - type: g5.xlarge
+    cpu: 4
+    memory: 16
+    hourly: 1.2080
+  - type: g5.2xlarge
+    cpu: 8
+    memory: 32
+    hourly: 1.4554
