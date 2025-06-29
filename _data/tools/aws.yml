@@ -1,4 +1,68 @@
 instances:
+  - type: m6g.large
+    cpu: 2
+    memory: 8
+    hourly: 0.0506
+  - type: c8g.large
+    cpu: 2
+    memory: 4
+    hourly: 0.0540
+  - type: m6a.large
+    cpu: 2
+    memory: 8
+    hourly: 0.0556
+  - type: m5a.large
+    cpu: 2
+    memory: 8
+    hourly: 0.0560
+  - type: c7gd.large
+    cpu: 2
+    memory: 4
+    hourly: 0.0576
+  - type: m7g.large
+    cpu: 2
+    memory: 8
+    hourly: 0.0583
+  - type: m6gd.large
+    cpu: 2
+    memory: 8
+    hourly: 0.0604
+  - type: m8g.large
+    cpu: 2
+    memory: 8
+    hourly: 0.0642
+  - type: r6g.large
+    cpu: 2
+    memory: 16
+    hourly: 0.0650
+  - type: m5ad.large
+    cpu: 2
+    memory: 8
+    hourly: 0.0670
+  - type: m7gd.large
+    cpu: 2
+    memory: 8
+    hourly: 0.0710
+  - type: r6a.large
+    cpu: 2
+    memory: 16
+    hourly: 0.0715
+  - type: r5a.large
+    cpu: 2
+    memory: 16
+    hourly: 0.0720
+  - type: r6gd.large
+    cpu: 2
+    memory: 16
+    hourly: 0.0747
+  - type: r7g.large
+    cpu: 2
+    memory: 16
+    hourly: 0.0751
+  - type: r8g.large
+    cpu: 2
+    memory: 16
+    hourly: 0.0826
   - type: t4g.nano
     cpu: 2
     memory: 0.5
@@ -159,74 +223,10 @@ instances:
     cpu: 2
     memory: 4
     hourly: 0.0000
-  - type: m6g.large
-    cpu: 2
-    memory: 8
-    hourly: 0.0506
   - type: a1.large
     cpu: 2
     memory: 4
     hourly: 0.0510
-  - type: c8g.large
-    cpu: 2
-    memory: 4
-    hourly: 0.0540
-  - type: m6a.large
-    cpu: 2
-    memory: 8
-    hourly: 0.0556
-  - type: m5a.large
-    cpu: 2
-    memory: 8
-    hourly: 0.0560
-  - type: c7gd.large
-    cpu: 2
-    memory: 4
-    hourly: 0.0576
-  - type: m7g.large
-    cpu: 2
-    memory: 8
-    hourly: 0.0583
-  - type: m6gd.large
-    cpu: 2
-    memory: 8
-    hourly: 0.0604
-  - type: m8g.large
-    cpu: 2
-    memory: 8
-    hourly: 0.0642
-  - type: r6g.large
-    cpu: 2
-    memory: 16
-    hourly: 0.0650
-  - type: m5ad.large
-    cpu: 2
-    memory: 8
-    hourly: 0.0670
-  - type: m7gd.large
-    cpu: 2
-    memory: 8
-    hourly: 0.0710
-  - type: r6a.large
-    cpu: 2
-    memory: 16
-    hourly: 0.0715
-  - type: r5a.large
-    cpu: 2
-    memory: 16
-    hourly: 0.0720
-  - type: r6gd.large
-    cpu: 2
-    memory: 16
-    hourly: 0.0747
-  - type: r7g.large
-    cpu: 2
-    memory: 16
-    hourly: 0.0751
-  - type: r8g.large
-    cpu: 2
-    memory: 16
-    hourly: 0.0826
   - type: r5ad.large
     cpu: 2
     memory: 16
