@@ -7,12 +7,10 @@ tags: [GitOps, ArgoCD, Crossplane, Kubernetes, PlatformEngineering, Infrastructu
 description: "Explore how ArgoCD and Crossplane can be combined to build a GitOps-driven platform engineering approach for multi-cloud Kubernetes infrastructure."
 ---
 
-
 Platform Engineering is maturing rapidly, and GitOps has evolved far beyond application delivery. The modern direction is toward GitOps-first platforms — where infrastructure provisioning, app deployment, and environment reconciliation are all driven declaratively from Git.
 
 This blog outlines a production-grade approach to building a GitOps-native platform using ArgoCD and Crossplane.
 
----
 
 **Why ArgoCD + Crossplane?**
 
