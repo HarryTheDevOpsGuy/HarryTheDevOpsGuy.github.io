@@ -1,302 +1,202 @@
 Name,API Name,Instance Family,Instance Memory,vCPUs,Arch,On Demand,Linux Spot Average cost,Generation
-M6IN Extra Large,m6in.xlarge,m6in,16 GiB,4 vCPUs,x86_64,$0.2902 hourly,$0.0609 hourly,current
-M6ID Double Extra Large,m6id.2xlarge,m6id,32 GiB,8 vCPUs,x86_64,$0.5124 hourly,$0.2050 hourly,current
-I3EN Large,i3en.large,i3en,16 GiB,2 vCPUs,x86_64,$0.2570 hourly,$0.0257 hourly,current
-M5A Extra Large,m5a.xlarge,m5a,16 GiB,4 vCPUs,x86_64,$0.1110 hourly,$0.0544 hourly,current
-M7I Extra Large,m7i.xlarge,m7i,16 GiB,4 vCPUs,x86_64,$0.2121 hourly,$0.0912 hourly,current
-M7A Extra Large,m7a.xlarge,m7a,16 GiB,4 vCPUs,x86_64,unavailable,unavailable,current
-R7I Extra Large,r7i.xlarge,r7i,32 GiB,4 vCPUs,x86_64,$0.2730 hourly,$0.0874 hourly,current
-I4I Extra Large,i4i.xlarge,i4i,32 GiB,4 vCPUs,x86_64,$0.3890 hourly,$0.1089 hourly,current
-M5 General Purpose Double Extra Large,m5d.2xlarge,m5d,32 GiB,8 vCPUs,x86_64,$0.4880 hourly,$0.2391 hourly,current
-M8G Extra Large,m8g.xlarge,m8g,16 GiB,4 vCPUs,arm64,$0.1283 hourly,$0.0128 hourly,current
-C6I Large,c6i.large,c6i,4 GiB,2 vCPUs,x86_64,$0.0850 hourly,$0.0297 hourly,current
-C6IN Double Extra Large,c6in.2xlarge,c6in,16 GiB,8 vCPUs,x86_64,$0.4536 hourly,$0.2404 hourly,current
+G5 Graphics and Machine Learning GPU Double Extra Large,g5.2xlarge,g5,32 GiB,8 vCPUs,x86_64,$1.4554 hourly,$0.4512 hourly,current
+G5 Graphics and Machine Learning GPU Extra Large,g5.xlarge,g5,16 GiB,4 vCPUs,x86_64,$1.2080 hourly,$0.3745 hourly,current
+G6 Graphics and Machine Learning GPU Double Extra Large,g6.2xlarge,g6,32 GiB,8 vCPUs,x86_64,$1.1739 hourly,$0.2935 hourly,current
+INF2 Extra Large,inf2.xlarge,inf2,16 GiB,4 vCPUs,x86_64,$0.9857 hourly,$0.1478 hourly,current
+I2 Extra Large,i2.xlarge,i2,30.5 GiB,4 vCPUs,x86_64,$0.9670 hourly,$0.0967 hourly,previous
+G6 Graphics and Machine Learning GPU Extra Large,g6.xlarge,g6,16 GiB,4 vCPUs,x86_64,$0.9664 hourly,$0.2319 hourly,current
+G4DN Double Extra Large,g4dn.2xlarge,g4dn,32 GiB,8 vCPUs,x86_64,$0.8280 hourly,$0.2401 hourly,current
+D2 Extra Large,d2.xlarge,d2,30.5 GiB,4 vCPUs,x86_64,$0.8270 hourly,$0.0992 hourly,previous
+M6IDN Double Extra Large,m6idn.2xlarge,m6idn,32 GiB,8 vCPUs,x86_64,$0.6786 hourly,$0.2850 hourly,current
+IS4GEN Extra Large,is4gen.xlarge,is4gen,24 GiB,4 vCPUs,arm64,$0.6550 hourly,$0.1441 hourly,current
+M6IN Double Extra Large,m6in.2xlarge,m6in,32 GiB,8 vCPUs,x86_64,$0.5803 hourly,$0.2031 hourly,current
+G4DN Extra Large,g4dn.xlarge,g4dn,16 GiB,4 vCPUs,x86_64,$0.5790 hourly,$0.1795 hourly,current
 D3 Extra Large,d3.xlarge,d3,32 GiB,4 vCPUs,x86_64,$0.5240 hourly,$0.0943 hourly,current
-C4 High-CPU Extra Large,c4.xlarge,c4,7.5 GiB,4 vCPUs,x86_64,$0.2000 hourly,$0.0880 hourly,current
-Z1D Large,z1d.large,z1d,16 GiB,2 vCPUs,x86_64,$0.1960 hourly,$0.0333 hourly,current
-R7GD Large,r7gd.large,r7gd,16 GiB,2 vCPUs,arm64,$0.0880 hourly,$0.0282 hourly,current
-T4G Large,t4g.large,t4g,8 GiB,2 vCPUs (7h 12m burst),arm64,$0.0448 hourly,$0.0157 hourly,current
-INF1 Double Extra Large,inf1.2xlarge,inf1,16 GiB,8 vCPUs,x86_64,$0.3810 hourly,$0.1143 hourly,current
-C5AD Large,c5ad.large,c5ad,4 GiB,2 vCPUs,x86_64,unavailable,unavailable,current
-R5A Extra Large,r5a.xlarge,r5a,32 GiB,4 vCPUs,x86_64,$0.1430 hourly,$0.0686 hourly,current
-M6GD Extra Large,m6gd.xlarge,m6gd,16 GiB,4 vCPUs,arm64,$0.1208 hourly,$0.0737 hourly,current
-R5B Large,r5b.large,r5b,16 GiB,2 vCPUs,x86_64,unavailable,unavailable,current
-T3 Extra Large,t3.xlarge,t3,16 GiB,4 vCPUs (9h 36m burst),x86_64,$0.1792 hourly,$0.0735 hourly,current
-T4G Micro,t4g.micro,t4g,1 GiB,2 vCPUs (2h 24m burst),arm64,$0.0056 hourly,$0.0015 hourly,current
-M5 General Purpose Extra Large,m5.xlarge,m5,16 GiB,4 vCPUs,x86_64,$0.2020 hourly,$0.0646 hourly,current
-R6A Extra Large,r6a.xlarge,r6a,32 GiB,4 vCPUs,x86_64,$0.1430 hourly,$0.0558 hourly,current
-R3 High-Memory Large,r3.large,r3,15.25 GiB,2 vCPUs,x86_64,$0.1900 hourly,$0.0532 hourly,previous
-INF1 Extra Large,inf1.xlarge,inf1,8 GiB,4 vCPUs,x86_64,$0.2400 hourly,$0.0672 hourly,current
-R5N Large,r5n.large,r5n,16 GiB,2 vCPUs,x86_64,$0.1530 hourly,$0.0597 hourly,current
-C5 High-CPU Extra Large,c5.xlarge,c5,8 GiB,4 vCPUs,x86_64,$0.1700 hourly,$0.0799 hourly,current
-T3A Double Extra Large,t3a.2xlarge,t3a,32 GiB,8 vCPUs (9h 36m burst),x86_64,$0.1971 hourly,$0.0670 hourly,current
-M6ID Extra Large,m6id.xlarge,m6id,16 GiB,4 vCPUs,x86_64,$0.2562 hourly,$0.0794 hourly,current
-T3A Small,t3a.small,t3a,2 GiB,2 vCPUs (4h 48m burst),x86_64,$0.0123 hourly,$0.0046 hourly,current
-T3A Extra Large,t3a.xlarge,t3a,16 GiB,4 vCPUs (9h 36m burst),x86_64,$0.0986 hourly,$0.0335 hourly,current
-R5N Extra Large,r5n.xlarge,r5n,32 GiB,4 vCPUs,x86_64,$0.3060 hourly,$0.1377 hourly,current
-M7GD Medium,m7gd.medium,m7gd,4 GiB,1 vCPUs,arm64,$0.0355 hourly,$0.0167 hourly,current
-C7A Medium,c7a.medium,c7a,2 GiB,1 vCPUs,x86_64,unavailable,unavailable,current
-M6I Double Extra Large,m6i.2xlarge,m6i,32 GiB,8 vCPUs,x86_64,$0.4040 hourly,$0.1616 hourly,current
-R5DN Large,r5dn.large,r5dn,16 GiB,2 vCPUs,x86_64,unavailable,unavailable,current
-R6G Medium,r6g.medium,r6g,8 GiB,1 vCPUs,arm64,$0.0325 hourly,$0.0140 hourly,current
-C7GN Extra Large,c7gn.xlarge,c7gn,8 GiB,4 vCPUs,arm64,unavailable,unavailable,current
-C6A Large,c6a.large,c6a,4 GiB,2 vCPUs,x86_64,$0.0467 hourly,$0.0210 hourly,current
-R7A Medium,r7a.medium,r7a,8 GiB,1 vCPUs,x86_64,unavailable,unavailable,current
-C6I Extra Large,c6i.xlarge,c6i,8 GiB,4 vCPUs,x86_64,$0.1700 hourly,$0.0748 hourly,current
-C5 High-CPU Double Extra Large,c5.2xlarge,c5,16 GiB,8 vCPUs,x86_64,$0.3400 hourly,$0.1258 hourly,current
-T4G Medium,t4g.medium,t4g,4 GiB,2 vCPUs (4h 48m burst),arm64,$0.0224 hourly,$0.0076 hourly,current
-M5DN Double Extra Large,m5dn.2xlarge,m5dn,32 GiB,8 vCPUs,x86_64,unavailable,unavailable,current
-R5A Large,r5a.large,r5a,16 GiB,2 vCPUs,x86_64,$0.0720 hourly,$0.0281 hourly,current
-C6ID Large,c6id.large,c6id,4 GiB,2 vCPUs,x86_64,unavailable,unavailable,current
-T3 Nano,t3.nano,t3,0.5 GiB,2 vCPUs (1h 12m burst),x86_64,$0.0056 hourly,$0.0008 hourly,current
-M6A Double Extra Large,m6a.2xlarge,m6a,32 GiB,8 vCPUs,x86_64,$0.2222 hourly,$0.1111 hourly,current
-T3 Large,t3.large,t3,8 GiB,2 vCPUs (7h 12m burst),x86_64,$0.0896 hourly,$0.0314 hourly,current
-M6A Large,m6a.large,m6a,8 GiB,2 vCPUs,x86_64,$0.0556 hourly,$0.0250 hourly,current
+I3EN Extra Large,i3en.xlarge,i3en,32 GiB,4 vCPUs,x86_64,$0.5140 hourly,$0.1696 hourly,current
+M6ID Double Extra Large,m6id.2xlarge,m6id,32 GiB,8 vCPUs,x86_64,$0.5124 hourly,$0.2050 hourly,current
+M5 General Purpose Double Extra Large,m5d.2xlarge,m5d,32 GiB,8 vCPUs,x86_64,$0.4880 hourly,$0.2391 hourly,current
+C6IN Double Extra Large,c6in.2xlarge,c6in,16 GiB,8 vCPUs,x86_64,$0.4536 hourly,$0.2404 hourly,current
 C5N Double Extra Large,c5n.2xlarge,c5n,21 GiB,8 vCPUs,x86_64,$0.4320 hourly,$0.2549 hourly,current
-C5N Extra Large,c5n.xlarge,c5n,10.5 GiB,4 vCPUs,x86_64,$0.2160 hourly,$0.1145 hourly,current
-M6I Large,m6i.large,m6i,8 GiB,2 vCPUs,x86_64,$0.1010 hourly,$0.0424 hourly,current
+M7I Double Extra Large,m7i.2xlarge,m7i,32 GiB,8 vCPUs,x86_64,$0.4242 hourly,$0.1527 hourly,current
 M4 General Purpose Double Extra Large,m4.2xlarge,m4,32 GiB,8 vCPUs,x86_64,$0.4200 hourly,$0.1764 hourly,current
-M7I Large,m7i.large,m7i,8 GiB,2 vCPUs,x86_64,$0.1061 hourly,$0.0488 hourly,current
-IM4GN Large,im4gn.large,im4gn,8 GiB,2 vCPUs,arm64,unavailable,unavailable,current
-R7G Extra Large,r7g.xlarge,r7g,32 GiB,4 vCPUs,arm64,$0.1502 hourly,$0.0631 hourly,current
+M6I Double Extra Large,m6i.2xlarge,m6i,32 GiB,8 vCPUs,x86_64,$0.4040 hourly,$0.1616 hourly,current
+M5 General Purpose Double Extra Large,m5.2xlarge,m5,32 GiB,8 vCPUs,x86_64,$0.4040 hourly,$0.1495 hourly,current
+M7I-FLEX Double Extra Large,m7i-flex.2xlarge,m7i-flex,32 GiB,8 vCPUs,x86_64,$0.4030 hourly,$0.1814 hourly,current
+C4 High-CPU Double Extra Large,c4.2xlarge,c4,15 GiB,8 vCPUs,x86_64,$0.4000 hourly,$0.1600 hourly,current
+T2 Double Extra Large,t2.2xlarge,t2,32 GiB,8 vCPUs (4h 4.799999999999983m burst),x86_64,$0.3968 hourly,$0.1548 hourly,current
+C5 High-CPU Double Extra Large,c5d.2xlarge,c5d,16 GiB,8 vCPUs,x86_64,$0.3960 hourly,$0.1861 hourly,current
+Z1D Extra Large,z1d.xlarge,z1d,32 GiB,4 vCPUs,x86_64,$0.3920 hourly,$0.1058 hourly,current
+I4I Extra Large,i4i.xlarge,i4i,32 GiB,4 vCPUs,x86_64,$0.3890 hourly,$0.1089 hourly,current
+INF1 Double Extra Large,inf1.2xlarge,inf1,16 GiB,8 vCPUs,x86_64,$0.3810 hourly,$0.1143 hourly,current
+R3 High-Memory Extra Large,r3.xlarge,r3,30.5 GiB,4 vCPUs,x86_64,$0.3790 hourly,$0.1213 hourly,previous
+T3 Double Extra Large,t3.2xlarge,t3,32 GiB,8 vCPUs (9h 36m burst),x86_64,$0.3584 hourly,$0.1362 hourly,current
+C7I Double Extra Large,c7i.2xlarge,c7i,16 GiB,8 vCPUs,x86_64,$0.3570 hourly,$0.1178 hourly,current
+I3 High I/O Extra Large,i3.xlarge,i3,30.5 GiB,4 vCPUs,x86_64,$0.3540 hourly,$0.1062 hourly,current
+C6GN Double Extra Large,c6gn.2xlarge,c6gn,16 GiB,8 vCPUs,arm64,$0.3460 hourly,$0.1799 hourly,current
+C5 High-CPU Double Extra Large,c5.2xlarge,c5,16 GiB,8 vCPUs,x86_64,$0.3400 hourly,$0.1258 hourly,current
+C6I Double Extra Large,c6i.2xlarge,c6i,16 GiB,8 vCPUs,x86_64,$0.3400 hourly,$0.1462 hourly,current
 M6IDN Extra Large,m6idn.xlarge,m6idn,16 GiB,4 vCPUs,x86_64,$0.3393 hourly,$0.0916 hourly,current
 C7I-FLEX Double Extra Large,c7i-flex.2xlarge,c7i-flex,16 GiB,8 vCPUs,x86_64,$0.3392 hourly,$0.1797 hourly,current
-C7GD Extra Large,c7gd.xlarge,c7gd,8 GiB,4 vCPUs,arm64,$0.1152 hourly,$0.0599 hourly,current
-R7A Extra Large,r7a.xlarge,r7a,32 GiB,4 vCPUs,x86_64,unavailable,unavailable,current
-C7I Extra Large,c7i.xlarge,c7i,8 GiB,4 vCPUs,x86_64,$0.1785 hourly,$0.0589 hourly,current
-R6I Large,r6i.large,r6i,16 GiB,2 vCPUs,x86_64,$0.1300 hourly,$0.0338 hourly,current
-M5N Large,m5n.large,m5n,8 GiB,2 vCPUs,x86_64,unavailable,unavailable,current
-C5 High-CPU Large,c5d.large,c5d,4 GiB,2 vCPUs,x86_64,$0.0990 hourly,$0.0356 hourly,current
-R6A Large,r6a.large,r6a,16 GiB,2 vCPUs,x86_64,$0.0715 hourly,$0.0257 hourly,current
-A1 Medium,a1.medium,a1,2 GiB,1 vCPUs,arm64,$0.0255 hourly,$0.0255 hourly,previous
-R8G Medium,r8g.medium,r8g,8 GiB,1 vCPUs,arm64,$0.0413 hourly,$0.0062 hourly,current
-C8G Extra Large,c8g.xlarge,c8g,8 GiB,4 vCPUs,arm64,$0.1080 hourly,$0.0119 hourly,current
-G6 Graphics and Machine Learning GPU Extra Large,g6.xlarge,g6,16 GiB,4 vCPUs,x86_64,$0.9664 hourly,$0.2319 hourly,current
-I7IE Large,i7ie.large,i7ie,16 GiB,2 vCPUs,x86_64,unavailable,unavailable,current
-T2 Micro,t2.micro,t2,1 GiB,1 vCPUs (2h 24m burst),"i386, x86_64",$0.0124 hourly,$0.0014 hourly,current
-R5AD Extra Large,r5ad.xlarge,r5ad,32 GiB,4 vCPUs,x86_64,$0.1660 hourly,$0.0979 hourly,current
-C6IN Large,c6in.large,c6in,4 GiB,2 vCPUs,x86_64,$0.1134 hourly,$0.0431 hourly,current
-C6ID Double Extra Large,c6id.2xlarge,c6id,16 GiB,8 vCPUs,x86_64,unavailable,unavailable,current
-C7GD Large,c7gd.large,c7gd,4 GiB,2 vCPUs,arm64,$0.0576 hourly,$0.0253 hourly,current
-G6e Graphics and Machine Learning GPU Extra Large,g6e.xlarge,g6e,32 GiB,4 vCPUs,x86_64,unavailable,unavailable,current
-M5 General Purpose Large,m5.large,m5,8 GiB,2 vCPUs,x86_64,$0.1010 hourly,$0.0323 hourly,current
-C6GN Large,c6gn.large,c6gn,4 GiB,2 vCPUs,arm64,$0.0865 hourly,$0.0372 hourly,current
-C7A Large,c7a.large,c7a,4 GiB,2 vCPUs,x86_64,unavailable,unavailable,current
-C6A Extra Large,c6a.xlarge,c6a,8 GiB,4 vCPUs,x86_64,$0.0935 hourly,$0.0430 hourly,current
-C7GN Large,c7gn.large,c7gn,4 GiB,2 vCPUs,arm64,unavailable,unavailable,current
-I7IE Extra Large,i7ie.xlarge,i7ie,32 GiB,4 vCPUs,x86_64,unavailable,unavailable,current
-T3A Medium,t3a.medium,t3a,4 GiB,2 vCPUs (4h 48m burst),x86_64,$0.0246 hourly,$0.0086 hourly,current
-M5A Large,m5a.large,m5a,8 GiB,2 vCPUs,x86_64,$0.0560 hourly,$0.0241 hourly,current
-M5AD Large,m5ad.large,m5ad,8 GiB,2 vCPUs,x86_64,$0.0670 hourly,$0.0322 hourly,current
-M5ZN Large,m5zn.large,m5zn,8 GiB,2 vCPUs,x86_64,unavailable,unavailable,current
-M6IN Large,m6in.large,m6in,8 GiB,2 vCPUs,x86_64,$0.1451 hourly,$0.0421 hourly,current
-C6I Double Extra Large,c6i.2xlarge,c6i,16 GiB,8 vCPUs,x86_64,$0.3400 hourly,$0.1462 hourly,current
-C7I Double Extra Large,c7i.2xlarge,c7i,16 GiB,8 vCPUs,x86_64,$0.3570 hourly,$0.1178 hourly,current
-R7IZ Extra Large,r7iz.xlarge,r7iz,32 GiB,4 vCPUs,x86_64,unavailable,unavailable,current
-R6ID Large,r6id.large,r6id,16 GiB,2 vCPUs,x86_64,$0.1586 hourly,$0.0412 hourly,current
-C5 High-CPU Double Extra Large,c5d.2xlarge,c5d,16 GiB,8 vCPUs,x86_64,$0.3960 hourly,$0.1861 hourly,current
-M6IN Double Extra Large,m6in.2xlarge,m6in,32 GiB,8 vCPUs,x86_64,$0.5803 hourly,$0.2031 hourly,current
-M7I-FLEX Extra Large,m7i-flex.xlarge,m7i-flex,16 GiB,4 vCPUs,x86_64,$0.2015 hourly,$0.0786 hourly,current
-M6ID Large,m6id.large,m6id,8 GiB,2 vCPUs,x86_64,$0.1281 hourly,$0.0346 hourly,current
-C5A Extra Large,c5a.xlarge,c5a,8 GiB,4 vCPUs,x86_64,$0.0940 hourly,$0.0602 hourly,current
-M6GD Medium,m6gd.medium,m6gd,4 GiB,1 vCPUs,arm64,$0.0302 hourly,$0.0066 hourly,current
-C6ID Extra Large,c6id.xlarge,c6id,8 GiB,4 vCPUs,x86_64,unavailable,unavailable,current
-D2 Extra Large,d2.xlarge,d2,30.5 GiB,4 vCPUs,x86_64,$0.8270 hourly,$0.0992 hourly,previous
-R5DN Extra Large,r5dn.xlarge,r5dn,32 GiB,4 vCPUs,x86_64,unavailable,unavailable,current
-M8G Medium,m8g.medium,m8g,4 GiB,1 vCPUs,arm64,$0.0321 hourly,$0.0032 hourly,current
-R7I Large,r7i.large,r7i,16 GiB,2 vCPUs,x86_64,$0.1365 hourly,$0.0328 hourly,current
-M5DN Extra Large,m5dn.xlarge,m5dn,16 GiB,4 vCPUs,x86_64,unavailable,unavailable,current
-I3EN Extra Large,i3en.xlarge,i3en,32 GiB,4 vCPUs,x86_64,$0.5140 hourly,$0.1696 hourly,current
-C8GD Medium,c8gd.medium,c8gd,2 GiB,1 vCPUs,arm64,unavailable,unavailable,current
-C6G Extra Large,c6g.xlarge,c6g,8 GiB,4 vCPUs,arm64,$0.0852 hourly,$0.0400 hourly,current
-R6ID Extra Large,r6id.xlarge,r6id,32 GiB,4 vCPUs,x86_64,$0.3172 hourly,$0.1078 hourly,current
-R6I Extra Large,r6i.xlarge,r6i,32 GiB,4 vCPUs,x86_64,$0.2600 hourly,$0.0806 hourly,current
-M5N Double Extra Large,m5n.2xlarge,m5n,32 GiB,8 vCPUs,x86_64,unavailable,unavailable,current
-R6G Extra Large,r6g.xlarge,r6g,32 GiB,4 vCPUs,arm64,$0.1300 hourly,$0.0624 hourly,current
-C5N Large,c5n.large,c5n,5.25 GiB,2 vCPUs,x86_64,$0.1080 hourly,$0.0410 hourly,current
-C5AD Double Extra Large,c5ad.2xlarge,c5ad,16 GiB,8 vCPUs,x86_64,unavailable,unavailable,current
-M5A Double Extra Large,m5a.2xlarge,m5a,32 GiB,8 vCPUs,x86_64,$0.2220 hourly,$0.1110 hourly,current
-M5 General Purpose Double Extra Large,m5.2xlarge,m5,32 GiB,8 vCPUs,x86_64,$0.4040 hourly,$0.1495 hourly,current
-R6IDN Large,r6idn.large,r6idn,16 GiB,2 vCPUs,x86_64,unavailable,unavailable,current
-M7I-FLEX Large,m7i-flex.large,m7i-flex,8 GiB,2 vCPUs,x86_64,$0.1008 hourly,$0.0302 hourly,current
-M7A Large,m7a.large,m7a,8 GiB,2 vCPUs,x86_64,unavailable,unavailable,current
-M6IDN Double Extra Large,m6idn.2xlarge,m6idn,32 GiB,8 vCPUs,x86_64,$0.6786 hourly,$0.2850 hourly,current
-T3 Double Extra Large,t3.2xlarge,t3,32 GiB,8 vCPUs (9h 36m burst),x86_64,$0.3584 hourly,$0.1362 hourly,current
-H1 Double Extra Large,h1.2xlarge,h1,32 GiB,8 vCPUs,x86_64,unavailable,unavailable,current
-M6A Extra Large,m6a.xlarge,m6a,16 GiB,4 vCPUs,x86_64,$0.1111 hourly,$0.0556 hourly,current
-M5 General Purpose Large,m5d.large,m5d,8 GiB,2 vCPUs,x86_64,$0.1220 hourly,$0.0390 hourly,current
-M6G Large,m6g.large,m6g,8 GiB,2 vCPUs,arm64,$0.0506 hourly,$0.0228 hourly,current
-M5AD Extra Large,m5ad.xlarge,m5ad,16 GiB,4 vCPUs,x86_64,$0.1340 hourly,$0.0831 hourly,current
-I7I Large,i7i.large,i7i,16 GiB,2 vCPUs,x86_64,unavailable,unavailable,current
-R5D Large,r5d.large,r5d,16 GiB,2 vCPUs,x86_64,$0.1510 hourly,$0.0529 hourly,current
-C5 High-CPU Large,c5.large,c5,4 GiB,2 vCPUs,x86_64,$0.0850 hourly,$0.0323 hourly,current
-R5AD Large,r5ad.large,r5ad,16 GiB,2 vCPUs,x86_64,$0.0830 hourly,$0.0349 hourly,current
-G4DN Double Extra Large,g4dn.2xlarge,g4dn,32 GiB,8 vCPUs,x86_64,$0.8280 hourly,$0.2401 hourly,current
-M7GD Large,m7gd.large,m7gd,8 GiB,2 vCPUs,arm64,$0.0710 hourly,$0.0234 hourly,current
-M6I Extra Large,m6i.xlarge,m6i,16 GiB,4 vCPUs,x86_64,$0.2020 hourly,$0.0768 hourly,current
-C8GD Large,c8gd.large,c8gd,4 GiB,2 vCPUs,arm64,unavailable,unavailable,current
-M7A Double Extra Large,m7a.2xlarge,m7a,32 GiB,8 vCPUs,x86_64,unavailable,unavailable,current
-M6G Extra Large,m6g.xlarge,m6g,16 GiB,4 vCPUs,arm64,$0.1012 hourly,$0.0435 hourly,current
-G6 Graphics and Machine Learning GPU Double Extra Large,g6.2xlarge,g6,32 GiB,8 vCPUs,x86_64,$1.1739 hourly,$0.2935 hourly,current
-I4G Large,i4g.large,i4g,16 GiB,2 vCPUs,arm64,unavailable,unavailable,current
-M6G Double Extra Large,m6g.2xlarge,m6g,32 GiB,8 vCPUs,arm64,$0.2024 hourly,$0.1154 hourly,current
-T2 Double Extra Large,t2.2xlarge,t2,32 GiB,8 vCPUs (4h 4.799999999999983m burst),x86_64,$0.3968 hourly,$0.1548 hourly,current
-G4AD Extra Large,g4ad.xlarge,g4ad,16 GiB,4 vCPUs,x86_64,unavailable,unavailable,current
-C5AD Extra Large,c5ad.xlarge,c5ad,8 GiB,4 vCPUs,x86_64,unavailable,unavailable,current
-R5 Large,r5.large,r5,16 GiB,2 vCPUs,x86_64,$0.1300 hourly,$0.0585 hourly,current
-M7GD Double Extra Large,m7gd.2xlarge,m7gd,32 GiB,8 vCPUs,arm64,$0.2840 hourly,$0.1250 hourly,current
-M4 General Purpose Extra Large,m4.xlarge,m4,16 GiB,4 vCPUs,x86_64,$0.2100 hourly,$0.0987 hourly,current
-M6IDN Large,m6idn.large,m6idn,8 GiB,2 vCPUs,x86_64,$0.1696 hourly,$0.0458 hourly,current
-M5AD Double Extra Large,m5ad.2xlarge,m5ad,32 GiB,8 vCPUs,x86_64,$0.2680 hourly,$0.1796 hourly,current
-G3S Extra Large,g3s.xlarge,g3s,30.5 GiB,4 vCPUs,x86_64,unavailable,unavailable,current
-T3 Small,t3.small,t3,2 GiB,2 vCPUs (4h 48m burst),x86_64,$0.0224 hourly,$0.0072 hourly,current
-C7GD Double Extra Large,c7gd.2xlarge,c7gd,16 GiB,8 vCPUs,arm64,$0.2304 hourly,$0.1083 hourly,current
-T4G Small,t4g.small,t4g,2 GiB,2 vCPUs (4h 48m burst),arm64,$0.0112 hourly,$0.0036 hourly,current
-C4 High-CPU Double Extra Large,c4.2xlarge,c4,15 GiB,8 vCPUs,x86_64,$0.4000 hourly,$0.1600 hourly,current
-T3 Medium,t3.medium,t3,4 GiB,2 vCPUs (4h 48m burst),x86_64,$0.0448 hourly,$0.0184 hourly,current
-C6IN Extra Large,c6in.xlarge,c6in,8 GiB,4 vCPUs,x86_64,$0.2268 hourly,$0.0998 hourly,current
-T4G Double Extra Large,t4g.2xlarge,t4g,32 GiB,8 vCPUs (9h 36m burst),arm64,$0.1792 hourly,$0.0699 hourly,current
-C6G Medium,c6g.medium,c6g,2 GiB,1 vCPUs,arm64,$0.0213 hourly,$0.0070 hourly,current
-T3A Large,t3a.large,t3a,8 GiB,2 vCPUs (7h 12m burst),x86_64,$0.0493 hourly,$0.0153 hourly,current
-T3A Micro,t3a.micro,t3a,1 GiB,2 vCPUs (2h 24m burst),x86_64,$0.0062 hourly,$0.0019 hourly,current
-C5A Double Extra Large,c5a.2xlarge,c5a,16 GiB,8 vCPUs,x86_64,$0.1880 hourly,$0.0940 hourly,current
-C6GD Extra Large,c6gd.xlarge,c6gd,8 GiB,4 vCPUs,arm64,$0.0980 hourly,$0.0421 hourly,current
-R7IZ Large,r7iz.large,r7iz,16 GiB,2 vCPUs,x86_64,unavailable,unavailable,current
-I3 High I/O Extra Large,i3.xlarge,i3,30.5 GiB,4 vCPUs,x86_64,$0.3540 hourly,$0.1062 hourly,current
-M5ZN Double Extra Large,m5zn.2xlarge,m5zn,32 GiB,8 vCPUs,x86_64,unavailable,unavailable,current
-M5N Extra Large,m5n.xlarge,m5n,16 GiB,4 vCPUs,x86_64,unavailable,unavailable,current
-C6A Double Extra Large,c6a.2xlarge,c6a,16 GiB,8 vCPUs,x86_64,$0.1870 hourly,$0.0860 hourly,current
-C5 High-CPU Extra Large,c5d.xlarge,c5d,8 GiB,4 vCPUs,x86_64,$0.1980 hourly,$0.0812 hourly,current
-G4DN Extra Large,g4dn.xlarge,g4dn,16 GiB,4 vCPUs,x86_64,$0.5790 hourly,$0.1795 hourly,current
-M7I Double Extra Large,m7i.2xlarge,m7i,32 GiB,8 vCPUs,x86_64,$0.4242 hourly,$0.1527 hourly,current
-R6G Large,r6g.large,r6g,16 GiB,2 vCPUs,arm64,$0.0650 hourly,$0.0273 hourly,current
-R8GD Large,r8gd.large,r8gd,16 GiB,2 vCPUs,arm64,unavailable,unavailable,current
-R8GD Medium,r8gd.medium,r8gd,8 GiB,1 vCPUs,arm64,unavailable,unavailable,current
-R7A Large,r7a.large,r7a,16 GiB,2 vCPUs,x86_64,unavailable,unavailable,current
-M5 General Purpose Extra Large,m5d.xlarge,m5d,16 GiB,4 vCPUs,x86_64,$0.2440 hourly,$0.0756 hourly,current
-C8G Double Extra Large,c8g.2xlarge,c8g,16 GiB,8 vCPUs,arm64,$0.2159 hourly,$0.0259 hourly,current
-T4G Nano,t4g.nano,t4g,0.5 GiB,2 vCPUs (1h 12m burst),arm64,$0.0028 hourly,$0.0007 hourly,current
-R3 High-Memory Extra Large,r3.xlarge,r3,30.5 GiB,4 vCPUs,x86_64,$0.3790 hourly,$0.1213 hourly,previous
-C7GN Double Extra Large,c7gn.2xlarge,c7gn,16 GiB,8 vCPUs,arm64,unavailable,unavailable,current
-C5A Large,c5a.large,c5a,4 GiB,2 vCPUs,x86_64,$0.0470 hourly,$0.0240 hourly,current
-C7A Double Extra Large,c7a.2xlarge,c7a,16 GiB,8 vCPUs,x86_64,unavailable,unavailable,current
-M8G Large,m8g.large,m8g,8 GiB,2 vCPUs,arm64,$0.0642 hourly,$0.0071 hourly,current
-C7GN Medium,c7gn.medium,c7gn,2 GiB,1 vCPUs,arm64,unavailable,unavailable,current
-C6GD Large,c6gd.large,c6gd,4 GiB,2 vCPUs,arm64,$0.0490 hourly,$0.0201 hourly,current
-M5ZN Extra Large,m5zn.xlarge,m5zn,16 GiB,4 vCPUs,x86_64,unavailable,unavailable,current
-C7G Medium,c7g.medium,c7g,2 GiB,1 vCPUs,arm64,$0.0245 hourly,$0.0110 hourly,current
-R8GD Extra Large,r8gd.xlarge,r8gd,32 GiB,4 vCPUs,arm64,unavailable,unavailable,current
-R5 Extra Large,r5.xlarge,r5,32 GiB,4 vCPUs,x86_64,$0.2600 hourly,$0.1014 hourly,current
-M8G Double Extra Large,m8g.2xlarge,m8g,32 GiB,8 vCPUs,arm64,$0.2566 hourly,$0.0282 hourly,current
-C7I Large,c7i.large,c7i,4 GiB,2 vCPUs,x86_64,$0.0892 hourly,$0.0277 hourly,current
-R7GD Extra Large,r7gd.xlarge,r7gd,32 GiB,4 vCPUs,arm64,$0.1760 hourly,$0.0862 hourly,current
-M7G Medium,m7g.medium,m7g,4 GiB,1 vCPUs,arm64,$0.0292 hourly,$0.0128 hourly,current
-T2 Extra Large,t2.xlarge,t2,16 GiB,4 vCPUs (5h 24m burst),x86_64,$0.1984 hourly,$0.0655 hourly,current
-C4 High-CPU Large,c4.large,c4,3.75 GiB,2 vCPUs,x86_64,$0.1000 hourly,$0.0360 hourly,current
-M7GD Extra Large,m7gd.xlarge,m7gd,16 GiB,4 vCPUs,arm64,$0.1420 hourly,$0.0767 hourly,current
-T2 Medium,t2.medium,t2,4 GiB,2 vCPUs (4h 48m burst),"i386, x86_64",$0.0496 hourly,$0.0164 hourly,current
-R6IN Extra Large,r6in.xlarge,r6in,32 GiB,4 vCPUs,x86_64,unavailable,unavailable,current
-M7A Medium,m7a.medium,m7a,4 GiB,1 vCPUs,x86_64,unavailable,unavailable,current
-R7GD Medium,r7gd.medium,r7gd,8 GiB,1 vCPUs,arm64,$0.0440 hourly,$0.0158 hourly,current
-M7I-FLEX Double Extra Large,m7i-flex.2xlarge,m7i-flex,32 GiB,8 vCPUs,x86_64,$0.4030 hourly,$0.1814 hourly,current
-T2 Large,t2.large,t2,8 GiB,2 vCPUs (7h 12m burst),x86_64,$0.0992 hourly,$0.0327 hourly,current
-C7A Extra Large,c7a.xlarge,c7a,8 GiB,4 vCPUs,x86_64,unavailable,unavailable,current
-I7I Extra Large,i7i.xlarge,i7i,32 GiB,4 vCPUs,x86_64,unavailable,unavailable,current
-M7G Extra Large,m7g.xlarge,m7g,16 GiB,4 vCPUs,arm64,$0.1166 hourly,$0.0583 hourly,current
-M6GD Double Extra Large,m6gd.2xlarge,m6gd,32 GiB,8 vCPUs,arm64,$0.2416 hourly,$0.1280 hourly,current
-M6G Medium,m6g.medium,m6g,4 GiB,1 vCPUs,arm64,$0.0253 hourly,$0.0111 hourly,current
-R7G Medium,r7g.medium,r7g,8 GiB,1 vCPUs,arm64,$0.0375 hourly,$0.0180 hourly,current
-C8G Medium,c8g.medium,c8g,2 GiB,1 vCPUs,arm64,$0.0270 hourly,$0.0032 hourly,current
-R5D Extra Large,r5d.xlarge,r5d,32 GiB,4 vCPUs,x86_64,$0.3020 hourly,$0.1329 hourly,current
-M4 General Purpose Large,m4.large,m4,8 GiB,2 vCPUs,x86_64,$0.1050 hourly,$0.0420 hourly,current
-R4 High-Memory Large,r4.large,r4,15.25 GiB,2 vCPUs,x86_64,$0.1370 hourly,$0.0548 hourly,current
-I4I Large,i4i.large,i4i,16 GiB,2 vCPUs,x86_64,$0.1950 hourly,$0.0312 hourly,current
-X2GD Large,x2gd.large,x2gd,32 GiB,2 vCPUs,arm64,unavailable,unavailable,current
-C8GD Extra Large,c8gd.xlarge,c8gd,8 GiB,4 vCPUs,arm64,unavailable,unavailable,current
-C6GD Double Extra Large,c6gd.2xlarge,c6gd,16 GiB,8 vCPUs,arm64,$0.1960 hourly,$0.0627 hourly,current
-G4AD Double Extra Large,g4ad.2xlarge,g4ad,32 GiB,8 vCPUs,x86_64,unavailable,unavailable,current
-M7G Large,m7g.large,m7g,8 GiB,2 vCPUs,arm64,$0.0583 hourly,$0.0239 hourly,current
-T2 Small,t2.small,t2,2 GiB,1 vCPUs (4h 48m burst),"i386, x86_64",$0.0248 hourly,$0.0060 hourly,current
-R8G Large,r8g.large,r8g,16 GiB,2 vCPUs,arm64,$0.0826 hourly,$0.0339 hourly,current
-C7I-FLEX Large,c7i-flex.large,c7i-flex,4 GiB,2 vCPUs,x86_64,$0.0848 hourly,$0.0246 hourly,current
-IM4GN Extra Large,im4gn.xlarge,im4gn,16 GiB,4 vCPUs,arm64,unavailable,unavailable,current
-M5DN Large,m5dn.large,m5dn,8 GiB,2 vCPUs,x86_64,unavailable,unavailable,current
-A1 Double Extra Large,a1.2xlarge,a1,16 GiB,8 vCPUs,arm64,$0.2040 hourly,$0.2040 hourly,previous
-R5B Extra Large,r5b.xlarge,r5b,32 GiB,4 vCPUs,x86_64,unavailable,unavailable,current
-R6GD Extra Large,r6gd.xlarge,r6gd,32 GiB,4 vCPUs,arm64,$0.1495 hourly,$0.0852 hourly,current
-R6IDN Extra Large,r6idn.xlarge,r6idn,32 GiB,4 vCPUs,x86_64,unavailable,unavailable,current
-C8GD Double Extra Large,c8gd.2xlarge,c8gd,16 GiB,8 vCPUs,arm64,unavailable,unavailable,current
-C6GN Medium,c6gn.medium,c6gn,2 GiB,1 vCPUs,arm64,$0.0432 hourly,$0.0074 hourly,current
-T3 Micro,t3.micro,t3,1 GiB,2 vCPUs (2h 24m burst),x86_64,$0.0112 hourly,$0.0027 hourly,current
-M8GD Extra Large,m8gd.xlarge,m8gd,16 GiB,4 vCPUs,arm64,unavailable,unavailable,current
-I2 Extra Large,i2.xlarge,i2,30.5 GiB,4 vCPUs,x86_64,$0.9670 hourly,$0.0967 hourly,previous
-I4G Extra Large,i4g.xlarge,i4g,32 GiB,4 vCPUs,arm64,unavailable,unavailable,current
-C8G Large,c8g.large,c8g,4 GiB,2 vCPUs,arm64,$0.0540 hourly,$0.0054 hourly,current
-A1 Extra Large,a1.xlarge,a1,8 GiB,4 vCPUs,arm64,$0.1020 hourly,$0.1020 hourly,previous
-M8GD Large,m8gd.large,m8gd,8 GiB,2 vCPUs,arm64,unavailable,unavailable,current
-C7G Large,c7g.large,c7g,4 GiB,2 vCPUs,arm64,$0.0491 hourly,$0.0275 hourly,current
-C7G Extra Large,c7g.xlarge,c7g,8 GiB,4 vCPUs,arm64,$0.0982 hourly,$0.0530 hourly,current
-R7G Large,r7g.large,r7g,16 GiB,2 vCPUs,arm64,$0.0751 hourly,$0.0278 hourly,current
-A1 Large,a1.large,a1,4 GiB,2 vCPUs,arm64,$0.0510 hourly,$0.0510 hourly,previous
-G5 Graphics and Machine Learning GPU Double Extra Large,g5.2xlarge,g5,32 GiB,8 vCPUs,x86_64,$1.4554 hourly,$0.4512 hourly,current
-Z1D Extra Large,z1d.xlarge,z1d,32 GiB,4 vCPUs,x86_64,$0.3920 hourly,$0.1058 hourly,current
-I3 High I/O Large,i3.large,i3,15.25 GiB,2 vCPUs,x86_64,$0.1770 hourly,$0.0248 hourly,current
-R6IN Large,r6in.large,r6in,16 GiB,2 vCPUs,x86_64,unavailable,unavailable,current
-M6GD Large,m6gd.large,m6gd,8 GiB,2 vCPUs,arm64,$0.0604 hourly,$0.0260 hourly,current
-R4 High-Memory Extra Large,r4.xlarge,r4,30.5 GiB,4 vCPUs,x86_64,$0.2740 hourly,$0.1315 hourly,current
-C7I-FLEX Extra Large,c7i-flex.xlarge,c7i-flex,8 GiB,4 vCPUs,x86_64,$0.1696 hourly,$0.0627 hourly,current
-C6GN Double Extra Large,c6gn.2xlarge,c6gn,16 GiB,8 vCPUs,arm64,$0.3460 hourly,$0.1799 hourly,current
-M8GD Medium,m8gd.medium,m8gd,4 GiB,1 vCPUs,arm64,unavailable,unavailable,current
-R6GD Large,r6gd.large,r6gd,16 GiB,2 vCPUs,arm64,$0.0747 hourly,$0.0276 hourly,current
-C7G Double Extra Large,c7g.2xlarge,c7g,16 GiB,8 vCPUs,arm64,$0.1963 hourly,$0.0883 hourly,current
-M8GD Double Extra Large,m8gd.2xlarge,m8gd,32 GiB,8 vCPUs,arm64,unavailable,unavailable,current
-G5 Graphics and Machine Learning GPU Extra Large,g5.xlarge,g5,16 GiB,4 vCPUs,x86_64,$1.2080 hourly,$0.3745 hourly,current
-T3A Nano,t3a.nano,t3a,0.5 GiB,2 vCPUs (1h 12m burst),x86_64,$0.0031 hourly,$0.0007 hourly,current
-C6G Large,c6g.large,c6g,4 GiB,2 vCPUs,arm64,$0.0426 hourly,$0.0187 hourly,current
-C6GN Extra Large,c6gn.xlarge,c6gn,8 GiB,4 vCPUs,arm64,$0.1730 hourly,$0.0865 hourly,current
-C6GD Medium,c6gd.medium,c6gd,2 GiB,1 vCPUs,arm64,$0.0245 hourly,$0.0047 hourly,current
-R8G Extra Large,r8g.xlarge,r8g,32 GiB,4 vCPUs,arm64,$0.1652 hourly,$0.0859 hourly,current
-X2GD Medium,x2gd.medium,x2gd,16 GiB,1 vCPUs,arm64,unavailable,unavailable,current
-IM4GN Double Extra Large,im4gn.2xlarge,im4gn,32 GiB,8 vCPUs,arm64,unavailable,unavailable,current
-TRN1 Double Extra Large,trn1.2xlarge,trn1,32 GiB,8 vCPUs,x86_64,unavailable,unavailable,current
-M7G Double Extra Large,m7g.2xlarge,m7g,32 GiB,8 vCPUs,arm64,$0.2333 hourly,$0.1236 hourly,current
 IS4GEN Large,is4gen.large,is4gen,12 GiB,2 vCPUs,arm64,$0.3275 hourly,$0.0360 hourly,current
-R6GD Medium,r6gd.medium,r6gd,8 GiB,1 vCPUs,arm64,$0.0374 hourly,$0.0079 hourly,current
-IS4GEN Extra Large,is4gen.xlarge,is4gen,24 GiB,4 vCPUs,arm64,$0.6550 hourly,$0.1441 hourly,current
+R6ID Extra Large,r6id.xlarge,r6id,32 GiB,4 vCPUs,x86_64,$0.3172 hourly,$0.1078 hourly,current
+R5N Extra Large,r5n.xlarge,r5n,32 GiB,4 vCPUs,x86_64,$0.3060 hourly,$0.1377 hourly,current
+R5D Extra Large,r5d.xlarge,r5d,32 GiB,4 vCPUs,x86_64,$0.3020 hourly,$0.1329 hourly,current
+M6IN Extra Large,m6in.xlarge,m6in,16 GiB,4 vCPUs,x86_64,$0.2902 hourly,$0.0609 hourly,current
+M7GD Double Extra Large,m7gd.2xlarge,m7gd,32 GiB,8 vCPUs,arm64,$0.2840 hourly,$0.1250 hourly,current
+R4 High-Memory Extra Large,r4.xlarge,r4,30.5 GiB,4 vCPUs,x86_64,$0.2740 hourly,$0.1315 hourly,current
+R7I Extra Large,r7i.xlarge,r7i,32 GiB,4 vCPUs,x86_64,$0.2730 hourly,$0.0874 hourly,current
+M5AD Double Extra Large,m5ad.2xlarge,m5ad,32 GiB,8 vCPUs,x86_64,$0.2680 hourly,$0.1796 hourly,current
+R6I Extra Large,r6i.xlarge,r6i,32 GiB,4 vCPUs,x86_64,$0.2600 hourly,$0.0806 hourly,current
+R5 Extra Large,r5.xlarge,r5,32 GiB,4 vCPUs,x86_64,$0.2600 hourly,$0.1014 hourly,current
+I3EN Large,i3en.large,i3en,16 GiB,2 vCPUs,x86_64,$0.2570 hourly,$0.0257 hourly,current
+M8G Double Extra Large,m8g.2xlarge,m8g,32 GiB,8 vCPUs,arm64,$0.2566 hourly,$0.0282 hourly,current
+M6ID Extra Large,m6id.xlarge,m6id,16 GiB,4 vCPUs,x86_64,$0.2562 hourly,$0.0794 hourly,current
+M5 General Purpose Extra Large,m5d.xlarge,m5d,16 GiB,4 vCPUs,x86_64,$0.2440 hourly,$0.0756 hourly,current
+M6GD Double Extra Large,m6gd.2xlarge,m6gd,32 GiB,8 vCPUs,arm64,$0.2416 hourly,$0.1280 hourly,current
+INF1 Extra Large,inf1.xlarge,inf1,8 GiB,4 vCPUs,x86_64,$0.2400 hourly,$0.0672 hourly,current
+M7G Double Extra Large,m7g.2xlarge,m7g,32 GiB,8 vCPUs,arm64,$0.2333 hourly,$0.1236 hourly,current
+C7GD Double Extra Large,c7gd.2xlarge,c7gd,16 GiB,8 vCPUs,arm64,$0.2304 hourly,$0.1083 hourly,current
+C6IN Extra Large,c6in.xlarge,c6in,8 GiB,4 vCPUs,x86_64,$0.2268 hourly,$0.0998 hourly,current
+M6A Double Extra Large,m6a.2xlarge,m6a,32 GiB,8 vCPUs,x86_64,$0.2222 hourly,$0.1111 hourly,current
+M5A Double Extra Large,m5a.2xlarge,m5a,32 GiB,8 vCPUs,x86_64,$0.2220 hourly,$0.1110 hourly,current
+C5N Extra Large,c5n.xlarge,c5n,10.5 GiB,4 vCPUs,x86_64,$0.2160 hourly,$0.1145 hourly,current
+C8G Double Extra Large,c8g.2xlarge,c8g,16 GiB,8 vCPUs,arm64,$0.2159 hourly,$0.0259 hourly,current
+M7I Extra Large,m7i.xlarge,m7i,16 GiB,4 vCPUs,x86_64,$0.2121 hourly,$0.0912 hourly,current
+M4 General Purpose Extra Large,m4.xlarge,m4,16 GiB,4 vCPUs,x86_64,$0.2100 hourly,$0.0987 hourly,current
+A1 Double Extra Large,a1.2xlarge,a1,16 GiB,8 vCPUs,arm64,$0.2040 hourly,$0.2040 hourly,previous
+M6G Double Extra Large,m6g.2xlarge,m6g,32 GiB,8 vCPUs,arm64,$0.2024 hourly,$0.1154 hourly,current
+M5 General Purpose Extra Large,m5.xlarge,m5,16 GiB,4 vCPUs,x86_64,$0.2020 hourly,$0.0646 hourly,current
+M6I Extra Large,m6i.xlarge,m6i,16 GiB,4 vCPUs,x86_64,$0.2020 hourly,$0.0768 hourly,current
+M7I-FLEX Extra Large,m7i-flex.xlarge,m7i-flex,16 GiB,4 vCPUs,x86_64,$0.2015 hourly,$0.0786 hourly,current
+C4 High-CPU Extra Large,c4.xlarge,c4,7.5 GiB,4 vCPUs,x86_64,$0.2000 hourly,$0.0880 hourly,current
+T2 Extra Large,t2.xlarge,t2,16 GiB,4 vCPUs (5h 24m burst),x86_64,$0.1984 hourly,$0.0655 hourly,current
+C5 High-CPU Extra Large,c5d.xlarge,c5d,8 GiB,4 vCPUs,x86_64,$0.1980 hourly,$0.0812 hourly,current
+T3A Double Extra Large,t3a.2xlarge,t3a,32 GiB,8 vCPUs (9h 36m burst),x86_64,$0.1971 hourly,$0.0670 hourly,current
+C7G Double Extra Large,c7g.2xlarge,c7g,16 GiB,8 vCPUs,arm64,$0.1963 hourly,$0.0883 hourly,current
+Z1D Large,z1d.large,z1d,16 GiB,2 vCPUs,x86_64,$0.1960 hourly,$0.0333 hourly,current
+C6GD Double Extra Large,c6gd.2xlarge,c6gd,16 GiB,8 vCPUs,arm64,$0.1960 hourly,$0.0627 hourly,current
+I4I Large,i4i.large,i4i,16 GiB,2 vCPUs,x86_64,$0.1950 hourly,$0.0312 hourly,current
+R3 High-Memory Large,r3.large,r3,15.25 GiB,2 vCPUs,x86_64,$0.1900 hourly,$0.0532 hourly,previous
+C5A Double Extra Large,c5a.2xlarge,c5a,16 GiB,8 vCPUs,x86_64,$0.1880 hourly,$0.0940 hourly,current
+C6A Double Extra Large,c6a.2xlarge,c6a,16 GiB,8 vCPUs,x86_64,$0.1870 hourly,$0.0860 hourly,current
+T3 Extra Large,t3.xlarge,t3,16 GiB,4 vCPUs (9h 36m burst),x86_64,$0.1792 hourly,$0.0735 hourly,current
+T4G Double Extra Large,t4g.2xlarge,t4g,32 GiB,8 vCPUs (9h 36m burst),arm64,$0.1792 hourly,$0.0699 hourly,current
+C7I Extra Large,c7i.xlarge,c7i,8 GiB,4 vCPUs,x86_64,$0.1785 hourly,$0.0589 hourly,current
+I3 High I/O Large,i3.large,i3,15.25 GiB,2 vCPUs,x86_64,$0.1770 hourly,$0.0248 hourly,current
+R7GD Extra Large,r7gd.xlarge,r7gd,32 GiB,4 vCPUs,arm64,$0.1760 hourly,$0.0862 hourly,current
+C6GN Extra Large,c6gn.xlarge,c6gn,8 GiB,4 vCPUs,arm64,$0.1730 hourly,$0.0865 hourly,current
 C6G Double Extra Large,c6g.2xlarge,c6g,16 GiB,8 vCPUs,arm64,$0.1704 hourly,$0.0801 hourly,current
-C7GD Medium,c7gd.medium,c7gd,2 GiB,1 vCPUs,arm64,$0.0288 hourly,$0.0101 hourly,current
-T4G Extra Large,t4g.xlarge,t4g,16 GiB,4 vCPUs (9h 36m burst),arm64,$0.0896 hourly,$0.0376 hourly,current
-T2 Nano,t2.nano,t2,0.5 GiB,1 vCPUs (1h 12m burst),"i386, x86_64",$0.0062 hourly,unavailable,current
-INF2 Extra Large,inf2.xlarge,inf2,16 GiB,4 vCPUs,x86_64,$0.9857 hourly,$0.1478 hourly,current
-I2 Large,i2.large,i2,15 GiB,2 vCPUs,x86_64,unavailable,unavailable,previous
+C5 High-CPU Extra Large,c5.xlarge,c5,8 GiB,4 vCPUs,x86_64,$0.1700 hourly,$0.0799 hourly,current
+C6I Extra Large,c6i.xlarge,c6i,8 GiB,4 vCPUs,x86_64,$0.1700 hourly,$0.0748 hourly,current
+M6IDN Large,m6idn.large,m6idn,8 GiB,2 vCPUs,x86_64,$0.1696 hourly,$0.0458 hourly,current
+C7I-FLEX Extra Large,c7i-flex.xlarge,c7i-flex,8 GiB,4 vCPUs,x86_64,$0.1696 hourly,$0.0627 hourly,current
+R5AD Extra Large,r5ad.xlarge,r5ad,32 GiB,4 vCPUs,x86_64,$0.1660 hourly,$0.0979 hourly,current
+R8G Extra Large,r8g.xlarge,r8g,32 GiB,4 vCPUs,arm64,$0.1652 hourly,$0.0859 hourly,current
 IS4GEN Medium,is4gen.medium,is4gen,6 GiB,1 vCPUs,arm64,$0.1638 hourly,$0.0164 hourly,current
-MAC2-M2 Metal,mac2-m2.metal,mac2-m2,24 GiB,8 vCPUs,arm64_mac,unavailable,unavailable,current
-MAC2 Metal,mac2.metal,mac2,16 GiB,8 vCPUs,arm64_mac,unavailable,unavailable,current
-C3 High-CPU Large,c3.large,c3,3.75 GiB,2 vCPUs,"i386, x86_64",unavailable,unavailable,previous
-X8G Large,x8g.large,x8g,32 GiB,2 vCPUs,arm64,unavailable,unavailable,current
-M3 General Purpose Double Extra Large,m3.2xlarge,m3,30 GiB,8 vCPUs,x86_64,unavailable,unavailable,previous
-C3 High-CPU Double Extra Large,c3.2xlarge,c3,15 GiB,8 vCPUs,x86_64,unavailable,unavailable,previous
-D3EN Extra Large,d3en.xlarge,d3en,16 GiB,4 vCPUs,x86_64,unavailable,unavailable,current
-C8GN Extra Large,c8gn.xlarge,c8gn,8 GiB,4 vCPUs,arm64,unavailable,unavailable,current
-M3 General Purpose Large,m3.large,m3,7.5 GiB,2 vCPUs,x86_64,unavailable,unavailable,previous
-D3EN Double Extra Large,d3en.2xlarge,d3en,32 GiB,8 vCPUs,x86_64,unavailable,unavailable,current
-I8G Large,i8g.large,i8g,16 GiB,2 vCPUs,arm64,unavailable,unavailable,current
-M3 General Purpose Medium,m3.medium,m3,3.75 GiB,1 vCPUs,x86_64,unavailable,unavailable,previous
-C3 High-CPU Extra Large,c3.xlarge,c3,7.5 GiB,4 vCPUs,x86_64,unavailable,unavailable,previous
-M1 General Purpose Extra Large,m1.xlarge,m1,15 GiB,4 vCPUs,x86_64,unavailable,unavailable,previous
-M3 General Purpose Extra Large,m3.xlarge,m3,15 GiB,4 vCPUs,x86_64,unavailable,unavailable,previous
-M1 General Purpose Medium,m1.medium,m1,3.75 GiB,1 vCPUs,"i386, x86_64",unavailable,unavailable,previous
-M1 General Purpose Small,m1.small,m1,1.7 GiB,1 vCPUs,"i386, x86_64",unavailable,unavailable,previous
-M1 General Purpose Large,m1.large,m1,7.5 GiB,2 vCPUs,x86_64,unavailable,unavailable,previous
-I8G Extra Large,i8g.xlarge,i8g,32 GiB,4 vCPUs,arm64,unavailable,unavailable,current
-G2 Double Extra Large,g2.2xlarge,g2,15 GiB,8 vCPUs,x86_64,unavailable,unavailable,previous
-X8G Medium,x8g.medium,x8g,16 GiB,1 vCPUs,arm64,unavailable,unavailable,current
-M2 High Memory Extra Large,m2.xlarge,m2,17.1 GiB,2 vCPUs,x86_64,unavailable,unavailable,previous
-C1 High-CPU Medium,c1.medium,c1,1.7 GiB,2 vCPUs,"i386, x86_64",unavailable,unavailable,previous
-C8GN Large,c8gn.large,c8gn,4 GiB,2 vCPUs,arm64,unavailable,unavailable,current
-C1 High-CPU Extra Large,c1.xlarge,c1,7 GiB,8 vCPUs,x86_64,unavailable,unavailable,previous
-G5G Double Extra Large,g5g.2xlarge,g5g,16 GiB,8 vCPUs,arm64,unavailable,unavailable,current
-C8GN Double Extra Large,c8gn.2xlarge,c8gn,16 GiB,8 vCPUs,arm64,unavailable,unavailable,current
-C8GN Medium,c8gn.medium,c8gn,2 GiB,1 vCPUs,arm64,unavailable,unavailable,current
-G5G Extra Large,g5g.xlarge,g5g,8 GiB,4 vCPUs,arm64,unavailable,unavailable,current
-T1 Micro,t1.micro,t1,0.613 GiB,1 vCPUs,"i386, x86_64",unavailable,unavailable,previous
+R6ID Large,r6id.large,r6id,16 GiB,2 vCPUs,x86_64,$0.1586 hourly,$0.0412 hourly,current
+R5N Large,r5n.large,r5n,16 GiB,2 vCPUs,x86_64,$0.1530 hourly,$0.0597 hourly,current
+R5D Large,r5d.large,r5d,16 GiB,2 vCPUs,x86_64,$0.1510 hourly,$0.0529 hourly,current
+R7G Extra Large,r7g.xlarge,r7g,32 GiB,4 vCPUs,arm64,$0.1502 hourly,$0.0631 hourly,current
+R6GD Extra Large,r6gd.xlarge,r6gd,32 GiB,4 vCPUs,arm64,$0.1495 hourly,$0.0852 hourly,current
+M6IN Large,m6in.large,m6in,8 GiB,2 vCPUs,x86_64,$0.1451 hourly,$0.0421 hourly,current
+R5A Extra Large,r5a.xlarge,r5a,32 GiB,4 vCPUs,x86_64,$0.1430 hourly,$0.0686 hourly,current
+R6A Extra Large,r6a.xlarge,r6a,32 GiB,4 vCPUs,x86_64,$0.1430 hourly,$0.0558 hourly,current
+M7GD Extra Large,m7gd.xlarge,m7gd,16 GiB,4 vCPUs,arm64,$0.1420 hourly,$0.0767 hourly,current
+R4 High-Memory Large,r4.large,r4,15.25 GiB,2 vCPUs,x86_64,$0.1370 hourly,$0.0548 hourly,current
+R7I Large,r7i.large,r7i,16 GiB,2 vCPUs,x86_64,$0.1365 hourly,$0.0328 hourly,current
+M5AD Extra Large,m5ad.xlarge,m5ad,16 GiB,4 vCPUs,x86_64,$0.1340 hourly,$0.0831 hourly,current
+R6I Large,r6i.large,r6i,16 GiB,2 vCPUs,x86_64,$0.1300 hourly,$0.0338 hourly,current
+R6G Extra Large,r6g.xlarge,r6g,32 GiB,4 vCPUs,arm64,$0.1300 hourly,$0.0624 hourly,current
+R5 Large,r5.large,r5,16 GiB,2 vCPUs,x86_64,$0.1300 hourly,$0.0585 hourly,current
+M8G Extra Large,m8g.xlarge,m8g,16 GiB,4 vCPUs,arm64,$0.1283 hourly,$0.0128 hourly,current
+M6ID Large,m6id.large,m6id,8 GiB,2 vCPUs,x86_64,$0.1281 hourly,$0.0346 hourly,current
+M5 General Purpose Large,m5d.large,m5d,8 GiB,2 vCPUs,x86_64,$0.1220 hourly,$0.0390 hourly,current
+M6GD Extra Large,m6gd.xlarge,m6gd,16 GiB,4 vCPUs,arm64,$0.1208 hourly,$0.0737 hourly,current
+M7G Extra Large,m7g.xlarge,m7g,16 GiB,4 vCPUs,arm64,$0.1166 hourly,$0.0583 hourly,current
+C7GD Extra Large,c7gd.xlarge,c7gd,8 GiB,4 vCPUs,arm64,$0.1152 hourly,$0.0599 hourly,current
+C6IN Large,c6in.large,c6in,4 GiB,2 vCPUs,x86_64,$0.1134 hourly,$0.0431 hourly,current
+M6A Extra Large,m6a.xlarge,m6a,16 GiB,4 vCPUs,x86_64,$0.1111 hourly,$0.0556 hourly,current
+M5A Extra Large,m5a.xlarge,m5a,16 GiB,4 vCPUs,x86_64,$0.1110 hourly,$0.0544 hourly,current
+C5N Large,c5n.large,c5n,5.25 GiB,2 vCPUs,x86_64,$0.1080 hourly,$0.0410 hourly,current
+C8G Extra Large,c8g.xlarge,c8g,8 GiB,4 vCPUs,arm64,$0.1080 hourly,$0.0119 hourly,current
+M7I Large,m7i.large,m7i,8 GiB,2 vCPUs,x86_64,$0.1061 hourly,$0.0488 hourly,current
+M4 General Purpose Large,m4.large,m4,8 GiB,2 vCPUs,x86_64,$0.1050 hourly,$0.0420 hourly,current
+A1 Extra Large,a1.xlarge,a1,8 GiB,4 vCPUs,arm64,$0.1020 hourly,$0.1020 hourly,previous
+M6G Extra Large,m6g.xlarge,m6g,16 GiB,4 vCPUs,arm64,$0.1012 hourly,$0.0435 hourly,current
+M6I Large,m6i.large,m6i,8 GiB,2 vCPUs,x86_64,$0.1010 hourly,$0.0424 hourly,current
+M5 General Purpose Large,m5.large,m5,8 GiB,2 vCPUs,x86_64,$0.1010 hourly,$0.0323 hourly,current
+M7I-FLEX Large,m7i-flex.large,m7i-flex,8 GiB,2 vCPUs,x86_64,$0.1008 hourly,$0.0302 hourly,current
+C4 High-CPU Large,c4.large,c4,3.75 GiB,2 vCPUs,x86_64,$0.1000 hourly,$0.0360 hourly,current
+T2 Large,t2.large,t2,8 GiB,2 vCPUs (7h 12m burst),x86_64,$0.0992 hourly,$0.0327 hourly,current
+C5 High-CPU Large,c5d.large,c5d,4 GiB,2 vCPUs,x86_64,$0.0990 hourly,$0.0356 hourly,current
+T3A Extra Large,t3a.xlarge,t3a,16 GiB,4 vCPUs (9h 36m burst),x86_64,$0.0986 hourly,$0.0335 hourly,current
+C7G Extra Large,c7g.xlarge,c7g,8 GiB,4 vCPUs,arm64,$0.0982 hourly,$0.0530 hourly,current
+C6GD Extra Large,c6gd.xlarge,c6gd,8 GiB,4 vCPUs,arm64,$0.0980 hourly,$0.0421 hourly,current
+C5A Extra Large,c5a.xlarge,c5a,8 GiB,4 vCPUs,x86_64,$0.0940 hourly,$0.0602 hourly,current
+C6A Extra Large,c6a.xlarge,c6a,8 GiB,4 vCPUs,x86_64,$0.0935 hourly,$0.0430 hourly,current
+T3 Large,t3.large,t3,8 GiB,2 vCPUs (7h 12m burst),x86_64,$0.0896 hourly,$0.0314 hourly,current
+T4G Extra Large,t4g.xlarge,t4g,16 GiB,4 vCPUs (9h 36m burst),arm64,$0.0896 hourly,$0.0376 hourly,current
+C7I Large,c7i.large,c7i,4 GiB,2 vCPUs,x86_64,$0.0892 hourly,$0.0277 hourly,current
+R7GD Large,r7gd.large,r7gd,16 GiB,2 vCPUs,arm64,$0.0880 hourly,$0.0282 hourly,current
+C6GN Large,c6gn.large,c6gn,4 GiB,2 vCPUs,arm64,$0.0865 hourly,$0.0372 hourly,current
+C6G Extra Large,c6g.xlarge,c6g,8 GiB,4 vCPUs,arm64,$0.0852 hourly,$0.0400 hourly,current
+C6I Large,c6i.large,c6i,4 GiB,2 vCPUs,x86_64,$0.0850 hourly,$0.0297 hourly,current
+C5 High-CPU Large,c5.large,c5,4 GiB,2 vCPUs,x86_64,$0.0850 hourly,$0.0323 hourly,current
+C7I-FLEX Large,c7i-flex.large,c7i-flex,4 GiB,2 vCPUs,x86_64,$0.0848 hourly,$0.0246 hourly,current
+R5AD Large,r5ad.large,r5ad,16 GiB,2 vCPUs,x86_64,$0.0830 hourly,$0.0349 hourly,current
+R8G Large,r8g.large,r8g,16 GiB,2 vCPUs,arm64,$0.0826 hourly,$0.0339 hourly,current
+R7G Large,r7g.large,r7g,16 GiB,2 vCPUs,arm64,$0.0751 hourly,$0.0278 hourly,current
+R6GD Large,r6gd.large,r6gd,16 GiB,2 vCPUs,arm64,$0.0747 hourly,$0.0276 hourly,current
+R5A Large,r5a.large,r5a,16 GiB,2 vCPUs,x86_64,$0.0720 hourly,$0.0281 hourly,current
+R6A Large,r6a.large,r6a,16 GiB,2 vCPUs,x86_64,$0.0715 hourly,$0.0257 hourly,current
+M7GD Large,m7gd.large,m7gd,8 GiB,2 vCPUs,arm64,$0.0710 hourly,$0.0234 hourly,current
+M5AD Large,m5ad.large,m5ad,8 GiB,2 vCPUs,x86_64,$0.0670 hourly,$0.0322 hourly,current
+R6G Large,r6g.large,r6g,16 GiB,2 vCPUs,arm64,$0.0650 hourly,$0.0273 hourly,current
+M8G Large,m8g.large,m8g,8 GiB,2 vCPUs,arm64,$0.0642 hourly,$0.0071 hourly,current
+M6GD Large,m6gd.large,m6gd,8 GiB,2 vCPUs,arm64,$0.0604 hourly,$0.0260 hourly,current
+M7G Large,m7g.large,m7g,8 GiB,2 vCPUs,arm64,$0.0583 hourly,$0.0239 hourly,current
+C7GD Large,c7gd.large,c7gd,4 GiB,2 vCPUs,arm64,$0.0576 hourly,$0.0253 hourly,current
+M5A Large,m5a.large,m5a,8 GiB,2 vCPUs,x86_64,$0.0560 hourly,$0.0241 hourly,current
+M6A Large,m6a.large,m6a,8 GiB,2 vCPUs,x86_64,$0.0556 hourly,$0.0250 hourly,current
+C8G Large,c8g.large,c8g,4 GiB,2 vCPUs,arm64,$0.0540 hourly,$0.0054 hourly,current
+A1 Large,a1.large,a1,4 GiB,2 vCPUs,arm64,$0.0510 hourly,$0.0510 hourly,previous
+M6G Large,m6g.large,m6g,8 GiB,2 vCPUs,arm64,$0.0506 hourly,$0.0228 hourly,current
+T2 Medium,t2.medium,t2,4 GiB,2 vCPUs (4h 48m burst),"i386, x86_64",$0.0496 hourly,$0.0164 hourly,current
+T3A Large,t3a.large,t3a,8 GiB,2 vCPUs (7h 12m burst),x86_64,$0.0493 hourly,$0.0153 hourly,current
+C7G Large,c7g.large,c7g,4 GiB,2 vCPUs,arm64,$0.0491 hourly,$0.0275 hourly,current
+C6GD Large,c6gd.large,c6gd,4 GiB,2 vCPUs,arm64,$0.0490 hourly,$0.0201 hourly,current
+C5A Large,c5a.large,c5a,4 GiB,2 vCPUs,x86_64,$0.0470 hourly,$0.0240 hourly,current
+C6A Large,c6a.large,c6a,4 GiB,2 vCPUs,x86_64,$0.0467 hourly,$0.0210 hourly,current
+T4G Large,t4g.large,t4g,8 GiB,2 vCPUs (7h 12m burst),arm64,$0.0448 hourly,$0.0157 hourly,current
+T3 Medium,t3.medium,t3,4 GiB,2 vCPUs (4h 48m burst),x86_64,$0.0448 hourly,$0.0184 hourly,current
+R7GD Medium,r7gd.medium,r7gd,8 GiB,1 vCPUs,arm64,$0.0440 hourly,$0.0158 hourly,current
+C6GN Medium,c6gn.medium,c6gn,2 GiB,1 vCPUs,arm64,$0.0432 hourly,$0.0074 hourly,current
+C6G Large,c6g.large,c6g,4 GiB,2 vCPUs,arm64,$0.0426 hourly,$0.0187 hourly,current
+R8G Medium,r8g.medium,r8g,8 GiB,1 vCPUs,arm64,$0.0413 hourly,$0.0062 hourly,current
+R7G Medium,r7g.medium,r7g,8 GiB,1 vCPUs,arm64,$0.0375 hourly,$0.0180 hourly,current
+R6GD Medium,r6gd.medium,r6gd,8 GiB,1 vCPUs,arm64,$0.0374 hourly,$0.0079 hourly,current
+M7GD Medium,m7gd.medium,m7gd,4 GiB,1 vCPUs,arm64,$0.0355 hourly,$0.0167 hourly,current
+R6G Medium,r6g.medium,r6g,8 GiB,1 vCPUs,arm64,$0.0325 hourly,$0.0140 hourly,current
+M8G Medium,m8g.medium,m8g,4 GiB,1 vCPUs,arm64,$0.0321 hourly,$0.0032 hourly,current
+M6GD Medium,m6gd.medium,m6gd,4 GiB,1 vCPUs,arm64,$0.0302 hourly,$0.0066 hourly,current
+M7G Medium,m7g.medium,m7g,4 GiB,1 vCPUs,arm64,$0.0292 hourly,$0.0128 hourly,current
+C7GD Medium,c7gd.medium,c7gd,2 GiB,1 vCPUs,arm64,$0.0288 hourly,$0.0101 hourly,current
+C8G Medium,c8g.medium,c8g,2 GiB,1 vCPUs,arm64,$0.0270 hourly,$0.0032 hourly,current
+A1 Medium,a1.medium,a1,2 GiB,1 vCPUs,arm64,$0.0255 hourly,$0.0255 hourly,previous
+M6G Medium,m6g.medium,m6g,4 GiB,1 vCPUs,arm64,$0.0253 hourly,$0.0111 hourly,current
+T2 Small,t2.small,t2,2 GiB,1 vCPUs (4h 48m burst),"i386, x86_64",$0.0248 hourly,$0.0060 hourly,current
+T3A Medium,t3a.medium,t3a,4 GiB,2 vCPUs (4h 48m burst),x86_64,$0.0246 hourly,$0.0086 hourly,current
+C7G Medium,c7g.medium,c7g,2 GiB,1 vCPUs,arm64,$0.0245 hourly,$0.0110 hourly,current
+C6GD Medium,c6gd.medium,c6gd,2 GiB,1 vCPUs,arm64,$0.0245 hourly,$0.0047 hourly,current
+T4G Medium,t4g.medium,t4g,4 GiB,2 vCPUs (4h 48m burst),arm64,$0.0224 hourly,$0.0076 hourly,current
+T3 Small,t3.small,t3,2 GiB,2 vCPUs (4h 48m burst),x86_64,$0.0224 hourly,$0.0072 hourly,current
+C6G Medium,c6g.medium,c6g,2 GiB,1 vCPUs,arm64,$0.0213 hourly,$0.0070 hourly,current
+T2 Micro,t2.micro,t2,1 GiB,1 vCPUs (2h 24m burst),"i386, x86_64",$0.0124 hourly,$0.0014 hourly,current
+T3A Small,t3a.small,t3a,2 GiB,2 vCPUs (4h 48m burst),x86_64,$0.0123 hourly,$0.0046 hourly,current
+T4G Small,t4g.small,t4g,2 GiB,2 vCPUs (4h 48m burst),arm64,$0.0112 hourly,$0.0036 hourly,current
+T3 Micro,t3.micro,t3,1 GiB,2 vCPUs (2h 24m burst),x86_64,$0.0112 hourly,$0.0027 hourly,current
+T3A Micro,t3a.micro,t3a,1 GiB,2 vCPUs (2h 24m burst),x86_64,$0.0062 hourly,$0.0019 hourly,current
+T4G Micro,t4g.micro,t4g,1 GiB,2 vCPUs (2h 24m burst),arm64,$0.0056 hourly,$0.0015 hourly,current
+T3 Nano,t3.nano,t3,0.5 GiB,2 vCPUs (1h 12m burst),x86_64,$0.0056 hourly,$0.0008 hourly,current
+T3A Nano,t3a.nano,t3a,0.5 GiB,2 vCPUs (1h 12m burst),x86_64,$0.0031 hourly,$0.0007 hourly,current
+T4G Nano,t4g.nano,t4g,0.5 GiB,2 vCPUs (1h 12m burst),arm64,$0.0028 hourly,$0.0007 hourly,current
