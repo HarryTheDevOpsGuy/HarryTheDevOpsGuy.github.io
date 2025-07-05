@@ -1,0 +1,309 @@
+---
+layout: default
+title: "Hari Prasad | Resume"
+---
+
+<!-- Custom Styles -->
+<style>
+  @media print {
+    header[role="banner"],
+    footer[role="contentinfo"] {
+      display: none !important;
+    }
+    @page {
+      margin: 0.5in;
+    }
+    body {
+      print-color-adjust: exact !important;
+    }
+  }
+
+  .stat-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: rotate(45deg);
+  }
+
+  .progress-ring {
+    transform: rotate(-90deg);
+  }
+
+  .progress-ring-circle {
+    transition: stroke-dashoffset 0.35s;
+    transform-origin: 50% 50%;
+  }
+
+  .skill-progress {
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    height: 6px;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+  }
+
+  .experience-badge {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .dark .glass-effect {
+    background: rgba(17, 24, 39, 0.1);
+    border: 1px solid rgba(75, 85, 99, 0.2);
+  }
+</style>
+
+<div class="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+  <div class="max-w-7xl mx-auto p-6 md:p-8">
+    
+    <!-- Header with Stats -->
+    <header class="mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+        <!-- Name and Title -->
+        <div class="md:col-span-2 stat-card">
+          <div class="relative z-10">
+            <div class="flex items-center gap-4 mb-4">
+              <img src="{{ page.cvdata.personal.avatar }}" alt="Avatar" 
+                   class="w-16 h-16 rounded-full border-4 border-white shadow-lg" />
+              <div>
+                <h1 class="text-2xl font-bold text-white">{{ page.cvdata.personal.name }}</h1>
+                <p class="text-blue-100">{{ page.cvdata.personal.title }}</p>
+              </div>
+            </div>
+            <p class="text-blue-100 text-sm">{{ page.cvdata.professional_summary }}</p>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="glass-effect rounded-2xl p-6">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">📞 Contact</h3>
+          <div class="space-y-2 text-sm">
+            <p class="text-gray-700 dark:text-gray-300">📧 {{ page.cvdata.personal.contact.email }}</p>
+            <p class="text-gray-700 dark:text-gray-300">📱 {{ page.cvdata.personal.contact.phone }}</p>
+          </div>
+          <div class="flex gap-2 mt-4">
+            <a href="{{ page.cvdata.personal.social.linkedin }}" class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs hover:bg-blue-200">LinkedIn</a>
+            <a href="{{ page.cvdata.personal.social.github }}" class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs hover:bg-gray-200">GitHub</a>
+            <a href="{{ page.cvdata.personal.social.portfolio }}" class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs hover:bg-green-200">Portfolio</a>
+          </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="glass-effect rounded-2xl p-6">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">📊 Stats</h3>
+          <div class="space-y-3">
+            <div class="flex justify-between">
+              <span class="text-sm text-gray-600 dark:text-gray-400">Experience</span>
+              <span class="text-sm font-semibold text-gray-900 dark:text-white">{{ page.cvdata.experience | size }} roles</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-sm text-gray-600 dark:text-gray-400">Projects</span>
+              <span class="text-sm font-semibold text-gray-900 dark:text-white">{{ page.cvdata.projects | size }} tools</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-sm text-gray-600 dark:text-gray-400">Skills</span>
+              <span class="text-sm font-semibold text-gray-900 dark:text-white">{{ page.cvdata.skills.core | size }}+ core</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      
+      <!-- Left Column -->
+      <div class="lg:col-span-2 space-y-8">
+        
+        <!-- Technical Skills Dashboard -->
+        <section class="glass-effect rounded-2xl p-6">
+          <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+            <span class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center text-white mr-3">⚡</span>
+            Technical Skills
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {% for skill in page.cvdata.technical_skills %}
+              <div class="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-sm">
+                <h3 class="font-semibold text-blue-600 dark:text-blue-400 mb-2">{{ skill.category }}</h3>
+                <p class="text-sm text-gray-700 dark:text-gray-300">{{ skill.description }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+
+        <!-- Experience Timeline -->
+        <section class="glass-effect rounded-2xl p-6">
+          <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+            <span class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center text-white mr-3">💼</span>
+            Work Experience
+          </h2>
+          <div class="space-y-6">
+            {% for job in page.cvdata.experience %}
+              <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border-l-4 border-green-500">
+                <div class="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white">{{ job.position }}</h3>
+                    <p class="text-blue-600 dark:text-blue-400 font-semibold">{{ job.company }}</p>
+                  </div>
+                  <div class="text-right">
+                    <span class="experience-badge">{{ job.period }}</span>
+                    <p class="text-sm text-gray-500 mt-1">{{ job.location }}</p>
+                  </div>
+                </div>
+                <ul class="space-y-2">
+                  {% for achievement in job.achievements %}
+                    <li class="flex items-start text-sm text-gray-700 dark:text-gray-300">
+                      <span class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      {{ achievement }}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+
+        <!-- Projects Dashboard -->
+        <section class="glass-effect rounded-2xl p-6">
+          <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+            <span class="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center text-white mr-3">🚀</span>
+            Developed Solutions
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {% for project in page.cvdata.projects %}
+              <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex items-start justify-between mb-3">
+                  <h3 class="font-bold text-gray-900 dark:text-white">{{ project.name }}</h3>
+                  <span class="w-3 h-3 bg-green-500 rounded-full"></span>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">{{ project.description }}</p>
+                <a href="{{ project.url }}" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 font-medium text-sm">
+                  View Project
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                </a>
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+      </div>
+
+      <!-- Right Sidebar -->
+      <div class="space-y-6">
+        
+        <!-- Skills Progress -->
+        <section class="glass-effect rounded-2xl p-6">
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+            <span class="w-6 h-6 bg-yellow-500 rounded-lg flex items-center justify-center text-white mr-2 text-sm">⭐</span>
+            Core Skills
+          </h3>
+          <div class="space-y-4">
+            {% for tool in page.cvdata.skills.core %}
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ tool }}</span>
+                  <span class="text-sm text-gray-500">100%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div class="skill-progress rounded-full h-2" style="width: 100%"></div>
+                </div>
+              </div>
+            {% endfor %}
+            {% for tool in page.cvdata.skills.tools %}
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ tool }}</span>
+                  <span class="text-sm text-gray-500">85%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div class="skill-progress rounded-full h-2" style="width: 85%"></div>
+                </div>
+              </div>
+            {% endfor %}
+            {% for tool in page.cvdata.skills.additional %}
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ tool }}</span>
+                  <span class="text-sm text-gray-500">70%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div class="skill-progress rounded-full h-2" style="width: 70%"></div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section class="glass-effect rounded-2xl p-6">
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+            <span class="w-6 h-6 bg-purple-500 rounded-lg flex items-center justify-center text-white mr-2 text-sm">🎓</span>
+            Education
+          </h3>
+          <div class="space-y-4">
+            {% for edu in page.cvdata.education %}
+              <div class="bg-white dark:bg-gray-800 rounded-lg p-4">
+                <h4 class="font-semibold text-gray-900 dark:text-white text-sm">{{ edu.degree }}</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400">{{ edu.institution }}</p>
+                <p class="text-xs text-gray-500">{{ edu.location }} • {{ edu.year }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+
+        <!-- Languages -->
+        <section class="glass-effect rounded-2xl p-6">
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+            <span class="w-6 h-6 bg-indigo-500 rounded-lg flex items-center justify-center text-white mr-2 text-sm">🌐</span>
+            Languages
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {% for lang in page.cvdata.languages %}
+              <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">{{ lang }}</span>
+            {% endfor %}
+          </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="glass-effect rounded-2xl p-6">
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">⚡ Quick Actions</h3>
+          <div class="space-y-3">
+            <a href="{{ page.cvdata.personal.social.linkedin }}" class="block w-full bg-blue-500 text-white text-center py-2 rounded-lg hover:bg-blue-600 transition-colors">
+              Connect on LinkedIn
+            </a>
+            <a href="{{ page.cvdata.personal.social.github }}" class="block w-full bg-gray-800 text-white text-center py-2 rounded-lg hover:bg-gray-900 transition-colors">
+              View GitHub
+            </a>
+            <a href="mailto:{{ page.cvdata.personal.contact.email }}" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg hover:bg-green-600 transition-colors">
+              Send Email
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div> 

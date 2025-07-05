@@ -1,0 +1,253 @@
+---
+layout: default
+title: "Hari Prasad | Resume"
+---
+
+<!-- Custom Styles -->
+<style>
+  @media print {
+    header[role="banner"],
+    footer[role="contentinfo"] {
+      display: none !important;
+    }
+    @page {
+      margin: 0.5in;
+    }
+    body {
+      print-color-adjust: exact !important;
+    }
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    background: #3b82f6;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 3px #3b82f6;
+  }
+
+  .timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 1.5rem;
+    width: 2px;
+    height: calc(100% - 1rem);
+    background: #e5e7eb;
+  }
+
+  .timeline-item:last-child::after {
+    display: none;
+  }
+
+  .skill-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+  }
+
+  .skill-expert { background: #10b981; }
+  .skill-advanced { background: #3b82f6; }
+  .skill-intermediate { background: #f59e0b; }
+
+  .hover-lift {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+</style>
+
+<div class="min-h-screen bg-gray-50 dark:bg-gray-900">
+  <div class="max-w-5xl mx-auto p-6 md:p-8">
+    
+    <!-- Header Section -->
+    <header class="bg-white dark:bg-gray-800 rounded-2xl p-8 mb-8 shadow-sm hover-lift">
+      <div class="flex flex-col md:flex-row items-center md:justify-between gap-6">
+        <div class="flex items-center gap-6">
+          <div class="relative">
+            <img src="{{ page.cvdata.personal.avatar }}" alt="Avatar" 
+                 class="w-24 h-24 rounded-full border-4 border-blue-500 shadow-lg" />
+            <div class="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-white"></div>
+          </div>
+          <div>
+            <h1 class="text-3xl font-bold gradient-text mb-2">{{ page.cvdata.personal.name }}</h1>
+            <p class="text-lg text-gray-600 dark:text-gray-300 font-medium">{{ page.cvdata.personal.title }}</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-2 max-w-md">{{ page.cvdata.professional_summary }}</p>
+          </div>
+        </div>
+        <div class="text-right space-y-2">
+          <div class="space-y-1">
+            <p class="text-sm text-gray-600 dark:text-gray-400">📧 {{ page.cvdata.personal.contact.email }}</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">📱 {{ page.cvdata.personal.contact.phone }}</p>
+          </div>
+          <div class="flex gap-2 justify-end">
+            <a href="{{ page.cvdata.personal.social.linkedin }}" class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200">LinkedIn</a>
+            <a href="{{ page.cvdata.personal.social.github }}" class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200">GitHub</a>
+            <a href="{{ page.cvdata.personal.social.portfolio }}" class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm hover:bg-green-200">Portfolio</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      
+      <!-- Left Column -->
+      <div class="lg:col-span-3 space-y-8">
+        
+        <!-- Technical Skills -->
+        <section class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm hover-lift">
+          <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+            <span class="w-6 h-6 bg-blue-500 rounded-lg flex items-center justify-center text-white mr-3 text-sm">⚡</span>
+            Technical Skills
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {% for skill in page.cvdata.technical_skills %}
+              <div class="border-l-4 border-blue-500 pl-4">
+                <h3 class="font-semibold text-gray-900 dark:text-white mb-2">{{ skill.category }}</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">{{ skill.description }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+
+        <!-- Experience Timeline -->
+        <section class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm hover-lift">
+          <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+            <span class="w-6 h-6 bg-green-500 rounded-lg flex items-center justify-center text-white mr-3 text-sm">💼</span>
+            Work Experience
+          </h2>
+          <div class="space-y-8">
+            {% for job in page.cvdata.experience %}
+              <div class="timeline-item">
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
+                  <div class="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 class="text-lg font-bold text-gray-900 dark:text-white">{{ job.position }}</h3>
+                      <p class="text-blue-600 dark:text-blue-400 font-semibold">{{ job.company }}</p>
+                    </div>
+                    <div class="text-right">
+                      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">{{ job.period }}</span>
+                      <p class="text-sm text-gray-500 mt-1">{{ job.location }}</p>
+                    </div>
+                  </div>
+                  <ul class="space-y-2">
+                    {% for achievement in job.achievements %}
+                      <li class="flex items-start text-sm text-gray-700 dark:text-gray-300">
+                        <span class="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        {{ achievement }}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm hover-lift">
+          <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+            <span class="w-6 h-6 bg-orange-500 rounded-lg flex items-center justify-center text-white mr-3 text-sm">🚀</span>
+            Developed Solutions
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {% for project in page.cvdata.projects %}
+              <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-blue-300 transition-colors">
+                <h3 class="font-bold text-gray-900 dark:text-white mb-2">{{ project.name }}</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">{{ project.description }}</p>
+                <a href="{{ project.url }}" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 text-sm font-medium">
+                  View Project →
+                </a>
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+      </div>
+
+      <!-- Right Sidebar -->
+      <div class="space-y-6">
+        
+        <!-- Skills Rating -->
+        <section class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm hover-lift">
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+            <span class="w-5 h-5 bg-yellow-500 rounded-lg flex items-center justify-center text-white mr-2 text-xs">⭐</span>
+            Core Skills
+          </h3>
+          <div class="space-y-4">
+            {% for tool in page.cvdata.skills.core %}
+              <div class="flex items-center">
+                <span class="skill-dot skill-expert"></span>
+                <span class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ tool }}</span>
+              </div>
+            {% endfor %}
+            {% for tool in page.cvdata.skills.tools %}
+              <div class="flex items-center">
+                <span class="skill-dot skill-advanced"></span>
+                <span class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ tool }}</span>
+              </div>
+            {% endfor %}
+            {% for tool in page.cvdata.skills.additional %}
+              <div class="flex items-center">
+                <span class="skill-dot skill-intermediate"></span>
+                <span class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ tool }}</span>
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm hover-lift">
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+            <span class="w-5 h-5 bg-purple-500 rounded-lg flex items-center justify-center text-white mr-2 text-xs">🎓</span>
+            Education
+          </h3>
+          <div class="space-y-4">
+            {% for edu in page.cvdata.education %}
+              <div class="border-l-4 border-purple-500 pl-4">
+                <h4 class="font-semibold text-gray-900 dark:text-white text-sm">{{ edu.degree }}</h4>
+                <p class="text-xs text-gray-600 dark:text-gray-400">{{ edu.institution }}</p>
+                <p class="text-xs text-gray-500">{{ edu.location }} • {{ edu.year }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+
+        <!-- Languages -->
+        <section class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm hover-lift">
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+            <span class="w-5 h-5 bg-indigo-500 rounded-lg flex items-center justify-center text-white mr-2 text-xs">🌐</span>
+            Languages
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {% for lang in page.cvdata.languages %}
+              <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs font-medium">{{ lang }}</span>
+            {% endfor %}
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

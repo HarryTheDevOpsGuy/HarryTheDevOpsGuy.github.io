@@ -1,0 +1,286 @@
+---
+layout: default
+title: "Hari Prasad | Resume"
+---
+
+<!-- Custom Styles -->
+<style>
+  @media print {
+    header[role="banner"],
+    footer[role="contentinfo"] {
+      display: none !important;
+    }
+    @page {
+      margin: 0.5in;
+    }
+    body {
+      print-color-adjust: exact !important;
+    }
+  }
+
+  .hexagon {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+
+  .hexagon-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .skill-hex {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.75rem;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .experience-card {
+    border-left: 4px solid #3b82f6;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+  }
+
+  .project-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  .dark .project-card {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    border: 1px solid #475569;
+  }
+
+  .gradient-border {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 2px;
+    border-radius: 1rem;
+  }
+
+  .gradient-border > div {
+    background: white;
+    border-radius: calc(1rem - 2px);
+  }
+
+  .dark .gradient-border > div {
+    background: #1f2937;
+  }
+
+  .floating-element {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+</style>
+
+<div class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+  <div class="max-w-6xl mx-auto p-6 md:p-8">
+    
+    <!-- Creative Header -->
+    <header class="mb-12">
+      <div class="gradient-border mb-8">
+        <div class="p-8">
+          <div class="flex flex-col md:flex-row items-center md:justify-between gap-8">
+            <div class="flex items-center gap-6">
+              <div class="relative">
+                <div class="hexagon hexagon-bg w-24 h-24 flex items-center justify-center floating-element">
+                  <img src="{{ page.cvdata.personal.avatar }}" alt="Avatar" 
+                       class="w-20 h-20 rounded-full border-4 border-white" />
+                </div>
+                <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
+                  <span class="text-white text-xs">✓</span>
+                </div>
+              </div>
+              <div>
+                <h1 class="text-4xl font-bold text-gradient mb-2">{{ page.cvdata.personal.name }}</h1>
+                <p class="text-xl text-blue-600 dark:text-blue-400 font-semibold mb-3">{{ page.cvdata.personal.title }}</p>
+                <p class="text-gray-600 dark:text-gray-400 max-w-md">{{ page.cvdata.professional_summary }}</p>
+              </div>
+            </div>
+            <div class="text-right space-y-3">
+              <div class="space-y-1">
+                <p class="text-sm text-gray-600 dark:text-gray-400">📧 {{ page.cvdata.personal.contact.email }}</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400">📱 {{ page.cvdata.personal.contact.phone }}</p>
+              </div>
+              <div class="flex gap-2 justify-end">
+                <a href="{{ page.cvdata.personal.social.linkedin }}" class="px-4 py-2 bg-blue-500 text-white rounded-full text-sm hover:bg-blue-600 transition-colors">LinkedIn</a>
+                <a href="{{ page.cvdata.personal.social.github }}" class="px-4 py-2 bg-gray-800 text-white rounded-full text-sm hover:bg-gray-900 transition-colors">GitHub</a>
+                <a href="{{ page.cvdata.personal.social.portfolio }}" class="px-4 py-2 bg-green-500 text-white rounded-full text-sm hover:bg-green-600 transition-colors">Portfolio</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      
+      <!-- Left Column -->
+      <div class="lg:col-span-3 space-y-8">
+        
+        <!-- Technical Skills Hexagons -->
+        <section class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+            <span class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center text-white mr-3">⚡</span>
+            Technical Skills
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {% for skill in page.cvdata.technical_skills %}
+              <div class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-700 dark:to-gray-600 rounded-xl p-6 border-l-4 border-blue-500">
+                <h3 class="font-bold text-blue-600 dark:text-blue-400 mb-3 text-lg">{{ skill.category }}</h3>
+                <p class="text-gray-700 dark:text-gray-300">{{ skill.description }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+
+        <!-- Experience Cards -->
+        <section class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+            <span class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center text-white mr-3">💼</span>
+            Work Experience
+          </h2>
+          <div class="space-y-6">
+            {% for job in page.cvdata.experience %}
+              <div class="experience-card rounded-xl p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">{{ job.position }}</h3>
+                    <p class="text-blue-600 dark:text-blue-400 font-semibold text-lg">{{ job.company }}</p>
+                  </div>
+                  <div class="text-right">
+                    <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">{{ job.period }}</span>
+                    <p class="text-sm text-gray-500 mt-2">{{ job.location }}</p>
+                  </div>
+                </div>
+                <ul class="space-y-3">
+                  {% for achievement in job.achievements %}
+                    <li class="flex items-start">
+                      <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-4 flex-shrink-0"></span>
+                      <span class="text-gray-700 dark:text-gray-300">{{ achievement }}</span>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+
+        <!-- Projects Grid -->
+        <section class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+            <span class="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center text-white mr-3">🚀</span>
+            Developed Solutions
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {% for project in page.cvdata.projects %}
+              <div class="project-card rounded-xl p-6">
+                <div class="flex items-start justify-between mb-4">
+                  <h3 class="text-lg font-bold text-gray-900 dark:text-white">{{ project.name }}</h3>
+                  <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">{{ project.description }}</p>
+                <a href="{{ project.url }}" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 font-semibold">
+                  View Project
+                  <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                </a>
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+      </div>
+
+      <!-- Right Sidebar -->
+      <div class="space-y-6">
+        
+        <!-- Skills Hexagons -->
+        <section class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+            <span class="w-6 h-6 bg-yellow-500 rounded-lg flex items-center justify-center text-white mr-2 text-sm">⭐</span>
+            Core Skills
+          </h3>
+          <div class="grid grid-cols-2 gap-4">
+            {% for tool in page.cvdata.skills.core %}
+              <div class="hexagon skill-hex hexagon-bg floating-element">
+                {{ tool }}
+              </div>
+            {% endfor %}
+            {% for tool in page.cvdata.skills.tools %}
+              <div class="hexagon skill-hex" style="background: linear-gradient(135deg, #3b82f6, #8b5cf6);">
+                {{ tool }}
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+            <span class="w-6 h-6 bg-purple-500 rounded-lg flex items-center justify-center text-white mr-2 text-sm">🎓</span>
+            Education
+          </h3>
+          <div class="space-y-4">
+            {% for edu in page.cvdata.education %}
+              <div class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-gray-700 dark:to-gray-600 rounded-lg p-4 border-l-4 border-purple-500">
+                <h4 class="font-semibold text-gray-900 dark:text-white">{{ edu.degree }}</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400">{{ edu.institution }}</p>
+                <p class="text-xs text-gray-500">{{ edu.location }} • {{ edu.year }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+
+        <!-- Languages -->
+        <section class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+            <span class="w-6 h-6 bg-indigo-500 rounded-lg flex items-center justify-center text-white mr-2 text-sm">🌐</span>
+            Languages
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {% for lang in page.cvdata.languages %}
+              <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">{{ lang }}</span>
+            {% endfor %}
+          </div>
+        </section>
+
+        <!-- Additional Skills -->
+        <section class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+            <span class="w-6 h-6 bg-green-500 rounded-lg flex items-center justify-center text-white mr-2 text-sm">🛠</span>
+            Additional Skills
+          </h3>
+          <div class="space-y-3">
+            {% for tool in page.cvdata.skills.additional %}
+              <div class="flex items-center">
+                <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                <span class="text-sm text-gray-700 dark:text-gray-300">{{ tool }}</span>
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div> 
