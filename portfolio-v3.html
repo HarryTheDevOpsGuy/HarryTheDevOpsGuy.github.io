@@ -1,0 +1,384 @@
+---
+layout: default
+title: "Hari Prasad | DevOps Portfolio v3"
+---
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Font Awesome CDN for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Custom Styles for v3 (minimal, modern, responsive) -->
+<style>
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    color: #3b3663;
+  }
+  .section {
+    margin-bottom: 4rem;
+    padding: 2rem 0;
+    border-radius: 1.5rem;
+    background: #fff;
+    box-shadow: 0 2px 16px 0 rgba(60,60,100,0.06);
+  }
+  .tag-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1.5px solid #3b82f6;
+    color: #2563eb;
+    background: #f0f7ff;
+    margin: 0.2rem 0.2rem 0 0;
+  }
+  .timeline {
+    border-left: 3px solid #a5b4fc;
+    margin-left: 1.5rem;
+    padding-left: 1.5rem;
+  }
+  .timeline-item {
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+  .timeline-item:before {
+    content: '';
+    position: absolute;
+    left: -1.7rem;
+    top: 0.5rem;
+    width: 1.1rem;
+    height: 1.1rem;
+    background: linear-gradient(135deg, #6366f1, #a21caf);
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px #a5b4fc;
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 2rem;
+  }
+  .project-card-v3 {
+    background: #f8fafc;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px 0 rgba(60,60,100,0.06);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px solid #e0e7ef;
+  }
+  .lang-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #f3f4f6;
+    color: #374151;
+    border-radius: 9999px;
+    padding: 0.5rem 1.2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  @media (max-width: 700px) {
+    .section { padding: 1rem 0.5rem; }
+    .section-title { font-size: 1.3rem; }
+    .timeline { margin-left: 0.7rem; padding-left: 0.7rem; }
+  }
+</style>
+
+<div class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+
+  <!-- Hero Section -->
+  <section class="section flex flex-col items-center text-center">
+    <img src="/assets/image/hari-profile.jpeg" alt="Hari Prasad" class="w-36 h-36 rounded-full border-4 border-blue-500 shadow-lg mb-4" />
+    <h1 class="text-4xl font-extrabold mb-2">Hari Prasad</h1>
+    <p class="text-xl text-blue-700 font-semibold mb-2">Sr. DevOps Lead</p>
+    <p class="text-gray-600 max-w-xl mx-auto mb-4">11+ years of experience in DevOps, cloud automation, CI/CD, and infrastructure as code. Transforming infrastructure into scalable, automated, and resilient systems.</p>
+    <div class="flex flex-wrap justify-center gap-4 mb-2">
+      <a href="mailto:HarryTheDevOpsGuy@gmail.com" class="inline-flex items-center px-5 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition-colors font-semibold"><i class="fas fa-envelope mr-2"></i>Email</a>
+      <a href="https://github.com/HarryTheDevOpsGuy" class="inline-flex items-center px-5 py-2 bg-gray-800 text-white rounded-lg shadow hover:bg-gray-900 transition-colors font-semibold"><i class="fab fa-github mr-2"></i>GitHub</a>
+      <a href="https://www.linkedin.com/in/hari-prasad-verma-19b948154" class="inline-flex items-center px-5 py-2 bg-blue-700 text-white rounded-lg shadow hover:bg-blue-800 transition-colors font-semibold"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
+    </div>
+    <div class="mt-2 text-gray-400 text-sm">Noida, UP, India</div>
+  </section>
+
+  <!-- Stats & Chart Section -->
+  <section class="section">
+    <div class="section-title"><i class="fas fa-chart-pie"></i> Quick Stats</div>
+    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+      <canvas id="statsChart" width="220" height="220"></canvas>
+      <div class="grid grid-cols-2 gap-6">
+        <div class="text-center">
+          <div class="text-3xl font-bold text-blue-700">{{ site.data.cv.hari-prasad.personal.years_exp }}+</div>
+          <div class="text-gray-500">Years Experience</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-purple-700">{{ site.data.cv.hari-prasad.experience | size }}</div>
+          <div class="text-gray-500">Companies</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-green-700">{{ site.data.cv.hari-prasad.projects | size }}</div>
+          <div class="text-gray-500">Projects</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-pink-700">{{ site.data.cv.hari-prasad.skills.core | size }}</div>
+          <div class="text-gray-500">Core Skills</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        new Chart(document.getElementById('statsChart'), {
+          type: 'doughnut',
+          data: {
+            labels: ['Experience', 'Companies', 'Projects', 'Core Skills'],
+            datasets: [{
+              data: [{{ site.data.cv.hari-prasad.personal.years_exp }}, {{ site.data.cv.hari-prasad.experience | size }}, {{ site.data.cv.hari-prasad.projects | size }}, {{ site.data.cv.hari-prasad.skills.core | size }}],
+              backgroundColor: ['#3b82f6', '#a21caf', '#10b981', '#f472b6'],
+              borderWidth: 2
+            }]
+          },
+          options: {
+            plugins: { legend: { display: true, position: 'bottom' } },
+            cutout: '70%',
+            responsive: false
+          }
+        });
+      });
+    </script>
+  </section>
+
+  <!-- Technical Skills Section with Chart -->
+  <section class="section">
+    <div class="section-title"><i class="fas fa-tools"></i> Technical Skills</div>
+    <div class="flex flex-col md:flex-row gap-8">
+      <div class="flex-1">
+        <canvas id="skillsChart" height="220"></canvas>
+      </div>
+      <div class="flex-1">
+        <div class="mb-4 font-semibold text-blue-700">Core Skills</div>
+        <div class="flex flex-wrap gap-2 mb-6">
+          {% for skill in site.data.cv.hari-prasad.skills.core %}
+            <span class="tag-badge"><i class="fas fa-check-circle"></i> {{ skill }}</span>
+          {% endfor %}
+        </div>
+        <div class="mb-4 font-semibold text-purple-700">Tools</div>
+        <div class="flex flex-wrap gap-2 mb-6">
+          {% for tool in site.data.cv.hari-prasad.skills.tools %}
+            <span class="tag-badge"><i class="fas fa-wrench"></i> {{ tool }}</span>
+          {% endfor %}
+        </div>
+        <div class="mb-4 font-semibold text-green-700">Additional</div>
+        <div class="flex flex-wrap gap-2">
+          {% for add in site.data.cv.hari-prasad.skills.additional %}
+            <span class="tag-badge"><i class="fas fa-plus-circle"></i> {{ add }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        new Chart(document.getElementById('skillsChart'), {
+          type: 'bar',
+          data: {
+            labels: [{% for skill in site.data.cv.hari-prasad.skills.core %}'{{ skill }}',{% endfor %}],
+            datasets: [{
+              label: 'Proficiency',
+              data: [{% for skill in site.data.cv.hari-prasad.skills.core %}100,{% endfor %}],
+              backgroundColor: '#3b82f6',
+              borderRadius: 8
+            }]
+          },
+          options: {
+            indexAxis: 'y',
+            plugins: { legend: { display: false } },
+            scales: { x: { min: 0, max: 100, ticks: { stepSize: 20 } } },
+            responsive: false
+          }
+        });
+      });
+    </script>
+  </section>
+
+  <!-- Professional Experience Timeline -->
+  <section class="section">
+    <div class="section-title"><i class="fas fa-briefcase"></i> Professional Experience</div>
+    <div class="timeline">
+      {% for job in site.data.cv.hari-prasad.experience %}
+        <div class="timeline-item">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+            <div class="font-bold text-lg text-blue-700">{{ job.position }}</div>
+            <div class="text-sm text-gray-500">{{ job.company }} &bull; {{ job.location }} &bull; {{ job.period }}</div>
+          </div>
+          <ul class="list-disc ml-6 mb-2 text-gray-700">
+            {% for achievement in job.achievements %}
+              <li>{{ achievement }}</li>
+            {% endfor %}
+          </ul>
+          {% if job.learnt %}
+          <div class="flex flex-wrap gap-2 mb-2">
+            {% for tool in job.learnt %}
+              {% assign tool_lc = tool | downcase %}
+              {% case tool_lc %}
+                {% when 'ec2' %}{% assign icon = 'fas fa-server' %}
+                {% when 's3' %}{% assign icon = 'fas fa-database' %}
+                {% when 'terraform' %}{% assign icon = 'fas fa-cubes' %}
+                {% when 'jenkins' %}{% assign icon = 'fab fa-jenkins' %}
+                {% when 'master in shell scripting' %}{% assign icon = 'fas fa-terminal' %}
+                {% when 'devops' %}{% assign icon = 'fas fa-infinity' %}
+                {% when 'ubuntu' %}{% assign icon = 'fab fa-ubuntu' %}
+                {% when 'red hat' %}{% assign icon = 'fab fa-redhat' %}
+                {% when 'gitlab' %}{% assign icon = 'fab fa-gitlab' %}
+                {% when 'docker' %}{% assign icon = 'fab fa-docker' %}
+                {% when 'docker compose' %}{% assign icon = 'fab fa-docker' %}
+                {% when 'kubernetes' %}{% assign icon = 'fas fa-dharmachakra' %}
+                {% when 'ansible' %}{% assign icon = 'fas fa-cogs' %}
+                {% when 'linux' %}{% assign icon = 'fab fa-linux' %}
+                {% when 'windows' %}{% assign icon = 'fab fa-windows' %}
+                {% when 'apache' %}{% assign icon = 'fas fa-server' %}
+                {% when 'nginx' %}{% assign icon = 'fas fa-server' %}
+                {% when 'mysql' %}{% assign icon = 'fas fa-database' %}
+                {% when 'postgresql' %}{% assign icon = 'fas fa-database' %}
+                {% when 'mongodb' %}{% assign icon = 'fas fa-database' %}
+                {% when 'prometheus' %}{% assign icon = 'fas fa-burn' %}
+                {% when 'promethues' %}{% assign icon = 'fas fa-burn' %}
+                {% when 'redis' %}{% assign icon = 'fas fa-database' %}
+                {% when 'kafka' %}{% assign icon = 'fas fa-stream' %}
+                {% when 'elk' %}{% assign icon = 'fas fa-search' %}
+                {% when 'heroku' %}{% assign icon = 'fab fa-hubspot' %}
+                {% when 'zabbix' %}{% assign icon = 'fas fa-chart-line' %}
+                {% else %}{% assign icon = 'fas fa-tag' %}
+              {% endcase %}
+              <span class="tag-badge"><i class="{{ icon }}"></i> {{ tool }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section">
+    <div class="section-title"><i class="fas fa-code-branch"></i> Projects</div>
+    <div class="card-grid">
+      {% for project in site.data.cv.hari-prasad.projects %}
+        <div class="project-card-v3">
+          <div class="font-bold text-blue-700 text-lg mb-1">{{ project.name }}</div>
+          <div class="text-gray-600 mb-2">{{ project.description }}</div>
+          <a href="{{ project.url }}" target="_blank" class="text-blue-600 hover:underline font-semibold flex items-center gap-1"><i class="fas fa-external-link-alt"></i> View Project</a>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Education & Languages Section -->
+  <section class="section">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <div class="section-title"><i class="fas fa-graduation-cap"></i> Education</div>
+        <ol class="timeline">
+          {% for edu in site.data.cv.hari-prasad.education %}
+            <li class="timeline-item">
+              <div class="font-bold text-blue-700">{{ edu.degree }}</div>
+              <div class="text-gray-600">{{ edu.institution }}</div>
+              <div class="text-xs text-gray-400">{{ edu.location }} &bull; {{ edu.year }}</div>
+            </li>
+          {% endfor %}
+        </ol>
+      </div>
+      <div>
+        <div class="section-title"><i class="fas fa-language"></i> Languages</div>
+        <div class="flex flex-wrap gap-3">
+          {% for lang in site.data.cv.hari-prasad.languages %}
+            <span class="lang-badge">
+              {% if lang == 'English' %}<i class="fas fa-flag-usa text-blue-500"></i>{% endif %}
+              {% if lang == 'Hindi' %}<i class="fas fa-flag text-orange-500"></i>{% endif %}
+              {{ lang }}
+            </span>
+          {% endfor %}
+        </div>
+        <canvas id="langChart" height="120"></canvas>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            new Chart(document.getElementById('langChart'), {
+              type: 'bar',
+              data: {
+                labels: [{% for lang in site.data.cv.hari-prasad.languages %}'{{ lang }}',{% endfor %}],
+                datasets: [{
+                  label: 'Proficiency',
+                  data: [{% for lang in site.data.cv.hari-prasad.languages %}{{ lang == 'English' or lang == 'Hindi' ? 100 : 80 }},{% endfor %}],
+                  backgroundColor: ['#3b82f6', '#f59e42'],
+                  borderRadius: 8
+                }]
+              },
+              options: {
+                plugins: { legend: { display: false } },
+                scales: { x: { min: 0, max: 100, ticks: { stepSize: 20 } } },
+                responsive: false
+              }
+            });
+          });
+        </script>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Hire Me & CTA Section -->
+  <section class="section text-center">
+    <div class="section-title justify-center"><i class="fas fa-handshake"></i> Why Hire Me?</div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+      <div class="flex flex-col items-center text-center">
+        <div class="text-4xl text-blue-500 mb-3"><i class="fas fa-rocket"></i></div>
+        <h3 class="text-xl font-bold text-blue-700 mb-2">Proven Track Record</h3>
+        <p class="text-gray-600">11+ years of success in implementing DevOps solutions, resulting in 50%+ cost savings and 60%+ efficiency improvements.</p>
+      </div>
+      <div class="flex flex-col items-center text-center">
+        <div class="text-4xl text-cyan-500 mb-3"><i class="fas fa-tools"></i></div>
+        <h3 class="text-xl font-bold text-cyan-700 mb-2">Technical Excellence</h3>
+        <p class="text-gray-600">Deep expertise in modern DevOps tools and practices, from CI/CD to cloud infrastructure and container orchestration.</p>
+      </div>
+      <div class="flex flex-col items-center text-center">
+        <div class="text-4xl text-indigo-500 mb-3"><i class="fas fa-lightbulb"></i></div>
+        <h3 class="text-xl font-bold text-indigo-700 mb-2">Innovation Driver</h3>
+        <p class="text-gray-600">Created multiple automation tools and implemented zero-downtime deployment solutions that revolutionized deployment processes.</p>
+      </div>
+    </div>
+    <div class="text-center mb-2">
+      <h3 class="text-2xl font-bold text-blue-700 mb-2">Ready to Transform Your DevOps Journey?</h3>
+      <p class="text-gray-700 mb-6">Let's discuss how I can bring value to your organization</p>
+    </div>
+    <div class="flex flex-wrap justify-center gap-4 mb-4">
+      <a href="mailto:{{ site.data.cv.hari-prasad.personal.contact.email }}" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg shadow hover:bg-blue-700 transition-colors font-semibold">
+        <i class="fas fa-envelope mr-2"></i>Email Me
+      </a>
+      <a href="https://wa.me/917503721297?text=Hi%20Hari,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" class="inline-flex items-center px-6 py-3 bg-green-500 text-white rounded-lg shadow hover:bg-green-600 transition-colors font-semibold">
+        <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+      </a>
+      <a href="tel:{{ site.data.cv.hari-prasad.personal.contact.phone }}" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg shadow hover:bg-blue-700 transition-colors font-semibold">
+        <i class="fas fa-phone mr-2"></i>Call Me
+      </a>
+    </div>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="/cv/Hari-Prasad-11Yrs-2025-cv3-1.pdf" target="_blank" class="inline-flex items-center px-6 py-3 border-2 border-blue-600 text-blue-600 bg-white rounded-lg shadow hover:bg-blue-50 transition-colors font-semibold">
+        <i class="fas fa-file-alt mr-2"></i>View/Download Resume
+      </a>
+      <a href="{{ site.data.cv.hari-prasad.personal.social.linkedin }}" target="_blank" class="inline-flex items-center px-6 py-3 border-2 border-blue-600 text-blue-600 bg-white rounded-lg shadow hover:bg-blue-50 transition-colors font-semibold">
+        <i class="fab fa-linkedin mr-2"></i>LinkedIn Profile
+      </a>
+      <a href="{{ site.data.cv.hari-prasad.personal.social.github }}" target="_blank" class="inline-flex items-center px-6 py-3 border-2 border-gray-700 text-gray-700 bg-white rounded-lg shadow hover:bg-gray-100 transition-colors font-semibold">
+        <i class="fab fa-github mr-2"></i>GitHub Projects
+      </a>
+    </div>
+  </section>
+
+</div> 
