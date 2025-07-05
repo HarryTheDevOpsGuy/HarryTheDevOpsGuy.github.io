@@ -3,7 +3,7 @@ name: v6 - Deploy HarryTheDevOpsGuy.github.io
 on:
   push:
     branches:
-      - v6
+      - v7
   workflow_dispatch:
 
 permissions:
