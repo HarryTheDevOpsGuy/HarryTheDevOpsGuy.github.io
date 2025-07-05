@@ -13,148 +13,353 @@ title: "Hari Prasad | DevOps Portfolio v3"
 
 <!-- Custom Styles for v3 (creative, animated, modern) -->
 <style>
-  body, html { scroll-behavior: smooth; }
-  .animated-gradient-bg {
-    background: linear-gradient(270deg, #667eea, #a21caf, #10b981, #f472b6, #6366f1);
-    background-size: 200% 200%;
-    animation: gradientMove 8s ease-in-out infinite;
+  body, html { 
+    scroll-behavior: smooth; 
+    background: #f8fafc;
   }
-  @keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  
+  /* Sophisticated Background Design */
+  .portfolio-bg {
+    position: relative;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    overflow: hidden;
   }
-  .blob-bg {
+  
+  /* Animated Background Elements */
+  .bg-elements {
     position: absolute;
-    top: -80px; left: 50%;
-    width: 600px; height: 400px;
-    z-index: 0;
-    transform: translateX(-50%);
-    opacity: 0.18;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     pointer-events: none;
+    z-index: 1;
   }
+  
+  /* Floating Particles */
+  .particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: float-particle 15s infinite linear;
+  }
+  
+  .particle:nth-child(1) {
+    width: 4px;
+    height: 4px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 20s;
+  }
+  
+  .particle:nth-child(2) {
+    width: 6px;
+    height: 6px;
+    top: 60%;
+    right: 20%;
+    animation-delay: -5s;
+    animation-duration: 25s;
+  }
+  
+  .particle:nth-child(3) {
+    width: 3px;
+    height: 3px;
+    bottom: 30%;
+    left: 30%;
+    animation-delay: -10s;
+    animation-duration: 18s;
+  }
+  
+  .particle:nth-child(4) {
+    width: 5px;
+    height: 5px;
+    top: 40%;
+    right: 40%;
+    animation-delay: -15s;
+    animation-duration: 22s;
+  }
+  
+  .particle:nth-child(5) {
+    width: 4px;
+    height: 4px;
+    bottom: 60%;
+    right: 10%;
+    animation-delay: -20s;
+    animation-duration: 30s;
+  }
+  
+  @keyframes float-particle {
+    0% {
+      transform: translateY(0px) translateX(0px);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh) translateX(100px);
+      opacity: 0;
+    }
+  }
+  
+  /* Geometric Pattern */
+  .geometric-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    z-index: 1;
+  }
+  
+  /* Content Container */
+  .content-container {
+    position: relative;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    margin: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  /* Section Styling */
+  .section {
+    padding: 3rem 2rem;
+    border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+  }
+  
+  .section:last-child {
+    border-bottom: none;
+  }
+  
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #667eea;
+  }
+  
+  .section-title i {
+    font-size: 1.5rem;
+  }
+  
+  /* Enhanced Card Styling */
+  .project-card-v3 {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.1);
+    padding: 1.5rem;
+    border: 1px solid rgba(102, 126, 234, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .project-card-v3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+    transition: left 0.5s;
+  }
+  
+  .project-card-v3:hover::before {
+    left: 100%;
+  }
+  
+  .project-card-v3:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+  }
+  
+  /* Enhanced Tag Badges */
+  .tag-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    margin: 0.25rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .tag-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  .tag-badge:hover::before {
+    left: 100%;
+  }
+  
+  .tag-badge:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+  }
+  
+  /* Enhanced Language Badges */
+  .lang-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 25px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .lang-badge:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+  }
+  
+  /* Timeline Styling */
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+  }
+  
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -0.5rem;
+    top: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    background: #667eea;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px #667eea;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .content-container {
+      margin: 10px;
+      border-radius: 15px;
+    }
+    
+    .section {
+      padding: 2rem 1rem;
+    }
+    
+    .section-title {
+      font-size: 1.5rem;
+    }
+    
+    .timeline {
+      padding-left: 1.5rem;
+    }
+  }
+  
+  /* Animation Classes */
   .profile-float {
     animation: floatY 3s ease-in-out infinite;
   }
+  
   @keyframes floatY {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-18px); }
+    50% { transform: translateY(-10px); }
   }
+  
   .typing-effect {
     display: inline-block;
-    border-right: 2px solid #6366f1;
+    border-right: 2px solid #667eea;
     white-space: nowrap;
     overflow: hidden;
     animation: typing 3s steps(40, end), blink-caret 0.7s step-end infinite;
     font-family: monospace;
     font-size: 1.2rem;
-    color: #6366f1;
+    color: #667eea;
     min-height: 1.5em;
   }
+  
   @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
   }
+  
   @keyframes blink-caret {
     from, to { border-color: transparent; }
-    50% { border-color: #6366f1; }
+    50% { border-color: #667eea; }
   }
+  
   .countup {
     font-variant-numeric: tabular-nums;
     font-weight: bold;
     font-size: 2.2rem;
-    color: #3b82f6;
-  }
-  .tag-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.4rem 0.9rem;
-    border-radius: 9999px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    border: 1.5px solid #3b82f6;
-    color: #2563eb;
-    background: #f0f7ff;
-    margin: 0.2rem 0.2rem 0 0;
-    transition: box-shadow 0.2s, background 0.2s;
-    box-shadow: 0 2px 8px 0 rgba(60,60,100,0.06);
-    cursor: pointer;
-  }
-  .tag-badge:hover {
-    background: linear-gradient(90deg, #6366f1 0%, #a21caf 100%);
-    color: #fff;
-    border-color: #a21caf;
-    box-shadow: 0 4px 16px 0 rgba(99,102,241,0.12);
-  }
-  .tag-badge i {
-    transition: transform 0.2s;
-  }
-  .tag-badge:hover i {
-    transform: rotate(-12deg) scale(1.2);
-  }
-  .project-card-v3 {
-    background: #f8fafc;
-    border-radius: 1rem;
-    box-shadow: 0 2px 8px 0 rgba(60,60,100,0.06);
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    border: 1px solid #e0e7ef;
-    transition: transform 0.4s, box-shadow 0.4s;
-    perspective: 800px;
-  }
-  .project-card-v3:hover {
-    transform: rotateY(8deg) scale(1.04);
-    box-shadow: 0 8px 32px 0 rgba(99,102,241,0.12);
-    z-index: 2;
-  }
-  .lang-badge {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: #f3f4f6;
-    color: #374151;
-    border-radius: 9999px;
-    padding: 0.5rem 1.2rem;
-    font-weight: 600;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    box-shadow: 0 2px 8px 0 rgba(60,60,100,0.06);
-    transition: background 0.2s, color 0.2s;
-  }
-  .lang-badge:hover {
-    background: linear-gradient(90deg, #6366f1 0%, #a21caf 100%);
-    color: #fff;
-  }
-  .timeline-item[data-aos] {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.6s, transform 0.6s;
-  }
-  .timeline-item.aos-animate {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-  @media (max-width: 700px) {
-    .section { padding: 1rem 0.5rem; }
-    .section-title { font-size: 1.3rem; }
-    .timeline { margin-left: 0.7rem; padding-left: 0.7rem; }
+    color: #667eea;
   }
 </style>
 
-<div class="min-h-screen animated-gradient-bg relative overflow-x-hidden">
-  <!-- SVG Blob Background -->
-  <svg class="blob-bg" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="blobGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#6366f1"/>
-        <stop offset="100%" stop-color="#a21caf"/>
-      </linearGradient>
-    </defs>
-    <path fill="url(#blobGrad)" d="M421,320Q370,400,260,370Q150,340,120,220Q90,100,220,80Q350,60,420,140Q490,220,421,320Z"/>
-  </svg>
+<div class="portfolio-bg">
+  <!-- Background Elements -->
+  <div class="bg-elements">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+  
+  <!-- Geometric Pattern -->
+  <div class="geometric-pattern"></div>
+  
+  <!-- Content Container -->
+  <div class="content-container">
 
   <!-- Hero Section -->
   <section class="section flex flex-col items-center text-center relative z-10">
@@ -506,4 +711,5 @@ title: "Hari Prasad | DevOps Portfolio v3"
       AOS.init({ once: true, duration: 900, offset: 60 });
     });
   </script>
+  </div> <!-- End content-container -->
 </div> 
