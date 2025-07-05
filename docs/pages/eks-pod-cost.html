@@ -1,0 +1,229 @@
+---
+layout: default
+title: AWS EKS Pod Cost Calculator
+permalink: /tools/aws/pod-cost.html
+---
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-5xl mx-auto">
+    <!-- Header -->
+    <header class="text-center mb-12">
+      <i class="fas fa-cloud text-blue-600 text-5xl mb-4"></i>
+      <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-3">AWS EKS Pod Cost Calculator</h1>
+      <p class="text-lg text-gray-600 dark:text-gray-300">
+        Estimate monthly EKS costs based on pod-level CPU & memory usage and instance requirements.
+      </p>
+    </header>
+
+    <!-- Form -->
+    <form id="eksCostForm" class="bg-white dark:bg-gray-800 shadow-xl rounded-xl p-8 space-y-8 transition-all duration-300">
+      <div>
+        <label for="workerNode" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 flex items-center">
+          <i class="fas fa-server mr-2 text-blue-500"></i> Worker Node Instance Type
+        </label>
+        <select id="workerNode" name="workerNode" required
+                class="w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+          {% for row in site.data.tools.instance %}
+            <option value='{{ row["API Name"] }}' data-cpu='{{ row["vCPUs"] | remove: " vCPUs" }}' data-memory='{{ row["Instance Memory"] | remove: " GiB" }}' data-hourly='{{ row["On Demand"] | remove: "$" | remove: " hourly" | times: 1 }}' data-spothourly='{{ row["Linux Spot Average cost"] | remove: "$" | remove: " hourly" | times: 1 }}'>
+              {{ row["API Name"] }} ({{ row["vCPUs"] }}, {{ row["Instance Memory"] }})
+            </option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+        <div>
+          <label for="podCount" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 flex items-center">
+            <i class="fas fa-box-open mr-2 text-green-500"></i> Pod Count
+          </label>
+          <input type="number" id="podCount" value="2" min="1" required
+                 class="w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+        </div>
+        <div>
+          <label for="cpuPerPod" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 flex items-center">
+            <i class="fas fa-microchip mr-2 text-yellow-500"></i> CPU per Pod (vCPU)
+          </label>
+          <input type="number" step="0.1" id="cpuPerPod" value="0.5" required
+                 class="w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+        </div>
+        <div>
+          <label for="memoryPerPod" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 flex items-center">
+            <i class="fas fa-memory mr-2 text-purple-500"></i> Memory per Pod (GB)
+          </label>
+          <input type="number" step="0.1" id="memoryPerPod" value="0.5" required
+                 class="w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+        </div>
+        <div>
+          <label for="perDayUsage" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 flex items-center">
+            <i class="fas fa-clock mr-2 text-red-500"></i> Daily Usage (Hours)
+          </label>
+          <input type="number" id="perDayUsage" value="24" min="0" max="24" required
+                 class="w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+        </div>
+      </div>
+
+      <button type="submit"
+              class="w-full inline-flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300">
+        <i class="fas fa-calculator mr-2"></i> Calculate Cost
+      </button>
+    </form>
+
+    <!-- Result Section -->
+    <!-- Result Section -->
+<div id="resultSection" class="hidden mt-10">
+  <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-2 mb-2 text-center flex items-center justify-center">
+    <i class="fas fa-chart-line text-green-500 mr-2"></i> Estimated Cost Breakdown
+  </h2>
+  <h3 class="text-lg mb-6 text-center text-gray-600 dark:text-gray-300">
+    You may get up to <span id="spotDiscountPct" class="font-semibold text-blue-600 dark:text-blue-400">-</span>% discount on Spot Instances.
+  </h3>
+
+  <!-- Dual Card Output -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    
+    <!-- Instance Cost Card -->
+    <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 transform transition hover:scale-105 duration-300">
+      <h3 class="text-xl font-bold mb-4 text-center text-blue-600 flex items-center justify-center">
+        <i class="fas fa-server mr-2"></i> Instance Cost Summary
+      </h3>
+      <table class="w-full table-auto text-left text-sm">
+        <tbody class="space-y-2">
+          <tr>
+            <td><i class="fas fa-microchip text-blue-500 mr-2"></i><strong>Instance Type:</strong></td>
+            <td><span id="instanceTypeDetail" class="float-right font-medium"></span></td>
+          </tr>
+          <tr>
+            <td><i class="fas fa-network-wired text-indigo-500 mr-2"></i><strong>Nodes Needed:</strong></td>
+            <td><span id="nodesNeededDetail" class="float-right font-medium"></span></td>
+          </tr>
+          <tr>
+            <td><i class="fas fa-clock text-yellow-500 mr-2"></i><strong>Hourly:</strong></td>
+            <td>$<span id="hourlyOnDemand" class="float-right font-medium"></span></td>
+          </tr>
+          <tr>
+            <td><i class="fas fa-sun text-orange-500 mr-2"></i><strong>Daily:</strong></td>
+            <td>$<span id="dailyOnDemand" class="float-right font-medium"></span></td>
+          </tr>
+          <tr>
+            <td><i class="fas fa-calendar-alt text-green-500 mr-2"></i><strong>Monthly:</strong></td>
+            <td>$<span id="monthlyOnDemand" class="float-right font-medium text-green-600"></span></td>
+          </tr>
+          <tr>
+            <td><i class="fas fa-fire text-red-500 mr-2"></i><strong>Spot Monthly:</strong></td>
+            <td>$<span id="monthlySpotInstance" class="float-right font-medium text-purple-600"></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pod Cost Card -->
+    <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 transform transition hover:scale-105 duration-300">
+      <h3 class="text-xl font-bold mb-4 text-center text-green-600 flex items-center justify-center">
+        <i class="fas fa-boxes mr-2"></i> Pod Cost Summary
+      </h3>
+      <table class="w-full table-auto text-left text-sm">
+        <tbody class="space-y-2">
+          <tr>
+            <td><i class="fas fa-microchip text-yellow-500 mr-2"></i><strong>CPU/POD:</strong></td>
+            <td><span id="cpuPerPodDetail" class="float-right font-medium"></span>vCPU</td>
+          </tr>
+          <tr>
+            <td><i class="fas fa-memory text-purple-500 mr-2"></i><strong>Mem/POD:</strong></td>
+            <td><span id="memPerPodDetail" class="float-right font-medium"></span>GB</td>
+          </tr>
+          <tr>
+            <td><i class="fas fa-layer-group text-green-500 mr-2"></i><strong>Total Pods:</strong></td>
+            <td><span id="totalPodsDetail" class="float-right font-medium"></span></td>
+          </tr>
+          <tr>
+            <td><i class="fas fa-th-large text-indigo-500 mr-2"></i><strong>Pods/Node:</strong></td>
+            <td><span id="podsPerNode" class="float-right font-medium"></span></td>
+          </tr>
+          <tr>
+            <td><i class="fas fa-calendar-check text-green-500 mr-2"></i><strong>Monthly Cost:</strong></td>
+            <td>$<span id="monthlyPodCost" class="float-right font-medium text-green-600"></span></td>
+          </tr>
+          <tr>
+            <td><i class="fas fa-bolt text-red-500 mr-2"></i><strong>Spot Monthly:</strong></td>
+            <td>$<span id="monthlyPodCostSpot" class="float-right font-medium text-purple-600"></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Total Cost Footer -->
+  <div class="mt-6 text-center">
+    <h3 class="text-xl font-bold text-green-600 dark:text-green-400">
+      <i class="fas fa-coins mr-2"></i>Estimated Total Monthly Cost: $<span id="totalMonthlyCost">-</span>
+    </h3>
+    <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">
+      * This is an estimation only. Actual cost may vary depending on usage, region, and other AWS charges.
+    </p>
+  </div>
+</div>
+  </div>
+</div>
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css
+   ">
+
+<!-- Script -->
+<script>
+document.getElementById('eksCostForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // Get selected node
+  const workerNodeSelect = document.getElementById('workerNode');
+  const selectedOption = workerNodeSelect.options[workerNodeSelect.selectedIndex];
+  const nodeCPU = parseFloat(selectedOption.dataset.cpu);
+  const nodeMemory = parseFloat(selectedOption.dataset.memory);
+  const hourlyRate = parseFloat(selectedOption.dataset.hourly);
+  const spotHourlyRate = parseFloat(selectedOption.dataset.spothourly);
+
+  // Inputs
+  const podCount = Math.max(1, parseFloat(document.getElementById('podCount').value));
+  const cpuPerPod = Math.max(0.1, parseFloat(document.getElementById('cpuPerPod').value));
+  const memPerPod = Math.max(0.1, parseFloat(document.getElementById('memoryPerPod').value));
+  const dailyUsage = Math.min(24, Math.max(0, parseFloat(document.getElementById('perDayUsage').value)));
+
+  const spotDiscount = (hourlyRate - spotHourlyRate) / hourlyRate * 100;
+
+  // Calculate resources needed
+  const totalCpu = podCount * cpuPerPod;
+  const totalMem = podCount * memPerPod;
+
+  // Pods per node
+  const podsPerNode = Math.min(
+    Math.floor(nodeCPU / cpuPerPod),
+    Math.floor(nodeMemory / memPerPod)
+  );
+  const totalInstances = Math.ceil(podCount / podsPerNode);
+
+  // Cost calculation
+  const monthlyInstanceCost = totalInstances * hourlyRate * dailyUsage * 30.44;
+  const monthlySpotInstanceCost = monthlyInstanceCost * (1 - spotDiscount / 100);
+  const cpuCostPerUnit = (hourlyRate / nodeCPU) / 2;
+  const memCostPerUnit = (hourlyRate / nodeMemory) / 2;
+  const hourlyPodCost = (totalCpu * cpuCostPerUnit) + (totalMem * memCostPerUnit);
+  const monthlyPodCost = hourlyPodCost * dailyUsage * 30.44;
+  const monthlyPodCostSpot = monthlyPodCost * (1 - spotDiscount / 100);
+
+  // Update DOM
+  document.getElementById('instanceTypeDetail').textContent = `${selectedOption.value} (${nodeCPU} vCPU + ${nodeMemory} GB)`;
+  document.getElementById('cpuPerPodDetail').textContent = cpuPerPod.toFixed(2);
+  document.getElementById('memPerPodDetail').textContent = memPerPod.toFixed(2);
+  document.getElementById('totalPodsDetail').textContent = podCount;
+  document.getElementById('podsPerNode').textContent = podsPerNode || 0;
+  document.getElementById('nodesNeededDetail').textContent = totalInstances;
+  document.getElementById('hourlyOnDemand').textContent = (hourlyRate * totalInstances).toFixed(4);
+  document.getElementById('dailyOnDemand').textContent = (hourlyRate * totalInstances * dailyUsage).toFixed(2);
+  document.getElementById('monthlyOnDemand').textContent = monthlyInstanceCost.toFixed(2);
+  document.getElementById('monthlySpotInstance').textContent = monthlySpotInstanceCost.toFixed(2);
+  document.getElementById('monthlyPodCost').textContent = monthlyPodCost.toFixed(2);
+  document.getElementById('monthlyPodCostSpot').textContent = monthlyPodCostSpot.toFixed(2);
+  document.getElementById('spotDiscountPct').textContent = spotDiscount.toFixed();
+  document.getElementById('totalMonthlyCost').textContent = monthlyInstanceCost.toFixed(2);
+  document.getElementById('resultSection').classList.remove('hidden');
+});
+</script>
