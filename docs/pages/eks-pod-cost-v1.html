@@ -1,0 +1,861 @@
+---
+layout: default
+title: AWS EKS Pod Cost Calculator
+permalink: /tools/aws/pod-cost-v1.html
+---
+
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+  <!-- Dark Mode Toggle -->
+  <div class="absolute top-4 right-4">
+    <button id="themeToggle" class="p-2 rounded-full bg-white/80 dark:bg-gray-700/80 shadow-md backdrop-blur-sm">
+      <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+      <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-400 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Main Container -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Hero Header -->
+    <header class="text-center mb-12">
+      <div class="inline-flex items-center justify-center w-24 h-24 rounded-full bg-white/20 dark:bg-gray-800/50 shadow-lg backdrop-blur-sm mb-6 border border-white/30 dark:border-gray-600/50">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+        </svg>
+      </div>
+      <h1 class="text-5xl font-bold text-gray-900 dark:text-white mb-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">AWS EKS Pod Cost Calculator</h1>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        Optimize your Kubernetes costs with precision. Calculate pod expenses, compare pricing models, and maximize savings.
+      </p>
+    </header>
+
+    <!-- Calculator Form (Glassmorphism Card) -->
+    <div class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden border border-white/30 dark:border-gray-700/50 mb-12">
+      <div class="bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-gray-800 dark:to-gray-700 px-8 py-6">
+        <h2 class="text-2xl font-semibold text-white flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+          </svg>
+          Pod Configuration
+        </h2>
+      </div>
+      
+      <form id="eksCostForm" class="p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Instance Type -->
+        <div class="space-y-2">
+          <label for="workerNode" class="block text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+            </svg>
+            Worker Node Instance
+          </label>
+          <select id="workerNode" name="workerNode" required
+                  class="w-full border-gray-300 dark:border-gray-600 rounded-xl shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white/80 dark:bg-gray-700/80 text-gray-900 dark:text-white py-3 px-4 backdrop-blur-sm">
+            {% for row in site.data.tools.instance %}
+              <option value='{{ row["API Name"] }}' data-cpu='{{ row["vCPUs"] | remove: " vCPUs" }}' data-memory='{{ row["Instance Memory"] | remove: " GiB" }}' data-hourly='{{ row["On Demand"] | remove: "$" | remove: " hourly" | times: 1 }}' data-spothourly='{{ row["Linux Spot Average cost"] | remove: "$" | remove: " hourly" | times: 1 }}'>
+                {{ row["API Name"] }} ({{ row["vCPUs"] }}, {{ row["Instance Memory"] }})
+              </option>
+            {% endfor %}
+          </select>
+        </div>
+        
+        <!-- Pod Count -->
+        <div class="space-y-2">
+          <label for="podCount" class="block text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            </svg>
+            Pod Count
+          </label>
+          <input type="number" id="podCount" value="2" min="1" required
+                 class="w-full border-gray-300 dark:border-gray-600 rounded-xl shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white/80 dark:bg-gray-700/80 text-gray-900 dark:text-white py-3 px-4 backdrop-blur-sm">
+        </div>
+        
+        <!-- CPU per Pod -->
+        <div class="space-y-2">
+          <label for="cpuPerPod" class="block text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+            </svg>
+            CPU per Pod (vCPU)
+          </label>
+          <input type="number" step="0.1" id="cpuPerPod" value="0.5" required
+                 class="w-full border-gray-300 dark:border-gray-600 rounded-xl shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white/80 dark:bg-gray-700/80 text-gray-900 dark:text-white py-3 px-4 backdrop-blur-sm">
+        </div>
+        
+        <!-- Memory per Pod -->
+        <div class="space-y-2">
+          <label for="memoryPerPod" class="block text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM8 7v8m4-4v4m4-8v8" />
+            </svg>
+            Memory per Pod (GB)
+          </label>
+          <input type="number" step="0.1" id="memoryPerPod" value="0.5" required
+                 class="w-full border-gray-300 dark:border-gray-600 rounded-xl shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white/80 dark:bg-gray-700/80 text-gray-900 dark:text-white py-3 px-4 backdrop-blur-sm">
+        </div>
+        
+        <!-- Daily Usage -->
+        <div class="space-y-2">
+          <label for="perDayUsage" class="block text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Daily Usage (Hours)
+          </label>
+          <input type="number" id="perDayUsage" value="24" min="0" max="24" required
+                 class="w-full border-gray-300 dark:border-gray-600 rounded-xl shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white/80 dark:bg-gray-700/80 text-gray-900 dark:text-white py-3 px-4 backdrop-blur-sm">
+        </div>
+        
+        <!-- Submit Button -->
+        <div class="md:col-span-2">
+          <button type="submit"
+                  class="w-full inline-flex justify-center items-center px-8 py-4 border border-transparent rounded-xl shadow-lg text-lg font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-4 focus:ring-blue-500/30 transition-all transform hover:-translate-y-1 hover:shadow-xl active:translate-y-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+            Calculate Cost & Optimize
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Results Section -->
+    <div id="resultSection" class="hidden mt-6 space-y-12">
+      <!-- Summary Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Instance Summary -->
+        <div class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-white/30 dark:border-gray-700/50">
+          <div class="bg-blue-600/10 dark:bg-blue-900/20 px-6 py-5 border-b border-white/20 dark:border-gray-700/50 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600 dark:text-blue-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+            </svg>
+            <h3 class="font-semibold text-gray-800 dark:text-gray-200">Instance Summary</h3>
+          </div>
+          <div class="p-6">
+            <div class="space-y-4">
+              <div class="flex justify-between items-center">
+                <span class="text-gray-600 dark:text-gray-400">Instance Type</span>
+                <span class="font-medium text-gray-900 dark:text-white" id="instanceTypeDetail">-</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-600 dark:text-gray-400">Nodes Needed</span>
+                <span class="font-medium text-gray-900 dark:text-white" id="nodesNeededDetail">-</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-600 dark:text-gray-400">Pods per Node</span>
+                <span class="font-medium text-gray-900 dark:text-white" id="podsPerNode">-</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Pod Summary -->
+        <div class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-white/30 dark:border-gray-700/50">
+          <div class="bg-blue-600/10 dark:bg-blue-900/20 px-6 py-5 border-b border-white/20 dark:border-gray-700/50 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600 dark:text-blue-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            </svg>
+            <h3 class="font-semibold text-gray-800 dark:text-gray-200">Pod Summary</h3>
+          </div>
+          <div class="p-6">
+            <div class="space-y-4">
+              <div class="flex justify-between items-center">
+                <span class="text-gray-600 dark:text-gray-400">Total Pods</span>
+                <span class="font-medium text-gray-900 dark:text-white" id="totalPodsDetail">-</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-600 dark:text-gray-400">Resources per Pod</span>
+                <span class="font-medium text-gray-900 dark:text-white" id="podResourceDetail">-</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-600 dark:text-gray-400">Daily Usage</span>
+                <span class="font-medium text-gray-900 dark:text-white" id="dailyUsageDetail">-</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Savings Summary -->
+        <div class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-white/30 dark:border-gray-700/50">
+          <div class="bg-green-600/10 dark:bg-green-900/20 px-6 py-5 border-b border-white/20 dark:border-gray-700/50 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 dark:text-green-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <h3 class="font-semibold text-gray-800 dark:text-gray-200">Savings Potential</h3>
+          </div>
+          <div class="p-6">
+            <div class="space-y-4">
+              <div class="flex justify-between items-center">
+                <span class="text-gray-600 dark:text-gray-400">Spot Discount</span>
+                <span class="font-medium text-green-600 dark:text-green-400" id="spotDiscountPct">-</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-600 dark:text-gray-400">Monthly Savings</span>
+                <span class="font-medium text-green-600 dark:text-green-400" id="monthlySavings">-</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-600 dark:text-gray-400">Yearly Savings</span>
+                <span class="font-medium text-green-600 dark:text-green-400" id="yearlySavings">-</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cost Breakdown Tabs -->
+      <div class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-white/30 dark:border-gray-700/50">
+        <div class="border-b border-gray-200 dark:border-gray-700">
+          <nav class="flex -mb-px">
+            <button id="instanceTab" class="tab-button active py-5 px-6 text-center border-b-2 font-semibold text-lg border-blue-500 text-blue-600 dark:text-blue-400 dark:border-blue-400 flex-1 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+              </svg>
+              Instance Costs
+            </button>
+            <button id="podTab" class="tab-button py-5 px-6 text-center border-b-2 font-semibold text-lg border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300 flex-1 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+              Pod Costs
+            </button>
+            <button id="chartsTab" class="tab-button py-5 px-6 text-center border-b-2 font-semibold text-lg border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300 flex-1 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+              Visualizations
+            </button>
+          </nav>
+        </div>
+        
+        <!-- Instance Cost Panel -->
+        <div id="instanceCostPanel" class="tab-panel active p-8">
+          <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-6">Instance Cost Breakdown</h3>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <!-- On Demand Card -->
+            <div class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm">
+              <div class="bg-blue-600/10 dark:bg-blue-900/20 px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600 dark:text-blue-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                </svg>
+                <h4 class="font-medium text-gray-800 dark:text-gray-200">On Demand Pricing</h4>
+              </div>
+              <div class="p-6">
+                <div class="space-y-4">
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-600 dark:text-gray-400">Hourly</span>
+                    <span class="font-medium" id="hourlyOnDemand">-</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-600 dark:text-gray-400">Daily</span>
+                    <span class="font-medium" id="dailyOnDemand">-</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-600 dark:text-gray-400">Monthly</span>
+                    <span class="font-medium" id="monthlyOnDemand">-</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Spot Instance Card -->
+            <div class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm">
+              <div class="bg-green-600/10 dark:bg-green-900/20 px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 dark:text-green-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <h4 class="font-medium text-gray-800 dark:text-gray-200">Spot Instance Pricing</h4>
+              </div>
+              <div class="p-6">
+                <div class="space-y-4">
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-600 dark:text-gray-400">Hourly</span>
+                    <span class="font-medium" id="hourlySpotInstance">-</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-600 dark:text-gray-400">Daily</span>
+                    <span class="font-medium" id="dailySpotInstance">-</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-600 dark:text-gray-400">Monthly</span>
+                    <span class="font-medium" id="monthlySpotInstance">-</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Total Cost Card -->
+          <div class="bg-gradient-to-r from-blue-600/10 to-indigo-600/10 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-6 backdrop-blur-sm border border-blue-200/50 dark:border-blue-900/50">
+            <div class="flex items-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600 dark:text-blue-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>
+              <h4 class="text-xl font-semibold text-blue-800 dark:text-blue-200">Total Monthly Instance Cost</h4>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-3xl font-bold text-gray-900 dark:text-white">$<span id="monthlyInstanceCost">-</span></span>
+              <span class="text-sm text-gray-600 dark:text-gray-400 bg-white/50 dark:bg-gray-800/50 px-3 py-1 rounded-full">for <span id="nodesNeededSummary">-</span> nodes</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Pod Cost Panel -->
+        <div id="podCostPanel" class="tab-panel hidden p-8">
+          <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-6">Pod Cost Breakdown</h3>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <!-- On Demand Pod Card -->
+            <div class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm">
+              <div class="bg-blue-600/10 dark:bg-blue-900/20 px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600 dark:text-blue-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                </svg>
+                <h4 class="font-medium text-gray-800 dark:text-gray-200">On Demand Pricing</h4>
+              </div>
+              <div class="p-6">
+                <div class="space-y-4">
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-600 dark:text-gray-400">Per Pod Hourly</span>
+                    <span class="font-medium" id="hourlyPodCost">-</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-600 dark:text-gray-400">Per Pod Daily</span>
+                    <span class="font-medium" id="dailyPodCost">-</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-600 dark:text-gray-400">Per Pod Monthly</span>
+                    <span class="font-medium" id="perPodMonthlyCostDetail">-</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Spot Pod Card -->
+            <div class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm">
+              <div class="bg-green-600/10 dark:bg-green-900/20 px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 dark:text-green-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <h4 class="font-medium text-gray-800 dark:text-gray-200">Spot Instance Pricing</h4>
+              </div>
+              <div class="p-6">
+                <div class="space-y-4">
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-600 dark:text-gray-400">Per Pod Hourly</span>
+                    <span class="font-medium" id="hourlyPodCostSpot">-</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-600 dark:text-gray-400">Per Pod Daily</span>
+                    <span class="font-medium" id="dailyPodCostSpot">-</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-600 dark:text-gray-400">Per Pod Monthly</span>
+                    <span class="font-medium" id="perPodMonthlyCostDetailSpot">-</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Total Cost Card -->
+          <div class="bg-gradient-to-r from-blue-600/10 to-indigo-600/10 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-6 backdrop-blur-sm border border-blue-200/50 dark:border-blue-900/50">
+            <div class="flex items-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600 dark:text-blue-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>
+              <h4 class="text-xl font-semibold text-blue-800 dark:text-blue-200">Total Monthly Pod Cost</h4>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-3xl font-bold text-gray-900 dark:text-white">$<span id="monthlyPodCostDetail">-</span></span>
+              <span class="text-sm text-gray-600 dark:text-gray-400 bg-white/50 dark:bg-gray-800/50 px-3 py-1 rounded-full">for <span id="totalPodsSummary">-</span> pods</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Charts Panel -->
+        <div id="chartsPanel" class="tab-panel hidden p-8">
+          <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-6">Cost Visualizations</h3>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <!-- Cost Distribution Chart -->
+            <div class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-xl shadow-md p-6 border border-white/30 dark:border-gray-700/50">
+              <h4 class="font-medium text-gray-800 dark:text-gray-200 mb-4 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+                </svg>
+                Cost Distribution
+              </h4>
+              <div class="h-64">
+                <canvas id="costDistributionChart"></canvas>
+              </div>
+            </div>
+            
+            <!-- Savings Comparison Chart -->
+            <div class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-xl shadow-md p-6 border border-white/30 dark:border-gray-700/50">
+              <h4 class="font-medium text-gray-800 dark:text-gray-200 mb-4 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+                Savings Comparison
+              </h4>
+              <div class="h-64">
+                <canvas id="savingsComparisonChart"></canvas>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Yearly Projection -->
+          <div class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-xl shadow-md p-6 border border-white/30 dark:border-gray-700/50">
+            <h4 class="font-medium text-gray-800 dark:text-gray-200 mb-4 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              Yearly Cost Projection
+            </h4>
+            <div class="h-80">
+              <canvas id="yearlyProjectionChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Export & Actions -->
+      <div class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-white/30 dark:border-gray-700/50">
+        <div class="px-8 py-6 border-b border-white/20 dark:border-gray-700/50">
+          <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            Export & Share
+          </h3>
+        </div>
+        <div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <button id="exportPDF" class="inline-flex justify-center items-center px-6 py-3 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+            Export as PDF
+          </button>
+          <button id="exportCSV" class="inline-flex justify-center items-center px-6 py-3 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+            Export as CSV
+          </button>
+          <button id="copyToClipboard" class="inline-flex justify-center items-center px-6 py-3 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+            </svg>
+            Copy to Clipboard
+          </button>
+        </div>
+      </div>
+      
+      <!-- Disclaimer -->
+      <div class="bg-yellow-50/80 dark:bg-yellow-900/20 border-l-4 border-yellow-400 dark:border-yellow-600 p-4 rounded-lg backdrop-blur-sm">
+        <div class="flex">
+          <div class="flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 dark:text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+          </div>
+          <div class="ml-3">
+            <p class="text-sm text-yellow-700 dark:text-yellow-300">
+              <strong>Note:</strong> This is an estimation tool. Actual AWS costs may vary based on region, data transfer, storage, and other factors not included in this calculation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+// Dark Mode Toggle
+const themeToggle = document.getElementById('themeToggle');
+const sunIcon = document.getElementById('sunIcon');
+const moonIcon = document.getElementById('moonIcon');
+
+if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark');
+  sunIcon.classList.add('hidden');
+  moonIcon.classList.remove('hidden');
+} else {
+  document.documentElement.classList.remove('dark');
+  sunIcon.classList.remove('hidden');
+  moonIcon.classList.add('hidden');
+}
+
+themeToggle.addEventListener('click', function() {
+  if (document.documentElement.classList.contains('dark')) {
+    document.documentElement.classList.remove('dark');
+    localStorage.setItem('color-theme', 'light');
+    sunIcon.classList.remove('hidden');
+    moonIcon.classList.add('hidden');
+  } else {
+    document.documentElement.classList.add('dark');
+    localStorage.setItem('color-theme', 'dark');
+    sunIcon.classList.add('hidden');
+    moonIcon.classList.remove('hidden');
+  }
+});
+
+// Tab Functionality
+function switchTab(activeTab, activePanel) {
+  // Hide all panels
+  document.querySelectorAll('.tab-panel').forEach(panel => {
+    panel.classList.add('hidden');
+    panel.classList.remove('active');
+  });
+  
+  // Deactivate all tabs
+  document.querySelectorAll('.tab-button').forEach(tab => {
+    tab.classList.remove('active', 'border-blue-500', 'text-blue-600', 'dark:text-blue-400', 'dark:border-blue-400');
+    tab.classList.add('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300', 'dark:text-gray-400', 'dark:hover:text-gray-300');
+  });
+  
+  // Activate selected tab
+  activeTab.classList.add('active', 'border-blue-500', 'text-blue-600', 'dark:text-blue-400', 'dark:border-blue-400');
+  activeTab.classList.remove('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300', 'dark:text-gray-400', 'dark:hover:text-gray-300');
+  
+  // Show selected panel
+  activePanel.classList.remove('hidden');
+  activePanel.classList.add('active');
+}
+
+document.getElementById('instanceTab').addEventListener('click', function() {
+  switchTab(this, document.getElementById('instanceCostPanel'));
+});
+
+document.getElementById('podTab').addEventListener('click', function() {
+  switchTab(this, document.getElementById('podCostPanel'));
+});
+
+document.getElementById('chartsTab').addEventListener('click', function() {
+  switchTab(this, document.getElementById('chartsPanel'));
+});
+
+// Chart Variables
+let costDistributionChart, savingsComparisonChart, yearlyProjectionChart;
+
+// Form Submission
+document.getElementById('eksCostForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const workerNodeSelect = document.getElementById('workerNode');
+  const selectedOption = workerNodeSelect.options[workerNodeSelect.selectedIndex];
+  const nodeCPU = parseFloat(selectedOption.dataset.cpu);
+  const nodeMemory = parseFloat(selectedOption.dataset.memory);
+  const hourlyRate = parseFloat(selectedOption.dataset.hourly);
+  const spotHourlyRate = parseFloat(selectedOption.dataset.spothourly);
+
+  const spotDiscount = (hourlyRate - spotHourlyRate) / hourlyRate * 100;
+
+  // Get pod inputs
+  const podCount = parseFloat(document.getElementById('podCount').value);
+  const cpuPerPod = parseFloat(document.getElementById('cpuPerPod').value);
+  const memPerPod = parseFloat(document.getElementById('memoryPerPod').value);
+  const usagePerDay = parseFloat(document.getElementById('perDayUsage').value);
+
+  // Unit cost calculation
+  const cpuCostPerUnit = (hourlyRate / nodeCPU) / 2;
+  const memCostPerUnit = (hourlyRate / nodeMemory) / 2;
+
+  // Total resources needed
+  const totalCpu = podCount * cpuPerPod;
+  const totalMem = podCount * memPerPod;
+
+  // Total cost based on pod resource usage
+  const hourlyPodCost = (totalCpu * cpuCostPerUnit) + (totalMem * memCostPerUnit);
+  const dailyPodCost = hourlyPodCost * usagePerDay;
+  const monthlyPodCost = dailyPodCost * 30.44;
+  const perPodMonthlyCost = monthlyPodCost / podCount;
+
+  // Spot pod cost 
+  const perPodmonthlySpotPodCost = perPodMonthlyCost * (1 - spotDiscount / 100);
+  const monthlySpotPodCost = monthlyPodCost * (1 - spotDiscount / 100);
+  const dailySpotPodCost = dailyPodCost * (1 - spotDiscount / 100);
+  const hourlySpotPodCost = hourlyPodCost * (1 - spotDiscount / 100);
+
+  // Pods per instance
+  const podsPerNode = Math.min(
+    Math.floor(nodeCPU / cpuPerPod),
+    Math.floor(nodeMemory / memPerPod)
+  );
+  const totalInstances = Math.ceil(podCount / podsPerNode);
+  const monthlyInstanceCost = totalInstances * hourlyRate * usagePerDay * 30.44;
+  const dailyInstanceCost = totalInstances * hourlyRate * usagePerDay;
+  const hourlyInstanceCost = totalInstances * hourlyRate;
+
+  // SPOT Price
+  const monthlySpotInstanceCost = monthlyInstanceCost * (1 - spotDiscount / 100);
+  const dailySpotInstanceCost = dailyInstanceCost * (1 - spotDiscount / 100);
+  const hourlySpotInstanceCost = hourlyInstanceCost * (1 - spotDiscount / 100);
+  const monthlySavings = monthlyInstanceCost - monthlySpotInstanceCost;
+  const yearlySavings = monthlySavings * 12;
+
+  // Update DOM
+  document.getElementById('instanceTypeDetail').textContent = `${selectedOption.value}`;
+  document.getElementById('nodesNeededDetail').textContent = totalInstances;
+  document.getElementById('podsPerNode').textContent = podsPerNode || 0;
+  document.getElementById('totalPodsDetail').textContent = podCount;
+  document.getElementById('podResourceDetail').textContent = `${cpuPerPod.toFixed(2)} vCPU, ${memPerPod.toFixed(2)} GB`;
+  document.getElementById('dailyUsageDetail').textContent = `${usagePerDay} hrs/day`;
+  
+  // Costs
+  document.getElementById('monthlyInstanceCost').textContent = monthlyInstanceCost.toFixed(2);
+//   document.getElementById('perInstanceMonthlyCost').textContent = (hourlyRate * usagePerDay * 30.44).toFixed(2);
+  document.getElementById('monthlyOnDemand').textContent = monthlyInstanceCost.toFixed(2);
+  document.getElementById('dailyOnDemand').textContent = dailyInstanceCost.toFixed(2);
+  document.getElementById('hourlyOnDemand').textContent = hourlyInstanceCost.toFixed(2);
+  
+  // Spot costs
+//   document.getElementById('perInstanceMonthlyCostSpot').textContent = (spotHourlyRate * usagePerDay * 30.44).toFixed(2);
+  document.getElementById('monthlySpotInstance').textContent = monthlySpotInstanceCost.toFixed(2);
+  document.getElementById('dailySpotInstance').textContent = dailySpotInstanceCost.toFixed(2);
+  document.getElementById('hourlySpotInstance').textContent = hourlySpotInstanceCost.toFixed(2);
+  document.getElementById('spotDiscountPct').textContent = `${spotDiscount.toFixed(0)}%`;
+  document.getElementById('monthlySavings').textContent = `$${monthlySavings.toFixed(2)}`;
+  document.getElementById('yearlySavings').textContent = `$${yearlySavings.toFixed(2)}`;
+  
+  // Pod costs
+  document.getElementById('perPodMonthlyCostDetail').textContent = perPodMonthlyCost.toFixed(4);
+  document.getElementById('monthlyPodCostDetail').textContent = monthlyPodCost.toFixed(2);
+  document.getElementById('hourlyPodCost').textContent = hourlyPodCost.toFixed(4);
+  document.getElementById('dailyPodCost').textContent = dailyPodCost.toFixed(2);
+//   document.getElementById('monthlyPodCost').textContent = monthlyPodCost.toFixed(2);
+
+  // Spot pod costs
+  document.getElementById('perPodMonthlyCostDetailSpot').textContent = perPodmonthlySpotPodCost.toFixed(4);
+  document.getElementById('hourlyPodCostSpot').textContent = hourlySpotPodCost.toFixed(4);
+  document.getElementById('dailyPodCostSpot').textContent = dailySpotPodCost.toFixed(2);
+//   document.getElementById('monthlyPodCostSpot').textContent = monthlySpotPodCost.toFixed(2);
+  
+  // Summary fields
+  document.getElementById('nodesNeededSummary').textContent = totalInstances;
+  document.getElementById('totalPodsSummary').textContent = podCount;
+
+  // Update Charts
+  updateCharts(
+    monthlyInstanceCost,
+    monthlySpotInstanceCost,
+    monthlyPodCost,
+    monthlySpotPodCost,
+    yearlySavings
+  );
+
+  // Show results
+  document.getElementById('resultSection').classList.remove('hidden');
+});
+
+// Update Charts Function
+function updateCharts(monthlyInstanceCost, monthlySpotInstanceCost, monthlyPodCost, monthlySpotPodCost, yearlySavings) {
+  // Destroy existing charts if they exist
+  if (costDistributionChart) costDistributionChart.destroy();
+  if (savingsComparisonChart) savingsComparisonChart.destroy();
+  if (yearlyProjectionChart) yearlyProjectionChart.destroy();
+
+  // Cost Distribution Chart
+  const costDistributionCtx = document.getElementById('costDistributionChart').getContext('2d');
+  costDistributionChart = new Chart(costDistributionCtx, {
+    type: 'pie',
+    data: {
+      labels: ['Compute (CPU)', 'Compute (Memory)', 'Savings Potential'],
+      datasets: [{
+        data: [monthlyInstanceCost * 0.7, monthlyInstanceCost * 0.3, yearlySavings / 12],
+        backgroundColor: [
+          'rgba(59, 130, 246, 0.8)',
+          'rgba(99, 102, 241, 0.8)',
+          'rgba(16, 185, 129, 0.8)'
+        ],
+        borderColor: [
+          'rgba(59, 130, 246, 1)',
+          'rgba(99, 102, 241, 1)',
+          'rgba(16, 185, 129, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            color: window.matchMedia('(prefers-color-scheme: dark)').matches ? '#E5E7EB' : '#111827'
+          }
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return `${context.label}: $${context.raw.toFixed(2)}`;
+            }
+          }
+        }
+      }
+    }
+  });
+
+  // Savings Comparison Chart
+  const savingsComparisonCtx = document.getElementById('savingsComparisonChart').getContext('2d');
+  savingsComparisonChart = new Chart(savingsComparisonCtx, {
+    type: 'bar',
+    data: {
+      labels: ['On Demand', 'Spot Instances', 'Savings'],
+      datasets: [{
+        label: 'Monthly Cost ($)',
+        data: [monthlyInstanceCost, monthlySpotInstanceCost, yearlySavings / 12],
+        backgroundColor: [
+          'rgba(59, 130, 246, 0.8)',
+          'rgba(16, 185, 129, 0.8)',
+          'rgba(245, 158, 11, 0.8)'
+        ],
+        borderColor: [
+          'rgba(59, 130, 246, 1)',
+          'rgba(16, 185, 129, 1)',
+          'rgba(245, 158, 11, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            color: window.matchMedia('(prefers-color-scheme: dark)').matches ? '#E5E7EB' : '#111827'
+          },
+          grid: {
+            color: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'
+          }
+        },
+        x: {
+          ticks: {
+            color: window.matchMedia('(prefers-color-scheme: dark)').matches ? '#E5E7EB' : '#111827'
+          },
+          grid: {
+            display: false
+          }
+        }
+      },
+      plugins: {
+        legend: {
+          display: false
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return `$${context.raw.toFixed(2)}`;
+            }
+          }
+        }
+      }
+    }
+  });
+
+  // Yearly Projection Chart
+  const yearlyProjectionCtx = document.getElementById('yearlyProjectionChart').getContext('2d');
+  yearlyProjectionChart = new Chart(yearlyProjectionCtx, {
+    type: 'line',
+    data: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      datasets: [
+        {
+          label: 'On Demand',
+          data: Array(12).fill(0).map((_, i) => monthlyInstanceCost * (i + 1)),
+          borderColor: 'rgba(59, 130, 246, 1)',
+          backgroundColor: 'rgba(59, 130, 246, 0.1)',
+          tension: 0.3,
+          fill: true
+        },
+        {
+          label: 'Spot Instances',
+          data: Array(12).fill(0).map((_, i) => monthlySpotInstanceCost * (i + 1)),
+          borderColor: 'rgba(16, 185, 129, 1)',
+          backgroundColor: 'rgba(16, 185, 129, 0.1)',
+          tension: 0.3,
+          fill: true
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            color: window.matchMedia('(prefers-color-scheme: dark)').matches ? '#E5E7EB' : '#111827'
+          },
+          grid: {
+            color: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'
+          }
+        },
+        x: {
+          ticks: {
+            color: window.matchMedia('(prefers-color-scheme: dark)').matches ? '#E5E7EB' : '#111827'
+          },
+          grid: {
+            color: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'
+          }
+        }
+      },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return `${context.dataset.label}: $${context.raw.toFixed(2)}`;
+            }
+          }
+        }
+      }
+    }
+  });
+}
+
+// Export Functions
+document.getElementById('exportPDF').addEventListener('click', function() {
+  alert('PDF export functionality would be implemented here with a library like jsPDF');
+});
+
+document.getElementById('exportCSV').addEventListener('click', function() {
+  alert('CSV export functionality would be implemented here');
+});
+
+document.getElementById('copyToClipboard').addEventListener('click', function() {
+  const results = `AWS EKS Cost Calculation Results:
+  
+Instance Type: ${document.getElementById('instanceTypeDetail').textContent}
+Total Nodes: ${document.getElementById('nodesNeededDetail').textContent}
+Total Pods: ${document.getElementById('totalPodsDetail').textContent}
+
+Monthly On Demand Cost: $${document.getElementById('monthlyOnDemand').textContent}
+Monthly Spot Cost: $${document.getElementById('monthlySpotInstance').textContent}
+Monthly Savings: ${document.getElementById('spotDiscountPct').textContent}
+
+Pod Monthly Cost (On Demand): $${document.getElementById('monthlyPodCost').textContent}
+Pod Monthly Cost (Spot): $${document.getElementById('monthlyPodCostSpot').textContent}`;
+
+  navigator.clipboard.writeText(results).then(() => {
+    const originalText = this.innerHTML;
+    this.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+      </svg>
+      Copied!
+    `;
+    setTimeout(() => {
+      this.innerHTML = originalText;
+    }, 2000);
+  });
+});
+</script>
