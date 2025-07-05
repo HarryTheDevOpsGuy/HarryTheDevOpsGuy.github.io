@@ -8,82 +8,7 @@ title: "Hari Prasad | DevOps Portfolio v2"
 
 <!-- Custom Styles -->
 <style>
-  @keyframes slideInFromLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes slideInFromRight {
-    from {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-  }
-
-  .slide-in-left {
-    animation: slideInFromLeft 0.8s ease-out forwards;
-  }
-
-  .slide-in-right {
-    animation: slideInFromRight 0.8s ease-out forwards;
-  }
-
-  .fade-in-up {
-    animation: fadeInUp 0.8s ease-out forwards;
-  }
-
-  .pulse-animation {
-    animation: pulse 2s ease-in-out infinite;
-  }
-
-  .gradient-bg {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  }
-
-  .gradient-text {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .glass-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  .dark .glass-card {
-    background: rgba(17, 24, 39, 0.1);
-    border: 1px solid rgba(75, 85, 99, 0.2);
-  }
-
+  /* Only keep used styles */
   .skill-progress {
     background: linear-gradient(90deg, #3b82f6, #8b5cf6);
     height: 8px;
@@ -95,7 +20,6 @@ title: "Hari Prasad | DevOps Portfolio v2"
     border-left: 4px solid #3b82f6;
     transition: all 0.3s ease;
   }
-
   .experience-card:hover {
     transform: translateX(8px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -106,12 +30,10 @@ title: "Hari Prasad | DevOps Portfolio v2"
     border: 1px solid #e2e8f0;
     transition: all 0.3s ease;
   }
-
   .project-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   }
-
   .dark .project-card {
     background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
     border: 1px solid #475569;
@@ -123,7 +45,6 @@ title: "Hari Prasad | DevOps Portfolio v2"
     position: relative;
     overflow: hidden;
   }
-
   .stats-card::before {
     content: '';
     position: absolute;
@@ -135,8 +56,6 @@ title: "Hari Prasad | DevOps Portfolio v2"
     border-radius: 50%;
     transform: rotate(45deg);
   }
-
-  .value-prop-icon:hover { transform: scale(1.1) rotate(-6deg); transition: 0.2s; }
 </style>
 
 <div class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
