@@ -58,11 +58,11 @@ title: "Hari Prasad | DevOps Portfolio v2"
   }
 </style>
 
-<div class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+<div class="min-h-screen bg-linear-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
   
   <!-- Hero Section -->
   <section class="relative py-20 md:py-32 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 animate-pulse"></div>
+    <div class="absolute inset-0 bg-linear-to-r from-blue-500/10 to-purple-500/10 animate-pulse"></div>
     <div class="max-w-7xl mx-auto px-6 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
@@ -97,7 +97,7 @@ title: "Hari Prasad | DevOps Portfolio v2"
         <!-- Right Content - Profile Image -->
         <div class="slide-in-right text-center">
           <div class="relative inline-block">
-            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-2xl opacity-30 pulse-animation"></div>
+            <div class="absolute inset-0 bg-linear-to-r from-blue-500 to-purple-500 rounded-full blur-2xl opacity-30 pulse-animation"></div>
             <img src="/assets/image/hari-profile.jpeg" alt="Hari Prasad" 
                  class="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-8 border-white shadow-2xl" />
             <div class="absolute -bottom-4 -right-4 w-16 h-16 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
@@ -179,7 +179,7 @@ title: "Hari Prasad | DevOps Portfolio v2"
                 <ul class="space-y-3">
                   {% for achievement in job.achievements %}
                     <li class="flex items-start text-gray-700 dark:text-gray-300">
-                      <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-4 flex-shrink-0"></span>
+                      <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-4 shrink-0"></span>
                       {{ achievement }}
                     </li>
                   {% endfor %}
@@ -218,7 +218,7 @@ title: "Hari Prasad | DevOps Portfolio v2"
                       {% when 'zabbix' %}{% assign icon = 'fas fa-chart-line' %}
                       {% else %}{% assign icon = 'fas fa-tag' %}
                     {% endcase %}
-                    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold border border-blue-500 text-blue-700 bg-white shadow-sm">
+                    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold border border-blue-500 text-blue-700 bg-white shadow-xs">
                       <i class="{{ icon }} text-blue-500"></i> {{ tool }}
                     </span>
                   {% endfor %}
@@ -341,7 +341,7 @@ title: "Hari Prasad | DevOps Portfolio v2"
   </section>
 
   <!-- Education & Languages -->
-  <section class="py-16 bg-gradient-to-br from-white via-primary-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-primary-900">
+  <section class="py-16 bg-linear-to-br from-white via-primary-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-primary-900">
     <div class="max-w-5xl mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
         <!-- Education Timeline -->
@@ -356,7 +356,7 @@ title: "Hari Prasad | DevOps Portfolio v2"
                 <span class="absolute flex items-center justify-center w-8 h-8 bg-primary-600 rounded-full -left-5 ring-4 ring-white dark:ring-gray-900">
                   <i class="fas fa-university text-white"></i>
                 </span>
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-5">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-5">
                   <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
                     <h4 class="font-semibold text-lg text-primary-700 dark:text-primary-200">{{ edu.degree }}</h4>
                     <span class="text-sm text-gray-500 dark:text-gray-400">{{ edu.year }}</span>
@@ -376,7 +376,7 @@ title: "Hari Prasad | DevOps Portfolio v2"
           </h3>
           <div class="grid grid-cols-2 gap-4">
             {% for lang in site.data.cv.hari-prasad.languages %}
-              <div class="flex items-center bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+              <div class="flex items-center bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4">
                 <span class="text-2xl mr-3">
                   {% if lang == 'English' %}<i class="fas fa-flag-usa text-blue-500"></i>{% endif %}
                   {% if lang == 'Hindi' %}<i class="fas fa-flag text-orange-500"></i>{% endif %}
@@ -391,7 +391,7 @@ title: "Hari Prasad | DevOps Portfolio v2"
   </section>
 
   <!-- Why Hire Me & CTA Section -->
-  <section class="py-16 flex justify-center items-center bg-gradient-to-br from-primary-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-primary-900">
+  <section class="py-16 flex justify-center items-center bg-linear-to-br from-primary-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-primary-900">
     <div class="w-full max-w-5xl bg-white dark:bg-gray-900 rounded-2xl shadow-xl px-6 py-12 md:px-12 md:py-16 flex flex-col items-center">
       <div class="flex flex-col items-center mb-10">
         <div class="text-4xl text-primary-600 mb-2"><i class="fas fa-handshake"></i></div>
@@ -419,28 +419,28 @@ title: "Hari Prasad | DevOps Portfolio v2"
         <p class="text-gray-700 dark:text-gray-300 mb-6">Let's discuss how I can bring value to your organization</p>
       </div>
       <div class="flex flex-wrap justify-center gap-4 mb-4">
-        <a href="mailto:{{ site.data.cv.hari-prasad.personal.contact.email }}" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg shadow hover:bg-blue-700 transition-colors font-semibold">
+        <a href="mailto:{{ site.data.cv.hari-prasad.personal.contact.email }}" class="inline-flex items-center px-6 py-3 bg-linear-to-r from-blue-600 to-purple-600 text-white rounded-lg shadow-sm hover:bg-blue-700 transition-colors font-semibold">
           <i class="fas fa-envelope mr-2"></i>Email Me
         </a>
-        <a href="https://wa.me/917503721297?text=Hi%20Hari,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" class="inline-flex items-center px-6 py-3 bg-green-500 text-white rounded-lg shadow hover:bg-green-600 transition-colors font-semibold">
+        <a href="https://wa.me/917503721297?text=Hi%20Hari,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" class="inline-flex items-center px-6 py-3 bg-green-500 text-white rounded-lg shadow-sm hover:bg-green-600 transition-colors font-semibold">
           <i class="fab fa-whatsapp mr-2"></i>WhatsApp
         </a>
-        <a href="tel:{{ site.data.cv.hari-prasad.personal.contact.phone }}" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg shadow hover:bg-blue-700 transition-colors font-semibold">
+        <a href="tel:{{ site.data.cv.hari-prasad.personal.contact.phone }}" class="inline-flex items-center px-6 py-3 bg-linear-to-r from-blue-600 to-purple-600 text-white rounded-lg shadow-sm hover:bg-blue-700 transition-colors font-semibold">
           <i class="fas fa-phone mr-2"></i>Call Me
         </a>
       </div>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="/cv/Hari-Prasad-11Yrs-2025-cv3-1.pdf" target="_blank" class="inline-flex items-center px-6 py-3 border-2 border-blue-600 text-blue-600 bg-white rounded-lg shadow hover:bg-blue-50 transition-colors font-semibold">
+        <a href="/cv/Hari-Prasad-11Yrs-2025-cv3-1.pdf" target="_blank" class="inline-flex items-center px-6 py-3 border-2 border-blue-600 text-blue-600 bg-white rounded-lg shadow-sm hover:bg-blue-50 transition-colors font-semibold">
           <i class="fas fa-file-alt mr-2"></i>View/Download Resume
         </a>
-        <a href="{{ site.data.cv.hari-prasad.personal.social.linkedin }}" target="_blank" class="inline-flex items-center px-6 py-3 border-2 border-blue-600 text-blue-600 bg-white rounded-lg shadow hover:bg-blue-50 transition-colors font-semibold">
+        <a href="{{ site.data.cv.hari-prasad.personal.social.linkedin }}" target="_blank" class="inline-flex items-center px-6 py-3 border-2 border-blue-600 text-blue-600 bg-white rounded-lg shadow-sm hover:bg-blue-50 transition-colors font-semibold">
           <i class="fab fa-linkedin mr-2"></i>LinkedIn Profile
         </a>
-        <a href="{{ site.data.cv.hari-prasad.personal.social.github }}" target="_blank" class="inline-flex items-center px-6 py-3 border-2 border-gray-700 text-gray-700 bg-white rounded-lg shadow hover:bg-gray-100 transition-colors font-semibold">
+        <a href="{{ site.data.cv.hari-prasad.personal.social.github }}" target="_blank" class="inline-flex items-center px-6 py-3 border-2 border-gray-700 text-gray-700 bg-white rounded-lg shadow-sm hover:bg-gray-100 transition-colors font-semibold">
           <i class="fab fa-github mr-2"></i>GitHub Projects
         </a>
       </div>
-      <div class="my-8 w-full h-0.5 bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100"></div>
+      <div class="my-8 w-full h-0.5 bg-linear-to-r from-blue-100 via-purple-100 to-pink-100"></div>
     </div>
   </section>
 </div> 

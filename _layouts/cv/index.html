@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-12">
+<div class="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-12">
   <div class="container mx-auto px-4">
     <header class="max-w-full mx-auto text-center mb-12">
       <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -27,7 +27,7 @@ layout: default
           {% assign user = site.data.cv[user_id] %}
           <div class="group relative flex flex-col bg-white/60 dark:bg-gray-900/60 backdrop-blur-md border border-gray-200 dark:border-gray-700 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-3xl hover:-translate-y-1">
             <!-- Resume Preview Image (A4 ratio) -->
-            <div class="relative w-full aspect-[210/297] flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-800 dark:to-gray-900">
+            <div class="relative w-full aspect-210/297 flex items-center justify-center bg-linear-to-br from-blue-50 to-blue-100 dark:from-gray-800 dark:to-gray-900">
               <img src="{{ user.personal.resume_image | default: '/assets/image/cv-preview/placeholder.png' }}"
                    alt="Preview of {{ layout_name | capitalize }} resume"
                    class="object-cover w-full h-full rounded-b-none transition-transform duration-300 group-hover:scale-105 group-hover:shadow-2xl drop-shadow-2xl border-2 border-white dark:border-gray-800" />
@@ -49,7 +49,7 @@ layout: default
               <!-- Resume Type Tag -->
               <!-- View Resume Button flush with bottom -->
               <a href="{{ page.url | relative_url }}"
-                 class="inline-flex items-center justify-center w-full py-2 bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-500 hover:from-indigo-700 hover:to-blue-600 text-white font-bold rounded-b-xl shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
+                 class="inline-flex items-center justify-center w-full py-2 bg-linear-to-r from-blue-600 via-indigo-500 to-purple-500 hover:from-indigo-700 hover:to-blue-600 text-white font-bold rounded-b-xl shadow-lg transition-all duration-300 focus:outline-hidden focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
                 <span>{{ layout_name | capitalize }} Resume</span>
                 <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>

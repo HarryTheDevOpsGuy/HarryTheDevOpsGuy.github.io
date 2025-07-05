@@ -94,7 +94,7 @@ title: "Hari Prasad | Resume"
   <aside class="space-y-3">
     <!-- Avatar -->
     <div class="text-center">
-      <img src="{{ page.cvdata.personal.avatar }}" alt="Avatar" class="w-24 h-24 mx-auto rounded-full border-4 border-blue-500 shadow mb-2">
+      <img src="{{ page.cvdata.personal.avatar }}" alt="Avatar" class="w-24 h-24 mx-auto rounded-full border-4 border-blue-500 shadow-sm mb-2">
       <div class="text-xs text-gray-500">DevOps Specialist</div>
     </div>
 
@@ -172,7 +172,7 @@ title: "Hari Prasad | Resume"
   <h2 class="cv-title">Developed Custom Tools</h2>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4 cv-content">
     {% for project in page.cvdata.projects %}
-      <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded border border-gray-200 dark:border-gray-700">
+      <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-sm border border-gray-200 dark:border-gray-700">
         <strong class="block text-blue-800 dark:text-blue-200">{{ project.name }}</strong>
         <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">{{ project.description }}</p>
         <a href="{{ project.url }}" class="text-xs text-blue-500 hover:underline mt-1 block">🔗 View Project</a>

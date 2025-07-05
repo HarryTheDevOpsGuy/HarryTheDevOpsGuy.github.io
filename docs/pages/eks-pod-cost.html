@@ -3,7 +3,7 @@ layout: default
 title: AWS EKS Pod Cost Calculator
 permalink: /tools/aws/pod-cost.html
 ---
-<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 py-12 px-4 sm:px-6 lg:px-8">
+<div class="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 py-12 px-4 sm:px-6 lg:px-8">
   <div class="max-w-5xl mx-auto">
     <!-- Header -->
     <header class="text-center mb-12">
@@ -21,7 +21,7 @@ permalink: /tools/aws/pod-cost.html
           <i class="fas fa-server mr-2 text-blue-500"></i> Worker Node Instance Type
         </label>
         <select id="workerNode" name="workerNode" required
-                class="w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+                class="w-full border-gray-300 dark:border-gray-600 rounded-md shadow-xs focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
           {% for row in site.data.tools.instance %}
             <option value='{{ row["API Name"] }}' data-cpu='{{ row["vCPUs"] | remove: " vCPUs" }}' data-memory='{{ row["Instance Memory"] | remove: " GiB" }}' data-hourly='{{ row["On Demand"] | remove: "$" | remove: " hourly" | times: 1 }}' data-spothourly='{{ row["Linux Spot Average cost"] | remove: "$" | remove: " hourly" | times: 1 }}'>
               {{ row["API Name"] }} ({{ row["vCPUs"] }}, {{ row["Instance Memory"] }})
@@ -36,33 +36,33 @@ permalink: /tools/aws/pod-cost.html
             <i class="fas fa-box-open mr-2 text-green-500"></i> Pod Count
           </label>
           <input type="number" id="podCount" value="2" min="1" required
-                 class="w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+                 class="w-full border-gray-300 dark:border-gray-600 rounded-md shadow-xs focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
         </div>
         <div>
           <label for="cpuPerPod" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 flex items-center">
             <i class="fas fa-microchip mr-2 text-yellow-500"></i> CPU per Pod (vCPU)
           </label>
           <input type="number" step="0.1" id="cpuPerPod" value="0.5" required
-                 class="w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+                 class="w-full border-gray-300 dark:border-gray-600 rounded-md shadow-xs focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
         </div>
         <div>
           <label for="memoryPerPod" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 flex items-center">
             <i class="fas fa-memory mr-2 text-purple-500"></i> Memory per Pod (GB)
           </label>
           <input type="number" step="0.1" id="memoryPerPod" value="0.5" required
-                 class="w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+                 class="w-full border-gray-300 dark:border-gray-600 rounded-md shadow-xs focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
         </div>
         <div>
           <label for="perDayUsage" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 flex items-center">
             <i class="fas fa-clock mr-2 text-red-500"></i> Daily Usage (Hours)
           </label>
           <input type="number" id="perDayUsage" value="24" min="0" max="24" required
-                 class="w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+                 class="w-full border-gray-300 dark:border-gray-600 rounded-md shadow-xs focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
         </div>
       </div>
 
       <button type="submit"
-              class="w-full inline-flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300">
+              class="w-full inline-flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-xs text-base font-medium text-white bg-linear-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300">
         <i class="fas fa-calculator mr-2"></i> Calculate Cost
       </button>
     </form>

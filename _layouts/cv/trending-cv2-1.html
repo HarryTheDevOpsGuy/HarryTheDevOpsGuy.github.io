@@ -27,7 +27,7 @@ layout: default
 </style>
 
 <div class="cv-container container mx-auto px-4 py-6 md:py-4">
-  <article class="mx-auto bg-white/95 dark:bg-gray-800/95 rounded-xl shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30">
+  <article class="mx-auto bg-white/95 dark:bg-gray-800/95 rounded-xl shadow-lg backdrop-blur-xs border border-gray-200/50 dark:border-gray-700/30">
     <!-- Compact Header -->
     <header class="p-5 border-b compact-border border-primary-200 dark:border-primary-800 avoid-break">
       <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
@@ -178,7 +178,7 @@ layout: default
         <h2 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-3.5">🛠 Developed Custom Solutions</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
           {% for project in page.cvdata.projects %}
-            <div class="bg-gray-50 dark:bg-gray-700/50 rounded p-2.5">
+            <div class="bg-gray-50 dark:bg-gray-700/50 rounded-sm p-2.5">
               <h3 class="text-sm font-medium text-gray-900 dark:text-white">{{ project.name }}</h3>
               <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">{{ project.description }}</p>
               <a href="{{ project.url }}" 

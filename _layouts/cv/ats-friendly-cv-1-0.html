@@ -162,7 +162,7 @@ title: "Hari Prasad | Resume"
     <h2 class="section-title">Featured Projects</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       {% for project in page.cvdata.projects %}
-        <div class="p-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded">
+        <div class="p-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-sm">
           <strong class="block text-blue-800 dark:text-blue-200">{{ project.name }}</strong>
           <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">{{ project.description }}</p>
           <a href="{{ project.url }}" class="text-xs text-blue-500 hover:underline mt-1 block">🔗 View Project</a>

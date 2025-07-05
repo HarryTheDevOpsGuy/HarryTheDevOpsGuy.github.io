@@ -39,7 +39,7 @@ layout: default
 <div class="cv-container container mx-auto px-4 py-8">
   <article class=" mx-auto">
     <!-- Modern DevOps Header -->
-    <header class="devops-gradient bg-gradient-to-r from-slate-900 to-slate-800 rounded-xl p-8 shadow-2xl avoid-break">
+    <header class="devops-gradient bg-linear-to-r from-slate-900 to-slate-800 rounded-xl p-8 shadow-2xl avoid-break">
       <div class="max-w-full mx-auto">
         <div class="flex flex-col md:flex-row items-center gap-8">
           <!-- Profile Section -->
@@ -50,7 +50,7 @@ layout: default
                  class="relative w-32 h-32 object-cover rounded-xl ring-4 ring-cyan-500/30">
           </div>
 
-          <div class="flex-grow text-center md:text-left">
+          <div class="grow text-center md:text-left">
             <h1 class="text-3xl font-bold text-white tracking-tight">
               {{ page.cvdata.personal.name }}
             </h1>
@@ -194,7 +194,7 @@ layout: default
                   <ul class="mt-4 space-y-3">
                     {% for achievement in exp.achievements %}
                       <li class="flex gap-3 text-gray-600 dark:text-gray-300">
-                        <svg class="w-5 h-5 flex-shrink-0 mt-1 text-cyan-500" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 shrink-0 mt-1 text-cyan-500" fill="currentColor" viewBox="0 0 20 20">
                           <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                         </svg>
                         <span>{{ achievement }}</span>
@@ -216,10 +216,10 @@ layout: default
                 <h3 class="font-medium text-gray-900 dark:text-white">{{ project.name }}</h3>
                 <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">{{ project.description }}</p>
                 <div class="mt-4 flex flex-wrap gap-2">
-                  <span class="px-2 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400 text-xs rounded">
+                  <span class="px-2 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400 text-xs rounded-sm">
                     Infrastructure
                   </span>
-                  <span class="px-2 py-1 bg-slate-100 dark:bg-slate-900/30 text-slate-600 dark:text-slate-400 text-xs rounded">
+                  <span class="px-2 py-1 bg-slate-100 dark:bg-slate-900/30 text-slate-600 dark:text-slate-400 text-xs rounded-sm">
                     Automation
                   </span>
                 </div>

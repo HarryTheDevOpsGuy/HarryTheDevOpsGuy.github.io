@@ -40,7 +40,7 @@ layout: default
     <header class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
       <!-- Profile Image -->
       <div class="md:col-span-1">
-        <div class="relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary-600 to-purple-700">
+        <div class="relative aspect-square rounded-2xl overflow-hidden bg-linear-to-br from-primary-600 to-purple-700">
           <div class="absolute inset-2">
             <img src="{{ page.cvdata.personal.avatar }}" 
                  alt="{{ page.cvdata.personal.name }}" 
@@ -99,7 +99,7 @@ layout: default
     <!-- Main Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Professional Summary -->
-      <div class="lg:col-span-3 grid-card bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
+      <div class="lg:col-span-3 grid-card bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-xs border border-gray-200/50 dark:border-gray-700/30 avoid-break">
         <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Professional Summary</h2>
         <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
           {{ page.cvdata.professional_summary }}
@@ -107,7 +107,7 @@ layout: default
       </div>
 
       <!-- Skills -->
-      <div class="grid-card bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
+      <div class="grid-card bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-xs border border-gray-200/50 dark:border-gray-700/30 avoid-break">
         <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Core Skills</h2>
         <div class="flex flex-wrap gap-2">
           {% for skill in page.cvdata.skills.core %}
@@ -119,7 +119,7 @@ layout: default
       </div>
 
       <!-- Tools -->
-      <div class="grid-card bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
+      <div class="grid-card bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-xs border border-gray-200/50 dark:border-gray-700/30 avoid-break">
         <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Tools & Technologies</h2>
         <div class="flex flex-wrap gap-2">
           {% for tool in page.cvdata.skills.tools %}
@@ -131,7 +131,7 @@ layout: default
       </div>
 
       <!-- Experience -->
-      <div class="lg:col-span-2 grid-card bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
+      <div class="lg:col-span-2 grid-card bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-xs border border-gray-200/50 dark:border-gray-700/30 avoid-break">
         <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">Professional Experience</h2>
         <div class="space-y-6">
           {% for exp in page.cvdata.experience %}
@@ -157,7 +157,7 @@ layout: default
       </div>
 
       <!-- Projects -->
-      <div class="grid-card bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
+      <div class="grid-card bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-xs border border-gray-200/50 dark:border-gray-700/30 avoid-break">
         <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Notable Projects</h2>
         <div class="space-y-4">
           {% for project in page.cvdata.projects %}
@@ -177,7 +177,7 @@ layout: default
       </div>
 
       <!-- Education -->
-      <div class="lg:col-span-3 grid-card bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
+      <div class="lg:col-span-3 grid-card bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-xs border border-gray-200/50 dark:border-gray-700/30 avoid-break">
         <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Education</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           {% for edu in page.cvdata.education %}

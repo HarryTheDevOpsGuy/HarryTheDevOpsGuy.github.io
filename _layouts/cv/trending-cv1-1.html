@@ -32,7 +32,7 @@ layout: default
     <!-- Left Sidebar -->
     <aside class="md:col-span-1 p-6 border-r border-gray-200 dark:border-gray-700 space-y-6">
       <div class="text-center">
-        <img src="{{ page.cvdata.personal.avatar }}" alt="Avatar" class="w-28 h-28 rounded-full mx-auto border-4 border-blue-500 shadow" />
+        <img src="{{ page.cvdata.personal.avatar }}" alt="Avatar" class="w-28 h-28 rounded-full mx-auto border-4 border-blue-500 shadow-sm" />
         <h1 class="mt-4 text-3xl font-extrabold tracking-tight text-blue-900 dark:text-blue-200">
           {{ page.cvdata.personal.name }}
         </h1>
@@ -148,7 +148,7 @@ layout: default
   </article>
 
   <!-- Projects Footer Row -->
-  <div class="mt-2 bg-white dark:bg-gray-900 rounded-xl shadow border border-gray-200 dark:border-gray-700 p-6">
+  <div class="mt-2 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
     <h2 class="font-semibold text-blue-700 dark:text-blue-300 text-lg mb-4">🚀 Developed Solutions</h2>
     <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-sm text-gray-700 dark:text-gray-300">
       {% for project in page.cvdata.projects %}

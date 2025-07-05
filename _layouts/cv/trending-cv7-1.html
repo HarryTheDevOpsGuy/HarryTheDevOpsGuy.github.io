@@ -92,7 +92,7 @@ title: "Hari Prasad | Resume"
   }
 </style>
 
-<div class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+<div class="min-h-screen bg-linear-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
   <div class="max-w-6xl mx-auto p-6 md:p-8">
     
     <!-- Creative Header -->
@@ -146,7 +146,7 @@ title: "Hari Prasad | Resume"
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             {% for skill in page.cvdata.technical_skills %}
-              <div class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-700 dark:to-gray-600 rounded-xl p-6 border-l-4 border-blue-500">
+              <div class="bg-linear-to-r from-blue-50 to-indigo-50 dark:from-gray-700 dark:to-gray-600 rounded-xl p-6 border-l-4 border-blue-500">
                 <h3 class="font-bold text-blue-600 dark:text-blue-400 mb-3 text-lg">{{ skill.category }}</h3>
                 <p class="text-gray-700 dark:text-gray-300">{{ skill.description }}</p>
               </div>
@@ -176,7 +176,7 @@ title: "Hari Prasad | Resume"
                 <ul class="space-y-3">
                   {% for achievement in job.achievements %}
                     <li class="flex items-start">
-                      <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-4 flex-shrink-0"></span>
+                      <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-4 shrink-0"></span>
                       <span class="text-gray-700 dark:text-gray-300">{{ achievement }}</span>
                     </li>
                   {% endfor %}
@@ -243,7 +243,7 @@ title: "Hari Prasad | Resume"
           </h3>
           <div class="space-y-4">
             {% for edu in page.cvdata.education %}
-              <div class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-gray-700 dark:to-gray-600 rounded-lg p-4 border-l-4 border-purple-500">
+              <div class="bg-linear-to-r from-purple-50 to-pink-50 dark:from-gray-700 dark:to-gray-600 rounded-lg p-4 border-l-4 border-purple-500">
                 <h4 class="font-semibold text-gray-900 dark:text-white">{{ edu.degree }}</h4>
                 <p class="text-sm text-gray-600 dark:text-gray-400">{{ edu.institution }}</p>
                 <p class="text-xs text-gray-500">{{ edu.location }} • {{ edu.year }}</p>

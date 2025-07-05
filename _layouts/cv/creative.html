@@ -31,7 +31,7 @@ layout: default
 <div class="cv-container container mx-auto px-4 py-8">
   <article class=" mx-auto">
     <!-- Creative Header with Diagonal Design -->
-    <header class="relative bg-gradient-to-br from-primary-600 to-purple-700 rounded-xl overflow-hidden avoid-break">
+    <header class="relative bg-linear-to-br from-primary-600 to-purple-700 rounded-xl overflow-hidden avoid-break">
       <!-- Decorative Elements -->
       <div class="absolute inset-0">
         <div class="absolute inset-0 opacity-10">
@@ -46,7 +46,7 @@ layout: default
           <div class="relative">
             <div class="absolute inset-0 bg-white/20 rounded-full blur-xl"></div>
             <div class="relative w-40 h-40">
-              <div class="absolute inset-0 bg-gradient-to-br from-primary-400 to-purple-500 rounded-full transform rotate-45"></div>
+              <div class="absolute inset-0 bg-linear-to-br from-primary-400 to-purple-500 rounded-full transform rotate-45"></div>
               <img src="{{ page.cvdata.personal.avatar }}" 
                    alt="{{ page.cvdata.personal.name }}" 
                    class="absolute inset-2 w-36 h-36 object-cover rounded-full ring-4 ring-white/30">
@@ -54,7 +54,7 @@ layout: default
           </div>
 
           <!-- Name and Title with Creative Typography -->
-          <div class="flex-grow text-center md:text-left">
+          <div class="grow text-center md:text-left">
             <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight">
               {{ page.cvdata.personal.name }}
             </h1>
@@ -106,7 +106,7 @@ layout: default
     <!-- Main Content with Creative Cards -->
     <div class="mt-8 space-y-6">
       <!-- Professional Summary with Accent Border -->
-      <section class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-sm border-l-4 accent-border border-primary-600 dark:border-primary-500 avoid-break">
+      <section class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-xs border-l-4 accent-border border-primary-600 dark:border-primary-500 avoid-break">
         <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Professional Summary</h2>
         <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
           {{ page.cvdata.professional_summary }}
@@ -116,7 +116,7 @@ layout: default
       <!-- Skills Grid with Hover Effects -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Core Skills -->
-        <section class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
+        <section class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-xs border border-gray-200/50 dark:border-gray-700/30 avoid-break">
           <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Core Skills</h2>
           <div class="flex flex-wrap gap-2">
             {% for skill in page.cvdata.skills.core %}
@@ -128,7 +128,7 @@ layout: default
         </section>
 
         <!-- Tools & Technologies -->
-        <section class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
+        <section class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-xs border border-gray-200/50 dark:border-gray-700/30 avoid-break">
           <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Tools & Technologies</h2>
           <div class="flex flex-wrap gap-2">
             {% for tool in page.cvdata.skills.tools %}
@@ -141,7 +141,7 @@ layout: default
       </div>
 
       <!-- Experience Timeline with Creative Design -->
-      <section class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
+      <section class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-xs border border-gray-200/50 dark:border-gray-700/30 avoid-break">
         <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">Professional Journey</h2>
         <div class="space-y-8">
           {% for exp in page.cvdata.experience %}
@@ -172,12 +172,12 @@ layout: default
       </section>
 
       <!-- Projects Grid with Hover Cards -->
-      <section class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
+      <section class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-xs border border-gray-200/50 dark:border-gray-700/30 avoid-break">
         <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">Notable Projects</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {% for project in page.cvdata.projects %}
             <div class="group relative bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <div class="absolute inset-0 bg-gradient-to-br from-primary-600/0 to-purple-600/0 group-hover:from-primary-600/5 group-hover:to-purple-600/5 rounded-lg transition-colors"></div>
+              <div class="absolute inset-0 bg-linear-to-br from-primary-600/0 to-purple-600/0 group-hover:from-primary-600/5 group-hover:to-purple-600/5 rounded-lg transition-colors"></div>
               <div class="relative">
                 <h3 class="text-base font-medium text-gray-900 dark:text-white">{{ project.name }}</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">{{ project.description }}</p>
@@ -195,7 +195,7 @@ layout: default
       </section>
 
       <!-- Education with Creative Cards -->
-      <section class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
+      <section class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-xs border border-gray-200/50 dark:border-gray-700/30 avoid-break">
         <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">Education</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           {% for edu in page.cvdata.education %}

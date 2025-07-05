@@ -2,25 +2,25 @@
 layout: default
 ---
 
-<div class="flex flex-col md:flex-row gap-4 relative min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-800">
+<div class="flex flex-col md:flex-row gap-4 relative min-h-screen bg-linear-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-800">
     <!-- Left Sidebar -->
-    <aside class="md:w-80 flex-shrink-0 fixed md:sticky left-0 top-[3.5rem] md:top-[4rem] h-[calc(100vh-3.5rem)] md:h-[calc(100vh-4rem)] z-40 transform transition-all duration-300 ease-in-out -translate-x-full md:translate-x-0 overflow-hidden" id="course-sidebar">
+    <aside class="md:w-80 shrink-0 fixed md:sticky left-0 top-14 md:top-16 h-[calc(100vh-3.5rem)] md:h-[calc(100vh-4rem)] z-40 transform transition-all duration-300 ease-in-out -translate-x-full md:translate-x-0 overflow-hidden" id="course-sidebar">
         <nav class="h-full overflow-y-auto bg-white/95 dark:bg-gray-800/95 p-4 rounded-2xl shadow-2xl backdrop-blur-xl backdrop-filter relative flex flex-col border border-gray-200/50 dark:border-gray-700/30 hover:border-primary-500/30 dark:hover:border-primary-400/30 transition-all duration-300 hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10">
             <!-- Course Info Section -->
             <div class="sticky top-0 z-10 bg-white/95 dark:bg-gray-800/95 pb-3 mb-3 border-b border-gray-100/50 dark:border-gray-700/30">
                 <div class="flex items-center justify-between mb-3">
                     <div class="flex items-center space-x-2">
-                        <div class="p-2 rounded-xl bg-gradient-to-br from-primary-50/80 to-purple-50/80 dark:from-primary-900/30 dark:to-purple-900/30 group-hover:scale-105 transition-all duration-300 shadow-sm">
+                        <div class="p-2 rounded-xl bg-linear-to-br from-primary-50/80 to-purple-50/80 dark:from-primary-900/30 dark:to-purple-900/30 group-hover:scale-105 transition-all duration-300 shadow-xs">
                             <svg class="w-5 h-5 text-primary-500 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                             </svg>
                         </div>
                         <div class="space-y-0.5">
-                            <h2 class="text-sm font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-600 via-purple-500 to-primary-600 animate-gradient">Course Content</h2>
+                            <h2 class="text-sm font-bold bg-clip-text text-transparent bg-linear-to-r from-primary-600 via-purple-500 to-primary-600 animate-gradient">Course Content</h2>
                             <p class="text-[10px] text-gray-500 dark:text-gray-400">{% assign current_course = page.url | split: "/" | slice: 2 | first %}</p>
                         </div>
                     </div>
-                    <button class="p-1.5 rounded-xl bg-gray-50 dark:bg-gray-700/50 hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500/50 group md:hidden" onclick="toggleSidebar()" aria-label="Toggle Sidebar">
+                    <button class="p-1.5 rounded-xl bg-gray-50 dark:bg-gray-700/50 hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-all duration-200 focus:outline-hidden focus:ring-2 focus:ring-primary-500/50 group md:hidden" onclick="toggleSidebar()" aria-label="Toggle Sidebar">
                         <svg class="w-4 h-4 text-gray-600 dark:text-gray-300 group-hover:text-primary-500 dark:group-hover:text-primary-400 group-hover:scale-110 transition-all duration-200" id="sidebar-toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                         </svg>
@@ -39,13 +39,13 @@ layout: default
                         </div>
                     </div>
                     <div class="flex h-1.5 mb-3 overflow-hidden bg-primary-100 rounded-full dark:bg-gray-700/50">
-                        <div id="progress-bar" class="flex flex-col justify-center overflow-hidden bg-gradient-to-r from-primary-500 to-purple-500 shadow-none whitespace-nowrap text-white transition-all duration-500 ease-out" style="width: 0%"></div>
+                        <div id="progress-bar" class="flex flex-col justify-center overflow-hidden bg-linear-to-r from-primary-500 to-purple-500 shadow-none whitespace-nowrap text-white transition-all duration-500 ease-out" style="width: 0%"></div>
                     </div>
                 </div>
             </div>
             
             <!-- Course Modules -->
-            <div class="flex-grow space-y-3 overflow-y-auto">
+            <div class="grow space-y-3 overflow-y-auto">
                 {% assign current_course = page.url | split: "/" | slice: 2 | first %}
                 {% assign course_pages = site.pages | where_exp: "page", "page.url contains current_course" | where: "layout", "course" %}
                 {% assign modules = course_pages | group_by: "module" %}
@@ -54,10 +54,10 @@ layout: default
                 {% for module in sorted_modules %}
                 {% assign module_info = module_index | where: "module", module.name | first %}
                 {% if module_info %}
-                <div class="course-module bg-gradient-to-r from-white/90 to-gray-50/90 dark:from-gray-800/90 dark:to-gray-700/90 rounded-xl p-3 transition-all duration-300 hover:shadow-md hover:scale-[1.01] hover:bg-gradient-to-r hover:from-primary-50/40 hover:to-purple-50/40 dark:hover:from-primary-900/30 dark:hover:to-purple-900/30 border border-gray-100/30 dark:border-gray-700/30 hover:border-primary-300/40 dark:hover:border-primary-600/40 group/module mb-4">
+                <div class="course-module bg-linear-to-r from-white/90 to-gray-50/90 dark:from-gray-800/90 dark:to-gray-700/90 rounded-xl p-3 transition-all duration-300 hover:shadow-md hover:scale-[1.01] hover:bg-linear-to-r hover:from-primary-50/40 hover:to-purple-50/40 dark:hover:from-primary-900/30 dark:hover:to-purple-900/30 border border-gray-100/30 dark:border-gray-700/30 hover:border-primary-300/40 dark:hover:border-primary-600/40 group/module mb-4">
                     <button class="w-full flex items-center justify-between text-left group/button" onclick="toggleModule(this)" aria-expanded="false">
                         <div class="flex items-center space-x-3">
-                            <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-primary-200 via-primary-100 to-purple-100 dark:from-primary-800 dark:via-primary-700 dark:to-purple-800 text-primary-600 dark:text-primary-400 group-hover/module:scale-110 group-hover/module:rotate-3 transition-all duration-300 shadow-lg group-hover/module:shadow-primary-500/30 dark:group-hover/module:shadow-primary-400/30 border border-primary-200/50 dark:border-primary-700/50">
+                            <span class="shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-linear-to-br from-primary-200 via-primary-100 to-purple-100 dark:from-primary-800 dark:via-primary-700 dark:to-purple-800 text-primary-600 dark:text-primary-400 group-hover/module:scale-110 group-hover/module:rotate-3 transition-all duration-300 shadow-lg group-hover/module:shadow-primary-500/30 dark:group-hover/module:shadow-primary-400/30 border border-primary-200/50 dark:border-primary-700/50">
                                 <svg class="w-4 h-4 transform group-hover/module:rotate-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
@@ -65,7 +65,7 @@ layout: default
                                 </svg>
                             </span>
                             <div class="flex flex-col">
-                                <h3 class="text-xs font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 dark:from-white dark:via-gray-200 dark:to-gray-300 group-hover/module:from-primary-600 group-hover/module:via-primary-500 group-hover/module:to-purple-600 transition-colors duration-300">{% if module_info %}{{ module_info.title }}{% else %}Module {{ module.name }}{% endif %}</h3>
+                                <h3 class="text-xs font-bold bg-clip-text text-transparent bg-linear-to-r from-gray-900 via-gray-800 to-gray-700 dark:from-white dark:via-gray-200 dark:to-gray-300 group-hover/module:from-primary-600 group-hover/module:via-primary-500 group-hover/module:to-purple-600 transition-colors duration-300">{% if module_info %}{{ module_info.title }}{% else %}Module {{ module.name }}{% endif %}</h3>
                                 <span class="text-[10px] text-gray-500 dark:text-gray-400">{{ module.items.size }} lessons</span>
                             </div>
                         </div>
@@ -76,9 +76,9 @@ layout: default
                     <div class="mt-3 space-y-2 hidden">
                         {% assign sorted_pages = module.items | sort: "order" %}
                         {% for page in sorted_pages %}
-                        <a href="{{ page.url | relative_url }}" class="block p-2.5 rounded-lg hover:bg-white/90 dark:hover:bg-gray-700/90 transition-all duration-300 hover:shadow-md hover:scale-[1.02] {% if page.url == page.url %}bg-gradient-to-r from-primary-50 to-purple-50 dark:from-primary-900/30 dark:to-purple-900/30 shadow-md ring-1 ring-primary-500/30 dark:ring-primary-400/30{% endif %}">
+                        <a href="{{ page.url | relative_url }}" class="block p-2.5 rounded-lg hover:bg-white/90 dark:hover:bg-gray-700/90 transition-all duration-300 hover:shadow-md hover:scale-[1.02] {% if page.url == page.url %}bg-linear-to-r from-primary-50 to-purple-50 dark:from-primary-900/30 dark:to-purple-900/30 shadow-md ring-1 ring-primary-500/30 dark:ring-primary-400/30{% endif %}">
                             <div class="flex items-center space-x-2.5 group/item">
-                                <span class="flex-shrink-0 w-2.5 h-2.5 rounded-full transform transition-all duration-300 ring-2 ring-offset-2 ring-offset-white dark:ring-offset-gray-800 {% if page.completed %}bg-green-500 ring-green-400/50 group-hover/item:scale-125 group-hover/item:animate-pulse{% else %}bg-gray-300 dark:bg-gray-600 ring-gray-200 dark:ring-gray-700 group-hover/item:bg-primary-500 dark:group-hover/item:bg-primary-400 group-hover/item:ring-primary-400/50 dark:group-hover/item:ring-primary-500/50{% endif %}"></span>
+                                <span class="shrink-0 w-2.5 h-2.5 rounded-full transform transition-all duration-300 ring-2 ring-offset-2 ring-offset-white dark:ring-offset-gray-800 {% if page.completed %}bg-green-500 ring-green-400/50 group-hover/item:scale-125 group-hover/item:animate-pulse{% else %}bg-gray-300 dark:bg-gray-600 ring-gray-200 dark:ring-gray-700 group-hover/item:bg-primary-500 dark:group-hover/item:bg-primary-400 group-hover/item:ring-primary-400/50 dark:group-hover/item:ring-primary-500/50{% endif %}"></span>
                                 <span class="text-xs font-medium text-gray-700 dark:text-gray-300 group-hover/item:text-primary-600 dark:group-hover/item:text-primary-400 transition-all duration-300">{{ page.title }}</span>
                             </div>
                         </a>
@@ -92,19 +92,19 @@ layout: default
     </aside>
 
     <!-- Main Content -->
-    <main class="flex-grow">
+    <main class="grow">
         <article class="prose prose-sm md:prose-base dark:prose-invert max-w-none bg-white/95 dark:bg-gray-800/95 rounded-2xl shadow-lg p-5 border border-gray-100/50 dark:border-gray-700/30 hover:border-primary-500/30 dark:hover:border-primary-400/30 transition-all duration-300 hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10 backdrop-blur-xl backdrop-filter">
-            <h1 class="mb-4 bg-clip-text text-transparent bg-gradient-to-br from-primary-600 via-purple-500 to-purple-600 text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight animate-gradient">
+            <h1 class="mb-4 bg-clip-text text-transparent bg-linear-to-br from-primary-600 via-purple-500 to-purple-600 text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight animate-gradient">
                 {{ page.title }}
             </h1>
     
-            <div class="course-content space-y-4 text-gray-700 dark:text-gray-300 prose-headings:bg-clip-text prose-headings:text-transparent prose-headings:bg-gradient-to-r prose-headings:from-primary-600 prose-headings:to-purple-600 prose-headings:font-bold prose-headings:tracking-tight prose-p:leading-relaxed prose-p:text-base prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-a:no-underline hover:prose-a:text-purple-600 dark:hover:prose-a:text-purple-400 prose-a:transition-colors prose-strong:text-primary-700 dark:prose-strong:text-primary-300 prose-code:text-purple-600 dark:prose-code:text-purple-400 prose-code:bg-purple-50 dark:prose-code:bg-purple-900/30 prose-code:rounded prose-code:px-1.5 prose-code:py-0.5 prose-pre:bg-gray-50 dark:prose-pre:bg-gray-900/50 prose-pre:border prose-pre:border-gray-200 dark:prose-pre:border-gray-700 prose-img:rounded-xl prose-img:shadow-lg hover:prose-img:shadow-xl transition-shadow duration-300">
+            <div class="course-content space-y-4 text-gray-700 dark:text-gray-300 prose-headings:bg-clip-text prose-headings:text-transparent prose-headings:bg-linear-to-r prose-headings:from-primary-600 prose-headings:to-purple-600 prose-headings:font-bold prose-headings:tracking-tight prose-p:leading-relaxed prose-p:text-base prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-a:no-underline prose-a:hover:text-purple-600 dark:prose-a:hover:text-purple-400 prose-a:transition-colors prose-strong:text-primary-700 dark:prose-strong:text-primary-300 prose-code:text-purple-600 dark:prose-code:text-purple-400 prose-code:bg-purple-50 dark:prose-code:bg-purple-900/30 prose-code:rounded-sm prose-code:px-1.5 prose-code:py-0.5 prose-pre:bg-gray-50 dark:prose-pre:bg-gray-900/50 prose-pre:border prose-pre:border-gray-200 dark:prose-pre:border-gray-700 prose-img:rounded-xl prose-img:shadow-lg prose-img:hover:shadow-xl transition-shadow duration-300">
                 {{ content }}
             </div>
     
             <!-- Resources Section -->
             {% if page.resources %}
-            <div class="mt-12 p-6 bg-gradient-to-br from-gray-50/80 to-white/80 dark:from-gray-700/50 dark:to-gray-800/50 rounded-xl border border-gray-100/50 dark:border-gray-700/30 backdrop-blur-sm">
+            <div class="mt-12 p-6 bg-linear-to-br from-gray-50/80 to-white/80 dark:from-gray-700/50 dark:to-gray-800/50 rounded-xl border border-gray-100/50 dark:border-gray-700/30 backdrop-blur-xs">
                 <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Additional Resources</h2>
                 <div class="grid gap-4 md:grid-cols-2">
                     {% for resource in page.resources %}
@@ -115,7 +115,7 @@ layout: default
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                             </svg>
                         </div>
-                        <div class="flex-grow">
+                        <div class="grow">
                             <h3 class="font-semibold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">{{ resource.title }}</h3>
                             <p class="text-sm text-gray-600 dark:text-gray-400">{{ resource.description }}</p>
                         </div>
@@ -142,9 +142,9 @@ layout: default
               <div class="flex-1 min-w-0">
                 {% if prev_index >= 0 %}
                   {% assign prev_lesson = current_lessons[prev_index] %}
-                  <a href="{{ prev_lesson.url }}" class="group block p-6 rounded-2xl bg-gradient-to-br from-white/95 via-white/90 to-gray-50/90 dark:from-gray-800/95 dark:via-gray-800/90 dark:to-gray-700/90 hover:from-primary-50/95 hover:via-primary-50/90 hover:to-purple-50/90 dark:hover:from-primary-900/30 dark:hover:via-primary-800/30 dark:hover:to-purple-900/30 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10 border border-gray-200/50 dark:border-gray-700/30 hover:border-primary-500/30 dark:hover:border-primary-400/30 transform hover:-translate-y-1">
+                  <a href="{{ prev_lesson.url }}" class="group block p-6 rounded-2xl bg-linear-to-br from-white/95 via-white/90 to-gray-50/90 dark:from-gray-800/95 dark:via-gray-800/90 dark:to-gray-700/90 hover:from-primary-50/95 hover:via-primary-50/90 hover:to-purple-50/90 dark:hover:from-primary-900/30 dark:hover:via-primary-800/30 dark:hover:to-purple-900/30 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10 border border-gray-200/50 dark:border-gray-700/30 hover:border-primary-500/30 dark:hover:border-primary-400/30 transform hover:-translate-y-1">
                     <div class="flex items-center gap-4">
-                      <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-primary-100 to-purple-100 dark:from-primary-900 dark:to-purple-900 group-hover:from-primary-200 group-hover:to-purple-200 dark:group-hover:from-primary-800 dark:group-hover:to-purple-800 transition-all duration-300 shadow-md group-hover:shadow-lg">
+                      <div class="shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-linear-to-br from-primary-100 to-purple-100 dark:from-primary-900 dark:to-purple-900 group-hover:from-primary-200 group-hover:to-purple-200 dark:group-hover:from-primary-800 dark:group-hover:to-purple-800 transition-all duration-300 shadow-md group-hover:shadow-lg">
                         <svg class="w-6 h-6 text-primary-600 dark:text-primary-400 group-hover:text-primary-700 dark:group-hover:text-primary-300 transform group-hover:-translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                         </svg>
@@ -160,9 +160,9 @@ layout: default
                   {% assign prev_module_lessons = site.pages | where: "layout", "course" | where_exp: "p", "p.url contains course_id" | where: "module", prev_module | sort: "order" %}
                   {% assign last_lesson = prev_module_lessons | last %}
                   {% if last_lesson %}
-                    <a href="{{ last_lesson.url }}" class="group block p-6 rounded-2xl bg-gradient-to-br from-white/95 via-white/90 to-gray-50/90 dark:from-gray-800/95 dark:via-gray-800/90 dark:to-gray-700/90 hover:from-primary-50/95 hover:via-primary-50/90 hover:to-purple-50/90 dark:hover:from-primary-900/30 dark:hover:via-primary-800/30 dark:hover:to-purple-900/30 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10 border border-gray-200/50 dark:border-gray-700/30 hover:border-primary-500/30 dark:hover:border-primary-400/30 transform hover:-translate-y-1">
+                    <a href="{{ last_lesson.url }}" class="group block p-6 rounded-2xl bg-linear-to-br from-white/95 via-white/90 to-gray-50/90 dark:from-gray-800/95 dark:via-gray-800/90 dark:to-gray-700/90 hover:from-primary-50/95 hover:via-primary-50/90 hover:to-purple-50/90 dark:hover:from-primary-900/30 dark:hover:via-primary-800/30 dark:hover:to-purple-900/30 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10 border border-gray-200/50 dark:border-gray-700/30 hover:border-primary-500/30 dark:hover:border-primary-400/30 transform hover:-translate-y-1">
                       <div class="flex items-center gap-4">
-                        <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-primary-100 to-purple-100 dark:from-primary-900 dark:to-purple-900 group-hover:from-primary-200 group-hover:to-purple-200 dark:group-hover:from-primary-800 dark:group-hover:to-purple-800 transition-all duration-300 shadow-md group-hover:shadow-lg">
+                        <div class="shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-linear-to-br from-primary-100 to-purple-100 dark:from-primary-900 dark:to-purple-900 group-hover:from-primary-200 group-hover:to-purple-200 dark:group-hover:from-primary-800 dark:group-hover:to-purple-800 transition-all duration-300 shadow-md group-hover:shadow-lg">
                           <svg class="w-6 h-6 text-primary-600 dark:text-primary-400 group-hover:text-primary-700 dark:group-hover:text-primary-300 transform group-hover:-translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                           </svg>
@@ -180,13 +180,13 @@ layout: default
               <div class="flex-1 min-w-0">
                 {% if next_index < current_lessons.size %}
                   {% assign next_lesson = current_lessons[next_index] %}
-                  <a href="{{ next_lesson.url }}" class="group block p-6 rounded-2xl bg-gradient-to-br from-white/95 via-white/90 to-gray-50/90 dark:from-gray-800/95 dark:via-gray-800/90 dark:to-gray-700/90 hover:from-primary-50/95 hover:via-primary-50/90 hover:to-purple-50/90 dark:hover:from-primary-900/30 dark:hover:via-primary-800/30 dark:hover:to-purple-900/30 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10 border border-gray-200/50 dark:border-gray-700/30 hover:border-primary-500/30 dark:hover:border-primary-400/30 transform hover:-translate-y-1">
+                  <a href="{{ next_lesson.url }}" class="group block p-6 rounded-2xl bg-linear-to-br from-white/95 via-white/90 to-gray-50/90 dark:from-gray-800/95 dark:via-gray-800/90 dark:to-gray-700/90 hover:from-primary-50/95 hover:via-primary-50/90 hover:to-purple-50/90 dark:hover:from-primary-900/30 dark:hover:via-primary-800/30 dark:hover:to-purple-900/30 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10 border border-gray-200/50 dark:border-gray-700/30 hover:border-primary-500/30 dark:hover:border-primary-400/30 transform hover:-translate-y-1">
                     <div class="flex items-center justify-end gap-4">
                       <div class="min-w-0">
                         <div class="text-sm font-medium text-primary-600 dark:text-primary-400 mb-1 text-right group-hover:text-primary-700 dark:group-hover:text-primary-300">Next Lesson</div>
                         <div class="text-lg font-bold text-gray-900 dark:text-white truncate text-right group-hover:text-primary-600 dark:group-hover:text-primary-400">{{ next_lesson.title }}</div>
                       </div>
-                      <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-primary-100 to-purple-100 dark:from-primary-900 dark:to-purple-900 group-hover:from-primary-200 group-hover:to-purple-200 dark:group-hover:from-primary-800 dark:group-hover:to-purple-800 transition-all duration-300 shadow-md group-hover:shadow-lg">
+                      <div class="shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-linear-to-br from-primary-100 to-purple-100 dark:from-primary-900 dark:to-purple-900 group-hover:from-primary-200 group-hover:to-purple-200 dark:group-hover:from-primary-800 dark:group-hover:to-purple-800 transition-all duration-300 shadow-md group-hover:shadow-lg">
                         <svg class="w-6 h-6 text-primary-600 dark:text-primary-400 group-hover:text-primary-700 dark:group-hover:text-primary-300 transform group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
@@ -198,13 +198,13 @@ layout: default
                   {% assign next_module_lessons = site.pages | where: "layout", "course" | where_exp: "p", "p.url contains course_id" | where: "module", next_module | sort: "order" %}
                   {% assign first_lesson = next_module_lessons | first %}
                   {% if first_lesson %}
-                    <a href="{{ first_lesson.url }}" class="group block p-6 rounded-2xl bg-gradient-to-br from-white/95 via-white/90 to-gray-50/90 dark:from-gray-800/95 dark:via-gray-800/90 dark:to-gray-700/90 hover:from-primary-50/95 hover:via-primary-50/90 hover:to-purple-50/90 dark:hover:from-primary-900/30 dark:hover:via-primary-800/30 dark:hover:to-purple-900/30 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10 border border-gray-200/50 dark:border-gray-700/30 hover:border-primary-500/30 dark:hover:border-primary-400/30 transform hover:-translate-y-1">
+                    <a href="{{ first_lesson.url }}" class="group block p-6 rounded-2xl bg-linear-to-br from-white/95 via-white/90 to-gray-50/90 dark:from-gray-800/95 dark:via-gray-800/90 dark:to-gray-700/90 hover:from-primary-50/95 hover:via-primary-50/90 hover:to-purple-50/90 dark:hover:from-primary-900/30 dark:hover:via-primary-800/30 dark:hover:to-purple-900/30 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10 border border-gray-200/50 dark:border-gray-700/30 hover:border-primary-500/30 dark:hover:border-primary-400/30 transform hover:-translate-y-1">
                       <div class="flex items-center justify-end gap-4">
                         <div class="min-w-0">
                           <div class="text-sm font-medium text-primary-600 dark:text-primary-400 mb-1 text-right group-hover:text-primary-700 dark:group-hover:text-primary-300">Next Module</div>
                           <div class="text-lg font-bold text-gray-900 dark:text-white truncate text-right group-hover:text-primary-600 dark:group-hover:text-primary-400">{{ first_lesson.title }}</div>
                         </div>
-                        <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-primary-100 to-purple-100 dark:from-primary-900 dark:to-purple-900 group-hover:from-primary-200 group-hover:to-purple-200 dark:group-hover:from-primary-800 dark:group-hover:to-purple-800 transition-all duration-300 shadow-md group-hover:shadow-lg">
+                        <div class="shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-linear-to-br from-primary-100 to-purple-100 dark:from-primary-900 dark:to-purple-900 group-hover:from-primary-200 group-hover:to-purple-200 dark:group-hover:from-primary-800 dark:group-hover:to-purple-800 transition-all duration-300 shadow-md group-hover:shadow-lg">
                           <svg class="w-6 h-6 text-primary-600 dark:text-primary-400 group-hover:text-primary-700 dark:group-hover:text-primary-300 transform group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                           </svg>
@@ -222,9 +222,9 @@ layout: default
     </main>
 
     <!-- Right TOC Sidebar -->
-    <aside class="hidden lg:block w-56 flex-shrink-0 sticky top-[4rem] h-[calc(100vh-4rem)] overflow-hidden">
-        <nav class="p-4 rounded-xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-lg border border-gray-100/50 dark:border-gray-700/30 h-full overflow-y-auto">
-            <h4 class="text-xs font-bold uppercase tracking-wider mb-3 bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-purple-600">On this page</h4>
+    <aside class="hidden lg:block w-56 shrink-0 sticky top-16 h-[calc(100vh-4rem)] overflow-hidden">
+        <nav class="p-4 rounded-xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-xs shadow-lg border border-gray-100/50 dark:border-gray-700/30 h-full overflow-y-auto">
+            <h4 class="text-xs font-bold uppercase tracking-wider mb-3 bg-clip-text text-transparent bg-linear-to-r from-primary-600 to-purple-600">On this page</h4>
             <div id="toc" class="text-xs"></div>
         </nav>
     </aside>
@@ -263,7 +263,7 @@ layout: default
             
             // Add dot indicator
             const dot = document.createElement('span');
-            dot.className = `w-1 h-1 rounded-full bg-gray-700 dark:bg-gray-300 group-hover:bg-primary-500 dark:group-hover:bg-primary-400 transition-colors duration-200 mr-1.5 flex-shrink-0`;
+            dot.className = `w-1 h-1 rounded-full bg-gray-700 dark:bg-gray-300 group-hover:bg-primary-500 dark:group-hover:bg-primary-400 transition-colors duration-200 mr-1.5 shrink-0`;
             
             // Add text container
             const text = document.createElement('span');

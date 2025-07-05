@@ -7,10 +7,10 @@
   <link rel="stylesheet" href="/assets/css/tailwind.css">
   {% seo %}
 </head>
-<body class="min-h-screen flex flex-col bg-gradient-to-br from-primary-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-primary-900 animate-gradient-slow">
-  <header role="banner" class="bg-white/95 dark:bg-gray-800/95 shadow-lg sticky top-0 z-50 backdrop-blur-sm border-b border-gray-200/50 dark:border-gray-700/30">
+<body class="min-h-screen flex flex-col bg-linear-to-br from-primary-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-primary-900 animate-gradient-slow">
+  <header role="banner" class="bg-white/95 dark:bg-gray-800/95 shadow-lg sticky top-0 z-50 backdrop-blur-xs border-b border-gray-200/50 dark:border-gray-700/30">
     <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="/" class="text-xl font-bold bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">{{ site.title }}</a>
+      <a href="/" class="text-xl font-bold bg-linear-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">{{ site.title }}</a>
       <div class="hidden md:flex space-x-5">
         <a href="/tools/aws/pod-cost-calculator" class="nav-link text-sm hover:text-primary-600 dark:hover:text-primary-400">EKS-PodCost</a>
         <a href="/portfolio" class="nav-link text-sm hover:text-primary-600 dark:hover:text-primary-400">Portfolio</a>
@@ -26,7 +26,7 @@
       </button>
     </nav>
     <!-- Mobile menu -->
-    <div class="md:hidden hidden bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm border-t border-gray-200/50 dark:border-gray-700/30">
+    <div class="md:hidden hidden bg-white/95 dark:bg-gray-800/95 backdrop-blur-xs border-t border-gray-200/50 dark:border-gray-700/30">
       <div class="px-4 py-3 space-y-3">
         <a href="/portfolio" class="nav-link block hover:text-primary-600 dark:hover:text-primary-400">Portfolio</a>
         <a href="/blog" class="nav-link block hover:text-primary-600 dark:hover:text-primary-400">Blog</a>
@@ -37,7 +37,7 @@
     </div>
   </header>
 
-  <main class="flex-grow px-4 py-8 md:py-12">
+  <main class="grow px-4 py-8 md:py-12">
     {{ content }}
   </main>
 
@@ -45,7 +45,7 @@
     <div class="container mx-auto px-4 py-12">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
         <div class="space-y-4">
-          <h3 class="text-lg font-bold bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent">About</h3>
+          <h3 class="text-lg font-bold bg-linear-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent">About</h3>
           <p class="text-gray-600 dark:text-gray-400">Sharing knowledge and experiences in DevOps, Cloud Computing, and Software Engineering.</p>
           <div class="flex space-x-4">
             <a href="https://github.com/HarryTheDevOpsGuy" class="text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors duration-300">
@@ -60,7 +60,7 @@
           </div>
         </div>
         <div class="space-y-4">
-          <h3 class="text-lg font-bold bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent">Quick Links</h3>
+          <h3 class="text-lg font-bold bg-linear-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent">Quick Links</h3>
           <ul class="space-y-2">
             <li><a href="/blog" class="text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors duration-300">Blog</a></li>
             <li><a href="/courses" class="text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors duration-300">Courses</a></li>
@@ -69,11 +69,11 @@
           </ul>
         </div>
         <div class="space-y-4">
-          <h3 class="text-lg font-bold bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent">Newsletter</h3>
+          <h3 class="text-lg font-bold bg-linear-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent">Newsletter</h3>
           <p class="text-gray-600 dark:text-gray-400">Subscribe to get the latest updates on DevOps and Cloud technologies.</p>
           <form class="flex space-x-2">
-            <input type="email" placeholder="Enter your email" class="flex-grow px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/50 dark:bg-gray-800/50 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent outline-none transition-all duration-300">
-            <button type="submit" class="px-4 py-2 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-lg hover:from-primary-700 hover:to-purple-700 transition-all duration-300">Subscribe</button>
+            <input type="email" placeholder="Enter your email" class="grow px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/50 dark:bg-gray-800/50 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent outline-hidden transition-all duration-300">
+            <button type="submit" class="px-4 py-2 bg-linear-to-r from-primary-600 to-purple-600 text-white rounded-lg hover:from-primary-700 hover:to-purple-700 transition-all duration-300">Subscribe</button>
           </form>
         </div>
       </div>

@@ -30,10 +30,10 @@ title: "Hari Prasad | Resume"
 
 <div class="resume-wrapper container mx-auto px-6 py-10">
   <!-- Header Section -->
-  <header class="bg-gradient-to-r from-blue-100 to-blue-50 dark:from-blue-900 dark:to-gray-800 shadow-md rounded-lg p-6 mb-10">
+  <header class="bg-linear-to-r from-blue-100 to-blue-50 dark:from-blue-900 dark:to-gray-800 shadow-md rounded-lg p-6 mb-10">
     <div class="flex flex-col md:flex-row items-center md:justify-between gap-4">
       <div class="flex items-center gap-4">
-        <img src="{{ page.cvdata.personal.avatar }}" alt="Avatar" class="w-24 h-24 rounded-full border-4 border-blue-500 shadow" />
+        <img src="{{ page.cvdata.personal.avatar }}" alt="Avatar" class="w-24 h-24 rounded-full border-4 border-blue-500 shadow-sm" />
         <div>
           <h1 class="text-3xl font-bold text-blue-900 dark:text-blue-100">{{ page.cvdata.personal.name }}</h1>
           <p class="text-base font-medium text-gray-700 dark:text-gray-300">🚀 {{ page.cvdata.personal.title }}</p>
@@ -142,7 +142,7 @@ title: "Hari Prasad | Resume"
     <h2 class="text-xl font-semibold text-blue-700 dark:text-blue-300 border-b pb-1">🚀 Developed Solutions</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-800 dark:text-gray-300">
       {% for project in page.cvdata.projects %}
-        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
           <div class="flex flex-col h-full justify-between">
             <div>
               <h3 class="text-blue-700 dark:text-blue-300 font-semibold text-base">🧰 {{ project.name }}</h3>

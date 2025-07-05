@@ -37,7 +37,7 @@ layout: default
       <div class="relative">
         <!-- Background Pattern -->
         <div class="absolute inset-0 opacity-10">
-          <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600"></div>
+          <div class="absolute inset-0 bg-linear-to-br from-blue-500 to-purple-600"></div>
           <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
         </div>
 
@@ -45,14 +45,14 @@ layout: default
           <div class="flex flex-col md:flex-row items-center gap-8">
             <!-- Profile Image -->
             <div class="relative w-40 h-40">
-              <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl transform rotate-6"></div>
+              <div class="absolute inset-0 bg-linear-to-br from-blue-500 to-purple-600 rounded-xl transform rotate-6"></div>
               <img src="{{ page.cvdata.personal.avatar }}" 
                    alt="{{ page.cvdata.personal.name }}" 
                    class="relative w-40 h-40 object-cover rounded-xl shadow-lg">
             </div>
 
             <!-- Name and Title -->
-            <div class="flex-grow text-center md:text-left">
+            <div class="grow text-center md:text-left">
               <h1 class="text-4xl md:text-5xl font-bold tracking-tight">
                 {{ page.cvdata.personal.name }}
               </h1>
@@ -119,10 +119,10 @@ layout: default
       {% for project in page.cvdata.projects %}
         <div class="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow avoid-break">
           <!-- Project Image (placeholder) -->
-          <div class="aspect-video bg-gradient-to-br from-blue-500 to-purple-600 relative overflow-hidden">
+          <div class="aspect-video bg-linear-to-br from-blue-500 to-purple-600 relative overflow-hidden">
             <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
               <a href="{{ project.url }}" 
-                 class="px-6 py-3 bg-white/20 backdrop-blur-sm rounded-lg text-white hover:bg-white/30 transition-colors">
+                 class="px-6 py-3 bg-white/20 backdrop-blur-xs rounded-lg text-white hover:bg-white/30 transition-colors">
                 View Project
               </a>
             </div>

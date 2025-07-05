@@ -51,15 +51,15 @@ layout: default
 </style>
 
 <div class="cv-container container mx-auto px-4 py-8">
-  <article class=" mx-auto bg-white/95 dark:bg-gray-800/95 rounded-xl shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30">
+  <article class=" mx-auto bg-white/95 dark:bg-gray-800/95 rounded-xl shadow-lg backdrop-blur-xs border border-gray-200/50 dark:border-gray-700/30">
     <!-- Header Section -->
-    <header class="header-gradient bg-gradient-to-r from-primary-600 to-purple-600 rounded-t-xl p-6 text-white avoid-break">
+    <header class="header-gradient bg-linear-to-r from-primary-600 to-purple-600 rounded-t-xl p-6 text-white avoid-break">
       <div class="flex flex-col md:flex-row items-center gap-6">
         <img src="{{ page.cvdata.personal.avatar }}" 
              alt="{{ page.cvdata.personal.name }}" 
              class="w-28 h-28 rounded-xl object-cover ring-4 ring-white/20">
         
-        <div class="flex-grow text-center md:text-left">
+        <div class="grow text-center md:text-left">
           <h1 class="text-2xl font-bold">{{ page.cvdata.personal.name }}</h1>
           <p class="text-lg text-white/90 mt-1">{{ page.cvdata.personal.title }}</p>
           
@@ -158,7 +158,7 @@ layout: default
                 <ul class="mt-2 space-y-2">
                   {% for achievement in exp.achievements %}
                     <li class="flex gap-2 text-sm text-gray-600 dark:text-gray-400">
-                      <svg class="w-4 h-4 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                      <svg class="w-4 h-4 shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                       </svg>
                       <span>{{ achievement }}</span>

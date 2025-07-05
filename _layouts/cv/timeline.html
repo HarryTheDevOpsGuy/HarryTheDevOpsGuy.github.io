@@ -36,7 +36,7 @@ layout: default
 <div class="cv-container container mx-auto px-4 py-8">
   <article class=" mx-auto">
     <!-- Timeline Header -->
-    <header class="bg-gradient-to-br from-primary-600 to-purple-700 rounded-xl p-8 text-white avoid-break">
+    <header class="bg-linear-to-br from-primary-600 to-purple-700 rounded-xl p-8 text-white avoid-break">
       <div class="flex flex-col md:flex-row items-center gap-6">
         <div class="relative">
           <div class="absolute inset-0 bg-white/10 rounded-full blur-xl"></div>
@@ -45,7 +45,7 @@ layout: default
                class="relative w-32 h-32 rounded-full object-cover ring-4 ring-white/20">
         </div>
         
-        <div class="flex-grow text-center md:text-left">
+        <div class="grow text-center md:text-left">
           <h1 class="text-3xl font-bold">{{ page.cvdata.personal.name }}</h1>
           <p class="text-xl text-white/90 mt-2">{{ page.cvdata.personal.title }}</p>
           
@@ -93,7 +93,7 @@ layout: default
       <!-- Left Sidebar -->
       <div class="space-y-6">
         <!-- Professional Summary -->
-        <section class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
+        <section class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-xs border border-gray-200/50 dark:border-gray-700/30 avoid-break">
           <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Professional Summary</h2>
           <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
             {{ page.cvdata.professional_summary }}
@@ -101,7 +101,7 @@ layout: default
         </section>
 
         <!-- Skills -->
-        <section class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
+        <section class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-xs border border-gray-200/50 dark:border-gray-700/30 avoid-break">
           <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Core Skills</h2>
           <div class="space-y-3">
             {% for skill in page.cvdata.skills.core %}
@@ -114,7 +114,7 @@ layout: default
         </section>
 
         <!-- Tools -->
-        <section class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
+        <section class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-xs border border-gray-200/50 dark:border-gray-700/30 avoid-break">
           <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Tools & Technologies</h2>
           <div class="flex flex-wrap gap-2">
             {% for tool in page.cvdata.skills.tools %}
@@ -129,7 +129,7 @@ layout: default
       <!-- Main Timeline -->
       <div class="md:col-span-2 space-y-6">
         <!-- Experience Timeline -->
-        <section class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
+        <section class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-xs border border-gray-200/50 dark:border-gray-700/30 avoid-break">
           <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-6">Career Timeline</h2>
           <div class="relative space-y-8">
             <!-- Timeline Line -->
@@ -161,7 +161,7 @@ layout: default
         </section>
 
         <!-- Projects Grid -->
-        <section class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
+        <section class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-xs border border-gray-200/50 dark:border-gray-700/30 avoid-break">
           <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Notable Projects</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {% for project in page.cvdata.projects %}
@@ -181,7 +181,7 @@ layout: default
         </section>
 
         <!-- Education Timeline -->
-        <section class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 avoid-break">
+        <section class="bg-white/95 dark:bg-gray-800/95 rounded-xl p-6 shadow-lg backdrop-blur-xs border border-gray-200/50 dark:border-gray-700/30 avoid-break">
           <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Education Timeline</h2>
           <div class="relative space-y-4">
             <div class="absolute left-4 top-0 bottom-0 w-0.5 timeline-line bg-primary-200 dark:bg-primary-800"></div>
