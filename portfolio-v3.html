@@ -3,6 +3,8 @@ layout: default
 title: "Hari Prasad | DevOps Portfolio v3"
 ---
 
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
 <!-- Chart.js CDN -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <!-- AOS (Animate On Scroll) CDN -->
@@ -10,718 +12,120 @@ title: "Hari Prasad | DevOps Portfolio v3"
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <!-- Font Awesome CDN for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<!-- Three.js for 3D effects -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-<!-- Custom Styles for v3 (creative, animated, modern) -->
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body, html { 
-    scroll-behavior: smooth; 
-    background: #0a0a0a;
-    color: #ffffff;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    overflow-x: hidden;
-  }
-
-  /* Animated Background */
-  .animated-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #0f0f23, #1a1a2e, #16213e, #0f3460);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
-    z-index: -2;
-  }
-
-  @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-
-  /* Floating Particles */
-  .particles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    pointer-events: none;
-  }
-
-  .particle {
-    position: absolute;
-    background: rgba(99, 102, 241, 0.6);
-    border-radius: 50%;
-    animation: float 20s infinite linear;
-  }
-
-  .particle:nth-child(1) { width: 3px; height: 3px; top: 20%; left: 10%; animation-delay: 0s; }
-  .particle:nth-child(2) { width: 5px; height: 5px; top: 60%; right: 20%; animation-delay: -5s; }
-  .particle:nth-child(3) { width: 2px; height: 2px; bottom: 30%; left: 30%; animation-delay: -10s; }
-  .particle:nth-child(4) { width: 4px; height: 4px; top: 40%; right: 40%; animation-delay: -15s; }
-  .particle:nth-child(5) { width: 3px; height: 3px; bottom: 60%; right: 10%; animation-delay: -20s; }
-
-  @keyframes float {
-    0% { transform: translateY(100vh) translateX(0); opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { transform: translateY(-100px) translateX(100px); opacity: 0; }
-  }
-
-  /* Main Container */
-  .main-container {
-    position: relative;
-    z-index: 1;
-    min-height: 100vh;
-  }
-
-  /* Hero Section */
-  .hero-section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 2rem;
-  }
-
-  .hero-content {
-    text-align: center;
-    max-width: 800px;
-    z-index: 10;
-  }
-
-  .profile-image {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    border: 4px solid #6366f1;
-    box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
-    margin: 0 auto 2rem;
-    animation: profileGlow 3s ease-in-out infinite alternate;
-  }
-
-  @keyframes profileGlow {
-    0% { box-shadow: 0 0 30px rgba(99, 102, 241, 0.5); }
-    100% { box-shadow: 0 0 50px rgba(99, 102, 241, 0.8); }
-  }
-
-  .hero-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 1rem;
-    animation: titleGlow 2s ease-in-out infinite alternate;
-  }
-
-  @keyframes titleGlow {
-    0% { filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.3)); }
-    100% { filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.6)); }
-  }
-
-  .hero-subtitle {
-    font-size: 1.5rem;
-    color: #a855f7;
-    margin-bottom: 1rem;
-    font-weight: 600;
-  }
-
-  .typing-text {
-    font-size: 1.2rem;
-    color: #94a3b8;
-    margin-bottom: 2rem;
-    min-height: 2rem;
-    border-right: 2px solid #6366f1;
-    animation: blink 1s infinite;
-  }
-
-  @keyframes blink {
-    0%, 50% { border-color: transparent; }
-    51%, 100% { border-color: #6366f1; }
-  }
-
-  .hero-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .hero-btn {
-    padding: 0.75rem 1.5rem;
-    border: 2px solid #6366f1;
-    background: transparent;
-    color: #6366f1;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.2), transparent);
-    transition: left 0.5s;
-  }
-
-  .hero-btn:hover::before {
-    left: 100%;
-  }
-
-  .hero-btn:hover {
-    background: #6366f1;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
-  }
-
-  /* Section Styling */
-  .section {
-    padding: 5rem 2rem;
-    position: relative;
-  }
-
-  .section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 3rem;
-    background: linear-gradient(135deg, #6366f1, #a855f7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  /* Stats Section */
-  .stats-section {
-    background: rgba(99, 102, 241, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    margin: 2rem;
-    padding: 3rem;
-  }
-
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-
-  .stat-card {
-    text-align: center;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    border: 1px solid rgba(99, 102, 241, 0.2);
-    transition: all 0.3s ease;
-  }
-
-  .stat-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.2);
-  }
-
-  .stat-number {
-    font-size: 3rem;
-    font-weight: 800;
-    color: #6366f1;
-    margin-bottom: 0.5rem;
-  }
-
-  .stat-label {
-    color: #94a3b8;
-    font-size: 1.1rem;
-  }
-
-  /* Skills Section */
-  .skills-section {
-    background: rgba(168, 85, 247, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    margin: 2rem;
-    padding: 3rem;
-  }
-
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-
-  .skill-category {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 2rem;
-    border: 1px solid rgba(168, 85, 247, 0.2);
-  }
-
-  .skill-category h3 {
-    color: #a855f7;
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-  }
-
-  .skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .skill-tag {
-    padding: 0.5rem 1rem;
-    background: linear-gradient(135deg, #a855f7, #ec4899);
-    color: white;
-    border-radius: 25px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-  }
-
-  .skill-tag:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4);
-  }
-
-  /* Experience Section */
-  .experience-section {
-    background: rgba(236, 72, 153, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    margin: 2rem;
-    padding: 3rem;
-  }
-
-  .timeline {
-    position: relative;
-    max-width: auto;
-    margin: 0 auto;
-  }
-
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(180deg, #f979ce, #a855f7);
-    transform: translateX(-50%);
-  }
-
-  .timeline-item {
-    position: relative;
-    margin-bottom: 3rem;
-    width: 45%;
-  }
-
-  .timeline-item:nth-child(odd) {
-    left: 0;
-  }
-
-  .timeline-item:nth-child(even) {
-    left: 55%;
-  }
-
-  .timeline-content {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 2rem;
-    border: 1px solid rgba(236, 72, 153, 0.2);
-    position: relative;
-    transition: all 0.3s ease;
-  }
-
-  .timeline-content:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(236, 72, 153, 0.2);
-  }
-
-  .timeline-content::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 20px;
-    height: 20px;
-    background: #ed92f0;
-    border-radius: 50%;
-    transform: translateY(-50%);
-  }
-
-  .timeline-item:nth-child(odd) .timeline-content::before {
-    right: -60px;
-  }
-
-  .timeline-item:nth-child(even) .timeline-content::before {
-    left: -60px;
-  }
-
-  .job-title {
-    color: #ec4899;
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
-
-  .job-company {
-    color: #a855f7;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-
-  .job-period {
-    color: #94a3b8;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-  }
-
-  .job-achievements {
-    list-style: none;
-    margin-bottom: 1rem;
-  }
-
-  .job-achievements li {
-    color: #77229c;
-    margin-bottom: 0.5rem;
-    padding-left: 1.5rem;
-    position: relative;
-  }
-
-  .job-achievements li::before {
-    content: '▸';
-    position: absolute;
-    left: 0;
-    color: #ec4899;
-  }
-
-  .job-tools {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .tool-tag {
-    padding: 0.3rem 0.8rem;
-    background: rgba(236, 72, 153, 0.2);
-    color: #ec4899;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    border: 1px solid rgba(236, 72, 153, 0.3);
-  }
-
-  /* Projects Section */
-  .projects-section {
-    background: rgba(34, 197, 94, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    margin: 2rem;
-    padding: 3rem;
-  }
-
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-
-  .project-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 2rem;
-    border: 1px solid rgba(34, 197, 94, 0.2);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .project-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.1), transparent);
-    transition: left 0.5s;
-  }
-
-  .project-card:hover::before {
-    left: 100%;
-  }
-
-  .project-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(34, 197, 94, 0.2);
-  }
-
-  .project-title {
-    color: #22c55e;
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-
-  .project-description {
-    color: #cbd5e1;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-  }
-
-  .project-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #22c55e;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-  }
-
-  .project-link:hover {
-    color: #16a34a;
-    transform: translateX(5px);
-  }
-
-  /* Contact Section */
-  .contact-section {
-    background: rgba(59, 130, 246, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    margin: 2rem;
-    padding: 3rem;
-    text-align: center;
-  }
-
-  .contact-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-  }
-
-  .contact-btn {
-    padding: 1rem 2rem;
-    border: 2px solid #3b82f6;
-    background: transparent;
-    color: #3b82f6;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .contact-btn:hover {
-    background: #3b82f6;
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3);
-  }
-
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .hero-title {
-      font-size: 2.5rem;
-    }
-
-    .section {
-      padding: 3rem 1rem;
-    }
-
-    .timeline::before {
-      left: 20px;
-    }
-
-    .timeline-item {
-      width: 100%;
-      left: 0 !important;
-      padding-left: 50px;
-    }
-
-    .timeline-content::before {
-      left: -35px !important;
-    }
-
-    .stats-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .projects-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  /* Scroll Indicator */
-  .scroll-indicator {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: rgba(99, 102, 241, 0.2);
-    z-index: 1000;
-  }
-
-  .scroll-progress {
-    height: 100%;
-    background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
-    width: 0%;
-    transition: width 0.1s ease;
-  }
-</style>
-
-
-<!-- Animated Background -->
-<div class="animated-bg"></div>
-
-<!-- Floating Particles -->
-<div class="particles">
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-</div>
-
-<!-- Scroll Progress Indicator -->
-<div class="scroll-indicator">
-  <div class="scroll-progress" id="scrollProgress"></div>
-</div>
-
-<!-- Main Container -->
-<div class="main-container">
+<!-- <body class="bg-gradient-to-br from-[#18122B] via-[#393053] to-[#443C68] min-h-screen text-gray-100"> -->
   <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="hero-content">
-      <img src="/assets/image/hari-profile.jpeg" alt="Hari Prasad" class="profile-image" />
-      <h1 class="hero-title">Hari Prasad</h1>
-      <p class="hero-subtitle">Senior DevOps Lead & Cloud Architect</p>
-      <div class="typing-text" id="typingText"></div>
-      <div class="hero-buttons">
-        <a href="#contact" class="hero-btn">Get In Touch</a>
-        <a href="#projects" class="hero-btn">View Projects</a>
-        <a href="/cv/Hari-Prasad-11Yrs-2025-cv3-1.pdf" target="_blank" class="hero-btn">Download CV</a>
-      </div>
+  <section class="flex flex-col items-center justify-center min-h-screen px-4 py-12 text-center relative">
+    <img src="/assets/image/hari-profile.jpeg" alt="Hari Prasad" class="w-40 h-40 rounded-full border-4 border-violet-500 shadow-lg mb-6 animate-pulse" />
+    <h1 class="text-5xl font-extrabold bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent mb-2">Hari Prasad</h1>
+    <p class="text-xl text-fuchsia-400 font-semibold mb-2">Senior DevOps Lead & Cloud Architect</p>
+    <div id="typingText" class="text-lg text-gray-300 mb-6 min-h-[2rem] border-r-2 border-violet-400 inline-block animate-pulse"></div>
+    <div class="flex flex-wrap justify-center gap-4 mb-4">
+      <a href="#contact" class="px-6 py-2 rounded-full border-2 border-violet-500 text-violet-300 hover:bg-violet-600 hover:text-white font-semibold transition">Get In Touch</a>
+      <a href="#projects" class="px-6 py-2 rounded-full border-2 border-fuchsia-500 text-fuchsia-300 hover:bg-fuchsia-600 hover:text-white font-semibold transition">View Projects</a>
+      <a href="/cv/Hari-Prasad-11Yrs-2025-cv3-1.pdf" target="_blank" class="px-6 py-2 rounded-full border-2 border-pink-500 text-pink-300 hover:bg-pink-600 hover:text-white font-semibold transition">Download CV</a>
     </div>
   </section>
 
   <!-- Stats Section -->
-  <section class="stats-section" id="stats">
-    <h2 class="section-title">Professional Stats</h2>
-    <div class="stats-grid">
-      <div class="stat-card" data-aos="fade-up">
-        <div class="stat-number" id="expCount">0</div>
-        <div class="stat-label">Years Experience</div>
+  <section class="max-w-5xl mx-auto py-12 px-4">
+    <h2 class="text-3xl font-bold text-center bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent mb-8">Professional Stats</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="bg-[#23203b]/80 rounded-xl p-6 flex flex-col items-center shadow-lg" data-aos="fade-up">
+        <div class="text-4xl font-extrabold text-violet-400" id="expCount">0</div>
+        <div class="text-gray-300 mt-2">Years Experience</div>
       </div>
-      <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="stat-number" id="compCount">0</div>
-        <div class="stat-label">Companies Worked</div>
+      <div class="bg-[#23203b]/80 rounded-xl p-6 flex flex-col items-center shadow-lg" data-aos="fade-up" data-aos-delay="100">
+        <div class="text-4xl font-extrabold text-fuchsia-400" id="compCount">0</div>
+        <div class="text-gray-300 mt-2">Companies Worked</div>
       </div>
-      <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="stat-number" id="projCount">0</div>
-        <div class="stat-label">Projects Delivered</div>
+      <div class="bg-[#23203b]/80 rounded-xl p-6 flex flex-col items-center shadow-lg" data-aos="fade-up" data-aos-delay="200">
+        <div class="text-4xl font-extrabold text-pink-400" id="projCount">0</div>
+        <div class="text-gray-300 mt-2">Projects Delivered</div>
       </div>
-      <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
-        <div class="stat-number" id="skillCount">0</div>
-        <div class="stat-label">Core Skills</div>
+      <div class="bg-[#23203b]/80 rounded-xl p-6 flex flex-col items-center shadow-lg" data-aos="fade-up" data-aos-delay="300">
+        <div class="text-4xl font-extrabold text-cyan-400" id="skillCount">0</div>
+        <div class="text-gray-300 mt-2">Core Skills</div>
       </div>
     </div>
   </section>
 
   <!-- Skills Section -->
-  <section class="skills-section" id="skills">
-    <h2 class="section-title">Technical Expertise</h2>
-    <div class="skills-grid">
-      <div class="skill-category" data-aos="fade-up">
-        <h3><i class="fas fa-cloud"></i> Cloud & Infrastructure</h3>
-        <div class="skill-tags">
+  <section class="max-w-5xl mx-auto py-12 px-4">
+    <h2 class="text-3xl font-bold text-center bg-gradient-to-r from-fuchsia-400 to-pink-400 bg-clip-text text-transparent mb-8">Technical Expertise</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-[#23203b]/80 rounded-xl p-6 shadow-lg" data-aos="fade-up">
+        <h3 class="text-lg font-bold text-violet-400 mb-4 flex items-center gap-2"><i class="fas fa-cloud"></i> Cloud & Infrastructure</h3>
+        <div class="flex flex-wrap gap-2">
           {% for skill in site.data.cv.hari-prasad.skills.core %}
-            <span class="skill-tag">{{ skill }}</span>
+            <span class="px-3 py-1 rounded-full bg-violet-600/80 text-white text-sm font-semibold">{{ skill }}</span>
           {% endfor %}
         </div>
       </div>
-      <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
-        <h3><i class="fas fa-tools"></i> DevOps Tools</h3>
-        <div class="skill-tags">
+      <div class="bg-[#23203b]/80 rounded-xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-lg font-bold text-fuchsia-400 mb-4 flex items-center gap-2"><i class="fas fa-tools"></i> DevOps Tools</h3>
+        <div class="flex flex-wrap gap-2">
           {% for tool in site.data.cv.hari-prasad.skills.tools %}
-            <span class="skill-tag">{{ tool }}</span>
+            <span class="px-3 py-1 rounded-full bg-fuchsia-600/80 text-white text-sm font-semibold">{{ tool }}</span>
           {% endfor %}
         </div>
       </div>
-      <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
-        <h3><i class="fas fa-plus-circle"></i> Additional Skills</h3>
-        <div class="skill-tags">
+      <div class="bg-[#23203b]/80 rounded-xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-lg font-bold text-pink-400 mb-4 flex items-center gap-2"><i class="fas fa-plus-circle"></i> Additional Skills</h3>
+        <div class="flex flex-wrap gap-2">
           {% for add in site.data.cv.hari-prasad.skills.additional %}
-            <span class="skill-tag">{{ add }}</span>
+            <span class="px-3 py-1 rounded-full bg-pink-600/80 text-white text-sm font-semibold">{{ add }}</span>
           {% endfor %}
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Experience Section -->
-  <section class="experience-section" id="experience">
-    <h2 class="section-title">Professional Journey</h2>
-    <div class="timeline">
-      {% for job in site.data.cv.hari-prasad.experience %}
-        <div class="timeline-item" data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 100 }}">
-          <div class="timeline-content">
-            <h3 class="job-title">{{ job.position }}</h3>
-            <p class="job-company">{{ job.company }}</p>
-            <p class="job-period">{{ job.location }} • {{ job.period }}</p>
-            <ul class="job-achievements">
-              {% for achievement in job.achievements %}
-                <li>{{ achievement }}</li>
-              {% endfor %}
-            </ul>
-            {% if job.learnt %}
-            <div class="job-tools">
-              {% for tool in job.learnt %}
-                <span class="tool-tag">{{ tool }}</span>
-              {% endfor %}
+  <!-- Experience Timeline Section -->
+  <section class="max-w-5xl mx-auto py-12 px-4">
+    <h2 class="text-3xl font-bold text-center bg-gradient-to-r from-pink-400 to-violet-400 bg-clip-text text-transparent mb-8">Professional Journey</h2>
+    <div class="relative">
+      <div class="absolute left-1/2 top-0 h-full w-1 bg-gradient-to-b from-pink-400 via-fuchsia-400 to-violet-400 opacity-60 -translate-x-1/2"></div>
+      <div class="flex flex-col gap-12">
+        {% for job in site.data.cv.hari-prasad.experience %}
+        <div class="relative flex md:flex-row flex-col md:items-center group" data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 100 }}">
+          <div class="md:w-1/2 md:pr-8 md:text-right text-left md:order-{{ forloop.index0 | modulo: 2 }} order-1">
+            <div class="inline-block bg-[#23203b]/80 rounded-xl p-6 shadow-lg w-full max-w-xl">
+              <h3 class="text-xl font-bold text-pink-400 mb-1">{{ job.position }}</h3>
+              <p class="text-lg font-semibold text-fuchsia-400 mb-1">{{ job.company }}</p>
+              <p class="text-sm text-gray-400 mb-3">{{ job.location }} • {{ job.period }}</p>
+              <ul class="list-disc list-inside text-gray-200 space-y-1 mb-2">
+                {% for achievement in job.achievements %}
+                  <li>{{ achievement }}</li>
+                {% endfor %}
+              </ul>
+              {% if job.learnt %}
+              <div class="flex flex-wrap gap-2 mt-2">
+                {% for tool in job.learnt %}
+                  <span class="px-2 py-1 rounded bg-pink-600/80 text-white text-xs font-semibold">{{ tool }}</span>
+                {% endfor %}
+              </div>
+              {% endif %}
             </div>
-            {% endif %}
+          </div>
+          <div class="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+            <span class="block w-6 h-6 rounded-full bg-gradient-to-br from-pink-400 to-violet-400 border-4 border-[#18122B] shadow-lg"></span>
           </div>
         </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
     </div>
   </section>
 
   <!-- Projects Section -->
-  <section class="projects-section" id="projects">
-    <h2 class="section-title">Featured Projects</h2>
-    <div class="projects-grid">
+  <section class="max-w-5xl mx-auto py-12 px-4" id="projects">
+    <h2 class="text-3xl font-bold text-center bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent mb-8">Featured Projects</h2>
+    <div class="grid md:grid-cols-2 gap-8">
       {% for project in site.data.cv.hari-prasad.projects %}
-        <div class="project-card" data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 100 }}">
-          <h3 class="project-title">{{ project.name }}</h3>
-          <p class="project-description">{{ project.description }}</p>
-          <a href="{{ project.url }}" target="_blank" class="project-link">
+        <div class="bg-[#23203b]/80 rounded-xl p-6 shadow-lg flex flex-col justify-between" data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 100 }}">
+          <h3 class="text-xl font-bold text-violet-400 mb-2">{{ project.name }}</h3>
+          <p class="text-gray-200 mb-4">{{ project.description }}</p>
+          <a href="{{ project.url }}" target="_blank" class="inline-flex items-center gap-2 text-fuchsia-400 hover:text-pink-400 font-semibold transition">
             View Project <i class="fas fa-external-link-alt"></i>
           </a>
         </div>
@@ -730,127 +134,75 @@ title: "Hari Prasad | DevOps Portfolio v3"
   </section>
 
   <!-- Contact Section -->
-  <section class="contact-section" id="contact">
-    <h2 class="section-title">Let's Connect</h2>
-    <p style="color: #94a3b8; margin-bottom: 2rem; font-size: 1.2rem;">
-      Ready to transform your DevOps journey? Let's discuss how I can bring value to your organization.
-    </p>
-    <div class="contact-buttons">
-      <a href="mailto:{{ site.data.cv.hari-prasad.personal.contact.email }}" class="contact-btn">
-        <i class="fas fa-envelope"></i> Email Me
-      </a>
-      <a href="https://wa.me/917503721297?text=Hi%20Hari,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" class="contact-btn">
-        <i class="fab fa-whatsapp"></i> WhatsApp
-      </a>
-      <a href="tel:{{ site.data.cv.hari-prasad.personal.contact.phone }}" class="contact-btn">
-        <i class="fas fa-phone"></i> Call Me
-      </a>
-      <a href="{{ site.data.cv.hari-prasad.personal.social.linkedin }}" target="_blank" class="contact-btn">
-        <i class="fab fa-linkedin"></i> LinkedIn
-      </a>
-      <a href="{{ site.data.cv.hari-prasad.personal.social.github }}" target="_blank" class="contact-btn">
-        <i class="fab fa-github"></i> GitHub
-      </a>
+  <section class="max-w-3xl mx-auto py-12 px-4 text-center" id="contact">
+    <h2 class="text-3xl font-bold bg-gradient-to-r from-fuchsia-400 to-pink-400 bg-clip-text text-transparent mb-6">Let's Connect</h2>
+    <p class="text-lg text-gray-300 mb-8">Ready to transform your DevOps journey? Let's discuss how I can bring value to your organization.</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="mailto:{{ site.data.cv.hari-prasad.personal.contact.email }}" class="px-6 py-3 rounded-full border-2 border-violet-500 text-violet-300 hover:bg-violet-600 hover:text-white font-semibold transition flex items-center gap-2"><i class="fas fa-envelope"></i> Email Me</a>
+      <a href="https://wa.me/917503721297?text=Hi%20Hari,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" class="px-6 py-3 rounded-full border-2 border-green-500 text-green-300 hover:bg-green-600 hover:text-white font-semibold transition flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="tel:{{ site.data.cv.hari-prasad.personal.contact.phone }}" class="px-6 py-3 rounded-full border-2 border-cyan-500 text-cyan-300 hover:bg-cyan-600 hover:text-white font-semibold transition flex items-center gap-2"><i class="fas fa-phone"></i> Call Me</a>
+      <a href="{{ site.data.cv.hari-prasad.personal.social.linkedin }}" target="_blank" class="px-6 py-3 rounded-full border-2 border-blue-500 text-blue-300 hover:bg-blue-600 hover:text-white font-semibold transition flex items-center gap-2"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="{{ site.data.cv.hari-prasad.personal.social.github }}" target="_blank" class="px-6 py-3 rounded-full border-2 border-gray-500 text-gray-300 hover:bg-gray-700 hover:text-white font-semibold transition flex items-center gap-2"><i class="fab fa-github"></i> GitHub</a>
     </div>
   </section>
-</div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Typing effect
-    const texts = [
-      "Transforming infrastructure into scalable, automated, and resilient systems.",
-      "Building the future of DevOps and cloud automation.",
-      "Creating efficient, secure, and scalable solutions."
-    ];
-    let textIndex = 0;
-    let charIndex = 0;
-    const typingElement = document.getElementById('typingText');
-    
-    function typeText() {
-      if (charIndex < texts[textIndex].length) {
-        typingElement.textContent += texts[textIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(typeText, 50);
-      } else {
-        setTimeout(eraseText, 2000);
-      }
-    }
-    
-    function eraseText() {
-      if (charIndex > 0) {
-        typingElement.textContent = texts[textIndex].substring(0, charIndex - 1);
-        charIndex--;
-        setTimeout(eraseText, 30);
-      } else {
-        textIndex = (textIndex + 1) % texts.length;
-        setTimeout(typeText, 500);
-      }
-    }
-    
-    typeText();
-
-    // Count up animation
-    function animateCount(elementId, targetValue) {
-      const element = document.getElementById(elementId);
-      let currentValue = 0;
-      const increment = targetValue / 100;
-      const timer = setInterval(() => {
-        currentValue += increment;
-        if (currentValue >= targetValue) {
-          currentValue = targetValue;
-          clearInterval(timer);
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Typing effect
+      const texts = [
+        "Transforming infrastructure into scalable, automated, and resilient systems.",
+        "Building the future of DevOps and cloud automation.",
+        "Creating efficient, secure, and scalable solutions."
+      ];
+      let textIndex = 0;
+      let charIndex = 0;
+      const typingElement = document.getElementById('typingText');
+      function typeText() {
+        if (charIndex < texts[textIndex].length) {
+          typingElement.textContent += texts[textIndex].charAt(charIndex);
+          charIndex++;
+          setTimeout(typeText, 50);
+        } else {
+          setTimeout(eraseText, 2000);
         }
-        element.textContent = Math.floor(currentValue);
-      }, 20);
-    }
-
-    // Animate stats when they come into view
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const targetId = entry.target.querySelector('.stat-number').id;
-          const targetValue = parseInt(entry.target.querySelector('.stat-number').getAttribute('data-value'));
-          animateCount(targetId, targetValue);
-          observer.unobserve(entry.target);
+      }
+      function eraseText() {
+        if (charIndex > 0) {
+          typingElement.textContent = texts[textIndex].substring(0, charIndex - 1);
+          charIndex--;
+          setTimeout(eraseText, 30);
+        } else {
+          textIndex = (textIndex + 1) % texts.length;
+          setTimeout(typeText, 500);
         }
+      }
+      typeText();
+
+      // Count up animation
+      function animateCount(elementId, targetValue) {
+        const element = document.getElementById(elementId);
+        let currentValue = 0;
+        const increment = targetValue / 100;
+        const timer = setInterval(() => {
+          currentValue += increment;
+          if (currentValue >= targetValue) {
+            currentValue = targetValue;
+            clearInterval(timer);
+          }
+          element.textContent = Math.floor(currentValue);
+        }, 20);
+      }
+      animateCount('expCount', {{ site.data.cv.hari-prasad.personal.years_exp }});
+      animateCount('compCount', {{ site.data.cv.hari-prasad.experience | size }});
+      animateCount('projCount', {{ site.data.cv.hari-prasad.projects | size }});
+      animateCount('skillCount', {{ site.data.cv.hari-prasad.skills.core | size }});
+
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100
       });
     });
-
-    document.querySelectorAll('.stat-card').forEach(card => {
-      const numberElement = card.querySelector('.stat-number');
-      const value = {{ site.data.cv.hari-prasad.personal.years_exp }};
-      numberElement.setAttribute('data-value', value);
-      observer.observe(card);
-    });
-
-    // Scroll progress indicator
-    window.addEventListener('scroll', () => {
-      const scrollTop = window.pageYOffset;
-      const docHeight = document.body.offsetHeight - window.innerHeight;
-      const scrollPercent = (scrollTop / docHeight) * 100;
-      document.getElementById('scrollProgress').style.width = scrollPercent + '%';
-    });
-
-    // Initialize AOS
-    AOS.init({
-      duration: 1000,
-      once: true,
-      offset: 100
-    });
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-  });
-</script>
+  </script>
+<!-- </body> -->
