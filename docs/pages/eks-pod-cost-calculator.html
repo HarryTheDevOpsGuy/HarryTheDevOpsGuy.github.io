@@ -467,35 +467,6 @@ permalink: /tools/aws/pod-cost-calculator.html
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-// Dark Mode Toggle
-const themeToggle = document.getElementById('themeToggle');
-const sunIcon = document.getElementById('sunIcon');
-const moonIcon = document.getElementById('moonIcon');
-
-if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-  document.documentElement.classList.add('dark');
-  sunIcon.classList.add('hidden');
-  moonIcon.classList.remove('hidden');
-} else {
-  document.documentElement.classList.remove('dark');
-  sunIcon.classList.remove('hidden');
-  moonIcon.classList.add('hidden');
-}
-
-themeToggle.addEventListener('click', function() {
-  if (document.documentElement.classList.contains('dark')) {
-    document.documentElement.classList.remove('dark');
-    localStorage.setItem('color-theme', 'light');
-    sunIcon.classList.remove('hidden');
-    moonIcon.classList.add('hidden');
-  } else {
-    document.documentElement.classList.add('dark');
-    localStorage.setItem('color-theme', 'dark');
-    sunIcon.classList.add('hidden');
-    moonIcon.classList.remove('hidden');
-  }
-});
-
 // Tab Functionality
 function switchTab(activeTab, activePanel) {
   // Hide all panels
