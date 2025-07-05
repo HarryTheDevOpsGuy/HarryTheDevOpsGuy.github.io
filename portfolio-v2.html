@@ -3,6 +3,9 @@ layout: default
 title: "Hari Prasad | DevOps Portfolio v2"
 ---
 
+<!-- Font Awesome CDN for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <!-- Custom Styles -->
 <style>
   @keyframes slideInFromLeft {
@@ -246,38 +249,38 @@ title: "Hari Prasad | DevOps Portfolio v2"
         <p class="text-lg text-gray-600 dark:text-gray-400">My career progression in DevOps</p>
       </div>
       <div class="space-y-8">
-        {% assign tool_colors = 
+        {% assign tool_icons = 
           '{
-            "aws": "bg-yellow-100 text-yellow-800 border-yellow-300",
-            "jenkins": "bg-blue-100 text-blue-800 border-blue-300",
-            "kubernetes": "bg-blue-50 text-blue-700 border-blue-200",
-            "karpenter": "bg-green-100 text-green-800 border-green-300",
-            "groovy scripting": "bg-orange-100 text-orange-800 border-orange-300",
-            "packer": "bg-purple-100 text-purple-800 border-purple-300",
-            "promethues": "bg-pink-100 text-pink-800 border-pink-300",
-            "prometheus": "bg-pink-100 text-pink-800 border-pink-300",
-            "redis": "bg-red-100 text-red-800 border-red-300",
-            "kafka": "bg-indigo-100 text-indigo-800 border-indigo-300",
-            "elk": "bg-gray-100 text-gray-800 border-gray-300",
-            "docker": "bg-cyan-100 text-cyan-800 border-cyan-300",
-            "docker compose": "bg-cyan-50 text-cyan-700 border-cyan-200",
-            "ansible": "bg-green-50 text-green-700 border-green-200",
-            "heroku": "bg-indigo-50 text-indigo-700 border-indigo-200",
-            "zabbix": "bg-red-50 text-red-700 border-red-200",
-            "mysql": "bg-yellow-50 text-yellow-700 border-yellow-200",
-            "postgresql": "bg-blue-50 text-blue-700 border-blue-200",
-            "mongodb": "bg-green-50 text-green-700 border-green-200",
-            "ecs": "bg-teal-100 text-teal-800 border-teal-300",
-            "ubuntu": "bg-gray-50 text-gray-700 border-gray-200",
-            "red hat": "bg-red-100 text-red-800 border-red-300",
-            "gitlab": "bg-orange-50 text-orange-700 border-orange-200",
-            "linux": "bg-gray-100 text-gray-800 border-gray-300",
-            "shell scripting": "bg-gray-200 text-gray-800 border-gray-300",
-            "php": "bg-indigo-100 text-indigo-800 border-indigo-300",
-            "apache": "bg-gray-200 text-gray-800 border-gray-300",
-            "nginx": "bg-green-100 text-green-800 border-green-300",
-            "ms sql": "bg-blue-100 text-blue-800 border-blue-300",
-            "windows": "bg-blue-50 text-blue-700 border-blue-200"
+            "aws": "fab fa-aws",
+            "jenkins": "fab fa-jenkins",
+            "kubernetes": "fas fa-dharmachakra",
+            "karpenter": "fas fa-robot",
+            "groovy scripting": "fas fa-code",
+            "packer": "fas fa-cube",
+            "promethues": "fas fa-burn",
+            "prometheus": "fas fa-burn",
+            "redis": "fas fa-database",
+            "kafka": "fas fa-stream",
+            "elk": "fas fa-search",
+            "docker": "fab fa-docker",
+            "docker compose": "fab fa-docker",
+            "ansible": "fas fa-cogs",
+            "heroku": "fab fa-hubspot",
+            "zabbix": "fas fa-chart-line",
+            "mysql": "fas fa-database",
+            "postgresql": "fas fa-database",
+            "mongodb": "fas fa-database",
+            "ecs": "fas fa-server",
+            "ubuntu": "fab fa-ubuntu",
+            "red hat": "fab fa-redhat",
+            "gitlab": "fab fa-gitlab",
+            "linux": "fab fa-linux",
+            "shell scripting": "fas fa-terminal",
+            "php": "fab fa-php",
+            "apache": "fas fa-server",
+            "nginx": "fas fa-server",
+            "ms sql": "fas fa-database",
+            "windows": "fab fa-windows"
           }' | jsonify | replace: '\"', '"' | replace: '"', '"' | parse_json %}
         {% for job in site.data.cv.hari-prasad.experience %}
           <div class="experience-card bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
@@ -298,8 +301,10 @@ title: "Hari Prasad | DevOps Portfolio v2"
                 <div class="flex flex-wrap gap-2 mt-4">
                   {% for tool in job.learnt %}
                     {% assign tool_lc = tool | downcase %}
-                    {% assign color = tool_colors[tool_lc] | default: 'bg-gray-100 text-gray-800 border-gray-300' %}
-                    <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold border {{ color }} capitalize">{{ tool }}</span>
+                    {% assign icon = tool_icons[tool_lc] | default: 'fas fa-tag' %}
+                    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold shadow bg-gradient-to-r from-blue-500 to-purple-500 text-white capitalize">
+                      <i class="{{ icon }}"></i> {{ tool }}
+                    </span>
                   {% endfor %}
                 </div>
                 {% endif %}
