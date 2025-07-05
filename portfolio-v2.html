@@ -249,39 +249,7 @@ title: "Hari Prasad | DevOps Portfolio v2"
         <p class="text-lg text-gray-600 dark:text-gray-400">My career progression in DevOps</p>
       </div>
       <div class="space-y-8">
-        {% assign tool_icons = 
-          '{
-            "aws": "fab fa-aws",
-            "jenkins": "fab fa-jenkins",
-            "kubernetes": "fas fa-dharmachakra",
-            "karpenter": "fas fa-robot",
-            "groovy scripting": "fas fa-code",
-            "packer": "fas fa-cube",
-            "promethues": "fas fa-burn",
-            "prometheus": "fas fa-burn",
-            "redis": "fas fa-database",
-            "kafka": "fas fa-stream",
-            "elk": "fas fa-search",
-            "docker": "fab fa-docker",
-            "docker compose": "fab fa-docker",
-            "ansible": "fas fa-cogs",
-            "heroku": "fab fa-hubspot",
-            "zabbix": "fas fa-chart-line",
-            "mysql": "fas fa-database",
-            "postgresql": "fas fa-database",
-            "mongodb": "fas fa-database",
-            "ecs": "fas fa-server",
-            "ubuntu": "fab fa-ubuntu",
-            "red hat": "fab fa-redhat",
-            "gitlab": "fab fa-gitlab",
-            "linux": "fab fa-linux",
-            "shell scripting": "fas fa-terminal",
-            "php": "fab fa-php",
-            "apache": "fas fa-server",
-            "nginx": "fas fa-server",
-            "ms sql": "fas fa-database",
-            "windows": "fab fa-windows"
-          }' | jsonify | replace: '\"', '"' | replace: '"', '"' | parse_json %}
+        
         {% for job in site.data.cv.hari-prasad.experience %}
           <div class="experience-card bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
             <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
@@ -301,9 +269,38 @@ title: "Hari Prasad | DevOps Portfolio v2"
                 <div class="flex flex-wrap gap-2 mt-4">
                   {% for tool in job.learnt %}
                     {% assign tool_lc = tool | downcase %}
-                    {% assign icon = tool_icons[tool_lc] | default: 'fas fa-tag' %}
-                    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold shadow bg-gradient-to-r from-blue-500 to-purple-500 text-white capitalize">
-                      <i class="{{ icon }}"></i> {{ tool }}
+                    {% case tool_lc %}
+                      {% when 'ec2' %}{% assign icon = 'fas fa-server' %}
+                      {% when 's3' %}{% assign icon = 'fas fa-database' %}
+                      {% when 'terraform' %}{% assign icon = 'fas fa-cubes' %}
+                      {% when 'jenkins' %}{% assign icon = 'fab fa-jenkins' %}
+                      {% when 'master in shell scripting' %}{% assign icon = 'fas fa-terminal' %}
+                      {% when 'devops' %}{% assign icon = 'fas fa-infinity' %}
+                      {% when 'ubuntu' %}{% assign icon = 'fab fa-ubuntu' %}
+                      {% when 'red hat' %}{% assign icon = 'fab fa-redhat' %}
+                      {% when 'gitlab' %}{% assign icon = 'fab fa-gitlab' %}
+                      {% when 'docker' %}{% assign icon = 'fab fa-docker' %}
+                      {% when 'docker compose' %}{% assign icon = 'fab fa-docker' %}
+                      {% when 'kubernetes' %}{% assign icon = 'fas fa-dharmachakra' %}
+                      {% when 'ansible' %}{% assign icon = 'fas fa-cogs' %}
+                      {% when 'linux' %}{% assign icon = 'fab fa-linux' %}
+                      {% when 'windows' %}{% assign icon = 'fab fa-windows' %}
+                      {% when 'apache' %}{% assign icon = 'fas fa-server' %}
+                      {% when 'nginx' %}{% assign icon = 'fas fa-server' %}
+                      {% when 'mysql' %}{% assign icon = 'fas fa-database' %}
+                      {% when 'postgresql' %}{% assign icon = 'fas fa-database' %}
+                      {% when 'mongodb' %}{% assign icon = 'fas fa-database' %}
+                      {% when 'prometheus' %}{% assign icon = 'fas fa-burn' %}
+                      {% when 'promethues' %}{% assign icon = 'fas fa-burn' %}
+                      {% when 'redis' %}{% assign icon = 'fas fa-database' %}
+                      {% when 'kafka' %}{% assign icon = 'fas fa-stream' %}
+                      {% when 'elk' %}{% assign icon = 'fas fa-search' %}
+                      {% when 'heroku' %}{% assign icon = 'fab fa-hubspot' %}
+                      {% when 'zabbix' %}{% assign icon = 'fas fa-chart-line' %}
+                      {% else %}{% assign icon = 'fas fa-tag' %}
+                    {% endcase %}
+                    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold border border-blue-500 text-blue-700 bg-white shadow-sm">
+                      <i class="{{ icon }} text-blue-500"></i> {{ tool }}
                     </span>
                   {% endfor %}
                 </div>
