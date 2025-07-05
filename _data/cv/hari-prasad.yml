@@ -40,6 +40,17 @@ experience:
     position: Sr. DevOps Lead
     location: Noida
     period: Mar-20 – Present
+    learnt:
+      - aws
+      - Kubernetes
+      - karpenter
+      - groovy scripting
+      - Mastery in Jenkins
+      - Packer
+      - Promethues
+      - Redis
+      - Kafka
+      - ELK
     achievements:
       - Developed BG Deployer a fully automated blue-green deployment pipeline with zero downtime using Jenkins, AWS ALB, ASG, and CloudWatch.
       - Managed infrastructure as Code, leveraging Terraform, Ansible, Packer, and AWS.
@@ -56,6 +67,14 @@ experience:
     position: Sr. DevOps Engineer
     location: Delhi
     period: Oct-19 – Mar-20
+    learnt:
+      - aws
+      - ELK
+      - Docker
+      - Docker compose
+      - Mastery in Jenkins
+      - ECS
+
     achievements:
       - Migrated on-premises applications to AWS, cutting hosting costs by 50%.
       - Implemented blue-green deployments with ALB, ASG, and Jenkins.
@@ -68,6 +87,17 @@ experience:
     position: DevOps Engineer
     location: Noida
     period: Nov-17 – Oct-19
+    learnt:
+      - AWS
+      - Heroku
+      - Kibana
+      - Zabbix
+      - Master in CICD
+      - MySQL
+      - PostGreSQL
+      - MongoDB
+      - Docker
+
     achievements:
       - Managed 100+ Linux servers supporting mission-critical applications.
       - Automated deployments with Jenkins and Ansible for consistency and speed.
@@ -79,6 +109,18 @@ experience:
     position: Linux Administrator (DevOps)
     location: Gurugram
     period: Dec-15 – Nov-17
+    learnt:
+      - EC2
+      - S3
+      - Terraform
+      - Jenkins
+      - Master in Shell scripting
+      - DevOps
+      - Ubuntu
+      - Red Hat
+      - GitLab
+      - Docker 
+      - Docker Compose
     achievements:
       - Configured virtual machines to host multiple websites with LAMP stack architecture.
       - Administered GitLab servers, managing repositories and version control.
@@ -93,6 +135,15 @@ experience:
     position: Desktop Support Engineer
     location: Delhi
     period: Mar-13 – Dec-2015
+    learnt:
+      - Linux
+      - shell scripting
+      - PHP
+      - Apache
+      - Nginx
+      - git
+      - MS SQL
+      - Windows 
     achievements:
       - Supported desktop and laptop users, resolving technical issues promptly.
       - Managed MS SQL Server and ensured smooth operation of Windows applications.
