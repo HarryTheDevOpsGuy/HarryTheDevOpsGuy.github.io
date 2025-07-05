@@ -19,7 +19,8 @@ BLUE = \033[34m
 
 install: ## Install all dependencies
 	@echo "${BLUE}Installing dependencies...${RESET}"
-	@bundle install --jobs $(JOBS) --retry 3 --path vendor/bundle
+	@bundle config set path 'vendor/bundle'
+	@bundle install --jobs $(JOBS) --retry 3 
 	@npm ci
 	@echo "${GREEN}✓ Dependencies installed successfully${RESET}"
 
@@ -32,6 +33,7 @@ build: ## Build the site for production
 
 # Development build with watch mode
 dev: ## Start development server with live reload
+	@make install
 	@make build
 	@echo "${BLUE}Starting development server...${RESET}"
 	@JEKYLL_ENV=development bundle exec jekyll serve --livereload --incremental
