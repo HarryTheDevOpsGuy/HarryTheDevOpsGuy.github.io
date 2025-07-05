@@ -5,27 +5,65 @@ title: "Hari Prasad | DevOps Portfolio v3"
 
 <!-- Chart.js CDN -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+<!-- AOS (Animate On Scroll) CDN -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <!-- Font Awesome CDN for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<!-- Custom Styles for v3 (minimal, modern, responsive) -->
+<!-- Custom Styles for v3 (creative, animated, modern) -->
 <style>
-  .section-title {
-    font-size: 2rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 2rem;
-    color: #3b3663;
+  body, html { scroll-behavior: smooth; }
+  .animated-gradient-bg {
+    background: linear-gradient(270deg, #667eea, #a21caf, #10b981, #f472b6, #6366f1);
+    background-size: 200% 200%;
+    animation: gradientMove 8s ease-in-out infinite;
   }
-  .section {
-    margin-bottom: 4rem;
-    padding: 2rem 0;
-    border-radius: 1.5rem;
-    background: #fff;
-    box-shadow: 0 2px 16px 0 rgba(60,60,100,0.06);
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .blob-bg {
+    position: absolute;
+    top: -80px; left: 50%;
+    width: 600px; height: 400px;
+    z-index: 0;
+    transform: translateX(-50%);
+    opacity: 0.18;
+    pointer-events: none;
+  }
+  .profile-float {
+    animation: floatY 3s ease-in-out infinite;
+  }
+  @keyframes floatY {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-18px); }
+  }
+  .typing-effect {
+    display: inline-block;
+    border-right: 2px solid #6366f1;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(40, end), blink-caret 0.7s step-end infinite;
+    font-family: monospace;
+    font-size: 1.2rem;
+    color: #6366f1;
+    min-height: 1.5em;
+  }
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #6366f1; }
+  }
+  .countup {
+    font-variant-numeric: tabular-nums;
+    font-weight: bold;
+    font-size: 2.2rem;
+    color: #3b82f6;
   }
   .tag-badge {
     display: inline-flex;
@@ -39,32 +77,21 @@ title: "Hari Prasad | DevOps Portfolio v3"
     color: #2563eb;
     background: #f0f7ff;
     margin: 0.2rem 0.2rem 0 0;
+    transition: box-shadow 0.2s, background 0.2s;
+    box-shadow: 0 2px 8px 0 rgba(60,60,100,0.06);
+    cursor: pointer;
   }
-  .timeline {
-    border-left: 3px solid #a5b4fc;
-    margin-left: 1.5rem;
-    padding-left: 1.5rem;
+  .tag-badge:hover {
+    background: linear-gradient(90deg, #6366f1 0%, #a21caf 100%);
+    color: #fff;
+    border-color: #a21caf;
+    box-shadow: 0 4px 16px 0 rgba(99,102,241,0.12);
   }
-  .timeline-item {
-    margin-bottom: 2.5rem;
-    position: relative;
+  .tag-badge i {
+    transition: transform 0.2s;
   }
-  .timeline-item:before {
-    content: '';
-    position: absolute;
-    left: -1.7rem;
-    top: 0.5rem;
-    width: 1.1rem;
-    height: 1.1rem;
-    background: linear-gradient(135deg, #6366f1, #a21caf);
-    border-radius: 50%;
-    border: 2px solid #fff;
-    box-shadow: 0 0 0 2px #a5b4fc;
-  }
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    gap: 2rem;
+  .tag-badge:hover i {
+    transform: rotate(-12deg) scale(1.2);
   }
   .project-card-v3 {
     background: #f8fafc;
@@ -75,6 +102,13 @@ title: "Hari Prasad | DevOps Portfolio v3"
     flex-direction: column;
     gap: 1rem;
     border: 1px solid #e0e7ef;
+    transition: transform 0.4s, box-shadow 0.4s;
+    perspective: 800px;
+  }
+  .project-card-v3:hover {
+    transform: rotateY(8deg) scale(1.04);
+    box-shadow: 0 8px 32px 0 rgba(99,102,241,0.12);
+    z-index: 2;
   }
   .lang-badge {
     display: flex;
@@ -87,6 +121,21 @@ title: "Hari Prasad | DevOps Portfolio v3"
     font-weight: 600;
     font-size: 1rem;
     margin-bottom: 0.5rem;
+    box-shadow: 0 2px 8px 0 rgba(60,60,100,0.06);
+    transition: background 0.2s, color 0.2s;
+  }
+  .lang-badge:hover {
+    background: linear-gradient(90deg, #6366f1 0%, #a21caf 100%);
+    color: #fff;
+  }
+  .timeline-item[data-aos] {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s, transform 0.6s;
+  }
+  .timeline-item.aos-animate {
+    opacity: 1 !important;
+    transform: none !important;
   }
   @media (max-width: 700px) {
     .section { padding: 1rem 0.5rem; }
@@ -95,12 +144,23 @@ title: "Hari Prasad | DevOps Portfolio v3"
   }
 </style>
 
-<div class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+<div class="min-h-screen animated-gradient-bg relative overflow-x-hidden">
+  <!-- SVG Blob Background -->
+  <svg class="blob-bg" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="blobGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#6366f1"/>
+        <stop offset="100%" stop-color="#a21caf"/>
+      </linearGradient>
+    </defs>
+    <path fill="url(#blobGrad)" d="M421,320Q370,400,260,370Q150,340,120,220Q90,100,220,80Q350,60,420,140Q490,220,421,320Z"/>
+  </svg>
 
   <!-- Hero Section -->
-  <section class="section flex flex-col items-center text-center">
-    <img src="/assets/image/hari-profile.jpeg" alt="Hari Prasad" class="w-36 h-36 rounded-full border-4 border-blue-500 shadow-lg mb-4" />
+  <section class="section flex flex-col items-center text-center relative z-10">
+    <img src="/assets/image/hari-profile.jpeg" alt="Hari Prasad" class="w-36 h-36 rounded-full border-4 border-blue-500 shadow-lg mb-4 profile-float" />
     <h1 class="text-4xl font-extrabold mb-2">Hari Prasad</h1>
+    <span class="typing-effect" id="typingTagline"></span>
     <p class="text-xl text-blue-700 font-semibold mb-2">Sr. DevOps Lead</p>
     <p class="text-gray-600 max-w-xl mx-auto mb-4">11+ years of experience in DevOps, cloud automation, CI/CD, and infrastructure as code. Transforming infrastructure into scalable, automated, and resilient systems.</p>
     <div class="flex flex-wrap justify-center gap-4 mb-2">
@@ -112,31 +172,32 @@ title: "Hari Prasad | DevOps Portfolio v3"
   </section>
 
   <!-- Stats & Chart Section -->
-  <section class="section">
+  <section class="section" data-aos="fade-up">
     <div class="section-title"><i class="fas fa-chart-pie"></i> Quick Stats</div>
     <div class="flex flex-col md:flex-row items-center justify-center gap-8">
       <canvas id="statsChart" width="220" height="220"></canvas>
       <div class="grid grid-cols-2 gap-6">
         <div class="text-center">
-          <div class="text-3xl font-bold text-blue-700">{{ site.data.cv.hari-prasad.personal.years_exp }}+</div>
+          <div class="countup" id="expCount">0</div>
           <div class="text-gray-500">Years Experience</div>
         </div>
         <div class="text-center">
-          <div class="text-3xl font-bold text-purple-700">{{ site.data.cv.hari-prasad.experience | size }}</div>
+          <div class="countup" id="compCount">0</div>
           <div class="text-gray-500">Companies</div>
         </div>
         <div class="text-center">
-          <div class="text-3xl font-bold text-green-700">{{ site.data.cv.hari-prasad.projects | size }}</div>
+          <div class="countup" id="projCount">0</div>
           <div class="text-gray-500">Projects</div>
         </div>
         <div class="text-center">
-          <div class="text-3xl font-bold text-pink-700">{{ site.data.cv.hari-prasad.skills.core | size }}</div>
+          <div class="countup" id="skillCount">0</div>
           <div class="text-gray-500">Core Skills</div>
         </div>
       </div>
     </div>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
+        // Chart.js animated doughnut
         new Chart(document.getElementById('statsChart'), {
           type: 'doughnut',
           data: {
@@ -150,15 +211,35 @@ title: "Hari Prasad | DevOps Portfolio v3"
           options: {
             plugins: { legend: { display: true, position: 'bottom' } },
             cutout: '70%',
-            responsive: false
+            responsive: false,
+            animation: { animateRotate: true, animateScale: true }
           }
         });
+        // CountUp animation
+        function animateCount(id, end) {
+          let el = document.getElementById(id);
+          let start = 0;
+          let duration = 1200;
+          let startTime = null;
+          function step(ts) {
+            if (!startTime) startTime = ts;
+            let progress = Math.min((ts - startTime) / duration, 1);
+            el.textContent = Math.floor(progress * (end - start) + start);
+            if (progress < 1) requestAnimationFrame(step);
+            else el.textContent = end;
+          }
+          requestAnimationFrame(step);
+        }
+        animateCount('expCount', {{ site.data.cv.hari-prasad.personal.years_exp }});
+        animateCount('compCount', {{ site.data.cv.hari-prasad.experience | size }});
+        animateCount('projCount', {{ site.data.cv.hari-prasad.projects | size }});
+        animateCount('skillCount', {{ site.data.cv.hari-prasad.skills.core | size }});
       });
     </script>
   </section>
 
   <!-- Technical Skills Section with Chart -->
-  <section class="section">
+  <section class="section" data-aos="fade-up">
     <div class="section-title"><i class="fas fa-tools"></i> Technical Skills</div>
     <div class="flex flex-col md:flex-row gap-8">
       <div class="flex-1">
@@ -168,19 +249,19 @@ title: "Hari Prasad | DevOps Portfolio v3"
         <div class="mb-4 font-semibold text-blue-700">Core Skills</div>
         <div class="flex flex-wrap gap-2 mb-6">
           {% for skill in site.data.cv.hari-prasad.skills.core %}
-            <span class="tag-badge"><i class="fas fa-check-circle"></i> {{ skill }}</span>
+            <span class="tag-badge" data-aos="zoom-in"><i class="fas fa-check-circle"></i> {{ skill }}</span>
           {% endfor %}
         </div>
         <div class="mb-4 font-semibold text-purple-700">Tools</div>
         <div class="flex flex-wrap gap-2 mb-6">
           {% for tool in site.data.cv.hari-prasad.skills.tools %}
-            <span class="tag-badge"><i class="fas fa-wrench"></i> {{ tool }}</span>
+            <span class="tag-badge" data-aos="zoom-in"><i class="fas fa-wrench"></i> {{ tool }}</span>
           {% endfor %}
         </div>
         <div class="mb-4 font-semibold text-green-700">Additional</div>
         <div class="flex flex-wrap gap-2">
           {% for add in site.data.cv.hari-prasad.skills.additional %}
-            <span class="tag-badge"><i class="fas fa-plus-circle"></i> {{ add }}</span>
+            <span class="tag-badge" data-aos="zoom-in"><i class="fas fa-plus-circle"></i> {{ add }}</span>
           {% endfor %}
         </div>
       </div>
@@ -202,7 +283,8 @@ title: "Hari Prasad | DevOps Portfolio v3"
             indexAxis: 'y',
             plugins: { legend: { display: false } },
             scales: { x: { min: 0, max: 100, ticks: { stepSize: 20 } } },
-            responsive: false
+            responsive: false,
+            animation: { duration: 1200, easing: 'easeOutBounce' }
           }
         });
       });
@@ -210,11 +292,11 @@ title: "Hari Prasad | DevOps Portfolio v3"
   </section>
 
   <!-- Professional Experience Timeline -->
-  <section class="section">
+  <section class="section" data-aos="fade-up">
     <div class="section-title"><i class="fas fa-briefcase"></i> Professional Experience</div>
     <div class="timeline">
       {% for job in site.data.cv.hari-prasad.experience %}
-        <div class="timeline-item">
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 100 }}">
           <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
             <div class="font-bold text-lg text-blue-700">{{ job.position }}</div>
             <div class="text-sm text-gray-500">{{ job.company }} &bull; {{ job.location }} &bull; {{ job.period }}</div>
@@ -258,7 +340,7 @@ title: "Hari Prasad | DevOps Portfolio v3"
                 {% when 'zabbix' %}{% assign icon = 'fas fa-chart-line' %}
                 {% else %}{% assign icon = 'fas fa-tag' %}
               {% endcase %}
-              <span class="tag-badge"><i class="{{ icon }}"></i> {{ tool }}</span>
+              <span class="tag-badge" data-aos="zoom-in"><i class="{{ icon }}"></i> {{ tool }}</span>
             {% endfor %}
           </div>
           {% endif %}
@@ -268,11 +350,11 @@ title: "Hari Prasad | DevOps Portfolio v3"
   </section>
 
   <!-- Projects Section -->
-  <section class="section">
+  <section class="section" data-aos="fade-up">
     <div class="section-title"><i class="fas fa-code-branch"></i> Projects</div>
     <div class="card-grid">
       {% for project in site.data.cv.hari-prasad.projects %}
-        <div class="project-card-v3">
+        <div class="project-card-v3" data-aos="flip-left">
           <div class="font-bold text-blue-700 text-lg mb-1">{{ project.name }}</div>
           <div class="text-gray-600 mb-2">{{ project.description }}</div>
           <a href="{{ project.url }}" target="_blank" class="text-blue-600 hover:underline font-semibold flex items-center gap-1"><i class="fas fa-external-link-alt"></i> View Project</a>
@@ -282,13 +364,13 @@ title: "Hari Prasad | DevOps Portfolio v3"
   </section>
 
   <!-- Education & Languages Section -->
-  <section class="section">
+  <section class="section" data-aos="fade-up">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div>
         <div class="section-title"><i class="fas fa-graduation-cap"></i> Education</div>
         <ol class="timeline">
           {% for edu in site.data.cv.hari-prasad.education %}
-            <li class="timeline-item">
+            <li class="timeline-item" data-aos="fade-right" data-aos-delay="{{ forloop.index0 | times: 100 }}">
               <div class="font-bold text-blue-700">{{ edu.degree }}</div>
               <div class="text-gray-600">{{ edu.institution }}</div>
               <div class="text-xs text-gray-400">{{ edu.location }} &bull; {{ edu.year }}</div>
@@ -300,31 +382,56 @@ title: "Hari Prasad | DevOps Portfolio v3"
         <div class="section-title"><i class="fas fa-language"></i> Languages</div>
         <div class="flex flex-wrap gap-3">
           {% for lang in site.data.cv.hari-prasad.languages %}
-            <span class="lang-badge">
+            <span class="lang-badge" data-aos="zoom-in">
               {% if lang == 'English' %}<i class="fas fa-flag-usa text-blue-500"></i>{% endif %}
               {% if lang == 'Hindi' %}<i class="fas fa-flag text-orange-500"></i>{% endif %}
               {{ lang }}
             </span>
           {% endfor %}
         </div>
-        <canvas id="langChart" height="120"></canvas>
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-4">
+          <div class="font-bold text-lg text-blue-700 mb-2">Language Proficiency</div>
+          <canvas id="langChart" height="120"></canvas>
+        </div>
         <script>
           document.addEventListener('DOMContentLoaded', function() {
             new Chart(document.getElementById('langChart'), {
               type: 'bar',
               data: {
-                labels: [{% for lang in site.data.cv.hari-prasad.languages %}'{{ lang }}',{% endfor %}],
+                labels: [{% for lang in site.data.cv.hari-prasad.languages %}'{{ lang }}'{% unless forloop.last %},{% endunless %}{% endfor %}],
                 datasets: [{
                   label: 'Proficiency',
-                  data: [{% for lang in site.data.cv.hari-prasad.languages %}{{ lang == 'English' or lang == 'Hindi' ? 100 : 80 }},{% endfor %}],
-                  backgroundColor: ['#3b82f6', '#f59e42'],
-                  borderRadius: 8
+                  data: [
+                    {% for lang in site.data.cv.hari-prasad.languages %}
+                      {% if lang == 'English' or lang == 'Hindi' %}100{% else %}80{% endif %}{% unless forloop.last %},{% endunless %}
+                    {% endfor %}
+                  ],
+                  backgroundColor: [
+                    {% for lang in site.data.cv.hari-prasad.languages %}
+                      {% assign mod = forloop.index0 | modulo: 2 %}
+                      {% if mod == 0 %}'#3b82f6'{% else %}'#f59e42'{% endif %}{% unless forloop.last %},{% endunless %}
+                    {% endfor %}
+                  ],
+                  borderRadius: 12,
+                  borderSkipped: false
                 }]
               },
               options: {
-                plugins: { legend: { display: false } },
-                scales: { x: { min: 0, max: 100, ticks: { stepSize: 20 } } },
-                responsive: false
+                plugins: { 
+                  legend: { display: false },
+                  title: {
+                    display: true,
+                    text: 'Language Proficiency',
+                    color: '#6366f1',
+                    font: { size: 18, weight: 'bold' }
+                  }
+                },
+                scales: { 
+                  x: { min: 0, max: 100, ticks: { stepSize: 20 }, grid: { color: '#e0e7ef' } },
+                  y: { grid: { color: '#e0e7ef' } }
+                },
+                responsive: false,
+                animation: { duration: 1200, easing: 'easeOutBounce' }
               }
             });
           });
@@ -334,7 +441,7 @@ title: "Hari Prasad | DevOps Portfolio v3"
   </section>
 
   <!-- Why Hire Me & CTA Section -->
-  <section class="section text-center">
+  <section class="section text-center" data-aos="fade-up">
     <div class="section-title justify-center"><i class="fas fa-handshake"></i> Why Hire Me?</div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
       <div class="flex flex-col items-center text-center">
@@ -381,4 +488,22 @@ title: "Hari Prasad | DevOps Portfolio v3"
     </div>
   </section>
 
+  <script>
+    // Typing effect for tagline
+    document.addEventListener('DOMContentLoaded', function() {
+      var text = "Transforming infrastructure into scalable, automated, and resilient systems.";
+      var el = document.getElementById('typingTagline');
+      var i = 0;
+      function type() {
+        if (i < text.length) {
+          el.textContent += text.charAt(i);
+          i++;
+          setTimeout(type, 40);
+        }
+      }
+      type();
+      // AOS init
+      AOS.init({ once: true, duration: 900, offset: 60 });
+    });
+  </script>
 </div> 
