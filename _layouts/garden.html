@@ -4,7 +4,7 @@ layout: default
 
 <div class="container mx-auto px-4 py-8">
   <article class="prose dark:prose-invert lg:prose-lg max-w-none bg-white/95 dark:bg-gray-800/95 p-8 rounded-xl shadow-lg backdrop-blur-xs border border-gray-200/50 dark:border-gray-700/30 hover:border-primary-500/30 dark:hover:border-primary-400/30 transition-all duration-300 hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10 prose-headings:bg-linear-to-r prose-headings:from-emerald-600 prose-headings:to-green-400 prose-headings:bg-clip-text prose-headings:text-transparent">
-    <h1 class="text-4xl md:text-5xl font-extrabold bg-linear-to-r from-emerald-600 to-green-400 bg-clip-text text-transparent animate-gradient mb-6!">🌱 {{ page.title }}</h1>
+    <h1 class="text-4xl md:text-5xl font-extrabold bg-linear-to-r from-fuchsia-600 via-blue-600 to-purple-600 bg-clip-text text-transparent animate-gradient mb-6!">🌱 {{ page.title }}</h1>
       
       {% if page.status %}
       <div class="mb-4">
@@ -37,7 +37,7 @@ layout: default
 
     {% if page.related_posts %}
     <footer class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
-      <h2 class="text-2xl font-bold mb-6 bg-linear-to-r from-emerald-600 to-green-400 bg-clip-text text-transparent">🌿 Related Posts</h2>
+      <h2 class="text-2xl font-bold mb-6 bg-linear-to-r from-fuchsia-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">🌿 Related Posts</h2>
       <div class="grid md:grid-cols-2 gap-6">
         {% for post in page.related_posts limit:2 %}
         <a href="{{ post.url }}" class="group block p-6 bg-emerald-50/50 dark:bg-emerald-900/30 rounded-xl hover:bg-emerald-100/50 dark:hover:bg-emerald-800/30 transition-all duration-300 hover:shadow-md hover:scale-[1.02]">
