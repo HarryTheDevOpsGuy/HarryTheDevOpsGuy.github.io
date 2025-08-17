@@ -43,6 +43,7 @@ jobs:
         with:
           fetch-depth: 1
           repository: 'HarryTheDevOpsGuy/cv'
+          ref: 'ai'
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
