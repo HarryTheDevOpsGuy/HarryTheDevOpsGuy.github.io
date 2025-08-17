@@ -39,9 +39,10 @@ jobs:
     # needs: security
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 1
+          repository: 'HarryTheDevOpsGuy/cv'
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -67,18 +68,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm ci
-          bundle install --jobs 4 --retry 3
+          make setup
 
-      - name: Build Tailwind CSS
-        run: npm run build:css
+      - name: npm and jekyll build
+        run: make build
         env:
           NODE_ENV: production
-
-      - name: Build site
-        run: bundle exec jekyll build
-        env:
-          JEKYLL_ENV: production
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3.0.1
