@@ -43,7 +43,8 @@ jobs:
         uses: actions/checkout@v5
         with:
           fetch-depth: 1
-          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          #ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          token: ${{ secrets.GH_TOKEN }}
           repository: 'HarryTheDevOpsGuy/cv'
           ref: 'ai'
 
