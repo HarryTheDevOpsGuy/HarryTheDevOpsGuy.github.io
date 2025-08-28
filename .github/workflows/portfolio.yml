@@ -61,7 +61,6 @@ jobs:
       - name: Install dependencies
         run: |
           make setup
-          node ssGenerator.js
 
       - name: npm and jekyll build
         run: make build
