@@ -34,7 +34,7 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: CLONE REPOSITORIES
         run: |
-          git clone -b ai git@github.com:HarryTheDevOpsGuy/cv.git
+          git clone -b ai git@github.com:HarryTheDevOpsGuy/cv.git ${GITHUB_WORKSPACE}
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
